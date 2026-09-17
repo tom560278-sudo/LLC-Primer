@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>Interactive LLC Formation Quiz 2026 | LLC Primer</title>
+  <meta name="description" content="Take our 2026 diagnostic quiz to discover your recommended LLC state, formation path, cost breakdown, and step-by-step checklist.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: #FFFFFF !important;
+      color: #12304A !important;
+    }
+    .quiz-page-wrapper {
+      min-height: 80vh;
+      background: #F8FAFC;
+      padding: 2rem 0 3.5rem 0;
+    }
+
+    .quiz-card-frame {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 2.5rem 2.25rem;
+      max-width: 840px;
+      margin: 0 auto;
+      box-shadow: 0 10px 35px #12304a14;
+      position: relative;
+      color: #12304A;
+    }
+
+    .quiz-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #E2E8F0;
+    }
+
+    .quiz-step-counter {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #159A9C;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .quiz-progress-track {
+      height: 10px;
+      background: #E2E8F0;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 2.25rem;
+    }
+
+    .quiz-progress-fill-bar {
+      height: 100%;
+      width: 10%;
+      background: linear-gradient(135deg, #159A9C 0%, #12304A 100%);
+      transition: width 0.4s ease;
+    }
+
+    .quiz-question-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #12304A;
+      margin-bottom: 0.5rem;
+      line-height: 1.35;
+    }
+
+    .quiz-question-desc {
+      font-size: 0.95rem;
+      color: #475569;
+      margin-bottom: 1.75rem;
+    }
+
+    .quiz-grid-2col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .quiz-choice-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 1.25rem 1.4rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-align: left;
+      color: #12304A;
+    }
+
+    .quiz-choice-card:hover {
+      background: #F8FAFC;
+      border-color: #159A9C;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px #159a9c20;
+    }
+
+    .quiz-choice-card.selected {
+      background: rgba(21, 154, 156, 0.08);
+      border-color: #159A9C;
+      box-shadow: 0 0 15px #159a9c33;
+    }
+
+    .quiz-choice-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #12304A;
+      margin-bottom: 0.35rem;
+    }
+
+    .quiz-choice-desc {
+      font-size: 0.85rem;
+      color: #475569;
+    }
+
+    .quiz-actions-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      border-top: 1px solid #E2E8F0;
+    }
+
+    @media (max-width: 768px) {
+      .quiz-grid-2col { grid-template-columns: 1fr; }
+      .quiz-card-frame { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       0. TOP ANNOUNCEMENT BAR
+       ========================================================================= -->
+  <div style="background: #12304A; border-bottom: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.8rem; color: #CBD5E1; padding: 0.5rem 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #159A9C; box-shadow: 0 0 10px #159A9C;"></span>
+        <strong style="color: #F8FAFC;">2026 DIAGNOSTIC ENGINE</strong> · Personalized LLC Route & Cost Blueprint
+      </div>
+      <div style="display: flex; align-items: center; gap: 1.25rem;">
+        <a href="index.html#states-section" style="color: #CBD5E1; font-weight: 500;">🏛️ All 50 States</a>
+        <a href="start-llc.html" style="color: #CBD5E1; font-weight: 500;">📚 LLC Guidance</a>
+        <a href="quiz.html" style="color: #159A9C; font-weight: 700;">🧩 Take Quiz →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       1. EXECUTIVE NAVBAR (MATCHING INDEX.HTML EXACTLY)
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">
+            Start an LLC
+          </a>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#states-section" class="nav-link">
+            State Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#states-section" class="dropdown-link">🏛️ 50-State Formation Guides & Fees</a>
+            <a href="index.html#states-section" onclick="selectStateAndOpenModal('WY')" class="dropdown-link">⭐ Wyoming LLC Guide</a>
+            <a href="index.html#states-section" onclick="selectStateAndOpenModal('DE')" class="dropdown-link">⭐ Delaware LLC Guide</a>
+            <a href="index.html#states-section" onclick="selectStateAndOpenModal('TX')" class="dropdown-link">⭐ Texas LLC Guide</a>
+            <a href="index.html#states-section" onclick="selectStateAndOpenModal('FL')" class="dropdown-link">⭐ Florida LLC Guide</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#after-formation-section" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#after-formation-section" class="dropdown-link">01. Obtain Federal EIN (SS-4 Tax ID)</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">02. Draft Operating Agreement</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">03. Open Business Bank Account</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">04. File FinCEN BOI Report</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#cost-estimator-section" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="quiz.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">🧩 Interactive LLC Quiz (60 Sec)</a>
+            <a href="index.html#cost-estimator-section" class="dropdown-link">📊 First-Year Cost Estimator</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="index.html" class="ls-btn ls-btn--outline" style="font-size: 0.85rem; color: #FFF; border-color: rgba(255,255,255,0.2);">
+          ← Return to Home
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- =========================================================================
+       2. QUIZ CONTAINER (LIGHT BACKGROUND & SLEEK CARDS)
+       ========================================================================= -->
+  <div class="quiz-page-wrapper">
+    <div class="container">
+      <div class="quiz-card-frame">
+        <div class="quiz-header-bar">
+          <div class="quiz-step-counter" id="quizStepCounterText">Question 1 of 6</div>
+          <span style="font-size: 0.75rem; color: #159A9C; font-weight: 800; background: rgba(21, 154, 156, 0.12); padding: 0.3rem 0.75rem; border-radius: 9999px;">
+            ✓ 60-Second LLC Diagnostic
+          </span>
+        </div>
+
+        <div class="quiz-progress-track">
+          <div class="quiz-progress-fill-bar" id="quizProgressBar"></div>
+        </div>
+
+        <!-- QUESTION 1 -->
+        <div class="quiz-step-block" id="quizQ1">
+          <div class="quiz-question-title">1. What is your primary objective today?</div>
+          <div class="quiz-question-desc">Select what best matches your current business planning stage:</div>
+          <div class="quiz-grid-2col">
+            <div class="quiz-choice-card selected" onclick="chooseOption('goal', 'start_llc', this)">
+              <div class="quiz-choice-title">🚀 Form a New LLC</div>
+              <div class="quiz-choice-desc">Start a brand new business entity from scratch</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('goal', 'find_setup', this)">
+              <div class="quiz-choice-title">🧭 Compare LLC States</div>
+              <div class="quiz-choice-desc">Find out if Home State, WY, or DE is best</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('goal', 'reduce_costs', this)">
+              <div class="quiz-choice-title">💰 Calculate Formation Costs</div>
+              <div class="quiz-choice-desc">Determine government filing fees & ongoing expenses</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('goal', 'understand_options', this)">
+              <div class="quiz-choice-title">📚 Learn Compliance Rules</div>
+              <div class="quiz-choice-desc">Understand EIN, Operating Agreements & privacy</div>
+            </div>
+          </div>
+          <div class="quiz-actions-row">
+            <div></div>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep(2)">Next Question →</button>
+          </div>
+        </div>
+
+        <!-- QUESTION 2 -->
+        <div class="quiz-step-block" id="quizQ2" style="display: none;">
+          <div class="quiz-question-title">2. What type of business will your LLC operate?</div>
+          <div class="quiz-question-desc">This helps tailor tax classification and state compliance recommendations:</div>
+          <div class="quiz-grid-2col">
+            <div class="quiz-choice-card selected" onclick="chooseOption('reason', 'assets', this)">
+              <div class="quiz-choice-title">🛡️ Personal Asset Protection</div>
+              <div class="quiz-choice-desc">Shield savings, personal bank accounts & house</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('reason', 'business', this)">
+              <div class="quiz-choice-title">💼 Local Service / Retail</div>
+              <div class="quiz-choice-desc">Physical store, local service, or consultancy</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('reason', 'online', this)">
+              <div class="quiz-choice-title">🛒 E-Commerce & Online Store</div>
+              <div class="quiz-choice-desc">Shopify, Amazon, Stripe, digital products</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('reason', 'real_estate', this)">
+              <div class="quiz-choice-title">🏢 Real Estate Holding</div>
+              <div class="quiz-choice-desc">Rental properties, Airbnb, land investments</div>
+            </div>
+          </div>
+          <div class="quiz-actions-row">
+            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep(1)">← Back</button>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep(3)">Next Question →</button>
+          </div>
+        </div>
+
+        <!-- QUESTION 3 (RESIDENCY BRANCH) -->
+        <div class="quiz-step-block" id="quizQ3" style="display: none;">
+          <div class="quiz-question-title">3. Where are you physically based?</div>
+          <div class="quiz-question-desc">Federal IRS rules differ significantly based on your residency:</div>
+          <div class="quiz-grid-2col">
+            <div class="quiz-choice-card selected" id="optResUS" onclick="setResidency('us', this)">
+              <div class="quiz-choice-title">🇺🇸 U.S. Resident</div>
+              <div class="quiz-choice-desc">I reside in one of the 50 U.S. states</div>
+            </div>
+            <div class="quiz-choice-card" id="optResNonUS" onclick="setResidency('non_us', this)">
+              <div class="quiz-choice-title">🌐 International / Non-U.S.</div>
+              <div class="quiz-choice-desc">Foreign founder living outside the U.S. without SSN</div>
+            </div>
+          </div>
+          <div class="quiz-actions-row">
+            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep(2)">← Back</button>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="handleResidencyNext()">Next Question →</button>
+          </div>
+        </div>
+
+        <!-- BRANCH A: US RESIDENT QUESTION 4 -->
+        <div class="quiz-step-block" id="quizQ4_US" style="display: none;">
+          <div class="quiz-question-title">4. Select your home state:</div>
+          <div class="quiz-question-desc">Where do you live or physically operate your business?</div>
+          <div style="margin-bottom: 2rem;">
+            <select id="usStateSelector" class="state-select-box" style="background:#FFFFFF; color: #12304A; border: 1.5px solid #CBD5E1; font-size:1.05rem; padding:0.85rem 1rem; width: 100%; border-radius: 8px;"></select>
+          </div>
+          <div class="quiz-actions-row">
+            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep(3)">← Back</button>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep('5_US')">Next Question →</button>
+          </div>
+        </div>
+
+        <!-- BRANCH A: US RESIDENT QUESTION 5 -->
+        <div class="quiz-step-block" id="quizQ5_US" style="display: none;">
+          <div class="quiz-question-title">5. Will your business have physical operations in your home state?</div>
+          <div class="quiz-question-desc">Such as a storefront, warehouse, office, or local client service:</div>
+          <div class="quiz-grid-2col">
+            <div class="quiz-choice-card selected" onclick="chooseOption('usPhys', 'yes', this)">
+              <div class="quiz-choice-title">Yes, Physical Operations</div>
+              <div class="quiz-choice-desc">Physical workspace, office, or local service</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('usPhys', 'online', this)">
+              <div class="quiz-choice-title">100% Online / Remote</div>
+              <div class="quiz-choice-desc">No physical location or local storefront</div>
+            </div>
+          </div>
+          <div class="quiz-actions-row">
+            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep('4_US')">← Back</button>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep('6_US')">Next Question →</button>
+          </div>
+        </div>
+
+        <!-- BRANCH A: US RESIDENT QUESTION 6 -->
+        <div class="quiz-step-block" id="quizQ6_US" style="display: none;">
+          <div class="quiz-question-title">6. What is your address privacy preference?</div>
+          <div class="quiz-question-desc">Every state mandates a physical street address on public state records:</div>
+          <div class="quiz-grid-2col">
+            <div class="quiz-choice-card selected" onclick="chooseOption('privacy', 'max', this)">
+              <div class="quiz-choice-title">🛡️ Registered Agent Address Privacy</div>
+              <div class="quiz-choice-desc">Keep personal home address off public state records</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('privacy', 'standard', this)">
+              <div class="quiz-choice-title">🏠 Self Registered Agent ($0)</div>
+              <div class="quiz-choice-desc">Okay displaying home address on state registry</div>
+            </div>
+          </div>
+          <div class="quiz-actions-row">
+            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep('5_US')">← Back</button>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="generateFinalResults()">Generate My Custom Plan →</button>
+          </div>
+        </div>
+
+        <!-- BRANCH B: OUTSIDE US QUESTION 4 -->
+        <div class="quiz-step-block" id="quizQ4_NONUS" style="display: none;">
+          <div class="quiz-question-title">4. How will you use your U.S. LLC?</div>
+          <div class="quiz-question-desc">Select your main commercial activities:</div>
+          <div class="quiz-grid-2col">
+            <div class="quiz-choice-card selected" onclick="chooseOption('nonusUse', 'online', this)">
+              <div class="quiz-choice-title">🛒 Online Store / E-Commerce</div>
+              <div class="quiz-choice-desc">Stripe payment gateway, Shopify, Amazon US</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('nonusUse', 'consulting', this)">
+              <div class="quiz-choice-title">💼 Global Freelancing / Consulting</div>
+              <div class="quiz-choice-desc">Receive USD payments from international clients</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('nonusUse', 'saas', this)">
+              <div class="quiz-choice-title">💻 SaaS / Software / Tech</div>
+              <div class="quiz-choice-desc">Digital software product subscriptions</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('nonusUse', 'agency', this)">
+              <div class="quiz-choice-title">🚀 Digital Service Agency</div>
+              <div class="quiz-choice-desc">Marketing, design, or dev services</div>
+            </div>
+          </div>
+          <div class="quiz-actions-row">
+            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep(3)">← Back</button>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep('5_NONUS')">Next Question →</button>
+          </div>
+        </div>
+
+        <!-- BRANCH B: OUTSIDE US QUESTION 5 -->
+        <div class="quiz-step-block" id="quizQ5_NONUS" style="display: none;">
+          <div class="quiz-question-title">5. Do you currently possess a U.S. SSN or ITIN?</div>
+          <div class="quiz-question-desc">This determines the exact IRS Employer Identification Number (EIN) acquisition route:</div>
+          <div class="quiz-grid-2col">
+            <div class="quiz-choice-card" onclick="chooseOption('ssn', 'ssn', this)">
+              <div class="quiz-choice-title">Yes, I have a U.S. SSN</div>
+              <div class="quiz-choice-desc">Social Security Number</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('ssn', 'itin', this)">
+              <div class="quiz-choice-title">Yes, I have a U.S. ITIN</div>
+              <div class="quiz-choice-desc">Individual Taxpayer Identification Number</div>
+            </div>
+            <div class="quiz-choice-card selected" onclick="chooseOption('ssn', 'none', this)">
+              <div class="quiz-choice-title">No, I have neither</div>
+              <div class="quiz-choice-desc">Requires IRS Form SS-4 fax application route</div>
+            </div>
+            <div class="quiz-choice-card" onclick="chooseOption('ssn', 'unsure', this)">
+              <div class="quiz-choice-title">I’m not sure</div>
+              <div class="quiz-choice-desc">Need assistance evaluating tax status</div>
+            </div>
+          </div>
+          <div class="quiz-actions-row">
+            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep('4_NONUS')">← Back</button>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep('6_NONUS')">Next Question →</button>
+          </div>
+        </div>
+
+        <!-- BRANCH B: OUTSIDE US QUESTION 6 -->
+        <div class="quiz-step-block" id="quizQ6_NONUS" style="display: none;">
+          <div class="quiz-question-title">6. Will you have physical assets or employees in the U.S.?</div>
+          <div class="quiz-question-desc">Determines whether state income tax or foreign qualifications apply:</div>
+          <div class="quiz-grid-2col">
+            <div class="quiz-choice-card" onclick="chooseOption('nonusPhys', 'yes', this)">
+              <div class="quiz-choice-title">Yes, U.S. Physical Presence</div>
+              <div class="quiz-choice-desc">U.S. office, warehouse, or employees</div>
+            </div>
+            <div class="quiz-choice-card selected" onclick="chooseOption('nonusPhys', 'no', this)">
+              <div class="quiz-choice-title">No, 100% Remote Global</div>
+              <div class="quiz-choice-desc">Operated entirely outside the U.S.</div>
+            </div>
+          </div>
+          <div class="quiz-actions-row">
+            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep('5_NONUS')">← Back</button>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="generateFinalResults()">Generate My Custom Plan →</button>
+          </div>
+        </div>
+
+        <!-- RESULTS STEP -->
+        <div class="quiz-step-block" id="quizResultsBlock" style="display: none;">
+          <div id="dynamicQuizResults"></div>
+          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="index.html" class="ls-btn" style="color: #12304A; border: 1.5px solid #12304A; padding: 0.75rem 1.5rem;">← Return to Homepage</a>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.5rem;" onclick="location.reload();">Restart Quiz 🔄</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       3. FOOTER (MATCHING INDEX.HTML EXACTLY)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="site-logo" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p style="font-size:0.88rem; color:#CBD5E1; margin-top:1rem; line-height:1.6;">
+            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step compliance resources to help founders start and maintain an LLC in any US state.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Popular States</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Wyoming LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Florida LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Texas LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
+            <li><a href="index.html#cost-estimator-section" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">EIN Application Guide</a></li>
+            <li><a href="index.html#decisions-section" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
+        <div>
+          <b>Disclaimer:</b> LLC Primer is an educational resource and business software provider. We are not a law firm or legal filing service and do not provide legal or financial advice. All state filing fees are verified against official Secretary of State portals for 2026.
+        </div>
+        <div>
+          © 2026 LLC Primer. All rights reserved. | Privacy Policy | Terms of Service
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    let answers = {
+      residency: 'us',
+      goal: 'start_llc',
+      reason: 'assets',
+      ssn: 'none',
+      nonusPhys: 'no'
+    };
+
+    function setResidency(res, el) {
+      answers.residency = res;
+      document.querySelectorAll('#quizQ3 .quiz-choice-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    function chooseOption(key, val, el) {
+      answers[key] = val;
+      const parent = el.parentElement;
+      if (parent) {
+        parent.querySelectorAll('.quiz-choice-card').forEach(c => c.classList.remove('selected'));
+        el.classList.add('selected');
+      }
+    }
+
+    function handleResidencyNext() {
+      if (answers.residency === 'us') {
+        goToStep('4_US');
+      } else {
+        goToStep('4_NONUS');
+      }
+    }
+
+    function goToStep(step) {
+      document.querySelectorAll('.quiz-step-block').forEach(b => b.style.display = 'none');
+
+      let stepNum = 1;
+      let barPct = 10;
+
+      if (step === 1) { document.getElementById('quizQ1').style.display = 'block'; stepNum = 1; barPct = 10; }
+      else if (step === 2) { document.getElementById('quizQ2').style.display = 'block'; stepNum = 2; barPct = 25; }
+      else if (step === 3) { document.getElementById('quizQ3').style.display = 'block'; stepNum = 3; barPct = 40; }
+      else if (step === '4_US') { document.getElementById('quizQ4_US').style.display = 'block'; stepNum = 4; barPct = 55; }
+      else if (step === '5_US') { document.getElementById('quizQ5_US').style.display = 'block'; stepNum = 5; barPct = 75; }
+      else if (step === '6_US') { document.getElementById('quizQ6_US').style.display = 'block'; stepNum = 6; barPct = 90; }
+      else if (step === '4_NONUS') { document.getElementById('quizQ4_NONUS').style.display = 'block'; stepNum = 4; barPct = 55; }
+      else if (step === '5_NONUS') { document.getElementById('quizQ5_NONUS').style.display = 'block'; stepNum = 5; barPct = 75; }
+      else if (step === '6_NONUS') { document.getElementById('quizQ6_NONUS').style.display = 'block'; stepNum = 6; barPct = 90; }
+
+      document.getElementById('quizStepCounterText').textContent = `Question ${stepNum} of 6`;
+      document.getElementById('quizProgressBar').style.width = `${barPct}%`;
+    }
+
+    function generateFinalResults() {
+      document.querySelectorAll('.quiz-step-block').forEach(b => b.style.display = 'none');
+      document.getElementById('quizResultsBlock').style.display = 'block';
+      document.getElementById('quizStepCounterText').textContent = `Complete`;
+      document.getElementById('quizProgressBar').style.width = `100%`;
+
+      const resBox = document.getElementById('dynamicQuizResults');
+      
+      if (answers.residency === 'non_us') {
+        resBox.innerHTML = `
+          <div style="background: #12304A; border: 2px solid #159A9C; border-radius: 16px; padding: 2.25rem; text-align: left; color: #FFF; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.2);">
+            <div style="font-size: 0.8rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.05em;">RECOMMENDED BLUEPRINT</div>
+            <h2 style="font-size: 1.75rem; color: #FFF; margin: 0.3rem 0 0.75rem 0;">Non-U.S. Founder — Remote Wyoming LLC Plan</h2>
+            <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.6;">
+              Based on your answers (Non-US Resident operating remotely without SSN), <b>Wyoming</b> is your optimal formation state. It features low initial fees ($100), low annual maintenance ($60), zero state income tax, and full remote banking capabilities via Mercury or Relay.
+            </p>
+
+            <div style="background: rgba(255, 255, 255, 0.06); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+              <h4 style="font-size: 0.95rem; color: #159A9C; margin-bottom: 0.5rem; font-weight: 700;">Step-by-Step Action Roadmap:</h4>
+              <ul style="font-size: 0.85rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.4rem; padding-left: 1rem;">
+                <li>1. Form Wyoming LLC with Registered Agent ($39 + $100 state fee)</li>
+                <li>2. Obtain EIN via IRS Form SS-4 Fax Application (No SSN required)</li>
+                <li>3. Open US Business Bank Account (Mercury or Relay online)</li>
+                <li>4. Connect Stripe & PayPal for international client billing</li>
+              </ul>
+            </div>
+
+            <a href="index.html#states-section" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem;">
+              View Wyoming LLC Guide & Fee Details →
+            </a>
+          </div>
+        `;
+      } else {
+        const selectedStateCode = document.getElementById('usStateSelector')?.value || 'Home State';
+        resBox.innerHTML = `
+          <div style="background: #12304A; border: 2px solid #159A9C; border-radius: 16px; padding: 2.25rem; text-align: left; color: #FFF; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.2);">
+            <div style="font-size: 0.8rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.05em;">RECOMMENDED BLUEPRINT</div>
+            <h2 style="font-size: 1.75rem; color: #FFF; margin: 0.3rem 0 0.75rem 0;">U.S. Resident — Home State LLC Formation Plan</h2>
+            <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.6;">
+              As a US resident, forming your LLC in your home state (<b>${selectedStateCode}</b>) is the most cost-effective path. You avoid double state filing fees and foreign qualification requirements.
+            </p>
+
+            <div style="background: rgba(255, 255, 255, 0.06); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+              <h4 style="font-size: 0.95rem; color: #159A9C; margin-bottom: 0.5rem; font-weight: 700;">Next Steps Checklist:</h4>
+              <ul style="font-size: 0.85rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.4rem; padding-left: 1rem;">
+                <li>1. File Articles of Organization with your Secretary of State</li>
+                <li>2. Get Free EIN directly on IRS.gov</li>
+                <li>3. Draft internal Operating Agreement</li>
+                <li>4. Open dedicated business bank account</li>
+              </ul>
+            </div>
+
+            <a href="index.html#states-section" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem;">
+              View ${selectedStateCode} Filing Guide →
+            </a>
+          </div>
+        `;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const select = document.getElementById("usStateSelector");
+      if (select && typeof stateData !== 'undefined') {
+        select.innerHTML = '<option value="">-- Select Your State --</option>';
+        stateData.forEach(st => {
+          const opt = document.createElement("option");
+          opt.value = st.name;
+          opt.textContent = st.name;
+          select.appendChild(opt);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
