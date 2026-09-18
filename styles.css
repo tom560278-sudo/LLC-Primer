@@ -1624,7 +1624,7 @@ button { cursor: pointer; border: none; background: none; }
   .hero-showcase-grid {
     grid-template-columns: 1fr !important;
   }
-  .calc-split-container, .calc-main-2col {
+  .calc-split-container, .calc-main-2col, .states-split-layout {
     grid-template-columns: 1fr !important;
   }
 }

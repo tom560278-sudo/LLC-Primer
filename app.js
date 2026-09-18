@@ -131,61 +131,73 @@ function showInlineStateResult(code) {
   const st = stateData.find(s => s.code === code);
   if (!st) return;
 
+  const popularCard = document.getElementById("popularStatesCard");
+  if (popularCard) {
+    popularCard.style.display = "none";
+  }
+
   const resultBox = document.getElementById("inlineStateResult");
   if (!resultBox) return;
 
   resultBox.innerHTML = `
-    <div style="background: rgba(18, 48, 74, 0.98); border: 1.5px solid var(--color-primary); border-radius: 16px; padding: 1.75rem; position: relative; box-shadow: 0 10px 30px rgba(21, 154, 156, 0.15); animation: inlineResultFade 0.4s ease-out; margin-top: 1.75rem;">
+    <div style="background: rgba(13, 35, 54, 0.95); border: 1.5px solid var(--color-primary); border-radius: 18px; padding: 1.5rem; position: relative; box-shadow: 0 10px 30px rgba(21, 154, 156, 0.2); animation: inlineResultFade 0.4s ease-out;">
       
-      <!-- Result Header -->
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 1rem; margin-bottom: 1.5rem;">
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <span style="background: var(--color-primary-gradient); color: #FFFFFF; font-weight: 800; font-size: 1.1rem; padding: 0.35rem 0.85rem; border-radius: 8px;">${st.code}</span>
+      <!-- Result Header with Back Button -->
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.85rem; margin-bottom: 1.15rem;">
+        <div style="display: flex; align-items: center; gap: 0.65rem;">
+          <span style="background: var(--color-primary-gradient); color: #FFFFFF; font-weight: 800; font-size: 1rem; padding: 0.3rem 0.75rem; border-radius: 8px;">${st.code}</span>
           <div>
-            <h3 style="margin: 0; color: #FFFFFF; font-size: 1.4rem; font-weight: 700;">${st.name} LLC State Filing Details</h3>
-            <span style="font-size: 0.8rem; color: #94A3B8;">Official Secretary of State Fee & Compliance Overview</span>
+            <h3 style="margin: 0; color: #FFFFFF; font-size: 1.25rem; font-weight: 700;">${st.name} LLC Details</h3>
+            <span style="font-size: 0.75rem; color: #94A3B8;">2026 SOS Filing Overview</span>
           </div>
         </div>
-        <span class="ls-kicker-pill" style="margin: 0; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); color: #10B981; font-size: 0.8rem;">
-          ✓ Live 2026 SOS Data
-        </span>
+        <button onclick="restorePopularStates()" style="font-size: 0.75rem; color: #159A9C; background: rgba(21, 154, 156, 0.12); border: 1px solid rgba(21, 154, 156, 0.35); border-radius: 6px; padding: 0.35rem 0.75rem; font-weight: 700; cursor: pointer;">
+          ← Popular States
+        </button>
       </div>
 
       <!-- Result Cards Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; margin-bottom: 1.15rem;">
         
         <!-- State Fee -->
-        <div style="background: #0D2336; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.25rem;">
-          <div style="font-size: 0.785rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary); font-weight: 700; margin-bottom: 0.4rem;">🏛️ Initial State Fee</div>
-          <div style="font-size: 2rem; font-weight: 800; color: #FFFFFF; line-height: 1;">$${st.fee}</div>
-          <div style="font-size: 0.75rem; color: #94A3B8; margin-top: 0.45rem;">Mandatory state government filing fee</div>
+        <div style="background: #0D2336; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1rem;">
+          <div style="font-size: 0.725rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary); font-weight: 700; margin-bottom: 0.3rem;">🏛️ Initial State Fee</div>
+          <div style="font-size: 1.75rem; font-weight: 800; color: #FFFFFF; line-height: 1;">$${st.fee}</div>
+          <div style="font-size: 0.725rem; color: #94A3B8; margin-top: 0.35rem;">Mandatory state fee</div>
         </div>
 
         <!-- Annual Fee -->
-        <div style="background: #0D2336; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.25rem;">
-          <div style="font-size: 0.785rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary); font-weight: 700; margin-bottom: 0.4rem;">📅 Ongoing Annual Fee</div>
-          <div style="font-size: 1.6rem; font-weight: 800; color: #F8FAFC; line-height: 1.1;">${st.annual}</div>
-          <div style="font-size: 0.75rem; color: #94A3B8; margin-top: 0.45rem;">Annual report / Franchise tax</div>
+        <div style="background: #0D2336; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1rem;">
+          <div style="font-size: 0.725rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary); font-weight: 700; margin-bottom: 0.3rem;">📅 Annual Report</div>
+          <div style="font-size: 1.35rem; font-weight: 800; color: #F8FAFC; line-height: 1.1;">${st.annual}</div>
+          <div style="font-size: 0.725rem; color: #94A3B8; margin-top: 0.35rem;">Ongoing requirement</div>
         </div>
 
         <!-- Approval Speed -->
-        <div style="background: #0D2336; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.25rem;">
-          <div style="font-size: 0.785rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary); font-weight: 700; margin-bottom: 0.4rem;">⚡ Approval Speed</div>
-          <div style="font-size: 1.35rem; font-weight: 700; color: #159A9C; line-height: 1.1;">${st.speed}</div>
-          <div style="font-size: 0.75rem; color: #94A3B8; margin-top: 0.45rem;">Estimated SOS turnaround</div>
+        <div style="background: #0D2336; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1rem; grid-column: span 2;">
+          <div style="font-size: 0.725rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary); font-weight: 700; margin-bottom: 0.3rem;">⚡ Approval Speed</div>
+          <div style="font-size: 1.15rem; font-weight: 700; color: #159A9C; line-height: 1.1;">${st.speed}</div>
+          <div style="font-size: 0.725rem; color: #94A3B8; margin-top: 0.35rem;">Estimated SOS turnaround</div>
         </div>
       </div>
 
       <!-- State Note / Rule -->
-      <div style="background: rgba(21, 154, 156, 0.1); border-left: 3px solid var(--color-primary); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0;">
-        <div style="font-size: 0.875rem; color: #CBD5E1; line-height: 1.5;">
-          <strong style="color: var(--color-primary);">State Requirements Note:</strong> ${st.note}
+      <div style="background: rgba(21, 154, 156, 0.1); border-left: 3px solid var(--color-primary); padding: 0.85rem 1rem; border-radius: 0 8px 8px 0;">
+        <div style="font-size: 0.825rem; color: #CBD5E1; line-height: 1.5;">
+          <strong style="color: var(--color-primary);">State Note:</strong> ${st.note}
         </div>
       </div>
     </div>
   `;
 
   resultBox.style.display = "block";
+}
+
+function restorePopularStates() {
+  const popularCard = document.getElementById("popularStatesCard");
+  const resultBox = document.getElementById("inlineStateResult");
+  if (popularCard) popularCard.style.display = "block";
+  if (resultBox) resultBox.style.display = "none";
 }
 
 function onStateSelectedInCta(code) {
