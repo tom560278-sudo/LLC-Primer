@@ -403,101 +403,99 @@
   <!-- =========================================================================
        5. 50-STATE INTERACTIVE SECTION (2-COLUMN LEFT/RIGHT SPLIT LAYOUT)
        ========================================================================= -->
+  <!-- =========================================================================
+       5. 50-STATE INTERACTIVE SECTION (2-COLUMN EQUAL-HEIGHT SPLIT LAYOUT)
+       ========================================================================= -->
   <section class="section-padding" id="states-section" style="padding: 2.5rem 0;">
     <div class="container" style="max-width: 1140px;">
       <div class="states-full-banner-card" style="padding: 2.5rem 2.25rem;">
         
-        <div class="states-split-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.25rem; align-items: start; text-align: left;">
+        <div class="states-split-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.25rem; align-items: stretch; text-align: left;">
           
           <!-- LEFT COLUMN: Heading, Dropdown Selector & Inspect Button -->
-          <div class="states-left-col">
-            <div class="ls-kicker-pill" style="margin-bottom: 0.75rem; background: rgba(21, 154, 156, 0.15); border-color: rgba(21, 154, 156, 0.4); color: #159A9C; display: inline-flex; align-items: center; gap: 0.4rem;">
-              <span class="ls-kicker-dot" style="background: #159A9C; box-shadow: 0 0 8px #159A9C;"></span>
-              ⚡ INSTANT 2026 CALCULATOR
+          <div class="states-left-col" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div class="ls-kicker-pill" style="margin-bottom: 0.75rem; background: rgba(21, 154, 156, 0.15); border-color: rgba(21, 154, 156, 0.4); color: #159A9C; display: inline-flex; align-items: center; gap: 0.4rem;">
+                <span class="ls-kicker-dot" style="background: #159A9C; box-shadow: 0 0 8px #159A9C;"></span>
+                ⚡ INSTANT 2026 CALCULATOR
+              </div>
+              
+              <h2 style="color: #FFFFFF; font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.65rem; font-weight: 800; font-family: var(--font-heading); line-height: 1.2;">
+                Start an LLC in Your State
+              </h2>
+              
+              <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.55;">
+                Select any state to instantly inspect official Secretary of State filing fees, processing speeds, and ongoing annual report requirements.
+              </p>
             </div>
-            
-            <h2 style="color: #FFFFFF; font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.65rem; font-weight: 800; font-family: var(--font-heading); line-height: 1.2;">
-              Start an LLC in Your State
-            </h2>
-            
-            <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.55;">
-              Select any state to instantly inspect official Secretary of State filing fees, processing speeds, and ongoing annual report requirements.
-            </p>
 
             <!-- State Selector Controls -->
-            <div style="background: rgba(13, 35, 54, 0.7); border: 1px solid rgba(21, 154, 156, 0.35); border-radius: 16px; padding: 1.25rem; margin-bottom: 1.25rem;">
+            <div style="background: rgba(13, 35, 54, 0.7); border: 1px solid rgba(21, 154, 156, 0.35); border-radius: 16px; padding: 1.25rem; margin-top: auto;">
               <label for="mainStateSectionSelect" style="display: block; font-size: 0.78rem; font-weight: 800; color: #159A9C; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.4rem;">
                 🏛️ Choose Your Business State:
               </label>
               
               <div style="display: flex; flex-direction: column; gap: 0.85rem;">
-                <select id="mainStateSectionSelect" class="state-select-box" aria-label="Select state to view details" style="width: 100%; border-radius: 10px; font-weight: 600; padding: 0.85rem 1rem;"></select>
+                <select id="mainStateSectionSelect" class="state-select-box" aria-label="Select state to view details" style="width: 100%; border-radius: 9999px; font-weight: 600; padding: 0.85rem 1.25rem;"></select>
                 
-                <button id="openStateModalBtn" onclick="submitStateSelection()" class="ls-btn ls-btn--emerald" style="background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); padding: 0.85rem 1.5rem; font-size: 0.95rem; font-weight: 800; border-radius: 10px; text-align: center; width: 100%; justify-content: center; box-shadow: 0 4px 18px rgba(21, 154, 156, 0.35);">
+                <button id="openStateModalBtn" onclick="submitStateSelection()" class="ls-btn ls-btn--emerald" style="background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); padding: 0.85rem 1.5rem; font-size: 0.95rem; font-weight: 800; border-radius: 9999px; text-align: center; width: 100%; justify-content: center; box-shadow: 0 4px 18px rgba(21, 154, 156, 0.35);">
                   Inspect State Fees →
                 </button>
               </div>
             </div>
 
-            <!-- Micro feature badges -->
-            <div style="display: flex; align-items: center; gap: 1.15rem; flex-wrap: wrap; font-size: 0.78rem; color: #CBD5E1;">
-              <span><strong style="color: #159A9C;">✓</strong> Official SOS Rates</span>
-              <span><strong style="color: #159A9C;">✓</strong> $0 Markups</span>
-              <span><strong style="color: #159A9C;">✓</strong> 2026 Data</span>
-            </div>
           </div>
 
           <!-- RIGHT COLUMN: Popular States Card OR Dynamic Result -->
-          <div class="states-right-col" style="width: 100%;">
+          <div class="states-right-col" style="width: 100%; height: 100%; display: flex; flex-direction: column;">
             
             <!-- POPULAR STATES CARD (Visible initially, hides when result opens) -->
-            <div id="popularStatesCard" style="background: rgba(13, 35, 54, 0.65); border: 1px solid rgba(21, 154, 156, 0.35); border-radius: 18px; padding: 1.5rem; height: 100%;">
-              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px dashed rgba(255, 255, 255, 0.15);">
+            <div id="popularStatesCard" style="background: rgba(13, 35, 54, 0.65); border: 1px solid rgba(21, 154, 156, 0.35); border-radius: 18px; padding: 1.5rem; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px dashed rgba(255, 255, 255, 0.15); text-align: left;">
                 <div style="font-size: 0.85rem; font-weight: 800; color: #FFFFFF; letter-spacing: 0.05em; text-transform: uppercase;">
                   🔥 Popular Formation States
                 </div>
-                <span style="font-size: 0.75rem; color: #159A9C; font-weight: 700;">Click to View</span>
               </div>
 
-              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
-                <button onclick="selectStateAndOpenModal('WY')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem;">
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; flex: 1; align-content: center;">
+                <button onclick="selectStateAndOpenModal('WY')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem; border-radius: 9999px;">
                   <span><b>WY</b> Wyoming</span>
                   <span style="font-size: 0.75rem; color: #CBD5E1;">$100</span>
                 </button>
 
-                <button onclick="selectStateAndOpenModal('DE')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem;">
+                <button onclick="selectStateAndOpenModal('DE')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem; border-radius: 9999px;">
                   <span><b>DE</b> Delaware</span>
                   <span style="font-size: 0.75rem; color: #CBD5E1;">$140</span>
                 </button>
 
-                <button onclick="selectStateAndOpenModal('TX')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem;">
+                <button onclick="selectStateAndOpenModal('TX')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem; border-radius: 9999px;">
                   <span><b>TX</b> Texas</span>
                   <span style="font-size: 0.75rem; color: #CBD5E1;">$300</span>
                 </button>
 
-                <button onclick="selectStateAndOpenModal('FL')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem;">
+                <button onclick="selectStateAndOpenModal('FL')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem; border-radius: 9999px;">
                   <span><b>FL</b> Florida</span>
                   <span style="font-size: 0.75rem; color: #CBD5E1;">$125</span>
                 </button>
 
-                <button onclick="selectStateAndOpenModal('CA')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem;">
+                <button onclick="selectStateAndOpenModal('CA')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem; border-radius: 9999px;">
                   <span><b>CA</b> California</span>
                   <span style="font-size: 0.75rem; color: #CBD5E1;">$70</span>
                 </button>
 
-                <button onclick="selectStateAndOpenModal('NM')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem;">
+                <button onclick="selectStateAndOpenModal('NM')" class="quick-state-pill" style="justify-content: space-between; padding: 0.65rem 0.85rem; border-radius: 9999px;">
                   <span><b>NM</b> New Mexico</span>
                   <span style="font-size: 0.75rem; color: #CBD5E1;">$50</span>
                 </button>
               </div>
 
-              <div style="margin-top: 1.15rem; padding-top: 0.85rem; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.775rem; color: #94A3B8; text-align: center;">
+              <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.775rem; color: #94A3B8; text-align: center;">
                 💡 <b>Tip:</b> Wyoming & Delaware are top picks for privacy & non-resident founders.
               </div>
             </div>
 
             <!-- Dynamic Inline Result Container (Hides popular states, shows state result) -->
-            <div id="inlineStateResult" class="inline-state-result-box" style="display: none; text-align: left;"></div>
+            <div id="inlineStateResult" class="inline-state-result-box" style="display: none; text-align: left; height: 100%;"></div>
 
           </div>
 
