@@ -11,7 +11,6 @@ const stateData = [
   { name: "Colorado", code: "CO", fee: 50, annual: "$10", speed: "Instant Online", region: "west", popular: true, note: "Instant online registration." },
   { name: "Connecticut", code: "CT", fee: 120, annual: "$80", speed: "2-3 Days", region: "east", popular: false, note: "Annual report due every year." },
   { name: "Delaware", code: "DE", fee: 140, annual: "$300", speed: "1-2 Days", region: "east", popular: true, note: "Preferred state for venture-backed entities and corporate privacy." },
-  { name: "District of Columbia", code: "DC", fee: 99, annual: "$300 Biennial", speed: "2-4 Days", region: "east", popular: false, note: "Biennial report due April 1st." },
   { name: "Florida", code: "FL", fee: 125, annual: "$138.75", speed: "1-2 Days", region: "south", popular: true, note: "Sunbiz portal. Annual report due May 1st." },
   { name: "Georgia", code: "GA", fee: 100, annual: "$50", speed: "2-3 Days", region: "south", popular: true, note: "Low ongoing annual fee." },
   { name: "Hawaii", code: "HI", fee: 50, annual: "$15", speed: "3-5 Days", region: "west", popular: false, note: "Simple online system." },
