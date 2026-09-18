@@ -670,8 +670,7 @@ button { cursor: pointer; border: none; background: none; }
    3RD POSITION SHORTCUT BAR
    -------------------------------------------------------------------------- */
 .shortcut-bar-section {
-  padding: 3.5rem 0;
-  background: var(--bg-secondary);
+  padding: 0.5rem 0;
 }
 
 .nav-shortcut-bar {
@@ -724,26 +723,31 @@ button { cursor: pointer; border: none; background: none; }
 /* --------------------------------------------------------------------------
    STATE SELECTION SECTION (FULL-WIDTH CLEAN BANNER - MODAL POPUP TRIGGER)
    -------------------------------------------------------------------------- */
+/* Redesigned Catchy Compact State Selection Banner */
 .states-full-banner-card {
-  background: #12304A;
+  background: radial-gradient(circle at 50% 0%, rgba(21, 154, 156, 0.22) 0%, transparent 70%), #12304A;
   border: 1.5px solid var(--color-primary);
   border-radius: 24px;
-  padding: 3rem 2.5rem;
+  padding: 2.25rem 2rem;
   box-shadow: 0 16px 45px #12304a2d;
-  max-width: 1140px;
+  max-width: 1100px;
   margin: 0 auto;
   text-align: center;
   color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
 }
 
 .states-selector-container {
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
-  background: #12304A;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  padding: 2rem;
-  box-shadow: 0 12px 35px #12304a2d;
+  background: rgba(13, 35, 54, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(21, 154, 156, 0.35);
+  border-radius: 20px;
+  padding: 1.75rem 1.75rem 1.25rem 1.75rem;
+  box-shadow: 0 10px 30px #12304a1f;
   color: #FFFFFF;
 }
 
@@ -759,9 +763,40 @@ button { cursor: pointer; border: none; background: none; }
   align-items: center;
   gap: 0.85rem;
   padding-top: 1rem;
-  border-top: 1px dashed var(--divider);
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.quick-state-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  font-size: 0.825rem;
+  color: #F8FAFC;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.quick-state-pill:hover {
+  background: rgba(21, 154, 156, 0.2);
+  border-color: #159A9C;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(21, 154, 156, 0.25);
+}
+
+.quick-state-pill b {
+  color: #159A9C;
+  font-weight: 800;
+  font-size: 0.75rem;
+  background: rgba(21, 154, 156, 0.15);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
 }
 
 .quick-pills-wrap {
