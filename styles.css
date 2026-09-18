@@ -847,18 +847,18 @@ button { cursor: pointer; border: none; background: none; }
 
 
 /* --------------------------------------------------------------------------
-   HOMEPAGE QUIZ EXPLAINER CARD (MATCHING REFERENCE IMAGE DESIGN)
+   HOMEPAGE QUIZ EXPLAINER CARD (BRAND ACCORDING TO SITE)
    -------------------------------------------------------------------------- */
 .quiz-explainer-card {
-  background: linear-gradient(135deg, #EEF4FF 0%, #F8FAFC 100%);
-  border: 1.5px solid #E0E7FF;
+  background: linear-gradient(135deg, #F0FDF4 0%, #F8FAFC 50%, #EFF6FF 100%);
+  border: 1.5px solid #CCFBF1;
   border-radius: 28px;
-  padding: 2.5rem 2.5rem;
+  padding: 2.25rem 2.5rem;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 2.5rem;
   align-items: center;
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.06);
+  box-shadow: 0 12px 35px rgba(18, 48, 74, 0.06);
   text-align: left;
   max-width: 1140px;
   margin: 0 auto;
@@ -1276,11 +1276,121 @@ button { cursor: pointer; border: none; background: none; }
   font-weight: 600;
 }
 
+/* --------------------------------------------------------------------------
+   NORTHWEST SECTION (DARK THEME WITH LIGHT PRICING CARD & DARK BUTTON)
+   -------------------------------------------------------------------------- */
+.premium-nw-card {
+  background: linear-gradient(135deg, #12304A 0%, #0D2336 100%);
+  border: 1.5px solid rgba(21, 154, 156, 0.3);
+  border-radius: 24px;
+  padding: 2.75rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  align-items: center;
+  box-shadow: 0 16px 45px rgba(18, 48, 74, 0.25);
+  text-align: left;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.nw-card-left h2 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  margin: 0.65rem 0 0.75rem 0;
+  line-height: 1.25;
+}
+
+.nw-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  background: rgba(21, 154, 156, 0.15);
+  border: 1px solid rgba(21, 154, 156, 0.35);
+  border-radius: 9999px;
+  font-size: 0.725rem;
+  font-weight: 800;
+  color: #159A9C;
+  letter-spacing: 0.06em;
+}
+
+.nw-description {
+  font-size: 0.95rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.nw-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.nw-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: #F1F5F9;
+}
+
+.nw-card-right-pricing {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+.pricing-header-tag {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  background: rgba(21, 154, 156, 0.12);
+  border-radius: 6px;
+  font-size: 0.725rem;
+  font-weight: 800;
+  color: #159A9C;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+}
+
+.pricing-big-amount {
+  font-size: 2.85rem;
+  font-weight: 800;
+  color: #12304A;
+  line-height: 1;
+}
+
+.pricing-state-sub {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748B;
+  margin-top: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.pricing-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+  color: #334155;
+  font-weight: 600;
+}
+
 .after-roadmap-banner {
   background: #12304A;
   border: 1.5px solid var(--color-primary);
   border-radius: 22px;
-  padding: 2.5rem 2.25rem;
+  padding: 1.75rem 2rem;
   color: #FFFFFF;
   text-align: left;
   box-shadow: 0 14px 40px #12304a33;
@@ -1291,50 +1401,49 @@ button { cursor: pointer; border: none; background: none; }
 .post-approval-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 1.75rem;
+  gap: 1rem;
+  margin-top: 1.25rem;
   align-items: stretch;
 }
 
 .post-step-card {
   background: #FFFFFF;
   border: 1px solid #E2E8F0;
-  border-radius: 16px;
-  padding: 1.6rem 1.4rem;
+  border-radius: 14px;
+  padding: 1.15rem 1.15rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  box-shadow: 0 4px 16px #12304a0d;
-  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 4px 14px #12304a0d;
 }
 
 .post-step-card:hover {
   background: #FFFFFF;
   border-color: var(--color-primary);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px #12304a1a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px #12304a1a;
 }
 
 .post-step-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
 }
 
 .post-step-num {
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   font-weight: 800;
   color: var(--color-primary);
   letter-spacing: 0.05em;
 }
 
 .post-step-badge {
-  font-size: 0.65rem;
+  font-size: 0.625rem;
   font-weight: 800;
-  padding: 0.15rem 0.5rem;
+  padding: 0.12rem 0.45rem;
   border-radius: 99px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1346,20 +1455,21 @@ button { cursor: pointer; border: none; background: none; }
 .post-step-badge.ongoing { background: rgba(148, 163, 184, 0.15); color: #64748B; border: 1px solid rgba(148, 163, 184, 0.3); }
 
 .post-step-card h4 {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   color: #12304A;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
+  font-weight: 800;
 }
 
 .post-step-card p {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-body);
-  line-height: 1.5;
-  margin-bottom: 1rem;
+  line-height: 1.45;
+  margin-bottom: 0.65rem;
 }
 
 .post-step-link {
-  font-size: 0.825rem;
+  font-size: 0.775rem;
   font-weight: 700;
   color: var(--color-primary);
   display: inline-flex;
