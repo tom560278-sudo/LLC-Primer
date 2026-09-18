@@ -1112,15 +1112,15 @@ button { cursor: pointer; border: none; background: none; }
    PROPER HIGH-CONVERTING FINAL CTA SECTION
    -------------------------------------------------------------------------- */
 .final-cta-card {
-  background: #12304A;
-  border: 1.5px solid var(--color-primary);
-  border-radius: 24px;
-  padding: 3.5rem 2.5rem;
+  background: linear-gradient(135deg, #12304A 0%, #0D2336 100%);
+  border: 1.5px solid #159A9C;
+  border-radius: 28px;
+  padding: 3.25rem 2.5rem;
   text-align: center;
-  box-shadow: 0 16px 45px rgba(18, 48, 74, 0.18);
+  box-shadow: 0 16px 45px rgba(18, 48, 74, 0.22);
   position: relative;
   overflow: hidden;
-  max-width: 860px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
