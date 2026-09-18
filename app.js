@@ -313,7 +313,7 @@ function updateCost() {
     rowsHtml = `
       <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
         <td colspan="4" style="padding: 1.25rem 0.5rem; text-align: center; color: #94A3B8;">
-          👇 Select a state from the dropdown menu to calculate exact government filing fees & compliance costs.
+          👇 Select a state to calculate estimated government filing fees and compliance costs.
         </td>
       </tr>
     `;

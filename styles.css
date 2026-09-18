@@ -194,7 +194,7 @@ button { cursor: pointer; border: none; background: none; }
   text-align: center;
 }
 
-.ls-home26-section-head h2 { margin-bottom: 0.85rem; color: var(--text-main); font-size: clamp(2rem, 3.5vw, 2.6rem); }
+.ls-home26-section-head h2 { margin-bottom: 0.85rem; color: var(--text-main); font-size: clamp(2rem, 3vw, 2.6rem); }
 .ls-home26-section-head p { font-size: 1.1rem; color: var(--text-body); }
 
 /* Buttons — Deep Navy & Teal Startup CTAs */
@@ -621,7 +621,7 @@ button { cursor: pointer; border: none; background: none; }
 .pricing-header-tag {
   font-size: 0.75rem;
   font-weight: 800;
-  color: var(--color-sand);
+  color: var(--color-primary);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -1120,7 +1120,7 @@ button { cursor: pointer; border: none; background: none; }
   box-shadow: 0 16px 45px rgba(18, 48, 74, 0.22);
   position: relative;
   overflow: hidden;
-  max-width: 1140px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
@@ -1347,13 +1347,14 @@ button { cursor: pointer; border: none; background: none; }
 }
 
 .pricing-header-tag {
+  border: 1px solid #f59e0bb0;
   display: inline-block;
-  padding: 0.2rem 0.75rem;
-  background: rgba(21, 154, 156, 0.12);
+  padding: 0.4rem 0.75rem;
+  background: #f59e0b36;
   border-radius: 6px;
   font-size: 0.725rem;
   font-weight: 800;
-  color: #159A9C;
+  color: #f59e0b;
   letter-spacing: 0.06em;
   margin-bottom: 0.75rem;
 }
@@ -1553,7 +1554,7 @@ button { cursor: pointer; border: none; background: none; }
 }
 
 .modal-card {
-  background: var(--bg-card);
+  background: #00000029;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
   max-width: 640px;
