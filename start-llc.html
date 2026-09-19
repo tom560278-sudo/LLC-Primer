@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
-  <title>How to Start an LLC in 2026 | Step-by-Step Formation Guidance | LLC Primer</title>
-  <meta name="description" content="Complete step-by-step educational guide on how to start an LLC in 2026. Learn about state filing fees, registered agent requirements, Operating Agreements, free IRS EIN, and FinCEN compliance.">
+  <title>How to Start an LLC in 2026 | Complete Guide for All 50 States | LLC Primer</title>
+  <meta name="description" content="Complete educational guide on how to start an LLC in 2026. State-by-state formation guides, fees, registered agent rules, Operating Agreements, free IRS EIN, and FinCEN compliance.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,137 +12,193 @@
   
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Light Theme Styling for Start an LLC Guidance Body */
-    body {
-      background: #FFFFFF !important;
-      color: #12304A !important;
+    /* Custom Page Styles for Start an LLC Hub */
+    .start-hub-hero {
+      background: linear-gradient(135deg, #12304A 0%, #0D2336 100%);
+      border-bottom: 1px solid rgba(21, 154, 156, 0.25);
+      padding: 3.5rem 0 3rem 0;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
     }
-    .light-body-section {
-      background: #F8FAFC;
-      color: #12304A;
-      padding: 3.5rem 0;
-    }
-    .light-card {
+    
+    .start-toc-card {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      border-radius: 16px;
-      padding: 1.75rem;
-      box-shadow: 0 4px 20px rgba(18, 48, 74, 0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 20px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 2.75rem;
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.05);
     }
-    .light-card:hover {
-      box-shadow: 0 10px 30px rgba(18, 48, 74, 0.1);
+    .start-toc-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #12304A;
+      margin-bottom: 1.15rem;
     }
-    .light-badge {
-      display: inline-flex;
+    .start-toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 2rem;
+    }
+    .start-toc-link {
+      font-size: 0.925rem;
+      color: #2563EB;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
       align-items: center;
       gap: 0.4rem;
-      background: rgba(21, 154, 156, 0.12);
-      color: #159A9C;
-      font-weight: 700;
-      font-size: 0.75rem;
-      padding: 0.35rem 0.85rem;
-      border-radius: 9999px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
     }
-    .step-number-badge {
-      width: 42px;
-      height: 42px;
+    .start-toc-link:hover {
+      color: #0E7490;
+      text-decoration: underline;
+    }
+
+    .guide-resource-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      height: 100%;
+    }
+    .guide-resource-card:hover {
+      border-color: #159A9C;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(18, 48, 74, 0.1);
+    }
+    .resource-icon-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .process-sequence-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 4px 18px rgba(18, 48, 74, 0.04);
+    }
+    .sequence-steps-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .sequence-step-node {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex: 1;
+      min-width: 170px;
+    }
+    .sequence-num {
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #159A9C 0%, #12304A 100%);
+      background: #12304A;
       color: #FFFFFF;
+      font-size: 0.75rem;
       font-weight: 800;
-      font-size: 1.15rem;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
-    .light-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-      text-align: left;
-    }
-    .light-table th {
-      background: #F1F5F9;
+    .sequence-label {
+      font-size: 0.825rem;
+      font-weight: 800;
       color: #12304A;
-      font-weight: 700;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.85rem 1rem;
-      border-bottom: 2px solid #CBD5E1;
+      line-height: 1.2;
     }
-    .light-table td {
-      padding: 1rem;
-      border-bottom: 1px solid #E2E8F0;
-      color: #334155;
-      font-size: 0.9rem;
-    }
-    .light-table tr:hover {
-      background: #F8FAFC;
-    }
-    .light-faq-question {
+
+    .founder-qa-card {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-      padding: 1.25rem 1.5rem;
-      cursor: pointer;
+      border-radius: 20px;
+      padding: 2rem 2.25rem;
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.05);
     }
-    .light-faq-question summary {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: #12304A;
-      list-style: none;
-      display: flex;
+    .founder-answer-box {
+      background: #F0FDF4;
+      border: 1.5px solid #DCFCE7;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .interactive-tool-card {
+      background: linear-gradient(135deg, #F0FDF4 0%, #F8FAFC 50%, #EFF6FF 100%);
+      border: 1.5px solid #CCFBF1;
+      border-radius: 24px;
+      padding: 2.5rem 2.5rem;
+      box-shadow: 0 10px 30px rgba(18, 48, 74, 0.06);
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 2.25rem;
       align-items: center;
-      justify-content: space-between;
     }
-    .light-faq-answer {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid #F1F5F9;
-      color: #475569;
-      line-height: 1.6;
-      font-size: 0.95rem;
+
+    @media (max-width: 900px) {
+      .start-toc-grid { grid-template-columns: 1fr; }
+      .interactive-tool-card { grid-template-columns: 1fr; gap: 1.5rem; }
+      .sequence-steps-flex { flex-direction: column; align-items: stretch; }
+      .sequence-step-node { width: 100%; }
     }
   </style>
 </head>
 <body>
 
   <!-- =========================================================================
-       0. TOP ANNOUNCEMENT / TRUST BAR
+       0. TOP ANNOUNCEMENT / TRUST BAR (EXACT FROM HOMEPAGE)
        ========================================================================= -->
-  <div style="background: #12304A; border-bottom: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.8rem; color: #CBD5E1; padding: 0.5rem 0;">
-    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+  <div style="background: #12304A; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.8rem; color: #94A3B8; padding: 0.5rem 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; max-width: 1180px;">
       <div style="display: flex; align-items: center; gap: 0.5rem;">
         <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #159A9C; box-shadow: 0 0 10px #159A9C;"></span>
         <strong style="color: #F8FAFC;">2026 SOS RATES VERIFIED</strong> · 50-State Filing Fees & Government Guides
       </div>
       <div style="display: flex; align-items: center; gap: 1.25rem;">
-        <a href="index.html#states-section" style="color: #CBD5E1; font-weight: 500;">🏛️ All 50 States</a>
-        <a href="index.html#non-us-section" style="color: #CBD5E1; font-weight: 500;">🌐 Non-US Founders</a>
-        <a href="quiz.html" style="color: #159A9C; font-weight: 700;">🧩 Take 60-Sec LLC Quiz →</a>
+        <a href="#states-table-section" style="color: #CBD5E1; font-weight: 500; text-decoration: none;">🏛️ All 50 States</a>
+        <a href="#decision-cards-section" style="color: #CBD5E1; font-weight: 500; text-decoration: none;">🌐 Non-US Founders</a>
+        <a href="quiz.html" style="color: #159A9C; font-weight: 700; text-decoration: none;">🧩 Take 60-Sec LLC Quiz →</a>
       </div>
     </div>
   </div>
 
   <!-- =========================================================================
-       1. EXECUTIVE NAVBAR (MATCHING INDEX.HTML EXACTLY)
+       1. EXECUTIVE GLASSMORPHIC NAVBAR (EXACT FROM HOMEPAGE)
        ========================================================================= -->
   <header class="site-header">
-    <div class="container header-container">
+    <div class="container header-container" style="max-width: 1180px;">
       <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
         <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
       </a>
 
       <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
         <div class="nav-item">
-          <a href="start-llc.html" class="nav-link" style="color: #159A9C; font-weight: 800;">
+          <a href="start-llc.html" class="nav-link" style="color: var(--color-primary); font-weight: 800;">
             Start an LLC
           </a>
         </div>
@@ -171,6 +227,19 @@
             <a href="index.html#after-formation-section" class="dropdown-link">02. Draft Operating Agreement</a>
             <a href="index.html#after-formation-section" class="dropdown-link">03. Open Business Bank Account</a>
             <a href="index.html#after-formation-section" class="dropdown-link">04. File FinCEN BOI Report</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">05. Business Licenses & Permits</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#northwest-section" class="nav-link">
+            Reviews
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#northwest-section" class="dropdown-link">⭐ Northwest Registered Agent ($39)</a>
+            <a href="index.html#northwest-section" class="dropdown-link">🌐 doola Review (Non-US Founders)</a>
+            <a href="index.html#northwest-section" class="dropdown-link">📊 ZenBusiness vs LegalZoom</a>
           </div>
         </div>
 
@@ -182,11 +251,21 @@
           <div class="dropdown-menu">
             <a href="quiz.html" class="dropdown-link">🧩 Interactive LLC Quiz (60 Sec)</a>
             <a href="index.html#cost-estimator-section" class="dropdown-link">📊 First-Year Cost Estimator</a>
+            <a href="index.html#spanish-section" class="dropdown-link">🇪🇸 Guía de LLC en Español</a>
           </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#non-us-section" class="nav-link">
+            Non-Residents 🌐
+          </a>
         </div>
       </nav>
 
       <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
         <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
           Build LLC Plan →
         </a>
@@ -199,283 +278,631 @@
 
 
   <!-- =========================================================================
-       2. HERO SECTION (HEIGHT 40% COMPACT MODE)
+       2. HERO SECTION (EXACT IMAGE 1 REPLICA IN LLC PRIMER BRAND THEME)
        ========================================================================= -->
-  <section class="hero-wrapper" style="background: linear-gradient(135deg, #12304A 0%, #0F253B 100%); padding: 2.25rem 0 2rem 0; border-bottom: 1px solid var(--border-color); position: relative; min-height: 220px; display: flex; align-items: center;">
-    <div class="container">
-      <div class="hero-content" style="max-width: 880px; margin: 0 auto; text-align: center;">
-        <div class="ls-kicker-pill" style="background: rgba(21, 154, 156, 0.15); border-color: #159A9C; color: #159A9C; font-size: 0.75rem; padding: 0.25rem 0.75rem; margin-bottom: 0.75rem;">
-          <span class="ls-kicker-dot" style="background: #159A9C; box-shadow: 0 0 8px #159A9C;"></span>
-          2026 FORMATION BLUEPRINT
-        </div>
+  <section class="start-hub-hero">
+    <div class="container" style="max-width: 1180px;">
+      <div style="display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 2.5rem; align-items: center;">
         
-        <h1 style="font-size: clamp(1.8rem, 3.5vw, 2.75rem); line-height: 1.2; margin-bottom: 0.75rem; color: #F8FAFC; font-weight: 800;">
-          How to Start an LLC — <span class="accent-text" style="color: #159A9C;">Complete 2026 Step-by-Step Guidance</span>
-        </h1>
-        
-        <p class="hero-subtext" style="font-size: 1rem; color: #94A3B8; max-width: 720px; margin: 0 auto 1.25rem auto; line-height: 1.5;">
-          Step-by-step educational walkthrough to help you self-file Articles of Organization, designate a registered agent, obtain a free IRS EIN, and comply with state laws.
-        </p>
+        <!-- Left Hero Content -->
+        <div style="text-align: left;">
+          <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 800; color: #FFFFFF; line-height: 1.15; margin-bottom: 1.25rem; font-family: var(--font-heading);">
+            How to Start an LLC — <span style="background: linear-gradient(135deg, #159A9C 0%, #38BDF8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Complete Guide for All 50 States (2026)</span>
+          </h1>
 
-        <div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; font-size: 0.85rem; color: #CBD5E1;">
-          <span style="display: flex; align-items: center; gap: 0.4rem;"><strong style="color: #159A9C;">✓</strong> 100% Free IRS EIN Route</span>
-          <span style="display: flex; align-items: center; gap: 0.4rem;"><strong style="color: #159A9C;">✓</strong> Self-Filing Instructions</span>
-          <span style="display: flex; align-items: center; gap: 0.4rem;"><strong style="color: #159A9C;">✓</strong> Personal Asset Shielding</span>
+          <p style="font-size: 1rem; color: #CBD5E1; line-height: 1.65; margin-bottom: 1.5rem; max-width: 720px;">
+            Use this hub to choose a state, follow the core formation sequence, and reach the correct state-specific compliance guide. State costs appear once in the canonical 50-state table below rather than being repeated in cards, FAQs and sales sections.
+          </p>
+
+          <!-- 4 Pill Badges (Image 1 Badges) -->
+          <div style="display: flex; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 2rem;">
+            <span style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 9999px; padding: 0.35rem 0.85rem; font-size: 0.78rem; font-weight: 700; color: #E2E8F0;">
+              50 state guides
+            </span>
+            <span style="background: rgba(21, 154, 156, 0.15); border: 1px solid rgba(21, 154, 156, 0.35); border-radius: 9999px; padding: 0.35rem 0.85rem; font-size: 0.78rem; font-weight: 700; color: #159A9C;">
+              <strong style="color: #10B981;">State requirements</strong> one canonical table
+            </span>
+            <span style="background: rgba(21, 154, 156, 0.15); border: 1px solid rgba(21, 154, 156, 0.35); border-radius: 9999px; padding: 0.35rem 0.85rem; font-size: 0.78rem; font-weight: 700; color: #159A9C;">
+              <strong style="color: #10B981;">LLC Guide</strong> structure and compliance
+            </span>
+            <span style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 9999px; padding: 0.35rem 0.85rem; font-size: 0.78rem; font-weight: 700; color: #E2E8F0;">
+              Español guías separadas
+            </span>
+          </div>
+
+          <!-- Hero CTA Buttons -->
+          <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="#states-table-section" class="ls-btn ls-btn--emerald" style="padding: 0.9rem 2.25rem; font-size: 1rem; border-radius: 9999px; background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #FFFFFF; font-weight: 800; box-shadow: 0 8px 24px rgba(21, 154, 156, 0.35); text-decoration: none;">
+              ↓ Choose Your State
+            </a>
+            <a href="index.html#northwest-section" class="ls-btn ls-btn--secondary" style="padding: 0.9rem 2.25rem; font-size: 1rem; border-radius: 9999px; background: rgba(255, 255, 255, 0.08); color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.2); font-weight: 800; text-decoration: none;">
+              Best Formation Services →
+            </a>
+          </div>
         </div>
+
+        <!-- Right Hero Shield Graphic (Image 1 Visual Replica) -->
+        <div style="display: flex; justify-content: center; align-items: center; position: relative;">
+          <div style="position: absolute; width: 220px; height: 220px; border-radius: 50%; background: rgba(21, 154, 156, 0.25); filter: blur(30px); pointer-events: none;"></div>
+          
+          <div style="position: relative; z-index: 2; width: 170px; height: 210px; background: linear-gradient(180deg, #159A9C 0%, #0D2336 100%); clip-path: polygon(50% 0%, 100% 15%, 100% 75%, 50% 100%, 0% 75%, 0% 15%); display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255, 255, 255, 0.25); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);">
+            <div style="text-align: center;">
+              <div style="font-size: 1.85rem; font-weight: 900; color: #FFFFFF; letter-spacing: 0.08em; font-family: var(--font-heading);">LLC</div>
+              <div style="font-size: 0.65rem; color: #93C5FD; font-weight: 800; letter-spacing: 0.15em; margin-top: 0.25rem;">2026 HUB</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
 
   <!-- =========================================================================
-       3. LIGHT BACKGROUND CONTENT AREA (#F8FAFC & #FFFFFF)
+       3. TABLE OF CONTENTS & ALL GUIDES ON LLC STARTERS (EXACT IMAGE 2 REPLICA)
        ========================================================================= -->
-  <main class="light-body-section">
-    <div class="container">
+  <section class="section-padding" style="padding: 3rem 0 2.5rem 0;">
+    <div class="container" style="max-width: 1180px;">
       
-      <!-- Section Intro -->
-      <div style="text-align: center; max-width: 760px; margin: 0 auto 3rem auto;">
-        <span class="light-badge">6-STEP FORMATION ROADMAP</span>
-        <h2 style="font-size: 2rem; color: #12304A; margin-bottom: 0.75rem; font-weight: 800;">
-          The Complete Master LLC Roadmap
-        </h2>
-        <p style="font-size: 1rem; color: #475569; line-height: 1.6;">
-          Forming a Limited Liability Company (LLC) protects your personal savings, house, and assets from business liabilities. Follow these 6 essential steps to launch your business correctly.
-        </p>
-      </div>
-
-
-      <!-- 6-STEP GRID -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; margin-bottom: 4rem;">
+      <!-- Table of Contents Card (Image 2 Top Element) -->
+      <div class="start-toc-card">
+        <h2 class="start-toc-title">Table of Contents</h2>
         
-        <!-- Step 1 -->
-        <div class="light-card">
-          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-            <div class="step-number-badge">01</div>
-            <div>
-              <h3 style="font-size: 1.2rem; color: #12304A; margin: 0; font-weight: 700;">Choose Your State</h3>
-              <span style="font-size: 0.8rem; color: #64748B;">Home State vs Domestic vs Non-Resident</span>
-            </div>
+        <div class="start-toc-grid">
+          <div>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem;">
+              <li><a href="#all-guides-section" class="start-toc-link">• All Guides on LLC Starters</a></li>
+              <li><a href="#interactive-tool-section" class="start-toc-link">• Free LLC Formation Tool</a></li>
+              <li><a href="#decision-cards-section" class="start-toc-link">• Featured States — By Category</a></li>
+              <li><a href="#states-table-section" class="start-toc-link">• All 50 States — Fees & Timelines</a></li>
+              <li><a href="#states-table-section" class="start-toc-link">• Texas · Florida · California</a></li>
+            </ul>
           </div>
-          <p style="font-size: 0.9rem; color: #334155; line-height: 1.6; margin-bottom: 1rem;">
-            If you operate a physical business in your home state (e.g. retail, local services), file in your home state. For online businesses or privacy, states like <strong>Wyoming ($100)</strong> or <strong>Delaware ($140)</strong> are popular alternatives.
-          </p>
-          <a href="index.html#states-section" style="font-weight: 700; color: #159A9C; font-size: 0.875rem;">Check 50-State Filing Fees →</a>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="light-card">
-          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-            <div class="step-number-badge">02</div>
-            <div>
-              <h3 style="font-size: 1.2rem; color: #12304A; margin: 0; font-weight: 700;">LLC Name Search</h3>
-              <span style="font-size: 0.8rem; color: #64748B;">State Registry Distinguishability</span>
-            </div>
+          <div>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem;">
+              <li><a href="#decision-sequence-section" class="start-toc-link">• How to Start an LLC in 5 Steps</a></li>
+              <li><a href="index.html#cost-section" class="start-toc-link">• How Much Does It Cost?</a></li>
+              <li><a href="index.html#cost-estimator-section" class="start-toc-link">• Free LLC Tools & Calculators</a></li>
+              <li><a href="#decision-cards-section" class="start-toc-link">• Best States to Form an LLC</a></li>
+              <li><a href="index.html#northwest-section" class="start-toc-link">• Best LLC Formation Services</a></li>
+              <li><a href="#faq-section" class="start-toc-link">• Frequently Asked Questions</a></li>
+            </ul>
           </div>
-          <p style="font-size: 0.9rem; color: #334155; line-height: 1.6; margin-bottom: 1rem;">
-            Your business name must be unique on your Secretary of State's business registry and include an official designator like <strong>"LLC"</strong> or <strong>"L.L.C."</strong>. Conduct a free name search on the Secretary of State portal.
-          </p>
-          <span style="font-size: 0.85rem; color: #64748B; font-weight: 600;">✓ Free State Registry Name Checks</span>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="light-card">
-          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-            <div class="step-number-badge">03</div>
-            <div>
-              <h3 style="font-size: 1.2rem; color: #12304A; margin: 0; font-weight: 700;">Designate Registered Agent</h3>
-              <span style="font-size: 0.8rem; color: #64748B;">Legal Notice & Privacy Shield</span>
-            </div>
-          </div>
-          <p style="font-size: 0.9rem; color: #334155; line-height: 1.6; margin-bottom: 1rem;">
-            Every state requires a registered agent with a physical street address in the formation state. You can serve as your own agent for <strong>$0</strong>, or hire a commercial service (~$125/yr) to keep your personal address off public state records.
-          </p>
-          <span style="font-size: 0.85rem; color: #64748B; font-weight: 600;">✓ Address Privacy Protection Available</span>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="light-card">
-          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-            <div class="step-number-badge">04</div>
-            <div>
-              <h3 style="font-size: 1.2rem; color: #12304A; margin: 0; font-weight: 700;">File Articles of Organization</h3>
-              <span style="font-size: 0.8rem; color: #64748B;">Official State Registration</span>
-            </div>
-          </div>
-          <p style="font-size: 0.9rem; color: #334155; line-height: 1.6; margin-bottom: 1rem;">
-            Submit your legal filing (Articles of Organization or Certificate of Formation) directly to the Secretary of State. State filing fees range from <strong>$35 (MT)</strong> to <strong>$500 (MA)</strong>.
-          </p>
-          <a href="index.html#cost-estimator-section" style="font-weight: 700; color: #159A9C; font-size: 0.875rem;">Estimate Total State Fees →</a>
-        </div>
-
-        <!-- Step 5 -->
-        <div class="light-card">
-          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-            <div class="step-number-badge">05</div>
-            <div>
-              <h3 style="font-size: 1.2rem; color: #12304A; margin: 0; font-weight: 700;">Draft Operating Agreement</h3>
-              <span style="font-size: 0.8rem; color: #64748B;">Internal Governance Rules</span>
-            </div>
-          </div>
-          <p style="font-size: 0.9rem; color: #334155; line-height: 1.6; margin-bottom: 1rem;">
-            An Operating Agreement defines owner percentages, voting rights, and profit distributions. Even single-member LLCs need an Operating Agreement to open business bank accounts and reinforce liability protection.
-          </p>
-          <span style="font-size: 0.85rem; color: #64748B; font-weight: 600;">✓ Free Member Contract Blueprint</span>
-        </div>
-
-        <!-- Step 6 -->
-        <div class="light-card">
-          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-            <div class="step-number-badge">06</div>
-            <div>
-              <h3 style="font-size: 1.2rem; color: #12304A; margin: 0; font-weight: 700;">Obtain EIN & BOI Report</h3>
-              <span style="font-size: 0.8rem; color: #64748B;">Federal Tax ID & FinCEN Compliance</span>
-            </div>
-          </div>
-          <p style="font-size: 0.9rem; color: #334155; line-height: 1.6; margin-bottom: 1rem;">
-            Apply for your Employer Identification Number (EIN) for <strong>$0 free directly on IRS.gov</strong>. Additionally, complete your federal FinCEN Beneficial Ownership Information (BOI) filing within required deadlines.
-          </p>
-          <span style="font-size: 0.85rem; color: #64748B; font-weight: 600;">✓ 100% Free Direct IRS Route</span>
-        </div>
-
-      </div>
-
-
-      <!-- COST COMPARISON & GUIDANCE TABLE -->
-      <div class="light-card" style="margin-bottom: 4rem; padding: 2.25rem;">
-        <div style="margin-bottom: 1.25rem;">
-          <span class="light-badge">TRANSPARENT FEE BREAKDOWN</span>
-          <h3 style="font-size: 1.5rem; color: #12304A; margin: 0; font-weight: 800;">LLC Cost Components Explained</h3>
-          <p style="font-size: 0.925rem; color: #475569; margin-top: 0.4rem;">Understand mandatory government charges versus optional third-party service fees.</p>
-        </div>
-
-        <div style="overflow-x: auto;">
-          <table class="light-table">
-            <thead>
-              <tr>
-                <th>Cost Component</th>
-                <th>Type</th>
-                <th>Typical Cost Range</th>
-                <th>Is it Mandatory?</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>State Filing Fee</strong></td>
-                <td>Mandatory Government</td>
-                <td>$35 – $500 (One-time)</td>
-                <td><span style="color: #059669; font-weight: 700;">Yes (Set by state law)</span></td>
-              </tr>
-              <tr>
-                <td><strong>Registered Agent Fee</strong></td>
-                <td>Self or Third-Party</td>
-                <td>$0 (Self) or ~$125/yr (Service)</td>
-                <td><span style="color: #159A9C; font-weight: 700;">Agent is mandatory; Service is optional</span></td>
-              </tr>
-              <tr>
-                <td><strong>State Annual Report / Tax</strong></td>
-                <td>Mandatory Government</td>
-                <td>$0 – $800/yr (Recurring)</td>
-                <td><span style="color: #059669; font-weight: 700;">Yes (Varies by state)</span></td>
-              </tr>
-              <tr>
-                <td><strong>Federal EIN (IRS Tax ID)</strong></td>
-                <td>Federal Government</td>
-                <td>$0 (Direct via IRS.gov)</td>
-                <td><span style="color: #059669; font-weight: 700;">Yes (Needed for banking & hiring)</span></td>
-              </tr>
-              <tr>
-                <td><strong>FinCEN BOI Filing</strong></td>
-                <td>Federal Government</td>
-                <td>$0 (Direct via FinCEN.gov)</td>
-                <td><span style="color: #059669; font-weight: 700;">Yes (Federal law requirement)</span></td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
 
-
-      <!-- FREQUENTLY ASKED QUESTIONS SECTION -->
-      <div style="max-width: 860px; margin: 0 auto 4rem auto;">
-        <div style="text-align: center; margin-bottom: 2rem;">
-          <span class="light-badge">KNOWLEDGE BASE</span>
-          <h3 style="font-size: 1.75rem; color: #12304A; font-weight: 800;">Frequently Asked Guidance Questions</h3>
+      <!-- All Guides on LLC Starters Section (Image 2 Main Content) -->
+      <div id="all-guides-section" style="text-align: left; margin-bottom: 2rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+          <span style="font-size: 1.8rem;">📂</span>
+          <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 800; color: #12304A; margin: 0; font-family: var(--font-heading);">
+            All Guides on LLC Starters
+          </h2>
         </div>
-
-        <details class="light-faq-question">
-          <summary>
-            <span>Can I file an LLC myself without paying third-party filing fees?</span>
-            <span>+</span>
-          </summary>
-          <div class="light-faq-answer">
-            Yes! You can file your Articles of Organization directly through your state's Secretary of State online portal. You only pay the mandatory government state filing fee.
-          </div>
-        </details>
-
-        <details class="light-faq-question">
-          <summary>
-            <span>What is the difference between a Single-Member and Multi-Member LLC?</span>
-            <span>+</span>
-          </summary>
-          <div class="light-faq-answer">
-            A Single-Member LLC has one owner (member) and is treated as a disregarded entity by default for tax purposes. A Multi-Member LLC has two or more owners and is taxed as a partnership by default. Both offer full personal liability protection.
-          </div>
-        </details>
-
-        <details class="light-faq-question">
-          <summary>
-            <span>Should non-U.S. residents form an LLC in Wyoming or Delaware?</span>
-            <span>+</span>
-          </summary>
-          <div class="light-faq-answer">
-            Wyoming is generally preferred for online businesses and e-commerce founders due to lower annual fees ($60) and zero state income tax. Delaware is preferred if you plan to seek U.S. venture capital or investor funding.
-          </div>
-        </details>
-
-        <details class="light-faq-question">
-          <summary>
-            <span>How long does state LLC approval take?</span>
-            <span>+</span>
-          </summary>
-          <div class="light-faq-answer">
-            Online filings in states like Colorado, Nevada, or Wyoming are approved instantly or within 1 business day. Other states may take 3 to 7 business days unless expedited processing is selected.
-          </div>
-        </details>
-      </div>
-
-
-      <!-- CTA BANNER -->
-      <div style="background: linear-gradient(135deg, #12304A 0%, #0F253B 100%); border-radius: 20px; padding: 2.75rem 2rem; text-align: center; color: #FFFFFF;">
-        <h3 style="font-size: 1.75rem; margin-bottom: 0.75rem; font-weight: 800;">Ready to check your state fees?</h3>
-        <p style="color: #94A3B8; max-width: 600px; margin: 0 auto 1.5rem auto; font-size: 0.975rem;">
-          Select your state on our main interactive dashboard or take our 60-second diagnostic quiz to build your tailored formation plan.
+        <div style="width: 50px; height: 4px; background: #159A9C; border-radius: 2px; margin-bottom: 1.15rem;"></div>
+        
+        <p style="font-size: 1rem; color: #475569; line-height: 1.65; max-width: 900px; margin-bottom: 2.25rem;">
+          <strong style="color: #12304A;">LLC Starters</strong> organizes formation information by state and by the decision you need to make next. For example, you can compare state requirements, learn LLC fundamentals, handle post-formation setup, or read service reviews without jumping between unrelated pages. Once your LLC is approved, our <a href="index.html#after-formation-section" style="color: #159A9C; font-weight: 700; text-decoration: underline;">post-formation checklist</a> puts the next compliance steps in a practical order.
         </p>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-          <a href="index.html#states-section" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 2rem;">
-            Explore State Fees →
-          </a>
-          <a href="quiz.html" class="ls-btn" style="border: 1px solid rgba(255,255,255,0.2); color: #FFF; padding: 0.85rem 2rem;">
-            Take 60-Sec LLC Quiz
-          </a>
+
+        <!-- 3-Column Resource Grid (Image 2 Grid) -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem;">
+          
+          <!-- Resource Card 1 -->
+          <div class="guide-resource-card">
+            <div>
+              <div class="resource-icon-badge">🗺️</div>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">How to Start an LLC by State</h3>
+              <p style="font-size: 0.875rem; color: #64748B; line-height: 1.55; margin-bottom: 1.25rem;">
+                Step-by-step formation guides for all 50 states. Use each state page together with its cited government source for filing-sensitive facts and current compliance requirements.
+              </p>
+            </div>
+            <div>
+              <a href="#states-table-section" style="font-size: 0.875rem; font-weight: 700; color: #159A9C; text-decoration: none;">Choose your state →</a>
+            </div>
+          </div>
+
+          <!-- Resource Card 2 -->
+          <div class="guide-resource-card">
+            <div>
+              <div class="resource-icon-badge">📄</div>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">LLC Guide</h3>
+              <p style="font-size: 0.875rem; color: #64748B; line-height: 1.55; margin-bottom: 1.25rem;">
+                What is an LLC, LLC taxes, operating agreement guide, registered agent fundamentals, best state to form, LLC vs S Corp, annual reports, and dissolution — all in one place.
+              </p>
+            </div>
+            <div>
+              <a href="index.html#decisions-section" style="font-size: 0.875rem; font-weight: 700; color: #159A9C; text-decoration: none;">Read the LLC Guide →</a>
+            </div>
+          </div>
+
+          <!-- Resource Card 3 -->
+          <div class="guide-resource-card">
+            <div>
+              <div class="resource-icon-badge">🏢</div>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">Business Setup</h3>
+              <p style="font-size: 0.875rem; color: #64748B; line-height: 1.55; margin-bottom: 1.25rem;">
+                Free EIN from the IRS, business bank account, business license, virtual business address, and business insurance — everything that comes after formation.
+              </p>
+            </div>
+            <div>
+              <a href="index.html#after-formation-section" style="font-size: 0.875rem; font-weight: 700; color: #159A9C; text-decoration: none;">Set up your business →</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 2-Column Sub-Grid (Image 2 Bottom Row) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 780px;">
+          
+          <!-- Resource Card 4 -->
+          <div class="guide-resource-card">
+            <div>
+              <div class="resource-icon-badge">⭐</div>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">LLC Service Reviews</h3>
+              <p style="font-size: 0.875rem; color: #64748B; line-height: 1.55; margin-bottom: 1.25rem;">
+                In-depth reviews of Northwest Registered Agent, ZenBusiness, LegalZoom, Bizee, and doola with transparent pricing and features.
+              </p>
+            </div>
+            <div>
+              <a href="index.html#northwest-section" style="font-size: 0.875rem; font-weight: 700; color: #159A9C; text-decoration: none;">Compare services →</a>
+            </div>
+          </div>
+
+          <!-- Resource Card 5 -->
+          <div class="guide-resource-card">
+            <div>
+              <div class="resource-icon-badge">🇪🇸</div>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">Guías en Español</h3>
+              <p style="font-size: 0.875rem; color: #64748B; line-height: 1.55; margin-bottom: 1.25rem;">
+                Guías completas en español para formar y mantener una LLC en los Estados Unidos con requisitos oficiales.
+              </p>
+            </div>
+            <div>
+              <a href="index.html#spanish-section" style="font-size: 0.875rem; font-weight: 700; color: #159A9C; text-decoration: none;">Ver guías en español →</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       4. DECISION SEQUENCE & FOUNDER QUESTION CARD (EXACT IMAGE 3 REPLICA)
+       ========================================================================= -->
+  <section class="section-padding" id="decision-sequence-section" style="padding: 2.5rem 0; background: #F8FAFC;">
+    <div class="container" style="max-width: 1180px;">
+      
+      <div style="text-align: left; margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1.2rem; font-weight: 600; color: #475569;">Start with the decision you need to make next</h3>
+      </div>
+
+      <!-- Card 1: 5-Step Horizontal Process Flow (Image 3 Top Box) -->
+      <div class="process-sequence-card">
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 800; color: #12304A;">
+          <span>🧭</span> Not sure where to start?
+        </div>
+
+        <div class="sequence-steps-flex">
+          <div class="sequence-step-node">
+            <span class="sequence-num">1</span>
+            <span class="sequence-label">Compare costs<br>by state</span>
+          </div>
+          <span style="color: #94A3B8; font-weight: 700;">→</span>
+
+          <div class="sequence-step-node">
+            <span class="sequence-num">2</span>
+            <span class="sequence-label">Choose your<br>state</span>
+          </div>
+          <span style="color: #94A3B8; font-weight: 700;">→</span>
+
+          <div class="sequence-step-node">
+            <span class="sequence-num">3</span>
+            <span class="sequence-label">Check name<br>availability</span>
+          </div>
+          <span style="color: #94A3B8; font-weight: 700;">→</span>
+
+          <div class="sequence-step-node">
+            <span class="sequence-num">4</span>
+            <span class="sequence-label">Compare formation<br>services</span>
+          </div>
+          <span style="color: #94A3B8; font-weight: 700;">→</span>
+
+          <div class="sequence-step-node" style="background: #E6F7F7; border-color: #159A9C;">
+            <span class="sequence-num" style="background: #159A9C;">5</span>
+            <span class="sequence-label" style="color: #12304A;">File your LLC</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Founder Question Box (Image 3 Bottom Box) -->
+      <div class="founder-qa-card">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.85rem;">
+          <span style="width: 22px; height: 22px; border-radius: 50%; background: #EFF6FF; color: #2563EB; font-weight: 800; font-size: 0.75rem; display: inline-flex; align-items: center; justify-content: center;">?</span>
+          <span style="font-size: 0.75rem; font-weight: 800; color: #2563EB; letter-spacing: 0.08em; text-transform: uppercase;">A QUESTION WE KEEP SEEING FROM FIRST-TIME FOUNDERS</span>
+        </div>
+
+        <div style="font-size: 1.1rem; font-weight: 600; color: #12304A; margin-bottom: 1.25rem; font-style: italic;">
+          "There are so many moving parts — what order do I actually do all of this in?"
+        </div>
+
+        <!-- Green Checkmark Answer Box -->
+        <div class="founder-answer-box">
+          <div style="display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.85rem;">
+            <span style="width: 22px; height: 22px; border-radius: 50%; background: #10B981; color: #FFFFFF; font-weight: 800; font-size: 0.75rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.2rem;">✓</span>
+            <div>
+              <div style="font-size: 1rem; color: #12304A; line-height: 1.6; margin-bottom: 0.85rem;">
+                <strong style="color: #12304A;">Keep it simpler than it looks.</strong> First, choose the state and a compliant name. Next, appoint a registered agent and file the formation document. Next, after approval, get an EIN if your situation requires one, put an operating agreement in place, and open a dedicated business bank account. Finally, handle licenses and recurring compliance that apply to your business.
+              </div>
+              <div style="font-size: 0.95rem; color: #334155; line-height: 1.6; margin-bottom: 1rem;">
+                In addition, you do not need to buy every add-on at the beginning. Therefore, start with the legal requirements for your state, then pay for a service only when it saves you time, protects privacy, or handles a task you do not want to manage yourself.
+              </div>
+              <a href="#decision-sequence-section" style="font-size: 0.9rem; font-weight: 800; color: #2563EB; text-decoration: none;">See the 5-step LLC process below →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Micro-footer -->
+        <div style="margin-top: 1rem; font-size: 0.75rem; color: #94A3B8; text-align: left;">
+          Based on recurring questions found in recent public founder forums. The answer is independently written by LLCStarters and checked against current government guidance.
         </div>
       </div>
 
     </div>
-  </main>
+  </section>
+
 
   <!-- =========================================================================
-       4. FOOTER (MATCHING INDEX.HTML EXACTLY)
+       5. INTERACTIVE TOOL CARD (EXACT IMAGE 4 REPLICA)
        ========================================================================= -->
+  <section class="section-padding" id="interactive-tool-section" style="padding: 2.5rem 0;">
+    <div class="container" style="max-width: 1180px;">
+      
+      <div class="interactive-tool-card">
+        
+        <!-- Left Content -->
+        <div style="text-align: left;">
+          <div class="ls-kicker-pill" style="margin-bottom: 0.85rem; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.35); color: #059669;">
+            ⚡ Interactive Tool
+          </div>
+
+          <h2 style="font-size: clamp(1.75rem, 3.2vw, 2.2rem); font-weight: 800; color: #12304A; margin-bottom: 0.85rem; font-family: var(--font-heading);">
+            Find the Right LLC Setup for Your Situation
+          </h2>
+
+          <p style="font-size: 0.95rem; color: #475569; line-height: 1.6; margin-bottom: 1.5rem;">
+            First, answer a few questions and get a practical route based on your state, budget, privacy needs, and business situation. In particular, the tool helps you compare formation costs, business structure choices, and whether a formation service is worth paying for.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.925rem; font-weight: 600; color: #1E293B;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: #10B981; font-weight: 800;">✓</span> State recommendation based on your location and goals
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: #10B981; font-weight: 800;">✓</span> Formation cost estimate for your situation
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: #10B981; font-weight: 800;">✓</span> LLC vs S Corp tax guidance
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: #10B981; font-weight: 800;">✓</span> Service recommendation based on budget and privacy needs
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Action Button & Micro-copy -->
+        <div style="text-align: center;">
+          <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 1rem 2.25rem; font-size: 1.05rem; border-radius: 12px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: #FFFFFF; font-weight: 800; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+            Start the Free LLC Tool →
+          </a>
+          <div style="font-size: 0.78rem; color: #64748B; margin-top: 0.75rem; font-weight: 600;">
+            Free · No account required · Takes 2 minutes
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       6. STATE GUIDES BY DECISION TYPE (EXACT IMAGE 5 REPLICA)
+       ========================================================================= -->
+  <section class="section-padding" id="decision-cards-section" style="padding: 2.5rem 0; background: #F8FAFC;">
+    <div class="container" style="max-width: 1180px;">
+      
+      <div style="text-align: left; margin-bottom: 2rem;">
+        <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.5rem;">
+          <span style="font-size: 1.6rem;">🏆</span>
+          <h2 style="font-size: clamp(1.75rem, 3.2vw, 2.3rem); font-weight: 800; color: #12304A; margin: 0; font-family: var(--font-heading);">
+            State Guides by Decision Type
+          </h2>
+        </div>
+        <p style="font-size: 0.95rem; color: #64748B; margin: 0; max-width: 820px; line-height: 1.55;">
+          The state table below owns the numeric data. These cards are navigation only, so the same fee is not repeated in multiple parts of the hub.
+        </p>
+      </div>
+
+      <!-- 3-Column Card Grid (Image 5 Grid) -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem;">
+        
+        <!-- Card 1: Texas -->
+        <div class="guide-resource-card">
+          <div>
+            <div class="resource-icon-badge">🤠</div>
+            <h3 style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">Texas</h3>
+            <p style="font-size: 0.875rem; color: #64748B; line-height: 1.55; margin-bottom: 1.25rem;">
+              For founders operating in Texas who need formation, franchise-tax and compliance guidance in one state path.
+            </p>
+          </div>
+          <div>
+            <a href="index.html#states-section" onclick="selectStateAndOpenModal('TX')" style="font-size: 0.875rem; font-weight: 700; color: #2563EB; text-decoration: none;">Texas LLC guide →</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Florida -->
+        <div class="guide-resource-card">
+          <div>
+            <div class="resource-icon-badge">🌞</div>
+            <h3 style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">Florida</h3>
+            <p style="font-size: 0.875rem; color: #64748B; line-height: 1.55; margin-bottom: 1.25rem;">
+              A dedicated route for Florida formation, annual reporting and state-specific post-formation obligations.
+            </p>
+          </div>
+          <div>
+            <a href="index.html#states-section" onclick="selectStateAndOpenModal('FL')" style="font-size: 0.875rem; font-weight: 700; color: #2563EB; text-decoration: none;">Florida LLC guide →</a>
+          </div>
+        </div>
+
+        <!-- Card 3: California -->
+        <div class="guide-resource-card">
+          <div>
+            <div class="resource-icon-badge">🌉</div>
+            <h3 style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">California</h3>
+            <p style="font-size: 0.875rem; color: #64748B; line-height: 1.55; margin-bottom: 1.25rem;">
+              Useful when California filing, Statement of Information and Franchise Tax Board obligations drive the decision.
+            </p>
+          </div>
+          <div>
+            <a href="index.html#states-section" onclick="selectStateAndOpenModal('CA')" style="font-size: 0.875rem; font-weight: 700; color: #2563EB; text-decoration: none;">California LLC guide →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2-Column Bottom Cards (Image 5 Bottom Row) -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 780px;">
+        
+        <!-- Card 4: Choosing a State -->
+        <div class="guide-resource-card">
+          <div>
+            <div class="resource-icon-badge">🧭</div>
+            <h3 style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">Choosing a State</h3>
+            <p style="font-size: 0.875rem; color: #64748B; line-height: 1.55; margin-bottom: 1.25rem;">
+              Compare operating-state logic, foreign qualification, privacy and special-purpose structures without a generic "best state" ranking.
+            </p>
+          </div>
+          <div>
+            <a href="index.html#states-section" style="font-size: 0.875rem; font-weight: 700; color: #2563EB; text-decoration: none;">Use the state-selection guide →</a>
+          </div>
+        </div>
+
+        <!-- Card 5: Non-US Founders -->
+        <div class="guide-resource-card">
+          <div>
+            <div class="resource-icon-badge">🌐</div>
+            <h3 style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">Non-US Founders</h3>
+            <p style="font-size: 0.875rem; color: #64748B; line-height: 1.55; margin-bottom: 1.25rem;">
+              A separate route for founders outside the United States who need EIN, banking and state-choice context.
+            </p>
+          </div>
+          <div>
+            <a href="index.html#non-us-section" style="font-size: 0.875rem; font-weight: 700; color: #2563EB; text-decoration: none;">Non-resident LLC guide →</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       7. CANONICAL 50-STATE DATA TABLE SECTION
+       ========================================================================= -->
+  <section class="section-padding" id="states-table-section" style="padding: 3rem 0;">
+    <div class="container" style="max-width: 1180px;">
+      
+      <div style="text-align: left; margin-bottom: 2rem;">
+        <div class="ls-kicker-pill" style="margin-bottom: 0.5rem;">CANONICAL 50-STATE TABLE</div>
+        <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 800; color: #12304A;">All 50 States — LLC Filing Fees & Requirements (2026)</h2>
+        <p style="font-size: 0.95rem; color: #64748B; margin-top: 0.5rem;">
+          Select any state to view official Secretary of State filing fees, processing timelines, annual reporting requirements, and direct government links.
+        </p>
+      </div>
+
+      <!-- State Dropdown & Live Filter -->
+      <div style="background: #12304A; border-radius: 18px; padding: 1.5rem; margin-bottom: 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <div style="flex: 1; min-width: 260px;">
+          <label for="hubStateSelect" style="display: block; font-size: 0.8rem; font-weight: 700; color: #159A9C; text-transform: uppercase; margin-bottom: 0.35rem;">
+            🏛️ Quick Select State:
+          </label>
+          <select id="hubStateSelect" class="state-select-box" style="width: 100%; border-radius: 9999px; padding: 0.75rem 1.25rem;" aria-label="Select State"></select>
+        </div>
+
+        <button onclick="submitHubStateSelection()" class="ls-btn ls-btn--emerald" style="padding: 0.85rem 1.75rem; font-size: 0.95rem; border-radius: 9999px; background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #FFFFFF; font-weight: 800;">
+          Inspect State Guide →
+        </button>
+      </div>
+
+      <!-- 50 State Interactive List Table -->
+      <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; overflow: hidden; box-shadow: 0 4px 20px rgba(18, 48, 74, 0.05);">
+        <table class="light-table" style="margin: 0;">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Filing Fee</th>
+              <th>Processing Time</th>
+              <th>Annual Report / Fee</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="hubStateTableBody">
+            <!-- Populated dynamically by JS or fallbacks -->
+            <tr>
+              <td><strong>Wyoming (WY)</strong></td>
+              <td><span style="color: #10B981; font-weight: 800;">$100</span></td>
+              <td>1-2 Days (Online)</td>
+              <td>$60 / Year</td>
+              <td><button onclick="selectStateAndOpenModal('WY')" class="ls-btn ls-btn--emerald" style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">View Guide →</button></td>
+            </tr>
+            <tr>
+              <td><strong>Delaware (DE)</strong></td>
+              <td><span style="color: #10B981; font-weight: 800;">$140</span></td>
+              <td>2-3 Days</td>
+              <td>$300 / Year (Franchise Tax)</td>
+              <td><button onclick="selectStateAndOpenModal('DE')" class="ls-btn ls-btn--emerald" style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">View Guide →</button></td>
+            </tr>
+            <tr>
+              <td><strong>Texas (TX)</strong></td>
+              <td><span style="color: #12304A; font-weight: 800;">$300</span></td>
+              <td>2-3 Days (Online)</td>
+              <td>$0 (No fee, Annual Report required)</td>
+              <td><button onclick="selectStateAndOpenModal('TX')" class="ls-btn ls-btn--emerald" style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">View Guide →</button></td>
+            </tr>
+            <tr>
+              <td><strong>Florida (FL)</strong></td>
+              <td><span style="color: #10B981; font-weight: 800;">$125</span></td>
+              <td>2-4 Days</td>
+              <td>$138.75 / Year</td>
+              <td><button onclick="selectStateAndOpenModal('FL')" class="ls-btn ls-btn--emerald" style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">View Guide →</button></td>
+            </tr>
+            <tr>
+              <td><strong>California (CA)</strong></td>
+              <td><span style="color: #10B981; font-weight: 800;">$70</span></td>
+              <td>1 Day (Online)</td>
+              <td>$800 / Year (Min Franchise Tax)</td>
+              <td><button onclick="selectStateAndOpenModal('CA')" class="ls-btn ls-btn--emerald" style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">View Guide →</button></td>
+            </tr>
+            <tr>
+              <td><strong>New Mexico (NM)</strong></td>
+              <td><span style="color: #10B981; font-weight: 800;">$50</span></td>
+              <td>1-3 Days</td>
+              <td>$0 / Year (No annual report)</td>
+              <td><button onclick="selectStateAndOpenModal('NM')" class="ls-btn ls-btn--emerald" style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">View Guide →</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       8. FREQUENTLY ASKED QUESTIONS SECTION
+       ========================================================================= -->
+  <section class="section-padding" id="faq-section" style="padding: 3rem 0; background: #F8FAFC;">
+    <div class="container" style="max-width: 920px;">
+      
+      <div style="text-align: center; margin-bottom: 2.25rem;">
+        <div class="ls-kicker-pill" style="font-size: 0.75rem;">FORMATION FAQS</div>
+        <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 800; color: #12304A;">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="light-faq-group">
+        
+        <details class="light-faq-question">
+          <summary>Which state is best to form an LLC in?</summary>
+          <div style="margin-top: 0.75rem; color: #475569; font-size: 0.925rem; line-height: 1.6;">
+            If you operate a local business in the U.S., forming in your home state is generally best to avoid foreign qualification double fees. For non-US residents or privacy-focused founders, Wyoming and Delaware offer strong privacy and non-resident options.
+          </div>
+        </details>
+
+        <details class="light-faq-question">
+          <summary>Do I need a lawyer to start an LLC?</summary>
+          <div style="margin-top: 0.75rem; color: #475569; font-size: 0.925rem; line-height: 1.6;">
+            No. You can file Articles of Organization directly with your Secretary of State or use a professional registered agent filing service. Legal advice is recommended only for complex multi-member ownership structures.
+          </div>
+        </details>
+
+        <details class="light-faq-question">
+          <summary>When do I get my Federal EIN number?</summary>
+          <div style="margin-top: 0.75rem; color: #475569; font-size: 0.925rem; line-height: 1.6;">
+            After your LLC state filing is approved. The IRS requires your approved state legal entity name to issue a free Employer Identification Number (EIN / SS-4).
+          </div>
+        </details>
+
+        <details class="light-faq-question">
+          <summary>What is FinCEN BOI reporting?</summary>
+          <div style="margin-top: 0.75rem; color: #475569; font-size: 0.925rem; line-height: 1.6;">
+            A mandatory federal report required by the U.S. Department of the Treasury within 90 days of LLC formation to report beneficial owners. It is 100% free to file at FinCEN.gov.
+          </div>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       9. SIMPLE & ELEGANT FINAL CTA SECTION (EXACT HOMEPAGE STYLE)
+       ========================================================================= -->
+  <section class="section-padding" id="cta-section" style="padding: 2.5rem 0;">
+    <div class="container" style="max-width: 1180px;">
+      <div class="final-cta-card">
+        
+        <!-- Ambient Decorative Background Elements -->
+        <div style="position: absolute; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, rgba(21, 154, 156, 0.25) 0%, rgba(21, 154, 156, 0) 70%); top: -90px; right: -90px; pointer-events: none;"></div>
+        <div style="position: absolute; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(14, 116, 144, 0.25) 0%, rgba(14, 116, 144, 0) 70%); bottom: -110px; left: -110px; pointer-events: none;"></div>
+        <div style="position: absolute; width: 480px; height: 480px; border-radius: 50%; border: 1px dashed rgba(21, 154, 156, 0.18); top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none;"></div>
+
+        <!-- Foreground Content -->
+        <div style="position: relative; z-index: 2;">
+          <div class="ls-kicker-pill" style="margin-bottom: 0.85rem; background: rgba(21, 154, 156, 0.15); border-color: rgba(21, 154, 156, 0.35); color: #159A9C; display: inline-flex; align-items: center; gap: 0.4rem;">
+            <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 8px #159A9C;"></span>
+            START YOUR BUSINESS TODAY
+          </div>
+
+          <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.35rem); color: #FFFFFF; margin-bottom: 0.85rem; font-weight: 800; font-family: var(--font-heading);">
+            Ready to start your LLC?
+          </h2>
+          
+          <p style="font-size: 1.05rem; color: #CBD5E1; max-width: 620px; margin: 0 auto 2.25rem auto; line-height: 1.6;">
+            Select your state to view official Secretary of State filing fees, or take our 60-second diagnostic quiz to build your custom formation path.
+          </p>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1.25rem; flex-wrap: wrap; margin: 0 auto;">
+            <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.95rem 2.35rem; font-size: 1rem; border-radius: 9999px; background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #FFFFFF; font-weight: 800; box-shadow: 0 8px 24px rgba(21, 154, 156, 0.35); text-decoration: none;">
+              Build My LLC Plan →
+            </a>
+            <a href="#states-table-section" class="ls-btn ls-btn--secondary" style="padding: 0.95rem 2.35rem; font-size: 1rem; border-radius: 9999px; background: rgba(255, 255, 255, 0.08); color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.2); font-weight: 800; text-decoration: none;">
+              Choose Your State →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER (EXACT HOMEPAGE FOOTER REPLICA) -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="container" style="max-width: 1180px;">
       <div class="footer-grid">
         <div>
           <a href="index.html" class="site-logo" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
             <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
           </a>
-          <p style="font-size:0.88rem; color:#CBD5E1; margin-top:1rem; line-height:1.6;">
-            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step compliance resources to help founders start and maintain an LLC in any US state.
+          <p style="font-size:0.88rem; color: #CBD5E1; margin-top:1rem; line-height: 1.6;">
+           LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
           </p>
         </div>
 
@@ -494,7 +921,7 @@
           <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
           <ul style="display:flex; flex-direction:column; gap:0.6rem;">
             <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
-            <li><a href="index.html#cost-estimator-section" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator</a></li>
+            <li><a href="javascript:void(0)" onclick="openCostCalculatorModal()" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator (Popup)</a></li>
           </ul>
         </div>
 
@@ -510,15 +937,191 @@
 
       <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
         <div>
-          <b>Disclaimer:</b> LLC Primer is an educational resource and business software provider. We are not a law firm or legal filing service and do not provide legal or financial advice. All state filing fees are verified against official Secretary of State portals for 2026.
+          <b>Disclaimer:</b> LLC Starters is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Starters may earn a commission at no additional cost to you. See our Affiliate Disclosure.
         </div>
         <div>
-          © 2026 LLC Primer. All rights reserved. | Privacy Policy | Terms of Service
+          © 2026 LLC Primer. All rights reserved. | <a href="">Privacy Policy</a> | <a href="">Terms of Service</a> |
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+  <!-- COST CALCULATOR POPUP MODAL -->
+  <div class="modal-overlay" id="costCalcModalOverlay">
+    <div class="modal-card" style="max-width: 900px; padding: 2.5rem;">
+      <button class="modal-close" onclick="closeCostCalculatorModal()">✕</button>
+
+      <div style="margin-bottom: 1.5rem; text-align: left;">
+        <div class="ls-kicker-pill" style="font-size: 0.7rem;">FIRST-YEAR COST ESTIMATOR</div>
+        <h2 style="font-size: 1.65rem; color: #FFFFFF;">Interactive State LLC Cost Calculator</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">
+          Calculate your exact state filing fees, registered agent options, and agency fees.
+        </p>
+      </div>
+
+      <div class="calc-split-container">
+        <div class="calc-inputs-card">
+          <div>
+            <div style="margin-bottom: 1.25rem;">
+              <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFF; margin-bottom: 0.4rem;">Select State:</label>
+              <select id="calcStateSelect" class="state-select-box" style="margin: 0;"></select>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+              <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFF; margin-bottom: 0.4rem;">Registered Agent:</label>
+              <select id="calcAgentSelect" class="state-select-box" style="margin: 0;">
+                <option value="0">Self (Use Home Address — $0)</option>
+                <option value="125">Professional Registered Agent ($125/yr)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+              <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFF; margin-bottom: 0.4rem;">Filing Service:</label>
+              <select id="calcServiceSelect" class="state-select-box" style="margin: 0;">
+                <option value="0">DIY Direct State Filing ($0)</option>
+                <option value="39">Northwest Registered Agent ($39)</option>
+                <option value="99">Standard Package ($99)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="background: var(--color-primary-light); border: 1px solid var(--color-primary); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <div style="font-size: 0.775rem; color: var(--text-muted); text-transform: uppercase;">Estimated First-Year Total</div>
+              <div style="font-size: 0.85rem; color: #FFF;">Required Fee: <b id="calcLiveGovFee">$0</b></div>
+            </div>
+            <div style="font-size: 2.25rem; font-weight: 900; color: var(--color-accent); font-family: var(--font-heading);" id="calcLiveTotalFee">$0</div>
+          </div>
+        </div>
+
+        <div class="calc-info-guide-card">
+          <div>
+            <div class="ls-kicker-pill" style="font-size: 0.7rem;">OFFICIAL STATE FEE FACTS</div>
+            <h3 style="font-size: 1.25rem; color: #FFFFFF; margin-bottom: 0.75rem;">How State Fees Work</h3>
+            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              State fees are mandated by state statutes and paid directly to the Secretary of State.
+            </p>
+
+            <ul style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+              <li style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--color-accent); font-weight: 800;">✓</span> Zero government markups when filing directly.
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--color-accent); font-weight: 800;">✓</span> Commercial agents protect personal address privacy on state registries.
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--color-accent); font-weight: 800;">✓</span> Federal EIN application is 100% free via IRS.gov.
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <button class="ls-btn ls-btn--emerald" style="width: 100%;" onclick="closeCostCalculatorModal(); location.href='#states-table-section';">
+              Select State & File →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATE INTELLIGENCE RESULT CARD MODAL POPUP -->
+  <div class="modal-overlay" id="stateModalOverlay" onclick="if(event.target===this) closeStateModal()">
+    <div class="modal-card state-modal-card">
+      <button class="modal-close" onclick="closeStateModal()" aria-label="Close modal">✕</button>
+      
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+        <h3 style="font-size: 1.4rem; color: #FFFFFF; display: flex; align-items: center; gap: 0.6rem; margin: 0;">
+          <span>🏛️</span> <span id="modalStateName">State Name</span> LLC
+        </h3>
+        <span class="ls-kicker-pill" id="modalStateAbbr" style="margin: 0;">CODE</span>
+      </div>
+
+      <div class="state-info-grid" style="margin-bottom: 1.5rem;">
+        <div class="info-item-box">
+          <div class="info-item-label">State Filing Fee</div>
+          <div class="info-item-value lime" id="modalStateFee">$0</div>
+        </div>
+        <div class="info-item-box">
+          <div class="info-item-label">Processing Speed</div>
+          <div class="info-item-value" id="modalStateSpeed" style="color: var(--color-primary);">1-2 Days</div>
+        </div>
+        <div class="info-item-box">
+          <div class="info-item-label">Annual Fee</div>
+          <div class="info-item-value" id="modalStateAnnual" style="color: #FFFFFF;">$0</div>
+        </div>
+      </div>
+
+      <div style="background: rgba(0, 229, 255, 0.06); border: 1px solid rgba(0, 229, 255, 0.2); border-radius: var(--radius-md); padding: 1rem 1.25rem; margin-bottom: 1.75rem; text-align: left;">
+        <div style="font-size: 0.75rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">
+          2026 SECRETARY OF STATE HIGHLIGHT
+        </div>
+        <p id="modalStateNote" style="font-size: 0.9rem; color: #CBD5E1; margin: 0; line-height: 1.5;"></p>
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button id="modalGuideBtn" class="ls-btn ls-btn--emerald" style="flex: 1; background: var(--color-primary-gradient); padding: 0.85rem 1.5rem;">
+          Start State Filing →
+        </button>
+        <button onclick="closeStateModal()" class="ls-btn ls-btn--ghost" style="padding: 0.85rem 1.5rem;">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Hub Helper logic -->
   <script src="app.js"></script>
+  <script>
+    // Hub State Table and Selector Initializers
+    document.addEventListener("DOMContentLoaded", function() {
+      const hubSelect = document.getElementById("hubStateSelect");
+      const tableBody = document.getElementById("hubStateTableBody");
+
+      if (typeof statesData !== "undefined" && statesData.length > 0) {
+        // Populate Hub State Selector
+        if (hubSelect) {
+          hubSelect.innerHTML = `<option value="" disabled selected>-- Select Your Business State --</option>` +
+            statesData.map(st => `<option value="${st.code}">${st.name} ($${st.fee} State Fee)</option>`).join("");
+        }
+
+        // Render full 50-state Table
+        if (tableBody) {
+          tableBody.innerHTML = statesData.map(st => `
+            <tr>
+              <td><strong>${st.name} (${st.code})</strong></td>
+              <td><span style="color: #10B981; font-weight: 800;">$${st.fee}</span></td>
+              <td>${st.speed}</td>
+              <td>${st.annual}</td>
+              <td>
+                <button onclick="selectStateAndOpenModal('${st.code}')" class="ls-btn ls-btn--emerald" style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">
+                  View Guide →
+                </button>
+              </td>
+            </tr>
+          `).join("");
+        }
+      }
+    });
+
+    function submitHubStateSelection() {
+      const sel = document.getElementById("hubStateSelect");
+      if (sel && sel.value) {
+        selectStateAndOpenModal(sel.value);
+      } else {
+        alert("Please select a state from the dropdown menu.");
+      }
+    }
+  </script>
 </body>
 </html>
