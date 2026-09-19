@@ -12,9 +12,12 @@
   
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Global Page Width override for Start an LLC Hub */
-    .container {
-      max-width: 1080px !important;
+    /* Scoped Content Container for Body Cards (Leaving Navbar & Footer at full homepage width) */
+    .start-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
     }
 
     /* Hero Card */
@@ -170,7 +173,7 @@
       margin-top: 1.25rem;
     }
 
-    /* Redesigned Interactive Tool Card (Left Content + Button, Right Visual Graphic) */
+    /* Redesigned Interactive Tool Card (Button on Left, Pure Graphic Shapes on Right) */
     .interactive-tool-card {
       background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 60%, #F0FDFA 100%);
       border: 1.5px solid #CCFBF1;
@@ -207,7 +210,6 @@
     .step-timeline-item:hover {
       border-color: #159A9C;
     }
-    /* Lighter counting box as requested */
     .step-timeline-badge {
       width: 42px;
       height: 42px;
@@ -224,7 +226,7 @@
       box-shadow: 0 2px 8px rgba(21, 154, 156, 0.15);
     }
 
-    /* Canonical Tables Styling (Lighter State Names) */
+    /* Canonical Tables Styling */
     .canonical-table-card {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
@@ -255,7 +257,6 @@
     }
     .canonical-table tr:last-child td { border-bottom: none; }
     .canonical-table tr:hover { background: #F8FAFC; }
-    /* Lighter state & cost layer names as requested */
     .canonical-table td strong { color: #475569; font-weight: 700; }
     .canonical-table td a { color: #159A9C; font-weight: 600; text-decoration: none; }
     .canonical-table td a:hover { text-decoration: underline; color: #0E7490; }
@@ -271,15 +272,50 @@
       border-radius: 8px;
     }
 
-    /* Redesigned Northwest Service Card with Brand Elements */
+    /* Budgeting Rule Box - Exact Image 1 Style with Green Border */
+    .budgeting-rule-box {
+      background: #F0FDF4;
+      border: 1.5px solid #86EFAC;
+      border-left: 5px solid #10B981;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.25rem;
+      text-align: left;
+    }
+
+    /* Northwest Service Card - Image 2 Exact Colors & Pill Badge */
     .nw-service-card {
       background: #FFFFFF;
-      border: 1.5px solid #CCFBF1;
-      border-radius: 20px;
+      border: 1.5px solid #86EFAC;
+      border-radius: 18px;
       padding: 2.25rem;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 8px 28px rgba(18, 48, 74, 0.06);
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.05);
+    }
+    .nw-pill-badge {
+      background: #10B981;
+      color: #FFFFFF;
+      font-size: 0.725rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.95rem;
+      border-radius: 9999px;
+      display: inline-block;
+    }
+
+    /* Choosing a Formation State Banner (Deep Navy + Shaded Orbits) */
+    .choosing-state-banner {
+      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.35) 0%, rgba(18, 48, 74, 0) 60%), radial-gradient(circle at 15% 85%, rgba(14, 116, 144, 0.25) 0%, rgba(18, 48, 74, 0) 65%), #12304A;
+      border: 1px solid rgba(21, 154, 156, 0.35);
+      border-radius: 20px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 2.75rem;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(18, 48, 74, 0.18);
     }
 
     /* Kicker Pill Badges matching Homepage style */
@@ -321,7 +357,7 @@
 <body>
 
   <!-- =========================================================================
-       0. TOP ANNOUNCEMENT / TRUST BAR (EXACT FROM HOMEPAGE)
+       0. TOP ANNOUNCEMENT / TRUST BAR (EXACT HOMEPAGE FULL WIDTH & STYLES)
        ========================================================================= -->
   <div style="background: #12304A; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.8rem; color: #94A3B8; padding: 0.5rem 0;">
     <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
@@ -338,7 +374,7 @@
   </div>
 
   <!-- =========================================================================
-       1. EXECUTIVE GLASSMORPHIC NAVBAR (EXACT FROM HOMEPAGE)
+       1. EXECUTIVE GLASSMORPHIC NAVBAR (EXACT HOMEPAGE REPLICA 1:1)
        ========================================================================= -->
   <header class="site-header">
     <div class="container header-container">
@@ -430,7 +466,7 @@
   <!-- =========================================================================
        2. HERO CARD SECTION (CONTAINED CARD STYLE)
        ========================================================================= -->
-  <div class="container">
+  <div class="start-content-container">
     <div class="start-hero-card">
       <div style="display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 2.5rem; align-items: center;">
         
@@ -492,7 +528,7 @@
        3. TABLE OF CONTENTS & ALL GUIDES ON LLC STARTERS (4-COL & FULL WIDTH)
        ========================================================================= -->
   <section class="section-padding" style="padding: 2.25rem 0 2rem 0;">
-    <div class="container">
+    <div class="start-content-container">
       
       <!-- Table of Contents Card -->
       <div class="start-toc-card">
@@ -607,7 +643,7 @@
        4. DECISION SEQUENCE & FOUNDER QUESTION CARD (BRAND COLORS & PILL BADGES)
        ========================================================================= -->
   <section class="section-padding" id="decision-sequence-section" style="padding: 2.25rem 0; background: #F8FAFC;">
-    <div class="container">
+    <div class="start-content-container">
       
       <div style="text-align: left; margin-bottom: 1.25rem;">
         <h3 style="font-size: 1.15rem; font-weight: 700; color: #12304A;">Start with the decision you need to make next</h3>
@@ -689,10 +725,10 @@
 
 
   <!-- =========================================================================
-       5. INTERACTIVE TOOL CARD (REDESIGNED: BUTTON ON LEFT, BRAND GRAPHIC ON RIGHT)
+       5. INTERACTIVE TOOL CARD (BUTTON ON LEFT, CLEAN PURE GEOMETRIC SHAPES ON RIGHT)
        ========================================================================= -->
   <section class="section-padding" id="interactive-tool-section" style="padding: 2.25rem 0;">
-    <div class="container">
+    <div class="start-content-container">
       
       <div class="interactive-tool-card">
         
@@ -737,44 +773,27 @@
           </div>
         </div>
 
-        <!-- Right Column: Brand Shape & Decorative Element Graphic -->
-        <div style="display: flex; justify-content: center; align-items: center; position: relative;">
-          <!-- Glowing background circles -->
-          <div style="position: absolute; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(21, 154, 156, 0.2) 0%, rgba(21, 154, 156, 0) 70%); pointer-events: none;"></div>
-          <div style="position: absolute; width: 180px; height: 180px; border-radius: 50%; border: 1.5px dashed rgba(21, 154, 156, 0.3); pointer-events: none;"></div>
+        <!-- Right Column: Pure Abstract Geometric Design Shapes (No Text Data) -->
+        <div style="display: flex; justify-content: center; align-items: center; position: relative; height: 260px;">
+          <!-- Concentric Orbit Circles & Gradient Shapes -->
+          <div style="position: absolute; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(21, 154, 156, 0.18) 0%, rgba(14, 116, 144, 0) 70%); pointer-events: none;"></div>
+          <div style="position: absolute; width: 210px; height: 210px; border-radius: 50%; border: 2px dashed rgba(21, 154, 156, 0.25); pointer-events: none;"></div>
+          <div style="position: absolute; width: 150px; height: 150px; border-radius: 50%; border: 1.5px solid rgba(18, 48, 74, 0.12); pointer-events: none;"></div>
           
-          <!-- Glassmorphic Decision Diagram Graphic Card -->
-          <div style="position: relative; z-index: 2; width: 100%; max-width: 280px; background: #FFFFFF; border: 1.5px solid #CCFBF1; border-radius: 20px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.08); text-align: left;">
-            <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E2E8F0; padding-bottom: 0.75rem; margin-bottom: 0.85rem;">
-              <span style="font-size: 0.78rem; font-weight: 800; color: #12304A; text-transform: uppercase;">LLC Setup Matrix</span>
-              <span style="background: #E6F7F7; color: #159A9C; font-size: 0.68rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 6px;">2026 Ready</span>
+          <!-- Floating Brand Decorative Hexagon / Shield Node Graphic -->
+          <div style="position: relative; z-index: 2; width: 120px; height: 120px; border-radius: 28px; background: linear-gradient(135deg, #12304A 0%, #159A9C 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 35px rgba(21, 154, 156, 0.3); transform: rotate(45deg);">
+            <div style="transform: rotate(-45deg); text-align: center;">
+              <span style="font-size: 2.2rem;">🧩</span>
             </div>
+          </div>
 
-            <div style="display: flex; flex-direction: column; gap: 0.65rem;">
-              <div style="display: flex; align-items: center; gap: 0.65rem; background: #F8FAFC; padding: 0.5rem 0.75rem; border-radius: 10px; border: 1px solid #E2E8F0;">
-                <span style="font-size: 1rem;">🏛️</span>
-                <div>
-                  <div style="font-size: 0.75rem; font-weight: 700; color: #12304A;">Home State vs DE/WY</div>
-                  <div style="font-size: 0.68rem; color: #64748B;">Tax & Foreign Filings</div>
-                </div>
-              </div>
+          <!-- Small Accent Shape Orbits -->
+          <div style="position: absolute; top: 25px; right: 40px; width: 38px; height: 38px; border-radius: 12px; background: #FFFFFF; border: 1.5px solid #CCFBF1; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 6px 16px rgba(18, 48, 74, 0.08);">
+            ⚡
+          </div>
 
-              <div style="display: flex; align-items: center; gap: 0.65rem; background: #F0FDFA; padding: 0.5rem 0.75rem; border-radius: 10px; border: 1px solid #CCFBF1;">
-                <span style="font-size: 1rem;">⚖️</span>
-                <div>
-                  <div style="font-size: 0.75rem; font-weight: 700; color: #159A9C;">DIY vs Agent Service</div>
-                  <div style="font-size: 0.68rem; color: #0E7490;">Privacy & Cost Comparison</div>
-                </div>
-              </div>
-
-              <div style="display: flex; align-items: center; gap: 0.65rem; background: #F8FAFC; padding: 0.5rem 0.75rem; border-radius: 10px; border: 1px solid #E2E8F0;">
-                <span style="font-size: 1rem;">📋</span>
-                <div>
-                  <div style="font-size: 0.75rem; font-weight: 700; color: #12304A;">EIN & Banking Stack</div>
-                  <div style="font-size: 0.68rem; color: #64748B;">$0 IRS Direct Guidance</div>
-                </div>
-              </div>
-            </div>
+          <div style="position: absolute; bottom: 25px; left: 40px; width: 38px; height: 38px; border-radius: 12px; background: #FFFFFF; border: 1.5px solid #CCFBF1; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 6px 16px rgba(18, 48, 74, 0.08);">
+            🏛️
           </div>
         </div>
 
@@ -788,7 +807,7 @@
        6. STATE GUIDES BY DECISION TYPE
        ========================================================================= -->
   <section class="section-padding" id="decision-cards-section" style="padding: 2.25rem 0; background: #F8FAFC;">
-    <div class="container">
+    <div class="start-content-container">
       
       <div style="text-align: left; margin-bottom: 1.75rem;">
         <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.4rem;">
@@ -890,7 +909,7 @@
        7. CANONICAL 50-STATE TABLES (LIGHTER STATE NAMES & BRAND COLOR TAGS)
        ========================================================================= -->
   <section class="section-padding" id="canonical-tables-section" style="padding: 2.75rem 0;">
-    <div class="container">
+    <div class="start-content-container">
       
       <div style="text-align: left; margin-bottom: 1.75rem;">
         <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.4rem;">
@@ -1271,7 +1290,7 @@
        8. "HOW TO START AN LLC IN 5 STEPS" (LIGHTER BADGES & ENHANCED TIMELINE)
        ========================================================================= -->
   <section class="section-padding" id="timeline-5step-section" style="padding: 2.75rem 0; background: #F8FAFC;">
-    <div class="container">
+    <div class="start-content-container">
       
       <div style="text-align: left; margin-bottom: 1.75rem;">
         <div class="ls-kicker-pill" style="margin-bottom: 0.5rem;">
@@ -1370,7 +1389,7 @@
        9. REAL FOUNDER Q&A CARDS & "WHAT ACTUALLY MAKES UP THE COST OF AN LLC?"
        ========================================================================= -->
   <section class="section-padding" id="cost-breakdown-section" style="padding: 2.75rem 0;">
-    <div class="container">
+    <div class="start-content-container">
       
       <!-- Card 1: DIY vs Service Q&A Card -->
       <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 1.75rem 2rem; margin-bottom: 1.5rem; box-shadow: 0 4px 18px rgba(18, 48, 74, 0.04); text-align: left;">
@@ -1480,10 +1499,10 @@
            IMAGE 1 & IMAGE 2 COMPONENT INTEGRATIONS
            ========================================================================= -->
 
-      <!-- 1. Green Budgeting Rule Callout (From Image 1) -->
-      <div style="background: #F0FDF4; border: 1.5px solid #10B981; border-radius: 18px; padding: 1.5rem 1.75rem; margin-bottom: 2.25rem; text-align: left;">
-        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; font-weight: 800; color: #059669; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.65rem;">
-          <span style="font-size: 1rem;">💲</span> BUDGETING RULE
+      <!-- 1. Green Budgeting Rule Callout (Exact Image 1 Style & Colors) -->
+      <div class="budgeting-rule-box">
+        <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 800; color: #059669; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.65rem;">
+          <span style="font-size: 0.9rem;">💲</span> BUDGETING RULE
         </div>
         <h4 style="font-size: 1.05rem; font-weight: 800; color: #12304A; margin-bottom: 0.4rem;">
           Separate government obligations from optional services
@@ -1494,7 +1513,7 @@
       </div>
 
       <!-- 2. LLC Tools and Reference Paths Grid (From Image 1) -->
-      <div style="text-align: left; margin-bottom: 2.25rem;">
+      <div style="text-align: left; margin-bottom: 2.5rem;">
         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
           <span style="font-size: 1.5rem;">🛠️</span>
           <h3 style="font-size: 1.35rem; font-weight: 800; color: #12304A; margin: 0;">LLC Tools and Reference Paths</h3>
@@ -1547,10 +1566,8 @@
         </div>
       </div>
 
-      <!-- 3. Choosing a Formation State Banner Card (From Image 1) -->
-      <div style="background: #12304A; border-radius: 20px; padding: 1.75rem 2.25rem; margin-bottom: 2.75rem; text-align: left; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.15);">
-        <div style="position: absolute; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(21, 154, 156, 0.25) 0%, transparent 70%); top: -80px; right: -80px; pointer-events: none;"></div>
-
+      <!-- 3. Choosing a Formation State Banner Card (Deep Dark Navy Banner with Gradient Radial Shades) -->
+      <div class="choosing-state-banner">
         <div style="position: relative; z-index: 2;">
           <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.35rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.5rem; font-family: var(--font-heading);">
             <span>🏆</span> Choosing a Formation State
@@ -1571,7 +1588,7 @@
         </div>
       </div>
 
-      <!-- 4. Filing Yourself vs Using a Formation Service (Redesigned with Site Colors & Ambient Shapes - From Image 2) -->
+      <!-- 4. Filing Yourself vs Using a Formation Service (Image 2 Exact Layout & Pill Badge Colors) -->
       <div style="text-align: left; margin-bottom: 2.75rem;" id="service-comparison-section">
         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
           <span style="font-size: 1.5rem;">⭐</span>
@@ -1583,61 +1600,53 @@
           You can file a straightforward LLC directly with the state. A formation service is optional and is most useful when you want filing support, a professional registered agent, privacy-oriented address handling or a more organized compliance workflow.
         </p>
 
-        <!-- Redesigned Service Card with Brand Elements -->
+        <!-- Redesigned Service Card Matching Image 2 Structure -->
         <div class="nw-service-card">
-          <!-- Background Ambient Shapes -->
-          <div style="position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(21, 154, 156, 0.1) 0%, transparent 70%); top: -100px; right: -80px; pointer-events: none;"></div>
-          <div style="position: absolute; width: 220px; height: 220px; border-radius: 50%; border: 1.5px dashed rgba(21, 154, 156, 0.2); bottom: -60px; left: -60px; pointer-events: none;"></div>
+          <div style="margin-bottom: 1.5rem;">
+            <span class="nw-pill-badge">
+              OPTIONAL FORMATION SERVICE
+            </span>
+          </div>
 
-          <div style="position: relative; z-index: 2;">
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
-              <span class="ls-kicker-pill" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.35); color: #059669;">
-                <span class="ls-kicker-dot" style="background: #10B981;"></span>
-                OPTIONAL FORMATION SERVICE
-              </span>
-              <span style="font-size: 0.78rem; color: #94A3B8; font-weight: 600;">Price checked 08/31/2026</span>
+          <div style="display: grid; grid-template-columns: 0.35fr 1fr 0.4fr; gap: 2rem; align-items: center;">
+            
+            <!-- Provider Logo/Box -->
+            <div style="text-align: center;">
+              <div style="width: 68px; height: 68px; border-radius: 16px; background: #EFF6FF; border: 1px solid #DBEAFE; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; font-weight: 900; color: #2563EB; margin: 0 auto 0.65rem auto;">
+                NW
+              </div>
+              <div style="font-size: 0.9rem; font-weight: 800; color: #12304A;">Northwest Registered Agent</div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 0.35fr 1fr 0.4fr; gap: 2rem; align-items: center;">
-              
-              <!-- Provider Logo/Box -->
-              <div style="text-align: center;">
-                <div style="width: 72px; height: 72px; border-radius: 18px; background: #F0FDFA; border: 1.5px solid #CCFBF1; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900; color: #159A9C; margin: 0 auto 0.65rem auto;">
-                  NW
-                </div>
-                <div style="font-size: 0.9rem; font-weight: 800; color: #12304A;">Northwest Registered Agent</div>
-              </div>
+            <!-- Price Details & Bullet List -->
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">
+                One current price reference, not repeated across the hub
+              </h3>
+              <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; margin-bottom: 1rem;">
+                Northwest currently charges <strong style="color: #12304A;">$39 + state fees</strong> for formation, includes registered-agent service for the first year, and renews registered-agent service at <strong style="color: #12304A;">$125/year</strong> after that.
+              </p>
 
-              <!-- Price Details & Bullet List -->
-              <div>
-                <h3 style="font-size: 1.15rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">
-                  One current price reference, not repeated across the hub
-                </h3>
-                <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; margin-bottom: 1rem;">
-                  Northwest currently charges <strong style="color: #12304A;">$39 + state fees</strong> for formation, includes registered-agent service for the first year, and renews registered-agent service at <strong style="color: #12304A;">$125/year</strong> after that.
-                </p>
-
-                <ul style="display: flex; flex-direction: column; gap: 0.45rem; list-style: none; padding: 0; margin: 0; font-size: 0.875rem; color: #334155;">
-                  <li style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="color: #10B981; font-weight: 800;">✓</span> The formation price is separate from government fees
-                  </li>
-                  <li style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="color: #10B981; font-weight: 800;">✓</span> The first-year registered-agent inclusion is part of the formation offer
-                  </li>
-                  <li style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="color: #10B981; font-weight: 800;">✓</span> The registered-agent renewal is priced separately from the formation service
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Action Button on Right -->
-              <div style="text-align: center;">
-                <a href="index.html#northwest-section" class="ls-btn ls-btn--emerald" style="padding: 0.9rem 1.85rem; font-size: 0.95rem; border-radius: 9999px; background: #12304A; color: #FFFFFF; font-weight: 800; box-shadow: 0 6px 20px rgba(18, 48, 74, 0.2); text-decoration: none; display: inline-block;">
-                  See Northwest →
-                </a>
-              </div>
-
+              <ul style="display: flex; flex-direction: column; gap: 0.45rem; list-style: none; padding: 0; margin: 0; font-size: 0.875rem; color: #334155;">
+                <li style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: #10B981; font-weight: 800;">✓</span> The formation price is separate from government fees
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: #10B981; font-weight: 800;">✓</span> The first-year registered-agent inclusion is part of the formation offer
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: #10B981; font-weight: 800;">✓</span> The registered-agent renewal is priced separately from the formation service
+                </li>
+              </ul>
             </div>
+
+            <!-- Action Button on Right -->
+            <div style="text-align: center;">
+              <a href="index.html#northwest-section" class="ls-btn ls-btn--emerald" style="padding: 0.85rem 1.75rem; font-size: 0.9rem; border-radius: 10px; background: #2563EB; color: #FFFFFF; font-weight: 800; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); text-decoration: none; display: inline-block;">
+                See Northwest →
+              </a>
+            </div>
+
           </div>
         </div>
 
@@ -1654,7 +1663,7 @@
        10. QUESTIONS THIS HUB DOES NOT ANSWER ELSEWHERE (HOMEPAGE FAQ ACCORDION STYLE)
        ========================================================================= -->
   <section class="section-padding" id="faq-section" style="padding: 2.75rem 0; background: #F8FAFC;">
-    <div class="container">
+    <div class="start-content-container">
       
       <div style="text-align: left; margin-bottom: 2rem;">
         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
@@ -1747,7 +1756,7 @@
   </section>
 
 
-  <!-- FOOTER (EXACT HOMEPAGE FOOTER REPLICA) -->
+  <!-- FOOTER (EXACT HOMEPAGE FOOTER REPLICA 1:1) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
