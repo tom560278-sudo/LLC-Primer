@@ -185,8 +185,10 @@
       transform: translateY(-3px);
     }
 
-    /* FAQ Accordion Styling (Exact Homepage / Start-LLC Style) */
+    /* FAQ Accordion Styling (Exact Homepage / Start-LLC / What-Is-An-LLC Style) */
     .faq-accordion-wrapper {
+      width: 100%;
+      max-width: 100%;
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
@@ -280,6 +282,9 @@
       font-family: var(--font-heading);
     }
     .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
       margin-bottom: 1.25rem;
     }
     .guide-article a {
@@ -348,23 +353,8 @@
         </div>
 
         <div class="nav-item">
-          <a href="llc-guide.html" class="nav-link">
-            LLC Guides
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="dropdown-menu">
-            <a href="what-is-an-llc.html" class="dropdown-link"> What is an LLC</a>
-            <a href="index.html#states-section" class="dropdown-link"> Best State for LLC</a>
-            <a href="start-llc.html" class="dropdown-link"> How Much Does An LLC Cost</a>
-            <a href="index.html#states-section" class="dropdown-link"> What Are LLC Taxed</a>
-            <a href="index.html#states-section" class="dropdown-link"> LLC Operating Agreement</a>
-            <a href="index.html#states-section" class="dropdown-link"> Registered Agent Guide</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <a href="index.html#after-formation-section" class="nav-link">
-            Business Setup
+          <a href="llc-guide.html" class="nav-link active">
+            LLC Guide
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
@@ -423,10 +413,10 @@
 
     <article class="guide-article">
 
-      <!-- HERO SPEC BANNER CARD (EXACT MATCH TO IMAGE 1) -->
+      <!-- HERO SPEC BANNER CARD (EXACT MATCH TO IMAGE 1 WITH YELLOW DOT) -->
       <div class="llc-specs-card">
         <div class="ls-kicker-pill" style="background: rgba(21, 154, 156, 0.15); border-color: #159A9C; color: #FFFFFF; margin-bottom: 0.75rem;">
-          <span class="ls-kicker-dot" style="background: #159A9C; box-shadow: 0 0 10px #159A9C;"></span>
+          <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 8px #159A9C;"></span>
           🗺️ The Complete LLC Guide — 2026
         </div>
         <div style="font-size: 0.95rem; color: #CBD5E1; margin-bottom: 1.25rem;">
@@ -454,10 +444,10 @@
       </div>
 
       <!-- INTRO PARAGRAPHS -->
-      <p style="font-size: 1.05rem; line-height: 1.75; color: #334155;">
+      <p style="font-size: 1rem; line-height: 1.75; color: #334155;">
         Whether you are thinking about forming an LLC or you already have one, this guide covers everything. From understanding <strong>what an LLC is</strong> and how it compares to other structures, to <strong>LLC taxes, operating agreements, how to pay yourself</strong>, and how to keep your LLC in good standing every year.
       </p>
-      <p style="font-size: 1.05rem; line-height: 1.75; color: #334155;">
+      <p style="font-size: 1rem; line-height: 1.75; color: #334155;">
         Every article is written in plain English — no legal jargon, no filler. Use the sections below to jump directly to what you need right now.
       </p>
 
@@ -610,7 +600,7 @@
         </div>
 
         <div class="callout-box callout-blue">
-          <div style="font-size: 0.925rem; color: #0C4A6E; line-height: 1.6;">
+          <div style="font-size: 0.95rem; color: #0C4A6E; line-height: 1.6;">
             💡 <strong>Recommended Reading Order</strong>: Start with <a href="what-is-an-llc.html">What is an LLC?</a>, then <strong>LLC vs Sole Proprietorship</strong> to understand why most small business owners choose the LLC. Once you are ready to form, head to our <a href="index.html#states-section">state-by-state formation guides</a> for exact steps and costs in your state.
           </div>
         </div>
@@ -758,7 +748,7 @@
         </div>
 
         <div class="callout-box callout-teal">
-          <div style="font-size: 0.925rem; color: #0F766E; line-height: 1.6;">
+          <div style="font-size: 0.95rem; color: #0F766E; line-height: 1.6;">
             🔥 <strong>The Tax Strategy That Saves $5K–$15K Per Year</strong>: Once your LLC earns more than $75,000 in net profit consistently, the <strong>S-Corp election</strong> reduces your self-employment tax bill significantly. Combined with the permanent 20% QBI deduction, the savings compound every year. Use our <a href="index.html#cost-estimator-section">S-Corp savings calculator</a> to see your exact numbers.
           </div>
         </div>
@@ -812,95 +802,109 @@
           </table>
         </div>
 
-        <!-- LLC QUICK START CHECKLIST (EXACT MATCH TO IMAGE 3) -->
-        <h3 style="font-size: 1.5rem; font-weight: 800; color: #12304A; margin-top: 2.5rem; margin-bottom: 0.5rem;">
+        <!-- LLC QUICK START CHECKLIST (REFINED & ENHANCED DESIGN) -->
+        <h3 style="font-size: 1.5rem; font-weight: 800; color: #12304A; margin-top: 2.75rem; margin-bottom: 0.5rem;">
           LLC Quick Start Checklist
         </h3>
         <p style="font-size: 0.95rem; color: #64748B; margin-bottom: 1.25rem;">
           If you are forming your LLC right now, these are the steps in the correct order. Complete them all before your LLC makes or receives any money.
         </p>
 
-        <div class="custom-table-wrapper">
+        <div class="custom-table-wrapper" style="margin: 2rem 0;">
           <div class="custom-table-header">
-            ☑️ LLC Formation Checklist — 2026
+            <span>☑️</span> LLC Formation Checklist — 2026
           </div>
           <table class="custom-data-table">
             <tbody>
               <tr>
-                <td style="width: 30px; padding-left: 1.5rem;"><span style="color: #CBD5E1; font-size: 1.1rem;">☐</span></td>
-                <td style="padding: 1.15rem 1.25rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem;">Choose your formation state</div>
-                  <div style="font-size: 0.85rem; color: #64748B;">For most people, your home state is the right answer. See our best state to form an LLC guide if you are deciding between states.</div>
+                <td style="width: 45px; padding-left: 1.5rem; text-align: center;">
+                  <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 6px; background: #F0FDFA; border: 1.5px solid #159A9C; color: #159A9C; font-size: 0.85rem; font-weight: 800;">✓</span>
                 </td>
-                <td style="width: 80px; text-align: right; padding-right: 1.5rem;">
-                  <span style="background: #FEF2F2; color: #EF4444; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 6px;">STEP 1</span>
+                <td style="padding: 1.15rem 1.25rem;">
+                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">Choose your formation state</div>
+                  <div style="font-size: 0.85rem; color: #64748B; line-height: 1.5;">For most people, your home state is the right answer. See our best state to form an LLC guide if deciding between states.</div>
+                </td>
+                <td style="width: 100px; text-align: right; padding-right: 1.5rem;">
+                  <span style="background: #FEF2F2; color: #EF4444; font-size: 0.725rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 6px; display: inline-block;">STEP 1</span>
                 </td>
               </tr>
               <tr>
-                <td style="padding-left: 1.5rem;"><span style="color: #CBD5E1; font-size: 1.1rem;">☐</span></td>
+                <td style="padding-left: 1.5rem; text-align: center;">
+                  <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 6px; background: #F0FDFA; border: 1.5px solid #159A9C; color: #159A9C; font-size: 0.85rem; font-weight: 800;">✓</span>
+                </td>
                 <td style="padding: 1.15rem 1.25rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem;">File Articles of Organization + pay state fee</div>
-                  <div style="font-size: 0.85rem; color: #64748B;">Average filing fee is $132. See exact costs by state in our LLC cost guide. Use our LLC Cost Calculator for your specific state.</div>
+                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">File Articles of Organization + pay state fee</div>
+                  <div style="font-size: 0.85rem; color: #64748B; line-height: 1.5;">Average filing fee is $132. See exact costs by state in our LLC cost guide. Use our LLC Cost Calculator for your specific state.</div>
                 </td>
                 <td style="text-align: right; padding-right: 1.5rem;">
-                  <span style="background: #FEF2F2; color: #EF4444; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 6px;">STEP 2</span>
+                  <span style="background: #FEF2F2; color: #EF4444; font-size: 0.725rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 6px; display: inline-block;">STEP 2</span>
                 </td>
               </tr>
               <tr>
-                <td style="padding-left: 1.5rem;"><span style="color: #CBD5E1; font-size: 1.1rem;">☐</span></td>
+                <td style="padding-left: 1.5rem; text-align: center;">
+                  <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 6px; background: #F0FDFA; border: 1.5px solid #10B981; color: #10B981; font-size: 0.85rem; font-weight: 800;">✓</span>
+                </td>
                 <td style="padding: 1.15rem 1.25rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem;">Get your EIN from IRS.gov (free)</div>
-                  <div style="font-size: 0.85rem; color: #64748B;">Free, instant, and required to open a business bank account. See our EIN guide for step-by-step instructions. Never pay a service for this.</div>
+                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">Get your EIN from IRS.gov (free)</div>
+                  <div style="font-size: 0.85rem; color: #64748B; line-height: 1.5;">Free, instant, and required to open a business bank account. See our EIN guide for step-by-step instructions. Never pay a service for this.</div>
                 </td>
                 <td style="text-align: right; padding-right: 1.5rem;">
-                  <span style="background: #F0FDFA; color: #047857; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 6px;">FREE</span>
+                  <span style="background: #F0FDFA; color: #047857; font-size: 0.725rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 6px; display: inline-block;">FREE</span>
                 </td>
               </tr>
               <tr>
-                <td style="padding-left: 1.5rem;"><span style="color: #CBD5E1; font-size: 1.1rem;">☐</span></td>
+                <td style="padding-left: 1.5rem; text-align: center;">
+                  <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 6px; background: #F0FDFA; border: 1.5px solid #159A9C; color: #159A9C; font-size: 0.85rem; font-weight: 800;">✓</span>
+                </td>
                 <td style="padding: 1.15rem 1.25rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem;">Create your operating agreement</div>
-                  <div style="font-size: 0.85rem; color: #64748B;">Required in 5 states. Essential everywhere else. See our operating agreement guide to understand what to include and how to create one for free.</div>
+                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">Create your operating agreement</div>
+                  <div style="font-size: 0.85rem; color: #64748B; line-height: 1.5;">Required in 5 states. Essential everywhere else. See our operating agreement guide to understand what to include and how to create one for free.</div>
                 </td>
                 <td style="text-align: right; padding-right: 1.5rem;">
-                  <span style="background: #FEF2F2; color: #EF4444; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 6px;">STEP 3</span>
+                  <span style="background: #FEF2F2; color: #EF4444; font-size: 0.725rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 6px; display: inline-block;">STEP 3</span>
                 </td>
               </tr>
               <tr>
-                <td style="padding-left: 1.5rem;"><span style="color: #CBD5E1; font-size: 1.1rem;">☐</span></td>
+                <td style="padding-left: 1.5rem; text-align: center;">
+                  <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 6px; background: #F0FDFA; border: 1.5px solid #159A9C; color: #159A9C; font-size: 0.85rem; font-weight: 800;">✓</span>
+                </td>
                 <td style="padding: 1.15rem 1.25rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem;">Open a dedicated business bank account</div>
-                  <div style="font-size: 0.85rem; color: #64748B;">Non-negotiable. Commingling personal and business funds destroys your liability protection. See our best business bank accounts guide.</div>
+                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">Open a dedicated business bank account</div>
+                  <div style="font-size: 0.85rem; color: #64748B; line-height: 1.5;">Non-negotiable. Commingling personal and business funds destroys your liability protection. See our best business bank accounts guide.</div>
                 </td>
                 <td style="text-align: right; padding-right: 1.5rem;">
-                  <span style="background: #FEF2F2; color: #EF4444; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 6px;">STEP 4</span>
+                  <span style="background: #FEF2F2; color: #EF4444; font-size: 0.725rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 6px; display: inline-block;">STEP 4</span>
                 </td>
               </tr>
               <tr>
-                <td style="padding-left: 1.5rem;"><span style="color: #CBD5E1; font-size: 1.1rem;">☐</span></td>
+                <td style="padding-left: 1.5rem; text-align: center;">
+                  <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 6px; background: #FEFCE8; border: 1.5px solid #EAB308; color: #854D0E; font-size: 0.85rem; font-weight: 800;">✓</span>
+                </td>
                 <td style="padding: 1.15rem 1.25rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem;">Decide how to pay yourself correctly</div>
-                  <div style="font-size: 0.85rem; color: #64748B;">Owner's draw, guaranteed payments, or W-2 salary — each method has different tax implications. Read our how to pay yourself guide before transferring funds.</div>
+                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">Decide how to pay yourself correctly</div>
+                  <div style="font-size: 0.85rem; color: #64748B; line-height: 1.5;">Owner's draw, guaranteed payments, or W-2 salary — each method has different tax implications. Read our how to pay yourself guide before transferring funds.</div>
                 </td>
                 <td style="text-align: right; padding-right: 1.5rem;">
-                  <span style="background: #FEFCE8; color: #854D0E; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 6px;">TAX IMPACT</span>
+                  <span style="background: #FEFCE8; color: #854D0E; font-size: 0.725rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 6px; display: inline-block;">TAX IMPACT</span>
                 </td>
               </tr>
               <tr>
-                <td style="padding-left: 1.5rem;"><span style="color: #CBD5E1; font-size: 1.1rem;">☐</span></td>
+                <td style="padding-left: 1.5rem; text-align: center;">
+                  <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 6px; background: #F1F5F9; border: 1.5px solid #94A3B8; color: #475569; font-size: 0.85rem; font-weight: 800;">✓</span>
+                </td>
                 <td style="padding: 1.15rem 1.25rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem;">Set your annual report reminder</div>
-                  <div style="font-size: 0.85rem; color: #64748B;">Missing the deadline can result in your LLC being administratively dissolved. Check your state's deadline and fees in our annual report guide.</div>
+                  <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">Set your annual report reminder</div>
+                  <div style="font-size: 0.85rem; color: #64748B; line-height: 1.5;">Missing the deadline can result in your LLC being administratively dissolved. Check your state's deadline and fees in our annual report guide.</div>
                 </td>
                 <td style="text-align: right; padding-right: 1.5rem;">
-                  <span style="background: #F1F5F9; color: #475569; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 6px;">ONGOING</span>
+                  <span style="background: #F1F5F9; color: #475569; font-size: 0.725rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 6px; display: inline-block;">ONGOING</span>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <!-- FREE LLC TOOLS (EXACT MATCH TO IMAGE 3) -->
+        <!-- FREE LLC TOOLS -->
         <h3 style="font-size: 1.5rem; font-weight: 800; color: #12304A; margin-top: 2.75rem; margin-bottom: 0.5rem;">
           Free LLC Tools
         </h3>
@@ -970,7 +974,7 @@
           </div>
         </div>
 
-        <!-- READY TO FORM YOUR LLC? (EXACT MATCH TO IMAGE 3) -->
+        <!-- READY TO FORM YOUR LLC? (NORTHWEST CARD 1:1 REPLICA MATCHING WHAT-IS-AN-LLC) -->
         <div style="margin-top: 2.75rem;">
           <h3 style="font-size: 1.5rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">
             Ready to Form Your LLC?
@@ -979,22 +983,22 @@
             Once you have done your research, the next step is filing. Northwest Registered Agent is our top-rated formation service — transparent pricing, no upsells, and real humans who answer the phone.
           </p>
 
-          <div style="background: #FFFFFF; border: 2px solid #10B981; border-radius: 16px; padding: 1.5rem 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.08);">
+          <div style="background: #FFFFFF; border: 2px solid #10B981; border-radius: 16px; padding: 1.5rem 1.75rem; margin: 2rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.08);">
             <div>
               <span style="background: #10B981; color: #FFFFFF; font-size: 0.7rem; font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 0.5rem;">
                 ★ OUR TOP PICK
               </span>
               <div style="font-size: 1.2rem; font-weight: 800; color: #12304A; margin-bottom: 0.25rem;">Northwest Registered Agent</div>
               <div style="font-size: 0.9rem; color: #475569; margin-bottom: 0.35rem;">
-                Forms your LLC for $39 + state fee. Registered agent service included for the first year, operating agreement, and privacy protection. Available in all 50 states.
+                Northwest can help with LLC formation and registered-agent services, including options designed to keep your personal address from being used where a business address is permitted for public records.
               </div>
               <div style="font-size: 0.85rem; color: #047857; font-weight: 700;">
-                Starting at $39 + state fee
+                Starting at $39 + state fees · 1st year registered agent included
               </div>
             </div>
             <div>
-              <a href="index.html#northwest-section" class="ls-btn" style="background: #047857; color: #FFFFFF; padding: 0.85rem 1.65rem; border-radius: 10px; font-weight: 800; font-size: 0.925rem; display: inline-flex; align-items: center; gap: 0.4rem;">
-                Form Your LLC →
+              <a href="index.html#northwest-section" class="ls-btn" style="text-decoration:none; background: #0bb27a; color: #FFFFFF; padding: 0.85rem 1.65rem; border-radius: 10px; font-weight: 800; font-size: 0.925rem; display: inline-flex; align-items: center; gap: 0.4rem;">
+                See Full Review →
               </a>
             </div>
           </div>
@@ -1015,12 +1019,12 @@
       </section>
 
       <!-- =========================================================================
-           SECTION 8: FREQUENTLY ASKED QUESTIONS (EXACT MATCH TO IMAGE 4)
+           SECTION 8: FREQUENTLY ASKED QUESTIONS (100% FULL WIDTH ACCORDION MATCHING HOMEPAGE & START-LLC)
            ========================================================================= -->
       <section id="faq-section" style="margin-top: 3.5rem;">
         <div style="margin-bottom: 2rem;">
           <div class="ls-kicker-pill">
-            <span class="ls-kicker-dot"></span>
+            <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 8px #159A9C;"></span>
             FREQUENTLY ASKED QUESTIONS
           </div>
           <h2 style="font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 800; color: #12304A; margin-top: 0.5rem; font-family: var(--font-heading);">
@@ -1268,7 +1272,7 @@
           <b>Disclaimer:</b> LLC Starters is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Starters may earn a commission at no additional cost to you. See our Affiliate Disclosure.
         </div>
         <div>
-          © 2026 LLC Primer. All rights reserved. | <a href="">Privacy Policy</a> | <a href="">Terms of Service</a> |
+          © 2026 LLC Primer. All rights reserved. | <a href="javascript:void(0)">Privacy Policy</a> | <a href="javascript:void(0)">Terms of Service</a>
         </div>
       </div>
     </div>
