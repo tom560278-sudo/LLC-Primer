@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Scoped Content Container for Body Cards (Leaving Navbar & Footer at full homepage width) */
+ 
     .guide-content-container {
       max-width: 1080px;
       margin: 0 auto;
@@ -72,16 +73,16 @@
     }
     .toc-link {
       font-size: 0.925rem;
-      color: #159A9C;
-      font-weight: 600;
-      text-decoration: none;
+      color: #159A9C !important; 
+      font-weight: 600 !important;
+      text-decoration: none !important;
       display: inline-block;
       transition: color 0.2s ease, transform 0.2s ease;
     }
     .toc-link:hover {
-      color: #0E7490;
-      text-decoration: underline;
-      transform: translateX(3px);
+      color: #0E7490 !important;
+      text-decoration: underline !important;
+      /* transform: translateX(3px); */
     }
 
     /* Highlight Callout Boxes with Left Border Accent */
@@ -243,6 +244,8 @@
 
     /* Exact Homepage FAQ Accordion Styling */
     .faq-accordion-wrapper {
+      border-top: 0;
+      max-width: 1040px;
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
@@ -486,24 +489,24 @@
         What is an LLC?
       </h1>
       <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; color: #159A9C; margin-bottom: 1.5rem; line-height: 1.4;">
-        The Business Structure That Protects Your Assets Without the Corporate Headache
+          A Flexible Business Structure With Limited Liability Protection
       </p>
 
       <p>
-        A <strong>limited liability company (LLC)</strong> is a legal business entity created under state law that separates your personal assets from your business debts and lawsuits. In simple terms, <strong>what is an LLC?</strong> It's the structure that gives you the protection of a corporation with the simplicity of a sole proprietorship — and it's why over 35% of U.S. businesses operate as LLCs today.
-      </p>
+        A <strong>limited liability company (LLC)</strong> is a business entity created under state law. It generally separates the LLC's legal obligations from the personal assets of its members, which can help protect personal property from business debts and certain claims against the company. That protection is not absolute, however, and personal liability can still arise in situations such as personal guarantees, certain taxes, fraud, or failure to maintain appropriate separation between the business and its owners.
       <p>
-        Specifically, an LLC protects your home, personal savings, and personal vehicles from being seized to pay business debts or satisfy a lawsuit judgment. Without that protection, moreover, a single client dispute or business debt could threaten everything you own personally. This guide is part of our <a href="index.html#states-section">LLC Guide</a> and covers exactly how an LLC works, the 6 types, how it's taxed, what it costs, and whether you need one.
+       In simple terms, what is an LLC? An LLC combines flexible management and ownership rules with liability protection, while offering several federal tax-classification options. For federal income-tax purposes, a domestic single-member LLC is generally treated as a disregarded entity by default, while a domestic LLC with two or more members is generally treated as a partnership unless it elects corporate treatment. An eligible LLC can also elect to be taxed as an S corporation. 
       </p>
+      <p>This guide is part of our <a href="index.html#states-section">LLC Guide</a> and explains how LLCs work, ownership and management, federal tax treatment, formation costs, liability protection, and when an LLC may be appropriate.</p>
 
       <!-- HERO EXECUTIVE SUMMARY SPEC CARD -->
       <div class="llc-specs-card">
         <div class="ls-kicker-pill" style="background: rgba(21, 154, 156, 0.15); border-color: #159A9C; color: #FFFFFF; margin-bottom: 0.75rem;">
-          <span class="ls-kicker-dot" style="background: #159A9C; box-shadow: 0 0 10px #159A9C;"></span>
+          <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 10px #159A9C;"></span>
           LIMITED LIABILITY COMPANY (LLC)
         </div>
         <div style="font-size: 0.95rem; color: #CBD5E1; margin-bottom: 1.25rem;">
-          The most common business structure in the United States — 2026
+          A flexible business structure created under state law
         </div>
 
         <div class="llc-specs-grid">
@@ -567,25 +570,27 @@
         
         <h3>A Separate Legal Entity From Its Owners</h3>
         <p>
-          The moment you file <strong>Articles of Organization</strong> with your state's Secretary of State, your LLC becomes a separate legal entity. Consequently, it can own property, enter contracts, open bank accounts, and be sued — all independently of you as an individual. This separation is the foundation of everything the LLC does. Specifically, your personal assets exist on one side of a legal wall, and your business assets exist on the other.
+           An LLC is a <b>legal entity created under state law</b> when its formation documents are properly filed and the LLC becomes effective under the state's rules. Once formed, an LLC can generally own property, enter contracts, open business bank accounts, and bring or defend legal actions in its own name.
         </p>
         <p>
-          Furthermore, unlike a sole proprietorship — where you and the business are legally the same person — an LLC means a creditor suing your business can only reach what the LLC owns. Your personal home, savings, and vehicle remain on the protected side of that wall. As a result, this structure is why the LLC has become the default choice for freelancers, small business owners, real estate investors, and e-commerce sellers across the U.S.
+           This separation is a key part of an LLC's liability structure. The LLC's business assets and obligations are generally treated separately from the personal assets and obligations of its members. However, limited liability is <b>not absolute</b>. Personal guarantees, certain taxes, personal wrongdoing, and other circumstances can result in personal liability.
         </p>
         <p>
-          Many sole proprietors register a <strong>DBA (Doing Business As)</strong> to operate under a brand name — but a DBA doesn't create a separate legal entity and provides no liability protection. An LLC is a fundamentally different structure.
+            Unlike a sole proprietorship, where the owner and business are generally not separate legal entities, an LLC provides a formal legal structure between the business and its owners. Maintaining appropriate separation between personal and business finances and following applicable state requirements can help preserve that distinction.
         </p>
-
+        <p>
+          Many sole proprietors use a <b>DBA (Doing Business As)</b> to operate under a business or brand name. A DBA can provide a different operating name, but it <b>does not by itself create a separate legal entity or provide limited liability protection</b>. An LLC is a different legal structure with its own rights, obligations, and liability framework.
+        </p> 
         <h3>What You Need to Form an LLC</h3>
         <p>
-          Forming an LLC requires five core elements. Specifically, every state requires all of these before your LLC is legally active:
+           Forming an LLC involves several core requirements, although the exact rules, documents, and fees vary by state. Most states require a compliant business name, a registered agent, formation documents, and a state filing fee. An operating agreement is also useful for documenting how the LLC will be owned and managed, even when state law does not require one.
         </p>
 
         <!-- FORMATION REQUIREMENTS TABLE CARD -->
         <div class="custom-table-wrapper">
-          <div class="custom-table-header">
+          <!-- <div class="custom-table-header">
             LLC Formation Requirements — All 50 States
-          </div>
+          </div> -->
           <table class="custom-data-table">
             <thead>
               <tr>
@@ -597,28 +602,28 @@
             <tbody>
               <tr>
                 <td><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
-                <td style="font-weight: 700; color: #12304A;">A unique business name</td>
-                <td>Must include "LLC," "L.L.C.," or "Limited Liability Company." Must be distinguishable from other registered names in your state.</td>
+                <td style="font-weight: 700; color: #12304A;">A Compliant Business Name</td>
+                <td>Your LLC name must follow your state's naming rules and generally include an LLC designator such as “LLC,” “L.L.C.,” or “Limited Liability Company.” The name must also meet the state's availability or distinguishability requirements.</td>
               </tr>
               <tr>
                 <td><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
                 <td style="font-weight: 700; color: #12304A;">Articles of Organization</td>
-                <td>The formation document filed with your Secretary of State. Typically 1-2 pages. Requires your LLC name, address, registered agent, and management structure.</td>
+                <td>The formation document used to create the LLC under state law. Some states use a different name, such as Certificate of Formation or <b>Certificate of Organization</b>. Required information varies by state.</td>
               </tr>
               <tr>
                 <td><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
-                <td style="font-weight: 700; color: #12304A;">A registered agent</td>
-                <td>A person or company with a physical address in your state who receives official legal documents on your LLC's behalf. See our guide on choosing a registered agent.</td>
+                <td style="font-weight: 700; color: #12304A;">A Registered Agent</td>
+                <td>A person or business designated to receive official legal and state documents for the LLC. The registered agent must meet the state's address and availability requirements.</td>
               </tr>
               <tr>
                 <td><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
-                <td style="font-weight: 700; color: #12304A;">State filing fee</td>
-                <td>Paid to the Secretary of State to process your Articles of Organization. Ranges from $35 (Montana) to $500 (Massachusetts). Average across all 50 states: $132 in 2026.</td>
+                <td style="font-weight: 700; color: #12304A;">State Filing Fee</td>
+                <td>The government fee charged to submit the LLC's formation filing. The amount varies by state and may be accompanied by additional required costs in some states.</td>
               </tr>
               <tr>
                 <td><span style="color: #F59E0B; font-size: 1.1rem;">🟠</span></td>
-                <td style="font-weight: 700; color: #12304A;">Operating agreement <span style="font-weight:400; font-size:0.8rem; color:#64748B;">(recommended)</span></td>
-                <td>The internal document that governs how your LLC runs — ownership percentages, management structure, profit distribution, and decision-making rules. Not legally required in most states, but strongly recommended.</td>
+                <td style="font-weight: 700; color: #12304A;">Operating Agreement <span style="font-weight:400; font-size:0.8rem; color:#bc4a15;"><b>(Recommended)</b></span></td>
+                <td>An internal document that can define ownership, management, voting, profit distributions, and other operating rules. Requirements vary by state, and it generally does not need to be filed with the state.</td>
               </tr>
             </tbody>
           </table>
@@ -630,9 +635,9 @@
             <span>💡</span> After Formation: Two More Steps
           </div>
           <p style="margin: 0; font-size: 0.95rem; color: #334155;">
-            Once your LLC is approved, you still need two things before accepting any revenue: get an <strong>EIN from the IRS</strong> (free, 10 minutes) and open a dedicated <strong>business bank account</strong>. Mixing personal and business money is the single most common reason LLC protection fails in court. For official IRS guidance on LLC tax classification, see <a href="https://www.irs.gov/businesses/small-businesses-self-employed/limited-liability-company-llc" target="_blank" rel="noopener">IRS: Limited Liability Company</a>. See our complete guide on <a href="start-llc.html">how to start an LLC</a> for the full process.
-          </p>
-        </div>
+            Once your LLC is approved, get an <b>EIN if applicable</b> and open a dedicated <b>business bank account</b>. Keeping business and personal finances separate helps maintain clear financial records and supports the separation between you and your LLC. See the <a href="https://www.irs.gov/businesses/small-businesses-self-employed/limited-liability-company-llc" target="_blank" rel="noopener">IRS: Limited Liability Company</a> for tax guidance or our How to Start an <a href="">LLC guide</a> for the full process.
+        </p>
+          </div>
       </section>
 
       <!-- =========================================================================
@@ -641,17 +646,17 @@
       <section id="what-llc-protects">
         <h2>What an LLC Actually Protects — And What It Doesn't</h2>
 
-        <h3>The Three Asset Categories an LLC Shields</h3>
+        <h3>The Three Asset Categories an LLC Can Help Protect</h3>
         <p>
-          Personal asset protection is the primary reason most people form an LLC. Specifically, when a creditor wins a judgment against your LLC, they can only go after what the LLC owns — not what you own personally. The three categories of personal assets that an LLC shields are your <strong>financial accounts</strong> (personal bank accounts, investment portfolios), your <strong>real estate</strong> (personal home and property), and your <strong>personal property</strong> (vehicles, belongings, and other personal assets).
+            Personal asset protection is one of the main reasons people form an LLC. Generally, business creditors and claimants pursue assets owned by the LLC rather than the owner's separate personal assets. Personal assets may include <b>financial accounts</b> such as personal bank and investment accounts, real estate such as a personal home, and <b>personal property</b> such as vehicles and other belongings.
         </p>
         <p>
-          In practice, this means a client lawsuit, a vendor dispute, or a business bankruptcy cannot touch your personal savings. Furthermore, a landlord or supplier you owe money to cannot put a lien on your home. That protection is real, legally enforceable in every U.S. state, and worth significantly more than the $132 average formation cost.
+        This protection is not absolute. Personal liability can still arise from personal guarantees, personal wrongdoing, certain taxes or obligations, or circumstances where the legal separation between the owner and LLC is not properly maintained.
         </p>
 
-        <h3>Four Situations Where LLC Protection Can Fail</h3>
+        <h3>Four Situations That Can Put LLC Protection at Risk</h3>
         <p>
-          However, the protection is conditional — not absolute. Courts can "pierce the corporate veil" and hold you personally liable if you don't maintain the LLC correctly. The most common failure modes are:
+          LLC liability protection depends on the circumstances and applicable state law. Common issues that can create personal exposure include:
         </p>
 
         <!-- WARNING BOX WITH LEFT BORDER -->
@@ -660,15 +665,14 @@
             ⚠️ Four Things That Destroy LLC Protection
           </div>
           <ol style="margin: 0; padding-left: 1.25rem; color: #475569; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.95rem;">
-            <li><strong style="color: #12304A;">1. Commingling funds</strong> — Using the same bank account for personal and business transactions removes the legal separation the LLC depends on.</li>
-            <li><strong style="color: #12304A;">2. Personal guarantees</strong> — Signing personally on a business loan or lease makes you personally liable for that debt, regardless of the LLC structure.</li>
-            <li><strong style="color: #12304A;">3. Administrative dissolution</strong> — Failing to file annual reports or pay state fees causes your state to dissolve the LLC. A dissolved LLC has no liability protection.</li>
-            <li><strong style="color: #12304A;">4. Fraud or personal negligence</strong> — Courts disregard LLC protection entirely when the member personally commits fraud or directly causes harm to a third party.</li>
-          </ol>
+            <li><strong style="color: #12304A;">1. Commingling funds</strong> — Mixing personal and business finances can weaken the separation between the owner and LLC.</li>
+            <li><strong style="color: #12304A;">2. Personal Guarantees</strong> — Personally guaranteeing a business loan, lease, or other obligation can make you responsible for that debt.</li>
+            <li><strong style="color: #12304A;">3. Administrative Dissolution</strong> — Failing to maintain required filings or fees can cause an LLC to lose its active status and may affect its protections.</li>
+            <li><strong style="color: #12304A;">4. Personal Wrongdoing</strong> — An LLC generally does not protect an owner from liability for their own fraud, negligence, or other wrongful acts.</li>
         </div>
 
         <p>
-          Consequently, the operating agreement, separate bank account, and annual compliance are not optional extras — they're what makes the protection real. See our guide on creating an operating agreement to set this up correctly from day one.
+           Keeping separate finances, maintaining required records, following state compliance requirements, and using appropriate business documents can help preserve the LLC's legal separation.
         </p>
       </section>
 
@@ -680,77 +684,73 @@
 
         <h3>Choosing the Right Structure for Your Situation</h3>
         <p>
-          Not all limited liability companies are identical. The right type depends on how many owners you have, your industry, and whether you operate in multiple states. Understanding these differences before you file saves you from expensive restructuring later. Here's a clear breakdown of all 6 types:
+           LLCs can be structured in different ways depending on ownership, management, professional licensing, and state law. Some categories describe <b>who owns the LLC</b>, while others describe <b>how it is managed</b> or whether special state rules apply. Understanding these distinctions can help you choose an appropriate structure before filing.
         </p>
 
         <!-- 6 TYPES COMPARISON TABLE -->
         <div class="custom-table-wrapper">
-          <div class="custom-table-header">
+          <!-- <div class="custom-table-header">
             6 Types of LLCs Comparison Overview
-          </div>
+          </div> -->
           <div style="overflow-x: auto;">
             <table class="custom-data-table">
               <thead>
                 <tr>
                   <th>TYPE</th>
                   <th>OWNERS</th>
-                  <th>DEFAULT TAX</th>
-                  <th>BEST FOR</th>
-                  <th>AVAILABLE IN</th>
+                  <th>GENERAL TAX TREATMENT</th>
+                  <th>COMMON USE</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td style="font-weight: 800; color: #12304A;">Single-Member LLC</td>
-                  <td>1</td>
-                  <td>Schedule C (sole prop)</td>
-                  <td>Freelancers, solopreneurs, side businesses</td>
-                  <td><span style="color:#10B981; font-weight:700;">All 50 states</span></td>
+                  <td>1 Owner</td>
+                  <td>Generally disregarded for federal income tax purposes by default</td>
+                  <td>Freelancers, solo businesses, side businesses</td>
                 </tr>
                 <tr>
                   <td style="font-weight: 800; color: #12304A;">Multi-Member LLC</td>
-                  <td>2+</td>
-                  <td>Form 1065 (partnership)</td>
-                  <td>Partners, family businesses, co-founders</td>
-                  <td><span style="color:#10B981; font-weight:700;">All 50 states</span></td>
+                  <td>2+ Owners</td>
+                  <td>Generally partnership taxation by default</td>
+                  <td>Co-founders, partners, family businesses</td>
                 </tr>
                 <tr>
-                  <td style="font-weight: 800; color: #12304A;">Member-Managed</td>
-                  <td>Any</td>
-                  <td>Same as above</td>
-                  <td>Hands-on owners who run the business daily</td>
-                  <td><span style="color:#10B981; font-weight:700;">All 50 states</span></td>
+                  <td style="font-weight: 800; color: #12304A;">Member-Managed LLC</td>
+                  <td>Owners manage the business</td>
+                  <td>Depends on LLC's tax classification</td>
+                  <td>Owners actively running the business</td>
                 </tr>
                 <tr>
                   <td style="font-weight: 800; color: #12304A;">Manager-Managed</td>
-                  <td>Any</td>
-                  <td>Same as above</td>
-                  <td>Passive investors who appoint outside managers</td>
-                  <td><span style="color:#10B981; font-weight:700;">All 50 states</span></td>
+                  <td>Designated manager(s) handle operations</td>
+                  <td>Depends on LLC's tax classification</td>
+                  <td>Businesses with passive or non-managing members</td>
                 </tr>
                 <tr>
-                  <td style="font-weight: 800; color: #12304A;">PLLC (Professional)</td>
-                  <td>Licensed only</td>
-                  <td>Same as standard</td>
-                  <td>Doctors, lawyers, architects, accountants</td>
-                  <td>32 states + DC</td>
+                  <td style="font-weight: 800; color: #12304A;">PLLC (Professional LLC)</td>
+                  <td>Licensed professionals, where permitted</td>
+                  <td>Depends on LLC's tax classification</td>
+                  <td>Certain medical, legal, accounting, architectural, and other licensed practices</td>
                 </tr>
                 <tr>
                   <td style="font-weight: 800; color: #12304A;">Series LLC</td>
-                  <td>Any</td>
-                  <td>Per series</td>
-                  <td>Real estate investors with multiple properties</td>
-                  <td>22 states</td>
+                  <td>One LLC with separate series, where state law permits</td>
+                  <td>Depends on federal and state tax rules</td>
+                  <td>Businesses using separate series for assets or activities</td>
                 </tr>
               </tbody>
             </table>
+
           </div>
         </div>
+        <p><i><b>Important:</b> These categories can overlap. For example, an LLC can be single-member and manager-managed, or multi-member and member-managed. State availability and requirements for PLLCs and Series LLCs vary, so check the rules in the state where you plan to form the business.</i></p>
 
         <h3>Single-Member vs Multi-Member: The Key Difference</h3>
         <p>
-          The most important structural choice is whether your company has one owner or multiple owners. A <strong>single-member LLC</strong> is treated by the IRS as a "disregarded entity" — meaning the IRS ignores the entity and taxes you directly as if you were a sole proprietor. You report income on Schedule C of your personal Form 1040. By contrast, a <strong>multi-member LLC</strong> is treated as a partnership by default. It files Form 1065 with the IRS (deadline: March 15 annually), and each member receives a Schedule K-1 showing their share of income to report on their personal return.
+            The main structural difference is the number of owners. A <b>single-member LLC</b> is generally treated by the <a href="https://www.irs.gov/" target="_blank" rel="noopener">IRS</a> as a <b>disregarded entity</b> for federal income-tax purposes unless it elects corporate treatment. Its business income and expenses are generally reported on the owner's federal tax return, often using Schedule C for a business operated by an individual.
         </p>
+        <p><b>A multi-member LLC</b> is generally treated as a <b>partnership</b> for federal income-tax purposes unless it elects corporate treatment. The LLC generally files Form <b>1065</b>, and members typically receive <b>Schedule K-1</b> showing their allocated share of the partnership's income, deductions, and other items. Filing deadlines can vary depending on the tax year and circumstances.</p>
 
         <!-- REDESIGNED SINGLE VS MULTI MEMBER CLEAN CARD -->
         <div class="vs-comparison-card">
@@ -761,54 +761,56 @@
             <div class="vs-column">
               <div style="font-size: 1.15rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">Single-Member LLC</div>
               <ul class="vs-list">
-                <li><span style="color:#10B981; font-weight:800;">✓</span> 1 owner</li>
-                <li><span style="color:#10B981; font-weight:800;">✓</span> IRS: disregarded entity</li>
-                <li><span style="color:#10B981; font-weight:800;">✓</span> Files Schedule C (Form 1040)</li>
-                <li><span style="color:#10B981; font-weight:800;">✓</span> Tax deadline: April 15</li>
-                <li><span style="color:#10B981; font-weight:800;">✓</span> No Schedule K-1 needed</li>
-                <li><span style="color:#10B981; font-weight:800;">✓</span> Simplest structure available</li>
-                <li><span style="color:#10B981; font-weight:800;">✓</span> Can elect S-corp or C-corp taxation</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> 1 Owner</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> Disregarded entity by default for federal income tax</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> Business activity generally reported on the owner's tax return</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> No partnership Schedule K-1 required by default</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> Can elect corporate tax treatment if eligible</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> Often simpler to administer than a multi-member LLC</li>
               </ul>
             </div>
 
             <div class="vs-column" style="background: #F8FAFC;">
               <div style="font-size: 1.15rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">Multi-Member LLC</div>
               <ul class="vs-list">
-                <li><span style="color:#159A9C; font-weight:800;">✓</span> 2+ owners</li>
-                <li><span style="color:#159A9C; font-weight:800;">✓</span> IRS: partnership by default</li>
-                <li><span style="color:#159A9C; font-weight:800;">✓</span> Files Form 1065 + K-1s</li>
-                <li><span style="color:#159A9C; font-weight:800;">✓</span> Tax deadline: March 15</li>
-                <li><span style="color:#159A9C; font-weight:800;">✓</span> Each member gets K-1</li>
-                <li><span style="color:#159A9C; font-weight:800;">✓</span> Requires operating agreement</li>
-                <li><span style="color:#159A9C; font-weight:800;">✓</span> Can elect S-corp or C-corp taxation</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> 2+ Owners</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> Partnership taxation by default for federal income tax</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> Generally files Form 1065</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> Members generally receive Schedule K-1</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> Ownership and management rules should be documented clearly</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> Can elect corporate tax treatment if eligible</li>
               </ul>
             </div>
           </div>
-          <div style="background: #F0FDFA; border-top: 1px solid #CCFBF1; border-left: 5px solid #159A9C; padding: 1rem 1.5rem; font-size: 0.875rem; color: #0F766E; font-weight: 600;">
-            💡 <strong>For most first-time business owners:</strong> a single-member structure is the fastest, simplest, and cheapest option. You can always add members later by amending your operating agreement.
+          <div style="font-style:italic;background: #F0FDFA; border-top: 1px solid #CCFBF1; border-left: 5px solid #159A9C; padding: 1rem 1.5rem; font-size: 0.875rem; color: #0F766E; font-weight: 600;">
+            💡 <strong>Important:</strong> There is no single LLC structure that is right for every business. Your ownership, management, tax situation, and state requirements should all be considered before choosing a structure. Adding or removing members later may require updated agreements, state filings, tax changes, or other formal steps.
           </div>
         </div>
 
         <h3>PLLC: For Licensed Professionals</h3>
         <p>
-          <strong>Professional LLC (PLLC)</strong> is required in many states for licensed professionals — including doctors, lawyers, architects, engineers, and accountants. Specifically, this structure works the same as a standard company, but it adds licensing board approval requirements during formation. Additionally, PLLC members are protected from each other's malpractice — but each member remains personally liable for their own professional errors.
+         A <strong>Professional Limited Liability Company (PLLC)</strong> is a state-law business structure available to certain licensed professionals in states that permit it. Requirements vary by state and profession and may include professional licensing, ownership restrictions, or approval from a licensing authority.
         </p>
         <p>
-          California, notably, does not recognize PLLCs and requires licensed professionals to form Professional Corporations instead.
+         A PLLC can generally provide limited liability for business obligations, but it does not normally protect a professional from personal liability for their own malpractice or professional misconduct. Whether one professional can be liable for another member's professional acts also depends on applicable state law.
         </p>
+        <p>California, for example, does not provide a PLLC structure under its LLC law for licensed professional practices; certain professionals may instead need to use a professional corporation or another permitted entity structure.</p>
 
         <h3>Series LLC: For Multiple Assets or Properties</h3>
         <p>
-          A <strong>Series LLC</strong> allows one parent entity to create separate "series" — each with its own members, assets, and liabilities — under a single formation filing. As a result, real estate investors who own multiple properties can shield each property from the liabilities of others without forming a separate entity for each one. This structure is currently available in 22 states, including Texas, Delaware, Illinois, and Nevada. However, it's complex to maintain and requires strict financial separation between each series to preserve the protection.
+          A <strong>Series LLC</strong> is a special LLC structure permitted by certain states that can allow a parent LLC to establish separate series with distinct assets, members, or business activities. Where recognized and properly maintained, each series may receive separate liability treatment under state law.
+        </p>
+        <p>
+          This structure can be useful for businesses managing multiple properties or separate lines of activity, but the rules are complex and vary significantly by state. Requirements may include separate records, accounting, assets, and other formalities for each series. Before using a Series LLC, review the rules of the state involved and consider professional legal and tax advice.
         </p>
 
         <!-- CALLOUT BLUE -->
         <div class="callout-box callout-blue">
           <div style="font-weight: 800; color: #0369A1; font-size: 1rem; margin-bottom: 0.4rem;">
-            📊 Which Type Is Most Common?
+            📊 Which LLC Structure Fits Your Business?
           </div>
           <p style="margin: 0; font-size: 0.925rem; color: #0C4A6E;">
-            The single-member structure is by far the most common in the U.S. According to the IRS, limited liability companies now represent 71.7% of all partnerships filed — and the majority of those are single-owner structures. If you're starting a business alone, a single-member LLC is almost certainly the right starting point.
+            There is no single LLC structure that is appropriate for every business. A <b>Single-member LLC</b> may be a straightforward option for an individual owner, while a multi-member, manager-managed, professional, or Series LLC may make sense in different circumstances. Your ownership, business activities, state requirements, and tax objectives should guide the decision.
           </p>
         </div>
       </section>
@@ -817,12 +819,13 @@
            SECTION 4: How an LLC Is Taxed — All 4 Options
            ========================================================================= -->
       <section id="how-llc-is-taxed">
-        <h2>How an LLC Is Taxed — All 4 Options</h2>
+        <h2>How an LLC Is Taxed — 4 Federal Tax Classifications</h2>
 
-        <h3>The Entity Has No Tax Classification of Its Own</h3>
+        <h3>LLCs Can Have Different Federal Tax Classifications</h3>
         <p>
-          This surprises many new business owners: the IRS does not have a specific tax category for limited liability companies. Consequently, the tax treatment depends entirely on how many members it has — and whether it makes a tax election. There are four possible treatments, and the right one depends on your income level and goals. See our complete guide on how LLCs are taxed for a full breakdown of each option.
+          The <a href="https://www.irs.gov/" target="_blank" rel="noopener">IRS</a> does not treat an LLC as a separate federal income-tax classification by default. Instead, an LLC's federal tax treatment generally depends on the number of members and whether the LLC makes an election to be taxed as a corporation.
         </p>
+        <p>For federal tax purposes, an LLC may generally be treated as a <b>disregarded entity, partnership, S corporation, or C corporation</b>. The appropriate treatment depends on the LLC's ownership, elections, and circumstances. See our complete guide on [How LLCs Are Taxed] for a detailed explanation.</p>
 
         <!-- TAX OPTIONS OVERVIEW CARD -->
         <div class="custom-table-wrapper">
@@ -833,38 +836,38 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
               <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.15rem;">
                 <div style="font-size: 0.725rem; font-weight: 800; color: #159A9C; text-transform: uppercase;">SINGLE-MEMBER (DEFAULT)</div>
-                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">Schedule C — taxed like sole prop</div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">Reported on the owner's return</div>
               </div>
               <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.15rem;">
                 <div style="font-size: 0.725rem; font-weight: 800; color: #159A9C; text-transform: uppercase;">MULTI-MEMBER (DEFAULT)</div>
-                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">Form 1065 — taxed like partnership</div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">Form 1065 + Schedule K-1s</div>
               </div>
               <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.15rem;">
                 <div style="font-size: 0.725rem; font-weight: 800; color: #159A9C; text-transform: uppercase;">S-CORP ELECTION</div>
-                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">Form 2553 — salary + distributions</div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">Available to eligible LLCs</div>
               </div>
               <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.15rem;">
                 <div style="font-size: 0.725rem; font-weight: 800; color: #159A9C; text-transform: uppercase;">C-CORP ELECTION</div>
-                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">Form 8832 — 21% flat corporate rate</div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">Corporate tax treatment</div>
               </div>
               <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.15rem;">
                 <div style="font-size: 0.725rem; font-weight: 800; color: #159A9C; text-transform: uppercase;">SELF-EMPLOYMENT TAX RATE (2026)</div>
-                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">15.3% on net profit</div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">Varies by tax treatment</div>
               </div>
               <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.15rem;">
                 <div style="font-size: 0.725rem; font-weight: 800; color: #159A9C; text-transform: uppercase;">ENTITY-LEVEL INCOME TAX (DEFAULT)</div>
-                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">$0</div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">Depends on tax classification</div>
               </div>
             </div>
             <div style="font-size: 0.8rem; color: #64748B; font-style: italic;">
-              *Default taxation avoids double taxation entirely. Profits are taxed once, at the member level. No separate federal income tax return for the entity itself (single-member).
+              <i>Default federal tax treatment for many LLCs generally passes income through to the owner or owners rather than imposing a separate federal income tax at the LLC level. State and local taxes, employment taxes, and other obligations may still apply.</i>
             </div>
           </div>
         </div>
 
         <h3>Default Tax: Pass-Through and Self-Employment Tax</h3>
         <p>
-          By default, profits from your limited liability company pass directly to your personal tax return. The entity, therefore, pays no federal income tax at the entity level. Instead, you pay income tax at your personal bracket plus 15.3% self-employment tax on all net profit. Specifically, that 15.3% breaks down as 12.4% Social Security (on income up to $176,100 in 2026) and 2.9% Medicare (no cap). On $80,000 in net profit, consequently, that's $12,240 in SE tax alone — before income tax. One question that comes up immediately: once the money is in the LLC, what is the correct way to transfer it to yourself — and does it affect how much SE tax you owe? The answer depends entirely on your LLC structure and tax election.
+              Many LLCs receive <b>pass-through</b> tax treatment, meaning business income generally flows through to the owner or owners rather than being taxed at the LLC level. Self-employment tax may also apply, depending on the LLC's tax classification and the owner's circumstances.
         </p>
 
         <!-- CALLOUT YELLOW -->
@@ -873,58 +876,56 @@
             ⚠️ The Self-Employment Tax Reality
           </div>
           <p style="margin: 0; font-size: 0.925rem; color: #713F12;">
-            Self-employment tax hits every dollar of profit by default. At $100,000 net profit, you owe $15,300 in SE tax — money that pays no rent, hires no employees, and grows no business. That's why the S-corp election becomes worth considering once profits consistently exceed $60,000–$80,000/year. See the full breakdown in our LLC tax benefits guide.
+           Self-employment tax rules can be complex and do not apply identically to every LLC owner. An S-corp election may provide different tax treatment in some situations, but whether it makes financial sense depends on factors such as profit, reasonable compensation, payroll costs, and other tax considerations.
           </p>
         </div>
 
-        <h3>The S-Corp Election: Reducing SE Tax Above $60K</h3>
+        <h3>The S-Corp Election: When It May Affect Your Tax Bill</h3>
         <p>
-          A limited liability company can file Form 2553 to elect S-corporation tax treatment. As a result, instead of paying SE tax on all profit, you split income: you pay yourself a reasonable salary (subject to payroll taxes) and take the rest as distributions — which are not subject to SE tax. At $100,000 profit with a $60,000 salary, for example, you save approximately $6,120 in SE tax annually. For the full comparison, see our LLC vs S-Corp guide.
+          An LLC that meets the requirements can elect S corporation tax treatment by filing the appropriate election with the IRS. An S corporation generally pays its owner-employees through a reasonable salary, which is subject to employment taxes, while qualifying distributions may receive different tax treatment.
+        </p>
+        <p>
+          Whether an S-corp election reduces overall taxes depends on the owner's profit, reasonable compensation, payroll costs, administrative expenses, and other tax factors. There is <b>no universal $60,000 or $80,000 profit threshold</b> at which an S-corp election becomes beneficial.
         </p>
 
         <!-- S-CORP SAVINGS TABLE -->
         <div class="custom-table-wrapper">
-          <div class="custom-table-header">
+          <!-- <div class="custom-table-header">
             S-Corp Tax Savings Breakdown
-          </div>
+          </div> -->
           <table class="custom-data-table">
             <thead>
               <tr>
                 <th>NET PROFIT</th>
-                <th>SE TAX (DEFAULT)</th>
-                <th>SE TAX (S-CORP ELECTION)</th>
-                <th>ANNUAL SAVING</th>
+                <th>S-CORP TREATMENT</th>
+                <th>POTENTIAL BENEFIT</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td style="font-weight: 700;">$60,000</td>
-                <td>$9,180</td>
-                <td>~$5,508</td>
-                <td style="color: #047857; font-weight: 800;">-$3,672</td>
+                <td>Salary + qualifying distributions</td>
+                <td>Depends on circumstances</td>
               </tr>
               <tr>
                 <td style="font-weight: 700;">$80,000</td>
-                <td>$12,240</td>
-                <td>~$6,885</td>
-                <td style="color: #047857; font-weight: 800;">-$5,355</td>
+                <td>Salary + qualifying distributions</td>
+                <td>Depends on circumstances</td>
               </tr>
               <tr>
                 <td style="font-weight: 700;">$100,000</td>
-                <td>$15,300</td>
-                <td>~$9,180</td>
-                <td style="color: #047857; font-weight: 800;">-$6,120</td>
+                <td>Salary + qualifying distributions</td>
+                <td>Depends on circumstances</td>
               </tr>
               <tr>
                 <td style="font-weight: 700;">$150,000</td>
-                <td>$22,950</td>
-                <td>~$11,475</td>
-                <td style="color: #047857; font-weight: 800;">-$11,475</td>
+                <td>Salary + qualifying distributions</td>
+                <td>Depends on circumstances</td>
               </tr>
             </tbody>
           </table>
           <div style="padding: 0.85rem 1.5rem; background: #F8FAFC; font-size: 0.8rem; color: #64748B;">
-            *S-corp salary assumed at 60% of profit. Admin costs ($2,000–$3,500/yr) reduce net savings. Consult a CPA.
+           <i>An <b>S-corp</b> election can add payroll, tax-filing, and administrative requirements. The appropriate salary must be reasonable for the services performed. Consult a qualified tax professional before making an election.</i>
           </div>
         </div>
       </section>
@@ -935,110 +936,102 @@
       <section id="llc-costs">
         <h2>What an LLC Costs to Form and Maintain</h2>
 
-        <h3>First-Year vs Ongoing Annual Costs</h3>
+        <h3>First-Year vs. Ongoing Costs</h3>
         <p>
-          The cost of forming a limited liability company is predictable and front-loaded. The formation fee is a one-time expense. After that, you pay a registered agent and an annual report fee — both recurring costs that vary by state. Here's the honest breakdown. For state-by-state numbers, see our full guide on how much an LLC costs.
+          The cost of forming and maintaining an LLC varies by state and by the services you choose. The main costs can include the state formation filing, registered-agent service, recurring state filings or taxes, and optional professional services.
         </p>
 
         <!-- TYPICAL COST BREAKDOWN CARD -->
         <div class="custom-table-wrapper">
-          <div class="custom-table-header">
+          <!-- <div class="custom-table-header">
             LLC — Typical Cost Breakdown (2026)
-          </div>
+          </div> -->
           <table class="custom-data-table">
             <thead>
               <tr>
                 <th>FEE / ITEM</th>
-                <th style="text-align: right;">ESTIMATED COST</th>
+                <th style="text-align: right;">TYPICAL COST</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-weight: 700;">📄 State filing fee <span style="font-weight:400; font-size:0.8rem; color:#64748B;">(one-time)</span></td>
-                <td style="font-weight: 800; color: #12304A; text-align: right;">$35–$500</td>
+                <td style="font-weight: 700;">📄 State Filing Fee</td>
+                <td style="font-weight: 800; color: #12304A; text-align: right;">Varies by state</td>
               </tr>
               <tr>
-                <td style="font-weight: 700;">👤 Registered agent <span style="font-weight:400; font-size:0.8rem; color:#64748B;">(annual)</span></td>
-                <td style="font-weight: 800; color: #12304A; text-align: right;">$39–$125/yr</td>
+                <td style="font-weight: 700;">👤 Registered Agent</td>
+                <td style="font-weight: 800; color: #12304A; text-align: right;">$0 if self-managed or typically $100–$300+/yr</td>
               </tr>
               <tr>
-                <td style="font-weight: 700;">📋 Annual report <span style="font-weight:400; font-size:0.8rem; color:#64748B;">(most states)</span></td>
-                <td style="font-weight: 800; color: #12304A; text-align: right;">$0–$300/yr</td>
+                <td style="font-weight: 700;">📋 Annual Report</td>
+                <td style="font-weight: 800; color: #12304A; text-align: right;">Varies by state</td>
               </tr>
               <tr>
-                <td style="font-weight: 700;">📜 Operating agreement <span style="font-weight:400; font-size:0.8rem; color:#64748B;">(one-time)</span></td>
-                <td style="font-weight: 800; color: #047857; text-align: right;">Free–$200</td>
+                <td style="font-weight: 700;">📜 Operating Agreement</td>
+                <td style="font-weight: 800; color: #047857; text-align: right;">$0 if self-prepared or optional professional cost</td>
               </tr>
               <tr>
                 <td style="font-weight: 700;">🏛️ EIN from IRS</td>
                 <td style="font-weight: 800; color: #047857; text-align: right;">Free</td>
               </tr>
               <tr>
-                <td style="font-weight: 700;">✨ Formation service <span style="font-weight:400; font-size:0.8rem; color:#64748B;">(optional)</span></td>
-                <td style="font-weight: 800; color: #159A9C; text-align: right;">$0–$149</td>
-              </tr>
-              <tr style="background: #F0FDFA;">
-                <td style="font-weight: 900; font-size: 1.05rem; color: #12304A;">Typical first-year total</td>
-                <td style="font-weight: 900; font-size: 1.25rem; color: #12304A; text-align: right;">$150–$900</td>
+                <td style="font-weight: 700;">✨ Formation services</td>
+                <td style="font-weight: 800; color: #159A9C; text-align: right;">$0 if DIY; optional service fees vary</td>
               </tr>
             </tbody>
           </table>
-          <div style="padding: 0.85rem 1.5rem; background: #F8FAFC; font-size: 0.8rem; color: #64748B;">
-            Average formation filing fee across all 50 states: $132 (2026). Ongoing annual cost after year one: $100–$500 depending on state and registered agent.
+          <div style="font-style: italic;padding: 0.85rem 1.5rem; background: #F8FAFC; font-size: 0.8rem; color: #64748B;">
+              Your total cost depends on the state, business activity, required filings or taxes, and optional services you choose. See our state-by-state LLC cost guide for specific figures.
           </div>
         </div>
 
-        <h3>States With the Lowest and Highest Formation Costs</h3>
+        <h3>States With Different Formation Cost Structures</h3>
         
         <div class="custom-table-wrapper">
           <table class="custom-data-table">
             <thead>
               <tr>
                 <th>STATE</th>
-                <th>FILING FEE</th>
-                <th>ANNUAL FEE</th>
-                <th>FIRST-YEAR TOTAL</th>
+                <th>FORMATION FEE</th>
+                <th>RECURRING COST / REQUIREMENT</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td style="font-weight: 800;">Missouri</td>
-                <td>$50</td>
-                <td>$0</td>
-                <td style="color: #047857; font-weight: 800;">~$50</td>
+                <td>Varies by filing method</td>
+                <td>No standard LLC annual report</td>
               </tr>
               <tr>
                 <td style="font-weight: 800;">New Mexico</td>
                 <td>$50</td>
-                <td>$0</td>
-                <td style="color: #047857; font-weight: 800;">~$50</td>
+                <td>No standard LLC annual report</td>
               </tr>
               <tr>
                 <td style="font-weight: 800;">Colorado</td>
                 <td>$50</td>
-                <td>$25/yr</td>
-                <td style="color: #047857; font-weight: 800;">~$75</td>
+                <td>$25 annual periodic report</td>
               </tr>
               <tr>
                 <td style="font-weight: 800;">California</td>
                 <td>$70</td>
-                <td>$800 min. tax</td>
-                <td style="color: #DC2626; font-weight: 800;">~$870+</td>
+                <td>$800 annual LLC tax + applicable filings</td>
               </tr>
               <tr>
                 <td style="font-weight: 800;">Nevada</td>
-                <td>$75</td>
-                <td>$350/yr</td>
-                <td style="color: #DC2626; font-weight: 800;">~$425</td>
+                <td>$425 initial state fees</td>
+                <td>Annual list and business-license requirements</td>
               </tr>
               <tr>
                 <td style="font-weight: 800;">Massachusetts</td>
                 <td>$500</td>
-                <td>$500/yr</td>
-                <td style="color: #DC2626; font-weight: 800;">~$1,000</td>
+                <td>$500 annual report</td>
               </tr>
             </tbody>
           </table>
+          <div style="font-style: italic;padding: 0.85rem 1.5rem; background: #F8FAFC; font-size: 0.8rem; color: #64748B;">
+             State fees and requirements can change. Always verify the current amount and filing requirements with the relevant state agency before submitting a filing.
+          </div>
         </div>
 
         <div class="callout-box callout-teal">
@@ -1046,7 +1039,7 @@
             📍 Form in Your Home State
           </div>
           <p style="margin: 0; font-size: 0.95rem; color: #334155;">
-            For most small businesses, forming in your home state is the right choice — even if Wyoming or Delaware seem cheaper. If you register out of state, you'll likely need to register as a foreign entity in your operating state, which means paying fees in both places. See our guide on the best state to form your LLC before deciding.
+         If your business operates primarily in your home state, forming there may be simpler and avoid the additional costs and compliance requirements that can come with registering an out-of-state LLC as a foreign entity. Wyoming or Delaware may make sense in certain situations, but there is no universally best state for every business.
           </p>
         </div>
       </section>
@@ -1057,18 +1050,18 @@
       <section id="how-to-form-llc">
         <h2>How to Form an LLC — 5 Steps</h2>
 
-        <h3>The Formation Process from Start to Approval</h3>
+        <h3>The Formation Process From Start to Approval</h3>
         <p>
-          Forming an LLC is simpler than most people expect. In most states, moreover, you can complete the entire process online in under an hour. Here are the five steps, in the order you need to complete them:
+           Forming an LLC involves a few key steps, although requirements, fees, and processing times vary by state. Use these five steps as a general roadmap, then confirm the exact requirements with your state's official agency.
         </p>
 
         <!-- STEP 1 -->
         <div class="step-item-card">
           <div class="step-number-circle">1</div>
           <div>
-            <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Choose your state and check name availability</div>
+            <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Choose Your State & Check Name Availability</div>
             <div style="font-size: 0.925rem; color: #475569;">
-              Form your LLC in the state where you live and operate. Then, specifically, search your state's Secretary of State business name database to confirm your chosen name is available. Your name must include "LLC," "L.L.C.," or "Limited Liability Company" — and it must be distinguishable from other registered businesses in that state.
+               Choose the state where you plan to form your LLC, considering where your business operates and any foreign-qualification requirements. Then check your state's business-name database to confirm your proposed name meets state naming and availability rules.
             </div>
           </div>
         </div>
@@ -1077,9 +1070,9 @@
         <div class="step-item-card">
           <div class="step-number-circle">2</div>
           <div>
-            <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Appoint a registered agent</div>
+            <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Appoint a Registered Agent</div>
             <div style="font-size: 0.925rem; color: #475569;">
-              Every LLC is required to have a registered agent in its formation state. Your registered agent receives official legal documents — such as lawsuits and state notices — on the LLC's behalf. You can be your own agent if you have a physical address in the state, or use a professional service for $39–$125/year for added privacy — see our best registered agent services comparison, or go directly with <a href="index.html#northwest-section">Northwest ($39/year)</a>, our top pick.
+                LLCs generally must designate a registered agent that meets the state's requirements. The agent receives official legal and state documents on the LLC's behalf. Depending on state rules, you may be able to serve as your own agent or hire a professional registered-agent service.
             </div>
           </div>
         </div>
@@ -1088,9 +1081,9 @@
         <div class="step-item-card">
           <div class="step-number-circle">3</div>
           <div>
-            <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">File Articles of Organization and pay the state fee</div>
+            <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">File the Formation Document & Pay the State Fee</div>
             <div style="font-size: 0.925rem; color: #475569;">
-              Submit your Articles of Organization through your state's Secretary of State website. Pay the filing fee ($35–$500, average $132). Processing time ranges from same-day in some states to 2–3 weeks in others. Expedited processing is available in most states for an additional fee.
+              Submit your state's required formation document, such as <b>Articles of Organization or a Certificate of Formation</b>, and pay the applicable filing fee. Costs, filing methods, required information, and processing times vary by state. Some states also offer expedited processing for an additional fee.
             </div>
           </div>
         </div>
@@ -1099,9 +1092,9 @@
         <div class="step-item-card">
           <div class="step-number-circle">4</div>
           <div>
-            <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Create an operating agreement</div>
+            <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Create an Operating Agreement</div>
             <div style="font-size: 0.925rem; color: #475569;">
-              Draft an operating agreement that defines ownership percentages, management structure, profit distribution, and decision-making rules. Furthermore, even if your state doesn't require it, this document is critical for maintaining the legal separation that makes LLC protection enforceable. Free templates exist, but professional review is worthwhile for multi-member LLCs.
+                An operating agreement can document ownership, management, voting, profit distributions, and other rules for running the LLC. Requirements vary by state, and the agreement generally does not need to be filed with the state. Professional review may be useful for complex or multi-member businesses.
             </div>
           </div>
         </div>
@@ -1110,9 +1103,9 @@
         <div class="step-item-card">
           <div class="step-number-circle">5</div>
           <div>
-            <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Get your EIN and open a business bank account</div>
+            <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Get an EIN if Applicable & Open a Business Bank Account</div>
             <div style="font-size: 0.925rem; color: #475569;">
-              Apply for a free Employer Identification Number (EIN) at IRS.gov — takes 10 minutes, instantly issued online. Then, immediately, open a dedicated business bank account in your LLC's name. All business revenue and expenses must flow through this account — never your personal one. This single step is what makes the liability protection real in court.
+                An EIN is available directly from the <a href="https://www.irs.gov/" target="_blank" rel="noopener">IRS</a> at no charge when your LLC needs one. After formation, consider opening a dedicated business bank account and keeping business and personal finances separate. Maintaining clear records and respecting the LLC's separate legal status can help preserve the distinction between the business and its owners.
             </div>
           </div>
         </div>
@@ -1122,7 +1115,7 @@
             🛠️ Do It Yourself or Use a Service?
           </div>
           <p style="margin: 0; font-size: 0.925rem; color: #0C4A6E;">
-            You can form an LLC yourself directly through your state's website — no service required. However, if you want to save time or want your personal address kept off public records, a formation service handles the paperwork and often includes registered agent service. Compare options in our best LLC formation services guide. Additionally, once your LLC is approved, follow our post-formation checklist to complete every remaining setup step correctly.
+         You can generally form an LLC yourself by following your state's filing instructions, without paying for a formation service. A service may be useful if you want filing assistance, a professional registered agent, privacy-focused address options, or additional administrative support. Compare providers in our LLC Formation Services Guide. After your LLC is approved, use our Post-Formation Checklist to organize the remaining setup steps.
           </p>
         </div>
       </section>
@@ -1133,63 +1126,63 @@
       <section id="do-you-need-llc">
         <h2>Do You Actually Need an LLC?</h2>
 
-        <h3>The Income and Risk Threshold That Matters</h3>
+        <h3>Consider Liability, Cost & Your Business Situation</h3>
         <p>
-          Not every business needs an LLC immediately. However, most businesses need one sooner than their owners think. The two factors that determine whether you need an LLC right now are your liability exposure and your revenue level. Specifically, if you have any of the following, forming an LLC should be a priority — not a "someday" task:
+           Not every business needs an LLC immediately, and there is no universal revenue level that determines when you should form one. Consider factors such as your liability exposure, business activity, personal assets, ownership structure, state requirements, and tax situation.
         </p>
 
         <!-- FORM AN LLC IF ANY OF THESE APPLY TABLE CARD -->
         <div class="custom-table-wrapper" style="margin: 2rem 0;">
           <div class="custom-table-header">
-            Form an LLC If Any of These Apply
+            Consider Forming an LLC If These Apply
           </div>
           <table class="custom-data-table">
             <tbody>
               <tr>
                 <td style="width: 40px; padding-left: 1.5rem;"><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
                 <td style="padding: 1.25rem 1.5rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You have personal assets worth protecting</div>
-                  <div style="font-size: 0.9rem; color: #64748B;">A home, savings, investments, or a vehicle. Without an LLC, a business lawsuit can reach all of these directly.</div>
+                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You Have Personal Assets to Protect</div>
+                  <div style="font-size: 0.9rem; color: #64748B;">An LLC may help separate eligible business liabilities from your personal assets, subject to important exceptions.</div>
                 </td>
               </tr>
               <tr>
                 <td style="padding-left: 1.5rem;"><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
                 <td style="padding: 1.25rem 1.5rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You work directly with clients or customers</div>
-                  <div style="font-size: 0.9rem; color: #64748B;">Service businesses, e-commerce, contractors, and consultants all face liability from work quality, product defects, or client disputes.</div>
+                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You Work With Clients or Customers</div>
+                  <div style="font-size: 0.9rem; color: #64748B;">Contracts, products, services, and business activities can create potential liability exposure.</div>
                 </td>
               </tr>
               <tr>
                 <td style="padding-left: 1.5rem;"><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
                 <td style="padding: 1.25rem 1.5rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You're hiring employees or contractors</div>
-                  <div style="font-size: 0.9rem; color: #64748B;">Employment-related claims — wrongful termination, workplace injuries, discrimination — expose you personally without an LLC.</div>
+                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You Hire Employees or Contractors</div>
+                  <div style="font-size: 0.9rem; color: #64748B;">Employment and workplace responsibilities can create additional business risks and compliance obligations.</div>
                 </td>
               </tr>
               <tr>
                 <td style="padding-left: 1.5rem;"><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
                 <td style="padding: 1.25rem 1.5rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">Your annual revenue exceeds $30,000</div>
-                  <div style="font-size: 0.9rem; color: #64748B;">At this level, the LLC's annual cost ($150–$400/year) is less than 1.2% of revenue — and the protection it provides is worth significantly more.</div>
+                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You Want a Separate Business Structure</div>
+                  <div style="font-size: 0.9rem; color: #64748B;">An LLC can provide a formal ownership, management, and financial structure for your business.</div>
                 </td>
               </tr>
               <tr>
                 <td style="padding-left: 1.5rem;"><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
                 <td style="padding: 1.25rem 1.5rem;">
-                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You want business credibility and a dedicated bank account</div>
-                  <div style="font-size: 0.9rem; color: #64748B;">Clients, banks, and vendors treat an LLC differently than an individual. Additionally, an LLC name on invoices and contracts signals legitimacy.</div>
+                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You Want Flexible Tax Options</div>
+                  <div style="font-size: 0.9rem; color: #64748B;">Depending on eligibility, an LLC can use different federal tax classifications.</div>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <h3>When You Can Wait to Form an LLC</h3>
+        <h3>When You May Choose to Wait</h3>
         <p>
-          That said, not everyone needs an LLC immediately. Specifically, if you're testing a business idea with under $10,000 in revenue, no client liability risk, and no personal assets to protect — a sole proprietorship is a reasonable starting point. Nevertheless, once the business becomes real and recurring income starts, the cost of forming an LLC is trivially small compared to the exposure of operating without one.
+           If you're only testing an idea, have limited business activity, and face relatively low liability exposure, operating as a sole proprietor may be a reasonable starting point. However, review your state's rules, business risks, insurance needs, and tax considerations before deciding.
         </p>
         <p>
-          The U.S. Small Business Administration also recommends evaluating your liability exposure before choosing a structure.
+          There is no one-size-fits-all revenue threshold for forming an LLC. As your business grows or your liability exposure changes, reassess whether your current structure still fits your situation.
         </p>
 
         <!-- ENHANCED BOTTOM LINE SUMMARY CARD WITH AMBIENT SHADES & GLOW SHAPES -->
@@ -1202,19 +1195,19 @@
 
           <div style="position: relative; z-index: 2;">
             <div class="ls-kicker-pill" style="background: rgba(21, 154, 156, 0.18); border-color: #159A9C; color: #FFFFFF; margin-bottom: 1rem;">
-              <span class="ls-kicker-dot" style="background: #159A9C; box-shadow: 0 0 10px #159A9C;"></span>
+              <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 10px #159A9C;"></span>
               BOTTOM LINE: WHAT IS AN LLC?
             </div>
 
-            <div style="font-size: clamp(1.05rem, 2vw, 1.2rem); line-height: 1.75; color: #F8FAFC; font-weight: 500; max-width: 960px;">
-              An LLC is the legal structure that separates your personal assets from your business risks — formed in your state, owned by members, taxed by default as a pass-through entity, and maintained through simple annual compliance. It's the most popular business structure in the U.S. for a reason: it solves the three biggest problems small business owners face — <strong style="color: #159A9C;">personal liability</strong>, <strong style="color: #159A9C;">tax flexibility</strong>, and <strong style="color: #159A9C;">operational simplicity</strong> — at a cost most businesses can afford from day one.
+            <div style="font-size: clamp(1.05rem, 1vw, 1.2rem) !important; line-height: 1.75; color: #F8FAFC; font-weight: 500; max-width: 960px;">
+                An LLC is a state-law business structure that can help separate business obligations from the personal assets of its owners. It offers flexible management and federal tax-classification options, but its protections are not absolute. The right time to form one depends on your business activities, risks, state requirements, ownershi
             </div>
 
-            <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+            <!-- <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
               <a href="start-llc.html" class="ls-btn ls-btn--emerald" style="padding: 0.85rem 1.75rem; font-size: 0.95rem; font-weight: 800; background: var(--color-primary-gradient); box-shadow: 0 6px 20px rgba(21, 154, 156, 0.35);">
                 How to Start an LLC in Your State →
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -1222,24 +1215,24 @@
         <div style="background: #FFFFFF; border: 2px solid #10B981; border-radius: 16px; padding: 1.5rem 1.75rem; margin: 2rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.08);">
           <div>
             <span style="background: #10B981; color: #FFFFFF; font-size: 0.7rem; font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 0.5rem;">
-              ★ OUR TOP PICK
+              ★ FORMATION SERVICE OPTION
             </span>
             <div style="font-size: 1.2rem; font-weight: 800; color: #12304A; margin-bottom: 0.25rem;">Northwest Registered Agent</div>
             <div style="font-size: 0.9rem; color: #475569; margin-bottom: 0.35rem;">
-              Forms your LLC and serves as your registered agent — keeps your personal address off public records.
+               Northwest can help with LLC formation and registered-agent services, including options designed to keep your personal address from being used where a business address is permitted for public records.
             </div>
             <div style="font-size: 0.85rem; color: #047857; font-weight: 700;">
-              Formation from $39 + state fee — registered agent renews at $125/year
+              Formation from $39 + state fees · Registered-agent service renews separately
             </div>
           </div>
           <div>
-            <a href="index.html#northwest-section" class="ls-btn" style="background: #047857; color: #FFFFFF; padding: 0.85rem 1.65rem; border-radius: 10px; font-weight: 800; font-size: 0.925rem; display: inline-flex; align-items: center; gap: 0.4rem;">
+            <a href="index.html#northwest-section" class="ls-btn" style="text-decoration:none; background: #0bb27a; color: #FFFFFF; padding: 0.85rem 1.65rem; border-radius: 10px; font-weight: 800; font-size: 0.925rem; display: inline-flex; align-items: center; gap: 0.4rem;">
               See Full Review →
             </a>
           </div>
         </div>
 
-        <!-- RELATED LLC GUIDES GRID (EXACT MATCH TO IMAGE 1) -->
+        <!-- RELATED LLC GUIDES GRID (EXACT MATCH TO IMAGE 1)
         <div style="margin-top: 2.5rem;">
           <div style="font-size: 0.75rem; font-weight: 800; color: #64748B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; font-family: var(--font-heading);">
             KEEP BUILDING YOUR LLC
@@ -1247,7 +1240,7 @@
           <h3 style="font-size: 1.6rem; font-weight: 800; color: #12304A; margin-bottom: 1.25rem;">Related LLC Guides</h3>
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem;">
-            <!-- CARD 1 -->
+            CARD 1
             <a href="index.html#states-section" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.borderColor='#159A9C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#E2E8F0'; this.style.transform='translateY(0)'">
               <div>
                 <div style="font-size: 1.05rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Best State to Form</div>
@@ -1256,7 +1249,7 @@
               </div>
             </a>
 
-            <!-- CARD 2 -->
+            CARD 2
             <a href="index.html#decisions-section" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.borderColor='#159A9C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#E2E8F0'; this.style.transform='translateY(0)'">
               <div>
                 <div style="font-size: 1.05rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">vs Sole Proprietorship</div>
@@ -1265,7 +1258,7 @@
               </div>
             </a>
 
-            <!-- CARD 3 -->
+            CARD 3
             <a href="index.html#after-formation-section" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.borderColor='#159A9C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#E2E8F0'; this.style.transform='translateY(0)'">
               <div>
                 <div style="font-size: 1.05rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Annual Report Guide</div>
@@ -1274,7 +1267,7 @@
               </div>
             </a>
 
-            <!-- CARD 4 -->
+            CARD 4 
             <a href="index.html#cost-estimator-section" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.borderColor='#159A9C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#E2E8F0'; this.style.transform='translateY(0)'">
               <div>
                 <div style="font-size: 1.05rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Tax Benefits 2026</div>
@@ -1284,7 +1277,7 @@
             </a>
           </div>
         </div>
-      </section>
+      </section>-->
 
       <!-- =========================================================================
            SECTION 8: Frequently Asked Questions (EXACT HOMEPAGE/START-LLC ACCORDION DESIGN)
@@ -1292,7 +1285,7 @@
       <section id="faq-section" style="margin-top: 3.5rem;">
         <div style="margin-bottom: 2rem;">
           <div class="ls-kicker-pill">
-            <span class="ls-kicker-dot"></span>
+            <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 10px #159A9C;"></span>
             FREQUENTLY ASKED QUESTIONS
           </div>
           <h2 style="font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 800; color: #12304A; margin-top: 0.5rem; font-family: var(--font-heading);">
@@ -1314,7 +1307,7 @@
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>LLC stands for <strong>Limited Liability Company</strong>. It is a legal business structure created under state law that combines the personal asset protection of a corporation with the pass-through tax treatment and operational flexibility of a sole proprietorship or partnership.</p>
+              <p>LLC stands for <strong>Limited Liability Company</strong>. It is a business entity created under state law that can provide limited liability protection for its owners while offering flexible management and several federal tax-classification options.</p>
             </div>
           </details>
 
@@ -1327,7 +1320,7 @@
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>No, an LLC is not a corporation. While both entity types provide personal liability protection for their owners, an LLC has much simpler governance (members instead of shareholders and boards of directors), fewer formal meeting requirements, and pass-through taxation by default.</p>
+              <p>No. An LLC and a corporation are different types of business entities. Both can provide limited liability protection, but their ownership, management, filing, and tax rules differ. LLCs generally use members rather than shareholders and may have fewer formal governance requirements, depending on state law.</p>
             </div>
           </details>
 
@@ -1335,12 +1328,12 @@
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">03</span>
-                <span>What is the difference between an LLC and a sole proprietorship?</span>
+                <span>How is an LLC different from a sole proprietorship?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>A sole proprietorship offers zero legal separation between you and your business, meaning personal savings, vehicles, and real estate can be seized to satisfy business debts or lawsuits. An LLC creates a separate legal entity that shields your personal assets from business liabilities.</p>
+              <p>A sole proprietorship generally does not create a separate legal entity from its owner. An LLC is a separate legal entity under state law, which can help separate business obligations from the owner's personal assets. However, LLC liability protection is not absolute and exceptions can apply.</p>
             </div>
           </details>
         </div>
@@ -1354,12 +1347,13 @@
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">04</span>
-                <span>Does an LLC pay taxes?</span>
+                <span>How is an LLC taxed?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>By default, an LLC is a pass-through entity that pays no federal income tax at the entity level. Business profits pass directly to the owners' personal tax returns. However, owners pay income tax plus 15.3% self-employment tax on net profits unless an S-corp tax election is made.</p>
+              <p>Federal tax treatment depends on the LLC's ownership and elections. A single-member LLC is generally treated as a disregarded entity by default, while a multi-member LLC is generally treated as a partnership unless it elects corporate taxation. Eligible LLCs may also elect S-corporation treatment.</p>
+              <p>Self-employment and other taxes depend on the LLC's tax classification, ownership, income, and circumstances. There is no single tax rate that applies to every LLC owner.</p>
             </div>
           </details>
 
@@ -1367,25 +1361,24 @@
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">05</span>
-                <span>How much does it cost to start an LLC?</span>
+                <span>How much does it cost to form an LLC?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>Government state filing fees range from $35 (Montana) to $500 (Massachusetts), with a 50-state average of $132 in 2026. Ongoing annual report costs range from $0 to $300/year depending on your state of formation.</p>
-            </div>
+              <p>State filing fees vary significantly by state. Additional costs may include required initial filings, publication requirements, recurring reports or taxes, registered-agent services, licenses, and optional formation services.</p>
           </details>
 
           <details class="faq-accordion-item" name="faq-group-2">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">06</span>
-                <span>Can a single person own an LLC?</span>
+                <span>Can one person form an LLC?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>Yes! A Single-Member LLC (SMLLC) is owned by one individual or entity. It is the most common business structure in the United States, offering full liability protection with minimal administrative paperwork.</p>
+              <p>Yes. A <b>single-member LLC</b> can have one owner. It can provide a formal business structure and limited liability protection while generally receiving simplified federal tax treatment by default. State requirements and tax rules still apply.</p>
             </div>
           </details>
         </div>
@@ -1404,7 +1397,8 @@
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>Online state processing times range from immediate or same-day (in states like Ohio, Colorado, or Nevada) to 2–3 weeks for paper mail filings. Most states offer 24-hour expedited processing for a small government fee.</p>
+              <p>Processing times vary by state, filing method, and workload. Some states offer online or expedited processing, while standard or paper filings may take longer.</p>
+              <p>Always check the current processing time and expedited options with the relevant state agency.</p>
             </div>
           </details>
 
@@ -1412,12 +1406,13 @@
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">08</span>
-                <span>Do I need an operating agreement for an LLC?</span>
+                <span>Do I need an operating agreement?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>Yes. Even in states where an operating agreement is not required to be filed with the Secretary of State, drafting one is essential to prove personal asset separation in court, open business bank accounts, and set owner rights.</p>
+              <p>An operating agreement can be useful even when it is not required to be filed with the state. It can document ownership, management, voting, profit distributions, and other internal rules.</p>
+              <p>For a single-member LLC, it can also help document how the business is organized and operated. Requirements and legal effects vary by state.</p>
             </div>
           </details>
 
@@ -1425,12 +1420,13 @@
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">09</span>
-                <span>What happens to an LLC when the owner dies?</span>
+                <span>What happens to an LLC if an owner dies?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>For a single-member LLC, ownership passes to the owner's estate or designated beneficiaries according to their will or state probate law. For multi-member LLCs, the operating agreement typically defines buy-sell provisions or transfer rules upon a member's death.</p>
+              <p>The result depends on state law, the LLC's operating agreement, ownership structure, and estate-planning documents. An operating agreement may establish what happens to a member's ownership interest, including transfer, buy-sell, or succession provisions.</p>
+              <p>For a multi-member LLC, the agreement may also address how the remaining members handle a deceased member's interest. Review the applicable state rules and obtain professional advice for estate or succession planning.</p>
             </div>
           </details>
         </div>
