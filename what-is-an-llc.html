@@ -16,7 +16,7 @@
     .guide-content-container {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 0 1.5rem 3rem 1.5rem;
+      padding: 0 1.5rem 3.5rem 1.5rem;
       width: 100%;
     }
 
@@ -75,45 +75,43 @@
       color: #159A9C;
       font-weight: 600;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
+      display: inline-block;
       transition: color 0.2s ease, transform 0.2s ease;
     }
     .toc-link:hover {
       color: #0E7490;
+      text-decoration: underline;
       transform: translateX(3px);
     }
 
-    /* Highlight Callout Boxes */
-    .callout-teal {
-      background: linear-gradient(135deg, #F0FDFA 0%, #CCFBF1 100%);
-      border: 1px solid #159A9C;
+    /* Highlight Callout Boxes with Left Border Accent */
+    .callout-box {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 16px;
-      padding: 1.5rem;
+      padding: 1.5rem 1.75rem;
       margin: 1.75rem 0;
-      box-shadow: 0 4px 15px rgba(21, 154, 156, 0.08);
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+    }
+    .callout-teal {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      border-left: 5px solid #159A9C;
     }
     .callout-red {
       background: #FEF2F2;
-      border: 1.5px solid #FCA5A5;
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin: 1.75rem 0;
+      border: 1px solid #FCA5A5;
+      border-left: 5px solid #EF4444;
     }
     .callout-blue {
       background: #F0F9FF;
       border: 1px solid #BAE6FD;
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin: 1.75rem 0;
+      border-left: 5px solid #0284C7;
     }
     .callout-yellow {
       background: #FEFCE8;
       border: 1px solid #FDE047;
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin: 1.75rem 0;
+      border-left: 5px solid #EAB308;
     }
 
     /* Structured Custom Tables */
@@ -128,7 +126,7 @@
     .custom-table-header {
       background: #12304A;
       color: #FFFFFF;
-      padding: 1.25rem 1.75rem;
+      padding: 1.15rem 1.75rem;
       font-size: 1.15rem;
       font-weight: 800;
       font-family: var(--font-heading);
@@ -142,14 +140,14 @@
       text-align: left;
     }
     .custom-data-table th {
-      background: #F8FAFC;
-      color: #12304A;
+      background: #12304A;
+      color: #FFFFFF;
       font-size: 0.825rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       padding: 1rem 1.5rem;
-      border-bottom: 2px solid #E2E8F0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .custom-data-table td {
       padding: 1rem 1.5rem;
@@ -161,10 +159,10 @@
       border-bottom: none;
     }
     .custom-data-table tr:nth-child(even) td {
-      background: #FAFAFA;
+      background: #F8FAFC;
     }
 
-    /* Single vs Multi Member Card */
+    /* Single vs Multi Member Clean Comparison Card */
     .vs-comparison-card {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
@@ -173,26 +171,24 @@
       box-shadow: 0 6px 22px rgba(18, 48, 74, 0.08);
       margin: 2rem 0;
     }
+    .vs-card-header {
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 1.15rem 1.75rem;
+      font-size: 1.15rem;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      text-align: center;
+    }
     .vs-grid {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
+      grid-template-columns: 1fr 1fr;
     }
     .vs-column {
-      padding: 2rem;
+      padding: 1.75rem 2rem;
     }
-    .vs-badge {
-      background: #12304A;
-      color: #159A9C;
-      font-weight: 900;
-      font-size: 0.85rem;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(18, 48, 74, 0.2);
+    .vs-column:first-child {
+      border-right: 1px solid #E2E8F0;
     }
     .vs-list {
       list-style: none;
@@ -207,6 +203,9 @@
     .vs-list li {
       padding-bottom: 0.5rem;
       border-bottom: 1px dashed #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     .vs-list li:last-child {
       border-bottom: none;
@@ -242,6 +241,55 @@
       flex-shrink: 0;
     }
 
+    /* FAQ Details/Summary Accordion Styling */
+    .faq-accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 4px 16px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-question {
+      padding: 1.15rem 1.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+    }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-accordion-question .faq-plus {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #159A9C;
+      transition: transform 0.25s ease;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-plus {
+      transform: rotate(45deg);
+    }
+    .faq-accordion-answer {
+      padding: 0 1.5rem 1.25rem 1.5rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.65;
+    }
+
     /* Content Typography Scoping */
     .guide-article {
       color: #334155;
@@ -249,14 +297,14 @@
       line-height: 1.75;
     }
     .guide-article h2 {
-      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
       font-weight: 800;
       color: #12304A;
       margin: 2.75rem 0 1.25rem 0;
       font-family: var(--font-heading);
     }
     .guide-article h3 {
-      font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
       font-weight: 700;
       color: #12304A;
       margin: 2rem 0 1rem 0;
@@ -275,14 +323,12 @@
     }
 
     @media (max-width: 768px) {
-      .llc-specs-grid, .toc-grid {
+      .llc-specs-grid, .toc-grid, .vs-grid {
         grid-template-columns: 1fr;
       }
-      .vs-grid {
-        grid-template-columns: 1fr;
-      }
-      .vs-badge {
-        margin: 1rem auto;
+      .vs-column:first-child {
+        border-right: none;
+        border-bottom: 1px solid #E2E8F0;
       }
     }
   </style>
@@ -427,11 +473,9 @@
 
       <!-- HERO EXECUTIVE SUMMARY SPEC CARD -->
       <div class="llc-specs-card">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
-          <span style="background: rgba(21, 154, 156, 0.2); border: 1px solid #159A9C; color: #F8FAFC; font-size: 0.75rem; font-weight: 800; padding: 0.35rem 0.85rem; border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.4rem;">
-            🔖 Limited Liability Company (LLC)
-          </span>
-          <span style="font-size: 0.8rem; color: #94A3B8;">Updated 2026 SOS Specifications</span>
+        <div class="ls-kicker-pill" style="background: rgba(21, 154, 156, 0.15); border-color: #159A9C; color: #FFFFFF; margin-bottom: 0.75rem;">
+          <span class="ls-kicker-dot" style="background: #159A9C; box-shadow: 0 0 10px #159A9C;"></span>
+          LIMITED LIABILITY COMPANY (LLC)
         </div>
         <div style="font-size: 0.95rem; color: #CBD5E1; margin-bottom: 1.25rem;">
           The most common business structure in the United States — 2026
@@ -479,14 +523,14 @@
           IN THIS GUIDE
         </div>
         <div class="toc-grid">
-          <a href="#how-an-llc-works" class="toc-link">📌 How an LLC works — the core mechanics</a>
-          <a href="#what-llc-protects" class="toc-link">📌 What an LLC actually protects (and what it doesn't)</a>
-          <a href="#types-of-llcs" class="toc-link">📌 The 6 types of LLCs explained</a>
-          <a href="#how-llc-is-taxed" class="toc-link">📌 How an LLC is taxed — all 4 options</a>
-          <a href="#llc-costs" class="toc-link">📌 What an LLC costs to form and maintain</a>
-          <a href="#how-to-form-llc" class="toc-link">📌 How to form an LLC — 5 steps</a>
-          <a href="#do-you-need-llc" class="toc-link">📌 Do you actually need an LLC?</a>
-          <a href="#faq-section" class="toc-link">📌 Frequently asked questions</a>
+          <a href="#how-an-llc-works" class="toc-link">How an LLC works — the core mechanics</a>
+          <a href="#what-llc-protects" class="toc-link">What an LLC actually protects (and what it doesn't)</a>
+          <a href="#types-of-llcs" class="toc-link">The 6 types of LLCs explained</a>
+          <a href="#how-llc-is-taxed" class="toc-link">How an LLC is taxed — all 4 options</a>
+          <a href="#llc-costs" class="toc-link">What an LLC costs to form and maintain</a>
+          <a href="#how-to-form-llc" class="toc-link">How to form an LLC — 5 steps</a>
+          <a href="#do-you-need-llc" class="toc-link">Do you actually need an LLC?</a>
+          <a href="#faq-section" class="toc-link">Frequently asked questions</a>
         </div>
       </div>
 
@@ -515,33 +559,40 @@
         <!-- FORMATION REQUIREMENTS TABLE CARD -->
         <div class="custom-table-wrapper">
           <div class="custom-table-header">
-            <span>📋</span> LLC Formation Requirements — All 50 States
+            LLC Formation Requirements — All 50 States
           </div>
           <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th style="width: 40px;"></th>
+                <th style="width: 240px;">REQUIREMENT</th>
+                <th>DETAILS & DESCRIPTION</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
-                <td style="width: 30px;"><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
-                <td style="font-weight: 700; width: 220px;">A unique business name</td>
+                <td><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
+                <td style="font-weight: 700; color: #12304A;">A unique business name</td>
                 <td>Must include "LLC," "L.L.C.," or "Limited Liability Company." Must be distinguishable from other registered names in your state.</td>
               </tr>
               <tr>
                 <td><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
-                <td style="font-weight: 700;">Articles of Organization</td>
+                <td style="font-weight: 700; color: #12304A;">Articles of Organization</td>
                 <td>The formation document filed with your Secretary of State. Typically 1-2 pages. Requires your LLC name, address, registered agent, and management structure.</td>
               </tr>
               <tr>
                 <td><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
-                <td style="font-weight: 700;">A registered agent</td>
+                <td style="font-weight: 700; color: #12304A;">A registered agent</td>
                 <td>A person or company with a physical address in your state who receives official legal documents on your LLC's behalf. See our guide on choosing a registered agent.</td>
               </tr>
               <tr>
                 <td><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
-                <td style="font-weight: 700;">State filing fee</td>
+                <td style="font-weight: 700; color: #12304A;">State filing fee</td>
                 <td>Paid to the Secretary of State to process your Articles of Organization. Ranges from $35 (Montana) to $500 (Massachusetts). Average across all 50 states: $132 in 2026.</td>
               </tr>
               <tr>
                 <td><span style="color: #F59E0B; font-size: 1.1rem;">🟠</span></td>
-                <td style="font-weight: 700;">Operating agreement <span style="font-weight:400; font-size:0.8rem; color:#64748B;">(recommended)</span></td>
+                <td style="font-weight: 700; color: #12304A;">Operating agreement <span style="font-weight:400; font-size:0.8rem; color:#64748B;">(recommended)</span></td>
                 <td>The internal document that governs how your LLC runs — ownership percentages, management structure, profit distribution, and decision-making rules. Not legally required in most states, but strongly recommended.</td>
               </tr>
             </tbody>
@@ -549,7 +600,7 @@
         </div>
 
         <!-- CALLOUT TEAL -->
-        <div class="callout-teal">
+        <div class="callout-box callout-teal">
           <div style="font-weight: 800; color: #12304A; font-size: 1.05rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
             <span>💡</span> After Formation: Two More Steps
           </div>
@@ -578,16 +629,16 @@
           However, the protection is conditional — not absolute. Courts can "pierce the corporate veil" and hold you personally liable if you don't maintain the LLC correctly. The most common failure modes are:
         </p>
 
-        <!-- WARNING BOX -->
-        <div class="callout-red">
+        <!-- WARNING BOX WITH LEFT BORDER -->
+        <div class="callout-box callout-red">
           <div style="font-weight: 800; color: #991B1B; font-size: 1.05rem; margin-bottom: 0.75rem;">
             ⚠️ Four Things That Destroy LLC Protection
           </div>
-          <ol style="margin: 0; padding-left: 1.25rem; color: #7F1D1D; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.95rem;">
-            <li><strong>Commingling funds</strong> — Using the same bank account for personal and business transactions removes the legal separation the LLC depends on.</li>
-            <li><strong>Personal guarantees</strong> — Signing personally on a business loan or lease makes you personally liable for that debt, regardless of the LLC structure.</li>
-            <li><strong>Administrative dissolution</strong> — Failing to file annual reports or pay state fees causes your state to dissolve the LLC. A dissolved LLC has no liability protection.</li>
-            <li><strong>Fraud or personal negligence</strong> — Courts disregard LLC protection entirely when the member personally commits fraud or directly causes harm to a third party.</li>
+          <ol style="margin: 0; padding-left: 1.25rem; color: #475569; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.95rem;">
+            <li><strong style="color: #12304A;">1. Commingling funds</strong> — Using the same bank account for personal and business transactions removes the legal separation the LLC depends on.</li>
+            <li><strong style="color: #12304A;">2. Personal guarantees</strong> — Signing personally on a business loan or lease makes you personally liable for that debt, regardless of the LLC structure.</li>
+            <li><strong style="color: #12304A;">3. Administrative dissolution</strong> — Failing to file annual reports or pay state fees causes your state to dissolve the LLC. A dissolved LLC has no liability protection.</li>
+            <li><strong style="color: #12304A;">4. Fraud or personal negligence</strong> — Courts disregard LLC protection entirely when the member personally commits fraud or directly causes harm to a third party.</li>
           </ol>
         </div>
 
@@ -610,7 +661,7 @@
         <!-- 6 TYPES COMPARISON TABLE -->
         <div class="custom-table-wrapper">
           <div class="custom-table-header">
-            <span>🏛️</span> 6 Types of LLCs Comparison Overview
+            6 Types of LLCs Comparison Overview
           </div>
           <div style="overflow-x: auto;">
             <table class="custom-data-table">
@@ -676,41 +727,39 @@
           The most important structural choice is whether your company has one owner or multiple owners. A <strong>single-member LLC</strong> is treated by the IRS as a "disregarded entity" — meaning the IRS ignores the entity and taxes you directly as if you were a sole proprietor. You report income on Schedule C of your personal Form 1040. By contrast, a <strong>multi-member LLC</strong> is treated as a partnership by default. It files Form 1065 with the IRS (deadline: March 15 annually), and each member receives a Schedule K-1 showing their share of income to report on their personal return.
         </p>
 
-        <!-- SINGLE VS MULTI MEMBER CARD -->
+        <!-- REDESIGNED SINGLE VS MULTI MEMBER CLEAN CARD -->
         <div class="vs-comparison-card">
-          <div style="background: #12304A; color: #FFFFFF; padding: 1rem 1.5rem; text-align: center; font-weight: 800; font-family: var(--font-heading);">
+          <div class="vs-card-header">
             Single-Member LLC vs Multi-Member LLC
           </div>
           <div class="vs-grid">
             <div class="vs-column">
               <div style="font-size: 1.15rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">Single-Member LLC</div>
               <ul class="vs-list">
-                <li>👤 1 owner</li>
-                <li>🏛️ IRS: disregarded entity</li>
-                <li>📄 Files Schedule C (Form 1040)</li>
-                <li>📅 Tax deadline: April 15</li>
-                <li>✅ No Schedule K-1 needed</li>
-                <li>⚡ Simplest structure available</li>
-                <li>💼 Can elect S-corp or C-corp taxation</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> 1 owner</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> IRS: disregarded entity</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> Files Schedule C (Form 1040)</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> Tax deadline: April 15</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> No Schedule K-1 needed</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> Simplest structure available</li>
+                <li><span style="color:#10B981; font-weight:800;">✓</span> Can elect S-corp or C-corp taxation</li>
               </ul>
             </div>
-            
-            <div class="vs-badge">VS</div>
 
             <div class="vs-column" style="background: #F8FAFC;">
               <div style="font-size: 1.15rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">Multi-Member LLC</div>
               <ul class="vs-list">
-                <li>👥 2+ owners</li>
-                <li>🏛️ IRS: partnership by default</li>
-                <li>📄 Files Form 1065 + K-1s</li>
-                <li>📅 Tax deadline: March 15</li>
-                <li>📋 Each member gets K-1</li>
-                <li>📜 Requires operating agreement</li>
-                <li>💼 Can elect S-corp or C-corp taxation</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> 2+ owners</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> IRS: partnership by default</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> Files Form 1065 + K-1s</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> Tax deadline: March 15</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> Each member gets K-1</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> Requires operating agreement</li>
+                <li><span style="color:#159A9C; font-weight:800;">✓</span> Can elect S-corp or C-corp taxation</li>
               </ul>
             </div>
           </div>
-          <div style="background: #E6FFFA; border-top: 1px solid #159A9C; padding: 0.85rem 1.5rem; font-size: 0.875rem; color: #064E3B; font-weight: 600;">
+          <div style="background: #F0FDFA; border-top: 1px solid #CCFBF1; border-left: 5px solid #159A9C; padding: 1rem 1.5rem; font-size: 0.875rem; color: #0F766E; font-weight: 600;">
             💡 <strong>For most first-time business owners:</strong> a single-member structure is the fastest, simplest, and cheapest option. You can always add members later by amending your operating agreement.
           </div>
         </div>
@@ -729,7 +778,7 @@
         </p>
 
         <!-- CALLOUT BLUE -->
-        <div class="callout-blue">
+        <div class="callout-box callout-blue">
           <div style="font-weight: 800; color: #0369A1; font-size: 1rem; margin-bottom: 0.4rem;">
             📊 Which Type Is Most Common?
           </div>
@@ -753,7 +802,7 @@
         <!-- TAX OPTIONS OVERVIEW CARD -->
         <div class="custom-table-wrapper">
           <div class="custom-table-header">
-            <span>📊</span> LLC Tax Options — 2026 Overview
+            LLC Tax Options — 2026 Overview
           </div>
           <div style="padding: 1.5rem;">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
@@ -779,7 +828,7 @@
               </div>
               <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.15rem;">
                 <div style="font-size: 0.725rem; font-weight: 800; color: #159A9C; text-transform: uppercase;">ENTITY-LEVEL INCOME TAX (DEFAULT)</div>
-                <div style="font-size: 1.05rem; font-weight: 700; color: #10B981; margin-top: 0.25rem;">$0</div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #12304A; margin-top: 0.25rem;">$0</div>
               </div>
             </div>
             <div style="font-size: 0.8rem; color: #64748B; font-style: italic;">
@@ -794,7 +843,7 @@
         </p>
 
         <!-- CALLOUT YELLOW -->
-        <div class="callout-yellow">
+        <div class="callout-box callout-yellow">
           <div style="font-weight: 800; color: #854D0E; font-size: 1.05rem; margin-bottom: 0.4rem;">
             ⚠️ The Self-Employment Tax Reality
           </div>
@@ -811,7 +860,7 @@
         <!-- S-CORP SAVINGS TABLE -->
         <div class="custom-table-wrapper">
           <div class="custom-table-header">
-            <span>💰</span> S-Corp Tax Savings Breakdown
+            S-Corp Tax Savings Breakdown
           </div>
           <table class="custom-data-table">
             <thead>
@@ -827,25 +876,25 @@
                 <td style="font-weight: 700;">$60,000</td>
                 <td>$9,180</td>
                 <td>~$5,508</td>
-                <td style="color: #10B981; font-weight: 800;">-$3,672</td>
+                <td style="color: #047857; font-weight: 800;">-$3,672</td>
               </tr>
               <tr>
                 <td style="font-weight: 700;">$80,000</td>
                 <td>$12,240</td>
                 <td>~$6,885</td>
-                <td style="color: #10B981; font-weight: 800;">-$5,355</td>
+                <td style="color: #047857; font-weight: 800;">-$5,355</td>
               </tr>
               <tr>
                 <td style="font-weight: 700;">$100,000</td>
                 <td>$15,300</td>
                 <td>~$9,180</td>
-                <td style="color: #10B981; font-weight: 800;">-$6,120</td>
+                <td style="color: #047857; font-weight: 800;">-$6,120</td>
               </tr>
               <tr>
                 <td style="font-weight: 700;">$150,000</td>
                 <td>$22,950</td>
                 <td>~$11,475</td>
-                <td style="color: #10B981; font-weight: 800;">-$11,475</td>
+                <td style="color: #047857; font-weight: 800;">-$11,475</td>
               </tr>
             </tbody>
           </table>
@@ -869,9 +918,15 @@
         <!-- TYPICAL COST BREAKDOWN CARD -->
         <div class="custom-table-wrapper">
           <div class="custom-table-header">
-            <span>🏷️</span> LLC — Typical Cost Breakdown (2026)
+            LLC — Typical Cost Breakdown (2026)
           </div>
           <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>FEE / ITEM</th>
+                <th style="text-align: right;">ESTIMATED COST</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
                 <td style="font-weight: 700;">📄 State filing fee <span style="font-weight:400; font-size:0.8rem; color:#64748B;">(one-time)</span></td>
@@ -887,11 +942,11 @@
               </tr>
               <tr>
                 <td style="font-weight: 700;">📜 Operating agreement <span style="font-weight:400; font-size:0.8rem; color:#64748B;">(one-time)</span></td>
-                <td style="font-weight: 800; color: #10B981; text-align: right;">Free–$200</td>
+                <td style="font-weight: 800; color: #047857; text-align: right;">Free–$200</td>
               </tr>
               <tr>
                 <td style="font-weight: 700;">🏛️ EIN from IRS</td>
-                <td style="font-weight: 800; color: #10B981; text-align: right;">Free</td>
+                <td style="font-weight: 800; color: #047857; text-align: right;">Free</td>
               </tr>
               <tr>
                 <td style="font-weight: 700;">✨ Formation service <span style="font-weight:400; font-size:0.8rem; color:#64748B;">(optional)</span></td>
@@ -899,7 +954,7 @@
               </tr>
               <tr style="background: #F0FDFA;">
                 <td style="font-weight: 900; font-size: 1.05rem; color: #12304A;">Typical first-year total</td>
-                <td style="font-weight: 900; font-size: 1.25rem; color: #159A9C; text-align: right;">$150–$900</td>
+                <td style="font-weight: 900; font-size: 1.25rem; color: #12304A; text-align: right;">$150–$900</td>
               </tr>
             </tbody>
           </table>
@@ -925,43 +980,43 @@
                 <td style="font-weight: 800;">Missouri</td>
                 <td>$50</td>
                 <td>$0</td>
-                <td style="color: #10B981; font-weight: 800;">~$50</td>
+                <td style="color: #047857; font-weight: 800;">~$50</td>
               </tr>
               <tr>
                 <td style="font-weight: 800;">New Mexico</td>
                 <td>$50</td>
                 <td>$0</td>
-                <td style="color: #10B981; font-weight: 800;">~$50</td>
+                <td style="color: #047857; font-weight: 800;">~$50</td>
               </tr>
               <tr>
                 <td style="font-weight: 800;">Colorado</td>
                 <td>$50</td>
                 <td>$25/yr</td>
-                <td style="color: #10B981; font-weight: 800;">~$75</td>
+                <td style="color: #047857; font-weight: 800;">~$75</td>
               </tr>
               <tr>
                 <td style="font-weight: 800;">California</td>
                 <td>$70</td>
                 <td>$800 min. tax</td>
-                <td style="color: #EF4444; font-weight: 800;">~$870+</td>
+                <td style="color: #DC2626; font-weight: 800;">~$870+</td>
               </tr>
               <tr>
                 <td style="font-weight: 800;">Nevada</td>
                 <td>$75</td>
                 <td>$350/yr</td>
-                <td style="color: #EF4444; font-weight: 800;">~$425</td>
+                <td style="color: #DC2626; font-weight: 800;">~$425</td>
               </tr>
               <tr>
                 <td style="font-weight: 800;">Massachusetts</td>
                 <td>$500</td>
                 <td>$500/yr</td>
-                <td style="color: #EF4444; font-weight: 800;">~$1,000</td>
+                <td style="color: #DC2626; font-weight: 800;">~$1,000</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="callout-teal">
+        <div class="callout-box callout-teal">
           <div style="font-weight: 800; color: #12304A; font-size: 1.05rem; margin-bottom: 0.4rem;">
             📍 Form in Your Home State
           </div>
@@ -1037,7 +1092,7 @@
           </div>
         </div>
 
-        <div class="callout-blue">
+        <div class="callout-box callout-blue">
           <div style="font-weight: 800; color: #0369A1; font-size: 1.05rem; margin-bottom: 0.4rem;">
             🛠️ Do It Yourself or Use a Service?
           </div>
@@ -1048,85 +1103,262 @@
       </section>
 
       <!-- =========================================================================
-           SECTION 7: Do You Actually Need an LLC?
+           SECTION 7: Do You Actually Need an LLC? (EXACT MATCH TO IMAGE 1)
            ========================================================================= -->
       <section id="do-you-need-llc">
         <h2>Do You Actually Need an LLC?</h2>
 
+        <h3>The Income and Risk Threshold That Matters</h3>
         <p>
-          Deciding whether to form an LLC comes down to risk, taxation, and growth goals. Here is a clear decision matrix to help you determine if an LLC is right for your business:
+          Not every business needs an LLC immediately. However, most businesses need one sooner than their owners think. The two factors that determine whether you need an LLC right now are your liability exposure and your revenue level. Specifically, if you have any of the following, forming an LLC should be a priority — not a "someday" task:
         </p>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin: 1.75rem 0;">
-          <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);">
-            <div style="font-size: 1.1rem; font-weight: 800; color: #475569; margin-bottom: 0.5rem;">Sole Proprietorship is Enough If:</div>
-            <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: #64748B; display: flex; flex-direction: column; gap: 0.5rem;">
-              <li>Low-risk hobby or side project</li>
-              <li>No physical storefront or employees</li>
-              <li>No client contracts with liability risk</li>
-              <li>Testing a business idea with under $5k revenue</li>
-            </ul>
+        <!-- FORM AN LLC IF ANY OF THESE APPLY TABLE CARD -->
+        <div class="custom-table-wrapper" style="margin: 2rem 0;">
+          <div class="custom-table-header">
+            Form an LLC If Any of These Apply
           </div>
+          <table class="custom-data-table">
+            <tbody>
+              <tr>
+                <td style="width: 40px; padding-left: 1.5rem;"><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
+                <td style="padding: 1.25rem 1.5rem;">
+                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You have personal assets worth protecting</div>
+                  <div style="font-size: 0.9rem; color: #64748B;">A home, savings, investments, or a vehicle. Without an LLC, a business lawsuit can reach all of these directly.</div>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-left: 1.5rem;"><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
+                <td style="padding: 1.25rem 1.5rem;">
+                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You work directly with clients or customers</div>
+                  <div style="font-size: 0.9rem; color: #64748B;">Service businesses, e-commerce, contractors, and consultants all face liability from work quality, product defects, or client disputes.</div>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-left: 1.5rem;"><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
+                <td style="padding: 1.25rem 1.5rem;">
+                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You're hiring employees or contractors</div>
+                  <div style="font-size: 0.9rem; color: #64748B;">Employment-related claims — wrongful termination, workplace injuries, discrimination — expose you personally without an LLC.</div>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-left: 1.5rem;"><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
+                <td style="padding: 1.25rem 1.5rem;">
+                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">Your annual revenue exceeds $30,000</div>
+                  <div style="font-size: 0.9rem; color: #64748B;">At this level, the LLC's annual cost ($150–$400/year) is less than 1.2% of revenue — and the protection it provides is worth significantly more.</div>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-left: 1.5rem;"><span style="color: #10B981; font-size: 1.1rem;">🟢</span></td>
+                <td style="padding: 1.25rem 1.5rem;">
+                  <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.25rem;">You want business credibility and a dedicated bank account</div>
+                  <div style="font-size: 0.9rem; color: #64748B;">Clients, banks, and vendors treat an LLC differently than an individual. Additionally, an LLC name on invoices and contracts signals legitimacy.</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          <div style="background: #F0FDFA; border: 2px solid #159A9C; border-radius: 16px; padding: 1.5rem; box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);">
-            <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; margin-bottom: 0.5rem;">You Need an LLC If:</div>
-            <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: #334155; display: flex; flex-direction: column; gap: 0.5rem;">
-              <li>Selling physical products or online store</li>
-              <li>Hiring employees or independent contractors</li>
-              <li>Signing commercial building leases</li>
-              <li>Multiple business partners or co-founders</li>
-              <li>Want personal home/savings protected</li>
-            </ul>
+        <h3>When You Can Wait to Form an LLC</h3>
+        <p>
+          That said, not everyone needs an LLC immediately. Specifically, if you're testing a business idea with under $10,000 in revenue, no client liability risk, and no personal assets to protect — a sole proprietorship is a reasonable starting point. Nevertheless, once the business becomes real and recurring income starts, the cost of forming an LLC is trivially small compared to the exposure of operating without one.
+        </p>
+        <p>
+          The U.S. Small Business Administration also recommends evaluating your liability exposure before choosing a structure.
+        </p>
+
+        <!-- BOTTOM LINE SUMMARY CARD (EXACT MATCH TO IMAGE 1) -->
+        <div style="background: linear-gradient(135deg, #12304A 0%, #0D2336 100%); border-radius: 16px; padding: 2rem 2.25rem; color: #FFFFFF; margin: 2rem 0; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.15);">
+          <div style="font-size: 0.75rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; font-family: var(--font-heading);">
+            BOTTOM LINE: WHAT IS AN LLC?
           </div>
+          <div style="font-size: 1.05rem; line-height: 1.7; color: #F8FAFC; font-weight: 500;">
+            An LLC is the legal structure that separates your personal assets from your business risks — formed in your state, owned by members, taxed by default as a pass-through entity, and maintained through simple annual compliance. It's the most popular business structure in the U.S. for a reason: it solves the three biggest problems small business owners face — personal liability, tax flexibility, and operational simplicity — at a cost most businesses can afford from day one. Ready to take the next step? See exactly <a href="start-llc.html" style="color: #159A9C; text-decoration: underline; font-weight: 700;">how to start an LLC</a> in your state.
+          </div>
+        </div>
 
-          <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);">
-            <div style="font-size: 1.1rem; font-weight: 800; color: #475569; margin-bottom: 0.5rem;">You Need a C-Corporation If:</div>
-            <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: #64748B; display: flex; flex-direction: column; gap: 0.5rem;">
-              <li>Raising venture capital or institutional funding</li>
-              <li>Issuing stock options to employees</li>
-              <li>Planning a public stock offering (IPO)</li>
-            </ul>
+        <!-- NORTHWEST FEATURED PICK BANNER (EXACT MATCH TO IMAGE 1) -->
+        <div style="background: #FFFFFF; border: 2px solid #10B981; border-radius: 16px; padding: 1.5rem 1.75rem; margin: 2rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.08);">
+          <div>
+            <span style="background: #10B981; color: #FFFFFF; font-size: 0.7rem; font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 0.5rem;">
+              ★ OUR TOP PICK
+            </span>
+            <div style="font-size: 1.2rem; font-weight: 800; color: #12304A; margin-bottom: 0.25rem;">Northwest Registered Agent</div>
+            <div style="font-size: 0.9rem; color: #475569; margin-bottom: 0.35rem;">
+              Forms your LLC and serves as your registered agent — keeps your personal address off public records.
+            </div>
+            <div style="font-size: 0.85rem; color: #047857; font-weight: 700;">
+              Formation from $39 + state fee — registered agent renews at $125/year
+            </div>
+          </div>
+          <div>
+            <a href="index.html#northwest-section" class="ls-btn" style="background: #047857; color: #FFFFFF; padding: 0.85rem 1.65rem; border-radius: 10px; font-weight: 800; font-size: 0.925rem; display: inline-flex; align-items: center; gap: 0.4rem;">
+              See Full Review →
+            </a>
+          </div>
+        </div>
+
+        <!-- RELATED LLC GUIDES GRID (EXACT MATCH TO IMAGE 1) -->
+        <div style="margin-top: 2.5rem;">
+          <div style="font-size: 0.75rem; font-weight: 800; color: #64748B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; font-family: var(--font-heading);">
+            KEEP BUILDING YOUR LLC
+          </div>
+          <h3 style="font-size: 1.6rem; font-weight: 800; color: #12304A; margin-bottom: 1.25rem;">Related LLC Guides</h3>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem;">
+            <!-- CARD 1 -->
+            <a href="index.html#states-section" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.borderColor='#159A9C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#E2E8F0'; this.style.transform='translateY(0)'">
+              <div>
+                <div style="font-size: 1.05rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Best State to Form</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #159A9C; margin-bottom: 0.25rem;">Wyoming vs Delaware vs Home State</div>
+                <div style="font-size: 0.775rem; color: #64748B;">All 50 states compared</div>
+              </div>
+            </a>
+
+            <!-- CARD 2 -->
+            <a href="index.html#decisions-section" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.borderColor='#159A9C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#E2E8F0'; this.style.transform='translateY(0)'">
+              <div>
+                <div style="font-size: 1.05rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">vs Sole Proprietorship</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #159A9C; margin-bottom: 0.25rem;">The $15,300 Tax Difference</div>
+                <div style="font-size: 0.775rem; color: #64748B;">Which structure wins for you</div>
+              </div>
+            </a>
+
+            <!-- CARD 3 -->
+            <a href="index.html#after-formation-section" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.borderColor='#159A9C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#E2E8F0'; this.style.transform='translateY(0)'">
+              <div>
+                <div style="font-size: 1.05rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Annual Report Guide</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #159A9C; margin-bottom: 0.25rem;">Deadlines + Fees by State</div>
+                <div style="font-size: 0.775rem; color: #64748B;">Keep your LLC in good standing</div>
+              </div>
+            </a>
+
+            <!-- CARD 4 -->
+            <a href="index.html#cost-estimator-section" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.25rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.borderColor='#159A9C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#E2E8F0'; this.style.transform='translateY(0)'">
+              <div>
+                <div style="font-size: 1.05rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem;">Tax Benefits 2026</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #159A9C; margin-bottom: 0.25rem;">QBI + S-Corp Stack</div>
+                <div style="font-size: 0.775rem; color: #64748B;">Maximize your deductions</div>
+              </div>
+            </a>
           </div>
         </div>
       </section>
 
       <!-- =========================================================================
-           SECTION 8: Frequently Asked Questions
+           SECTION 8: Frequently Asked Questions (EXACT MATCH TO IMAGE 2)
            ========================================================================= -->
-      <section id="faq-section" style="margin-top: 3rem;">
-        <div style="margin-bottom: 1.5rem;">
-          <div class="ls-kicker-pill" style="margin-bottom: 0.5rem;">CLEAR ANSWERS</div>
-          <h2 style="margin: 0;">Frequently Asked Questions</h2>
+      <section id="faq-section" style="margin-top: 3.5rem;">
+        <h2 style="font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 800; color: #12304A; margin-bottom: 1.75rem;">
+          Frequently Asked Questions
+        </h2>
+
+        <!-- CATEGORY 1: Understanding What an LLC Is -->
+        <h3 style="font-size: 1.35rem; font-weight: 700; color: #12304A; margin: 1.75rem 0 1rem 0;">
+          Understanding What an LLC Is
+        </h3>
+        <div class="faq-accordion-group">
+          <details class="faq-accordion-item" name="faq-group-1">
+            <summary class="faq-accordion-question">
+              <span>What does LLC stand for?</span>
+              <span class="faq-plus">+</span>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>LLC stands for <strong>Limited Liability Company</strong>. It is a legal business structure created under state law that combines the personal asset protection of a corporation with the pass-through tax treatment and operational flexibility of a sole proprietorship or partnership.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-group-1">
+            <summary class="faq-accordion-question">
+              <span>Is an LLC a corporation?</span>
+              <span class="faq-plus">+</span>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>No, an LLC is not a corporation. While both entity types provide personal liability protection for their owners, an LLC has much simpler governance (members instead of shareholders and boards of directors), fewer formal meeting requirements, and pass-through taxation by default.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-group-1">
+            <summary class="faq-accordion-question">
+              <span>What is the difference between an LLC and a sole proprietorship?</span>
+              <span class="faq-plus">+</span>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>A sole proprietorship offers zero legal separation between you and your business, meaning personal savings, vehicles, and real estate can be seized to satisfy business debts or lawsuits. An LLC creates a separate legal entity that shields your personal assets from business liabilities.</p>
+            </div>
+          </details>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
-          <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);">
-            <div style="font-weight: 800; font-size: 1.1rem; color: #12304A; margin-bottom: 0.5rem;">What is the main benefit of an LLC?</div>
-            <div style="font-size: 0.95rem; color: #475569; line-height: 1.6;">
-              The primary benefit is personal asset protection. An LLC limits your personal financial risk if your business is sued or accumulates debt, separating your personal savings, home, and assets from business liabilities.
+        <!-- CATEGORY 2: LLC Taxes and Costs -->
+        <h3 style="font-size: 1.35rem; font-weight: 700; color: #12304A; margin: 2rem 0 1rem 0;">
+          LLC Taxes and Costs
+        </h3>
+        <div class="faq-accordion-group">
+          <details class="faq-accordion-item" name="faq-group-2">
+            <summary class="faq-accordion-question">
+              <span>Does an LLC pay taxes?</span>
+              <span class="faq-plus">+</span>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>By default, an LLC is a pass-through entity that pays no federal income tax at the entity level. Business profits pass directly to the owners' personal tax returns. However, owners pay income tax plus 15.3% self-employment tax on net profits unless an S-corp tax election is made.</p>
             </div>
-          </div>
+          </details>
 
-          <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);">
-            <div style="font-weight: 800; font-size: 1.1rem; color: #12304A; margin-bottom: 0.5rem;">Can I form an LLC myself without a lawyer?</div>
-            <div style="font-size: 0.95rem; color: #475569; line-height: 1.6;">
-              Yes! Forming an LLC is a straightforward government filing that you can complete online directly with your state's Secretary of State. No lawyer or paid service is legally required.
+          <details class="faq-accordion-item" name="faq-group-2">
+            <summary class="faq-accordion-question">
+              <span>How much does it cost to start an LLC?</span>
+              <span class="faq-plus">+</span>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Government state filing fees range from $35 (Montana) to $500 (Massachusetts), with a 50-state average of $132 in 2026. Ongoing annual report costs range from $0 to $300/year depending on your state of formation.</p>
             </div>
-          </div>
+          </details>
 
-          <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);">
-            <div style="font-weight: 800; font-size: 1.1rem; color: #12304A; margin-bottom: 0.5rem;">What is the difference between an LLC and an Inc (Corporation)?</div>
-            <div style="font-size: 0.95rem; color: #475569; line-height: 1.6;">
-              An LLC has informal management (members), pass-through taxation by default, and minimal corporate record-keeping. A Corporation (Inc) has formal shareholders, directors, officers, strict recordkeeping, and potential double taxation unless S-corp status is elected.
+          <details class="faq-accordion-item" name="faq-group-2">
+            <summary class="faq-accordion-question">
+              <span>Can a single person own an LLC?</span>
+              <span class="faq-plus">+</span>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Yes! A Single-Member LLC (SMLLC) is owned by one individual or entity. It is the most common business structure in the United States, offering full liability protection with minimal administrative paperwork.</p>
             </div>
-          </div>
+          </details>
+        </div>
 
-          <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);">
-            <div style="font-weight: 800; font-size: 1.1rem; color: #12304A; margin-bottom: 0.5rem;">How long does it take to form an LLC?</div>
-            <div style="font-size: 0.95rem; color: #475569; line-height: 1.6;">
-              State approval times range from same-day or immediate online processing (in states like Ohio or Colorado) to 2–3 weeks in states that process paper filings. Most states offer 24-hour expedited processing for an additional fee.
+        <!-- CATEGORY 3: LLC Formation and Compliance -->
+        <h3 style="font-size: 1.35rem; font-weight: 700; color: #12304A; margin: 2rem 0 1rem 0;">
+          LLC Formation and Compliance
+        </h3>
+        <div class="faq-accordion-group">
+          <details class="faq-accordion-item" name="faq-group-3">
+            <summary class="faq-accordion-question">
+              <span>How long does it take to form an LLC?</span>
+              <span class="faq-plus">+</span>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Online state processing times range from immediate or same-day (in states like Ohio, Colorado, or Nevada) to 2–3 weeks for paper mail filings. Most states offer 24-hour expedited processing for a small government fee.</p>
             </div>
-          </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-group-3">
+            <summary class="faq-accordion-question">
+              <span>Do I need an operating agreement for an LLC?</span>
+              <span class="faq-plus">+</span>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Yes. Even in states where an operating agreement is not required to be filed with the Secretary of State, drafting one is essential to prove personal asset separation in court, open business bank accounts, and set owner rights.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-group-3">
+            <summary class="faq-accordion-question">
+              <span>What happens to an LLC when the owner dies?</span>
+              <span class="faq-plus">+</span>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>For a single-member LLC, ownership passes to the owner's estate or designated beneficiaries according to their will or state probate law. For multi-member LLCs, the operating agreement typically defines buy-sell provisions or transfer rules upon a member's death.</p>
+            </div>
+          </details>
         </div>
       </section>
 
