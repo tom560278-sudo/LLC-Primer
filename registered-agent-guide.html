@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>Registered Agent Guide (2026 Requirements & Services) | LLC Primer</title>
+  <meta name="description" content="Complete guide to LLC registered agents in 2026. Understand statutory requirements across all 50 states, being your own agent vs hiring a service, privacy protection, and top services compared.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Scoped Content Container for Body Cards (Leaving Navbar & Footer at full homepage width) */
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3.5rem 1.5rem;
+      width: 100%;
+    }
+
+    /* Article Spacing & Typography Matching what-is-an-llc.html 1:1 */
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover {
+      color: #0E7490;
+    }
+
+    /* Hero Key Specs Card (Navy Banner Box) */
+    .llc-specs-card {
+      background: linear-gradient(135deg, #12304A 0%, #0D2336 100%);
+      border: 1.5px solid rgba(21, 154, 156, 0.35);
+      border-radius: 24px;
+      padding: 2.25rem 2.5rem;
+      color: #FFFFFF;
+      box-shadow: 0 16px 45px rgba(18, 48, 74, 0.2);
+      margin: 2rem 0 2.5rem 0;
+    }
+    .llc-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .spec-item-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 1.15rem 1rem;
+      text-align: center;
+    }
+    .spec-label {
+      font-size: 0.725rem;
+      font-weight: 800;
+      color: #159A9C;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+    .spec-value {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+    }
+    .spec-desc {
+      font-size: 0.75rem;
+      color: #94A3B8;
+      margin-top: 0.2rem;
+      line-height: 1.3;
+    }
+
+    /* Table of Contents Card */
+    .toc-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.06);
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 2rem;
+    }
+    .toc-link {
+      font-size: 0.925rem;
+      color: #159A9C !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      display: inline-block;
+      transition: color 0.2s ease;
+    }
+    .toc-link:hover {
+      color: #0E7490 !important;
+      text-decoration: underline !important;
+    }
+
+    /* Structured Custom Tables */
+    .custom-table-wrapper {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.08);
+      margin: 2rem 0;
+    }
+    .custom-table-header {
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 1.15rem 1.75rem;
+      font-size: 1.1rem;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .custom-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .custom-data-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .custom-data-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.925rem;
+      color: #334155;
+      border-bottom: 1px solid #E2E8F0;
+      line-height: 1.6;
+    }
+    .custom-data-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-data-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+
+    /* Highlight Callout Boxes */
+    .callout-box {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin: 1.75rem 0;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+    }
+    .callout-teal {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      border-left: 5px solid #159A9C;
+    }
+    .callout-yellow {
+      background: #FEFCE8;
+      border: 1px solid #FDE047;
+      border-left: 5px solid #EAB308;
+    }
+
+    /* FAQ Accordion Styling */
+    .faq-accordion-wrapper {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      color: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      color: #334155;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      border-top: 1px dashed #E2E8F0;
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .llc-specs-grid { grid-template-columns: repeat(2, 1fr); }
+      .toc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       0. TOP ANNOUNCEMENT / TRUST BAR
+       ========================================================================= -->
+  <div style="background: #12304A; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.8rem; color: #94A3B8; padding: 0.5rem 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #159A9C; box-shadow: 0 0 10px #159A9C;"></span>
+        <strong style="color: #F8FAFC;">2026 SOS RULES VERIFIED</strong> · 50-State Registered Agent Requirements
+      </div>
+      <div style="display: flex; align-items: center; gap: 1.25rem;">
+        <a href="index.html#states-section" style="color: #CBD5E1; font-weight: 500;">🏛️ All 50 States</a>
+        <a href="index.html#non-us-section" style="color: #CBD5E1; font-weight: 500;">🌐 Non-US Founders</a>
+        <a href="quiz.html" style="color: #159A9C; font-weight: 700;">🧩 Take 60-Sec LLC Quiz →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       1. EXECUTIVE GLASSMORPHIC NAVBAR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link" style="color: var(--color-primary); font-weight: 800;">
+            Start an LLC
+          </a>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#northwest-section" class="nav-link">
+            Reviews
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#northwest-section" class="dropdown-link">⭐ Northwest Registered Agent ($39)</a>
+            <a href="index.html#northwest-section" class="dropdown-link">🌐 doola Review (Non-US Founders)</a>
+            <a href="index.html#northwest-section" class="dropdown-link">📊 ZenBusiness vs LegalZoom</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link active">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link"> What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link"> Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link"> How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link"> How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link"> LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;"> Registered Agent Guide</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#after-formation-section" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#after-formation-section" class="dropdown-link">01. Obtain Federal EIN (SS-4 Tax ID)</a>
+            <a href="operating-agreement.html" class="dropdown-link">02. Draft Operating Agreement</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">03. Open Business Bank Account</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">04. File FinCEN BOI Report</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">05. Business Licenses & Permits</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#cost-estimator-section" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="quiz.html" class="dropdown-link">🧩 Interactive LLC Quiz (60 Sec)</a>
+            <a href="index.html#cost-estimator-section" class="dropdown-link">📊 First-Year Cost Estimator</a>
+            <a href="index.html#spanish-section" class="dropdown-link">🇪🇸 Guía de LLC en Español</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#non-us-section" class="nav-link">
+            Non-Residents 🌐
+          </a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan →
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT AREA
+       ========================================================================= -->
+  <main class="guide-content-container">
+
+    <!-- BREADCRUMB -->
+    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
+      <a href="index.html" style="color: #64748B; text-decoration: none;">Home</a> &nbsp;/&nbsp; 
+      <a href="llc-guide.html" style="color: #64748B; text-decoration: none;">LLC Guides</a> &nbsp;/&nbsp; 
+      <strong style="color: #12304A;">Registered Agent Guide</strong>
+    </div>
+
+    <article class="guide-article">
+
+      <!-- HEADER TITLE & SUBTITLE -->
+      <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: #12304A; line-height: 1.2; margin-bottom: 0.75rem; font-family: var(--font-heading);">
+        Registered Agent Guide (2026 Requirements & Services)
+      </h1>
+      <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; color: #159A9C; margin-bottom: 1.5rem; line-height: 1.4;">
+        Statutory Rules Across All 50 States, DIY vs Service Comparison & Privacy Protection
+      </p>
+
+      <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.5rem;">
+        Last reviewed: <strong>September 7, 2026</strong> · Official source: <strong>U.S. Small Business Administration & State Statutes</strong>
+      </div>
+
+      <p>
+        A <strong>registered agent</strong> is a person or company that receives official legal documents on behalf of your LLC — and every state in the US requires one, without exception. Specifically, when someone sues your business, files a government notice, or sends a tax document from the state, that paperwork goes directly to your <strong>registered agent's address</strong>. Consequently, if your registered agent is unavailable, unreliable, or nonexistent, your LLC can lose lawsuits by default, face administrative dissolution, and lose its good standing — all without you ever knowing anything happened. Furthermore, your registered agent's address becomes a matter of public record, which is why most LLC owners choose a professional registered agent service over listing their home address.
+      </p>
+      <p>
+        In different states, this role goes by different names. Specifically, some states call it a <strong>statutory agent</strong>, others use <strong>resident agent</strong>, and still others use <strong>agent for service of process</strong>. However, the function is identical everywhere: one reliable address where the state and courts can always reach your business during business hours. Additionally, you need a registered agent in every state where your LLC formally operates — not just your home state. Consequently, understanding who qualifies, what the job actually involves, and when to hire a professional service versus doing it yourself is one of the most important decisions you make when forming an LLC.
+      </p>
+
+      <p>
+        This guide answers every question about <strong>registered agents</strong> for LLCs in 2026. For the full LLC formation process, see our <a href="llc-guide.html">LLC Guide</a> and our step-by-step <a href="start-llc.html">How to Start an LLC guide</a>.
+      </p>
+
+      <!-- HERO KEY FACTS BOX (NAVY BANNER BOX) -->
+      <div class="llc-specs-card">
+        <div class="ls-kicker-pill" style="background: rgba(21, 154, 156, 0.15); border-color: #159A9C; color: #FFFFFF; margin-bottom: 0.75rem;">
+          <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 10px #159A9C;"></span>
+          REGISTERED AGENT — KEY FACTS 2026
+        </div>
+        <div style="font-size: 0.95rem; color: #CBD5E1; margin-bottom: 1.25rem;">
+          Source: State Statutes / IRS.gov / Thomson Reuters / Swyft Filings
+        </div>
+
+        <div class="llc-specs-grid">
+          <div class="spec-item-box">
+            <div class="spec-label">REQUIRED IN</div>
+            <div class="spec-value">All 50 states</div>
+            <div class="spec-desc">No exceptions under state law</div>
+          </div>
+          <div class="spec-item-box">
+            <div class="spec-label">SERVICE COST</div>
+            <div class="spec-value">$99–$300/yr</div>
+            <div class="spec-desc">Depending on provider ($39 NW)</div>
+          </div>
+          <div class="spec-item-box">
+            <div class="spec-label">CAN YOU BE YOUR OWN?</div>
+            <div class="spec-value">Yes</div>
+            <div class="spec-desc">If you meet state requirements</div>
+          </div>
+          <div class="spec-item-box">
+            <div class="spec-label">PHYSICAL ADDRESS</div>
+            <div class="spec-value">Required</div>
+            <div class="spec-desc">No P.O. boxes, no virtual addresses</div>
+          </div>
+          <div class="spec-item-box">
+            <div class="spec-label">BUSINESS HOURS</div>
+            <div class="spec-value">Mon–Fri 9am–5pm</div>
+            <div class="spec-desc">Must be physically present</div>
+          </div>
+          <div class="spec-item-box">
+            <div class="spec-label">MISS A LAWSUIT NOTICE?</div>
+            <div class="spec-value">Default Judgment</div>
+            <div class="spec-desc">You lose automatically in court</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <a href="#section-4" class="ls-btn" style="background: #159A9C; color: #FFFFFF; padding: 0.75rem 1.5rem; border-radius: 10px; font-weight: 800; font-size: 0.9rem; text-decoration: none; display: inline-block;">
+            Compare Top Registered Agent Services →
+          </a>
+        </div>
+      </div>
+
+      <!-- TABLE OF CONTENTS CARD -->
+      <div class="toc-card" id="toc-section">
+        <div style="font-size: 0.8rem; font-weight: 800; color: #12304A; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; font-family: var(--font-heading);">
+          WHAT THIS GUIDE COVERS
+        </div>
+        <div class="toc-grid">
+          <a href="#section-1" class="toc-link">1. Registered Agent Requirements — All 50 States</a>
+          <a href="#section-2" class="toc-link">2. Be Your Own Agent vs. Hire a Service</a>
+          <a href="#section-3" class="toc-link">3. What Does a Registered Agent Actually Do?</a>
+          <a href="#section-4" class="toc-link">4. Best Registered Agent Services 2026 — Compared</a>
+          <a href="#section-5" class="toc-link">5. How Much Does a Registered Agent Cost?</a>
+          <a href="#section-6" class="toc-link">6. How to Change Your Registered Agent</a>
+          <a href="#faq-section" class="toc-link">7. Frequently Asked Questions</a>
+        </div>
+      </div>
+
+      <!-- SECTION 1 -->
+      <section id="section-1">
+        <h2>What Is a Registered Agent and What Do They Actually Do?</h2>
+        <p>
+          A <strong>registered agent</strong> is the official point of contact between your LLC and the government. Specifically, their job is to receive three types of documents on your behalf: <strong>service of process</strong> (lawsuits, subpoenas, summonses), government correspondence from the Secretary of State, and official tax notices from state agencies. Furthermore, every document they receive must be forwarded to you promptly — because most legal documents come with deadlines ranging from 20 to 30 days to respond. Consequently, a slow or unreliable agent creates legal exposure the moment those deadlines pass without a response.
+        </p>
+        <p>
+          The role sounds simple, but the stakes are high. For example, if someone files a lawsuit against your LLC and the court delivers the summons to your registered agent — and your agent fails to forward it, or you fail to check — the court proceeds without you. Specifically, this results in a <strong>default judgment</strong>, where the court rules automatically in the plaintiff's favor. Additionally, state agencies use registered agent addresses to deliver compliance notices, annual report reminders, and tax documents. Missing any of these can trigger penalties or administrative dissolution of your LLC. That is why reliability and consistent availability are the two most critical factors when choosing a registered agent.
+        </p>
+
+        <div class="callout-box callout-teal">
+          <div style="font-weight: 800; color: #12304A; font-size: 1.05rem; margin-bottom: 0.5rem;">
+            💡 Key Takeaway:
+          </div>
+          <p style="margin: 0; font-size: 0.95rem; color: #0F766E; line-height: 1.65;">
+            Every single U.S. state requires every active LLC to maintain a registered agent with a physical street address in that state. Failing to maintain one results in loss of good standing, state fines, or administrative dissolution of your LLC.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section id="section-2">
+        <h2>Registered Agent Requirements — All 50 States</h2>
+        <p>
+          To serve as a registered agent for an LLC, an individual or business entity must satisfy three mandatory statutory requirements in every state:
+        </p>
+
+        <ul style="line-height: 1.8; color: #334155; margin-left: 1.25rem; margin-bottom: 1.5rem;">
+          <li style="margin-bottom: 0.5rem;"><strong>Physical Street Address:</strong> Must have an actual physical address (registered office) in the state of formation or registration. P.O. Boxes, PMBs, and virtual mailboxes are strictly prohibited.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Availability During Business Hours:</strong> Must be physically present at the registered office during standard business hours (typically 9:00 AM to 5:00 PM, Monday through Friday) to accept hand-delivered legal summonses.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Legal Capacity:</strong> If an individual, must be at least 18 years old and a legal resident of the state. If a corporation/LLC, must be authorized to transact business in the state.</li>
+        </ul>
+
+        <h3>Can an LLC be its own registered agent?</h3>
+        <p>
+          No. An LLC cannot serve as its own registered agent under state law. However, an individual owner (member), manager, officer, or employee of the LLC <em>can</em> serve as the registered agent as long as they reside in the state and meet the physical address and availability requirements.
+        </p>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section id="section-3">
+        <h2>Be Your Own Agent vs. Hire a Professional Service</h2>
+
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>⚖️</span> DIY Agent vs. Professional Service Comparison
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>FACTOR</th>
+                <th>ACT AS YOUR OWN AGENT</th>
+                <th>HIRE A PROFESSIONAL SERVICE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cost</strong></td>
+                <td>$0 (Free)</td>
+                <td>$39–$300/year ($39 with Northwest)</td>
+              </tr>
+              <tr>
+                <td><strong>Privacy</strong></td>
+                <td>Home address becomes public record on state database</td>
+                <td><strong style="color: #047857;">Service provider address listed; keeps home address private</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Business Hours</strong></td>
+                <td>Must remain at registered address Mon–Fri 9am–5pm</td>
+                <td><strong style="color: #047857;">Service handles 100% of business hour presence</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Jury/Client Disruption</strong></td>
+                <td>Process server can deliver lawsuit in front of clients/family</td>
+                <td><strong style="color: #047857;">Lawsuits served quietly at commercial office</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Multi-State Expansion</strong></td>
+                <td>Must have physical address in every operating state</td>
+                <td><strong style="color: #047857;">Covers all 50 states seamlessly</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Compliance Alerts</strong></td>
+                <td>You must track annual report due dates manually</td>
+                <td><strong style="color: #047857;">Automatic compliance calendar & deadline alerts</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4 -->
+      <section id="section-4">
+        <h2>Best Registered Agent Services (2026)</h2>
+        
+        <div style="background: #FFFFFF; border: 2px solid #00875A; border-radius: 16px; padding: 1.75rem; margin: 2rem 0; box-shadow: 0 6px 20px rgba(0, 135, 90, 0.08);">
+          <span style="background: #00875A; color: #FFFFFF; font-size: 0.725rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 0.85rem;">
+            ★ OUR TOP PICK
+          </span>
+          <div style="font-size: 1.35rem; font-weight: 800; color: #12304A; margin-bottom: 0.4rem; font-family: var(--font-heading);">
+            Northwest Registered Agent
+          </div>
+          <p style="font-size: 0.95rem; color: #475569; margin-bottom: 1.25rem; line-height: 1.6;">
+            Northwest provides premium registered agent service in all 50 states with Privacy by Default®, same-day document scanning, and local Corporate Guides.
+          </p>
+
+          <div style="border-top: 1px dashed #E2E8F0; padding-top: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="font-size: 0.925rem; color: #00875A; font-weight: 800;">Starting at $39 + state fees</div>
+              <div style="font-size: 0.8rem; color: #64748B; margin-top: 0.2rem;">1st year registered agent included ($125/yr renewal)</div>
+            </div>
+            <a href="index.html#northwest-section" class="ls-btn" target="_blank" rel="sponsored noopener" style="text-decoration:none; background: #00875A; color: #FFFFFF; padding: 0.85rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 14px rgba(0, 135, 90, 0.25);">
+              Get Northwest Registered Agent →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: FAQ SECTION -->
+      <section id="faq-section" style="margin-top: 3.5rem;">
+        <div style="margin-bottom: 2rem;">
+          <div class="ls-kicker-pill">
+            <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 8px #159A9C;"></span>
+            FREQUENTLY ASKED QUESTIONS
+          </div>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 800; color: #12304A; margin-top: 0.5rem; font-family: var(--font-heading);">
+            Registered Agent FAQs
+          </h2>
+        </div>
+
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item" name="faq-ra-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">01</span>
+                <span>Can I use a P.O. Box or virtual address as my registered agent address?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>No. State law requires a physical street address where a process server can physically hand-deliver legal documents during business hours. P.O. Boxes and virtual mailboxes are strictly rejected by the Secretary of State.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-ra-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">02</span>
+                <span>What happens if I don't have a registered agent?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Your LLC formation documents will be rejected. If an existing LLC loses its registered agent, the state will issue a notice of non-compliance and eventually administratively dissolve the LLC, destroying your personal liability protection.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-ra-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">03</span>
+                <span>Can I change my registered agent later?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Yes! You can change your registered agent at any time by filing a Change of Registered Agent form with your Secretary of State (filing fees range from $0 to $50 depending on the state).</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- =========================================================================
+       3. SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="site-logo" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p style="font-size:0.88rem; color: #CBD5E1; margin-top:1rem; line-height: 1.6;">
+           LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Popular States</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Wyoming LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Florida LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Texas LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
+            <li><a href="index.html#calculator-section" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
+            <li><a href="registered-agent-guide.html" style="font-size:0.85rem; color:#CBD5E1;">Registered Agent Guide</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
+        <div>
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </div>
+        <div>
+          © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a href="index.html#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

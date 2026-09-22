@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>LLC Operating Agreement Guide (2026 Rules & Templates) | LLC Primer</title>
+  <meta name="description" content="Complete guide to LLC Operating Agreements in 2026. Learn single-member vs multi-member rules, state requirements (NY, CA, DE, MO, ME), core governance clauses, tax allocations, and drafting rules.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Scoped Content Container for Body Cards (Leaving Navbar & Footer at full homepage width) */
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3.5rem 1.5rem;
+      width: 100%;
+    }
+
+    /* Article Spacing & Typography Matching what-is-an-llc.html 1:1 */
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover {
+      color: #0E7490;
+    }
+
+    /* Hero Key Specs Card (Navy Banner Box) */
+    .llc-specs-card {
+      background: linear-gradient(135deg, #12304A 0%, #0D2336 100%);
+      border: 1.5px solid rgba(21, 154, 156, 0.35);
+      border-radius: 24px;
+      padding: 2.25rem 2.5rem;
+      color: #FFFFFF;
+      box-shadow: 0 16px 45px rgba(18, 48, 74, 0.2);
+      margin: 2rem 0 2.5rem 0;
+    }
+    .llc-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .spec-item-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 1.15rem 1rem;
+      text-align: center;
+    }
+    .spec-label {
+      font-size: 0.725rem;
+      font-weight: 800;
+      color: #159A9C;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+    .spec-value {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+    }
+    .spec-desc {
+      font-size: 0.75rem;
+      color: #94A3B8;
+      margin-top: 0.2rem;
+      line-height: 1.3;
+    }
+
+    /* Table of Contents Card */
+    .toc-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.06);
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 2rem;
+    }
+    .toc-link {
+      font-size: 0.925rem;
+      color: #159A9C !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      display: inline-block;
+      transition: color 0.2s ease;
+    }
+    .toc-link:hover {
+      color: #0E7490 !important;
+      text-decoration: underline !important;
+    }
+
+    /* Structured Custom Tables */
+    .custom-table-wrapper {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.08);
+      margin: 2rem 0;
+    }
+    .custom-table-header {
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 1.15rem 1.75rem;
+      font-size: 1.1rem;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .custom-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .custom-data-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .custom-data-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.925rem;
+      color: #334155;
+      border-bottom: 1px solid #E2E8F0;
+      line-height: 1.6;
+    }
+    .custom-data-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-data-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+
+    /* Highlight Callout Boxes */
+    .callout-box {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin: 1.75rem 0;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+    }
+    .callout-teal {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      border-left: 5px solid #159A9C;
+    }
+    .callout-yellow {
+      background: #FEFCE8;
+      border: 1px solid #FDE047;
+      border-left: 5px solid #EAB308;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1px solid #BAE6FD;
+      border-left: 5px solid #0284C7;
+    }
+
+    /* Comparison Box */
+    .comparison-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin: 1.75rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .comparison-col {
+      flex: 1;
+    }
+
+    /* Checklist Card */
+    .checklist-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.06);
+      margin: 2rem 0;
+    }
+    .checklist-item {
+      padding: 1.15rem 1.65rem;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .checklist-item:last-child {
+      border-bottom: none;
+    }
+
+    /* FAQ Accordion Styling */
+    .faq-accordion-wrapper {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      color: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      color: #334155;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      border-top: 1px dashed #E2E8F0;
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .llc-specs-grid { grid-template-columns: repeat(2, 1fr); }
+      .toc-grid { grid-template-columns: 1fr; }
+      .comparison-box { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       0. TOP ANNOUNCEMENT / TRUST BAR
+       ========================================================================= -->
+  <div style="background: #12304A; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.8rem; color: #94A3B8; padding: 0.5rem 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #159A9C; box-shadow: 0 0 10px #159A9C;"></span>
+        <strong style="color: #F8FAFC;">2026 SOS RATES & STATUTES VERIFIED</strong> · 50-State Filing Fees & Government Guides
+      </div>
+      <div style="display: flex; align-items: center; gap: 1.25rem;">
+        <a href="index.html#states-section" style="color: #CBD5E1; font-weight: 500;">🏛️ All 50 States</a>
+        <a href="index.html#non-us-section" style="color: #CBD5E1; font-weight: 500;">🌐 Non-US Founders</a>
+        <a href="quiz.html" style="color: #159A9C; font-weight: 700;">🧩 Take 60-Sec LLC Quiz →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       1. EXECUTIVE GLASSMORPHIC NAVBAR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link" style="color: var(--color-primary); font-weight: 800;">
+            Start an LLC
+          </a>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#northwest-section" class="nav-link">
+            Reviews
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#northwest-section" class="dropdown-link">⭐ Northwest Registered Agent ($39)</a>
+            <a href="index.html#northwest-section" class="dropdown-link">🌐 doola Review (Non-US Founders)</a>
+            <a href="index.html#northwest-section" class="dropdown-link">📊 ZenBusiness vs LegalZoom</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link active">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link"> What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link"> Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link"> How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link"> How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;"> LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link"> Registered Agent Guide</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#after-formation-section" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#after-formation-section" class="dropdown-link">01. Obtain Federal EIN (SS-4 Tax ID)</a>
+            <a href="operating-agreement.html" class="dropdown-link">02. Draft Operating Agreement</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">03. Open Business Bank Account</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">04. File FinCEN BOI Report</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">05. Business Licenses & Permits</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#cost-estimator-section" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="quiz.html" class="dropdown-link">🧩 Interactive LLC Quiz (60 Sec)</a>
+            <a href="index.html#cost-estimator-section" class="dropdown-link">📊 First-Year Cost Estimator</a>
+            <a href="index.html#spanish-section" class="dropdown-link">🇪🇸 Guía de LLC en Español</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#non-us-section" class="nav-link">
+            Non-Residents 🌐
+          </a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan →
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT AREA
+       ========================================================================= -->
+  <main class="guide-content-container">
+
+    <!-- BREADCRUMB -->
+    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
+      <a href="index.html" style="color: #64748B; text-decoration: none;">Home</a> &nbsp;/&nbsp; 
+      <a href="llc-guide.html" style="color: #64748B; text-decoration: none;">LLC Guides</a> &nbsp;/&nbsp; 
+      <strong style="color: #12304A;">LLC Operating Agreement</strong>
+    </div>
+
+    <article class="guide-article">
+
+      <!-- HEADER TITLE & SUBTITLE -->
+      <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: #12304A; line-height: 1.2; margin-bottom: 0.75rem; font-family: var(--font-heading);">
+        LLC Operating Agreement Guide (2026 Rules)
+      </h1>
+      <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; color: #159A9C; margin-bottom: 1.5rem; line-height: 1.4;">
+        State Requirements, Core Clauses, Single vs Multi-Member Differences & Tax Provisions
+      </p>
+
+      <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.5rem;">
+        Last reviewed: <strong>September 7, 2026</strong> · Source: <strong>State LLC Statutes & Business Law Practices</strong>
+      </div>
+
+      <!-- HERO SPECS CARD -->
+      <div class="llc-specs-card">
+        <div class="ls-kicker-pill" style="background: rgba(21, 154, 156, 0.15); border-color: #159A9C; color: #FFFFFF; margin-bottom: 0.75rem;">
+          <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 10px #159A9C;"></span>
+          LLC OPERATING AGREEMENT — 2026 GUIDE
+        </div>
+        <div style="font-size: 0.95rem; color: #CBD5E1; margin-bottom: 1.25rem;">
+          Key facts on legal status, state filings, and internal governance
+        </div>
+
+        <div class="llc-specs-grid">
+          <div class="spec-item-box">
+            <div class="spec-label">DOCUMENT TYPE</div>
+            <div class="spec-value">Internal governance</div>
+            <div class="spec-desc">Private contract among members</div>
+          </div>
+          <div class="spec-item-box">
+            <div class="spec-label">STATE FILING</div>
+            <div class="spec-value">Not filed</div>
+            <div class="spec-desc">Usually kept with company records</div>
+          </div>
+          <div class="spec-item-box">
+            <div class="spec-label">TAX ELECTION</div>
+            <div class="spec-value">Separate IRS filing</div>
+            <div class="spec-desc">Requires Form 2553 or 8832</div>
+          </div>
+          <div class="spec-item-box">
+            <div class="spec-label">BEST USE</div>
+            <div class="spec-value">Ownership & Exits</div>
+            <div class="spec-desc">Authority, distributions & buyouts</div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        An <strong>LLC operating agreement</strong> sets the internal rules of a limited liability company: who owns it, who can act for it, how decisions are approved, how money moves, what happens when ownership changes, and how the company can be wound down. It is important, but it should not be sold as a magic document that automatically creates liability protection, guarantees a bank account, or makes a tax election by itself.
+      </p>
+
+      <!-- BLUE QUICK ANSWER BOX -->
+      <div class="callout-box callout-blue">
+        <div style="font-weight: 800; color: #0369A1; font-size: 0.95rem; margin-bottom: 0.35rem; font-family: var(--font-heading);">
+          QUICK ANSWER:
+        </div>
+        <p style="margin: 0; font-size: 0.95rem; color: #0C4A6E; line-height: 1.65;">
+          A written operating agreement is usually the safest practical format even when state law permits an oral or implied agreement. The exact legal requirement, signature mechanics and default rules depend on the LLC's formation state.
+        </p>
+      </div>
+
+      <!-- TABLE OF CONTENTS CARD -->
+      <div class="toc-card" id="toc-section">
+        <div style="font-size: 0.8rem; font-weight: 800; color: #12304A; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; font-family: var(--font-heading);">
+          OPERATING AGREEMENT GUIDE
+        </div>
+        <div class="toc-grid">
+          <a href="#section-1" class="toc-link">1. What an operating agreement does</a>
+          <a href="#section-2" class="toc-link">2. States with explicit operating-agreement rules</a>
+          <a href="#section-3" class="toc-link">3. Single-member vs multi-member LLCs</a>
+          <a href="#section-4" class="toc-link">4. Core provisions to include</a>
+          <a href="#section-5" class="toc-link">5. Tax clauses: what they can and cannot do</a>
+          <a href="#section-6" class="toc-link">6. Management and signing authority</a>
+          <a href="#section-7" class="toc-link">7. Signatures, notarization and enforceability</a>
+          <a href="#section-8" class="toc-link">8. Liability protection: avoid the shortcut claim</a>
+          <a href="#section-9" class="toc-link">9. Banks, investors and proof of ownership</a>
+          <a href="#section-10" class="toc-link">10. Amending the agreement</a>
+          <a href="#section-11" class="toc-link">11. Five drafting mistakes to avoid</a>
+          <a href="#section-12" class="toc-link">12. Operating agreement vs Articles of Organization</a>
+          <a href="#faq-section" class="toc-link">13. Questions</a>
+        </div>
+      </div>
+
+      <!-- SECTION 1 -->
+      <section id="section-1">
+        <h2>What an LLC operating agreement actually does</h2>
+        <p>
+          The operating agreement is the LLC's private governance contract. It can define ownership percentages, capital contributions, voting thresholds, management authority, distributions, transfers, buyouts, admission of new members, succession planning and dissolution procedures.
+        </p>
+
+        <div class="comparison-box">
+          <div class="comparison-col">
+            <div style="font-weight: 800; color: #047857; font-size: 1rem; margin-bottom: 0.4rem;">What it can do</div>
+            <div style="font-size: 0.875rem; color: #334155; line-height: 1.6;">Replace many state default rules with agreed internal rules, allocate authority, document ownership and establish procedures for future changes.</div>
+          </div>
+          <div style="font-size: 1.5rem; font-weight: 800; color: #94A3B8;">≠</div>
+          <div class="comparison-col">
+            <div style="font-weight: 800; color: #B91C1C; font-size: 1rem; margin-bottom: 0.4rem;">What it cannot do by itself</div>
+            <div style="font-size: 0.875rem; color: #334155; line-height: 1.6;">Create the LLC, override non-waivable law, guarantee limited liability, open a bank account automatically or elect federal tax status without the required IRS filing.</div>
+          </div>
+        </div>
+
+        <p>
+          If you are still deciding how the entity itself works, start with our <a href="what-is-an-llc.html">LLC structure guide</a>. The operating agreement governs the company after formation; it does not replace the state formation filing.
+        </p>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section id="section-2">
+        <h2>Five states with especially explicit operating-agreement rules</h2>
+        <p>
+          California, Delaware, Maine, Missouri and New York all have statutes or official guidance that make the operating agreement especially important. The old version of this page treated them as if they imposed the same written-document rule. They do not.
+        </p>
+
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>🏛️</span> 5 States with Specific Operating Agreement Statutes
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th style="width: 20%;">STATE</th>
+                <th style="width: 45%;">CURRENT RULE</th>
+                <th style="width: 35%;">WRITTEN REQUIRED?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>California</strong></td>
+                <td>Members must enter into an operating agreement; FTB says it may be verbal or written and advises a formal written agreement.</td>
+                <td><strong>No — oral or written</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Delaware</strong></td>
+                <td>An LLC agreement may be written, oral or implied. Delaware also says members/managers can be bound whether or not they execute it.</td>
+                <td><strong>No — written, oral or implied</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Maine</strong></td>
+                <td>A limited liability company agreement must be entered into or otherwise had. Maine defines it as written, oral or implied.</td>
+                <td><strong>No — written, oral or implied</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Missouri</strong></td>
+                <td>Members shall adopt an operating agreement. Missouri defines it as a valid written or oral agreement among members, or a written declaration by a sole member.</td>
+                <td><strong>Not universally written</strong></td>
+              </tr>
+              <tr>
+                <td><strong>New York</strong></td>
+                <td>Members shall adopt a written operating agreement. It may be entered into before, at formation or within 90 days after the Articles of Organization are filed.</td>
+                <td><strong style="color: #047857;">Yes</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout-box callout-teal">
+          <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.35rem;">
+            Practical rule:
+          </div>
+          <p style="margin: 0; font-size: 0.95rem; color: #0F766E;">
+            Even where an oral or implied agreement can exist, a written version is usually much easier to administer, prove, amend and show to a bank, lender, buyer or investor.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section id="section-3">
+        <h2>Single-member and multi-member agreements solve different problems</h2>
+        <p>
+          A <a href="what-is-an-llc.html">single-member LLC</a> does not need voting mechanics between owners, but a written agreement can still document ownership, management authority, succession instructions and the separation between the owner and the entity. It can also provide a clean record when a bank or counterparty asks who is authorized to act.
+        </p>
+        <p>
+          A <a href="what-is-an-llc.html">multi-member LLC</a> needs more detail because economic rights and control can diverge. The agreement should anticipate contributions, voting, deadlocks, transfers, departures, death or incapacity, buyouts and the process for admitting new members.
+        </p>
+
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>⚖️</span> Single-Member vs Multi-Member Agreement Comparison
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>TOPIC</th>
+                <th>SINGLE-MEMBER</th>
+                <th>MULTI-MEMBER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ownership record</strong></td>
+                <td>Document sole ownership</td>
+                <td>Document each member's interest</td>
+              </tr>
+              <tr>
+                <td><strong>Voting</strong></td>
+                <td>Usually simple</td>
+                <td>Define thresholds and reserved matters</td>
+              </tr>
+              <tr>
+                <td><strong>Exit/buyout rules</strong></td>
+                <td>Succession is the main issue</td>
+                <td>Buy-sell and transfer rules are central</td>
+              </tr>
+              <tr>
+                <td><strong>Economic provisions</strong></td>
+                <td>Usually straightforward</td>
+                <td>Must coordinate allocations, distributions and capital accounts</td>
+              </tr>
+              <tr>
+                <td><strong>Dispute process</strong></td>
+                <td>Less central</td>
+                <td>Often worth defining in advance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4 -->
+      <section id="section-4">
+        <h2>Core provisions worth drafting deliberately</h2>
+        
+        <div class="checklist-card">
+          <div class="custom-table-header">
+            <span>☑️</span> Operating agreement checklist
+          </div>
+          
+          <div class="checklist-item">
+            <span style="color: #10B981; font-weight: 800; font-size: 1.1rem;">✓</span>
+            <div>
+              <strong style="color: #12304A;">Company identity and purpose</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">Legal name, formation state, principal business purpose and effective date.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <span style="color: #10B981; font-weight: 800; font-size: 1.1rem;">✓</span>
+            <div>
+              <strong style="color: #12304A;">Members and contributions</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">Ownership, initial contributions, future contribution obligations and what happens if someone fails to contribute.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <span style="color: #10B981; font-weight: 800; font-size: 1.1rem;">✓</span>
+            <div>
+              <strong style="color: #12304A;">Management and authority</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">Member-managed or manager-managed structure, signing authority and decisions that require member approval.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <span style="color: #10B981; font-weight: 800; font-size: 1.1rem;">✓</span>
+            <div>
+              <strong style="color: #12304A;">Voting and deadlocks</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">Voting weights, ordinary thresholds, supermajority/unanimous matters and what happens when owners cannot agree.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <span style="color: #10B981; font-weight: 800; font-size: 1.1rem;">✓</span>
+            <div>
+              <strong style="color: #12304A;">Economics</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">Distributions, tax allocations when relevant, reserves, reimbursements and member/manager compensation.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <span style="color: #10B981; font-weight: 800; font-size: 1.1rem;">✓</span>
+            <div>
+              <strong style="color: #12304A;">Transfers and exits</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">Admission of new members, transfer restrictions, right of first refusal, buyout method, death, incapacity and withdrawal.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <span style="color: #10B981; font-weight: 800; font-size: 1.1rem;">✓</span>
+            <div>
+              <strong style="color: #12304A;">Amendment and records</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">Who can amend the document, required approval and how current versions are retained.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <span style="color: #10B981; font-weight: 800; font-size: 1.1rem;">✓</span>
+            <div>
+              <strong style="color: #12304A;">Dissolution and wind-down</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">Trigger events, authorization and distribution mechanics consistent with applicable law.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5 -->
+      <section id="section-5">
+        <h2>Tax clauses need more care than the old page suggested</h2>
+        <p>
+          An operating agreement can describe the members' intended economic arrangement and can record the LLC's current tax posture. It does <strong>not</strong> itself elect federal tax classification.
+        </p>
+
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>📊</span> Tax Provisions Alignment Matrix
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>FEDERAL TAX TREATMENT</th>
+                <th>WHAT THE AGREEMENT SHOULD RECOGNIZE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Single-member LLC — default disregarded entity</strong></td>
+                <td>There is only one owner, so partnership-style special allocations do not apply.</td>
+              </tr>
+              <tr>
+                <td><strong>Multi-member LLC taxed as partnership</strong></td>
+                <td>Tax allocations under the partnership agreement are subject to IRC §704(b) and related regulations; cash distributions and tax allocations are not the same concept.</td>
+              </tr>
+              <tr>
+                <td><strong>LLC taxed as C corporation</strong></td>
+                <td>The federal classification is made through the applicable IRS election, such as Form 8832 when required.</td>
+              </tr>
+              <tr>
+                <td><strong>LLC taxed as S corporation</strong></td>
+                <td>The S election is made with Form 2553. Governing provisions should not create non-identical distribution or liquidation rights that could create a second class of stock problem.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout-box callout-yellow">
+          <div style="font-weight: 800; color: #854D0E; font-size: 0.95rem; margin-bottom: 0.4rem;">
+            Do not copy a "special allocation" clause casually.
+          </div>
+          <p style="margin: 0; font-size: 0.9rem; color: #713F12; line-height: 1.65;">
+            Partnership allocations can be respected only under the federal partnership allocation rules, and an LLC taxed as an S corporation has a different one-class-of-stock constraint. Coordinate unusual economics with a tax professional before signing them into the agreement.
+          </p>
+        </div>
+
+        <p>
+          For the broader classification framework, see our <a href="how-are-llcs-taxed.html">LLC tax guide</a>.
+        </p>
+      </section>
+
+      <!-- SECTION 6 -->
+      <section id="section-6">
+        <h2>Management structure and authority should match the real business</h2>
+        <p>
+          The agreement should say whether the LLC is member-managed or manager-managed and then define what each person can actually do. Do not rely on a generic sentence saying a manager can "bind the company in all matters" if the members intend to reserve major decisions for themselves.
+        </p>
+
+        <div class="comparison-box">
+          <div class="comparison-col">
+            <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.4rem;">Member-managed</div>
+            <div style="font-size: 0.875rem; color: #334155; line-height: 1.6;">Useful when owners participate directly. Define ordinary authority, voting weight and which actions need approval beyond day-to-day management.</div>
+          </div>
+          <div style="font-size: 1.25rem; font-weight: 800; color: #94A3B8;">VS</div>
+          <div class="comparison-col">
+            <div style="font-weight: 800; color: #12304A; font-size: 1rem; margin-bottom: 0.4rem;">Manager-managed</div>
+            <div style="font-size: 0.875rem; color: #334155; line-height: 1.6;">Useful when owners are passive or management is delegated. Define manager powers, removal, compensation and reserved member decisions.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 7 -->
+      <section id="section-7">
+        <h2>Does every member have to sign?</h2>
+        <p>
+          There is no safe nationwide rule that says an operating agreement is unenforceable unless every member signs the same paper document. Delaware is the clearest counterexample: its LLC Act expressly says a member, manager or assignee can be bound by the LLC agreement whether or not that person executes it.
+        </p>
+        <p>
+          For a written agreement, collecting signatures or another clear form of assent from the people whose rights are being governed is still a strong documentation practice. But the legal effect of a missing signature depends on the formation state's law, the agreement itself and the facts showing assent.
+        </p>
+
+        <div class="callout-box callout-teal">
+          <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.35rem;">
+            Notarization:
+          </div>
+          <p style="margin: 0; font-size: 0.95rem; color: #0F766E; line-height: 1.65;">
+            Do not treat notarization as a universal validity requirement. It may be requested by a particular bank, lender, transaction or foreign-use process, but that is different from saying every LLC operating agreement must be notarized.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 8 -->
+      <section id="section-8">
+        <h2>An operating agreement supports governance — it does not guarantee the liability shield</h2>
+        <p>
+          The absence of an operating agreement does not produce one automatic nationwide liability consequence. Limited-liability disputes are governed by state law and the full factual record.
+        </p>
+        <p>
+          A written agreement can be useful evidence that the owner intended to operate through a separate legal entity and can document governance, authority and recordkeeping. But veil-piercing and personal-liability questions are state-specific and usually depend on a broader set of facts, such as commingling, undercapitalization, personal guarantees, fraud, misuse of the entity and compliance with applicable law.
+        </p>
+
+        <div style="background: linear-gradient(135deg, #12304A 0%, #1E40AF 100%); border-radius: 16px; padding: 1.5rem 2rem; color: #FFFFFF; margin: 2rem 0; box-shadow: 0 8px 25px rgba(18, 48, 74, 0.15);">
+          <div style="font-size: 0.75rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; font-family: var(--font-heading);">
+            BETTER FRAMING
+          </div>
+          <div style="font-size: 0.95rem; font-weight: 600; line-height: 1.6; color: #F8FAFC;">
+            Use the operating agreement as one part of disciplined entity governance. Do not tell an owner that the document alone creates the shield or that its absence automatically destroys it.
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 9 -->
+      <section id="section-9">
+        <h2>Banks, lenders and investors may ask for it — but requirements vary</h2>
+        <p>
+          Financial institutions often need evidence of ownership and signing authority, and an operating agreement can be one way to provide it. However, no universal banking rule requires every LLC to present the document in every account-opening process.
+        </p>
+        <p>
+          A bank may instead or additionally request formation documents, EIN confirmation, beneficial-owner information, resolutions, identification or institution-specific forms. The operating agreement therefore helps as a governance and ownership record without guaranteeing approval.
+        </p>
+        <p>
+          For account-opening documentation, use our business bank account guide.
+        </p>
+      </section>
+
+      <!-- SECTION 10 -->
+      <section id="section-10">
+        <h2>How to amend an operating agreement</h2>
+        <p>
+          Start with the amendment clause in the current agreement. It should tell you who can propose a change and what approval threshold applies. If the agreement is silent, the formation state's default LLC law can control the process.
+        </p>
+        <p>
+          Do not assume every amendment requires unanimous signatures. Some agreements require a majority, supermajority or consent of only the affected class; certain changes may require broader consent under non-waivable law. Record the approval, date the amendment and keep the current agreement together with its amendment history.
+        </p>
+      </section>
+
+      <!-- SECTION 11 -->
+      <section id="section-11">
+        <h2>Five operating-agreement mistakes worth fixing before signing</h2>
+        
+        <div class="checklist-card">
+          <div class="custom-table-header">
+            <span>⚠️</span> Drafting risks
+          </div>
+          
+          <div class="checklist-item">
+            <span style="color: #EF4444; font-weight: 800; font-size: 1.1rem;">1</span>
+            <div>
+              <strong style="color: #12304A;">Using the wrong state's template</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">The governing law and default rules must match the LLC's actual formation state.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <span style="color: #EF4444; font-weight: 800; font-size: 1.1rem;">2</span>
+            <div>
+              <strong style="color: #12304A;">Turning a tax clause into a fake election</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">Federal classification changes require the applicable IRS election; the agreement alone is not enough.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <span style="color: #EF4444; font-weight: 800; font-size: 1.1rem;">3</span>
+            <div>
+              <strong style="color: #12304A;">Mixing ownership, allocations and cash distributions</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">These concepts can differ, but the tax consequences and state-law economics have to work together.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <span style="color: #EF4444; font-weight: 800; font-size: 1.1rem;">4</span>
+            <div>
+              <strong style="color: #12304A;">Ignoring transfer and exit mechanics</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">Multi-member LLCs should know what happens when someone wants out, dies, becomes disabled or tries to transfer an interest.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <span style="color: #EF4444; font-weight: 800; font-size: 1.1rem;">5</span>
+            <div>
+              <strong style="color: #12304A;">Leaving the agreement frozen after the company changes</strong>
+              <div style="font-size: 0.875rem; color: #64748B; margin-top: 0.2rem;">Ownership, management authority, major financing and tax-classification changes can make old provisions inaccurate.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 12 -->
+      <section id="section-12">
+        <h2>Operating Agreement vs Articles of Organization</h2>
+        
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>⚖️</span> Articles of Organization vs Operating Agreement
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>QUESTION</th>
+                <th>ARTICLES OF ORGANIZATION</th>
+                <th>OPERATING AGREEMENT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Primary purpose</strong></td>
+                <td>Forms the LLC with the state</td>
+                <td>Governs internal rights and procedures</td>
+              </tr>
+              <tr>
+                <td><strong>Filed with state?</strong></td>
+                <td>Yes</td>
+                <td>Generally retained as an internal company record rather than filed as the formation document</td>
+              </tr>
+              <tr>
+                <td><strong>Ownership detail</strong></td>
+                <td>Depends on state form</td>
+                <td>Can document members and economic rights in detail</td>
+              </tr>
+              <tr>
+                <td><strong>Voting/management</strong></td>
+                <td>Usually limited information</td>
+                <td>Can define authority and approval thresholds</td>
+              </tr>
+              <tr>
+                <td><strong>Tax election</strong></td>
+                <td>No</td>
+                <td>No — IRS election is separate</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          After the company is formed and the agreement is in place, continue with the post-formation checklist. If the agreement includes wind-down provisions, compare them with the actual state process in our LLC dissolution guide.
+        </p>
+      </section>
+
+      <!-- SECTION 13: FAQ SECTION -->
+      <section id="faq-section" style="margin-top: 3.5rem;">
+        <div style="margin-bottom: 2rem;">
+          <div class="ls-kicker-pill">
+            <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 8px #159A9C;"></span>
+            FREQUENTLY ASKED QUESTIONS
+          </div>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 800; color: #12304A; margin-top: 0.5rem; font-family: var(--font-heading);">
+            Operating Agreement Questions
+          </h2>
+        </div>
+
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item" name="faq-oa-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">01</span>
+                <span>Can a sole owner create a valid operating agreement?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Yes. Single-member LLC operating agreements are valid and routinely used to establish sole ownership, management authority, banking resolution terms, and succession rules.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-oa-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">02</span>
+                <span>Do I have to file my Operating Agreement with the Secretary of State?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>No. Operating agreements are internal private contracts and are not filed with the state Secretary of State office in any U.S. state. Keep it stored with your official company records.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-oa-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">03</span>
+                <span>Does an Operating Agreement need to be notarized?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Notarization is generally not required by state law for validity, although some banks or lenders may request a notarized signature during account opening or financing.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- =========================================================================
+       3. SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="site-logo" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p style="font-size:0.88rem; color: #CBD5E1; margin-top:1rem; line-height: 1.6;">
+           LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Popular States</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Wyoming LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Florida LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Texas LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
+            <li><a href="index.html#calculator-section" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
+        <div>
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </div>
+        <div>
+          © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a href="index.html#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
