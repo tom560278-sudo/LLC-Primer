@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>Best State to Form an LLC (2026) | Wyoming vs Delaware vs Home State | LLC Primer</title>
+  <meta name="description" content="Find the best state to form your LLC in 2026. Compare Wyoming, Delaware, New Mexico, and your home state on government costs, foreign qualification, and privacy.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Scoped Content Container for Body Cards */
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3.5rem 1.5rem;
+      width: 100%;
+    }
+
+    /* Table of Contents Card */
+    .toc-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 2rem 2.25rem;
+      margin: 2rem 0 2.5rem 0;
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.06);
+    }
+    .toc-header {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+      font-family: var(--font-heading);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 2rem;
+    }
+    .toc-link-item {
+      font-size: 0.925rem;
+      color: #159A9C !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s ease;
+    }
+    .toc-link-item:hover {
+      color: #0E7490 !important;
+      text-decoration: underline !important;
+    }
+
+    /* Structured Custom Tables */
+    .custom-table-wrapper {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.08);
+      margin: 1.75rem 0;
+    }
+    .custom-table-header {
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 1.15rem 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .custom-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .custom-data-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .custom-data-table td {
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      color: #334155;
+      border-bottom: 1px solid #E2E8F0;
+      line-height: 1.6;
+    }
+    .custom-data-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-data-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+
+    /* State Official Filing Card (Blue pill accent) */
+    .state-filing-card {
+      background: #F0F9FF;
+      border: 1px solid #BAE6FD;
+      border-radius: 14px;
+      padding: 1.15rem 1.5rem;
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.06);
+    }
+    .state-badge {
+      background: #0284C7;
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.35rem 0.6rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .state-filing-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #12304A;
+    }
+    .state-filing-sub {
+      font-size: 0.75rem;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 0.5rem;
+    }
+
+    /* Checklist / Worksheet Card */
+    .worksheet-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.08);
+      margin: 2rem 0;
+    }
+    .worksheet-item {
+      padding: 1.25rem 1.65rem;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .worksheet-item:last-child {
+      border-bottom: none;
+    }
+    .worksheet-checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #CBD5E1;
+      border-radius: 5px;
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    /* Highlight Callout Box */
+    .callout-box {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      border-left: 5px solid #159A9C;
+      border-radius: 14px;
+      padding: 1.35rem 1.65rem;
+      margin: 1.75rem 0;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #0F766E;
+    }
+
+    /* Content Typography */
+    .guide-article {
+      color: #334155;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+    }
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover {
+      color: #0E7490;
+    }
+
+    @media (max-width: 768px) {
+      .toc-grid { grid-template-columns: 1fr; }
+      .custom-data-table th, .custom-data-table td { padding: 0.75rem 0.85rem; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       0. TOP ANNOUNCEMENT / TRUST BAR
+       ========================================================================= -->
+  <div style="background: #12304A; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.8rem; color: #94A3B8; padding: 0.5rem 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #159A9C; box-shadow: 0 0 10px #159A9C;"></span>
+        <strong style="color: #F8FAFC;">2026 SOS RATES VERIFIED</strong> · 50-State Filing Fees & Government Guides
+      </div>
+      <div style="display: flex; align-items: center; gap: 1.25rem;">
+        <a href="index.html#states-section" style="color: #CBD5E1; font-weight: 500;">🏛️ All 50 States</a>
+        <a href="index.html#non-us-section" style="color: #CBD5E1; font-weight: 500;">🌐 Non-US Founders</a>
+        <a href="quiz.html" style="color: #159A9C; font-weight: 700;">🧩 Take 60-Sec LLC Quiz →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       1. EXECUTIVE GLASSMORPHIC NAVBAR (LLC PRIMER)
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link" style="color: var(--color-primary); font-weight: 800;">
+            Start an LLC
+          </a>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#northwest-section" class="nav-link">
+            Reviews
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#northwest-section" class="dropdown-link">⭐ Northwest Registered Agent ($39)</a>
+            <a href="index.html#northwest-section" class="dropdown-link">🌐 doola Review (Non-US Founders)</a>
+            <a href="index.html#northwest-section" class="dropdown-link">📊 ZenBusiness vs LegalZoom</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link active">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link"> What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link"> Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link"> How Much Does An LLC Cost</a>
+            <a href="index.html#states-section" class="dropdown-link"> What Are LLC Taxed</a>
+            <a href="index.html#states-section" class="dropdown-link"> LLC Operating Agreement</a>
+            <a href="index.html#states-section" class="dropdown-link"> Registered Agent Guide</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#after-formation-section" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#after-formation-section" class="dropdown-link">01. Obtain Federal EIN (SS-4 Tax ID)</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">02. Draft Operating Agreement</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">03. Open Business Bank Account</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">04. File FinCEN BOI Report</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">05. Business Licenses & Permits</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#cost-estimator-section" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="quiz.html" class="dropdown-link">🧩 Interactive LLC Quiz (60 Sec)</a>
+            <a href="index.html#cost-estimator-section" class="dropdown-link">📊 First-Year Cost Estimator</a>
+            <a href="index.html#spanish-section" class="dropdown-link">🇪🇸 Guía de LLC en Español</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#non-us-section" class="nav-link">
+            Non-Residents 🌐
+          </a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan →
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT AREA (EXACT STYLED CONTAINER matching start-llc.html)
+       ========================================================================= -->
+  <main class="guide-content-container">
+
+    <!-- BREADCRUMB -->
+    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
+      <a href="index.html" style="color: #64748B; text-decoration: none;">Home</a> &nbsp;/&nbsp; 
+      <a href="llc-guide.html" style="color: #64748B; text-decoration: none;">LLC Guides</a> &nbsp;/&nbsp; 
+      <strong style="color: #12304A;">Best State to Form an LLC</strong>
+    </div>
+
+    <article class="guide-article">
+
+      <!-- TITLE & REVIEW BADGE -->
+      <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: #12304A; margin-top: 1rem; margin-bottom: 0.75rem; font-family: var(--font-heading); line-height: 1.15;">
+        Best State to Form an LLC (2026 Breakdown)
+      </h1>
+      <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.5rem;">
+        Last reviewed: <strong>September 7, 2026</strong>
+      </div>
+
+      <p style="font-size: 1.05rem; line-height: 1.75; color: #334155; font-weight: 500;">
+        The "best state" to form an LLC is not a national ranking. This guide separates four questions that are often mixed together: <strong>government cost</strong>, <strong>foreign qualification</strong>, <strong>privacy</strong> and the <strong>specific legal reason for choosing another state</strong>.
+      </p>
+
+      <!-- TABLE OF CONTENTS CARD -->
+      <div class="toc-card">
+        <div class="toc-header">
+          <span>📋</span> BEST-STATE DECISION GUIDE
+        </div>
+        <div class="toc-grid">
+          <a href="#section-1" class="toc-link-item"><span>1.</span> The decision rule</a>
+          <a href="#section-2" class="toc-link-item"><span>2.</span> Wyoming, Delaware and New Mexico compared</a>
+          <a href="#section-3" class="toc-link-item"><span>3.</span> When Wyoming deserves a closer look</a>
+          <a href="#section-4" class="toc-link-item"><span>4.</span> When Delaware is actually useful</a>
+          <a href="#section-5" class="toc-link-item"><span>5.</span> Where New Mexico fits</a>
+          <a href="#section-6" class="toc-link-item"><span>6.</span> Foreign qualification changes the math</a>
+          <a href="#section-7" class="toc-link-item"><span>7.</span> What "privacy" really means</a>
+          <a href="#section-8" class="toc-link-item"><span>8.</span> A practical state-selection worksheet</a>
+        </div>
+      </div>
+
+      <!-- SECTION 1 -->
+      <section id="section-1">
+        <h2>Start with where the business is legally doing business</h2>
+        <p>
+          Do not choose a formation state from a fee table alone. First identify the state or states where your activities are likely to require registration. That test is state-specific; residence by itself is not the universal legal trigger.
+        </p>
+
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>🏛️</span> Situation vs. Useful Starting Point
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th style="width: 30%;">SITUATION</th>
+                <th style="width: 32%;">USEFUL STARTING POINT</th>
+                <th style="width: 38%;">WHY</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Local service business with one operating state</strong></td>
+                <td><strong style="color: #159A9C;">That operating state</strong></td>
+                <td>Avoids adding a second entity-registration layer without a separate business reason.</td>
+              </tr>
+              <tr>
+                <td><strong>Rental property held in one state</strong></td>
+                <td><strong style="color: #159A9C;">Evaluate the property state first</strong></td>
+                <td>Real estate ownership and local registration rules can make the property state central to the structure.</td>
+              </tr>
+              <tr>
+                <td><strong>Multi-state operations</strong></td>
+                <td><strong style="color: #159A9C;">Choose a primary formation state, then map foreign qualification</strong></td>
+                <td>The decision is about the full compliance footprint, not one headline filing fee.</td>
+              </tr>
+              <tr>
+                <td><strong>VC-backed company</strong></td>
+                <td><strong style="color: #159A9C;">Evaluate Delaware corporation structure</strong></td>
+                <td>Investor expectations and corporate law infrastructure may matter more than small-business LLC fees.</td>
+              </tr>
+              <tr>
+                <td><strong>Holding/privacy structure with no ordinary operating nexus elsewhere</strong></td>
+                <td><strong style="color: #159A9C;">Evaluate Wyoming or New Mexico</strong></td>
+                <td>Privacy and low recurring entity costs may matter when another state does not immediately create duplicate registration.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size: 0.95rem; color: #64748B;">
+          If you need the broader formation sequence first, use the <a href="start-llc.html">How to Start an LLC hub</a>. For a state-by-state fee breakdown, see <a href="how-much-does-an-llc-cost.html">How Much Does an LLC Cost?</a>.
+        </p>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section id="section-2">
+        <h2>Wyoming, Delaware and New Mexico: the 2026 comparison</h2>
+        <p>
+          These three states are often grouped together online even though they solve different problems. The table below keeps government cost, recurring obligation and privacy language separate.
+        </p>
+
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>📊</span> 2026 3-State Comparison Matrix
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th style="width: 22%;">FACTOR</th>
+                <th style="width: 26%;">WYOMING</th>
+                <th style="width: 26%;">DELAWARE</th>
+                <th style="width: 26%;">NEW MEXICO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Formation filing</strong></td>
+                <td><strong>$100</strong></td>
+                <td><strong>$110</strong></td>
+                <td><strong>$50</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Recurring entity obligation</strong></td>
+                <td>Annual license tax: $60 minimum or asset formula</td>
+                <td>$300 annual LLC tax; no LLC annual report</td>
+                <td>No recurring SOS report required under current domestic LLC regime</td>
+              </tr>
+              <tr>
+                <td><strong>Privacy profile</strong></td>
+                <td>Member names are not required on member fields on the Articles, but organizer and address information can be public</td>
+                <td>Member names are not generally part of the basic Delaware LLC formation certificate</td>
+                <td>Member/manager fields can be optional in current filings, but any information submitted becomes public</td>
+              </tr>
+              <tr>
+                <td><strong>Most relevant when</strong></td>
+                <td>Privacy/holding structure justifies the Wyoming layer</td>
+                <td>Delaware legal/investor infrastructure matters</td>
+                <td>Low formation cost and limited recurring SOS filing burden matter</td>
+              </tr>
+              <tr>
+                <td><strong>Main caution</strong></td>
+                <td>Another operating state may still require qualification</td>
+                <td>High annual LLC tax for a small operating business</td>
+                <td>Privacy is conditional, not guaranteed anonymity</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section id="section-3">
+        <h2>Wyoming: useful for some privacy and holding structures</h2>
+        <p>
+          Wyoming does not require the LLC's members to be identified as "members" in the standard Articles of Organization. That can reduce one category of ownership disclosure. It is not the same as saying the owner can never appear in a public filing.
+        </p>
+        <p>
+          The Articles require an organizer signature and printed name, plus the registered-agent, mailing and principal-office information. If the owner acts as organizer or supplies personally identifying addresses, those choices affect the public record.
+        </p>
+
+        <div class="state-filing-card">
+          <div style="display: flex; align-items: center; gap: 0.85rem;">
+            <span class="state-badge">WY</span>
+            <div>
+              <span class="state-filing-sub">OFFICIAL FILING FORM</span>
+              <strong class="state-filing-title">Wyoming LLC Articles of Organization</strong>
+            </div>
+          </div>
+          <a href="index.html#states-section" style="color: #0284C7; font-weight: 700; text-decoration: none;">View Form →</a>
+        </div>
+
+        <p>
+          Wyoming becomes more interesting when the privacy/holding-company benefit is real and the business is not simply creating duplicate qualification elsewhere. For property-focused structures, compare our <a href="llc-guide.html">LLC for rental property guide</a>.
+        </p>
+      </section>
+
+      <!-- SECTION 4 -->
+      <section id="section-4">
+        <h2>Delaware: a legal-infrastructure choice, not a cheap-LLC choice</h2>
+        <p>
+          Delaware's value proposition is strongest when its legal and financing ecosystem matters. The comparison table above contains the current LLC government charges; the decision here is whether Delaware's legal infrastructure provides enough value to justify that recurring state layer for your business.
+        </p>
+        <p>
+          Delaware LLCs do not file an annual franchise-tax report. The recurring obligation is an annual LLC tax, so it should not be described as an annual-report fee.
+        </p>
+
+        <div class="state-filing-card">
+          <div style="display: flex; align-items: center; gap: 0.85rem;">
+            <span class="state-badge">DE</span>
+            <div>
+              <span class="state-filing-sub">2026 FEE SCHEDULE</span>
+              <strong class="state-filing-title">Delaware Division of Corporations — August 2026 Fee Schedule</strong>
+            </div>
+          </div>
+          <a href="index.html#states-section" style="color: #0284C7; font-weight: 700; text-decoration: none;">View Schedule →</a>
+        </div>
+
+        <p>
+          If you are deciding between entity types rather than states, see <a href="what-is-an-llc.html">LLC vs corporation</a>.
+        </p>
+      </section>
+
+      <!-- SECTION 5 -->
+      <section id="section-5">
+        <h2>New Mexico: low state cost with privacy that depends on what you file</h2>
+        <p>
+          New Mexico sits at the low-cost end of the current 50-state formation matrix, and the domestic LLC regime we reviewed does not impose the standard recurring Secretary-of-State annual report used by many other states.
+        </p>
+        <p>
+          Privacy still needs precise wording. Current New Mexico filings can make member/manager information optional in some contexts, but the Secretary of State's system warns that information entered is public. Public exposure therefore depends on the fields submitted, organizer/manager choices, addresses and later filings.
+        </p>
+
+        <div class="state-filing-card">
+          <div style="display: flex; align-items: center; gap: 0.85rem;">
+            <span class="state-badge">NM</span>
+            <div>
+              <span class="state-filing-sub">OFFICIAL BUSINESS PORTAL</span>
+              <strong class="state-filing-title">New Mexico Secretary of State — Business Services</strong>
+            </div>
+          </div>
+          <a href="index.html#states-section" style="color: #0284C7; font-weight: 700; text-decoration: none;">Visit Portal →</a>
+        </div>
+      </section>
+
+      <!-- SECTION 6 -->
+      <section id="section-6">
+        <h2>Foreign qualification can erase a headline cost advantage</h2>
+        <p>
+          Forming in one state does not exempt the company from another state's registration rules. If the LLC's activities meet another state's "doing business" or qualification standard, the company may need authority there as a foreign LLC.
+        </p>
+
+        <h3>Georgia shows why total cost needs the current service charge</h3>
+        <p>
+          Georgia's current foreign-entity workflow includes both the certificate-of-authority filing and an annual registration. The table below holds the current amounts; the important structural point is that choosing another formation state can create a second recurring state obligation.
+        </p>
+
+        <h3>New York shows why frequency labels matter</h3>
+        <p>
+          New York uses a biennial filing rather than an annual one. The current amount and frequency are shown once in the table below so the event fee is not confused with an annualized estimate.
+        </p>
+
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>📝</span> Example Obligation vs Actual 2026 Framing
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th style="width: 40%;">EXAMPLE OBLIGATION</th>
+                <th style="width: 60%;">ACTUAL 2026 FRAMING</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Georgia foreign qualification</strong></td>
+                <td>$235 total filing; then $50 annual registration</td>
+              </tr>
+              <tr>
+                <td><strong>New York Biennial Statement</strong></td>
+                <td>$9 per filing, every two years</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size: 0.95rem; color: #64748B;">
+          For recurring filing terminology across all states, use the <a href="llc-guide.html">LLC annual report and compliance guide</a>.
+        </p>
+      </section>
+
+      <!-- SECTION 7 -->
+      <section id="section-7">
+        <h2>Privacy means controlling disclosure — not promising anonymity</h2>
+        <p>
+          A useful privacy comparison asks <strong>which names and addresses the formation document requires, who signs it, which later filings can add information, and what the state makes searchable</strong>. It should not reduce a state to "anonymous" or "no public disclosure."
+        </p>
+
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>🛡️</span> Privacy Claim vs Safer Interpretation
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th style="width: 35%;">PRIVACY CLAIM</th>
+                <th style="width: 65%;">SAFER INTERPRETATION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>"Member names not required on Articles"</strong></td>
+                <td>Potentially meaningful, but organizer, manager, agent or address fields may still identify people.</td>
+              </tr>
+              <tr>
+                <td><strong>"No annual report"</strong></td>
+                <td>Reduces one recurring disclosure event; it does not make all other filings private.</td>
+              </tr>
+              <tr>
+                <td><strong>"Use a registered agent"</strong></td>
+                <td>Can keep a home address out of some registered office fields, but does not erase every public-data field.</td>
+              </tr>
+              <tr>
+                <td><strong>"Privacy state"</strong></td>
+                <td>A relative advantage that depends on filing choices, not a guarantee of zero public exposure.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size: 0.95rem; color: #64748B;">
+          For registered-agent duties and address tradeoffs, see the <a href="llc-guide.html">registered agent guide</a>.
+        </p>
+      </section>
+
+      <!-- SECTION 8: WORKSHEET -->
+      <section id="section-8">
+        <h2>A practical worksheet for choosing the state</h2>
+
+        <div class="worksheet-card">
+          <div class="custom-table-header">
+            <span>☑️</span> Answer these before filing
+          </div>
+          <div class="worksheet-item">
+            <div class="worksheet-checkbox"></div>
+            <div>
+              <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">Where will the LLC actually conduct activities?</div>
+              <div style="font-size: 0.85rem; color: #64748B;">List offices, employees, property, inventory and recurring in-state operations.</div>
+            </div>
+          </div>
+          <div class="worksheet-item">
+            <div class="worksheet-checkbox"></div>
+            <div>
+              <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">Would another state require foreign qualification?</div>
+              <div style="font-size: 0.85rem; color: #64748B;">Check that state's statutory and agency rules rather than using residence as the only test.</div>
+            </div>
+          </div>
+          <div class="worksheet-item">
+            <div class="worksheet-checkbox"></div>
+            <div>
+              <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">What benefit are you buying by filing elsewhere?</div>
+              <div style="font-size: 0.85rem; color: #64748B;">Privacy, investor expectations, holding-company structure or another specific legal objective.</div>
+            </div>
+          </div>
+          <div class="worksheet-item">
+            <div class="worksheet-checkbox"></div>
+            <div>
+              <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">What is the full government stack?</div>
+              <div style="font-size: 0.85rem; color: #64748B;">Formation, foreign qualification, annual/biennial filing, tax, license and state-specific extras.</div>
+            </div>
+          </div>
+          <div class="worksheet-item">
+            <div class="worksheet-checkbox"></div>
+            <div>
+              <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">Does the privacy benefit survive your real filing choices?</div>
+              <div style="font-size: 0.85rem; color: #64748B;">Review organizer, manager, address and later-report fields before assuming anonymity.</div>
+            </div>
+          </div>
+          <div class="worksheet-item">
+            <div class="worksheet-checkbox"></div>
+            <div>
+              <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.2rem;">Is a separate legal or tax review justified?</div>
+              <div style="font-size: 0.85rem; color: #64748B;">Multi-state operations, investors, regulated activities and complex holding structures deserve fact-specific advice.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- REFINED NORTHWEST CARD (WITHOUT NW LOGO BLOCK ON LEFT, CLEAN BUTTON PLACEMENT) -->
+        <div style="background: #FFFFFF; border: 2px solid #00875A; border-radius: 16px; padding: 1.75rem; margin: 2.25rem 0; box-shadow: 0 6px 20px rgba(0, 135, 90, 0.08);">
+          <span style="background: #00875A; color: #FFFFFF; font-size: 0.725rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 0.85rem;">
+            OPTIONAL FORMATION SERVICE
+          </span>
+          <div style="font-size: 1.3rem; font-weight: 800; color: #12304A; margin-bottom: 0.4rem; font-family: var(--font-heading);">
+            File after you choose the state
+          </div>
+          <p style="font-size: 0.925rem; color: #475569; margin-bottom: 1rem; line-height: 1.6;">
+            Northwest's current formation package includes registered-agent service for the first year. Registered-agent service renews at $125/year after that.
+          </p>
+
+          <ul style="list-style: none; padding: 0; margin: 0 0 1.25rem 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem; color: #334155;">
+            <li style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: #00875A; font-weight: 800;">✓</span> Formation service and government fees stay separate
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: #00875A; font-weight: 800;">✓</span> First-year registered-agent service included with formation
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: #00875A; font-weight: 800;">✓</span> The formation price is not an annual registered-agent rate
+            </li>
+          </ul>
+
+          <div style="border-top: 1px dashed #E2E8F0; padding-top: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="font-size: 1.5rem; font-weight: 800; color: #12304A; line-height: 1;">$39</div>
+              <div style="font-size: 0.775rem; color: #64748B; margin-top: 0.2rem;">+ state fees</div>
+            </div>
+            <a href="index.html#northwest-section" class="ls-btn" style="text-decoration:none; background: #00875A; color: #FFFFFF; padding: 0.85rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 14px rgba(0, 135, 90, 0.25);">
+              See Northwest →
+            </a>
+          </div>
+        </div>
+
+        <p style="font-size: 0.9rem; color: #64748B; margin-bottom: 1.5rem;">
+          Once the state is chosen, continue with the <a href="llc-guide.html">post-formation checklist</a>.
+        </p>
+
+        <!-- BOTTOM CALLOUT BANNER -->
+        <div class="callout-box">
+          <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+            <span style="font-size: 1.25rem;">💡</span>
+            <div>
+              <strong>Can the state filing cost only $50?</strong> Yes, in a small group of states — but the filing fee is only one part of the decision, especially if foreign qualification is required elsewhere. See our breakdown of <a href="start-llc.html" style="color: #0F766E; font-weight: 700; text-decoration: underline;">how to start an LLC for $50</a> and the additional costs to budget for.
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- =========================================================================
+       3. SITE FOOTER (1:1 Match with Homepage & start-llc.html)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="site-logo" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p style="font-size:0.88rem; color: #CBD5E1; margin-top:1rem; line-height: 1.6;">
+           LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Popular States</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Wyoming LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Florida LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Texas LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
+            <li><a href="index.html#cost-estimator-section" onclick="openCostCalculatorModal(); return false;" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator (Popup)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">EIN Application Guide</a></li>
+            <li><a href="index.html#decisions-section" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
+        <div>
+          <b>Disclaimer:</b> LLC Starters is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Starters may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </div>
+        <div>
+          © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a href="index.html#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
