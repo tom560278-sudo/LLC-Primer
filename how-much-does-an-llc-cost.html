@@ -198,256 +198,223 @@
       font-weight: 800;
       padding: 0.25rem 0.65rem;
       border-radius: 8px;
-      flex-shrink: 0;
     }
     .faq-chevron {
       width: 20px;
       height: 20px;
-      stroke: #159A9C;
+      color: #159A9C;
       transition: transform 0.25s ease;
       flex-shrink: 0;
     }
-    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+    .faq-accordion-item[open] .faq-chevron {
       transform: rotate(180deg);
     }
     .faq-accordion-answer {
       padding: 0 1.65rem 1.35rem 1.65rem;
+      color: #334155;
       font-size: 0.95rem;
-      color: #475569;
-      line-height: 1.7;
-      border-top: 1px dashed #F1F5F9;
-      margin-top: 0.25rem;
+      line-height: 1.75;
+      border-top: 1px dashed #E2E8F0;
       padding-top: 1rem;
     }
 
-    /* Content Typography */
-    .guide-article {
-      color: #334155;
-      font-size: 1rem;
-      line-height: 1.75;
+    /* Budgeting Callout Box */
+    .budget-callout-box {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.05);
     }
-    .guide-article h2 {
-      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+    .budget-callout-kicker {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
+    }
+    .budget-callout-q {
+      font-size: 1.25rem;
       font-weight: 800;
       color: #12304A;
-      margin: 2.75rem 0 1.25rem 0;
-      font-family: var(--font-heading);
-    }
-    .guide-article h3 {
-      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
-      font-weight: 700;
-      color: #12304A;
-      margin: 2rem 0 1rem 0;
-      font-family: var(--font-heading);
-    }
-    .guide-article p {
-      font-size: 1rem;
-      line-height: 1.75;
-      color: #334155;
       margin-bottom: 1.25rem;
+      font-family: var(--font-heading);
     }
-    .guide-article a {
-      color: #159A9C;
-      font-weight: 600;
-      text-decoration: underline;
+    .budget-callout-answer-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
     }
-    .guide-article a:hover {
-      color: #0E7490;
+    .budget-check-icon {
+      width: 24px;
+      height: 24px;
+      background: #10B981;
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: justify-center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      text-align: center;
+      line-height: 24px;
     }
 
     @media (max-width: 768px) {
-      .cost-metrics-grid { grid-template-columns: repeat(2, 1fr); }
-      .toc-grid { grid-template-columns: 1fr; }
-      .custom-data-table th, .custom-data-table td { padding: 0.75rem 0.85rem; font-size: 0.85rem; }
-    }
-    @media (max-width: 480px) {
-      .cost-metrics-grid { grid-template-columns: 1fr; }
+      .cost-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .toc-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- =========================================================================
-       0. TOP ANNOUNCEMENT / TRUST BAR
+       1. HEADER & NAVIGATION (1:1 Match with Homepage & what-is-an-llc.html)
        ========================================================================= -->
-  <div style="background: #12304A; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.8rem; color: #94A3B8; padding: 0.5rem 0;">
-    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
-      <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #159A9C; box-shadow: 0 0 10px #159A9C;"></span>
-        <strong style="color: #F8FAFC;">2026 SOS RATES VERIFIED</strong> · 50-State Filing Fees & Government Guides
-      </div>
-      <div style="display: flex; align-items: center; gap: 1.25rem;">
-        <a href="index.html#states-section" style="color: #CBD5E1; font-weight: 500;">🏛️ All 50 States</a>
-        <a href="index.html#non-us-section" style="color: #CBD5E1; font-weight: 500;">🌐 Non-US Founders</a>
-        <a href="quiz.html" style="color: #159A9C; font-weight: 700;">🧩 Take 60-Sec LLC Quiz →</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================================================
-       1. EXECUTIVE GLASSMORPHIC NAVBAR (LLC PRIMER)
-       ========================================================================= -->
-  <header class="site-header">
-    <div class="container header-container">
-      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
-        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+  <header class="site-header sticky-header">
+    <div class="header-container">
+      <a href="index.html" class="site-logo">
+        <img src="logo.png" alt="LLC Primer Logo" class="logo-img">
       </a>
-
-      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
-        <div class="nav-item">
-          <a href="start-llc.html" class="nav-link" style="color: var(--color-primary); font-weight: 800;">
-            Start an LLC
-          </a>
-        </div>
-
-        <div class="nav-item">
-          <a href="index.html#northwest-section" class="nav-link">
-            Reviews
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
+      
+      <nav class="desktop-nav">
+        <div class="nav-item has-dropdown">
+          <a href="#" class="nav-link">LLC Guides <span class="dropdown-arrow">▾</span></a>
           <div class="dropdown-menu">
-            <a href="index.html#northwest-section" class="dropdown-link">⭐ Northwest Registered Agent ($39)</a>
-            <a href="index.html#northwest-section" class="dropdown-link">🌐 doola Review (Non-US Founders)</a>
-            <a href="index.html#northwest-section" class="dropdown-link">📊 ZenBusiness vs LegalZoom</a>
+            <a href="llc-guide.html" class="dropdown-item">
+              <span class="item-title">🗺️ LLC Guide</span>
+              <span class="item-desc">Comprehensive step-by-step LLC handbook</span>
+            </a>
+            <a href="what-is-an-llc.html" class="dropdown-item">
+              <span class="item-title">💡 What is an LLC?</span>
+              <span class="item-desc">Definition, asset protection & liability</span>
+            </a>
+            <a href="start-llc.html" class="dropdown-item">
+              <span class="item-title">🚀 How to Start an LLC</span>
+              <span class="item-desc">7-step process to form your company</span>
+            </a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-item">
+              <span class="item-title">🏆 Best State to Form an LLC</span>
+              <span class="item-desc">Wyoming vs Delaware vs Home State</span>
+            </a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-item active">
+              <span class="item-title">💰 LLC Cost Guide</span>
+              <span class="item-desc">50-State fee breakdown & hidden costs</span>
+            </a>
           </div>
         </div>
 
-        <div class="nav-item">
-          <a href="llc-guide.html" class="nav-link active">
-            LLC Guides
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="dropdown-menu">
-            <a href="what-is-an-llc.html" class="dropdown-link"> What is an LLC</a>
-            <a href="best-state-to-form-an-llc.html" class="dropdown-link"> Best State for LLC</a>
-            <a href="how-much-does-an-llc-cost.html" class="dropdown-link"> How Much Does An LLC Cost</a>
-            <a href="index.html#states-section" class="dropdown-link"> What Are LLC Taxed</a>
-            <a href="index.html#states-section" class="dropdown-link"> LLC Operating Agreement</a>
-            <a href="index.html#states-section" class="dropdown-link"> Registered Agent Guide</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <a href="index.html#after-formation-section" class="nav-link">
-            Business Setup
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="dropdown-menu">
-            <a href="index.html#after-formation-section" class="dropdown-link">01. Obtain Federal EIN (SS-4 Tax ID)</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">02. Draft Operating Agreement</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">03. Open Business Bank Account</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">04. File FinCEN BOI Report</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">05. Business Licenses & Permits</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <a href="index.html#cost-estimator-section" class="nav-link">
-            Tools
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="dropdown-menu">
-            <a href="quiz.html" class="dropdown-link">🧩 Interactive LLC Quiz (60 Sec)</a>
-            <a href="index.html#cost-estimator-section" class="dropdown-link">📊 First-Year Cost Estimator</a>
-            <a href="index.html#spanish-section" class="dropdown-link">🇪🇸 Guía de LLC en Español</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <a href="index.html#non-us-section" class="nav-link">
-            Non-Residents 🌐
-          </a>
-        </div>
+        <a href="index.html#calculator-section" class="nav-link">Fee Calculator</a>
+        <a href="quiz.html" class="nav-link">Diagnostic Quiz</a>
+        <a href="index.html#states-section" class="nav-link">State Directory</a>
       </nav>
 
       <div class="header-actions">
-        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <button class="icon-btn search-trigger" onclick="openSearchModal()" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </button>
-        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
-          Build LLC Plan →
-        </a>
-        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
+        <a href="index.html#northwest-section" class="btn-primary header-cta" target="_blank" rel="sponsored noopener">Form Your LLC</a>
       </div>
     </div>
   </header>
 
-  <!-- =========================================================================
-       2. MAIN CONTENT AREA (EXACT STYLED CONTAINER matching start-llc.html)
-       ========================================================================= -->
-  <main class="guide-content-container">
-
-    <!-- BREADCRUMB -->
-    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
-      <a href="index.html" style="color: #64748B; text-decoration: none;">Home</a> &nbsp;/&nbsp; 
-      <a href="llc-guide.html" style="color: #64748B; text-decoration: none;">LLC Guides</a> &nbsp;/&nbsp; 
-      <strong style="color: #12304A;">How Much Does an LLC Cost?</strong>
+  <!-- BREADCRUMBS -->
+  <div style="background: #F8FAFC; border-bottom: 1px solid #E2E8F0; padding: 0.85rem 0;">
+    <div style="max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; font-size: 0.85rem; color: #64748B;">
+      <a href="index.html" style="color: #159A9C; text-decoration: none;">Home</a>
+      <span style="margin: 0 0.5rem; color: #CBD5E1;">/</span>
+      <a href="llc-guide.html" style="color: #159A9C; text-decoration: none;">LLC Guides</a>
+      <span style="margin: 0 0.5rem; color: #CBD5E1;">/</span>
+      <span style="color: #12304A; font-weight: 600;">LLC Cost Guide</span>
     </div>
+  </div>
 
-    <article class="guide-article">
-
-      <!-- TITLE & REVIEW BADGE -->
-      <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: #12304A; margin-top: 1rem; margin-bottom: 0.75rem; font-family: var(--font-heading); line-height: 1.15;">
-        How Much Does an LLC Cost? (2026 50-State Fee Guide)
-      </h1>
-      <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.5rem;">
-        Last reviewed: <strong>September 21, 2026</strong>
+  <!-- HERO SECTION -->
+  <header style="background: #FFFFFF; padding: 3rem 1.5rem 2rem 1.5rem; border-bottom: 1px solid #E2E8F0;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <div class="ls-kicker-pill">
+        <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 8px #159A9C;"></span>
+        2026 50-STATE FEE MATRIX
       </div>
+      
+      <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 900; color: #12304A; line-height: 1.15; margin-top: 0.75rem; margin-bottom: 1rem; font-family: var(--font-heading);">
+        How Much Does an LLC Cost? (2026 50-State Guide)
+      </h1>
 
-      <p style="font-size: 1.05rem; line-height: 1.75; color: #334155; font-weight: 500;">
-        The cost of an LLC is not one filing fee plus one annual fee. In 2026, a reliable budget has to separate <strong>formation filing, mandatory formation-stage extras, recurring entity filings, taxes or licenses, conditional costs, and optional private services</strong>.
+      <p style="font-size: 1.15rem; color: #475569; max-width: 820px; line-height: 1.7; margin-bottom: 1.5rem;">
+        An LLC costs anywhere from <strong>$0 to $500</strong> in mandatory state filing fees, plus annual reports, registered agent fees, and local licenses. Use this guide to calculate your true Year 1 and ongoing costs.
       </p>
-      <p style="font-size: 1.05rem; line-height: 1.75; color: #334155;">
-        That distinction changes the answer materially. A Nevada LLC has a $75 Articles fee but a <strong>$425 mandatory Initial state package</strong>. New York adds publication and a $50 Certificate of Publication. Nebraska adds publication and proof filing. California separates a $20 Statement of Information from its $800 annual tax. Tennessee's filing and annual-report fees depend on member count.
-      </p>
+
+      <div style="font-size: 0.85rem; color: #64748B; display: flex; align-items: center; gap: 1.25rem;">
+        <span><strong>Last Reviewed:</strong> September 21, 2026</span>
+        <span>•</span>
+        <span><strong>Source:</strong> Official Secretary of State Fee Schedules</span>
+      </div>
 
       <!-- 4 METRIC BOX GRID -->
       <div class="cost-metrics-grid">
         <div class="cost-metric-box">
           <div class="cost-metric-val">$0</div>
-          <div class="cost-metric-lbl">EIN direct from IRS</div>
+          <div class="cost-metric-lbl">Lowest Formation Fee<br>(NM online promotion)</div>
         </div>
         <div class="cost-metric-box">
           <div class="cost-metric-val">$73</div>
-          <div class="cost-metric-lbl">Kentucky basic formation filings*</div>
+          <div class="cost-metric-lbl">National Median<br>State Filing Fee</div>
         </div>
         <div class="cost-metric-box">
           <div class="cost-metric-val">$425</div>
-          <div class="cost-metric-lbl">Nevada initial state package</div>
+          <div class="cost-metric-lbl">Highest Mandatory Stack<br>(NV 1st year initial fees)</div>
         </div>
         <div class="cost-metric-box">
           <div class="cost-metric-val">$400</div>
-          <div class="cost-metric-lbl">Delaware annual LLC tax</div>
+          <div class="cost-metric-lbl">Avg 5-Yr Govt Layer<br>(State average over 5 yrs)</div>
         </div>
       </div>
-      <div style="font-size: 0.775rem; color: #64748B; margin-bottom: 2rem; font-style: italic;">
-        *Kentucky example: $40 Secretary of State Articles filing + $33 county-clerk recording for a typical filed copy of five pages or fewer. Taxes and optional services are separate.
-      </div>
+    </div>
+  </header>
 
+  <!-- MAIN ARTICLE CONTENT -->
+  <main class="guide-content-container">
+    <article>
+      
       <!-- TABLE OF CONTENTS CARD -->
       <div class="toc-card">
         <div class="toc-header">
-          <span>📋</span> LLC COST GUIDE — 2026
+          <span>📋</span> ON THIS PAGE: QUICK NAVIGATION
         </div>
         <div class="toc-grid">
-          <a href="#section-1" class="toc-link-item"><span>1.</span> The six cost buckets</a>
-          <a href="#section-2" class="toc-link-item"><span>2.</span> Mandatory costs beyond the filing fee</a>
-          <a href="index.html#cost-estimator-section" class="toc-link-item"><span>3.</span> All 50 states: current government cost model</a>
-          <a href="index.html#cost-estimator-section" class="toc-link-item"><span>4.</span> Five-year budgeting without fake rankings</a>
-          <a href="#section-1" class="toc-link-item"><span>5.</span> DIY vs formation-service pricing</a>
-          <a href="index.html#after-formation-section" class="toc-link-item"><span>6.</span> EIN cost and timing</a>
-          <a href="what-is-an-llc.html#section-4" class="toc-link-item"><span>7.</span> Can LLC costs be tax-deductible?</a>
-          <a href="best-state-to-form-an-llc.html" class="toc-link-item"><span>8.</span> The out-of-state formation trap</a>
-          <a href="start-llc.html" class="toc-link-item"><span>9.</span> Cost mistakes to avoid</a>
-          <a href="#faq-section" class="toc-link-item"><span>10.</span> Frequently asked questions</a>
+          <a href="#section-1" class="toc-link-item"><span>1.</span> The 6 LLC Cost Buckets</a>
+          <a href="#section-2" class="toc-link-item"><span>2.</span> Mandatory Extras Beyond Articles</a>
+          <a href="#section-3" class="toc-link-item"><span>3.</span> 50-State LLC Fee Matrix (2026)</a>
+          <a href="#section-4" class="toc-link-item"><span>4.</span> Five-Year LLC Budgeting Scenarios</a>
+          <a href="#section-5" class="toc-link-item"><span>5.</span> DIY vs Formation Services</a>
+          <a href="#section-6" class="toc-link-item"><span>6.</span> EIN Application Costs</a>
+          <a href="#section-7" class="toc-link-item"><span>7.</span> Tax Deductibility & Out-of-State Trap</a>
+          <a href="#section-8" class="toc-link-item"><span>8.</span> 5 Cost Mistakes to Avoid</a>
+          <a href="#section-9" class="toc-link-item"><span>9.</span> Budgeting Question Callout</a>
+          <a href="#faq-section" class="toc-link-item"><span>10.</span> LLC Cost FAQ (10 Questions)</a>
         </div>
       </div>
 
       <!-- SECTION 1 -->
       <section id="section-1">
         <h2>The six cost buckets that determine what an LLC really costs</h2>
+        <p>
+          Forming and maintaining a Limited Liability Company involves more than just a single filing fee. To budget accurately, founders should understand the six distinct cost buckets:
+        </p>
 
         <div class="custom-table-wrapper">
           <div class="custom-table-header">
@@ -464,85 +431,708 @@
             <tbody>
               <tr>
                 <td><strong>Formation filing</strong></td>
-                <td>Articles/Certificate filed with the state</td>
+                <td>Articles/Certificate filed with the state Secretary of State</td>
                 <td><strong style="color: #047857;">Yes for formation</strong></td>
               </tr>
               <tr>
                 <td><strong>Mandatory initial extras</strong></td>
-                <td>Name reservation, publication, initial list, state license or proof filing when state law requires it</td>
+                <td>Name reservation, newspaper publication, initial list, or state business license</td>
                 <td>State-specific</td>
               </tr>
               <tr>
                 <td><strong>Periodic business filing</strong></td>
-                <td>Annual report, biennial statement, renewal, annual registration or similar filing</td>
+                <td>Annual report, biennial statement, or renewal registration</td>
                 <td>State-specific</td>
               </tr>
               <tr>
                 <td><strong>Tax / license layer</strong></td>
-                <td>Annual LLC tax, franchise tax, state business license or asset/member-based charge</td>
+                <td>Annual LLC tax, franchise tax, state business license or asset-based fee</td>
                 <td>State-specific</td>
               </tr>
               <tr>
                 <td><strong>Conditional costs</strong></td>
-                <td>Local licenses, profession rules, foreign qualification, payroll, publication price, income/member/asset-based fees</td>
-                <td>Depends on facts</td>
+                <td>Local municipal licenses, profession permits, foreign qualification</td>
+                <td>Depends on business facts</td>
               </tr>
               <tr>
                 <td><strong>Private services</strong></td>
-                <td>Formation service, professional registered agent, attorney, mailbox or compliance service</td>
+                <td>Formation service, commercial registered agent, legal/accounting help</td>
                 <td>Usually optional</td>
               </tr>
             </tbody>
           </table>
         </div>
-
-        <p>
-          This is also why a national "average annual LLC fee" is not very useful without a methodology. A biennial filing, Delaware's annual tax, Nevada's license, Tennessee's member-count fee and a state with no periodic report are not directly comparable numbers.
-        </p>
-        <p>
-          If you are still deciding where to form, use the <a href="best-state-to-form-an-llc.html">LLC for $50 guide</a> only for low-cost formation options, then compare the full state obligations here before choosing.
-        </p>
       </section>
 
       <!-- SECTION 2 -->
       <section id="section-2">
         <h2>Mandatory LLC costs that can exist beyond the Articles filing</h2>
-
-        <h3>Alabama: the filing is not the only formation-stage requirement</h3>
         <p>
-          Alabama currently charges $200 at the Secretary of State for a domestic LLC, but the state also requires a <strong>Certificate of Name Reservation before formation documents are filed</strong>. That makes "only the filing fee is mandatory" false as a national rule.
+          Evaluating an LLC state by its formation fee alone leads to expensive surprises. Several states enforce additional mandatory initial costs:
         </p>
 
-        <h3>New York: publication can dominate the first-year budget</h3>
+        <h3>Alabama: mandatory name reservation fee</h3>
         <p>
-          New York requires newly formed LLCs to publish notice in two local newspapers designated by the county clerk for six consecutive weeks. Publication costs range from $300 to $1,500+ depending on the county, plus a $50 state filing fee for the Certificate of Publication.
+          Alabama charges a $200 filing fee for Articles of Organization, but also requires a mandatory <strong>$28 Certificate of Name Reservation</strong> prior to filing, bringing the true formation fee to $228.
         </p>
 
-        <!-- REFINED NORTHWEST CARD -->
-        <div style="background: #FFFFFF; border: 2px solid #00875A; border-radius: 16px; padding: 1.75rem; margin: 2.25rem 0; box-shadow: 0 6px 20px rgba(0, 135, 90, 0.08);">
+        <h3>New York: the newspaper publication requirement</h3>
+        <p>
+          New York requires new LLCs to publish notice in two local newspapers designated by the county clerk for six consecutive weeks. Publication costs range from <strong>$300 to $1,500+</strong> depending on your county, plus a $50 Certificate of Publication filing fee.
+        </p>
+
+        <h3>Nevada: mandatory initial list and state business license</h3>
+        <p>
+          While Nevada's Articles of Organization fee is $75, the state requires an <strong>Initial List ($150)</strong> and a <strong>State Business License ($200)</strong> filed concurrently, creating a mandatory initial government stack of <strong>$425</strong>.
+        </p>
+      </section>
+
+      <!-- SECTION 3: 50-STATE FEE MATRIX -->
+      <section id="section-3">
+        <h2>50-State LLC Fee Matrix (2026 Matrix)</h2>
+        <p>
+          Below is the complete fee structure for all 50 states, detailing mandatory formation fees, initial extras, and recurring annual fees.
+        </p>
+
+        <!-- BLOCK 1: ALABAMA TO GEORGIA -->
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>🏛️</span> States: Alabama – Georgia
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>STATE</th>
+                <th>FORMATION FILING</th>
+                <th>MANDATORY INITIAL EXTRAS</th>
+                <th>RECURRING GOVT LAYER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Alabama</strong></td>
+                <td>$200</td>
+                <td>$28 Name Reservation</td>
+                <td>$100 min PPT tax (Annual)</td>
+              </tr>
+              <tr>
+                <td><strong>Alaska</strong></td>
+                <td>$250</td>
+                <td>None</td>
+                <td>$100 Biennial ($50/yr)</td>
+              </tr>
+              <tr>
+                <td><strong>Arizona</strong></td>
+                <td>$50 ($85 expedited)</td>
+                <td>County publication ($30–$100, if outside Maricopa/Pima)</td>
+                <td>$0 (No annual report)</td>
+              </tr>
+              <tr>
+                <td><strong>Arkansas</strong></td>
+                <td>$45 online / $50 paper</td>
+                <td>None</td>
+                <td>$150 Annual Franchise Tax</td>
+              </tr>
+              <tr>
+                <td><strong>California</strong></td>
+                <td>$70</td>
+                <td>$20 Statement of Info (within 90 days)</td>
+                <td>$800 Annual Franchise Tax + $20 Biennial SI</td>
+              </tr>
+              <tr>
+                <td><strong>Colorado</strong></td>
+                <td>$50</td>
+                <td>None</td>
+                <td>$10 Annual Periodic Report</td>
+              </tr>
+              <tr>
+                <td><strong>Connecticut</strong></td>
+                <td>$120</td>
+                <td>None</td>
+                <td>$80 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Delaware</strong></td>
+                <td>$90</td>
+                <td>None</td>
+                <td>$300 Flat Annual Tax</td>
+              </tr>
+              <tr>
+                <td><strong>District of Columbia</strong></td>
+                <td>$99</td>
+                <td>None</td>
+                <td>$300 Biennial Report ($150/yr)</td>
+              </tr>
+              <tr>
+                <td><strong>Florida</strong></td>
+                <td>$125</td>
+                <td>None</td>
+                <td>$138.75 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Georgia</strong></td>
+                <td>$100</td>
+                <td>None</td>
+                <td>$50 Annual Registration</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- BLOCK 2: HAWAII TO MARYLAND -->
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>🏛️</span> States: Hawaii – Maryland
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>STATE</th>
+                <th>FORMATION FILING</th>
+                <th>MANDATORY INITIAL EXTRAS</th>
+                <th>RECURRING GOVT LAYER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Hawaii</strong></td>
+                <td>$50</td>
+                <td>None</td>
+                <td>$15 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Idaho</strong></td>
+                <td>$100 online / $120 paper</td>
+                <td>None</td>
+                <td>$0 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Illinois</strong></td>
+                <td>$150</td>
+                <td>None</td>
+                <td>$75 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Indiana</strong></td>
+                <td>$95 online / $100 paper</td>
+                <td>None</td>
+                <td>$32 Biennial Report ($16/yr)</td>
+              </tr>
+              <tr>
+                <td><strong>Iowa</strong></td>
+                <td>$50</td>
+                <td>None</td>
+                <td>$60 Biennial Report ($30/yr)</td>
+              </tr>
+              <tr>
+                <td><strong>Kansas</strong></td>
+                <td>$160</td>
+                <td>None</td>
+                <td>$55 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Kentucky</strong></td>
+                <td>$40</td>
+                <td>None</td>
+                <td>$15 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Louisiana</strong></td>
+                <td>$100</td>
+                <td>None</td>
+                <td>$35 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Maine</strong></td>
+                <td>$175</td>
+                <td>None</td>
+                <td>$85 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Maryland</strong></td>
+                <td>$100</td>
+                <td>None</td>
+                <td>$300 Annual Personal Property Return</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- BLOCK 3: MASSACHUSETTS TO NEW JERSEY -->
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>🏛️</span> States: Massachusetts – New Jersey
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>STATE</th>
+                <th>FORMATION FILING</th>
+                <th>MANDATORY INITIAL EXTRAS</th>
+                <th>RECURRING GOVT LAYER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Massachusetts</strong></td>
+                <td>$500 (Highest in US)</td>
+                <td>None</td>
+                <td>$500 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Michigan</strong></td>
+                <td>$50</td>
+                <td>None</td>
+                <td>$25 Annual Statement</td>
+              </tr>
+              <tr>
+                <td><strong>Minnesota</strong></td>
+                <td>$155 online / $135 paper</td>
+                <td>None</td>
+                <td>$0 Annual Renewal</td>
+              </tr>
+              <tr>
+                <td><strong>Mississippi</strong></td>
+                <td>$50</td>
+                <td>None</td>
+                <td>$0 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Missouri</strong></td>
+                <td>$50 online / $105 paper</td>
+                <td>None</td>
+                <td>$0 (No annual report)</td>
+              </tr>
+              <tr>
+                <td><strong>Montana</strong></td>
+                <td>$35</td>
+                <td>None</td>
+                <td>$20 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Nebraska</strong></td>
+                <td>$105 online / $110 paper</td>
+                <td>~$50 Newspaper Publication</td>
+                <td>$10 Biennial Report</td>
+              </tr>
+              <tr>
+                <td><strong>Nevada</strong></td>
+                <td>$75</td>
+                <td>$150 Initial List + $200 State License ($350)</td>
+                <td>$350 Annual List + Business License</td>
+              </tr>
+              <tr>
+                <td><strong>New Hampshire</strong></td>
+                <td>$100</td>
+                <td>None</td>
+                <td>$100 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>New Jersey</strong></td>
+                <td>$125</td>
+                <td>None</td>
+                <td>$75 Annual Report (+$150/partner fee)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- BLOCK 4: NEW MEXICO TO SOUTH CAROLINA -->
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>🏛️</span> States: New Mexico – South Carolina
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>STATE</th>
+                <th>FORMATION FILING</th>
+                <th>MANDATORY INITIAL EXTRAS</th>
+                <th>RECURRING GOVT LAYER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>New Mexico</strong></td>
+                <td>$50</td>
+                <td>None</td>
+                <td>$0 Annual Report (High Privacy)</td>
+              </tr>
+              <tr>
+                <td><strong>New York</strong></td>
+                <td>$200</td>
+                <td>$300–$1,500 Publication + $50 Cert of Pub</td>
+                <td>$9 Biennial Statement</td>
+              </tr>
+              <tr>
+                <td><strong>North Carolina</strong></td>
+                <td>$125</td>
+                <td>None</td>
+                <td>$200 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>North Dakota</strong></td>
+                <td>$135</td>
+                <td>None</td>
+                <td>$50 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Ohio</strong></td>
+                <td>$99</td>
+                <td>None</td>
+                <td>$0 (No annual report fee)</td>
+              </tr>
+              <tr>
+                <td><strong>Oklahoma</strong></td>
+                <td>$100</td>
+                <td>None</td>
+                <td>$25 Annual Certificate</td>
+              </tr>
+              <tr>
+                <td><strong>Oregon</strong></td>
+                <td>$100</td>
+                <td>None</td>
+                <td>$100 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Pennsylvania</strong></td>
+                <td>$125</td>
+                <td>None</td>
+                <td>$70 Decennial Report ($7/yr avg)</td>
+              </tr>
+              <tr>
+                <td><strong>Rhode Island</strong></td>
+                <td>$150</td>
+                <td>None</td>
+                <td>$50 Annual Report + $500 Min Tax</td>
+              </tr>
+              <tr>
+                <td><strong>South Carolina</strong></td>
+                <td>$110</td>
+                <td>None</td>
+                <td>$0 Annual Report</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- BLOCK 5: SOUTH DAKOTA TO WYOMING -->
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>🏛️</span> States: South Dakota – Wyoming
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>STATE</th>
+                <th>FORMATION FILING</th>
+                <th>MANDATORY INITIAL EXTRAS</th>
+                <th>RECURRING GOVT LAYER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>South Dakota</strong></td>
+                <td>$150</td>
+                <td>None</td>
+                <td>$50 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Tennessee</strong></td>
+                <td>$300 min ($50/member, max $3,000)</td>
+                <td>None</td>
+                <td>$300 min Annual Report ($50/member)</td>
+              </tr>
+              <tr>
+                <td><strong>Texas</strong></td>
+                <td>$300</td>
+                <td>None</td>
+                <td>$0 Report ($0 Tax if revenue < $2.47M)</td>
+              </tr>
+              <tr>
+                <td><strong>Utah</strong></td>
+                <td>$54</td>
+                <td>None</td>
+                <td>$18 Annual Report Renewal</td>
+              </tr>
+              <tr>
+                <td><strong>Vermont</strong></td>
+                <td>$125</td>
+                <td>None</td>
+                <td>$35 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Virginia</strong></td>
+                <td>$100</td>
+                <td>None</td>
+                <td>$50 Annual Registration</td>
+              </tr>
+              <tr>
+                <td><strong>Washington</strong></td>
+                <td>$200 online / $180 paper</td>
+                <td>None</td>
+                <td>$70 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>West Virginia</strong></td>
+                <td>$100</td>
+                <td>None</td>
+                <td>$25 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Wisconsin</strong></td>
+                <td>$130 online / $170 paper</td>
+                <td>None</td>
+                <td>$25 Annual Report</td>
+              </tr>
+              <tr>
+                <td><strong>Wyoming</strong></td>
+                <td>$100</td>
+                <td>None</td>
+                <td>$60 min Annual Report ($0.0002/dollar of WY assets)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4: 5-YEAR BUDGETING -->
+      <section id="section-4">
+        <h2>Five-Year LLC Budgeting Scenarios</h2>
+        <p>
+          Comparing states over a 5-year period reveals true long-term costs. Below are two common scenarios:
+        </p>
+
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>📊</span> 5-Year Cost Comparison Across Popular States
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>STATE</th>
+                <th>YEAR 1 GOVT COST</th>
+                <th>5-YEAR GOVT TOTAL</th>
+                <th>5-YEAR WITH $39/YR RA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Wyoming</strong></td>
+                <td>$100</td>
+                <td>$340 ($100 + 4 × $60)</td>
+                <td>$535</td>
+              </tr>
+              <tr>
+                <td><strong>Delaware</strong></td>
+                <td>$90</td>
+                <td>$1,290 ($90 + 4 × $300)</td>
+                <td>$1,485</td>
+              </tr>
+              <tr>
+                <td><strong>Florida</strong></td>
+                <td>$125</td>
+                <td>$680 ($125 + 4 × $138.75)</td>
+                <td>$875</td>
+              </tr>
+              <tr>
+                <td><strong>Texas</strong></td>
+                <td>$300</td>
+                <td>$300 ($300 + 4 × $0)</td>
+                <td>$495</td>
+              </tr>
+              <tr>
+                <td><strong>California</strong></td>
+                <td>$90 ($70 + $20 SI)</td>
+                <td>$3,290 ($90 + 4 × $800)</td>
+                <td>$3,485</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 5: DIY VS SERVICES -->
+      <section id="section-5">
+        <h2>DIY vs. Formation Services Cost Breakdown</h2>
+        <p>
+          You can file Articles of Organization yourself directly with the Secretary of State or use a professional service:
+        </p>
+
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>⚖️</span> Service Option Comparison
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>OPTION</th>
+                <th>SERVICE FEE</th>
+                <th>REGISTERED AGENT</th>
+                <th>INCLUDED FEATURES</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>DIY (State Direct)</strong></td>
+                <td>$0</td>
+                <td>Self or hire separate</td>
+                <td>You handle state forms & filing manually</td>
+              </tr>
+              <tr>
+                <td><strong>Northwest Registered Agent</strong></td>
+                <td><strong>$39</strong></td>
+                <td><strong>Included 1st Year</strong></td>
+                <td>Privacy protection, corporate guide support, operating agreement template</td>
+              </tr>
+              <tr>
+                <td><strong>LegalZoom Basic</strong></td>
+                <td>$0 + state fee</td>
+                <td>$299/yr extra</td>
+                <td>Basic filing, 14-day standard speed</td>
+              </tr>
+              <tr>
+                <td><strong>LegalZoom Pro/Premium</strong></td>
+                <td>$249–$299 + state fee</td>
+                <td>$299/yr extra</td>
+                <td>Expedited filing, EIN, advisory calls</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 6: NORTHWEST CARD (REDESIGNED SITE-NATIVE) -->
+      <section id="section-6">
+        <div style="background: #FFFFFF; border: 2px solid #00875A; border-radius: 16px; padding: 1.75rem; margin: 2.5rem 0; box-shadow: 0 6px 20px rgba(0, 135, 90, 0.08);">
           <span style="background: #00875A; color: #FFFFFF; font-size: 0.725rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 0.85rem;">
             ★ OUR TOP PICK
           </span>
-          <div style="font-size: 1.3rem; font-weight: 800; color: #12304A; margin-bottom: 0.4rem; font-family: var(--font-heading);">
+          <div style="font-size: 1.35rem; font-weight: 800; color: #12304A; margin-bottom: 0.4rem; font-family: var(--font-heading);">
             Northwest Registered Agent
           </div>
-          <p style="font-size: 0.925rem; color: #475569; margin-bottom: 1rem; line-height: 1.6;">
-            Form your LLC for $39 + state fee. Registered agent service included for the first year, operating agreement, and privacy protection. Available in all 50 states.
+          <p style="font-size: 0.95rem; color: #475569; margin-bottom: 1.25rem; line-height: 1.6;">
+            Northwest can help with LLC formation and registered-agent services, including options designed to keep your personal address from being used where a business address is permitted for public records.
           </p>
 
-          <div style="border-top: 1px dashed #E2E8F0; padding-top: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div style="border-top: 1px dashed #E2E8F0; padding-top: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
             <div>
-              <div style="font-size: 0.875rem; color: #00875A; font-weight: 800;">Starting at $39 + state fee</div>
-              <div style="font-size: 0.775rem; color: #64748B; margin-top: 0.2rem;">1st year registered agent included</div>
+              <div style="font-size: 0.925rem; color: #00875A; font-weight: 800;">Starting at $39 + state fees</div>
+              <div style="font-size: 0.8rem; color: #64748B; margin-top: 0.2rem;">1st year registered agent included</div>
             </div>
-            <a href="index.html#northwest-section" class="ls-btn" style="text-decoration:none; background: #00875A; color: #FFFFFF; padding: 0.85rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 14px rgba(0, 135, 90, 0.25);">
+            <a href="index.html#northwest-section" class="ls-btn" target="_blank" rel="sponsored noopener" style="text-decoration:none; background: #00875A; color: #FFFFFF; padding: 0.85rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 14px rgba(0, 135, 90, 0.25);">
               Form Your LLC →
             </a>
           </div>
         </div>
       </section>
 
-      <!-- SECTION 3: FAQ -->
+      <!-- SECTION 7: EIN COST BREAKDOWN -->
+      <section id="section-7">
+        <h2>How much does an EIN cost?</h2>
+        <p>
+          <strong>$0 when you obtain it directly from the IRS.</strong> Third-party formation services often charge $50–$100 to apply for an Employer Identification Number on your behalf, but applying directly on IRS.gov is free and instantaneous for US residents.
+        </p>
+
+        <div class="custom-table-wrapper">
+          <div class="custom-table-header">
+            <span>🏛️</span> IRS EIN Filing Methods & Pricing
+          </div>
+          <table class="custom-data-table">
+            <thead>
+              <tr>
+                <th>APPLICANT SITUATION</th>
+                <th>IRS ROUTE</th>
+                <th>TIMING DESCRIBED BY IRS</th>
+                <th>COST</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>US Resident (Online)</strong></td>
+                <td>IRS Online EIN Tool</td>
+                <td>Immediate issuance upon submission</td>
+                <td><strong style="color: #047857;">$0 (Free)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Domestic Applicant using Fax</strong></td>
+                <td>Form SS-4 by Fax</td>
+                <td>About 4 business days</td>
+                <td><strong style="color: #047857;">$0 (Free)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>International Applicant (No SSN)</strong></td>
+                <td>Phone or Fax / Mail Form SS-4</td>
+                <td>Phone: Immediate / Fax: ~4 days / Mail: 4 weeks</td>
+                <td><strong style="color: #047857;">$0 (Free)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="background: #F0FDFA; border: 1px solid #CCFBF1; border-left: 4px solid #159A9C; border-radius: 12px; padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: #0F766E; display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="background: #159A9C; color: #FFF; font-weight: 800; font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px;">IRS SOURCE</span>
+            <strong>Form SS-4 Application for Employer Identification Number</strong>
+          </div>
+          <span style="font-weight: 800;">Free Direct Filing →</span>
+        </div>
+      </section>
+
+      <!-- SECTION 8: TAX DEDUCTIBILITY & OUT-OF-STATE TRAP -->
+      <section id="section-8">
+        <h2>Can LLC formation and maintenance costs be tax-deductible?</h2>
+        <p>
+          Some startup costs can be deducted, but the old belief that "everything is a $5,000 startup deduction" is inaccurate. Federal tax treatment depends on the nature of the expense, when operations begin, and entity classification under <strong>IRS Section 195</strong>.
+        </p>
+
+        <h3>Startup costs vs. Organizational costs</h3>
+        <p>
+          IRS Publication 583 explains that a business can generally elect to deduct up to <strong>$5,000 of qualifying startup costs</strong> and up to <strong>$5,000 of qualifying organizational costs</strong> in the first year of active trade or business, reduced dollar-for-dollar when total costs exceed $50,000. Remaining amounts are amortized over 180 months.
+        </p>
+
+        <div style="background: #F0FDFA; border: 1px solid #CCFBF1; border-left: 4px solid #159A9C; border-radius: 12px; padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: #0F766E; display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="background: #159A9C; color: #FFF; font-weight: 800; font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px;">IRS SOURCE</span>
+            <strong>IRS Publication 583 — Starting a Business and Keeping Records</strong>
+          </div>
+          <span style="font-weight: 800;">Official IRS Guide →</span>
+        </div>
+
+        <h3>The Out-of-State Formation Cost Trap</h3>
+        <p>
+          Forming in Wyoming or Delaware solely to save on state fees is often a costly mistake for local small businesses. If you operate your business in your home state (e.g., California or New York), your home state will require you to register as a <strong>Foreign LLC</strong>, forcing you to pay <em>two set of state fees and two registered agent fees</em>. Always form in the state where your physical business activities take place.
+        </p>
+      </section>
+
+      <!-- SECTION 9: 5 MISTAKES TO AVOID -->
+      <section id="section-9">
+        <h2>Five LLC cost mistakes to avoid</h2>
+        <ul style="line-height: 1.8; color: #334155; margin-left: 1.25rem; margin-bottom: 2rem;">
+          <li style="margin-bottom: 0.5rem;"><strong>Comparing states only by the Articles filing fee:</strong> Mandatory initial extras like Nevada's $350 list/license or NY publication change the real initial stack.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Treating optional service fees as state costs:</strong> Registered agent services and formation service packages are optional private costs, not government taxes.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Ignoring recurring annual taxes:</strong> States like Delaware ($300 flat annual tax) or California ($800 annual tax) cost significantly more over 5 years.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Paying third parties for a free EIN:</strong> Applying directly on IRS.gov takes minutes and costs $0.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Falling into the foreign qualification trap:</strong> Out-of-state LLCs doing business locally must pay state fees in both states.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 10: BUDGETING QUESTION CALLOUT -->
+      <section id="section-10">
+        <div class="budget-callout-box">
+          <div class="budget-callout-kicker">BUDGETING QUESTION</div>
+          <div class="budget-callout-q">Which number should I compare first when choosing a state?</div>
+          
+          <div class="budget-callout-answer-card">
+            <div class="budget-check-icon">✓</div>
+            <div style="font-size: 0.95rem; color: #334155; line-height: 1.7;">
+              Compare the mandatory Year 1 government stack and the recurring government stack separately. Then add only the conditional costs that match your facts and the private services you actually want. That produces a more defensible budget than ranking states by one filing fee.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 11: LLC COST FAQ SECTION -->
       <section id="faq-section" style="margin-top: 3.5rem;">
         <div style="margin-bottom: 2rem;">
           <div class="ls-kicker-pill">
@@ -550,21 +1140,26 @@
             FREQUENTLY ASKED QUESTIONS
           </div>
           <h2 style="font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 800; color: #12304A; margin-top: 0.5rem; font-family: var(--font-heading);">
-            Frequently Asked Questions About LLC Costs
+            LLC Cost FAQ
           </h2>
         </div>
+
+        <!-- CATEGORY 1: GOVERNMENT COSTS AND STATE FEES -->
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #12304A; margin-bottom: 1rem; font-family: var(--font-heading);">
+          Government costs and state fees
+        </h3>
 
         <div class="faq-accordion-wrapper">
           <details class="faq-accordion-item" name="faq-cost-group">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">01</span>
-                <span>Are LLC filing fees tax deductible?</span>
+                <span>What is the cheapest possible LLC formation fee in the current 2026 matrix?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>Under IRS Section 195, startup costs up to $5,000 (including LLC formation fees and legal costs) can generally be deducted in your first year of business operations, subject to income thresholds.</p>
+              <p>The lowest government formation fee in the 2026 matrix is Kentucky ($40) or New Mexico ($50 online filing). However, total costs depend on mandatory recurring annual report fees.</p>
             </div>
           </details>
 
@@ -572,12 +1167,12 @@
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">02</span>
-                <span>Do I have to pay an annual fee for my LLC every year?</span>
+                <span>Is the state filing fee the only mandatory cost?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>In most states, yes. Annual or biennial report fees range from $0 (like Ohio or New Mexico) to $300+ (like Delaware or California). Check your state's specific annual requirement to maintain good standing.</p>
+              <p>No. Several states enforce mandatory extras at formation, such as Alabama's mandatory $28 name reservation, Nevada's $350 initial list and business license, or New York's $300–$1,500 newspaper publication requirement.</p>
             </div>
           </details>
 
@@ -585,12 +1180,110 @@
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">03</span>
-                <span>Is an EIN free from the IRS?</span>
+                <span>How much does a Nevada LLC cost to start?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>Yes! Applying for an EIN directly on IRS.gov is 100% free and issued immediately. You should never pay a third-party service just to obtain an EIN.</p>
+              <p>A Nevada LLC costs $425 to start ($75 Articles of Organization + $150 Initial List of Managers + $200 State Business License), plus a recurring $350 annual fee.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-cost-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">04</span>
+                <span>Does every LLC have an annual fee?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>No, a few states like New Mexico, Ohio, Missouri, and Arizona charge $0 in recurring annual state report fees. Most other states charge between $10 and $800 annually.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-cost-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">05</span>
+                <span>Is New Jersey's $150-per-owner partnership fee automatic for every multi-member LLC?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>In New Jersey, entities classified as partnerships with 2 or more partners pay a $150-per-partner filing fee unless exempt based on gross income or specific active member criteria. Always review state tax rules.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- CATEGORY 2: SERVICES, EIN AND TAX TREATMENT -->
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #12304A; margin-top: 2rem; margin-bottom: 1rem; font-family: var(--font-heading);">
+          Services, EIN and tax treatment
+        </h3>
+
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item" name="faq-cost-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">06</span>
+                <span>How much does LegalZoom charge to form an LLC in 2026?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>LegalZoom's basic package starts at $0 + state fee, but registered agent service is an additional $299/year. Pro and Premium tiers range from $249 to $299 + state fee.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-cost-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">07</span>
+                <span>Does Northwest cost $39 per year as a registered agent?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Northwest charges $39 to form your LLC (which includes 1 year of registered agent service). After the first year, registered agent service renews at $125/year.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-cost-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">08</span>
+                <span>Is an EIN free?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Yes. An Employer Identification Number (EIN) is 100% free when applied for directly through the official IRS website (IRS.gov).</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-cost-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">09</span>
+                <span>Can I deduct $5,000 of all LLC formation costs?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Under IRS Section 195, up to $5,000 in qualifying business startup costs and $5,000 in organizational costs can be deducted in year 1, provided total startup expenses don't exceed $50,000.</p>
+            </div>
+          </details>
+
+          <details class="faq-accordion-item" name="faq-cost-group">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">10</span>
+                <span>Should I form in the state with the lowest fee?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              <p>Not if you operate in another state. Operating a foreign LLC in your home state requires registering and paying state fees in both states, making it more expensive overall.</p>
             </div>
           </details>
         </div>
@@ -629,7 +1322,7 @@
           <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
           <ul style="display:flex; flex-direction:column; gap:0.6rem;">
             <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
-            <li><a href="index.html#cost-estimator-section" onclick="openCostCalculatorModal(); return false;" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator (Popup)</a></li>
+            <li><a href="index.html#calculator-section" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator</a></li>
           </ul>
         </div>
 
@@ -645,7 +1338,7 @@
 
       <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
         <div>
-          <b>Disclaimer:</b> LLC Starters is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Starters may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
         </div>
         <div>
           © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a href="index.html#terms">Terms of Service</a>
