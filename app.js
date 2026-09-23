@@ -272,7 +272,6 @@ function initMobileMenu() {
 function updateCost() {
   const calcStateSelect = document.getElementById("calcStateSelect");
   const calcAgentSelect = document.getElementById("calcAgentSelect");
-  const calcEinToggle = document.getElementById("calcEinToggle");
   const calcExpeditedToggle = document.getElementById("calcExpeditedToggle");
 
   const tbody = document.getElementById("calcBreakdownTableBody");
@@ -309,7 +308,6 @@ function updateCost() {
   const agentCostDisplay = `$${agentFee.toFixed(2)}`;
 
   // Toggles
-  const includeEin = calcEinToggle ? calcEinToggle.checked : false;
   const includeExpedited = calcExpeditedToggle ? calcExpeditedToggle.checked : false;
 
   // Compute Totals
@@ -348,17 +346,6 @@ function updateCost() {
         <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 700; text-align: right;">${annualTextDisplay}</td>
       </tr>
     `;
-
-    if (includeEin) {
-      rowsHtml += `
-        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
-          <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 500;">Federal EIN Filing (SS-4)</td>
-          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Federal Government / DIY</td>
-          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">One-time (Setup)</td>
-          <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 700; text-align: right;">$0.00</td>
-        </tr>
-      `;
-    }
 
     if (includeExpedited) {
       rowsHtml += `
@@ -406,10 +393,9 @@ function updateCost() {
 function initCostCalculator() {
   const calcStateSelect = document.getElementById("calcStateSelect");
   const calcAgentSelect = document.getElementById("calcAgentSelect");
-  const calcEinToggle = document.getElementById("calcEinToggle");
   const calcExpeditedToggle = document.getElementById("calcExpeditedToggle");
 
-  [calcStateSelect, calcAgentSelect, calcEinToggle, calcExpeditedToggle].forEach(el => {
+  [calcStateSelect, calcAgentSelect, calcExpeditedToggle].forEach(el => {
     if (el) {
       el.addEventListener("change", updateCost);
       el.addEventListener("input", updateCost);
