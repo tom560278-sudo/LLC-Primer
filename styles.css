@@ -1768,3 +1768,17 @@ button { cursor: pointer; border: none; background: none; }
 .map-card-bottom-bar:hover {
   background: #E4F1FE !important;
 }
+
+/* Compare Formation Services Pillars Responsive Grid */
+@media (max-width: 992px) {
+  .compare-pillars-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .compare-pillars-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+

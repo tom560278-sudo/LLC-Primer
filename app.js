@@ -373,8 +373,34 @@ function updateCost() {
   }
 
   if (tbody) tbody.innerHTML = rowsHtml;
-  if (totalSetupEl) totalSetupEl.textContent = st ? `$${totalSetup.toFixed(2)}` : "$0.00";
-  if (annualCompEl) annualCompEl.textContent = st ? `$${totalAnnual.toFixed(2)}` : "$0.00";
+  
+  if (totalSetupEl) {
+    if (st) {
+      totalSetupEl.textContent = `$${totalSetup.toFixed(2)}`;
+      totalSetupEl.style.fontSize = "1.65rem";
+      totalSetupEl.style.color = "#FFFFFF";
+      totalSetupEl.style.fontWeight = "800";
+    } else {
+      totalSetupEl.textContent = "Select a state to calculate";
+      totalSetupEl.style.fontSize = "0.825rem";
+      totalSetupEl.style.color = "#94A3B8";
+      totalSetupEl.style.fontWeight = "600";
+    }
+  }
+
+  if (annualCompEl) {
+    if (st) {
+      annualCompEl.textContent = `$${totalAnnual.toFixed(2)}`;
+      annualCompEl.style.fontSize = "1.65rem";
+      annualCompEl.style.color = "#159A9C";
+      annualCompEl.style.fontWeight = "800";
+    } else {
+      annualCompEl.textContent = "Select a state to calculate";
+      annualCompEl.style.fontSize = "0.825rem";
+      annualCompEl.style.color = "#94A3B8";
+      annualCompEl.style.fontWeight = "600";
+    }
+  }
 }
 
 function initCostCalculator() {
