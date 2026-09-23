@@ -3,56 +3,56 @@
    ========================================================================== */
 
 const stateData = [
-  { name: "Alabama", code: "AL", fee: 208, annual: "$100 min PPT", speed: "2-3 Days", region: "south", popular: false, note: "Filing handled via Secretary of State portal." },
-  { name: "Alaska", code: "AK", fee: 250, annual: "$100 Biennial", speed: "1-2 Days", region: "west", popular: false, note: "Biennial report due every 2 years." },
-  { name: "Arizona", code: "AZ", fee: 50, annual: "$0", speed: "3-5 Days", region: "west", popular: true, note: "No annual report fee. Newspaper publication required in 3 counties." },
-  { name: "Arkansas", code: "AR", fee: 45, annual: "$150", speed: "1-2 Days", region: "south", popular: false, note: "Low initial filing fee." },
-  { name: "California", code: "CA", fee: 70, annual: "$800 + $20", speed: "1 Day (Online)", region: "west", popular: true, note: "$800 minimum annual franchise tax after Year 1." },
-  { name: "Colorado", code: "CO", fee: 50, annual: "$10", speed: "Instant Online", region: "west", popular: true, note: "Instant online registration." },
-  { name: "Connecticut", code: "CT", fee: 120, annual: "$80", speed: "2-3 Days", region: "east", popular: false, note: "Annual report due every year." },
-  { name: "Delaware", code: "DE", fee: 140, annual: "$300", speed: "1-2 Days", region: "east", popular: true, note: "Preferred state for venture-backed entities and corporate privacy." },
-  { name: "Florida", code: "FL", fee: 125, annual: "$138.75", speed: "1-2 Days", region: "south", popular: true, note: "Sunbiz portal. Annual report due May 1st." },
-  { name: "Georgia", code: "GA", fee: 100, annual: "$50", speed: "2-3 Days", region: "south", popular: true, note: "Low ongoing annual fee." },
-  { name: "Hawaii", code: "HI", fee: 50, annual: "$15", speed: "3-5 Days", region: "west", popular: false, note: "Simple online system." },
-  { name: "Idaho", code: "ID", fee: 100, annual: "$0", speed: "1-2 Days", region: "west", popular: false, note: "No annual report fee required." },
-  { name: "Illinois", code: "IL", fee: 150, annual: "$75", speed: "Instant Online", region: "midwest", popular: false, note: "Fast online processing." },
-  { name: "Indiana", code: "IN", fee: 98, annual: "$50 Biennial", speed: "1 Day", region: "midwest", popular: false, note: "Biennial business entity report." },
-  { name: "Iowa", code: "IA", fee: 50, annual: "$60 Biennial", speed: "1-2 Days", region: "midwest", popular: false, note: "Biennial report in odd years." },
-  { name: "Kansas", code: "KS", fee: 160, annual: "$55", speed: "1 Day", region: "midwest", popular: false, note: "Annual report due April 15th." },
-  { name: "Kentucky", code: "KY", fee: 40, annual: "$15", speed: "1 Day", region: "south", popular: true, note: "One of the lowest state fees in America." },
-  { name: "Louisiana", code: "LA", fee: 100, annual: "$35", speed: "1-2 Days", region: "south", popular: false, note: "Affordable annual compliance." },
-  { name: "Maine", code: "ME", fee: 175, annual: "$85", speed: "3-5 Days", region: "east", popular: false, note: "Annual report due June 1st." },
-  { name: "Maryland", code: "MD", fee: 100, annual: "$300", speed: "Instant Online", region: "east", popular: false, note: "Annual personal property return required." },
-  { name: "Massachusetts", code: "MA", fee: 500, annual: "$500", speed: "1-2 Days", region: "east", popular: false, note: "Highest initial filing fee." },
-  { name: "Michigan", code: "MI", fee: 50, annual: "$25", speed: "1-2 Days", region: "midwest", popular: true, note: "Affordable startup and annual fees." },
-  { name: "Minnesota", code: "MN", fee: 155, annual: "$0", speed: "1 Day", region: "midwest", popular: false, note: "No annual fee if filed on time." },
-  { name: "Mississippi", code: "MS", fee: 50, annual: "$0", speed: "1 Day", region: "south", popular: false, note: "Free annual report filing." },
-  { name: "Missouri", code: "MO", fee: 50, annual: "$0", speed: "Instant Online", region: "midwest", popular: false, note: "No annual report required!" },
-  { name: "Montana", code: "MT", fee: 35, annual: "$20", speed: "1 Day", region: "west", popular: false, note: "Lowest initial state fee in America." },
-  { name: "Nebraska", code: "NE", fee: 100, annual: "$10 Biennial", speed: "2-3 Days", region: "midwest", popular: false, note: "Newspaper publication required." },
-  { name: "Nevada", code: "NV", fee: 425, annual: "$350", speed: "1-2 Days", region: "west", popular: true, note: "Fee includes Articles ($75), Initial List ($150) & State License ($200)." },
-  { name: "New Hampshire", code: "NH", fee: 100, annual: "$100", speed: "2-3 Days", region: "east", popular: false, note: "Annual report due April 1st." },
-  { name: "New Jersey", code: "NJ", fee: 125, annual: "$75", speed: "1 Day", region: "east", popular: true, note: "Annual report due on anniversary month." },
-  { name: "New Mexico", code: "NM", fee: 50, annual: "$0", speed: "1-2 Days", region: "west", popular: true, note: "Top privacy state with no public owner names or annual reports." },
-  { name: "New York", code: "NY", fee: 200, annual: "$9 Biennial", speed: "1-2 Days", region: "east", popular: true, note: "Section 206 newspaper publication requirement (~$300-$1000)." },
-  { name: "North Carolina", code: "NC", fee: 125, annual: "$200", speed: "3-5 Days", region: "south", popular: true, note: "Annual report due April 15th." },
-  { name: "North Dakota", code: "ND", fee: 135, annual: "$50", speed: "2-3 Days", region: "midwest", popular: false, note: "Annual report due Nov 15th." },
-  { name: "Ohio", code: "OH", fee: 99, annual: "$0", speed: "1-2 Days", region: "midwest", popular: true, note: "No annual report required!" },
-  { name: "Oklahoma", code: "OK", fee: 100, annual: "$25", speed: "1-2 Days", region: "south", popular: false, note: "Low annual compliance cost." },
-  { name: "Oregon", code: "OR", fee: 100, annual: "$100", speed: "1 Day", region: "west", popular: false, note: "Annual report due on anniversary date." },
-  { name: "Pennsylvania", code: "PA", fee: 125, annual: "$70 Decennial", speed: "2-3 Days", region: "east", popular: false, note: "Decennial report due every 10 years." },
-  { name: "Rhode Island", code: "RI", fee: 150, annual: "$50", speed: "1-2 Days", region: "east", popular: false, note: "Annual report due between Feb 1 & Nov 1." },
-  { name: "South Carolina", code: "SC", fee: 110, annual: "$0", speed: "1-2 Days", region: "south", popular: false, note: "No annual report fee." },
-  { name: "South Dakota", code: "SD", fee: 150, annual: "$50", speed: "Instant Online", region: "midwest", popular: false, note: "Online instant approval." },
-  { name: "Tennessee", code: "TN", fee: 300, annual: "$300 min", speed: "1-2 Days", region: "south", popular: false, note: "$300 minimum initial filing fee." },
-  { name: "Texas", code: "TX", fee: 300, annual: "$0 PIR", speed: "2-3 Days", region: "south", popular: true, note: "Public Information Report required." },
-  { name: "Utah", code: "UT", fee: 54, annual: "$18", speed: "1 Day", region: "west", popular: false, note: "Affordable overall state." },
-  { name: "Vermont", code: "VT", fee: 125, annual: "$35", speed: "2-3 Days", region: "east", popular: false, note: "Annual report due within 2.5 months of fiscal year end." },
-  { name: "Virginia", code: "VA", fee: 100, annual: "$50", speed: "Instant Online", region: "south", popular: true, note: "Fast instant online processing." },
-  { name: "Washington", code: "WA", fee: 200, annual: "$60", speed: "1 Day", region: "west", popular: true, note: "Initial report due within 120 days ($10)." },
-  { name: "West Virginia", code: "WV", fee: 100, annual: "$25", speed: "2-3 Days", region: "south", popular: false, note: "Fee waived for military veterans." },
-  { name: "Wisconsin", code: "WI", fee: 130, annual: "$25", speed: "1 Day", region: "midwest", popular: false, note: "Low annual renewal fee." },
-  { name: "Wyoming", code: "WY", fee: 100, annual: "$60", speed: "Instant Online", region: "west", popular: true, note: "Top state for non-residents, asset protection, and zero state income tax." }
+  { name: "Alabama", code: "AL", fee: 208, annual: "$100 min PPT", speed: "2-3 Days", region: "south", popular: false, note: "Filing handled via Secretary of State portal.", sosName: "Alabama Secretary of State", sosUrl: "https://www.sos.alabama.gov/" },
+  { name: "Alaska", code: "AK", fee: 250, annual: "$100 Biennial", speed: "1-2 Days", region: "west", popular: false, note: "Biennial report due every 2 years.", sosName: "Alaska Division of Corporations", sosUrl: "https://www.commerce.alaska.gov/web/cbpl/corporations.aspx" },
+  { name: "Arizona", code: "AZ", fee: 50, annual: "$0", speed: "3-5 Days", region: "west", popular: true, note: "No annual report fee. Newspaper publication required in 3 counties.", sosName: "Arizona Corporation Commission", sosUrl: "https://ecorp.azcc.gov/" },
+  { name: "Arkansas", code: "AR", fee: 45, annual: "$150", speed: "1-2 Days", region: "south", popular: false, note: "Low initial filing fee.", sosName: "Arkansas Secretary of State", sosUrl: "https://www.sos.arkansas.gov/" },
+  { name: "California", code: "CA", fee: 70, annual: "$800 + $20", speed: "1 Day (Online)", region: "west", popular: true, note: "$800 minimum annual franchise tax after Year 1.", sosName: "California Secretary of State", sosUrl: "https://bizfileonline.sos.ca.gov/" },
+  { name: "Colorado", code: "CO", fee: 50, annual: "$10", speed: "Instant Online", region: "west", popular: true, note: "Instant online registration.", sosName: "Colorado Secretary of State", sosUrl: "https://www.sos.state.co.us/" },
+  { name: "Connecticut", code: "CT", fee: 120, annual: "$80", speed: "2-3 Days", region: "east", popular: false, note: "Annual report due every year.", sosName: "Connecticut Secretary of the State", sosUrl: "https://business.ct.gov/" },
+  { name: "Delaware", code: "DE", fee: 140, annual: "$300", speed: "1-2 Days", region: "east", popular: true, note: "Preferred state for venture-backed entities and corporate privacy.", sosName: "Delaware Division of Corporations", sosUrl: "https://corp.delaware.gov/" },
+  { name: "Florida", code: "FL", fee: 125, annual: "$138.75", speed: "1-2 Days", region: "south", popular: true, note: "Sunbiz portal. Annual report due May 1st.", sosName: "Florida Division of Corporations (Sunbiz)", sosUrl: "https://dos.fl.gov/sunbiz/" },
+  { name: "Georgia", code: "GA", fee: 100, annual: "$50", speed: "2-3 Days", region: "south", popular: true, note: "Low ongoing annual fee.", sosName: "Georgia Secretary of State", sosUrl: "https://ecorp.sos.ga.gov/" },
+  { name: "Hawaii", code: "HI", fee: 50, annual: "$15", speed: "3-5 Days", region: "west", popular: false, note: "Simple online system.", sosName: "Hawaii DCCA Business Registration", sosUrl: "https://hbe.ehawaii.gov/" },
+  { name: "Idaho", code: "ID", fee: 100, annual: "$0", speed: "1-2 Days", region: "west", popular: false, note: "No annual report fee required.", sosName: "Idaho Secretary of State", sosUrl: "https://sos.idaho.gov/" },
+  { name: "Illinois", code: "IL", fee: 150, annual: "$75", speed: "Instant Online", region: "midwest", popular: false, note: "Fast online processing.", sosName: "Illinois Secretary of State", sosUrl: "https://www.ilsos.gov/" },
+  { name: "Indiana", code: "IN", fee: 98, annual: "$50 Biennial", speed: "1 Day", region: "midwest", popular: false, note: "Biennial business entity report.", sosName: "Indiana Secretary of State INBiz", sosUrl: "https://bsd.sos.in.gov/" },
+  { name: "Iowa", code: "IA", fee: 50, annual: "$60 Biennial", speed: "1-2 Days", region: "midwest", popular: false, note: "Biennial report in odd years.", sosName: "Iowa Secretary of State", sosUrl: "https://sos.iowa.gov/" },
+  { name: "Kansas", code: "KS", fee: 160, annual: "$55", speed: "1 Day", region: "midwest", popular: false, note: "Annual report due April 15th.", sosName: "Kansas Secretary of State", sosUrl: "https://sos.ks.gov/" },
+  { name: "Kentucky", code: "KY", fee: 40, annual: "$15", speed: "1 Day", region: "south", popular: true, note: "One of the lowest state fees in America.", sosName: "Kentucky Secretary of State", sosUrl: "https://web.sos.ky.gov/" },
+  { name: "Louisiana", code: "LA", fee: 100, annual: "$35", speed: "1-2 Days", region: "south", popular: false, note: "Affordable annual compliance.", sosName: "Louisiana Secretary of State geauxBiz", sosUrl: "https://geauxbiz.sos.la.gov/" },
+  { name: "Maine", code: "ME", fee: 175, annual: "$85", speed: "3-5 Days", region: "east", popular: false, note: "Annual report due June 1st.", sosName: "Maine Secretary of State", sosUrl: "https://www.maine.gov/sos/cec/corp/" },
+  { name: "Maryland", code: "MD", fee: 100, annual: "$300", speed: "Instant Online", region: "east", popular: false, note: "Annual personal property return required.", sosName: "Maryland Business Express", sosUrl: "https://egov.maryland.gov/businessexpress" },
+  { name: "Massachusetts", code: "MA", fee: 500, annual: "$500", speed: "1-2 Days", region: "east", popular: false, note: "Highest initial filing fee.", sosName: "Massachusetts Corporations Division", sosUrl: "https://www.sec.state.ma.us/cor/" },
+  { name: "Michigan", code: "MI", fee: 50, annual: "$25", speed: "1-2 Days", region: "midwest", popular: true, note: "Affordable startup and annual fees.", sosName: "Michigan LARA Corporations Online", sosUrl: "https://cfs.lara.state.mi.us/" },
+  { name: "Minnesota", code: "MN", fee: 155, annual: "$0", speed: "1 Day", region: "midwest", popular: false, note: "No annual fee if filed on time.", sosName: "Minnesota Secretary of State", sosUrl: "https://mblsportal.sos.state.mn.us/" },
+  { name: "Mississippi", code: "MS", fee: 50, annual: "$0", speed: "1 Day", region: "south", popular: false, note: "Free annual report filing.", sosName: "Mississippi Secretary of State", sosUrl: "https://www.sos.ms.gov/" },
+  { name: "Missouri", code: "MO", fee: 50, annual: "$0", speed: "Instant Online", region: "midwest", popular: false, note: "No annual report required!", sosName: "Missouri Secretary of State", sosUrl: "https://bsd.sos.mo.gov/" },
+  { name: "Montana", code: "MT", fee: 35, annual: "$20", speed: "1 Day", region: "west", popular: false, note: "Lowest initial state fee in America.", sosName: "Montana Secretary of State", sosUrl: "https://biz.sosmt.gov/" },
+  { name: "Nebraska", code: "NE", fee: 100, annual: "$10 Biennial", speed: "2-3 Days", region: "midwest", popular: false, note: "Newspaper publication required.", sosName: "Nebraska Secretary of State", sosUrl: "https://www.nebraska.gov/sos/corp/" },
+  { name: "Nevada", code: "NV", fee: 425, annual: "$350", speed: "1-2 Days", region: "west", popular: true, note: "Fee includes Articles ($75), Initial List ($150) & State License ($200).", sosName: "Nevada Secretary of State SilverFlume", sosUrl: "https://www.nvsos.gov/" },
+  { name: "New Hampshire", code: "NH", fee: 100, annual: "$100", speed: "2-3 Days", region: "east", popular: false, note: "Annual report due April 1st.", sosName: "New Hampshire Department of State", sosUrl: "https://quickstart.sos.nh.gov/" },
+  { name: "New Jersey", code: "NJ", fee: 125, annual: "$75", speed: "1 Day", region: "east", popular: true, note: "Annual report due on anniversary month.", sosName: "New Jersey Division of Revenue", sosUrl: "https://www.njportal.com/DOR/BusinessRegistration" },
+  { name: "New Mexico", code: "NM", fee: 50, annual: "$0", speed: "1-2 Days", region: "west", popular: true, note: "Top privacy state with no public owner names or annual reports.", sosName: "New Mexico Secretary of State", sosUrl: "https://portal.sos.state.nm.us/" },
+  { name: "New York", code: "NY", fee: 200, annual: "$9 Biennial", speed: "1-2 Days", region: "east", popular: true, note: "Section 206 newspaper publication requirement (~$300-$1000).", sosName: "New York Department of State", sosUrl: "https://dos.ny.gov/corps" },
+  { name: "North Carolina", code: "NC", fee: 125, annual: "$200", speed: "3-5 Days", region: "south", popular: true, note: "Annual report due April 15th.", sosName: "North Carolina Secretary of State", sosUrl: "https://www.sosnc.gov/" },
+  { name: "North Dakota", code: "ND", fee: 135, annual: "$50", speed: "2-3 Days", region: "midwest", popular: false, note: "Annual report due Nov 15th.", sosName: "North Dakota Secretary of State FirstStop", sosUrl: "https://firststop.sos.nd.gov/" },
+  { name: "Ohio", code: "OH", fee: 99, annual: "$0", speed: "1-2 Days", region: "midwest", popular: true, note: "No annual report required!", sosName: "Ohio Secretary of State", sosUrl: "https://www.ohiosos.gov/" },
+  { name: "Oklahoma", code: "OK", fee: 100, annual: "$25", speed: "1-2 Days", region: "south", popular: false, note: "Low annual compliance cost.", sosName: "Oklahoma Secretary of State", sosUrl: "https://www.sos.ok.gov/" },
+  { name: "Oregon", code: "OR", fee: 100, annual: "$100", speed: "1 Day", region: "west", popular: false, note: "Annual report due on anniversary date.", sosName: "Oregon Secretary of State", sosUrl: "https://sos.oregon.gov/" },
+  { name: "Pennsylvania", code: "PA", fee: 125, annual: "$70 Decennial", speed: "2-3 Days", region: "east", popular: false, note: "Decennial report due every 10 years.", sosName: "Pennsylvania Department of State", sosUrl: "https://www.dos.pa.gov/" },
+  { name: "Rhode Island", code: "RI", fee: 150, annual: "$50", speed: "1-2 Days", region: "east", popular: false, note: "Annual report due between Feb 1 & Nov 1.", sosName: "Rhode Island Department of State", sosUrl: "https://ezcorp.sos.ri.gov/" },
+  { name: "South Carolina", code: "SC", fee: 110, annual: "$0", speed: "1-2 Days", region: "south", popular: false, note: "No annual report fee.", sosName: "South Carolina Secretary of State", sosUrl: "https://sos.sc.gov/" },
+  { name: "South Dakota", code: "SD", fee: 150, annual: "$50", speed: "Instant Online", region: "midwest", popular: false, note: "Online instant approval.", sosName: "South Dakota Secretary of State", sosUrl: "https://sdsos.gov/" },
+  { name: "Tennessee", code: "TN", fee: 300, annual: "$300 min", speed: "1-2 Days", region: "south", popular: false, note: "$300 minimum initial filing fee.", sosName: "Tennessee Secretary of State Tre Hargett", sosUrl: "https://tnbear.tn.gov/" },
+  { name: "Texas", code: "TX", fee: 300, annual: "$0 PIR", speed: "2-3 Days", region: "south", popular: true, note: "Public Information Report required.", sosName: "Texas Secretary of State", sosUrl: "https://www.sos.state.tx.us/corp/" },
+  { name: "Utah", code: "UT", fee: 54, annual: "$18", speed: "1 Day", region: "west", popular: false, note: "Affordable overall state.", sosName: "Utah Division of Corporations", sosUrl: "https://corporations.utah.gov/" },
+  { name: "Vermont", code: "VT", fee: 125, annual: "$35", speed: "2-3 Days", region: "east", popular: false, note: "Annual report due within 2.5 months of fiscal year end.", sosName: "Vermont Secretary of State", sosUrl: "https://sos.vermont.gov/" },
+  { name: "Virginia", code: "VA", fee: 100, annual: "$50", speed: "Instant Online", region: "south", popular: true, note: "Fast instant online processing.", sosName: "Virginia State Corporation Commission", sosUrl: "https://cis.scc.virginia.gov/" },
+  { name: "Washington", code: "WA", fee: 200, annual: "$60", speed: "1 Day", region: "west", popular: true, note: "Initial report due within 120 days ($10).", sosName: "Washington Secretary of State", sosUrl: "https://www.sos.wa.gov/corps" },
+  { name: "West Virginia", code: "WV", fee: 100, annual: "$25", speed: "2-3 Days", region: "south", popular: false, note: "Fee waived for military veterans.", sosName: "West Virginia Secretary of State", sosUrl: "https://wvsos.gov/" },
+  { name: "Wisconsin", code: "WI", fee: 130, annual: "$25", speed: "1 Day", region: "midwest", popular: false, note: "Low annual renewal fee.", sosName: "Wisconsin DFI", sosUrl: "https://www.wdfi.org/" },
+  { name: "Wyoming", code: "WY", fee: 100, annual: "$60", speed: "Instant Online", region: "west", popular: true, note: "Top state for non-residents, asset protection, and zero state income tax.", sosName: "Wyoming Secretary of State", sosUrl: "https://wyobiz.wyo.gov/" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -138,6 +138,9 @@ function showInlineStateResult(code) {
   const resultBox = document.getElementById("inlineStateResult");
   if (!resultBox) return;
 
+  const sosLinkName = st.sosName || (st.name + " Secretary of State");
+  const sosLinkUrl = st.sosUrl || "https://www.sos.state.wy.us";
+
   resultBox.innerHTML = `
     <div style="background: rgba(13, 35, 54, 0.95); border: 1.5px solid var(--color-primary); border-radius: 18px; padding: 1.5rem; position: relative; box-shadow: 0 10px 30px rgba(21, 154, 156, 0.2); animation: inlineResultFade 0.4s ease-out;">
       
@@ -181,11 +184,18 @@ function showInlineStateResult(code) {
       </div>
 
       <!-- State Note / Rule -->
-      <div style="background: rgba(21, 154, 156, 0.1); border-left: 3px solid var(--color-primary); padding: 0.85rem 1rem; border-radius: 0 8px 8px 0;">
+      <div style="background: rgba(21, 154, 156, 0.1); border-left: 3px solid var(--color-primary); padding: 0.85rem 1rem; border-radius: 0 8px 8px 0; margin-bottom: 0.85rem;">
         <div style="font-size: 0.825rem; color: #CBD5E1; line-height: 1.5;">
           <strong style="color: var(--color-primary);">State Note:</strong> ${st.note}
         </div>
       </div>
+
+      <!-- Small Official Source Box -->
+      <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.65rem 0.85rem; font-size: 0.8rem; color: #CBD5E1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+        <div>State Filing Fee: <strong style="color: #FFFFFF; font-size: 0.9rem;">$${st.fee}</strong></div>
+        <div>Source: <a href="${sosLinkUrl}" target="_blank" rel="noopener" style="color: #159A9C; font-weight: 700; text-decoration: underline;">${sosLinkName}</a></div>
+      </div>
+
     </div>
   `;
 
