@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
-  <title>Registered Agent Guide (2026 Requirements & Services) | LLC Primer</title>
-  <meta name="description"
-    content="Complete guide to LLC registered agents in 2026. Understand statutory requirements across all 50 states, being your own agent vs hiring a service, privacy protection, top services compared, 4-step change process, and multi-state rules.">
+  <title>Northwest Registered Agent Review (2026) | Tested & Reviewed | LLC Primer</title>
+  <meta name="description" content="Detailed 2026 review of Northwest Registered Agent. Features, $39 formation pricing, free 1st-year registered agent, privacy protection, Corporate Guides support, filing speed, and complaints.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Scoped Content Container for Body Cards (Leaving Navbar & Footer at full homepage width) */
+    /* Scoped Content Container for Body Cards (1080px Width Matching Site Guides) */
     .guide-content-container {
       max-width: 1080px;
       margin: 0 auto;
@@ -24,7 +20,7 @@
       width: 100%;
     }
 
-    /* Article Spacing & Typography Matching what-is-an-llc.html 1:1 */
+    /* Article Spacing & Typography */
     .guide-article h2 {
       font-size: clamp(1.75rem, 3.2vw, 2.3rem);
       font-weight: 800;
@@ -60,254 +56,327 @@
       color: #0E7490;
     }
 
-    /* Hero Key Specs Card (Navy Banner Box) */
-    .llc-specs-card {
-      background: linear-gradient(135deg, #12304A 0%, #0D2336 100%);
-      border: 1.5px solid rgba(21, 154, 156, 0.35);
-      border-radius: 24px;
-      padding: 2.25rem 2.5rem;
+    /* Dual-Shade Executive Verification Banner */
+    .review-check-banner {
+      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #12304A 0%, #0B1928 100%);
+      color: #F8FAFC;
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(18, 48, 74, 0.22);
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
+    }
+    .review-check-banner a {
+      color: #6EE7B7;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(110, 231, 183, 0.25);
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .review-check-banner a:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: #6EE7B7;
+      transform: translateY(-1px);
+    }
+
+    /* Verdict Banner Box */
+    .verdict-box {
+      background: linear-gradient(135deg, #12304A 0%, #0F766E 100%);
+      border: 1.5px solid #159A9C;
+      border-radius: 16px;
+      padding: 1.35rem 1.65rem;
       color: #FFFFFF;
-      box-shadow: 0 16px 45px rgba(18, 48, 74, 0.2);
-      margin: 2rem 0 2.5rem 0;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.15);
     }
 
-    .llc-specs-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1.25rem;
-    }
-
-    .spec-item-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+    /* Short Answer Callout Box */
+    .short-answer-box {
+      background: #F0FDFA;
+      border: 1.5px solid #CCFBF1;
+      border-left: 4px solid #159A9C;
       border-radius: 14px;
-      padding: 1.15rem 1rem;
-      text-align: center;
+      padding: 1.15rem 1.4rem;
+      font-size: 0.95rem;
+      color: #0F766E;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
-    .spec-label {
-      font-size: 0.725rem;
+    /* 4 Metric Cards Grid */
+    .metric-4grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .metric-card-pill {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .metric-card-pill:hover {
+      border-color: #159A9C;
+      transform: translateY(-2px);
+    }
+    .metric-card-pill .icon {
+      font-size: 1.35rem;
+      margin-bottom: 0.25rem;
+    }
+    .metric-card-pill .num {
+      font-size: 1.35rem;
       font-weight: 800;
-      color: #159A9C;
+      color: #12304A;
+      line-height: 1.15;
+    }
+    .metric-card-pill .label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: #64748B;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 0.35rem;
+      margin-top: 0.25rem;
     }
 
-    .spec-value {
-      font-size: 1.05rem;
+    /* Affiliate Disclosure Box */
+    .affiliate-disc-box {
+      background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+      border: 1.5px solid #CBD5E1;
+      border-left: 4px solid #159A9C;
+      border-radius: 12px;
+      padding: 0.9rem 1.25rem;
+      font-size: 0.825rem;
+      color: #475569;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(18, 48, 74, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .affiliate-disc-box strong {
+      color: #12304A;
       font-weight: 800;
-      color: #FFFFFF;
-      font-family: var(--font-heading);
+    }
+    .affiliate-disc-badge {
+      background: #E6F7F7;
+      color: #159A9C;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
     }
 
-    .spec-desc {
-      font-size: 0.75rem;
-      color: #94A3B8;
-      margin-top: 0.2rem;
-      line-height: 1.3;
+    /* Top Pick Card Banner */
+    .top-pick-card {
+      background: #FFFFFF;
+      border: 2px solid #10B981;
+      border-radius: 18px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     /* Table of Contents Card */
-    .toc-card {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 20px;
-      padding: 2rem 2.25rem;
-      margin-bottom: 2.5rem;
-      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.06);
-    }
-
-    .toc-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem 2rem;
-    }
-
-    .toc-link {
-      font-size: 0.925rem;
-      color: #159A9C !important;
-      font-weight: 600 !important;
-      text-decoration: none !important;
-      display: inline-block;
-      transition: color 0.2s ease;
-    }
-
-    .toc-link:hover {
-      color: #0E7490 !important;
-      text-decoration: underline !important;
-    }
-
-    /* Structured Custom Tables */
-    .custom-table-wrapper {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.08);
-      margin: 2rem 0;
-    }
-
-    .custom-table-header {
-      background: #12304A;
-      color: #FFFFFF;
-      padding: 1.15rem 1.75rem;
-      font-size: 1.1rem;
-      font-weight: 800;
-      font-family: var(--font-heading);
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .custom-data-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    .custom-data-table th {
-      background: #12304A;
-      color: #FFFFFF;
-      font-size: 0.825rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .custom-data-table td {
-      padding: 1rem 1.5rem;
-      font-size: 0.925rem;
-      color: #334155;
-      border-bottom: 1px solid #E2E8F0;
-      line-height: 1.6;
-    }
-
-    .custom-data-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .custom-data-table tr:nth-child(even) td {
+    .toc-card-box {
       background: #F8FAFC;
-    }
-
-    /* Highlight Callout Boxes */
-    .callout-box {
-      background: #FFFFFF;
-      border: 1px solid #159a9c;
+      border: 1px solid #E2E8F0;
       border-radius: 16px;
       padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+    }
+    .toc-card-box h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+    .toc-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem 2rem;
+      font-size: 0.9rem;
+    }
+    .toc-links-grid a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .toc-links-grid a:hover {
+      text-decoration: underline;
+      color: #0E7490;
+    }
+
+    /* Green Feature Package Box */
+    .nw-package-green-box {
+      background: #0F766E;
+      border-radius: 20px;
+      padding: 2rem;
+      color: #FFFFFF;
+      margin: 2rem 0 2.5rem 0;
+      box-shadow: 0 12px 32px rgba(15, 118, 110, 0.2);
+    }
+    .feature-2col-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .feature-item-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem;
+      color: #12304A;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    /* 3 Ratings Cards Grid */
+    .ratings-3grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
       margin: 1.75rem 0;
+    }
+    .rating-card-box {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 1.35rem 1.15rem;
+      text-align: center;
       box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
     }
 
-    .callout-teal {
-      background: #F0FDFA;
-      border: 1px solid #CCFBF1;
-      border-left: 5px solid #159A9C;
-    }
-
-    .callout-yellow {
-      background: #FEFCE8;
-      border: 1px solid #FDE047;
-      border-left: 5px solid #EAB308;
-    }
-
-    .callout-red {
-      background: #FEF2F2;
-      border: 1px solid #FCA5A5;
-      border-left: 5px solid #EF4444;
-    }
-
-    /* Side by side comparison box */
-    .comparison-box {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
+    /* Styled Tables */
+    .styled-table-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
       border-radius: 16px;
-      padding: 1.5rem 1.75rem;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
       margin: 1.75rem 0;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
+    }
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    .styled-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 0.95rem 1.15rem;
+      font-size: 0.785rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .styled-table td {
+      padding: 0.95rem 1.15rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .styled-table tr:last-child td {
+      border-bottom: none;
+    }
+    .styled-table tr:nth-child(even) {
+      background: #F8FAFC;
     }
 
-    .comparison-col {
-      flex: 1;
+    /* Callout Alert Boxes */
+    .callout-green {
+      background: #ECFDF5;
+      border: 1.5px solid #10B981;
+      border-left: 5px solid #059669;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #065F46;
+      margin: 1.75rem 0;
+    }
+    .callout-yellow {
+      background: #FFFBEB;
+      border: 1.5px solid #F59E0B;
+      border-left: 5px solid #D97706;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #78350F;
+      margin: 1.75rem 0;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #0284C7;
+      border-left: 5px solid #0369A1;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #0C4A6E;
+      margin: 1.75rem 0;
     }
 
-    /* 4-Step Process Timeline */
-    .process-timeline {
+    /* Numbered Step Timeline */
+    .timeline-steps {
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
-      margin: 2rem 0;
-      position: relative;
+      margin: 1.5rem 0;
     }
-
-    .process-step-item {
+    .timeline-step-row {
       display: flex;
-      gap: 1.25rem;
       align-items: flex-start;
+      gap: 1rem;
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      border-radius: 16px;
-      padding: 1.25rem 1.5rem;
-      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
+      border-radius: 14px;
+      padding: 1.15rem 1.35rem;
     }
-
-    .process-step-circle {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
+    .timeline-num {
       background: #159A9C;
       color: #FFFFFF;
       font-weight: 800;
-      font-size: 1rem;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      font-size: 0.9rem;
     }
 
-    /* Related Guides Grid */
-    .related-guides-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.15rem;
-      margin: 1.5rem 0 2.5rem 0;
-    }
-
-    .related-guide-card {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 16px;
-      padding: 1.25rem;
-      text-decoration: none !important;
-      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .related-guide-card:hover {
-      border-color: #159A9C;
-      transform: translateY(-2px);
-    }
-
-    /* FAQ Accordion Styling */
+    /* Standard Site FAQ Accordion Styles */
     .faq-accordion-wrapper {
-      width: 100%;
-      max-width: 100%;
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
       margin-bottom: 2rem;
+      width: 100% !important;
+      max-width: 100% !important;
     }
-
     .faq-accordion-item {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
@@ -315,18 +384,17 @@
       overflow: hidden;
       box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
       transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      width: 100% !important;
+      max-width: 100% !important;
     }
-
     .faq-accordion-item:hover {
       border-color: #159A9C;
       box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
     }
-
     .faq-accordion-item[open] {
       border-color: #159A9C;
       box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
     }
-
     .faq-accordion-question {
       padding: 1.25rem 1.65rem;
       font-weight: 700;
@@ -340,17 +408,8 @@
       list-style: none;
       font-family: var(--font-heading);
     }
-
-    .faq-accordion-question::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq-q-badge-title {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-    }
-
+    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-q-badge-title { display: flex; align-items: center; gap: 0.85rem; }
     .faq-q-badge {
       background: #F0FDFA;
       border: 1px solid #CCFBF1;
@@ -361,83 +420,48 @@
       border-radius: 8px;
       flex-shrink: 0;
     }
-
     .faq-chevron {
       width: 20px;
       height: 20px;
-      color: #159A9C;
+      stroke: #159A9C;
       transition: transform 0.25s ease;
       flex-shrink: 0;
     }
-
-    .faq-accordion-item[open] .faq-chevron {
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
       transform: rotate(180deg);
     }
-
     .faq-accordion-answer {
       padding: 0 1.65rem 1.35rem 1.65rem;
-      color: #334155;
       font-size: 0.95rem;
-      line-height: 1.75;
-      border-top: 1px dashed #E2E8F0;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
       padding-top: 1rem;
     }
 
     @media (max-width: 768px) {
-      .llc-specs-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .toc-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .related-guides-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .comparison-box {
-        flex-direction: column;
-      }
+      .metric-4grid { grid-template-columns: repeat(2, 1fr); }
+      .ratings-3grid { grid-template-columns: 1fr; }
+      .feature-2col-grid { grid-template-columns: 1fr; }
+      .toc-links-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-
 <body>
 
   <!-- =========================================================================
-       0. TOP ANNOUNCEMENT / TRUST BAR
-       ========================================================================= 
-  <div
-    style="background: #12304A; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.8rem; color: #94A3B8; padding: 0.5rem 0;">
-    <div class="container"
-      style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
-      <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <span
-          style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #159A9C; box-shadow: 0 0 10px #159A9C;"></span>
-        <strong style="color: #F8FAFC;">2026 SOS RULES VERIFIED</strong> · 50-State Registered Agent Requirements
-      </div>
-      <div style="display: flex; align-items: center; gap: 1.25rem;">
-        <a href="index.html#states-section" style="color: #CBD5E1; font-weight: 500;">🏛️ All 50 States</a>
-        <a href="index.html#non-us-section" style="color: #CBD5E1; font-weight: 500;">🌐 Non-US Founders</a>
-        <a href="quiz.html" style="color: #159A9C; font-weight: 700;">🧩 Take 60-Sec LLC Quiz →</a>
-      </div>
-    </div>
-  </div>-->
-
-  <!-- =========================================================================
-       1. EXECUTIVE GLASSMORPHIC NAVBAR
+       1. EXECUTIVE GLASSMORPHIC NAVBAR (LLC PRIMER)
        ========================================================================= -->
   <header class="site-header">
     <div class="container header-container">
-      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage"
-        style="display: flex; align-items: center;">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
         <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
       </a>
 
       <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
         <div class="nav-item">
-          <a href="start-llc.html" class="nav-link" style="color: var(--color-primary); font-weight: 800;">
+          <a href="start-llc.html" class="nav-link">
             Start an LLC
           </a>
         </div>
@@ -445,41 +469,34 @@
         <div class="nav-item">
           <a href="best-llc-services.html" class="nav-link">
             LLC Services
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="best-llc-services.html" class="dropdown-link">📊 Best LLC Services (2026)</a>
-            <a href="best-llc-services.html#doola" class="dropdown-link">🌐 doola Review (Non-US Founders)</a>
-            <a href="best-llc-services.html#head-to-head" class="dropdown-link">📊 ZenBusiness vs LegalZoom</a>
+            <a href="best-llc-services.html" class="dropdown-link">📊 Best LLC Formation Services (2026)</a>
+            <a href="registered-agent-guide.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">⭐ Registered Agent Services</a>
+            <a href="best-llc-services.html#head-to-head" class="dropdown-link">⚖️ ZenBusiness vs Northwest</a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="llc-guide.html" class="nav-link active">
+          <a href="llc-guide.html" class="nav-link">
             LLC Guides
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="what-is-an-llc.html" class="dropdown-link"> What is an LLC</a>
-            <a href="best-state-to-form-an-llc.html" class="dropdown-link"> Best State for LLC</a>
-            <a href="how-much-does-an-llc-cost.html" class="dropdown-link"> How Much Does An LLC Cost</a>
-            <a href="how-are-llcs-taxed.html" class="dropdown-link"> How Are LLCs Taxed</a>
-            <a href="operating-agreement.html" class="dropdown-link"> LLC Operating Agreement</a>
-            <a href="registered-agent-guide.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">
-              Registered Agent Guide</a>
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
           </div>
         </div>
 
         <div class="nav-item">
           <a href="index.html#after-formation-section" class="nav-link">
             Business Setup
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
             <a href="index.html#after-formation-section" class="dropdown-link">01. Obtain Federal EIN (SS-4 Tax ID)</a>
@@ -493,821 +510,759 @@
         <div class="nav-item">
           <a href="index.html#cost-estimator-section" class="nav-link">
             Tools
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
             <a href="quiz.html" class="dropdown-link">🧩 Interactive LLC Quiz (60 Sec)</a>
             <a href="index.html#cost-estimator-section" class="dropdown-link">📊 First-Year Cost Estimator</a>
-            <a href="index.html#spanish-section" class="dropdown-link">🇪🇸 Guía de LLC en Español</a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="index.html#non-us-section" class="nav-link">
-            Non-Residents 🌐
+          <a href="index.html#states-section" class="nav-link">
+            50-State Guides
           </a>
         </div>
       </nav>
 
       <div class="header-actions">
-        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search"
-          title="Search state guides (Ctrl+K)">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
-        <a href="quiz.html" class="ls-btn ls-btn--emerald"
-          style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
           Build LLC Plan →
         </a>
         <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </div>
     </div>
   </header>
 
   <!-- =========================================================================
-       2. MAIN CONTENT AREA
+       2. REVIEWS HERO & VERIFICATION SECTION
        ========================================================================= -->
-  <main class="guide-content-container">
+  <section style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%); padding: 1.5rem 0 1rem 0; border-bottom: 1px solid #E2E8F0;">
+    <div class="guide-content-container" style="padding-bottom: 1rem;">
 
-    <!-- BREADCRUMB -->
-    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
-      <a href="index.html" style="color: #64748B; text-decoration: none;">Home</a> &nbsp;/&nbsp;
-      <a href="llc-guide.html" style="color: #64748B; text-decoration: none;">LLC Guides</a> &nbsp;/&nbsp;
-      <strong style="color: #12304A;">Registered Agent Guide</strong>
-    </div>
+      <!-- BREADCRUMB NAVIGATION -->
+      <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
+        <a href="index.html" style="color: #64748B; text-decoration: none; font-weight: 500;">Home</a>
+        <span style="color: #CBD5E1;">/</span>
+        <a href="start-llc.html" style="color: #64748B; text-decoration: none; font-weight: 500;">How to Start an LLC</a>
+        <span style="color: #CBD5E1;">/</span>
+        <a href="best-llc-services.html" style="color: #64748B; text-decoration: none; font-weight: 500;">LLC Services</a>
+        <span style="color: #CBD5E1;">/</span>
+        <span style="color: #12304A; font-weight: 700;">Northwest Registered Agent Review</span>
+      </div>
 
-    <article class="guide-article">
+      <!-- Verification Banner -->
+      <div class="review-check-banner">
+        <div style="position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); filter: blur(25px); pointer-events: none;"></div>
+        <div style="position: absolute; bottom: -50px; left: 35%; width: 200px; height: 200px; border-radius: 50%; background: rgba(21, 154, 156, 0.25); filter: blur(35px); pointer-events: none;"></div>
 
-      <!-- HEADER TITLE & SUBTITLE -->
-      <h1
-        style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: #12304A; line-height: 1.2; margin-bottom: 0.75rem; font-family: var(--font-heading);">
-        Registered Agent Requirements — All 50 States
-      </h1>
-      <p
-        style="font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; color: #159A9C; margin-bottom: 1.5rem; line-height: 1.4;">
-        Statutory Rules Across All 50 States, DIY vs Service Comparison & Privacy Protection
-      </p>
-
-
-      <p>
-        A <b>Registered Agent</b> is a person or company designated to receive official legal and state documents on behalf of
-        your LLC. LLCs generally must maintain a registered agent in each state where they are formed or formally
-        registered to do business, subject to that state's requirements.
-      </p>
-      <p>
-        A registered agent may receive service of process (such as lawsuits, summonses, or subpoenas), <b>official notices
-        from the Secretary of State or similar agency, and certain state tax</b> or compliance correspondence. The agent is
-        responsible for receiving documents at the registered office and following the applicable procedures for
-        notifying or forwarding them to the LLC.
-      </p>
-      <p>
-        If a registered agent is unavailable, fails to maintain the required address, or does not properly handle
-        received documents, the LLC can face <b>missed deadlines, penalties, loss of good standing, or administrative
-        consequences</b>. However, a missed lawsuit notice does not automatically mean the business loses the case; the
-        legal consequences depend on the circumstances and applicable court rules.
-      </p>
-      <p>
-        A registered agent's address may be part of the public <b>business record, depending on the state's filing and
-        disclosure rules</b>. Some LLC owners therefore use a professional registered agent service rather than listing a
-        qualifying personal or business address.
-      </p>
-      <p>
-        In different states, this role may be called a statutory agent, resident agent, or agent for service of process.
-        The terminology varies, but the core function is similar: maintaining a qualifying address where the state and
-        parties serving legal process can reach the business.
-      </p>
-      <p>
-        If your LLC is registered to do business in another state through foreign qualification, that state will
-        generally have its own registered-agent requirement as well. Simply having customers in another state does not
-        automatically mean you need a registered agent there; the requirement generally follows the state's rules for
-        registration and doing business. </p>
-      </p>
-      <!-- HERO KEY FACTS BOX (NAVY BANNER BOX) -->
-      <div class="llc-specs-card">
-        <div class="ls-kicker-pill"
-          style="background: rgba(21, 154, 156, 0.15); border-color: #159A9C; color: #FFFFFF; margin-bottom: 0.75rem;">
-          <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 10px #159A9C;"></span>
-          REGISTERED AGENT — KEY FACTS 2026
-        </div>
-        <div style="font-size: 0.95rem; color: #CBD5E1; margin-bottom: 1.25rem;">
-          Source: state statutes / sba.gov / Thomson Reuters / Swyft Filings
-        </div>
-
-        <div class="llc-specs-grid">
-          <div class="spec-item-box">
-            <div class="spec-label">REQUIRED IN</div>
-            <div class="spec-value">All 50 states</div>
-            <div class="spec-desc">No exceptions under state law</div>
+        <div style="display: flex; align-items: flex-start; gap: 0.85rem; position: relative; z-index: 2;">
+          <span style="background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; margin-top: 0.1rem;">
+            🔍
+          </span>
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.25rem;">
+              VERIFIED EDITORIAL METHODOLOGY · SEPTEMBER 2026
+            </div>
+            <div style="color: #FFFFFF; font-weight: 800; font-size: 1.05rem; margin-bottom: 0.35rem;">
+              How This Review Was Checked
+            </div>
+            <p style="margin: 0 0 0.65rem 0; color: #E2E8F0; font-size: 0.85rem; line-height: 1.6;">
+              We reviewed the providers' official public pricing and plan pages on September 7, 2026, comparing advertised base prices, renewals, included services, and stated exclusions. State filing fees are separate. We did not place a new paid order for this update, so service-quality observations are editorial analysis rather than a mystery-shopping test. Affiliate relationships do not change our ranking criteria or the price you pay. Prices and promotions can change; verify the current offer at <a href="https://www.northwestregisteredagent.com" target="_blank" rel="sponsored noopener">Northwest</a>.
+            </p>
           </div>
-          <div class="spec-item-box">
-            <div class="spec-label">PROFESSIONAL SERVICE COST</div>
-            <div class="spec-value">$99–$300/year</div>
-            <div class="spec-desc">Depending on provider ($39 NW)</div>
-          </div>
-          <div class="spec-item-box">
-            <div class="spec-label">CAN YOU BE YOUR OWN?</div>
-            <div class="spec-value">Yes</div>
-            <div class="spec-desc">If you meet state requirements</div>
-          </div>
-          <div class="spec-item-box">
-            <div class="spec-label">PHYSICAL ADDRESS REQUIRED?</div>
-            <div class="spec-value">Yes</div>
-            <div class="spec-desc">No P.O. boxes, no virtual addresses</div>
-          </div>
-          <div class="spec-item-box">
-            <div class="spec-label">AVAILABLE DURING</div>
-            <div class="spec-value">Mon–Fri, 9am–5pm</div>
-            <div class="spec-desc">Normal business hours required</div>
-          </div>
-          <div class="spec-item-box">
-            <div class="spec-label">MISS A LAWSUIT NOTICE?</div>
-            <div class="spec-value">Default judgment</div>
-            <div class="spec-desc">You lose automatically in court</div>
-          </div>
-        </div>
-
-        <div style="margin-top: 1.5rem; text-align: center;">
-          <a href="#section-4" class="ls-btn"
-            style="background: #159A9C; color: #FFFFFF; padding: 0.75rem 1.5rem; border-radius: 10px; font-weight: 800; font-size: 0.9rem; text-decoration: none; display: inline-block;">
-            Compare Top Registered Agent Services →
-          </a>
         </div>
       </div>
 
-      <!-- TABLE OF CONTENTS CARD 
-      <div class="toc-card" id="toc-section">
-        <div
-          style="font-size: 0.8rem; font-weight: 800; color: #12304A; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; font-family: var(--font-heading);">
-          WHAT THIS GUIDE COVERS
+      <!-- Verdict Banner Box -->
+      <div class="verdict-box">
+        <div style="font-size: 0.75rem; font-weight: 800; color: #6EE7B7; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem;">
+          ⚖️ VERDICT
         </div>
-        <div class="toc-grid">
-          <a href="#section-1" class="toc-link">1. Universal Requirements Across All States</a>
-          <a href="#section-2" class="toc-link">2. State-Specific Names for Registered Agents</a>
-          <a href="#section-3" class="toc-link">3. Be Your Own Agent vs. Hire a Service — Full Comparison</a>
-          <a href="#section-4" class="toc-link">4. Best Registered Agent Services 2026 — Head-to-Head Comparison</a>
-          <a href="#section-5" class="toc-link">5. How Much Does a Registered Agent Cost? (2026 Breakdown)</a>
-          <a href="#section-6" class="toc-link">6. How to Change Your Registered Agent (4-Step Process)</a>
-          <a href="#section-7" class="toc-link">7. Multi-State LLCs — You Need an Agent in Each State</a>
-          <a href="#section-8" class="toc-link">8. Registered Agent vs. Other LLC Roles — What's the Difference?</a>
-          <a href="#faq-section" class="toc-link">9. Frequently Asked Questions</a>
+        <div style="font-size: 1.05rem; font-weight: 700; line-height: 1.55;">
+          Northwest Registered Agent is one of the best LLC services if you care about privacy and no upsells — but it's NOT the cheapest option, and it's not for everyone.
         </div>
-      </div>-->
+      </div>
+
+      <!-- Title & Subtitle -->
+      <h1 style="font-size: clamp(2.1rem, 4vw, 3rem); font-weight: 900; color: #12304A; margin-bottom: 0.75rem; line-height: 1.18;">
+        Northwest Registered Agent Review (2026)
+      </h1>
+      <p style="font-size: 1.05rem; color: #334155; line-height: 1.65; margin-bottom: 1.5rem; max-width: 860px;">
+        <strong>Northwest Registered Agent</strong> costs $39 to form an LLC — while competitors like ZenBusiness and Bizee advertise $0. So is it actually worth paying for?
+      </p>
+
+      <!-- Short Answer Callout Box -->
+      <div class="short-answer-box">
+        <span style="background: #159A9C; color: #FFFFFF; font-size: 0.7rem; font-weight: 900; padding: 0.25rem 0.6rem; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0;">SHORT ANSWER</span>
+        <div>
+          <strong>Yes</strong> — if you want better privacy, no aggressive upsells, and real support. <strong>No</strong> — if your only goal is to pay the absolute minimum.
+        </div>
+      </div>
+
+      <!-- 4 Metric Cards Grid -->
+      <div class="metric-4grid">
+        <div class="metric-card-pill">
+          <div class="icon">💰</div>
+          <div class="num">$39</div>
+          <div class="label">+ State Fee</div>
+        </div>
+        <div class="metric-card-pill">
+          <div class="icon">⚠️</div>
+          <div class="num">$$</div>
+          <div class="label">Not Cheapest Long-Term</div>
+        </div>
+        <div class="metric-card-pill">
+          <div class="icon">🛡️</div>
+          <div class="num">Privacy</div>
+          <div class="label">Best For</div>
+        </div>
+        <div class="metric-card-pill">
+          <div class="icon">❌</div>
+          <div class="num">Budget</div>
+          <div class="label">Not Ideal For</div>
+        </div>
+      </div>
+
+      <!-- Affiliate Disclosure Box -->
+      <div class="affiliate-disc-box">
+        <span class="affiliate-disc-badge">Disclosure</span>
+        <span><strong>AFFILIATE DISCLOSURE:</strong> LLC Primer may earn a commission if you form an LLC through the Northwest link on this page. That doesn't change our editorial evaluation or the price you pay. Read our full affiliate disclosure policy.</span>
+      </div>
+
+      <!-- Top Pick Card Banner -->
+      <div class="top-pick-card">
+        <div>
+          <div style="font-size: 0.75rem; font-weight: 900; color: #059669; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem;">
+            ★ OUR TOP PICK
+          </div>
+          <h3 style="font-size: 1.45rem; font-weight: 800; color: #12304A; margin: 0 0 0.35rem 0;">
+            Northwest Registered Agent
+          </h3>
+          <p style="font-size: 0.9rem; color: #475569; margin: 0 0 0.5rem 0; line-height: 1.5;">
+            Form your LLC and get a registered agent, privacy protection, business address, domain, email, and phone — all for one flat fee.
+          </p>
+          <div style="font-size: 0.85rem; font-weight: 700; color: #059669;">
+            $39 + state fee — registered agent included free first year
+          </div>
+        </div>
+        <a href="https://www.northwestregisteredagent.com" target="_blank" rel="sponsored noopener" class="ls-btn" style="background: #10B981; color: #FFFFFF; padding: 0.85rem 1.75rem; font-size: 0.95rem; border-radius: 9999px; text-decoration: none; font-weight: 800; white-space: nowrap;">
+          Form My LLC →
+        </a>
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="toc-card-box">
+        <h3>📋 In This Review</h3>
+        <div class="toc-links-grid">
+          <a href="#section-1">1. What Does Northwest Include?</a>
+          <a href="#section-8">8. Filing Speed</a>
+          <a href="#section-2">2. Who Is Northwest Registered Agent?</a>
+          <a href="#section-9">9. Using Northwest for an Existing LLC</a>
+          <a href="#section-3">3. Is Northwest Registered Agent Legit?</a>
+          <a href="#section-10">10. Where Northwest Falls Short</a>
+          <a href="#section-4">4. Pricing Summary</a>
+          <a href="#section-11">11. Common Customer Complaints</a>
+          <a href="#section-5">5. Privacy by Default: How It Works</a>
+          <a href="#section-12">12. Who Should Choose Northwest?</a>
+          <a href="#section-6">6. Registered Agent Service Deep Dive</a>
+          <a href="#section-13">13. Northwest vs The Competition</a>
+          <a href="#section-7">7. The Corporate Guides® Experience</a>
+          <a href="#section-14">14. Frequently Asked Questions</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. MAIN DETAILED REVIEW CONTENT
+       ========================================================================= -->
+  <main class="guide-article" style="padding-top: 1.5rem;">
+    <div class="guide-content-container">
+
       <!-- SECTION 1 -->
       <section id="section-1">
-        <h2>Universal Requirements Across All States</h2>
+        <h2>1. What Does Northwest Include?</h2>
         <p>
-          States generally require an LLC to maintain a registered agent and a qualifying registered office, but the exact requirements vary by state. The following are common requirements rather than universal rules.
+          Every Northwest customer gets the same package for $39 plus the state filing fee. There are no tiers, no "Starter vs Pro" upgrade path, and no surprise charges added at checkout.
         </p>
-
-        <div class="custom-table-wrapper">
-          <div class="custom-table-header">
-            Universal Registered Agent Requirements
-          </div>
-          <table class="custom-data-table">
-            <thead>
-              <tr>
-                <th>REQUIREMENT</th>
-                <th>TYPICAL RULE</th>
-                <th>STATE VARIATIONS</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Physical registered office</strong></td>
-                <td>A qualifying physical address in the state is generally required</td>
-                <td>P.O. boxes alone typically do not qualify; exact address rules vary</td>
-              </tr>
-              <tr>
-                <td><strong>Availability</strong></td>
-                <td>Agent must be available to receive service of process as required by state law</td>
-                <td>Required hours and availability rules vary</td>
-              </tr>
-              <tr>
-                <td><strong>Authorized to serve</strong></td>
-                <td>The individual or entity must meet the state's qualifications to act as a registered agent</td>
-                <td>Some states have specific eligibility or consent requirements</td>
-              </tr>
-              <tr>
-                <td><strong>Individual agent</strong></td>
-                <td>An individual generally must meet the state's residency or address requirements</td>
-                <td>Exact rules vary by state</td>
-              </tr>
-              <tr>
-                <td><strong>Business entity agent</strong></td>
-                <td>A qualifying business entity may serve as registered agent where permitted</td>
-                <td>Usually must be authorized to conduct business in that state</td>
-              </tr>
-              <tr>
-                <td><strong>Continuous coverage</strong></td>
-                <td>The LLC generally must maintain a qualifying registered agent while the state requires one</td>
-                <td>Changing agents or allowing a gap can create compliance issues</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-          <p style="font-size: 0.95rem; color: #64748B; font-style:italic;">There is no single set of identical registered-agent rules across all 50 states. Before naming an individual or professional service, check the formation state's current requirements for address, eligibility, availability, consent, and appointment procedures.</p>
-        <h3>State-Specific Names for Registered Agents</h3>
-        <p>
-          States use different terms for the person or entity responsible for receiving official documents for a business. The terminology can matter when reading state forms, statutes, and filing instructions, even though the underlying role is generally similar.
-        </p>
-
-        <div class="custom-table-wrapper">
-          <div class="custom-table-header">
-            <span>🏷️</span> Official Terms Used by State
-          </div>
-          <table class="custom-data-table">
-            <thead>
-              <tr>
-                <th>TERM USED</th>
-                <th>EXAMPLE OF STATES USING THE TERM</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Registered Agent</strong></td>
-                <td>Used in many states, including Delaware, Florida, and Texas</td>
-              </tr>
-              <tr>
-                <td><strong>Statutory Agent</strong></td>
-                <td>Used in states such as Arizona and Ohio</td>
-              </tr>
-              <tr>
-                <td><strong>Resident Agent</strong></td>
-                <td>Used in states such as Maryland, Massachusetts, and Michigan</td>
-              </tr>
-              <tr>
-                <td><strong>Agent for Service of Process</strong></td>
-                <td>Used in statutes or filing contexts in states such as California and New York</td>
-              </tr>
-              <tr>
-                <td><strong>Commercial Clerk</strong></td>
-                <td>Used in Maine in specific statutory contexts</td>
-              </tr>
-            </tbody>
-          </table>
+        
+        <div class="callout-blue" style="font-size: 0.9rem; line-height: 1.6;">
+          <strong>Note for licensed professionals:</strong> doctors, attorneys, dentists, CPAs, and architects may need a <a href="what-is-an-llc.html" style="color: #0284C7; font-weight: 700;">PLLC instead of a standard LLC</a>, depending on the state. Confirm this before placing an order.
         </div>
 
-        <div class="callout-box callout-blue">
-          <div
-            style="font-weight: 800; color: #159a9c; font-size: 0.95rem; margin-bottom: 0.35rem; font-family: var(--font-heading);">
-           New York — A Different Service-of-Process Structure
+        <!-- Green Feature Package Box -->
+        <div class="nw-package-green-box">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="background: #F59E0B; color: #0F172A; font-size: 0.75rem; font-weight: 900; padding: 0.25rem 0.75rem; border-radius: 9999px; display: inline-block; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                ONE FLAT FEE
+              </div>
+              <h3 style="color: #FFFFFF; font-size: 1.85rem; margin: 0 0 0.35rem 0;">One Plan, One Price</h3>
+              <p style="color: #CCFBF1; font-size: 0.925rem; margin: 0;">Every customer receives the same set of features below. Nothing here is gated behind a higher tier.</p>
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; font-size: 0.78rem; font-weight: 700;">
+              <span style="background: rgba(255,255,255,0.15); padding: 0.35rem 0.75rem; border-radius: 9999px;">✓ Privacy Included</span>
+              <span style="background: rgba(255,255,255,0.15); padding: 0.35rem 0.75rem; border-radius: 9999px;">✓ No Checkout Upsells</span>
+              <span style="background: rgba(255,255,255,0.15); padding: 0.35rem 0.75rem; border-radius: 9999px;">✓ BBB Rating: A</span>
+            </div>
           </div>
-          <p style="margin: 0; font-size: 0.925rem; color: #0C4A6E; line-height: 1.65;">
-            New York's LLC law provides for the <b>Secretary of State to act as an agent for service of process</b> for an LLC. The state then sends the served process to the LLC at the address on file. This does not eliminate the LLC's need to maintain the required address and comply with its New York filing obligations. An LLC may also use a private registered-agent service for additional document-handling and notification support.
-          </p>
+
+          <div class="feature-2col-grid">
+            <div class="feature-item-card">
+              <span style="font-size: 1.25rem;">📄</span>
+              <div style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem;">
+                  <span>LLC Formation Filing</span>
+                  <span style="color: #059669; font-size: 0.8rem; background: #ECFDF5; padding: 0.15rem 0.45rem; border-radius: 6px;">$39 + state fee</span>
+                </div>
+                <div style="font-size: 0.825rem; color: #64748B;">Articles of Organization prepared and filed with your state, plus state fee.</div>
+              </div>
+            </div>
+
+            <div class="feature-item-card">
+              <span style="font-size: 1.25rem;">🛡️</span>
+              <div style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem;">
+                  <span>Registered Agent — 1 Year Free</span>
+                  <span style="color: #2563EB; font-size: 0.8rem; background: #EFF6FF; padding: 0.15rem 0.45rem; border-radius: 6px;">Included Year 1</span>
+                </div>
+                <div style="font-size: 0.825rem; color: #64748B;">One year of registered agent coverage, so legal and state documents have somewhere to go besides your home.</div>
+              </div>
+            </div>
+
+            <div class="feature-item-card">
+              <span style="font-size: 1.25rem;">🏢</span>
+              <div style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem;">
+                  <span>Business Address</span>
+                  <span style="color: #059669; font-size: 0.8rem; background: #ECFDF5; padding: 0.15rem 0.45rem; border-radius: 6px;">Included</span>
+                </div>
+                <div style="font-size: 0.825rem; color: #64748B;">A business address you can use in place of a home address on certain filings, depending on your state.</div>
+              </div>
+            </div>
+
+            <div class="feature-item-card">
+              <span style="font-size: 1.25rem;">📬</span>
+              <div style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem;">
+                  <span>Mail Scanning</span>
+                  <span style="color: #059669; font-size: 0.8rem; background: #ECFDF5; padding: 0.15rem 0.45rem; border-radius: 6px;">Included</span>
+                </div>
+                <div style="font-size: 0.825rem; color: #64748B;">Documents sent to your registered address are scanned and uploaded to your dashboard.</div>
+              </div>
+            </div>
+
+            <div class="feature-item-card">
+              <span style="font-size: 1.25rem;">📞</span>
+              <div style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem;">
+                  <span>Business Phone Line</span>
+                  <span style="color: #059669; font-size: 0.8rem; background: #ECFDF5; padding: 0.15rem 0.45rem; border-radius: 6px;">Included</span>
+                </div>
+                <div style="font-size: 0.825rem; color: #64748B;">A separate phone number for the business, so personal and business calls don't mix.</div>
+              </div>
+            </div>
+
+            <div class="feature-item-card">
+              <span style="font-size: 1.25rem;">✉️</span>
+              <div style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem;">
+                  <span>Business Email</span>
+                  <span style="color: #059669; font-size: 0.8rem; background: #ECFDF5; padding: 0.15rem 0.45rem; border-radius: 6px;">Included</span>
+                </div>
+                <div style="font-size: 0.825rem; color: #64748B;">A professional email address tied to the business domain.</div>
+              </div>
+            </div>
+
+            <div class="feature-item-card">
+              <span style="font-size: 1.25rem;">🌐</span>
+              <div style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem;">
+                  <span>Domain Name</span>
+                  <span style="color: #059669; font-size: 0.8rem; background: #ECFDF5; padding: 0.15rem 0.45rem; border-radius: 6px;">Included</span>
+                </div>
+                <div style="font-size: 0.825rem; color: #64748B;">A domain registered for the business.</div>
+              </div>
+            </div>
+
+            <div class="feature-item-card">
+              <span style="font-size: 1.25rem;">💻</span>
+              <div style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem;">
+                  <span>Website</span>
+                  <span style="color: #059669; font-size: 0.8rem; background: #ECFDF5; padding: 0.15rem 0.45rem; border-radius: 6px;">Included</span>
+                </div>
+                <div style="font-size: 0.825rem; color: #64748B;">A basic starter website, useful as a placeholder while a fuller site is in development.</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p>New York's <b>publication requirement is separate</b> from the registered-agent requirement. New LLCs generally must publish a formation notice in two newspapers designated by the county clerk and file a Certificate of Publication. The cost depends on the newspapers and county, so a registered-agent service should not be presented as automatically eliminating or reducing the publication requirement.</p>
       </section>
 
       <!-- SECTION 2 -->
       <section id="section-2">
-        <h2>Be Your Own Registered Agent vs. Hire a Service — Full Comparison</h2>
-        <p>
-          Many states allow an LLC owner to serve as their own <b>registered agent</b> if they meet the state's requirements. Doing so can eliminate the cost of a professional service, but it also means taking responsibility for maintaining a qualifying address, receiving official documents, and complying with the state's availability requirements.
-        </p>
-        <p>
-          Before deciding, consider whether you can reliably remain available at the required address, whether you want your address included in public records, and whether you are comfortable handling important legal and government documents yourself. The decision can also become more complicated if your LLC expands into additional states.
-        </p>
-
-        <div class="comparison-box">
-          <div class="comparison-col">
-            <div style="font-weight: 800; color: #12304A; font-size: 1.05rem; margin-bottom: 0.5rem;">Be Your Own Agent
-            </div>
-            <ul
-              style="list-style: none; padding: 0; margin: 0; font-size: 0.875rem; color: #334155; display: flex; flex-direction: column; gap: 0.4rem;">
-              <li><strong>Annual cost:</strong> $0 for the agent service itself</li>
-              <li><strong>Privacy:</strong> Your qualifying address may appear in public business records</li>
-              <li><strong>Availability:</strong> Must meet the state's registered-agent availability requirements</li>
-              <li><strong>Travel:</strong> You may need to arrange coverage when you cannot meet those requirements</li>
-              <li><strong>Multi-state:</strong> You generally need a qualifying agent in each state where one is required</li>
-              <li><strong style="color: #DC2626;">Risk:</strong> You handle receipt and timely review of official documents</li>
-            </ul>
-          </div>
-          <div style="font-size: 1.25rem; font-weight: 800; color: #94A3B8;">VS</div>
-          <div class="comparison-col">
-            <div style="font-weight: 800; color: #047857; font-size: 1.05rem; margin-bottom: 0.5rem;">Professional
-              Service</div>
-            <ul
-              style="list-style: none; padding: 0; margin: 0; font-size: 0.875rem; color: #334155; display: flex; flex-direction: column; gap: 0.4rem;">
-              <li><strong>Annual cost:</strong> Often about $99–$300/year, depending on provider</li>
-              <li><strong>Privacy:</strong> May keep a personal address off certain public filings where state rules permit</li>
-              <li><strong>Availability:</strong> Professional service maintains the required registered-office coverage</li>
-              <li><strong>Travel:</strong> Less concern about your personal schedule interfering with receipt of documents</li>
-              <li><strong>Multi-state:</strong> Some providers offer registered-agent services in multiple states</li>
-              <li><strong style="color: #047857;">Risk:</strong> Provider receives documents and typically notifies or forwards them according to its service terms</li>
-            </ul>
-          </div>
+        <h2>2. Who Is Northwest Registered Agent?</h2>
+        
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; display: flex; gap: 0.85rem; flex-wrap: wrap; font-size: 0.85rem; font-weight: 700;">
+          <span style="background: #FFFFFF; border: 1px solid #CBD5E1; padding: 0.4rem 0.85rem; border-radius: 9999px; color: #12304A;">🏛️ Since 1998 — Founded in Spokane, WA</span>
+          <span style="background: #FFFFFF; border: 1px solid #CBD5E1; padding: 0.4rem 0.85rem; border-radius: 9999px; color: #12304A;">🔒 Private — Family-owned, no outside investors</span>
+          <span style="background: #FFFFFF; border: 1px solid #CBD5E1; padding: 0.4rem 0.85rem; border-radius: 9999px; color: #12304A;">🗺️ 50 States — Registered agent coverage nationwide</span>
+          <span style="background: #FFFFFF; border: 1px solid #CBD5E1; padding: 0.4rem 0.85rem; border-radius: 9999px; color: #12304A;">🛡️ Policy — States it does not sell client data</span>
         </div>
-        <p style="font-style:italic;font-size: 0.95rem; color: #64748B;">Self-representation can work well when you meet the state's requirements and are comfortable handling official documents. A professional service can be useful when privacy, travel, convenience, or multi-state operations make self-service less practical.</p>
 
-        <h3>Why DIY Registered Agent Coverage Can Create Problems</h3>
+        <h3>A Company Older Than Most of Its Competitors</h3>
         <p>
-          The main consideration when serving as your own registered agent is <b>reliable availability</b>. Depending on state requirements, the registered agent must maintain a qualifying address and be available to receive service of process and other official documents.
+          Northwest Registered Agent was founded in 1998 in Spokane, Washington, according to the company's own history. LegalZoom launched in 2001, ZenBusiness arrived in 2015, and Bizee (formerly Incfile) started in 2004, which puts Northwest ahead of each of them by several years. Decades of handling LLC formations and registered agent work across all 50 states give the company an operating history that newer competitors simply don't have yet.
         </p>
-        <p>If you work outside the registered office, travel frequently, operate from different locations, or cannot reliably meet the state's availability requirements, self-appointment may be less practical. Missing or failing to act on an important document can lead to missed legal or compliance deadlines. The consequences depend on the type of document, the state, and the circumstances.</p>
-        <p>Using your home or office address as the registered office may also make that address available in public business records, depending on the state's disclosure rules. Some owners therefore use a professional registered agent service when they want greater separation between their personal address and business filings.</p>
-        <h3>When DIY Is Acceptable — And When It May Not Be</h3>
-        <p style="font-size: 1.3rem;"><b>Self-appointment can be practical when you:</b></p>
-        <ul style="padding-left:25px;">
-          <li>Maintain a qualifying address in the state</li>
-          <li>Can meet the state's availability requirements</li>
-          <li>Regularly monitor official documents</li>
-          <li>Are comfortable having the registered-office address appear in applicable public records</li>
-          <li>Do not need registered-agent coverage in additional states</li>
-          <li style="margin-bottom:15px;">A professional registered agent may be worth considering if you <b>travel frequently, work away from the registered office, want to limit the use of a personal address in public records where possible, or operate in multiple states</b>.</li>
-        </ul>
-          <p>The right choice depends on the state's requirements, your schedule, privacy preferences, and the level of administrative responsibility you want to handle yourself.</p>
 
-        <div class="callout-box callout-red">
-          <div style="font-weight: 800; color: #991B1B; font-size: 0.95rem; margin-bottom: 0.35rem;">
-            The Default Judgment Risk is Real:
-          </div>
-          <p style="margin: 0; font-size: 0.9rem; color: #7F1D1D; line-height: 1.65;">
-            Businesses can face serious consequences when important legal documents are missed or not handled on time. A failure to respond to a properly served lawsuit can result in a <b>default judgment</b>, although the exact consequences and options to challenge it depend on state law and the circumstances.
-            A professional registered agent service, typically costing around <b>$99–$300 per year</b>, can help with reliable document receipt and notification, but it does not guarantee that deadlines or legal issues will never be missed.
-          </p>
-        </div>
+        <h3>A Family-Owned Structure With No Outside Investors</h3>
+        <p>
+          Unlike most companies in this space, Northwest is privately held and family-owned, and it hasn't taken outside investment. ZenBusiness, by contrast, raised venture capital, and LegalZoom trades publicly. A company answering to outside investors tends to face more pressure to monetize through upsells or auto-renewals. Northwest's checkout has no upsell screens, and its privacy policy states that it doesn't sell customer data to third parties. That structure also shapes the tone of its support team.
+        </p>
       </section>
 
       <!-- SECTION 3 -->
       <section id="section-3">
-        <h2>Registered Agent Services 2026 — Head-to-Head Comparison</h2>
+        <h2>3. Is Northwest Registered Agent Legit?</h2>
         <p>
-          Choosing a registered agent service generally comes down to four factors: price, <b>reliability, privacy considerations, and document handling</b>. The providers below offer registered-agent services in multiple states, but pricing, included features, renewal rates, and notification systems can differ. Because provider pricing and packages can change, compare both the <b>first-year price and ongoing annual cost</b> before choosing a service.
-        </p>
-          <div style="font-size: 1.3rem; font-weight:800">
-             Top Registered Agent Providers Compared (2026)
-          </div>
-        <div class="custom-table-wrapper">
-          <table class="custom-data-table">
-            <thead>
-              <tr>
-                <th>SERVICE</th>
-                <th>PRICE</th>
-                <th>MULTI-STATE COVERAGE</th>
-                <th>BEST FOR</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Northwest Registered Agent</strong></td>
-                <td><strong style="color: #047857;">Varies by package</strong></td>
-                <td><strong style="color: #047857;">✓</strong></td>
-                <td>Privacy and registered-agent support</td>
-              </tr>
-              <tr>
-                <td><strong>Harbor Compliance</strong></td>
-                <td>Varies</td>
-                <td><strong style="color: #047857;">✓</strong></td>
-                <td>Multi-state compliance</td>
-              </tr>
-              <tr>
-                <td><strong>InCorp</strong></td>
-                <td>Varies</td>
-                <td><strong style="color: #047857;">✓</strong></td>
-                <td>Multi-year service options</td>
-              </tr>
-              <tr>
-                <td><strong>Bizee</strong></td>
-                <td>Varies by package</td>
-                <td><strong style="color: #047857;">✓</strong></td>
-                <td>Formation and registered-agent bundles</td>
-              </tr>
-              <tr>
-                <td><strong>ZenBusiness</strong></td>
-                <td>Varies by package</td>
-                <td><strong style="color: #047857;">✓</strong></td>
-                <td>Business formation packages</td>
-              </tr>
-              <tr>
-                <td><strong>LegalZoom</strong></td>
-                <td>Varies by package</td>
-                <td><strong style="color: #047857;">✓</strong></td>
-                <td>Broader legal/business services</td>
-              </tr>
-              <tr>
-                <td><strong>Rocket Lawyer</strong></td>
-                <td>Varies by plan</td>
-                <td><strong style="color: #047857;">✓</strong></td>
-                <td>Legal services subscriptions</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p>
-          While these providers offer similar core registered-agent functions, differences in <b>pricing, renewal terms, privacy features, document delivery, and additional services</b> can matter when comparing them.
+          Northwest Registered Agent appears to be a legitimate, established business. Decades in operation, registered agent coverage nationwide, and ratings across the major review platforms all point the same direction. The question of legitimacy comes up often, understandably, since the LLC formation space includes its share of companies with poor reputations. Based on the evidence available, Northwest isn't one of them.
         </p>
 
-        <!-- FEATURED NORTHWEST CARD -->
-        <div
-          style="background: #FFFFFF; border: 2px solid #00875A; border-radius: 16px; padding: 1.75rem; margin: 2rem 0; box-shadow: 0 6px 20px rgba(0, 135, 90, 0.08); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem;">
-          <div>
-            <span
-              style="background: #00875A; color: #FFFFFF; font-size: 0.725rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 0.6rem;">
-              ★ REGISTERED AGENT SERVICE OPTION
-            </span>
-            <div
-              style="font-size: 1.3rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem; font-family: var(--font-heading);">
-              Northwest Registered Agent
-            </div>
-            <div style="font-size: 0.9rem; color: #475569; margin-bottom: 0.5rem;">
-              Northwest offers LLC formation and registered-agent services, with first-year registered-agent service included with certain formation packages.
-            </div>
-            <div style="font-size: 0.85rem; color: #00875A; font-weight: 800;">
-              Starting at $39 + state fees
-            </div>
+        <h3>Ratings Across the Major Review Platforms</h3>
+        <p style="font-size: 0.875rem; color: #64748B;">Figures below were checked in July 2026 and may change over time — always worth a quick check against the live pages before you rely on them.</p>
+
+        <div class="ratings-3grid">
+          <div class="rating-card-box">
+            <div style="font-size: 0.75rem; font-weight: 800; color: #0284C7; text-transform: uppercase; margin-bottom: 0.4rem;">BETTER BUSINESS BUREAU</div>
+            <div style="font-size: 1.6rem; font-weight: 900; color: #12304A;">Rating: A</div>
+            <div style="font-size: 0.75rem; color: #64748B; margin-top: 0.25rem;">Not BBB accredited · Checked Jul 2026</div>
           </div>
-          <a href="index.html#northwest-section" class="ls-btn" target="_blank" rel="sponsored noopener"
-            style="text-decoration:none; background: #00875A; color: #FFFFFF; padding: 0.85rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 14px rgba(0, 135, 90, 0.25); flex-shrink: 0;">
-            See Current Northwest Pricing →
-          </a>
+
+          <div class="rating-card-box">
+            <div style="font-size: 0.75rem; font-weight: 800; color: #059669; text-transform: uppercase; margin-bottom: 0.4rem;">GOOGLE (PER NORTHWEST)</div>
+            <div style="font-size: 1.6rem; font-weight: 900; color: #D97706;">⭐ 4.7/5</div>
+            <div style="font-size: 0.75rem; color: #64748B; margin-top: 0.25rem;">~1,912 clients · As shown on Northwest's site</div>
+          </div>
+
+          <div class="rating-card-box">
+            <div style="font-size: 0.75rem; font-weight: 800; color: #0F766E; text-transform: uppercase; margin-bottom: 0.4rem;">TRUSTPILOT</div>
+            <div style="font-size: 1.6rem; font-weight: 900; color: #D97706;">⭐ 4.2/5</div>
+            <div style="font-size: 0.75rem; color: #64748B; margin-top: 0.25rem;">279 reviews · Replies to ~96% of negative reviews</div>
+          </div>
         </div>
+
+        <h3>What Customers Say</h3>
+        <p>
+          Patterns across BBB, Trustpilot, and Google reviews tend to repeat rather than surprise. On the positive side, customers frequently mention responsive, knowledgeable human support and a formation process that feels straightforward from checkout to filing. Clear, upfront pricing also comes up often as a point in Northwest's favor, especially from people who've used a $0-headline competitor before. On the other side, complaints tend to cluster around refund handling, occasional account or system issues, and friction when cancelling a service. Some negative reviews also blame Northwest for delays that trace back to a state agency or the IRS rather than to Northwest itself, which is worth keeping in mind when reading complaint totals at face value.
+        </p>
       </section>
 
       <!-- SECTION 4 -->
       <section id="section-4">
-        <h2>How Much Does a Registered Agent Cost? (2026 Breakdown)</h2>
+        <h2>4. Pricing Summary</h2>
         <p>
-          A <b>registered agent</b> service can cost $0 if you serve as your own agent, while professional services commonly charge an annual fee that varies by provider and package. First-year promotional pricing can also differ from renewal pricing, so check the provider's current terms before choosing a service.
+          Northwest's pricing is simple: $39 plus the state filing fee to form the LLC, with registered agent service included free for the first year. There's one plan, so there's nothing to compare against a "Pro" or "Premium" tier.
         </p>
 
-        <div class="custom-table-wrapper">
-          <div class="custom-table-header" style="background: #4a0c49; color: #FFFFFF;">
-            Registered Agent Cost Comparison — 2026
-          </div>
-          <table class="custom-data-table">
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Cost</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
-                <td style="width: 50%;"><strong>Own Registered Agent</strong><br><span
-                    style="font-size: 1rem; font-weight: 800; color: #12304A;">$0 service fee
-                    </span></td>
-                <td style="width: 50%;"><strong>Northwest Registered Agent</strong><br><span
-                    style="font-size: 1rem; font-weight: 800; color: #6B21A8;">$125/year</span></td>
+                <td><strong>LLC Formation</strong></td>
+                <td><strong style="color: #059669;">$39</strong></td>
+                <td>One-time fee</td>
               </tr>
               <tr>
-                <td><strong>Harbor Compliance</strong><br><span
-                    style="font-size: 1rem; font-weight: 800; color: #12304A;">Pricing varies</span></td>
-                <td><strong>InCorp</strong><br><span
-                    style="font-size: 1rem; font-weight: 800; color: #12304A;">Pricing varies</span></td>
+                <td><strong>State Filing Fee</strong></td>
+                <td>$35–$500</td>
+                <td>Paid to the state, not to Northwest</td>
               </tr>
               <tr>
-                <td><strong>Bizee</strong><br><span style="font-size: 1rem; font-weight: 800; color: #12304A;">Pricing varies by package</span></td>
-                <td><strong>ZenBusiness</strong><br><span
-                    style="font-size: 1rem; font-weight: 800; color: #12304A;">Pricing varies by package</span></td>
+                <td><strong>Registered Agent (Year 1)</strong></td>
+                <td><strong style="color: #059669;">$0</strong></td>
+                <td>Included with formation</td>
               </tr>
               <tr>
-                <td><strong>LegalZoom</strong><br><span
-                    style="font-size: 1rem; font-weight: 800; color: #DC2626;">Pricing varies by package</span></td>
-                <td><strong>Attorney as Agent</strong><br><span
-                    style="font-size: 1rem; font-weight: 800; color: #DC2626;">Pricing varies by attorney</span></td>
+                <td><strong>Registered Agent (Year 2+)</strong></td>
+                <td>$125/yr</td>
+                <td>Renewal rate</td>
               </tr>
             </tbody>
           </table>
-          <div
-            style="font-style:italic;padding: 0.85rem 1.5rem; background: #F8FAFC; font-size: 0.8rem; color: #64748B; border-top: 1px solid #E2E8F0;">
-            Provider pricing, renewal rates, discounts, and included services can change. State fees may also apply when appointing or changing a registered agent.
-          </div>
         </div>
 
-        <h3>Is the Registered Agent Fee Tax-Deductible?</h3>
-        <p>
-          Generally, <b>registered agent service fees may be deductible</b> when they are ordinary and necessary business expenses. The way the expense is reported depends on how your LLC is taxed. For example, a single-member LLC taxed as a disregarded entity generally reports business expenses on Schedule C, while a partnership generally reports allowable expenses on Form 1065.
-        </p>
-        <p>Formation-related costs can have different tax treatment. Certain startup and organizational costs may qualify for a limited deduction when the business begins, with remaining qualifying amounts generally amortized under the applicable rules. The $5,000 startup-cost deduction is subject to a $50,000 phaseout threshold and other requirements.</p>
-         <p>For more on LLC deductions, see our <a href="llc-guide.html">LLC tax guide.</a></p>
+        <div class="callout-green">
+          <strong>💡 Looking for a discount code?</strong> Northwest doesn't run traditional coupon codes. $39 is its standard formation rate regardless of where you click through from.
+        </div>
       </section>
 
       <!-- SECTION 5 -->
       <section id="section-5">
-        <h2>How to Change Your Registered Agent</h2>
+        <h2>5. Privacy by Default: How It Works</h2>
         <p>
-          You can generally change your <b>registered agent</b> while your LLC remains active. The process varies by state, but usually involves filing a change form or an equivalent state filing with the Secretary of State or other business agency and paying any applicable fee. Once the state accepts the filing, the new agent becomes the agent of record. You generally do not need to dissolve or reform your LLC just to change agents. Some professional services also handle the change filing when you switch to their service.
+          Privacy protection is one of the more useful parts of Northwest's service, and it's built into the standard plan rather than sold as an add-on.
         </p>
 
-        <div class="callout-box callout-teal">
-          <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.35rem;">
-            Never miss a compliance deadline:
-          </div>
-          <p style="margin: 0; font-size: 0.9rem; color: #0F766E; line-height: 1.65;">
-            Your registered agent may forward annual report notices, but tracking filing deadlines remains your responsibility. Use our free LLC Annual Report Deadline Tracker to stay ahead in every state.
-          </p>
+        <h3>What Happens Without Privacy Protection</h3>
+        <p>
+          State law requires a public filing when forming an LLC. That filing, the Articles of Organization, typically includes the owner's name, address, and phone number, depending on the state's exact requirements. Once that information sits in a public database, data brokers commonly scrape and resell it. Junk mail, spam calls, and a home address turning up in searches tied to the business name are the common downstream effects. None of that can be undone for the original filing once it's public — switching registered agents later stops further exposure, but it doesn't erase what's already on record.
+        </p>
+
+        <h3>How Northwest Approaches This</h3>
+        <p>
+          Northwest can use its own address instead of the client's on state filings, in the states and filing types where that option applies, and it's included in the base plan at no separate fee. As a result, clients get a usable <a href="registered-agent-guide.html">business address for LLC</a> purposes bundled into the $39 formation fee. It's worth noting that a <a href="registered-agent-guide.html">virtual address vs registered agent</a> aren't interchangeable — they serve different legal purposes, though Northwest's address can cover both functions within its service.
+        </p>
+
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>YOUR INFORMATION</th>
+                <th>WITH NORTHWEST</th>
+                <th>WITH MOST COMPETITORS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Address on state filing</strong></td>
+                <td><span style="color: #059669; font-weight: 700;">Can use Northwest's address, depending on state/filing</span></td>
+                <td>Typically your own address is filed</td>
+              </tr>
+              <tr>
+                <td><strong>Phone number on filing</strong></td>
+                <td><span style="color: #059669; font-weight: 700;">Can use Northwest's number, where applicable</span></td>
+                <td>Personal number often on public record</td>
+              </tr>
+              <tr>
+                <td><strong>Data sale policy</strong></td>
+                <td><span style="color: #059669; font-weight: 700;">States it does not sell customer data</span></td>
+                <td>Varies by provider — check individual privacy policies</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <h3>The 4-Step Process to Change Your Agent</h3>
-
-        <div class="process-timeline">
-          <div class="process-step-item">
-            <div class="process-step-circle">1</div>
-            <div>
-              <strong style="color: #12304A; font-size: 1rem;">Step 1 — Choose your new registered agent</strong>
-              <div style="font-size: 0.9rem; color: #475569; margin-top: 0.25rem;">Confirm that the new agent meets your state's requirements. If using a professional service, confirm the company accepts the appointment. If using an individual, make sure they meet the state's eligibility and address requirements and are willing to serve.</div>
-            </div>
-          </div>
-
-          <div class="process-step-item">
-            <div class="process-step-circle">2</div>
-            <div>
-              <strong style="color: #12304A; font-size: 1rem;">Step 2 — Find and complete the change form</strong>
-              <div style="font-size: 0.9rem; color: #475569; margin-top: 0.25rem;">Check your state's official business filing website for the required form or online filing. The document may be called a Statement of Change, Certificate of Change, Statement of Information, or another state-specific filing.</div>
-            </div>
-          </div>
-
-          <div class="process-step-item">
-            <div class="process-step-circle">3</div>
-            <div>
-              <strong style="color: #12304A; font-size: 1rem;">Step 3 — File the change and pay any applicable fee</strong>
-              <div style="font-size: 0.9rem; color: #475569; margin-top: 0.25rem;">Submit the required filing through the state's available filing method and pay the applicable fee. Filing fees and processing options vary by state, so check the current state filing instructions before submitting.</div>
-            </div>
-          </div>
-
-          <div class="process-step-item">
-            <div class="process-step-circle">4</div>
-            <div>
-              <strong style="color: #12304A; font-size: 1rem;">Step 4 — Confirm the change</strong>
-              <div style="font-size: 0.9rem; color: #475569; margin-top: 0.25rem;">After the state processes the filing, verify that the new agent and address appear correctly in the state's business records. Notify your previous agent that the appointment has ended, and update your internal records or operating agreement if they specifically identify the former agent.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="callout-box callout-yellow">
-          <div style="font-weight: 800; color: #854D0E; font-size: 0.95rem; margin-bottom: 0.35rem;">
-            Never Create a Gap in Registered Agent Coverage:
-          </div>
-          <p style="margin: 0; font-size: 0.9rem; color: #713F12; line-height: 1.65;">
-           Your LLC generally must maintain a registered agent while state law requires one. If your agent resigns or your service lapses, you may need to appoint a replacement within the state's required timeframe to avoid compliance problems. If legal documents are missed during a coverage issue, deadlines and court consequences can depend on the state and circumstances. Always arrange your new agent before ending the old service when possible.
-          </p>
+        <div class="callout-yellow">
+          <strong>⚠️ Filings Already Made Can't Be Undone:</strong> Once personal information appears on a state filing, that part of the record stays public. Switching registered agents later prevents further exposure, but the original filing remains. Setting up privacy protection at the point of formation avoids the problem instead of fixing it afterward.
         </div>
       </section>
 
       <!-- SECTION 6 -->
       <section id="section-6">
-        <h2>Multi-State LLCs — You May Need an Agent in Each Registered State</h2>
+        <h2>6. Registered Agent Service Deep Dive</h2>
         <p>
-          If your LLC foreign-qualifies in another state, that state will generally require a registered agent there as part of the registration process. However, simply having customers in another state does not automatically mean you need to foreign-qualify. Registration requirements depend on the state's rules and your business activities.
+          Registered agent work is the core of Northwest's business, and the company has offered it since 1998. Here's what the $125-a-year renewal covers after the free first year.
         </p>
 
-        <h3>When Does Your LLC Need to Register in Another State?</h3>
-        <p>
-          The rules for foreign qualification vary by state. Common factors can include having a physical presence, employees working in the state, offices or other locations, or significant business activity there. Customer sales alone do not automatically create a foreign-registration requirement in every state. Check the specific state's rules before registering.
-        </p>
-
-        <div class="callout-box callout-teal">
-          <div style="font-weight: 800; color: #12304A; font-size: 0.95rem; margin-bottom: 0.35rem;">
-            One Provider for Multiple States Can Simplify Management:
+        <h3>What the Renewal Includes</h3>
+        <div class="timeline-steps">
+          <div class="timeline-step-row">
+            <div class="timeline-num">1</div>
+            <div>
+              <strong>Coverage in Every State</strong>
+              <p style="margin: 0.2rem 0 0 0; font-size: 0.875rem; color: #475569;">Northwest maintains registered agent coverage in all 50 states, DC, and Puerto Rico. When a state agency or process server delivers legal documents to the address on file, Northwest receives and scans them, generally the same day.</p>
+            </div>
           </div>
-          <p style="margin: 0; font-size: 0.95rem; color: #0F766E; line-height: 1.65;">
-            Many registered agent companies operate across multiple states. Using one provider can give you a single point of contact and simplify renewals and document management, although pricing and features vary by provider. Multi-state service can be useful for businesses that are foreign-qualified in several states.
-          </p>
+          <div class="timeline-step-row">
+            <div class="timeline-num">2</div>
+            <div>
+              <strong>Document Scanning</strong>
+              <p style="margin: 0.2rem 0 0 0; font-size: 0.875rem; color: #475569;">Documents are uploaded to the client dashboard along with an email notification. There's no need to wait on physical mail forwarding just to see what arrived.</p>
+            </div>
+          </div>
+          <div class="timeline-step-row">
+            <div class="timeline-num">3</div>
+            <div>
+              <strong>Compliance Alerts</strong>
+              <p style="margin: 0.2rem 0 0 0; font-size: 0.875rem; color: #475569;">Reminders go out ahead of annual report deadlines and RA renewal, included at no extra cost. The free LLC annual report tracker is a useful backup for confirming exact deadlines and fees by state.</p>
+            </div>
+          </div>
         </div>
 
+        <h3>Multi-State Coverage and Cancelling the Service</h3>
         <p>
-         For state-specific registered agent requirements, formation fees, and compliance calendars, see the individual state guides in our <a href="start-llc.html">How to Start an LLC hub</a>. For a complete breakdown of ongoing state compliance costs, see our <a href="how-much-does-an-llc-cost.html">LLC cost guide</a>.
+          For LLCs registered in multiple states through foreign qualification, Northwest provides registered agent coverage in each additional state. Whether a reduced multi-state rate currently applies is worth confirming directly with Northwest, since public sources disagree on this point.
         </p>
+
+        <div class="callout-green">
+          <strong>💡 Finding Your State's Registered Agent Address:</strong> Northwest maintains a registered address in every state. In each case, the specific address for your state appears in the client dashboard after formation and on the filed Articles of Organization, and it's typically visible during signup as well, before payment is required.
+        </div>
       </section>
 
       <!-- SECTION 7 -->
       <section id="section-7">
-        <h2>Registered Agent vs. Other LLC Roles — What's the Difference?</h2>
+        <h2>7. The Corporate Guides® Experience</h2>
         <p>
-          New LLC owners sometimes confuse the <b>registered agent</b> role with other people involved in forming and running an LLC. The registered agent receives official legal and state documents, while the organizer, members, managers, and attorneys have different responsibilities. The same person may fill multiple roles if they meet the state's requirements.
+          Most LLC services offer customer support of some kind, though the quality behind that support varies widely. Northwest calls its team Corporate Guides® — formation specialists rather than general call-center staff, and that distinction shapes the kind of help you actually get on the phone.
         </p>
-<div style="font-weight:700; font-size:1.3rem;">
-            Role Comparison Matrix
-          </div>
-        <div class="custom-table-wrapper">
-          
-          <table class="custom-data-table">
-            <thead>
-              <tr>
-                <th>ROLE</th>
-                <th>WHAT THEY DO</th>
-                <th>CAN THEY ALSO BE THE AGENT?</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Registered Agent</strong></td>
-                <td>Receives official legal and government documents</td>
-                <td><strong style="color: #047857;">Yes — if eligible under state law</strong></td>
-              </tr>
-              <tr>
-                <td><strong>LLC Organizer</strong></td>
-                <td>Prepares, signs, and files formation documents</td>
-                <td>Yes — often can be the same person</td>
-              </tr>
-              <tr>
-                <td><strong>LLC Member</strong></td>
-                <td>Owns an interest in the LLC</td>
-                <td>Yes — if state requirements are met</td>
-              </tr>
-              <tr>
-                <td><strong>LLC Manager</strong></td>
-                <td>Manages operations in a manager-managed LLC</td>
-                <td>Yes — if state requirements are met</td>
-              </tr>
-              <tr>
-                <td><strong>Attorney</strong></td>
-                <td>Provides legal advice and representation</td>
-                <td>Yes — if willing and permitted</td>
-              </tr>
-              <tr>
-                <td><strong>Partnership Representative</strong></td>
-                <td>Handles certain IRS matters for a partnership-taxed LLC</td>
-                <td>Separate tax role — may be a member or another eligible person</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
 
+        <h3>What Sets Corporate Guides Apart</h3>
         <p>
-          For more on LLC ownership and management structures, see our <a href="operating-agreement.html">LLC operating agreement guide</a>, which covers management roles, ownership, and member responsibilities. For an overview of LLCs and how they differ from other business structures, see our <a href="what-is-an-llc.html">What Is an LLC guide</a>.
+          Corporate Guides are trained in entity types, state-specific filing requirements, and LLC annual report deadlines. Because of that training, they can typically handle a question like "Should I form in Wyoming or my home state?" with more depth than a general support queue would offer. They're also not paid on commission, which reduces the incentive to push add-ons that a caller may not need.
+        </p>
+
+        <h3>A Real Limitation Worth Knowing</h3>
+        <p>
+          Support runs by phone and email, Monday through Friday, with no live chat and no 24/7 coverage. That's a genuine drawback if you need help on a weekend. Anyone still unsure whether an LLC is even the right structure can try the free <a href="quiz.html">business structure quiz</a> before picking up the phone.
         </p>
       </section>
 
       <!-- SECTION 8 -->
       <section id="section-8">
-        <div
-          style="background: linear-gradient(135deg, #12304A 0%, #159a9c 100%); border-radius: 20px; padding: 2.25rem 2.5rem; color: #FFFFFF; margin: 2rem 0; box-shadow: 0 12px 35px rgba(18, 48, 74, 0.2);">
-          <div
-            style="font-size: 1rem; font-weight: 800; color: #159a9c; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; font-family: var(--font-heading);">
-            KEY TAKEAWAY
-          </div>
-          <div style="font-size: 1rem; line-height: 1.6; color: #F8FAFC;">
-            <b>A registered agent is generally required where state law requires one, and keeping the appointment current is an important part of LLC compliance</b>. A missed lawsuit notice can lead to missed response deadlines and, in some circumstances, a default judgment. Professional registered agent services typically charge an annual fee, while serving as your own agent may have no service fee if you meet state requirements. A home or business address used as the registered office may also appear in public state records, depending on the state. If your LLC expands into multiple states and must foreign-qualify, using one multi-state provider can simplify document handling and renewals. Choose the option that fits your state's requirements, availability, privacy preferences, and business needs, and avoid gaps in registered-agent coverage.</div>
-        </div>
-</section>
-            <h3>Recommended Registered Agent Service</h3>
+        <h2>8. Filing Speed</h2>
+        <p>
+          Northwest typically prepares and submits LLC documents within 1 to 3 business days on its standard plan, with no premium tier required to unlock that speed.
+        </p>
 
-        <div
-          style="background: #FFFFFF; border: 2px solid #00875A; border-radius: 16px; padding: 1.75rem; margin: 1.5rem 0 2.5rem 0; box-shadow: 0 6px 20px rgba(0, 135, 90, 0.08); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem;">
-          <div>
-            <span
-              style="background: #00875A; color: #FFFFFF; font-size: 0.725rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 0.6rem;">
-              ★ OUR TOP PICK
-            </span>
-            <div
-              style="font-size: 1.3rem; font-weight: 800; color: #12304A; margin-bottom: 0.35rem; font-family: var(--font-heading);">
-              Northwest Registered Agent
-            </div>
-            <div style="font-size: 0.9rem; color: #475569; margin-bottom: 0.5rem;">
-              Form your LLC for $39 + state fee. Includes one free year of registered agent service, full document
-              scanning, and privacy protection. Available in all 50 states.
-            </div>
-            <div style="font-size: 0.85rem; color: #00875A; font-weight: 800;">
-              From $39 + state fee — Registered Agent Included Free First Year
-            </div>
-          </div>
-          <a href="index.html#northwest-section" class="ls-btn" target="_blank" rel="sponsored noopener"
-            style="text-decoration:none; background: #00875A; color: #FFFFFF; padding: 0.85rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 14px rgba(0, 135, 90, 0.25); flex-shrink: 0;">
-            Get Started →
-          </a>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>SPEED COMPARISON</th>
+                <th>NORTHWEST ($39)</th>
+                <th>ZENBUSINESS ($0)</th>
+                <th>LEGALZOOM ($0)</th>
+                <th>BIZEE ($0)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Document Preparation</strong></td>
+                <td><strong style="color: #059669;">1–3 business days</strong></td>
+                <td>Slower on the base tier</td>
+                <td>Slower on the base tier</td>
+                <td>Slower on the base tier</td>
+              </tr>
+              <tr>
+                <td><strong>Faster Processing</strong></td>
+                <td><strong style="color: #059669;">Included — no rush fee</strong></td>
+                <td>Paid rush tier available</td>
+                <td>Paid rush tier available</td>
+                <td>Paid rush tier available</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
-      <!-- SECTION 9: FAQ SECTION -->
-      <section id="faq-section" style="margin-top: 3.5rem;">
-        <div style="margin-bottom: 2rem;">
-          <div class="ls-kicker-pill">
-            <span class="ls-kicker-dot" style="background: #f5d20b; box-shadow: 0 0 8px #159A9C;"></span>
-            FREQUENTLY ASKED QUESTIONS
-          </div>
-          <h2
-            style="font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 800; color: #12304A; margin-top: 0.5rem; font-family: var(--font-heading);">
-            Frequently Asked Questions
-          </h2>
+      <!-- SECTION 9 -->
+      <section id="section-9">
+        <h2>9. Using Northwest for an Existing LLC</h2>
+        <p>
+          Northwest isn't only for new formations. An LLC that already exists, wherever it was originally formed, can switch to Northwest as its registered agent, and the change-of-agent filing is handled at no extra cost.
+        </p>
+
+        <h3>The Transfer Process</h3>
+        <p>
+          Northwest prepares the change-of-agent paperwork and files it with the state to update the registered agent of record. Timing typically runs to a matter of days, though the exact figure depends on the state.
+        </p>
+
+        <div class="callout-blue">
+          <strong>ℹ️ Can I Be My Own Registered Agent?</strong> Most states allow LLC owners to act as their own registered agent. The trade-off: your address appears on public records, you need to be available during business hours at that address, and you personally receive anything served in person. For many owners, paying for a professional RA service is worth it for privacy and convenience alone.
+        </div>
+      </section>
+
+      <!-- SECTION 10 -->
+      <section id="section-10">
+        <h2>10. Where Northwest Falls Short</h2>
+        <p>
+          No service fits every situation. Even so, these are the genuine limitations worth knowing before signing up.
+        </p>
+
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>LIMITATION</th>
+                <th>DETAILS</th>
+                <th>WHO DOES IT BETTER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>No $0 formation option</strong></td>
+                <td>$39 minimum — no free tier available</td>
+                <td>ZenBusiness, Bizee, LegalZoom (all $0 formation)</td>
+              </tr>
+              <tr>
+                <td><strong>Basic dashboard</strong></td>
+                <td>Functional but dated — no dedicated mobile app</td>
+                <td>ZenBusiness generally rates higher on UX</td>
+              </tr>
+              <tr>
+                <td><strong>No live chat</strong></td>
+                <td>Phone and email only, Mon–Fri</td>
+                <td>ZenBusiness and LegalZoom offer chat support</td>
+              </tr>
+              <tr>
+                <td><strong>No attorney access</strong></td>
+                <td>No legal consultation included or available</td>
+                <td>LegalZoom's higher tiers include this</td>
+              </tr>
+              <tr>
+                <td><strong>EIN costs extra for US residents</strong></td>
+                <td>Optional add-on, or free directly via the IRS</td>
+                <td>Some competitors bundle EIN on higher tiers</td>
+              </tr>
+              <tr>
+                <td><strong>No accounting tools</strong></td>
+                <td>No bookkeeping, invoicing, or tax features built in</td>
+                <td>Dedicated tools like QuickBooks or Wave</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <!-- CATEGORY 1: BASICS AND REQUIREMENTS -->
-        <h3
-          style="font-size: 1.25rem; font-weight: 800; color: #12304A; margin-bottom: 1rem; font-family: var(--font-heading);">
-          Basics and Requirements
-        </h3>
-
-        <div class="faq-accordion-wrapper">
-          <details class="faq-accordion-item" name="faq-ra-group">
-            <summary class="faq-accordion-question">
-              <div class="faq-q-badge-title">
-                <span class="faq-q-badge">01</span>
-                <span>What does a registered agent do?</span>
-              </div>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </summary>
-            <div class="faq-accordion-answer">
-              <p>A registered agent receives official legal and government documents on behalf of your LLC, including service of process, certain state correspondence, and applicable tax or compliance notices, and forwards or handles them according to the state's requirements and the service agreement.</p>
-            </div>
-          </details>
-
-          <details class="faq-accordion-item" name="faq-ra-group">
-            <summary class="faq-accordion-question">
-              <div class="faq-q-badge-title">
-                <span class="faq-q-badge">02</span>
-                <span>Can I be my own registered agent?</span>
-              </div>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </summary>
-            <div class="faq-accordion-answer">
-              <p>Often, yes. Requirements vary by state, but an individual generally must meet the state's age, residency or eligibility, physical-address, and availability requirements.</p>
-            </div>
-          </details>
-
-          <details class="faq-accordion-item" name="faq-ra-group">
-            <summary class="faq-accordion-question">
-              <div class="faq-q-badge-title">
-                <span class="faq-q-badge">03</span>
-                <span>What happens if my LLC does not have a registered agent?</span>
-              </div>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </summary>
-            <div class="faq-accordion-answer">
-              <p>Your LLC may fall out of compliance if state law requires an agent and you fail to maintain one. The state may provide a period to correct the issue, and continued noncompliance can lead to penalties or administrative consequences, depending on the state.</p>
-            </div>
-          </details>
+        <div class="callout-green">
+          <strong>💡 How to Work Around These Limitations:</strong> The dashboard and lack of live chat are real drawbacks if you value polish or need weekend support. Skip the optional EIN add-on if you have an SSN or ITIN, since the IRS issues the same number directly at no cost. For bookkeeping, dedicated software will outperform anything bundled with an LLC formation service.
         </div>
+      </section>
 
-        <!-- CATEGORY 2: COSTS AND SERVICES -->
-        <h3
-          style="font-size: 1.25rem; font-weight: 800; color: #12304A; margin-top: 2rem; margin-bottom: 1rem; font-family: var(--font-heading);">
-          Costs and Services
-        </h3>
+      <!-- SECTION 11 -->
+      <section id="section-11">
+        <h2>11. Common Customer Complaints</h2>
+        <p>
+          Complaints across BBB, Trustpilot, and Google tend to fall into a few recurring buckets rather than a wide spread of unrelated issues.
+        </p>
+        <ul style="line-height: 1.75; margin-bottom: 1.5rem;">
+          <li><strong>Refund handling:</strong> A handful of BBB complaints describe slow resolution on refunds, particularly when a customer's original payment method was no longer valid by the time the refund was issued.</li>
+          <li><strong>Account or system issues:</strong> Some reviews mention billing confusion or dashboard glitches that took extra back-and-forth to resolve.</li>
+          <li><strong>Cancellation friction:</strong> A number of customers report that cancelling required contacting support directly rather than a simple self-service toggle.</li>
+          <li><strong>State and IRS delays:</strong> Several complaints attribute slow EIN issuance or state approval to Northwest, when the underlying delay actually sits with the IRS or the relevant state agency.</li>
+        </ul>
+      </section>
 
+      <!-- SECTION 12 -->
+      <section id="section-12">
+        <h2>12. Who Should Choose Northwest?</h2>
+        <p><strong>Northwest tends to be a good fit for:</strong></p>
+        <ul style="line-height: 1.75; margin-bottom: 1.5rem;">
+          <li>Owners who care about keeping a home address off public filings where possible</li>
+          <li>People who want a formation specialist on the phone rather than a general support queue</li>
+          <li>Businesses that need straightforward registered agent coverage without a lot of add-on pressure</li>
+          <li>Users who prefer one flat price over a $0 headline rate with recurring upsells</li>
+        </ul>
+
+        <p><strong>Northwest may not be the best fit for:</strong></p>
+        <ul style="line-height: 1.75; margin-bottom: 1.5rem;">
+          <li>Anyone whose only priority is the lowest possible upfront price</li>
+          <li>Users who want a highly polished app or live chat support</li>
+          <li>Founders who need legal consultation as part of the package</li>
+          <li>Non-US founders who need integrated banking, tax, or bookkeeping support — <a href="best-llc-services.html#doola">doola</a> is generally a better fit there</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 13 -->
+      <section id="section-13">
+        <h2>13. Northwest vs The Competition</h2>
+        <p>
+          Rather than comparing only the headline formation price, the table below covers the categories that tend to matter most once the LLC is actually up and running. Compare Northwest head-to-head with ZenBusiness, LegalZoom, and Bizee on our main <a href="best-llc-services.html#head-to-head">Best LLC Formation Services guide</a>.
+        </p>
+      </section>
+
+      <!-- SECTION 14 -->
+      <section id="section-14">
+        <h2>14. Frequently Asked Questions</h2>
         <div class="faq-accordion-wrapper">
-          <details class="faq-accordion-item" name="faq-ra-group">
+          <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
-                <span class="faq-q-badge">04</span>
-                <span>How much does a professional registered agent cost?</span>
+                <span class="faq-q-badge">1</span>
+                <span>Is Northwest Registered Agent really $39?</span>
               </div>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>Professional registered agent services often cost about $99–$300 per year, depending on the provider and features. Pricing, promotions, and renewal rates can change, so check the provider's current terms.</p>
+              Yes. The base formation fee is $39 plus mandatory state filing fees. There are no mandatory checkout upsells or hidden membership subscriptions required to get the $39 price.
             </div>
           </details>
 
-          <details class="faq-accordion-item" name="faq-ra-group">
+          <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
-                <span class="faq-q-badge">05</span>
-                <span>How do I change my registered agent?</span>
+                <span class="faq-q-badge">2</span>
+                <span>Is registered agent service free with Northwest?</span>
               </div>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>Usually, you file the required change or equivalent state filing and pay any applicable fee. The exact form, filing method, and cost vary by state. Some professional services assist with the change when you switch to their service.</p>
+              Registered agent service is included free for the first full year when you form your LLC with Northwest. Starting in Year 2, the registered agent service renews at $125/year.
             </div>
           </details>
-        </div>
 
-        <!-- CATEGORY 3: MULTI-STATE AND FOREIGN LLCS -->
-        <h3
-          style="font-size: 1.25rem; font-weight: 800; color: #12304A; margin-top: 2rem; margin-bottom: 1rem; font-family: var(--font-heading);">
-          Multi-State and Foreign LLCs
-        </h3>
-
-        <div class="faq-accordion-wrapper">
-          <details class="faq-accordion-item" name="faq-ra-group">
+          <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
-                <span class="faq-q-badge">06</span>
-                <span>Do I need a registered agent in every state?</span>
+                <span class="faq-q-badge">3</span>
+                <span>Does Northwest protect my personal address?</span>
               </div>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              <p>Generally, if your LLC foreign-qualifies in another state, that state requires a registered agent there. However, simply having customers in another state does not automatically mean foreign qualification is required. Requirements depend on the state's rules and your business activities.</p>
+              Yes. In states where permitted, Northwest lists its own business address on public Articles of Organization filings instead of your home address, protecting your personal privacy.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">4</span>
+                <span>Does Northwest charge annual subscription fees?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              No. Unlike competitors that force annual compliance subscription packages ($199–$299/yr), Northwest only charges the standard $125/yr registered agent renewal if you choose to maintain them as your agent.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">5</span>
+                <span>Can I switch my existing LLC to Northwest?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. Northwest handles the change-of-agent filing with your Secretary of State to switch your existing LLC's registered agent to Northwest.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">6</span>
+                <span>Is Northwest suitable for non-US founders?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes, Northwest is very popular for non-US founders creating Wyoming or Delaware LLCs. However, if you need integrated international banking and tax filings, doola is also worth considering.
             </div>
           </details>
         </div>
       </section>
 
-    </article>
+    </div>
   </main>
 
   <!-- =========================================================================
-       3. SITE FOOTER
+       FOOTER (EXACT 1:1 MATCH WITH HOMEPAGE & ALL SITE PAGES)
        ========================================================================= -->
   <footer class="site-footer">
     <div class="container">
@@ -1317,8 +1272,7 @@
             <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
           </a>
           <p style="font-size:0.88rem; color: #CBD5E1; margin-top:1rem; line-height: 1.6;">
-            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders
-            form, manage, and maintain an LLC in any U.S. state.
+           LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
           </p>
         </div>
 
@@ -1326,12 +1280,10 @@
           <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Popular States</h4>
           <ul style="display:flex; flex-direction:column; gap:0.6rem;">
             <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Wyoming LLC Guide</a></li>
-            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a>
-            </li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a></li>
             <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Florida LLC Guide</a></li>
             <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Texas LLC Guide</a></li>
-            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a>
-            </li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a></li>
           </ul>
         </div>
 
@@ -1339,36 +1291,26 @@
           <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
           <ul style="display:flex; flex-direction:column; gap:0.6rem;">
             <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
-            <li><a href="index.html#calculator-section" style="font-size:0.85rem; color:#CBD5E1;">State Fee
-                Calculator</a></li>
+            <li><a href="index.html#cost-estimator-section" onclick="openCostCalculatorModal(); return false;" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator (Popup)</a></li>
           </ul>
         </div>
 
         <div>
           <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
           <ul style="display:flex; flex-direction:column; gap:0.6rem;">
-            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">EIN Application
-                Guide</a></li>
-            <li><a href="operating-agreement.html" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a>
-            </li>
-            <li><a href="registered-agent-guide.html" style="font-size:0.85rem; color:#CBD5E1;">Registered Agent
-                Guide</a></li>
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">Business Banking</a></li>
           </ul>
         </div>
       </div>
 
-      <div
-        style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
         <div>
-          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency,
-          and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax
-          advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified
-          professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at
-          no additional cost to you. See our Affiliate Disclosure.
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
         </div>
         <div>
-          © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a
-            href="index.html#terms">Terms of Service</a>
+          © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a href="index.html#terms">Terms of Service</a>
         </div>
       </div>
     </div>
@@ -1379,13 +1321,11 @@
     <div class="modal-card">
       <button class="modal-close" onclick="closeSearchModal()">✕</button>
       <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
-      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..."
-        class="state-select-box" style="margin-bottom: 1rem;">
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
       <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
     </div>
   </div>
 
   <script src="app.js"></script>
 </body>
-
 </html>

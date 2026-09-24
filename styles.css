@@ -1632,6 +1632,13 @@ button { cursor: pointer; border: none; background: none; }
   width: 100% !important;
 }
 
+.site-footer .container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 2.5rem !important;
+}
+
 .footer-grid {
   display: grid !important;
   grid-template-columns: 1.5fr repeat(3, 1fr) !important;
