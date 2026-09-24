@@ -166,32 +166,29 @@
       font-weight: 700;
     }
 
-    /* Provider Review Cards */
+    /* Provider Review Sections - Clean Natural Flow */
     .provider-review-card {
-      background: #FFFFFF;
-      border: 1.5px solid #CBD5E1;
-      border-radius: 18px;
-      padding: 1.75rem;
-      margin-bottom: 2.75rem;
-      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.06);
-      transition: all 0.2s ease;
-    }
-    .provider-review-card:hover {
-      box-shadow: 0 10px 28px rgba(18, 48, 74, 0.1);
-      border-color: #159A9C;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 3.5rem;
+      box-shadow: none;
     }
     .provider-header-bar {
-      padding: 1rem 1.35rem;
+      padding: 1.1rem 1.5rem;
       border-radius: 12px;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      margin-bottom: 1.75rem;
+      background: linear-gradient(135deg, #12304A 0%, #159A9C 100%);
       color: #FFFFFF;
-      border: 1.5px solid rgba(21, 154, 156, 0.4);
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.08);
     }
     .provider-brand-title {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: #FFFFFF;
+      margin: 0;
+      font-family: var(--font-heading);
     }
 
     .quick-stats-table-wrap {
@@ -336,9 +333,9 @@
   <!-- =========================================================================
        1. SITEWIDE HEADER NAVIGATION (EXACT HOMEPAGE PARITY)
        ========================================================================= -->
-  <header class="header">
-    <div class="header-container">
-      <a href="index.html" class="logo" aria-label="LLC Primer Home">
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
         <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
       </a>
 
@@ -350,7 +347,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="best-llc-services.html" class="nav-link active" style="color: var(--color-primary); font-weight: 800;">
+          <a href="best-llc-formation-services.html" class="nav-link active" style="color: var(--color-primary); font-weight: 800;">
             LLC Services
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
@@ -359,7 +356,6 @@
             <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
             <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
             <a href="best-llc-formation-services.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">Best LLC Formation Services</a>
-            <a href="best-llc-services.html" class="dropdown-link">Best LLC Services</a>
           </div>
         </div>
 
@@ -369,12 +365,12 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
-            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
-            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
-            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
-            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
-            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+            <a href="what-is-an-llc.html" class="dropdown-link"> What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link"> Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link"> How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link"> How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link"> LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link"> Registered Agent Guide</a>
           </div>
         </div>
 
@@ -387,7 +383,8 @@
             <a href="index.html#after-formation-section" class="dropdown-link">01. Obtain Federal EIN (SS-4 Tax ID)</a>
             <a href="operating-agreement.html" class="dropdown-link">02. Draft Operating Agreement</a>
             <a href="index.html#after-formation-section" class="dropdown-link">03. Open Business Bank Account</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">04. Local Licenses & Permits</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">04. File FinCEN BOI Report</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">05. Business Licenses & Permits</a>
           </div>
         </div>
 
@@ -399,12 +396,13 @@
           <div class="dropdown-menu">
             <a href="quiz.html" class="dropdown-link">🧩 Interactive LLC Quiz (60 Sec)</a>
             <a href="index.html#cost-estimator-section" class="dropdown-link">📊 First-Year Cost Estimator</a>
+            <a href="index.html#spanish-section" class="dropdown-link">🇪🇸 Guía de LLC en Español</a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="index.html#states-section" class="nav-link">
-            50-State Guides
+          <a href="index.html#non-us-section" class="nav-link">
+            Non-Residents 🌐
           </a>
         </div>
       </nav>
@@ -417,7 +415,7 @@
           Build LLC Plan →
         </a>
         <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </div>
     </div>
@@ -648,7 +646,7 @@
              ========================================================================= -->
 
         <!-- #1 NORTHWEST -->
-        <div class="provider-review-card" id="northwest" style="border: 2px solid #159A9C; box-shadow: 0 8px 24px rgba(21, 154, 156, 0.12);">
+        <div class="provider-review-card" id="northwest">
           <div class="provider-header-bar">
             <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">🏅 #1 RANKED SERVICE</div>
             <div class="provider-brand-title">#1 Northwest Registered Agent — Best Overall</div>
@@ -1462,59 +1460,67 @@
   <!-- =========================================================================
        11. SITEWIDE FOOTER (EXACT HOMEPAGE PARITY)
        ========================================================================= -->
-  <footer class="footer">
-    <div class="footer-container">
+  <footer class="site-footer">
+    <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo logo--footer" aria-label="LLC Primer Home">
-            <img src="logo.png" alt="LLC Primer Logo" style="height: 52px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+        <div>
+          <a href="index.html" class="site-logo" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
           </a>
-          <p class="footer-desc">
-            Simplifying business formation across all 50 states. Step-by-step state guides, compliance tools, and verified provider reviews for entrepreneurs.
+          <p style="font-size:0.88rem; color: #CBD5E1; margin-top:1rem; line-height: 1.6;">
+           LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
           </p>
-          <div style="margin-top: 1rem; font-size: 0.8rem; color: #94A3B8;">
-            © 2026 LLC Primer. All rights reserved.
-          </div>
         </div>
 
         <div>
-          <div class="footer-title">LLC Formation</div>
-          <ul class="footer-links">
-            <li><a href="start-llc.html">How to Start an LLC</a></li>
-            <li><a href="best-llc-services.html">Best LLC Services</a></li>
-            <li><a href="how-much-does-an-llc-cost.html">LLC Costs by State</a></li>
-            <li><a href="operating-agreement.html">LLC Operating Agreement</a></li>
-            <li><a href="registered-agent-guide.html">Registered Agent Guide</a></li>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Popular States</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Wyoming LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Florida LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Texas LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="footer-title">Popular State Guides</div>
-          <ul class="footer-links">
-            <li><a href="start-llc.html#california">California LLC Guide</a></li>
-            <li><a href="start-llc.html#texas">Texas LLC Guide</a></li>
-            <li><a href="start-llc.html#florida">Florida LLC Guide</a></li>
-            <li><a href="start-llc.html#wyoming">Wyoming LLC Guide</a></li>
-            <li><a href="start-llc.html#delaware">Delaware LLC Guide</a></li>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
+            <li><a href="index.html#cost-estimator-section" onclick="openCostCalculatorModal(); return false;" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator (Popup)</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="footer-title">Verified Reviews</div>
-          <ul class="footer-links">
-            <li><a href="northwest-registered-agent-review.html">Northwest Registered Agent</a></li>
-            <li><a href="zenbusiness-vs-northwest.html">ZenBusiness vs Northwest</a></li>
-            <li><a href="best-registered-agent-services.html">Best Registered Agent</a></li>
-            <li><a href="best-llc-formation-services.html">Best LLC Formation Services</a></li>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">Business Banking</a></li>
           </ul>
         </div>
       </div>
 
-      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 2.5rem; padding-top: 1.5rem; text-align: center; font-size: 0.78rem; color: #64748B;">
-        Disclaimer: LLC Primer is an independent educational portal and review site. We are not a law firm, tax advisor, or government agency. Information provided is for educational purposes only.
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
+        <div>
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </div>
+        <div>
+          © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a href="index.html#terms">Terms of Service</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
 
   <script>
     function toggleFaq(headerElement) {
