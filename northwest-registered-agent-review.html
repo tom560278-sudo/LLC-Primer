@@ -12,7 +12,6 @@
 
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Scoped Content Container for Body Cards (1080px Width Matching Site Guides) */
     .guide-content-container {
       max-width: 1080px;
       margin: 0 auto;
@@ -20,7 +19,6 @@
       width: 100%;
     }
 
-    /* Article Spacing & Typography */
     .guide-article h2 {
       font-size: clamp(1.75rem, 3.2vw, 2.3rem);
       font-weight: 800;
@@ -46,6 +44,16 @@
       margin-bottom: 1.25rem;
     }
 
+    .guide-article ul {
+      padding-left: 1.65rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+    .guide-article ul li {
+      margin-bottom: 0.65rem !important;
+      line-height: 1.7 !important;
+      color: #334155 !important;
+    }
+
     .guide-article a {
       color: #159A9C;
       font-weight: 600;
@@ -56,7 +64,6 @@
       color: #0E7490;
     }
 
-    /* Dual-Shade Executive Verification Banner */
     .review-check-banner {
       background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #12304A 0%, #0B1928 100%);
       color: #F8FAFC;
@@ -88,7 +95,6 @@
       transform: translateY(-1px);
     }
 
-    /* Verdict Banner Box */
     .verdict-box {
       background: linear-gradient(135deg, #12304A 0%, #0F766E 100%);
       border: 1.5px solid #159A9C;
@@ -99,7 +105,6 @@
       box-shadow: 0 8px 24px rgba(18, 48, 74, 0.15);
     }
 
-    /* Short Answer Callout Box */
     .short-answer-box {
       background: #F0FDFA;
       border: 1.5px solid #CCFBF1;
@@ -114,7 +119,6 @@
       gap: 0.75rem;
     }
 
-    /* 4 Metric Cards Grid */
     .metric-4grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -153,7 +157,6 @@
       margin-top: 0.25rem;
     }
 
-    /* Affiliate Disclosure Box */
     .affiliate-disc-box {
       background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
       border: 1.5px solid #CBD5E1;
@@ -184,7 +187,6 @@
       flex-shrink: 0;
     }
 
-    /* Top Pick Card Banner */
     .top-pick-card {
       background: #FFFFFF;
       border: 2px solid #10B981;
@@ -199,7 +201,6 @@
       flex-wrap: wrap;
     }
 
-    /* Table of Contents Card */
     .toc-card-box {
       background: #F8FAFC;
       border: 1px solid #E2E8F0;
@@ -231,7 +232,6 @@
       color: #0E7490;
     }
 
-    /* Green Feature Package Box */
     .nw-package-green-box {
       background: #0F766E;
       border-radius: 20px;
@@ -257,7 +257,6 @@
       gap: 0.75rem;
     }
 
-    /* 3 Ratings Cards Grid */
     .ratings-3grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -273,7 +272,6 @@
       box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
     }
 
-    /* Styled Tables */
     .styled-table-wrap {
       background: #FFFFFF;
       border: 1.5px solid #CBD5E1;
@@ -309,7 +307,6 @@
       background: #F8FAFC;
     }
 
-    /* Callout Alert Boxes */
     .callout-green {
       background: #ECFDF5;
       border: 1.5px solid #10B981;
@@ -338,7 +335,6 @@
       margin: 1.75rem 0;
     }
 
-    /* Numbered Step Timeline */
     .timeline-steps {
       display: flex;
       flex-direction: column;
@@ -368,7 +364,29 @@
       font-size: 0.9rem;
     }
 
-    /* Standard Site FAQ Accordion Styles */
+    .related-guides-6grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0 3rem 0;
+    }
+    .related-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.35rem 1.15rem;
+      text-align: center;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
+      text-decoration: none;
+      display: block;
+    }
+    .related-card:hover {
+      border-color: #159A9C;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(21, 154, 156, 0.12);
+    }
+
     .faq-accordion-wrapper {
       display: flex;
       flex-direction: column;
@@ -380,25 +398,17 @@
     .faq-accordion-item {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease;
       width: 100% !important;
-      max-width: 100% !important;
     }
-    .faq-accordion-item:hover {
-      border-color: #159A9C;
-      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
-    }
-    .faq-accordion-item[open] {
-      border-color: #159A9C;
-      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
-    }
+    .faq-accordion-item:hover { border-color: #159A9C; }
     .faq-accordion-question {
-      padding: 1.25rem 1.65rem;
+      padding: 1.15rem 1.4rem;
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 0.975rem;
       color: #12304A;
       cursor: pointer;
       display: flex;
@@ -409,40 +419,19 @@
       font-family: var(--font-heading);
     }
     .faq-accordion-question::-webkit-details-marker { display: none; }
-    .faq-q-badge-title { display: flex; align-items: center; gap: 0.85rem; }
-    .faq-q-badge {
-      background: #F0FDFA;
-      border: 1px solid #CCFBF1;
-      color: #159A9C;
-      font-size: 0.8rem;
-      font-weight: 800;
-      padding: 0.25rem 0.65rem;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-    .faq-chevron {
-      width: 20px;
-      height: 20px;
-      stroke: #159A9C;
-      transition: transform 0.25s ease;
-      flex-shrink: 0;
-    }
-    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
-      transform: rotate(180deg);
-    }
     .faq-accordion-answer {
-      padding: 0 1.65rem 1.35rem 1.65rem;
-      font-size: 0.95rem;
+      padding: 0 1.4rem 1.15rem 1.4rem;
+      font-size: 0.925rem;
       color: #475569;
-      line-height: 1.7;
+      line-height: 1.65;
       border-top: 1px dashed #F1F5F9;
       margin-top: 0.25rem;
-      padding-top: 1rem;
+      padding-top: 0.85rem;
     }
 
     @media (max-width: 768px) {
       .metric-4grid { grid-template-columns: repeat(2, 1fr); }
-      .ratings-3grid { grid-template-columns: 1fr; }
+      .ratings-3grid, .related-guides-6grid { grid-template-columns: 1fr; }
       .feature-2col-grid { grid-template-columns: 1fr; }
       .toc-links-grid { grid-template-columns: 1fr; }
     }
@@ -467,15 +456,15 @@
         </div>
 
         <div class="nav-item">
-          <a href="best-llc-services.html" class="nav-link">
+          <a href="best-llc-services.html" class="nav-link active">
             LLC Services
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
             <a href="best-llc-services.html" class="dropdown-link">📊 Best LLC Formation Services (2026)</a>
             <a href="zenbusiness-vs-northwest.html" class="dropdown-link">⚖️ ZenBusiness vs Northwest</a>
-            <a href="registered-agent-guide.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">⭐ Best Registered Agent Services</a>
-            <a href="northwest-registered-agent-review.html" class="dropdown-link">🛡️ Northwest Registered Agent Review</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">⭐ Best Registered Agent Services</a>
+            <a href="northwest-registered-agent-review.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">🛡️ Northwest Registered Agent Review</a>
           </div>
         </div>
 
@@ -698,7 +687,6 @@
           <strong>Note for licensed professionals:</strong> doctors, attorneys, dentists, CPAs, and architects may need a <a href="what-is-an-llc.html" style="color: #0284C7; font-weight: 700;">PLLC instead of a standard LLC</a>, depending on the state. Confirm this before placing an order.
         </div>
 
-        <!-- Green Feature Package Box -->
         <div class="nw-package-green-box">
           <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
             <div>
@@ -1139,7 +1127,7 @@
         <p>
           Complaints across BBB, Trustpilot, and Google tend to fall into a few recurring buckets rather than a wide spread of unrelated issues.
         </p>
-        <ul style="line-height: 1.75; margin-bottom: 1.5rem;">
+        <ul>
           <li><strong>Refund handling:</strong> A handful of BBB complaints describe slow resolution on refunds, particularly when a customer's original payment method was no longer valid by the time the refund was issued.</li>
           <li><strong>Account or system issues:</strong> Some reviews mention billing confusion or dashboard glitches that took extra back-and-forth to resolve.</li>
           <li><strong>Cancellation friction:</strong> A number of customers report that cancelling required contacting support directly rather than a simple self-service toggle.</li>
@@ -1151,7 +1139,7 @@
       <section id="section-12">
         <h2>12. Who Should Choose Northwest?</h2>
         <p><strong>Northwest tends to be a good fit for:</strong></p>
-        <ul style="line-height: 1.75; margin-bottom: 1.5rem;">
+        <ul>
           <li>Owners who care about keeping a home address off public filings where possible</li>
           <li>People who want a formation specialist on the phone rather than a general support queue</li>
           <li>Businesses that need straightforward registered agent coverage without a lot of add-on pressure</li>
@@ -1159,7 +1147,7 @@
         </ul>
 
         <p><strong>Northwest may not be the best fit for:</strong></p>
-        <ul style="line-height: 1.75; margin-bottom: 1.5rem;">
+        <ul>
           <li>Anyone whose only priority is the lowest possible upfront price</li>
           <li>Users who want a highly polished app or live chat support</li>
           <li>Founders who need legal consultation as part of the package</li>
@@ -1167,95 +1155,401 @@
         </ul>
       </section>
 
-      <!-- SECTION 13 -->
+      <!-- SECTION 13: NORTHWEST VS THE COMPETITION (IMAGES 1 & 2 ENHANCEMENTS) -->
       <section id="section-13">
         <h2>13. Northwest vs The Competition</h2>
-        <p>
-          Rather than comparing only the headline formation price, the table below covers the categories that tend to matter most once the LLC is actually up and running. Compare Northwest head-to-head with ZenBusiness, LegalZoom, and Bizee on our main <a href="best-llc-services.html#head-to-head">Best LLC Formation Services guide</a>.
+
+        <h3>Northwest vs Main Alternatives</h3>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>CATEGORY</th>
+                <th>NORTHWEST</th>
+                <th>ZENBUSINESS</th>
+                <th>LEGALZOOM</th>
+                <th>BIZEE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Formation price</strong></td>
+                <td><strong style="color: #059669;">$39</strong></td>
+                <td>$0</td>
+                <td>$0</td>
+                <td>$0</td>
+              </tr>
+              <tr>
+                <td><strong>RA renewal (Year 2+)</strong></td>
+                <td><strong style="color: #059669;">$125/yr</strong></td>
+                <td>~$199/yr</td>
+                <td>~$249/yr</td>
+                <td>~$119/yr</td>
+              </tr>
+              <tr>
+                <td><strong>Data privacy policy</strong></td>
+                <td><strong style="color: #059669;">States it doesn't sell data</strong></td>
+                <td>Check current policy</td>
+                <td>Check current policy</td>
+                <td>Check current policy</td>
+              </tr>
+              <tr>
+                <td><strong>Address privacy option</strong></td>
+                <td><strong style="color: #059669;">Included in base plan</strong></td>
+                <td>Basic / add on in some plans</td>
+                <td>Basic / add on in some plans</td>
+                <td>Basic / add on in some plans</td>
+              </tr>
+              <tr>
+                <td><strong>Filing speed (standard)</strong></td>
+                <td><strong style="color: #059669;">1–3 business days</strong></td>
+                <td>Slower base tier</td>
+                <td>Slower base tier</td>
+                <td>Slower base tier</td>
+              </tr>
+              <tr>
+                <td><strong>Upsells at checkout</strong></td>
+                <td><strong style="color: #059669;">None</strong></td>
+                <td>Several</td>
+                <td>Several</td>
+                <td>Several</td>
+              </tr>
+              <tr>
+                <td><strong>Dashboard quality</strong></td>
+                <td>Functional, simple</td>
+                <td><span style="color: #059669; font-weight: 700;">Rated higher</span></td>
+                <td>Average</td>
+                <td>Good</td>
+              </tr>
+              <tr>
+                <td><strong>Live chat support</strong></td>
+                <td>No</td>
+                <td><span style="color: #059669; font-weight: 700;">Yes</span></td>
+                <td>Limited</td>
+                <td>Phone + email</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size: 0.95rem; line-height: 1.7; color: #334155;">
+          Full head-to-head breakdowns are also available for <a href="zenbusiness-vs-northwest.html">ZenBusiness vs Northwest</a> and <strong>doola vs Northwest</strong>. For a broader view of every major option, the <a href="best-llc-services.html">best LLC services</a> guide ranks providers across key categories, and standalone reviews of <strong>ZenBusiness</strong>, <strong>LegalZoom</strong>, and <strong>Bizee</strong> go deeper on each. For anyone researching Northwest vs Incfile specifically: Bizee is the rebranded Incfile, and its RA renewal is one of the closer price competitors to Northwest's $125, even though Northwest still stands out on privacy and checkout simplicity.
         </p>
+
+        <!-- doola Callout Card -->
+        <div class="callout-blue" style="border-left-width: 5px; border-color: #0284C7; margin: 2rem 0;">
+          <div style="font-size: 0.75rem; font-weight: 800; color: #0284C7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+            <span>🌐</span> WHAT ABOUT DOOLA?
+          </div>
+          <p style="font-size: 0.925rem; line-height: 1.65; margin: 0 0 0.75rem 0;">
+            <strong>doola</strong> targets a different founder than Northwest does. It's built for people outside the US who need to form an LLC without an SSN or ITIN, and it adds guidance to open a US bank account plus help filing for an EIN by mail — pieces Northwest doesn't cover in the same way.
+          </p>
+          <p style="font-size: 0.9rem; line-height: 1.6; margin: 0; color: #334155;">
+            For US residents who already have an SSN, Northwest tends to be the simpler and cheaper choice day to day. Non-US founders who need that extra layer of support are usually better served by doola. See the full doola vs Northwest Registered Agent comparison for the details.
+          </p>
+        </div>
+
+        <h3>Northwest vs Enterprise Registered Agent Services</h3>
+        <div class="callout-blue" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #159A9C;">
+          <strong>Northwest vs Enterprise Registered Agent Services:</strong> Comparisons against enterprise-level providers like CSC (Corporation Service Company) and CT Corporation come up often among owners researching registered agent options. Those services target large corporations, law firms, and publicly traded companies, generally with higher per-state pricing and more complex contract structures. Northwest, by contrast, is built for small business owners and single-entity LLCs, with a flat renewal rate and no long-term contract. For most single-state LLCs, in other words, enterprise RA services bring more infrastructure than the situation calls for.
+        </div>
+
+        <h3>Our Overall Verdict</h3>
+        <div class="verdict-box" style="background: linear-gradient(135deg, #12304A 0%, #0D2336 100%); border-color: #159A9C; padding: 1.75rem;">
+          <div style="display: flex; align-items: flex-start; gap: 0.85rem;">
+            <span style="font-size: 1.5rem;">🏆</span>
+            <div>
+              <div style="font-size: 0.75rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem;">
+                OUR VERDICT
+              </div>
+              <p style="margin: 0; font-size: 0.975rem; line-height: 1.65; color: #E2E8F0;">
+                Based on our analysis, <strong>Northwest Registered Agent</strong> is one of the stronger overall LLC formation services for US-based founders. At $39, it pairs privacy-by-default with straightforward pricing and a support team that doesn't earn commissions on add-ons — a combination few competitors match. Set against that, the dashboard isn't modern, live chat isn't available, and cancellation reports are mixed enough to verify directly before signing up. For owners who value privacy and predictable pricing over app polish, Northwest still holds up well. Once the LLC is approved, the <a href="index.html#after-formation-section" style="color: #6EE7B7;">what to do after forming an LLC</a> guide covers the next steps.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exact Northwest Card Requested by User -->
+        <div style="background: #FFFFFF; border: 2px solid #10B981; border-radius: 18px; padding: 1.75rem 2rem; margin: 2rem 0; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 900; color: #059669; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem;">
+              ★ OUR TOP PICK
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: #12304A; margin: 0 0 0.4rem 0;">
+              Northwest Registered Agent
+            </h3>
+            <p style="font-size: 0.95rem; color: #334155; margin: 0 0 0.5rem 0; line-height: 1.6;">
+              Form your LLC for $39. Privacy protection, registered agent, business address, domain, email, and phone — all included.
+            </p>
+            <div style="font-size: 0.875rem; font-weight: 700; color: #059669;">
+              $39 + state fee — everything included, zero checkout upsells
+            </div>
+          </div>
+          <a href="https://www.northwestregisteredagent.com" target="_blank" rel="sponsored noopener" class="ls-btn" style="background: #10B981; color: #FFFFFF; padding: 0.85rem 2rem; font-size: 1rem; border-radius: 9999px; text-decoration: none; font-weight: 800; white-space: nowrap;">
+            Start My LLC →
+          </a>
+        </div>
+
+        <!-- RELATED GUIDES 6-GRID -->
+        <div style="font-size: 0.75rem; font-weight: 800; color: #64748B; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2.5rem;">
+          RELATED GUIDES
+        </div>
+        <div class="related-guides-6grid">
+          <a href="registered-agent-guide.html" class="related-card">
+            <strong style="color: #12304A; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">Registered Agent Guide</strong>
+            <span style="font-size: 0.78rem; color: #159A9C; font-weight: 700;">All 50 States</span>
+            <div style="font-size: 0.725rem; color: #64748B; margin-top: 0.15rem;">Requirements & costs</div>
+          </a>
+
+          <a href="registered-agent-guide.html" class="related-card">
+            <strong style="color: #12304A; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">Best Registered Agents</strong>
+            <span style="font-size: 0.78rem; color: #159A9C; font-weight: 700;">2026 Comparison</span>
+            <div style="font-size: 0.725rem; color: #64748B; margin-top: 0.15rem;">Top services ranked</div>
+          </a>
+
+          <a href="#section-4" class="related-card">
+            <strong style="color: #12304A; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">Northwest Pricing Guide</strong>
+            <span style="font-size: 0.78rem; color: #159A9C; font-weight: 700;">Every fee explained</span>
+            <div style="font-size: 0.725rem; color: #64748B; margin-top: 0.15rem;">Year 1, Year 2, all states</div>
+          </a>
+
+          <a href="zenbusiness-vs-northwest.html" class="related-card">
+            <strong style="color: #12304A; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">ZenBusiness vs Northwest</strong>
+            <span style="font-size: 0.78rem; color: #159A9C; font-weight: 700;">Head-to-Head 2026</span>
+            <div style="font-size: 0.725rem; color: #64748B; margin-top: 0.15rem;">Full comparison</div>
+          </a>
+
+          <a href="how-much-does-an-llc-cost.html" class="related-card">
+            <strong style="color: #12304A; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">LLC Cost by State</strong>
+            <span style="font-size: 0.78rem; color: #159A9C; font-weight: 700;">All 50 States</span>
+            <div style="font-size: 0.725rem; color: #64748B; margin-top: 0.15rem;">Formation + annual fees</div>
+          </a>
+
+          <a href="index.html#after-formation-section" class="related-card">
+            <strong style="color: #12304A; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">After Forming an LLC</strong>
+            <span style="font-size: 0.78rem; color: #159A9C; font-weight: 700;">11-Step Checklist</span>
+            <div style="font-size: 0.725rem; color: #64748B; margin-top: 0.15rem;">EIN, bank, taxes & more</div>
+          </a>
+        </div>
       </section>
 
-      <!-- SECTION 14 -->
+      <!-- SECTION 14: CATEGORIZED FAQS (IMAGE 2) -->
       <section id="section-14">
         <h2>14. Frequently Asked Questions</h2>
+
+        <h3 style="font-size: 1.15rem; color: #12304A; margin-top: 1.5rem; margin-bottom: 0.85rem;">Legitimacy & Reputation</h3>
         <div class="faq-accordion-wrapper">
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
-              <div class="faq-q-badge-title">
-                <span class="faq-q-badge">1</span>
-                <span>Is Northwest Registered Agent really $39?</span>
-              </div>
+              <span>Is Northwest Registered Agent legitimate?</span>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              Yes. The base formation fee is $39 plus mandatory state filing fees. There are no mandatory checkout upsells or hidden membership subscriptions required to get the $39 price.
+              Yes. Northwest Registered Agent has been in business since 1998, operates in all 50 states, and maintains strong overall ratings on Google (4.7/5) and Trustpilot (4.2/5).
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
-              <div class="faq-q-badge-title">
-                <span class="faq-q-badge">2</span>
-                <span>Is registered agent service free with Northwest?</span>
-              </div>
+              <span>What is Northwest Registered Agent's BBB rating?</span>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              Registered agent service is included free for the first full year when you form your LLC with Northwest. Starting in Year 2, the registered agent service renews at $125/year.
+              Northwest holds an A rating with the Better Business Bureau (BBB), though it is not BBB-accredited (accreditation is a paid voluntary membership).
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
-              <div class="faq-q-badge-title">
-                <span class="faq-q-badge">3</span>
-                <span>Does Northwest protect my personal address?</span>
-              </div>
+              <span>What do Reddit users say about Northwest Registered Agent?</span>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              Yes. In states where permitted, Northwest lists its own business address on public Articles of Organization filings instead of your home address, protecting your personal privacy.
+              Reddit discussions on r/smallbusiness and r/LLC frequently recommend Northwest due to their strict privacy policy, lack of aggressive upsells, and reliable US-based Corporate Guides support.
+            </div>
+          </details>
+        </div>
+
+        <h3 style="font-size: 1.15rem; color: #12304A; margin-top: 1.5rem; margin-bottom: 0.85rem;">Pricing & Discounts</h3>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Why isn't Northwest free like ZenBusiness or Bizee?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Free $0 plans from competitors typically charge separately for registered agent services ($119–$199/yr) and add multiple upsells during checkout. Northwest's $39 plan includes 1 full year of registered agent service for free ($125/yr value thereafter) and operating agreement templates.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
-              <div class="faq-q-badge-title">
-                <span class="faq-q-badge">4</span>
-                <span>Does Northwest charge annual subscription fees?</span>
-              </div>
+              <span>How much does Northwest Registered Agent cost?</span>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              No. Unlike competitors that force annual compliance subscription packages ($199–$299/yr), Northwest only charges the standard $125/yr registered agent renewal if you choose to maintain them as your agent.
+              Northwest costs $39 + state filing fees to form an LLC. Registered agent service is free for Year 1, then renews at $125/year.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
-              <div class="faq-q-badge-title">
-                <span class="faq-q-badge">5</span>
-                <span>Can I switch my existing LLC to Northwest?</span>
-              </div>
+              <span>Is there a Northwest Registered Agent coupon code?</span>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              Yes. Northwest handles the change-of-agent filing with your Secretary of State to switch your existing LLC's registered agent to Northwest.
+              Northwest does not issue traditional promo or discount codes. The $39 offer is their standard base rate.
+            </div>
+          </details>
+        </div>
+
+        <h3 style="font-size: 1.15rem; color: #12304A; margin-top: 1.5rem; margin-bottom: 0.85rem;">Registered Agent, Privacy & EIN</h3>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Does Northwest Registered Agent include a registered agent?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes! Every $39 formation package includes 1 full year of registered agent service for free.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
-              <div class="faq-q-badge-title">
-                <span class="faq-q-badge">6</span>
-                <span>Is Northwest suitable for non-US founders?</span>
-              </div>
+              <span>Does Northwest protect your privacy?</span>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              Yes, Northwest is very popular for non-US founders creating Wyoming or Delaware LLCs. However, if you need integrated international banking and tax filings, doola is also worth considering.
+              Yes. Northwest lists their address on public state documents wherever allowed by state law, keeping your home address private.
             </div>
           </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Should I use Northwest's EIN service?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              If you have an SSN or ITIN, you can obtain an EIN for free directly on IRS.gov in 10 minutes. Using Northwest's $50 EIN add-on is convenient if you prefer them to handle it for you or if you don't have an SSN.
+            </div>
+          </details>
+        </div>
+
+        <h3 style="font-size: 1.15rem; color: #12304A; margin-top: 1.5rem; margin-bottom: 0.85rem;">Switching Agents & Filing Time</h3>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Can I switch to Northwest from another registered agent?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. Northwest prepares and files the change-of-agent paperwork with your state at no additional charge when you sign up for their $125/yr registered agent service.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>How long does Northwest take to file an LLC?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Northwest processes and submits documents in 1–3 business days. State processing times vary by state (from same-day to 2–3 weeks).
+            </div>
+          </details>
+        </div>
+
+        <h3 style="font-size: 1.15rem; color: #12304A; margin-top: 1.5rem; margin-bottom: 0.85rem;">Non-US Founders</h3>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Can Northwest form an LLC for a non-US resident?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. Non-US residents frequently use Northwest to register Wyoming or Delaware LLCs.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Is Northwest good for non-US residents?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Northwest is great for low-cost formation and privacy. However, if you need assistance opening a US bank account or filing tax returns remotely, doola is specifically built for non-US founders.
+            </div>
+          </details>
+        </div>
+
+        <h3 style="font-size: 1.15rem; color: #12304A; margin-top: 1.5rem; margin-bottom: 0.85rem;">Account, Cancellation & Support</h3>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Can I cancel Northwest Registered Agent?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes, you can cancel registered agent service by appointing a new registered agent with the state or dissolving the entity, then submitting a cancellation request in your Northwest portal.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Does Northwest offer refunds?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Northwest offers refunds on service fees if requested before filings are submitted. State filing fees paid to Secretary of State offices are non-refundable.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>What is Northwest Registered Agent's phone number and hours?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Support is available Mon–Fri, 6am–5pm PT by phone and email through their US Corporate Guides team.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Can Northwest help dissolve an existing LLC?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. Northwest can prepare and submit Articles of Dissolution with your state.
+            </div>
+          </details>
+        </div>
+
+        <h3 style="font-size: 1.15rem; color: #12304A; margin-top: 1.5rem; margin-bottom: 0.85rem;">Comparisons & Alternatives</h3>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Is Northwest better than ZenBusiness?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              ZenBusiness is cheaper upfront ($0 + state), but charges $199/yr separately for registered agent service. Northwest ($39) includes 1 year of registered agent service and offers better privacy protection.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>What is the difference between Northwest and LegalZoom?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Northwest charges $39 and includes registered agent service. LegalZoom charges $0 base formation but $249/yr for registered agent, making Northwest significantly less expensive overall.
+            </div>
+          </details>
+        </div>
+
+        <div class="callout-blue" style="background: #F0F9FF; border: 1px solid #0284C7; margin-top: 1.75rem;">
+          💡 <strong>Comparing the closest low-cost alternative?</strong> Bizee starts at $0 plus the state fee, while Northwest emphasizes privacy, direct support, and fewer upsells. See the complete ZenBusiness vs Northwest comparison before choosing.
         </div>
       </section>
 

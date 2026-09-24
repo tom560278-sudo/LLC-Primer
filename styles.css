@@ -143,6 +143,24 @@ button, input, select, textarea {
 
 button { cursor: pointer; border: none; background: none; }
 
+/* Universal Content Bullet List Formatting */
+ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu):not(.quick-comp-table ul) {
+  padding-left: 1.65rem;
+  margin-bottom: 1.25rem;
+}
+ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+.guide-article ul, .start-content-container ul, .reviews-container ul, .guide-content-container ul {
+  padding-left: 1.65rem !important;
+  margin-bottom: 1.25rem !important;
+}
+.guide-article ul li, .start-content-container ul li, .reviews-container ul li, .guide-content-container ul li {
+  margin-bottom: 0.5rem !important;
+  line-height: 1.7 !important;
+}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
