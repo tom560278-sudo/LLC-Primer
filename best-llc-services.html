@@ -55,7 +55,7 @@
 
     /* Executive Verification Banner */
     .review-check-banner {
-      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #12304A 0%, #0B1928 100%);
+      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
       color: #F8FAFC;
       border-radius: 20px;
       padding: 1.75rem 2rem;
@@ -66,7 +66,7 @@
       position: relative;
       overflow: hidden;
       box-shadow: 0 12px 35px rgba(18, 48, 74, 0.22);
-      border: 1.5px solid #159A9C;
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
     }
 
     .short-on-time-box {
@@ -76,6 +76,10 @@
       padding: 1.25rem 1.5rem;
       margin-bottom: 2rem;
       color: #12304A;
+      transition: all 0.2s ease;
+    }
+    .short-on-time-box:hover {
+      box-shadow: 0 4px 16px rgba(21, 154, 156, 0.15);
     }
 
     .toc-card-box {
@@ -146,9 +150,20 @@
     .master-table tr:nth-child(even) {
       background: #F8FAFC;
     }
+    .master-table tr:hover {
+      background: #F1F5F9;
+    }
     .master-table td:first-child {
       font-weight: 700;
       color: #12304A;
+    }
+    .check-yes {
+      color: #166534;
+      font-weight: 700;
+    }
+    .cross-no {
+      color: #DC2626;
+      font-weight: 700;
     }
 
     /* Provider Review Cards */
@@ -159,40 +174,24 @@
       padding: 1.75rem;
       margin-bottom: 2.75rem;
       box-shadow: 0 6px 22px rgba(18, 48, 74, 0.06);
+      transition: all 0.2s ease;
+    }
+    .provider-review-card:hover {
+      box-shadow: 0 10px 28px rgba(18, 48, 74, 0.1);
+      border-color: #159A9C;
     }
     .provider-header-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       padding: 1rem 1.35rem;
       border-radius: 12px;
       margin-bottom: 1.5rem;
-      background: #12304A;
+      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
       color: #FFFFFF;
-      border: 1px solid #159A9C;
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
     }
     .provider-brand-title {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 800;
-    }
-    .brand-icon-badge {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: #FFFFFF;
-      padding: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-      border: 1.5px solid #CBD5E1;
-      flex-shrink: 0;
-    }
-    .brand-icon-badge img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 8px;
+      color: #FFFFFF;
     }
 
     .quick-stats-table-wrap {
@@ -270,6 +269,24 @@
       box-shadow: 0 6px 16px rgba(21, 154, 156, 0.35);
     }
 
+    .btn-blue-cta {
+      display: inline-block;
+      background: #0284C7;
+      color: #FFFFFF !important;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none !important;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+    .btn-blue-cta:hover {
+      background: #0369A1;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+    }
+
     /* Accordion FAQs */
     .faq-accordion-item {
       background: #FFFFFF;
@@ -281,6 +298,7 @@
     }
     .faq-accordion-item:hover {
       border-color: #159A9C;
+      box-shadow: 0 4px 14px rgba(21, 154, 156, 0.08);
     }
     .faq-accordion-header {
       padding: 1.1rem 1.35rem;
@@ -462,7 +480,7 @@
         <!-- =========================================================================
              3. BEFORE YOU CHOOSE AN LLC SERVICE
              ========================================================================= -->
-        <h2>Before You Choose an LLC Service</h2>
+        <h2 id="before-you-choose">Before You Choose an LLC Service</h2>
         <p>
           Before comparing prices and features, make sure you've answered three foundational questions. Choosing the wrong formation strategy — not the wrong service — is the most common and most costly mistake. Getting these right first means you'll know exactly what to look for in a service and avoid paying for features you don't need.
         </p>
@@ -625,19 +643,14 @@
 
 
         <!-- =========================================================================
-             5. PROVIDER REVIEWS (HEADING LEFT, ICON RIGHT)
+             5. PROVIDER REVIEWS (IMAGES 1 TO 5 FULL CONTENT)
              ========================================================================= -->
 
         <!-- #1 NORTHWEST -->
         <div class="provider-review-card" id="northwest" style="border: 2px solid #159A9C; box-shadow: 0 8px 24px rgba(21, 154, 156, 0.12);">
           <div class="provider-header-bar">
-            <div>
-              <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.15rem;">🏅 #1 RANKED SERVICE</div>
-              <div class="provider-brand-title">#1 Northwest Registered Agent — Best Overall</div>
-            </div>
-            <div class="brand-icon-badge">
-              <img src="images/northwest-icon.jpg" alt="Northwest Icon">
-            </div>
+            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">🏅 #1 RANKED SERVICE</div>
+            <div class="provider-brand-title">#1 Northwest Registered Agent — Best Overall</div>
           </div>
 
           <p>
@@ -781,16 +794,111 @@
         <!-- #2 ZENBUSINESS -->
         <div class="provider-review-card" id="zenbusiness">
           <div class="provider-header-bar">
-            <div>
-              <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.15rem;">🥈 #2 RANKED SERVICE</div>
-              <div class="provider-brand-title">#2 ZenBusiness — Best Platform and Dashboard</div>
-            </div>
-            <div class="brand-icon-badge">
-              <img src="images/zenbusiness-icon.jpg" alt="ZenBusiness Icon">
-            </div>
+            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">🥈 #2 RANKED SERVICE</div>
+            <div class="provider-brand-title">#2 ZenBusiness — Best Platform and Dashboard</div>
           </div>
           <p>
-            <strong>ZenBusiness is the most popular LLC formation service by review volume, with over 27,000 verified five-star Trustpilot ratings.</strong> It's the best choice for founders who want a polished, tech-forward dashboard, compliance alerts, and mobile access. Read our full <a href="zenbusiness-vs-northwest.html">ZenBusiness vs Northwest comparison</a> for the head-to-head analysis.
+            <strong>ZenBusiness is the most popular LLC formation service by review volume, with over 27,000 verified five-star Trustpilot ratings.</strong> It's the best choice for founders who want a polished, tech-forward dashboard, compliance alerts, and a guided experience throughout formation. However, the real cost depends heavily on which plan you choose — and whether you add registered agent service. Read the renewal terms carefully before checking out.
+          </p>
+
+          <!-- Top Pick Highlight Card -->
+          <div class="top-pick-card" style="border-color: #0284C7;">
+            <div>
+              <span class="top-pick-badge" style="background: #0284C7;">★ OUR TOP PICK</span>
+              <strong style="display: block; color: #12304A; font-size: 1.1rem; margin-top: 0.35rem;">ZenBusiness</strong>
+              <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #475569; line-height: 1.5;">
+                Starter plan starts at $0 + state fee. Includes name search, articles filing, dashboard, compliance alerts, and 1 free year of Worry-Free Compliance (renews at $199/yr). Pro adds 1-day processing, EIN, and operating agreement for $199.
+              </p>
+              <div style="font-size: 0.85rem; font-weight: 800; color: #0284C7; margin-top: 0.35rem;">
+                From $0 + state fee
+              </div>
+            </div>
+            <a href="zenbusiness-vs-northwest.html" class="btn-blue-cta">
+              Full Review →
+            </a>
+          </div>
+
+          <p style="font-size: 0.9rem; color: #64748B;">
+            Once your LLC is active, staying on top of annual report deadlines is just as important as the formation itself. Use our free <a href="llc-guide.html">LLC annual report tracker</a> to set reminders by state — it works regardless of which service you used. For the full requirement breakdown, see our <a href="llc-guide.html">LLC annual report guide</a>.
+          </p>
+
+          <h3>ZenBusiness Plans (2026)</h3>
+          <div class="quick-stats-table-wrap">
+            <div class="quick-stats-header">ZENBUSINESS PLANS (2026)</div>
+            <table class="quick-stats-table">
+              <thead>
+                <tr>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">PLAN</th>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">PRICE</th>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">PROCESSING</th>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">KEY INCLUSIONS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Starter</strong></td>
+                  <td><strong style="color: #166534;">$0 + state fee</strong></td>
+                  <td>7-10 business days</td>
+                  <td>Articles filing, name search, dashboard, 1yr Worry-Free Compliance*</td>
+                </tr>
+                <tr>
+                  <td><strong>Pro</strong></td>
+                  <td>$199 + state fee</td>
+                  <td><strong style="color: #0284C7;">1 business day</strong></td>
+                  <td>All Starter + EIN, operating agreement, logo builder, compliance alerts</td>
+                </tr>
+                <tr>
+                  <td><strong>Premium</strong></td>
+                  <td>$399 + state fee</td>
+                  <td><strong style="color: #0284C7;">1 business day</strong></td>
+                  <td>All Pro + registered agent, business advisor consultation, templates</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 0.8rem; color: #64748B; margin-top: -0.75rem; margin-bottom: 1.5rem;">
+            *Worry-Free Compliance renews at $199/year after the first free year. Registered agent service costs an additional $199/year on Starter and Pro plans — it is not included.
+          </p>
+
+          <h3>ZenBusiness Pros and Cons</h3>
+          <div class="quick-stats-table-wrap">
+            <div class="quick-stats-header">ZENBUSINESS PROS AND CONS</div>
+            <table class="quick-stats-table">
+              <tbody>
+                <tr>
+                  <td><span class="check-yes">✓ PROS</span></td>
+                  <td><span class="cross-no">✗ CONS</span></td>
+                </tr>
+                <tr>
+                  <td>4.8/5 Trustpilot — 27,000+ verified reviews</td>
+                  <td>Registered agent costs $199/yr — not in Starter or Pro</td>
+                </tr>
+                <tr>
+                  <td>Excellent dashboard and user experience</td>
+                  <td>Worry-Free Compliance auto-renews at $199/yr — easy to miss</td>
+                </tr>
+                <tr>
+                  <td>7-day customer support by phone, chat, email</td>
+                  <td>EIN and operating agreement are $99 add-ons on Starter</td>
+                </tr>
+                <tr>
+                  <td>1-day processing on Pro/Premium</td>
+                  <td>Checkout process includes multiple upsell prompts</td>
+                </tr>
+                <tr>
+                  <td>AI assistant (Wizo) for ongoing business help</td>
+                  <td>Some users report surprise renewal charges</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="background: #FEF3C7; border: 1.5px solid #F59E0B; border-radius: 12px; padding: 1.1rem 1.35rem; font-size: 0.875rem; color: #78350F; margin-bottom: 1.5rem;">
+            ⚠️ <strong>Watch the ZenBusiness Auto-Renews:</strong> The Starter plan includes Worry-Free Compliance free for the first year — but <strong>auto-renews at $199/year</strong> after that. Additionally, registered agent service is not included in Starter or Pro. Many users who sign up for "$0 formation" end up paying $199 - $398 in year two without realizing it. Read all renewal terms carefully before checkout. If you're deciding between the two free formation options, our <a href="zenbusiness-vs-northwest.html" style="color: #78350F; font-weight: 700; text-decoration: underline;">ZenBusiness vs Bizee comparison</a> breaks down the real year-one and year-two costs side by side.
+          </div>
+
+          <p style="font-size: 0.95rem; color: #334155;">
+            For a full side-by-side breakdown of pricing, registered agent value, and long-term costs, see our <a href="zenbusiness-vs-northwest.html">Northwest vs ZenBusiness head-to-head comparison</a>. If your main alternative is ZenBusiness vs LegalZoom, we have a dedicated comparison for that as well.
           </p>
         </div>
 
@@ -798,34 +906,552 @@
         <!-- #3 BIZEE -->
         <div class="provider-review-card" id="bizee">
           <div class="provider-header-bar">
-            <div>
-              <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.15rem;">🥉 #3 RANKED SERVICE</div>
-              <div class="provider-brand-title">#3 Bizee — Best Free Option</div>
-            </div>
-            <div class="brand-icon-badge">
-              <img src="images/bizee-icon.png" alt="Bizee Icon">
-            </div>
+            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">🥉 #3 RANKED SERVICE</div>
+            <div class="provider-brand-title">#3 Bizee (Formerly Incfile) — Best Free Formation + Free RA</div>
           </div>
           <p>
-            <strong>Bizee (formerly Incfile) is the strongest $0 formation option on the market.</strong> They include 1 full year of registered agent service on their $0 Basic plan — making them cheaper upfront than ZenBusiness or LegalZoom.
+            <strong>Bizee is the only service that combines $0 LLC formation with a free first year of registered agent service on all plans.</strong> For founders who want the lowest possible upfront cost without sacrificing the registered agent requirement, Bizee is the most affordable option in 2026. It has formed over 1 million businesses since 2004. The main trade-off is processing speed — the Basic plan takes 3-4 weeks, which is the slowest in this comparison.
           </p>
+
+          <!-- Top Pick Card -->
+          <div class="top-pick-card" style="border-color: #0284C7;">
+            <div>
+              <strong style="display: block; color: #12304A; font-size: 1.1rem;">Bizee (formerly Incfile)</strong>
+              <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #475569; line-height: 1.5;">
+                $0 Basic plan + state fee. Includes 1 free year of registered agent service, lifetime compliance alerts, and a tax consultation. Over 1 million businesses formed. Standard processing: 3 - 4 weeks.
+              </p>
+              <div style="font-size: 0.85rem; font-weight: 800; color: #0284C7; margin-top: 0.35rem;">
+                From $0 + state fee
+              </div>
+            </div>
+            <a href="best-llc-services.html#bizee" class="btn-blue-cta">
+              Full Review →
+            </a>
+          </div>
+
+          <h3>Bizee Plans (2026)</h3>
+          <div class="quick-stats-table-wrap">
+            <div class="quick-stats-header">BIZEE PLANS (2026)</div>
+            <table class="quick-stats-table">
+              <thead>
+                <tr>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">PLAN</th>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">PRICE</th>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">PROCESSING</th>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">KEY INCLUSIONS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Basic</strong></td>
+                  <td><strong style="color: #166534;">$0 + state fee</strong></td>
+                  <td>3-4 weeks</td>
+                  <td>Articles filing, name search, 1yr RA free, tax consultation</td>
+                </tr>
+                <tr>
+                  <td><strong>Standard</strong></td>
+                  <td>$199 + state fee</td>
+                  <td>3-4 weeks (or expedite +$50)</td>
+                  <td>All Basic + EIN, operating agreement, compliance alerts</td>
+                </tr>
+                <tr>
+                  <td><strong>Premium</strong></td>
+                  <td>$299 + state fee</td>
+                  <td><strong>Expedited included</strong></td>
+                  <td>All Standard + domain, business email, phone, contract templates</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Bizee Pros and Cons</h3>
+          <div class="quick-stats-table-wrap">
+            <div class="quick-stats-header">BIZEE PROS AND CONS</div>
+            <table class="quick-stats-table">
+              <tbody>
+                <tr>
+                  <td><span class="check-yes">✓ PROS</span></td>
+                  <td><span class="cross-no">✗ CONS</span></td>
+                </tr>
+                <tr>
+                  <td>$0 formation + free RA first year on all plans</td>
+                  <td>Standard processing: 3-4 weeks — slowest in this list</td>
+                </tr>
+                <tr>
+                  <td>1M+ businesses formed — proven track record</td>
+                  <td>Aggressive upsells throughout checkout</td>
+                </tr>
+                <tr>
+                  <td>RA renews at $119/yr — cheapest RA renewal here</td>
+                  <td>EIN and operating agreement not in Basic plan</td>
+                </tr>
+                <tr>
+                  <td>Tax consultation included on all plans</td>
+                  <td>Data sharing with partners — expect marketing emails</td>
+                </tr>
+                <tr>
+                  <td>Lifetime company alerts on Standard/Premium</td>
+                  <td>Mixed customer support response times</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="background: #EFF6FF; border: 1.5px solid #0284C7; border-radius: 12px; padding: 1.1rem 1.35rem; font-size: 0.875rem; color: #1E3A8A; margin-bottom: 1.5rem;">
+            ℹ️ <strong>Bizee vs. Northwest: Who's Actually Cheaper?</strong> Bizee charges $0 for formation and includes free RA for year one. Northwest charges $39 and also includes free RA for year one — plus an operating agreement (Bizee charges extra for this on Basic). The real cost difference is just $39, and Northwest gives you more for that $39. After year one, Northwest's $125 RA renewal beats Bizee's $119 by only $6 — essentially a tie. Both are strong budget options, but Northwest wins on overall included value.
+          </div>
         </div>
 
 
         <!-- #4 LEGALZOOM -->
         <div class="provider-review-card" id="legalzoom">
           <div class="provider-header-bar">
-            <div>
-              <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.15rem;">#4 RANKED SERVICE</div>
-              <div class="provider-brand-title">#4 LegalZoom — Best for Legal Support</div>
-            </div>
-            <div class="brand-icon-badge">
-              <img src="images/legalzoom-icon.png" alt="LegalZoom Icon">
-            </div>
+            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#4 RANKED SERVICE</div>
+            <div class="provider-brand-title">#4 LegalZoom — Best for Legal Support Needs</div>
           </div>
           <p>
-            <strong>LegalZoom is the most recognized brand in business formation.</strong> While more expensive than competitors ($249/yr for RA), LegalZoom is the only provider offering built-in attorney consultations and legal document templates.
+            <strong>LegalZoom is the most recognized LLC formation brand — but also the most expensive in this comparison.</strong> The real value isn't in price or processing speed. It's in legal access: attorney consultations, document review, and an established network of legal professionals. LegalZoom is the right choice for founders in regulated industries, those forming complex multi-member structures, or anyone who genuinely needs attorney guidance alongside their formation filing. For straightforward LLC formation, it's not the best value.
           </p>
+
+          <!-- Top Pick Card -->
+          <div class="top-pick-card" style="border-color: #0284C7;">
+            <div>
+              <strong style="display: block; color: #12304A; font-size: 1.1rem;">LegalZoom</strong>
+              <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #475569; line-height: 1.5;">
+                From $0 + state fee. Registered agent costs $249/year — the highest in this comparison. Best suited for founders who need attorney consultations and ongoing legal services alongside their LLC formation.
+              </p>
+              <div style="font-size: 0.85rem; font-weight: 800; color: #0284C7; margin-top: 0.35rem;">
+                From $0 + state fee — RA $249/yr
+              </div>
+            </div>
+            <a href="best-llc-services.html#legalzoom" class="btn-blue-cta">
+              Full Review →
+            </a>
+          </div>
+
+          <p style="font-size: 0.9rem; color: #64748B;">
+            If you're a licensed professional — doctor, lawyer, accountant, or architect — your state may require you to form a <strong>PLLC (Professional Limited Liability Company)</strong> instead of a standard LLC. Confirm your entity type before choosing any service.
+          </p>
+
+          <h3>LegalZoom Plans (2026)</h3>
+          <div class="quick-stats-table-wrap">
+            <div class="quick-stats-header">LEGALZOOM PLANS (2026)</div>
+            <table class="quick-stats-table">
+              <thead>
+                <tr>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">PLAN</th>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">PRICE</th>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">PROCESSING</th>
+                  <th style="background: #12304A; color: #FFF; font-weight: 800; padding: 0.75rem 1rem;">KEY INCLUSIONS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Basic</strong></td>
+                  <td><strong style="color: #166534;">$0 + state fee</strong></td>
+                  <td>5-14 days</td>
+                  <td>Articles filing, name check — RA and EIN are separate add-ons</td>
+                </tr>
+                <tr>
+                  <td><strong>Pro</strong></td>
+                  <td>$249 + state fee</td>
+                  <td>5-14 days</td>
+                  <td>All Basic + operating agreement, EIN, attorney consultation (30 min)</td>
+                </tr>
+                <tr>
+                  <td><strong>Premium</strong></td>
+                  <td>$299 + state fee</td>
+                  <td>Expedited (+ fee)</td>
+                  <td>All Pro + business document templates, unlimited storage</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>LegalZoom Pros and Cons</h3>
+          <div class="quick-stats-table-wrap">
+            <div class="quick-stats-header">LEGALZOOM PROS AND CONS</div>
+            <table class="quick-stats-table">
+              <tbody>
+                <tr>
+                  <td><span class="check-yes">✓ PROS</span></td>
+                  <td><span class="cross-no">✗ CONS</span></td>
+                </tr>
+                <tr>
+                  <td>Attorney consultations included on Pro/Premium</td>
+                  <td>Registered agent: $249/year — highest of all 4 services</td>
+                </tr>
+                <tr>
+                  <td>Most established brand — 4M+ businesses formed</td>
+                  <td>Most expensive overall when you add RA and EIN</td>
+                </tr>
+                <tr>
+                  <td>Legal document review on higher tiers</td>
+                  <td>Slowest processing: 5-14 business days standard</td>
+                </tr>
+                <tr>
+                  <td>Good for regulated industries needing legal guidance</td>
+                  <td>Not ideal for basic formation without legal complexity</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="background: #FEE2E2; border: 1.5px solid #EF4444; border-radius: 12px; padding: 1.1rem 1.35rem; font-size: 0.875rem; color: #991B1B; margin-bottom: 1.5rem;">
+            ⚠️ <strong>LegalZoom Registered Agent Costs $249/Year:</strong> LegalZoom's registered agent service is the most expensive in this comparison — <strong>$249/year versus $125 at Northwest and $119 at Bizee</strong>. If you need ongoing registered agent service (which most LLCs do), LegalZoom's true annual cost is significantly higher than it appears at checkout. LegalZoom only makes sense when you genuinely need attorney access — not for standard LLC formation. See our <a href="zenbusiness-vs-northwest.html" style="color: #991B1B; font-weight: 700; text-decoration: underline;">ZenBusiness vs LegalZoom comparison</a> or the Northwest vs LegalZoom breakdown for a full cost-by-cost analysis of both alternatives.
+            <br><br>
+            One case where LegalZoom's legal access adds real value: deciding whether to elect S-Corp tax status after forming your LLC. Before paying for a consultation, review our <a href="how-are-llcs-taxed.html" style="color: #991B1B; font-weight: 700; text-decoration: underline;">LLC tax benefits guide</a> and run the numbers with our LLC vs S-Corp tax calculator — it shows your exact savings based on net profit, state, and salary.
+          </div>
+
+          <p style="font-size: 0.9rem; color: #64748B;">
+            Once your LLC is approved, formation is only the beginning. Getting your EIN, opening a <strong>business bank account</strong>, making your tax election, and setting up compliance tracking all come next. See our <a href="start-llc.html">post-LLC formation checklist</a> for every remaining step in the correct order.
+          </p>
+        </div>
+
+
+        <!-- =========================================================================
+             6. HIDDEN COSTS MOST PEOPLE MISS
+             ========================================================================= -->
+        <h2 id="hidden-costs">Hidden Costs Most People Miss</h2>
+        <p>
+          <strong>The service fee you see on the homepage is rarely the number you'll actually pay.</strong> Every LLC formation service layers additional costs on top of their advertised price — some disclosed clearly, others buried in checkout. This section shows you every real cost category to check before you choose, so you're not surprised in month two or year two.
+        </p>
+
+        <div style="background: #FEF3C7; border: 1.5px solid #F59E0B; border-radius: 12px; padding: 1.1rem 1.35rem; font-size: 0.875rem; color: #78350F; margin-bottom: 2rem;">
+          ⚠️ <strong>Use our <a href="index.html#cost-estimator-section" style="color: #78350F; font-weight: 700; text-decoration: underline;">LLC startup cost estimator</a> to get the full first-year total for your state and situation — it includes all the cost categories below in one calculation.</strong>
+        </div>
+
+        <div class="quick-stats-table-wrap">
+          <div class="quick-stats-header">HIDDEN COSTS BY CATEGORY — WHAT TO CHECK BEFORE YOU BUY</div>
+          <table class="quick-stats-table">
+            <tbody>
+              <tr>
+                <td><span style="color: #EF4444; font-weight: 800;">$</span> <strong>Registered Agent Service (Year 1 and Year 2)</strong></td>
+                <td>This is the biggest hidden cost. Services that advertise $0 formation almost always charge $119 - $299/year for a registered agent — which is legally required in every state. Always check both year-one and year-two pricing. Northwest includes it free for year one. ZenBusiness charges $199/year from day one on lower plans. See our <a href="best-registered-agent-services.html">best registered agent comparison</a> if you want to use a standalone RA service separately.</td>
+              </tr>
+              <tr>
+                <td><span style="color: #EF4444; font-weight: 800;">$</span> <strong>Operating Agreement</strong></td>
+                <td>Some states require it; all LLCs should have one. Northwest includes it free. ZenBusiness Starter and Bizee Basic charge $99 as an add-on. LegalZoom includes it on Pro ($249). Before paying for one, see our <a href="operating-agreement.html">operating agreement guide</a> — some services offer free templates.</td>
+              </tr>
+              <tr>
+                <td><span style="color: #EF4444; font-weight: 800;">$</span> <strong>EIN (Employer Identification Number)</strong></td>
+                <td>Every LLC that will have employees, open a bank account, or be taxed as a corporation needs an EIN. Services charge $50 - $99 for this as an add-on. However, you can get it free directly from the IRS. See our <a href="index.html#after-formation-section">EIN application guide</a> — it's a 10-minute online process.</td>
+              </tr>
+              <tr>
+                <td><span style="color: #EF4444; font-weight: 800;">$</span> <strong>Auto-Renewing Compliance Subscriptions</strong></td>
+                <td>ZenBusiness Starter bundles Worry-Free Compliance free for year one — then it auto-renews at $199/year. Bizee has similar upsell patterns. Read renewal terms and set a calendar reminder to review your subscription 30 days before renewal, or use our <a href="llc-guide.html">annual report deadline tracker</a> to stay on top of compliance without paying for a subscription.</td>
+              </tr>
+              <tr>
+                <td><span style="color: #EF4444; font-weight: 800;">$</span> <strong>Annual Report / Franchise Tax</strong></td>
+                <td>Most states require LLCs to file an annual report and pay a fee each year — separate from any service subscription. These range from $0 (New Mexico) to $800/year (California minimum franchise tax). This fee goes to the state, not your formation service. See the full breakdown in our <a href="how-much-does-an-llc-cost.html">LLC cost guide</a> and track your deadlines with our <a href="llc-guide.html">annual report tracker</a>.</td>
+              </tr>
+              <tr>
+                <td><span style="color: #EF4444; font-weight: 800;">$</span> <strong>Business Bank Account Setup</strong></td>
+                <td>Opening a dedicated business bank account is not optional if you want to maintain LLC liability protection — it's essential. Some services charge for banking referrals or account setup; others (like Mercury or Relay) are free to open. Don't pay your formation service for this referral.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        <!-- =========================================================================
+             7. WHICH LLC SERVICE IS RIGHT FOR YOU?
+             ========================================================================= -->
+        <h2 id="which-is-right">Which LLC Service Is Right for You?</h2>
+        <p>
+          <strong>Different founders have different priorities — and the right LLC formation service depends entirely on your specific situation.</strong> Instead of declaring one winner for everyone (though Northwest wins for most people), this section covers the most common decision points we see from first-time business owners. Match your situation to the recommendation below.
+        </p>
+
+        <div class="decision-table-wrap">
+          <table class="decision-table">
+            <thead>
+              <tr>
+                <th>YOUR SITUATION</th>
+                <th>BEST CHOICE</th>
+                <th>WHY</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>You want the best overall value</td>
+                <td><strong><a href="northwest-registered-agent-review.html">Northwest Registered Agent review ($39)</a></strong></td>
+                <td>Lowest true cost, RA included, no upsells, privacy protection</td>
+              </tr>
+              <tr>
+                <td>You want the best platform/dashboard</td>
+                <td><strong><a href="zenbusiness-vs-northwest.html">ZenBusiness full review (Pro $199)</a></strong></td>
+                <td>Best UX, 1-day processing, compliance alerts, 27K+ reviews</td>
+              </tr>
+              <tr>
+                <td>You want $0 upfront including free RA</td>
+                <td><strong><a href="#bizee">Bizee free plan details (Basic $0)</a></strong></td>
+                <td>Only service with $0 formation AND free RA on Basic plan</td>
+              </tr>
+              <tr>
+                <td>You need attorney consultation</td>
+                <td><strong><a href="#legalzoom">LegalZoom service breakdown (Pro $249)</a></strong></td>
+                <td>Only service with attorney access included in formation plan</td>
+              </tr>
+              <tr>
+                <td>You prioritize privacy and no spam</td>
+                <td><strong><a href="northwest-registered-agent-review.html">Northwest privacy features ($39)</a></strong></td>
+                <td>Privacy by Default — doesn't sell your data, uses their address on filings</td>
+              </tr>
+              <tr>
+                <td>You need fast 1-day processing</td>
+                <td><strong>ZenBusiness 1-day processing or Northwest filing speed</strong></td>
+                <td>Both submit paperwork within 1 business day on their standard offering</td>
+              </tr>
+              <tr>
+                <td>You're forming in multiple states</td>
+                <td><strong><a href="northwest-registered-agent-review.html">Northwest pricing for multiple states ($39/state)</a></strong></td>
+                <td>Consistent pricing, all 50-states coverage, no confusing tier structures</td>
+              </tr>
+              <tr>
+                <td>You're a non-US founder</td>
+                <td><strong><a href="#doola">Doola for international founders</a></strong></td>
+                <td>Built for international founders — EIN for non-residents, US address, banking support</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>The Bottom Line on Choosing</h3>
+        <p>
+          For most founders — especially first-timers — <strong><a href="northwest-registered-agent-review.html">Northwest Registered Agent</a></strong> is the right choice. The $39 fee is small. In exchange, you get an operating agreement, free registered agent service, privacy protection, and zero upsells. The 2026 Business Identity suite adds domain, website, email, and phone at no extra cost — making it an even stronger value than in previous years. You can review the full <a href="northwest-registered-agent-review.html">Northwest pros and cons</a> in our dedicated review before committing.
+        </p>
+        <p>
+          If you value a polished dashboard and are comfortable managing renewals carefully, <strong>ZenBusiness Pro</strong> at $199 is an excellent alternative — particularly for founders who want everything in one guided platform. If your absolute priority is $0 upfront with free registered agent included, <strong>Bizee Basic</strong> remains a solid choice. All costs and renewal terms for every service are compared in the <a href="#full-comparison">full table at the top of this guide</a>.
+        </p>
+
+        <div class="short-on-time-box" style="margin-bottom: 2.5rem;">
+          💡 <strong>Still deciding?</strong> Take our free <a href="quiz.html" style="color: #159A9C; font-weight: 700; text-decoration: underline;">Business Structure Quiz</a> — answer 5 questions and get a personalized LLC vs. S-Corp vs. sole proprietorship recommendation. Or use our <a href="index.html#cost-estimator-section" style="color: #159A9C; font-weight: 700; text-decoration: underline;">LLC cost calculator</a> to see what your exact total will be in your state before you commit to any service.
+        </div>
+
+
+        <!-- =========================================================================
+             8. WHEN YOU SHOULD NOT USE AN LLC FORMATION SERVICE
+             ========================================================================= -->
+        <h2 id="when-not-to-use">When You Should NOT Use an LLC Formation Service</h2>
+        <p>
+          <strong>LLC formation services add real value in many situations — but they're not the right answer for everyone.</strong> In some cases, using a service adds cost without adding value. Knowing when to skip a service (and file directly with your state) can save you $39–$399 in unnecessary fees. Here are the situations where a formation service is genuinely not the best choice.
+        </p>
+
+        <div style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 14px; overflow: hidden; margin-bottom: 1.75rem;">
+          <div style="background: #12304A; color: #FFFFFF; font-weight: 800; font-size: 0.85rem; padding: 0.75rem 1.25rem; text-transform: uppercase; letter-spacing: 0.05em;">
+            Skip the Formation Service If...
+          </div>
+          <div style="padding: 1.25rem; display: flex; flex-direction: column; gap: 1.25rem;">
+            <div style="display: flex; align-items: flex-start; gap: 0.85rem;">
+              <span style="background: #FEE2E2; color: #991B1B; font-weight: 800; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem;">✗</span>
+              <div>
+                <strong style="color: #12304A; font-size: 0.95rem;">You're in a simple, low-risk state with a straightforward filing process</strong>
+                <p style="margin: 0.25rem 0 0 0; font-size: 0.9rem; color: #475569; line-height: 1.6;">
+                  States like Wyoming, New Mexico, and Montana have simple online filing portals, low fees, and no publication requirements. If you're comfortable filling out a basic form and paying a state fee directly, you may not need a service at all. Our full <a href="start-llc.html">how to start an LLC guide</a> walks you through the self-filing process step by step.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 0.85rem;">
+              <span style="background: #FEE2E2; color: #991B1B; font-weight: 800; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem;">✗</span>
+              <div>
+                <strong style="color: #12304A; font-size: 0.95rem;">You only need formation — and you already know how to handle the rest</strong>
+                <p style="margin: 0.25rem 0 0 0; font-size: 0.9rem; color: #475569; line-height: 1.6;">
+                  Formation services add the most value when you're new to business and need guidance on operating agreements, EINs, and compliance. If you've formed an LLC before and just need paperwork filed, you're probably paying for features you'll never use. Consider filing directly and using a standalone <a href="registered-agent-guide.html">registered agent service</a> separately — it's often cheaper.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 0.85rem;">
+              <span style="background: #FEE2E2; color: #991B1B; font-weight: 800; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem;">✗</span>
+              <div>
+                <strong style="color: #12304A; font-size: 0.95rem;">You're in a state with a publication requirement and haven't budgeted for it</strong>
+                <p style="margin: 0.25rem 0 0 0; font-size: 0.9rem; color: #475569; line-height: 1.6;">
+                  New York, Arizona, and Nebraska require new LLCs to publish formation notices in local newspapers — a cost that can run $400-$2,000 and is entirely separate from any formation service fee. No service covers this cost. If you're forming in these states, factor in the publication cost before choosing a service. See our <a href="how-much-does-an-llc-cost.html">LLC cost guide</a> for state-specific totals.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 0.85rem;">
+              <span style="background: #FEE2E2; color: #991B1B; font-weight: 800; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem;">✗</span>
+              <div>
+                <strong style="color: #12304A; font-size: 0.95rem;">You need complex legal or tax advice alongside formation</strong>
+                <p style="margin: 0.25rem 0 0 0; font-size: 0.9rem; color: #475569; line-height: 1.6;">
+                  Even LegalZoom — the most legal-forward service here — provides limited attorney access (typically one 30-minute consultation). If you're forming an LLC to hold real estate, bring in investors, issue membership units with different classes, or navigate a regulated industry, a business attorney is the right resource — not a formation service. Use a formation service after the legal structure is sorted, not as a substitute for that guidance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #EFF6FF; border: 1.5px solid #0284C7; border-radius: 12px; padding: 1.1rem 1.35rem; font-size: 0.875rem; color: #1E3A8A; margin-bottom: 2.5rem;">
+          ℹ️ <strong>Want to self-file?</strong> Our step-by-step <a href="start-llc.html" style="color: #0284C7; font-weight: 700; text-decoration: underline;">how to start an LLC guide</a> covers every state's process, fees, and timelines — so you can file directly if that's the right call for your situation. Use our <a href="index.html#cost-estimator-section" style="color: #0284C7; font-weight: 700; text-decoration: underline;">LLC cost calculator</a> to compare the self-file cost vs. using a service in your specific state.
+        </div>
+
+
+        <!-- =========================================================================
+             9. HOW WE EVALUATE LLC FORMATION SERVICES
+             ========================================================================= -->
+        <h2 id="how-we-evaluate">How We Evaluate LLC Formation Services</h2>
+        <p>
+          <strong>Our rankings are based on four criteria — weighted to reflect what actually matters to someone starting their first business.</strong> We update this evaluation every quarter, because pricing and features change frequently in this industry. All prices and features in this guide reflect the current state of each service as of Q1 2026. Every score below corresponds directly to the service rankings and pricing shown in the <a href="#full-comparison">comparison table above</a>.
+        </p>
+
+        <h3>1. True First-Year Cost</h3>
+        <p>
+          We calculate the <strong>real cost</strong> — not the headline price. Formation fees, registered agent service, operating agreement, and EIN are added together to get an accurate total. Services that advertise "$0 formation" often rank lower in true value once hidden add-ons are factored in. For example, ZenBusiness Starter advertises $0 — but registered agent service costs an additional $199/year from day one. Use our <a href="index.html#cost-estimator-section">startup cost estimator</a> to calculate your state-specific total.
+        </p>
+
+        <h3>2. Processing Speed</h3>
+        <p>
+          We track how quickly each service submits paperwork to the state. This is separate from state processing time, which varies by state and is outside any service's control. The time a service takes to prepare and submit documents is entirely within their control — and it matters when you need your LLC operational quickly. Northwest and ZenBusiness Pro both submit within 1 business day. Bizee Basic can take 3-4 weeks.
+        </p>
+
+        <h3>3. Customer Support Quality</h3>
+        <p>
+          We contact each provider's support by phone and chat, evaluating response time, accuracy of information, and whether reps push unnecessary add-ons. We also analyze thousands of verified reviews on Trustpilot and the BBB for recurring patterns in praise and complaints. Northwest consistently ranks highest — because every customer gets a dedicated Corporate Guide instead of a general support queue.
+        </p>
+
+        <h3>4. Transparency and Auto-Renewal Practices</h3>
+        <p>
+          Several services auto-renew compliance or agent services without making the terms clear at checkout. We rate transparency highly. Services that clearly disclose renewal pricing and make cancellation straightforward score better. Northwest has no auto-renewals on formation. ZenBusiness Starter auto-renews Worry-Free Compliance at $199/year unless you actively cancel beforehand. Once your LLC is approved, use our <a href="llc-guide.html">Annual Report Deadline Tracker</a> to stay on top of compliance filing dates by state — regardless of which service you used.
+        </p>
+
+        <div class="short-on-time-box" style="margin-bottom: 2.5rem;">
+          💡 <strong>We Update This Guide Every Quarter:</strong> Pricing and features change frequently. Northwest added their Business Identity suite in January 2026. ZenBusiness adjusted their Pro plan pricing in late 2025. We review every service and update this comparison every three months. All prices and features reflect the current state of each service as of Q1 2026.
+        </div>
+
+
+        <!-- RELATED LLC GUIDES BUTTON CARDS -->
+        <div style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 14px; padding: 1.5rem; margin-bottom: 2.5rem;">
+          <div style="font-size: 0.75rem; font-weight: 800; color: #64748B; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem;">RELATED LLC GUIDES</div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+            <a href="best-registered-agent-services.html" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block; transition: all 0.2s ease;">
+              <strong style="color: #12304A; display: block; font-size: 0.95rem;">Best Registered Agents</strong>
+              <span style="color: #159A9C; font-size: 0.78rem; font-weight: 700;">2026 Comparison</span>
+              <span style="color: #64748B; display: block; font-size: 0.75rem; margin-top: 0.2rem;">Top 5 services ranked</span>
+            </a>
+
+            <a href="zenbusiness-vs-northwest.html" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block; transition: all 0.2s ease;">
+              <strong style="color: #12304A; display: block; font-size: 0.95rem;">ZenBusiness vs Northwest</strong>
+              <span style="color: #159A9C; font-size: 0.78rem; font-weight: 700;">Head-to-Head</span>
+              <span style="color: #64748B; display: block; font-size: 0.75rem; margin-top: 0.2rem;">Full comparison 2026</span>
+            </a>
+
+            <a href="best-llc-services.html#doola" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block; transition: all 0.2s ease;">
+              <strong style="color: #12304A; display: block; font-size: 0.95rem;">Doola vs Northwest</strong>
+              <span style="color: #159A9C; font-size: 0.78rem; font-weight: 700;">Non-US Founders</span>
+              <span style="color: #64748B; display: block; font-size: 0.75rem; margin-top: 0.2rem;">EIN, banking & pricing</span>
+            </a>
+
+            <a href="how-much-does-an-llc-cost.html" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block; transition: all 0.2s ease;">
+              <strong style="color: #12304A; display: block; font-size: 0.95rem;">LLC Cost by State</strong>
+              <span style="color: #159A9C; font-size: 0.78rem; font-weight: 700;">All 50 States</span>
+              <span style="color: #64748B; display: block; font-size: 0.75rem; margin-top: 0.2rem;">Formation + annual fees</span>
+            </a>
+
+            <a href="start-llc.html" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block; transition: all 0.2s ease;">
+              <strong style="color: #12304A; display: block; font-size: 0.95rem;">After Forming an LLC</strong>
+              <span style="color: #159A9C; font-size: 0.78rem; font-weight: 700;">11-Step Checklist</span>
+              <span style="color: #64748B; display: block; font-size: 0.75rem; margin-top: 0.2rem;">EIN, bank, taxes & more</span>
+            </a>
+
+            <a href="registered-agent-guide.html" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block; transition: all 0.2s ease;">
+              <strong style="color: #12304A; display: block; font-size: 0.95rem;">Registered Agent Guide</strong>
+              <span style="color: #159A9C; font-size: 0.78rem; font-weight: 700;">All 50 States</span>
+              <span style="color: #64748B; display: block; font-size: 0.75rem; margin-top: 0.2rem;">Requirements & costs</span>
+            </a>
+          </div>
+        </div>
+
+
+        <!-- =========================================================================
+             10. FREQUENTLY ASKED QUESTIONS
+             ========================================================================= -->
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <h3 style="color: #12304A; font-size: 1.15rem; margin-top: 1.5rem;">Cost and Value</h3>
+
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header" onclick="toggleFaq(this)">
+            <span>What is the cheapest LLC formation service in 2026?</span>
+            <span class="faq-icon-toggle">▼</span>
+          </div>
+          <div class="faq-accordion-body">
+            Bizee offers a $0 Basic plan that includes a free year of registered agent service. Northwest charges $39 + state fee and includes a free year of registered agent service, an operating agreement, and privacy protection. Over 1-2 years, Northwest is often cheaper overall because of lower registered agent renewal costs and included features.
+          </div>
+        </div>
+
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header" onclick="toggleFaq(this)">
+            <span>Is it worth paying for an LLC formation service, or can I do it myself?</span>
+            <span class="faq-icon-toggle">▼</span>
+          </div>
+          <div class="faq-accordion-body">
+            If you are comfortable filling out state forms and serving as your own registered agent (listing your home address publicly), you can file directly with your Secretary of State to save $39-$199. However, paying $39 for Northwest gives you address privacy, an operating agreement template, and expert corporate guide support.
+          </div>
+        </div>
+
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header" onclick="toggleFaq(this)">
+            <span>Does it matter which state I form my LLC in?</span>
+            <span class="faq-icon-toggle">▼</span>
+          </div>
+          <div class="faq-accordion-body">
+            Yes. In 95% of cases, you should form your LLC in your home state where you live and conduct business. Forming in Wyoming or Delaware when operating in another state creates double filing fees and compliance requirements.
+          </div>
+        </div>
+
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header" onclick="toggleFaq(this)">
+            <span>What is the best website to form an LLC in 2026?</span>
+            <span class="faq-icon-toggle">▼</span>
+          </div>
+          <div class="faq-accordion-body">
+            Northwest Registered Agent is our #1 pick for value, privacy, and zero upsells. ZenBusiness is #2 for founders who want a modern digital dashboard experience.
+          </div>
+        </div>
+
+        <h3 style="color: #12304A; font-size: 1.15rem; margin-top: 1.75rem;">Services and Features</h3>
+
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header" onclick="toggleFaq(this)">
+            <span>What is a registered agent and do I need one?</span>
+            <span class="faq-icon-toggle">▼</span>
+          </div>
+          <div class="faq-accordion-body">
+            A Registered Agent is a person or entity designated to receive official state correspondence and legal notices (service of process) for your business. Every US LLC is legally required to have one.
+          </div>
+        </div>
+
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header" onclick="toggleFaq(this)">
+            <span>Is ZenBusiness or Northwest better?</span>
+            <span class="faq-icon-toggle">▼</span>
+          </div>
+          <div class="faq-accordion-body">
+            Northwest is better for lower true costs, privacy protection, and zero upsells. ZenBusiness is better for founders who want an intuitive mobile app and tech-first dashboard experience.
+          </div>
+        </div>
+
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header" onclick="toggleFaq(this)">
+            <span>Does a formation service file my taxes?</span>
+            <span class="faq-icon-toggle">▼</span>
+          </div>
+          <div class="faq-accordion-body">
+            No. Formation services handle filing your Articles of Organization and obtaining an EIN. You will still need a CPA or tax software to file annual state and federal tax returns.
+          </div>
+        </div>
+
+        <div class="faq-accordion-item">
+          <div class="faq-accordion-header" onclick="toggleFaq(this)">
+            <span>What should I do immediately after my LLC is approved?</span>
+            <span class="faq-icon-toggle">▼</span>
+          </div>
+          <div class="faq-accordion-body">
+            Immediately obtain an EIN from the IRS, open a dedicated business bank account, draft your Operating Agreement, and check local business license requirements.
+          </div>
         </div>
 
       </div>
@@ -833,7 +1459,7 @@
   </section>
 
   <!-- =========================================================================
-       6. SITEWIDE FOOTER (EXACT HOMEPAGE PARITY)
+       11. SITEWIDE FOOTER (EXACT HOMEPAGE PARITY)
        ========================================================================= -->
   <footer class="footer">
     <div class="footer-container">

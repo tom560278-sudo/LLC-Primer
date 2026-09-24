@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -63,9 +63,9 @@
       color: #0E7490;
     }
 
-    /* Review Check Banner */
+    /* Executive Verification Banner */
     .review-check-banner {
-      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #12304A 0%, #0B1928 100%);
+      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
       color: #F8FAFC;
       border-radius: 20px;
       padding: 1.75rem 2rem;
@@ -76,7 +76,7 @@
       position: relative;
       overflow: hidden;
       box-shadow: 0 12px 35px rgba(18, 48, 74, 0.22);
-      border: 1.5px solid #159A9C;
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
     }
 
     /* Callout Boxes */
@@ -87,6 +87,10 @@
       padding: 1.25rem 1.5rem;
       margin-bottom: 2rem;
       color: #12304A;
+      transition: all 0.2s ease;
+    }
+    .short-on-time-box:hover {
+      box-shadow: 0 4px 16px rgba(21, 154, 156, 0.15);
     }
 
     .toc-card-box {
@@ -157,6 +161,9 @@
     .master-table tr:nth-child(even) {
       background: #F8FAFC;
     }
+    .master-table tr:hover {
+      background: #F1F5F9;
+    }
     .master-table td:first-child {
       font-weight: 700;
       color: #12304A;
@@ -178,40 +185,24 @@
       padding: 1.75rem;
       margin-bottom: 2.75rem;
       box-shadow: 0 6px 22px rgba(18, 48, 74, 0.06);
+      transition: all 0.2s ease;
+    }
+    .provider-review-card:hover {
+      box-shadow: 0 10px 28px rgba(18, 48, 74, 0.1);
+      border-color: #159A9C;
     }
     .provider-header-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       padding: 1rem 1.35rem;
       border-radius: 12px;
       margin-bottom: 1.5rem;
-      background: #12304A;
+      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
       color: #FFFFFF;
-      border: 1px solid #159A9C;
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
     }
     .provider-brand-title {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 800;
-    }
-    .brand-icon-badge {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: #FFFFFF;
-      padding: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-      border: 1.5px solid #CBD5E1;
-      flex-shrink: 0;
-    }
-    .brand-icon-badge img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 8px;
+      color: #FFFFFF;
     }
 
     /* Quick Stats Table inside provider cards */
@@ -281,7 +272,7 @@
       box-shadow: 0 6px 16px rgba(21, 154, 156, 0.35);
     }
 
-    /* Matrix Table */
+    /* Decision Framework Table */
     .decision-table-wrap {
       background: #FFFFFF;
       border: 1px solid #CBD5E1;
@@ -319,7 +310,7 @@
       color: #12304A;
     }
 
-    /* Numbered Circles for Mistakes */
+    /* Numbered Badges for Mistakes */
     .mistake-num-badge {
       display: inline-flex;
       align-items: center;
@@ -334,7 +325,7 @@
       flex-shrink: 0;
     }
 
-    /* State Guide Card Box */
+    /* State Guide Container */
     .state-wins-container {
       border: 1.5px solid #159A9C;
       border-radius: 16px;
@@ -351,6 +342,12 @@
       margin-bottom: 1rem;
       font-size: 0.9rem;
       line-height: 1.6;
+      transition: all 0.2s ease;
+    }
+    .state-card-item:hover {
+      border-color: #159A9C;
+      background: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(21, 154, 156, 0.06);
     }
     .state-card-item strong {
       color: #12304A;
@@ -367,6 +364,7 @@
     }
     .faq-accordion-item:hover {
       border-color: #159A9C;
+      box-shadow: 0 4px 14px rgba(21, 154, 156, 0.08);
     }
     .faq-accordion-header {
       padding: 1.1rem 1.35rem;
@@ -693,19 +691,14 @@
         </div>
 
         <!-- =========================================================================
-             4. TOP 5 DETAILED PROVIDER REVIEWS (HEADING LEFT, ICON RIGHT)
+             4. TOP 5 DETAILED PROVIDER REVIEWS (CLEAN TEXT HEADERS, NO LOGOS)
              ========================================================================= -->
 
         <!-- #1 NORTHWEST -->
         <div class="provider-review-card" id="northwest" style="border: 2px solid #159A9C; box-shadow: 0 8px 24px rgba(21, 154, 156, 0.12);">
           <div class="provider-header-bar">
-            <div>
-              <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.15rem;">#1 RANKED SERVICE</div>
-              <div class="provider-brand-title">#1 Northwest Registered Agent — Best Overall</div>
-            </div>
-            <div class="brand-icon-badge">
-              <img src="images/northwest-icon.jpg" alt="Northwest Registered Agent Icon">
-            </div>
+            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#1 RANKED SERVICE</div>
+            <div class="provider-brand-title">#1 Northwest Registered Agent — Best Overall</div>
           </div>
 
           <div class="quick-stats-table-wrap">
@@ -773,13 +766,8 @@
         <!-- #2 BIZEE -->
         <div class="provider-review-card" id="bizee">
           <div class="provider-header-bar">
-            <div>
-              <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.15rem;">#2 RANKED SERVICE</div>
-              <div class="provider-brand-title">#2 Bizee — Best Free Option</div>
-            </div>
-            <div class="brand-icon-badge">
-              <img src="images/bizee-icon.png" alt="Bizee Icon">
-            </div>
+            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#2 RANKED SERVICE</div>
+            <div class="provider-brand-title">#2 Bizee — Best Free Option</div>
           </div>
 
           <div class="quick-stats-table-wrap">
@@ -838,13 +826,8 @@
         <!-- #3 ZENBUSINESS -->
         <div class="provider-review-card" id="zenbusiness">
           <div class="provider-header-bar">
-            <div>
-              <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.15rem;">#3 RANKED SERVICE</div>
-              <div class="provider-brand-title">#3 ZenBusiness — Best Dashboard Experience</div>
-            </div>
-            <div class="brand-icon-badge">
-              <img src="images/zenbusiness-icon.jpg" alt="ZenBusiness Icon">
-            </div>
+            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#3 RANKED SERVICE</div>
+            <div class="provider-brand-title">#3 ZenBusiness — Best Dashboard Experience</div>
           </div>
 
           <div class="quick-stats-table-wrap">
@@ -903,13 +886,8 @@
         <!-- #4 LEGALZOOM -->
         <div class="provider-review-card" id="legalzoom">
           <div class="provider-header-bar">
-            <div>
-              <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.15rem;">#4 RANKED SERVICE</div>
-              <div class="provider-brand-title">#4 LegalZoom — Best for Attorney Access</div>
-            </div>
-            <div class="brand-icon-badge">
-              <img src="images/legalzoom-icon.png" alt="LegalZoom Icon">
-            </div>
+            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#4 RANKED SERVICE</div>
+            <div class="provider-brand-title">#4 LegalZoom — Best for Attorney Access</div>
           </div>
 
           <div class="quick-stats-table-wrap">
@@ -968,13 +946,8 @@
         <!-- #5 SWYFT FILINGS -->
         <div class="provider-review-card" id="swyft">
           <div class="provider-header-bar">
-            <div>
-              <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.15rem;">#5 RANKED SERVICE</div>
-              <div class="provider-brand-title">#5 Swyft Filings — Best for Repeat Filers</div>
-            </div>
-            <div class="brand-icon-badge">
-              <img src="images/swyft-filings-icon.webp" alt="Swyft Filings Icon">
-            </div>
+            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#5 RANKED SERVICE</div>
+            <div class="provider-brand-title">#5 Swyft Filings — Best for Repeat Filers</div>
           </div>
 
           <div class="quick-stats-table-wrap">
@@ -1195,7 +1168,7 @@
         </div>
 
         <!-- Track your own deadlines box -->
-        <div class="short-on-time-box" style="background: #E6F7F7; border-color: #159A9C; margin-bottom: 2.5rem;">
+        <div class="short-on-time-box" style="margin-bottom: 2.5rem;">
           <div style="font-size: 0.95rem; color: #12304A;">
             🗓️ <strong>Track your own deadlines too:</strong> Use our free <a href="llc-guide.html" style="color: #159A9C; font-weight: 700; text-decoration: underline;">State Annual Report Deadline Tracker</a> to see your exact filing date and fee — a smart backup regardless of which RA service you use.
           </div>
@@ -1260,19 +1233,19 @@
         <div style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 14px; padding: 1.5rem; margin-bottom: 2.5rem;">
           <div style="font-size: 0.75rem; font-weight: 800; color: #64748B; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem;">RELATED LLC GUIDES</div>
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-            <a href="how-much-does-an-llc-cost.html" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block;">
+            <a href="how-much-does-an-llc-cost.html" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block; transition: all 0.2s ease;">
               <strong style="color: #12304A; display: block; font-size: 0.95rem;">LLC Cost by State</strong>
               <span style="color: #159A9C; font-size: 0.78rem; font-weight: 700;">All 50 States</span>
               <span style="color: #64748B; display: block; font-size: 0.75rem; margin-top: 0.2rem;">Formation + annual fees</span>
             </a>
 
-            <a href="llc-guide.html" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block;">
+            <a href="llc-guide.html" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block; transition: all 0.2s ease;">
               <strong style="color: #12304A; display: block; font-size: 0.95rem;">LLC Annual Report</strong>
               <span style="color: #159A9C; font-size: 0.78rem; font-weight: 700;">All 50 states</span>
               <span style="color: #64748B; display: block; font-size: 0.75rem; margin-top: 0.2rem;">Deadlines & penalties</span>
             </a>
 
-            <a href="start-llc.html" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block;">
+            <a href="start-llc.html" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 1rem; text-align: center; text-decoration: none; display: block; transition: all 0.2s ease;">
               <strong style="color: #12304A; display: block; font-size: 0.95rem;">After Forming an LLC</strong>
               <span style="color: #159A9C; font-size: 0.78rem; font-weight: 700;">11-Step Checklist</span>
               <span style="color: #64748B; display: block; font-size: 0.75rem; margin-top: 0.2rem;">EIN, bank, taxes & more</span>
