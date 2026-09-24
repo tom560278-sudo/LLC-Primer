@@ -19,43 +19,64 @@
     
     /* Dual-Shade Executive Verification Banner */
     .review-check-banner {
-      background: linear-gradient(135deg, #12304A 0%, #0F766E 50%, #159A9C 100%);
+      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #12304A 0%, #0B1928 100%);
       color: #F8FAFC;
-      border-radius: 16px;
-      padding: 1.35rem 1.65rem;
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
       font-size: 0.875rem;
       line-height: 1.6;
       margin-top: 1rem;
       margin-bottom: 1.5rem;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 28px rgba(18, 48, 74, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 12px 35px rgba(18, 48, 74, 0.22);
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
     }
     .review-check-banner a {
       color: #6EE7B7;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 0.15rem 0.55rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(110, 231, 183, 0.25);
+      padding: 0.2rem 0.65rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.2s ease;
+      transition: all 0.2s ease;
+      display: inline-block;
     }
     .review-check-banner a:hover {
       background: rgba(255, 255, 255, 0.25);
+      border-color: #6EE7B7;
+      transform: translateY(-1px);
     }
 
     .affiliate-disc-box {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 10px;
-      padding: 0.85rem 1.15rem;
-      font-size: 0.8rem;
-      color: #64748B;
+      background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+      border: 1.5px solid #CBD5E1;
+      border-left: 4px solid #159A9C;
+      border-radius: 12px;
+      padding: 0.9rem 1.25rem;
+      font-size: 0.825rem;
+      color: #475569;
       margin-bottom: 1.75rem;
+      box-shadow: 0 2px 8px rgba(18, 48, 74, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
     }
     .affiliate-disc-box strong {
       color: #12304A;
+      font-weight: 800;
+    }
+    .affiliate-disc-badge {
+      background: #E6F7F7;
+      color: #159A9C;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
     }
 
     .stats-4grid {
@@ -261,10 +282,11 @@
     /* Head to Head Progress Chart */
     .rating-progress-card {
       background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 16px;
-      padding: 1.5rem;
+      border: 1.5px solid #159A9C;
+      border-radius: 18px;
+      padding: 1.75rem;
       margin-bottom: 2rem;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.08);
     }
     .progress-bar-row {
       margin-bottom: 1rem;
@@ -423,7 +445,7 @@
 
         <div class="nav-item">
           <a href="best-llc-services.html" class="nav-link active" style="color: var(--color-primary); font-weight: 800;">
-            Reviews
+            LLC Services
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
@@ -504,7 +526,7 @@
       <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
         <a href="index.html" style="color: #64748B; text-decoration: none; font-weight: 500;">Home</a>
         <span style="color: #CBD5E1;">/</span>
-        <a href="best-llc-services.html" style="color: #64748B; text-decoration: none; font-weight: 500;">Service Reviews</a>
+        <a href="start-llc.html" style="color: #64748B; text-decoration: none; font-weight: 500;">How to Start an LLC</a>
         <span style="color: #CBD5E1;">/</span>
         <span style="color: #12304A; font-weight: 700;">Best LLC Formation Services (2026)</span>
       </div>
@@ -545,7 +567,8 @@
 
       <!-- Affiliate Disclosure Box -->
       <div class="affiliate-disc-box">
-        <strong>DISCLOSURE:</strong> Some links on this page are affiliate links. We may earn a commission if you sign up through them — at no extra cost to you. This never affects our ratings or recommendations.
+        <span class="affiliate-disc-badge">Disclosure</span>
+        <span><strong>AFFILIATE DISCLOSURE:</strong> Some links on this page are affiliate links. We may earn a commission if you sign up through them — at no extra cost to you. This never affects our ratings or recommendations.</span>
       </div>
 
       <!-- Hero Text -->
@@ -1383,7 +1406,7 @@
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
-                <span class="faq-q-badge">Q1</span>
+                <span class="faq-q-badge">1</span>
                 <span>What is the best LLC formation service?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1396,7 +1419,7 @@
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
-                <span class="faq-q-badge">Q2</span>
+                <span class="faq-q-badge">2</span>
                 <span>Do I need an LLC formation service?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1409,7 +1432,7 @@
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
-                <span class="faq-q-badge">Q3</span>
+                <span class="faq-q-badge">3</span>
                 <span>How much do LLC formation services cost?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1422,7 +1445,7 @@
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
-                <span class="faq-q-badge">Q4</span>
+                <span class="faq-q-badge">4</span>
                 <span>Is LegalZoom worth it?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1435,7 +1458,7 @@
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
-                <span class="faq-q-badge">Q5</span>
+                <span class="faq-q-badge">5</span>
                 <span>What is the difference between ZenBusiness and Northwest?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1448,7 +1471,7 @@
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
-                <span class="faq-q-badge">Q6</span>
+                <span class="faq-q-badge">6</span>
                 <span>Which LLC service is best for non-US founders?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1456,7 +1479,7 @@
             <div class="faq-accordion-answer">
               doola ($297 + state) is specifically built for non-US founders and non-residents, offering full remote LLC setup, EIN acquisition without SSN, US business bank account assistance, and ongoing tax filings. Northwest is also popular for non-US founders who want a lower-cost $39 entry point in Wyoming or Delaware.
             </div>
-          </div
+          </details>
         </div>
       </section>
 
@@ -1464,69 +1487,69 @@
   </main>
 
   <!-- =========================================================================
-       FOOTER (EXACT MATCH HOMEPAGE & START-LLC)
+       FOOTER (EXACT 1:1 MATCH WITH WHAT-IS-AN-LLC.HTML & HOMEPAGE)
        ========================================================================= -->
   <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-col footer-col-brand">
-        <a href="index.html" class="footer-logo">
-          <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
-        </a>
-        <p class="footer-tagline">
-          Accurate, state-by-state LLC formation guides, filing fee calculators, templates, and compliance resources for 2026.
-        </p>
-        <div class="footer-disclaimer">
-          <strong>Disclaimer:</strong> LLC Primer is an independent educational publication and search directory. We are not a law firm, registered agent, or government agency, and do not provide legal, tax, or financial advice.
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="site-logo" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p style="font-size:0.88rem; color: #CBD5E1; margin-top:1rem; line-height: 1.6;">
+           LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Popular States</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Wyoming LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Florida LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Texas LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
+            <li><a href="index.html#cost-estimator-section" onclick="openCostCalculatorModal(); return false;" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator (Popup)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">Business Banking</a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="footer-col">
-        <h4>LLC Guides</h4>
-        <ul class="footer-links">
-          <li><a href="what-is-an-llc.html">What is an LLC?</a></li>
-          <li><a href="best-state-to-form-an-llc.html">Best State for LLC</a></li>
-          <li><a href="how-much-does-an-llc-cost.html">LLC Costs & Fees</a></li>
-          <li><a href="how-are-llcs-taxed.html">How Are LLCs Taxed?</a></li>
-          <li><a href="operating-agreement.html">LLC Operating Agreement</a></li>
-          <li><a href="registered-agent-guide.html">Registered Agent Guide</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Filing Services</h4>
-        <ul class="footer-links">
-          <li><a href="best-llc-services.html">Best LLC Services 2026</a></li>
-          <li><a href="best-llc-services.html#northwest">Northwest Registered Agent Review</a></li>
-          <li><a href="best-llc-services.html#zenbusiness">ZenBusiness Review</a></li>
-          <li><a href="best-llc-services.html#bizee">Bizee Review</a></li>
-          <li><a href="best-llc-services.html#doola">doola Review (Non-US)</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Free Tools</h4>
-        <ul class="footer-links">
-          <li><a href="quiz.html">🧩 Interactive 60-Sec LLC Quiz</a></li>
-          <li><a href="index.html#cost-estimator-section">📊 First-Year Cost Calculator</a></li>
-          <li><a href="index.html#states-section">🏛️ 50-State Fee Directory</a></li>
-          <li><a href="start-llc.html">📋 LLC Formation Checklist</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container footer-bottom-container">
-        <div>© 2026 LLC Primer. All rights reserved.</div>
-        <div class="footer-bottom-links">
-          <a href="index.html">Privacy Policy</a>
-          <span>·</span>
-          <a href="index.html">Terms of Service</a>
-          <span>·</span>
-          <a href="best-llc-services.html#how-we-review">Affiliate Disclosure</a>
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
+        <div>
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </div>
+        <div>
+          © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a href="index.html#terms">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
