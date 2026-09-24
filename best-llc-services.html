@@ -17,19 +17,32 @@
       padding: 0 1.25rem;
     }
     
+    /* Dual-Shade Executive Verification Banner */
     .review-check-banner {
-      background: #12304A;
+      background: linear-gradient(135deg, #12304A 0%, #0F766E 50%, #159A9C 100%);
       color: #F8FAFC;
-      border-radius: 12px;
-      padding: 1rem 1.25rem;
-      font-size: 0.835rem;
-      line-height: 1.55;
-      margin-bottom: 1.25rem;
-      border-left: 4px solid #159A9C;
+      border-radius: 16px;
+      padding: 1.35rem 1.65rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(18, 48, 74, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
     .review-check-banner a {
-      color: #93C5FD;
-      text-decoration: underline;
+      color: #6EE7B7;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+    .review-check-banner a:hover {
+      background: rgba(255, 255, 255, 0.25);
     }
 
     .affiliate-disc-box {
@@ -308,6 +321,80 @@
       border-bottom: none;
     }
 
+    /* Standard Site FAQ Accordion Styles (Exact Match with what-is-an-llc.html) */
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
+
     @media (max-width: 768px) {
       .stats-4grid { grid-template-columns: repeat(2, 1fr); }
       .toc-links-grid { grid-template-columns: 1fr; }
@@ -408,14 +495,52 @@
   </header>
 
   <!-- =========================================================================
-       2. REVIEWS HERO SECTION
+       2. REVIEWS HERO SECTION WITH BREADCRUMB & DUAL-SHADE BANNER
        ========================================================================= -->
-  <section style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%); padding: 2.5rem 0 1.5rem 0; border-bottom: 1px solid #E2E8F0;">
+  <section style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%); padding: 1.5rem 0 1.5rem 0; border-bottom: 1px solid #E2E8F0;">
     <div class="reviews-container">
-      
-      <!-- Review Verification Banner -->
+
+      <!-- BREADCRUMB NAVIGATION -->
+      <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
+        <a href="index.html" style="color: #64748B; text-decoration: none; font-weight: 500;">Home</a>
+        <span style="color: #CBD5E1;">/</span>
+        <a href="best-llc-services.html" style="color: #64748B; text-decoration: none; font-weight: 500;">Service Reviews</a>
+        <span style="color: #CBD5E1;">/</span>
+        <span style="color: #12304A; font-weight: 700;">Best LLC Formation Services (2026)</span>
+      </div>
+
+      <!-- Review Verification Banner (Enhanced Dual-Shade Executive Design) -->
       <div class="review-check-banner">
-        <strong>How this review was checked:</strong> We reviewed the providers' official public pricing and plan pages on September 7, 2026, comparing advertised base prices, renewals, included services and stated exclusions. State filing fees are separate. We did not place a new paid order for this update, so service-quality observations are editorial analysis rather than a mystery-shopping test. Affiliate relationships do not change our ranking criteria or the price you pay. Prices and promotions can change; verify the current offer at <a href="#northwest">Northwest</a>, <a href="#bizee">Bizee</a>, <a href="#doola">doola</a>, <a href="#legalzoom">LegalZoom</a>, <a href="#swyft">Swyft Filings</a>, <a href="#tailor">Tailor Brands</a>, <a href="#zenbusiness">ZenBusiness</a>.
+        <!-- Background Glow Spheres -->
+        <div style="position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); filter: blur(25px); pointer-events: none;"></div>
+        <div style="position: absolute; bottom: -50px; left: 35%; width: 200px; height: 200px; border-radius: 50%; background: rgba(21, 154, 156, 0.25); filter: blur(35px); pointer-events: none;"></div>
+
+        <div style="display: flex; align-items: flex-start; gap: 0.85rem; position: relative; z-index: 2;">
+          <span style="background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; margin-top: 0.1rem;">
+            🔍
+          </span>
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.25rem;">
+              VERIFIED EDITORIAL METHODOLOGY · SEPTEMBER 2026
+            </div>
+            <div style="color: #FFFFFF; font-weight: 800; font-size: 1.05rem; margin-bottom: 0.35rem;">
+              How This Review Was Checked
+            </div>
+            <p style="margin: 0 0 0.85rem 0; color: #E2E8F0; font-size: 0.85rem; line-height: 1.6;">
+              We reviewed the providers' official public pricing and plan pages on September 7, 2026, comparing advertised base prices, renewals, included services, and stated exclusions. State filing fees are separate. We did not place a new paid order for this update, so service-quality observations are editorial analysis rather than a mystery-shopping test. Affiliate relationships do not change our ranking criteria or the price you pay.
+            </p>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; font-size: 0.78rem; color: #CBD5E1;">
+              <span style="font-weight: 700; color: #FFFFFF;">Verify live provider offers:</span>
+              <a href="#northwest">Northwest</a>
+              <a href="#zenbusiness">ZenBusiness</a>
+              <a href="#bizee">Bizee</a>
+              <a href="#tailor">Tailor Brands</a>
+              <a href="#legalzoom">LegalZoom</a>
+              <a href="#swyft">Swyft Filings</a>
+              <a href="#doola">doola</a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Affiliate Disclosure Box -->
@@ -577,68 +702,73 @@
         </div>
       </section>
 
-      <!-- SECTION 2: OUR #1 PICK -->
+      <!-- SECTION 2: OUR #1 PICK (ENHANCED ATTRACTIVE VISUAL HERO DESIGN) -->
       <section id="number-1-pick" style="margin-bottom: 3.5rem;">
         <h2 style="font-size: 1.85rem; font-weight: 800; color: #12304A; margin-bottom: 1.25rem;">
           Our #1 Pick — Northwest Registered Agent
         </h2>
 
-        <div style="background: linear-gradient(135deg, #0F766E 0%, #115E59 100%); border-radius: 20px; padding: 2rem; color: #FFFFFF; box-shadow: 0 12px 32px rgba(15, 118, 110, 0.25);">
+        <div style="background: linear-gradient(135deg, #064E3B 0%, #0F766E 45%, #12304A 100%); border-radius: 22px; padding: 2.25rem 2rem; color: #FFFFFF; box-shadow: 0 16px 40px rgba(6, 78, 59, 0.28); position: relative; overflow: hidden; border: 1.5px solid rgba(255, 255, 255, 0.15);">
           
-          <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 1.5rem;">
+          <!-- Background Radial Decorative Spheres -->
+          <div style="position: absolute; top: -60px; right: -60px; width: 260px; height: 260px; border-radius: 50%; background: rgba(21, 154, 156, 0.25); filter: blur(50px); pointer-events: none;"></div>
+          <div style="position: absolute; bottom: -60px; left: -40px; width: 220px; height: 220px; border-radius: 50%; background: rgba(245, 158, 11, 0.15); filter: blur(45px); pointer-events: none;"></div>
+
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 1.75rem; position: relative; z-index: 2;">
             <div>
-              <div style="background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 9999px; padding: 0.25rem 0.85rem; font-size: 0.75rem; font-weight: 800; display: inline-block; margin-bottom: 0.75rem; letter-spacing: 0.05em;">
-                ⭐ #1 RATED FORMATION SERVICE
+              <div style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: #0F2942; border-radius: 9999px; padding: 0.35rem 1rem; font-size: 0.78rem; font-weight: 900; display: inline-block; margin-bottom: 0.85rem; letter-spacing: 0.06em; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);">
+                🏆 #1 RATED FORMATION SERVICE
               </div>
-              <h3 style="font-size: 2rem; font-weight: 800; margin: 0 0 0.5rem 0; color: #FFFFFF;">
+              <h3 style="font-size: 2.2rem; font-weight: 900; margin: 0 0 0.6rem 0; color: #FFFFFF; font-family: var(--font-heading);">
                 Northwest Registered Agent
               </h3>
-              <p style="font-size: 0.975rem; color: #CCFBF1; max-width: 680px; margin: 0; line-height: 1.6;">
+              <p style="font-size: 1.025rem; color: #CCFBF1; max-width: 680px; margin: 0; line-height: 1.65;">
                 The most transparent, privacy-first LLC service on the market. One flat fee — no subscriptions, no upsells, no surprises. Registered agent included free for year one.
               </p>
             </div>
 
-            <div style="background: #F59E0B; color: #78350F; border-radius: 50%; width: 105px; height: 105px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.2); flex-shrink: 0;">
-              <span style="font-size: 1.65rem; font-weight: 900; line-height: 1;">$39</span>
-              <span style="font-size: 0.65rem; font-weight: 800; text-transform: uppercase; margin-top: 0.1rem;">+ state fees</span>
+            <!-- Golden Price Badge -->
+            <div style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: #1E293B; border-radius: 50%; width: 110px; height: 110px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.3); flex-shrink: 0; border: 3px solid rgba(255, 255, 255, 0.4);">
+              <span style="font-size: 1.75rem; font-weight: 900; line-height: 1; color: #0F172A;">$39</span>
+              <span style="font-size: 0.65rem; font-weight: 800; text-transform: uppercase; margin-top: 0.15rem; color: #334155;">+ state fees</span>
             </div>
           </div>
 
           <!-- Feature Pills -->
-          <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; font-size: 0.8rem; font-weight: 700;">
-            <span style="background: rgba(255,255,255,0.15); padding: 0.35rem 0.75rem; border-radius: 9999px;">✓ RA Free Year 1</span>
-            <span style="background: rgba(255,255,255,0.15); padding: 0.35rem 0.75rem; border-radius: 9999px;">✓ Operating Agreement</span>
-            <span style="background: rgba(255,255,255,0.15); padding: 0.35rem 0.75rem; border-radius: 9999px;">✓ Privacy by Default</span>
-            <span style="background: rgba(255,255,255,0.15); padding: 0.35rem 0.75rem; border-radius: 9999px;">✓ No Subscription</span>
-            <span style="background: rgba(255,255,255,0.15); padding: 0.35rem 0.75rem; border-radius: 9999px;">✓ US-Based Support</span>
+          <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; margin-bottom: 1.75rem; font-size: 0.825rem; font-weight: 700; position: relative; z-index: 2;">
+            <span style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 0.4rem 0.85rem; border-radius: 9999px;">✓ RA Free Year 1</span>
+            <span style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 0.4rem 0.85rem; border-radius: 9999px;">✓ Operating Agreement</span>
+            <span style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 0.4rem 0.85rem; border-radius: 9999px;">✓ Privacy by Default</span>
+            <span style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 0.4rem 0.85rem; border-radius: 9999px;">✓ No Subscription</span>
+            <span style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 0.4rem 0.85rem; border-radius: 9999px;">✓ US-Based Support</span>
           </div>
 
-          <!-- 4 Mini Cards -->
-          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.75rem;" class="specs-2col-grid">
-            <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 1rem;">
-              <div style="font-weight: 800; font-size: 0.9rem; color: #FFFFFF; margin-bottom: 0.25rem;">🛡️ Registered Agent Included</div>
-              <div style="font-size: 0.8rem; color: #CCFBF1;">Free for year one — <strong>saves $125–249</strong> vs. other services</div>
+          <!-- 4 Glassmorphic Sub-Cards -->
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.75rem; position: relative; z-index: 2;" class="specs-2col-grid">
+            <div style="background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 14px; padding: 1.15rem; backdrop-filter: blur(8px);">
+              <div style="font-weight: 800; font-size: 0.95rem; color: #FFFFFF; margin-bottom: 0.3rem;">🛡️ Registered Agent Included</div>
+              <div style="font-size: 0.825rem; color: #CCFBF1; line-height: 1.5;">Free for year one — <strong style="color: #6EE7B7;">saves $125–249</strong> vs. other services</div>
             </div>
-            <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 1rem;">
-              <div style="font-weight: 800; font-size: 0.9rem; color: #FFFFFF; margin-bottom: 0.25rem;">🔒 Privacy by Default</div>
-              <div style="font-size: 0.8rem; color: #CCFBF1;">Their address on public records — your info stays private</div>
+            <div style="background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 14px; padding: 1.15rem; backdrop-filter: blur(8px);">
+              <div style="font-weight: 800; font-size: 0.95rem; color: #FFFFFF; margin-bottom: 0.3rem;">🔒 Privacy by Default</div>
+              <div style="font-size: 0.825rem; color: #CCFBF1; line-height: 1.5;">Their address on public records — your home info stays private</div>
             </div>
-            <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 1rem;">
-              <div style="font-weight: 800; font-size: 0.9rem; color: #FFFFFF; margin-bottom: 0.25rem;">📋 Optional EIN Filing</div>
-              <div style="font-size: 0.8rem; color: #CCFBF1;">Available as $50 add-on; eligible applicants can apply free at IRS.gov</div>
+            <div style="background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 14px; padding: 1.15rem; backdrop-filter: blur(8px);">
+              <div style="font-weight: 800; font-size: 0.95rem; color: #FFFFFF; margin-bottom: 0.3rem;">📋 Optional EIN Filing</div>
+              <div style="font-size: 0.825rem; color: #CCFBF1; line-height: 1.5;">Available as $50 add-on; eligible applicants can apply free at IRS.gov</div>
             </div>
-            <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 1rem;">
-              <div style="font-weight: 800; font-size: 0.9rem; color: #FFFFFF; margin-bottom: 0.25rem;">📞 Real Human Support</div>
-              <div style="font-size: 0.8rem; color: #CCFBF1;">U.S.-based Corporate Guides — no offshore call centers</div>
+            <div style="background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 14px; padding: 1.15rem; backdrop-filter: blur(8px);">
+              <div style="font-weight: 800; font-size: 0.95rem; color: #FFFFFF; margin-bottom: 0.3rem;">📞 Real Human Support</div>
+              <div style="font-size: 0.825rem; color: #CCFBF1; line-height: 1.5;">U.S.-based Corporate Guides — no offshore call centers</div>
             </div>
           </div>
 
           <!-- Bottom Footer Callout -->
-          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 1.25rem;">
-            <div style="font-size: 0.875rem; color: #CCFBF1; font-weight: 600;">
-              ⭐ <strong>4.9/5 Rating</strong> — Trusted by 3M+ business owners · 20+ years in business
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.25); padding-top: 1.35rem; position: relative; z-index: 2;">
+            <div style="font-size: 0.9rem; color: #CCFBF1; font-weight: 700;">
+              ⭐ <strong style="color: #FFFFFF;">4.9/5 Rating</strong> — Trusted by 3M+ business owners · 20+ years in business
             </div>
-            <a href="https://www.northwestregisteredagent.com" target="_blank" rel="sponsored noopener" class="ls-btn" style="background: #10B981; color: #FFFFFF; font-weight: 800; padding: 0.75rem 1.75rem; border-radius: 9999px; font-size: 0.95rem; text-decoration: none;">
+            <a href="https://www.northwestregisteredagent.com" target="_blank" rel="sponsored noopener" class="ls-btn" style="background: #10B981; color: #FFFFFF; font-weight: 800; padding: 0.85rem 2rem; border-radius: 9999px; font-size: 1rem; text-decoration: none; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);">
               Start with Northwest — $39 →
             </a>
           </div>
@@ -1243,54 +1373,90 @@
         </div>
       </section>
 
-      <!-- SECTION 8: FAQ ACCORDION -->
-      <section id="faq-section" style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.85rem; font-weight: 800; color: #12304A; margin-bottom: 1.25rem;">
+      <!-- SECTION 8: FAQ ACCORDION (EXACT MATCH STYLING WITH WHAT-IS-AN-LLC.HTML) -->
+      <section id="faq-section" style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.85rem; font-weight: 800; color: #12304A; margin-bottom: 1.25rem; font-family: var(--font-heading);">
           Frequently Asked Questions
         </h2>
 
-        <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+        <div class="faq-accordion-wrapper">
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-title">What is the best LLC formation service?</summary>
-            <div class="faq-accordion-content">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">Q1</span>
+                <span>What is the best LLC formation service?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
               For most business owners, Northwest Registered Agent is our top recommendation due to its $39 flat pricing, free first-year registered agent, privacy protection, and transparent pricing without hidden renewal surprises. ZenBusiness is another excellent choice for $0 formation with guided compliance.
             </div>
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-title">Do I need an LLC formation service?</summary>
-            <div class="faq-accordion-content">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">Q2</span>
+                <span>Do I need an LLC formation service?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
               No. You can file Articles of Organization directly with your state Secretary of State office. However, using a formation service saves time, ensures accuracy, handles registered agent requirements, and provides templates like Operating Agreements and compliance reminders.
             </div>
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-title">How much do LLC formation services cost?</summary>
-            <div class="faq-accordion-content">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">Q3</span>
+                <span>How much do LLC formation services cost?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
               Base formation services range from $0 to $297 plus state filing fees. Many services offer $0 base packages (you only pay state fees), but add-on services like registered agent ($119–$249/yr), EIN filing ($50–$99), and Operating Agreements can increase the total cost.
             </div>
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-title">Is LegalZoom worth it?</summary>
-            <div class="faq-accordion-content">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">Q4</span>
+                <span>Is LegalZoom worth it?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
               LegalZoom is a recognized legal brand and is worth considering if you need access to ongoing attorney consultations or estate planning bundle packages. However, for standard LLC formation, it is more expensive than competitors like Northwest or ZenBusiness and charges higher ongoing registered agent fees ($249/yr).
             </div>
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-title">What is the difference between ZenBusiness and Northwest?</summary>
-            <div class="faq-accordion-content">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">Q5</span>
+                <span>What is the difference between ZenBusiness and Northwest?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
               ZenBusiness offers a $0 base formation plan with guided compliance tools, but charges $199/yr separately for registered agent service. Northwest charges $39 for formation, includes 1 year of registered agent service for free, provides superior address privacy, and does not require annual subscriptions.
             </div>
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-title">Which LLC service is best for non-US founders?</summary>
-            <div class="faq-accordion-content">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">Q6</span>
+                <span>Which LLC service is best for non-US founders?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
               doola ($297 + state) is specifically built for non-US founders and non-residents, offering full remote LLC setup, EIN acquisition without SSN, US business bank account assistance, and ongoing tax filings. Northwest is also popular for non-US founders who want a lower-cost $39 entry point in Wyoming or Delaware.
             </div>
-          </details>
+          </div
         </div>
       </section>
 
