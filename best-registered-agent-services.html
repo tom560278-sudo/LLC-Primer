@@ -82,9 +82,8 @@
     /* Callout Boxes */
     .short-on-time-box {
       background: #E6F7F7;
-      border: 1px solid rgba(21, 154, 156, 0.3);
-      border-left: 5px solid #159A9C;
-      border-radius: 4px 14px 14px 4px;
+      border: 1.5px solid #159A9C;
+      border-radius: 14px;
       padding: 1.25rem 1.5rem;
       margin-bottom: 2rem;
       color: #12304A;
@@ -151,7 +150,6 @@
       letter-spacing: 0.05em;
     }
     .master-table th:first-child {
-      background: #0B1928;
       width: 22%;
     }
     .master-table td {
@@ -193,7 +191,6 @@
       margin-bottom: 1.5rem;
       background: transparent;
       border: none;
-      border-bottom: 2px solid #E2E8F0;
     }
     .provider-brand-title {
       font-size: 1.5rem;
@@ -351,47 +348,82 @@
       color: #12304A;
     }
 
-    /* Accordion FAQs */
+    /* Standard Site FAQ Accordion Styles (Exact Match with best-llc-services.html) */
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
     .faq-accordion-item {
       background: #FFFFFF;
       border: 1.5px solid #E2E8F0;
-      border-radius: 12px;
-      margin-bottom: 0.85rem;
+      border-radius: 16px;
       overflow: hidden;
-      transition: all 0.2s ease;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      width: 100% !important;
+      max-width: 100% !important;
     }
     .faq-accordion-item:hover {
       border-color: #159A9C;
-      box-shadow: 0 4px 14px rgba(21, 154, 156, 0.08);
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
     }
-    .faq-accordion-header {
-      padding: 1.1rem 1.35rem;
-      font-size: 1rem;
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
       font-weight: 700;
+      font-size: 1.05rem;
       color: #12304A;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
       user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
     }
-    .faq-accordion-body {
-      padding: 0 1.35rem 1.15rem 1.35rem;
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: #475569;
+    .faq-accordion-question::-webkit-details-marker {
       display: none;
     }
-    .faq-accordion-item.active .faq-accordion-body {
-      display: block;
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
     }
-    .faq-icon-toggle {
-      font-size: 1.1rem;
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
       color: #159A9C;
-      transition: transform 0.2s ease;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
     }
-    .faq-accordion-item.active .faq-icon-toggle {
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
       transform: rotate(180deg);
+    }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
     }
   </style>
 </head>
@@ -539,24 +571,6 @@
           </div>
           <div style="font-size: 0.95rem; line-height: 1.6; color: #12304A;">
             <strong><a href="northwest-registered-agent-review.html" style="color: #159A9C; text-decoration: underline;">Northwest Registered Agent</a></strong> is the best overall choice. For $39 (formation + free 1st year RA), you get privacy protection on state filings, $125/yr renewals, real offices in all 50 states, and zero upsells. No other service matches this combination of value, privacy, and transparency.
-          </div>
-        </div>
-
-        <!-- In This Guide TOC -->
-        <div class="toc-card-box">
-          <h3>IN THIS GUIDE</h3>
-          <div class="toc-list-grid">
-            <a href="#master-comparison">1. Master Comparison: All 5 Side by Side</a>
-            <a href="#northwest">2. #1 Northwest Registered Agent — Best Overall</a>
-            <a href="#bizee">3. #2 Bizee — Best Free Option</a>
-            <a href="#zenbusiness">4. #3 ZenBusiness — Best Dashboard Experience</a>
-            <a href="#legalzoom">5. #4 LegalZoom — Best for Attorney Access</a>
-            <a href="#swyft">6. #5 Swyft Filings — Best for Repeat Filers</a>
-            <a href="#how-to-choose">7. How to Choose the Right Registered Agent</a>
-            <a href="#what-does-ra-do">8. What Does a Registered Agent Actually Do?</a>
-            <a href="#mistakes-to-avoid">9. 3 Registered Agent Mistakes to Avoid</a>
-            <a href="#by-state">10. Best Registered Agent by State — Where Each Service Wins</a>
-            <a href="#faq">11. Frequently Asked Questions</a>
           </div>
         </div>
 
@@ -755,7 +769,7 @@
             Northwest is the best choice for <strong>first-time LLC owners</strong> who want a complete, worry-free setup. It's also ideal for <strong>privacy-conscious business owners</strong> and anyone who values transparent, predictable pricing. In addition, the multi-state discount makes Northwest the top pick for <strong>real estate investors</strong> with LLCs in multiple states. If you are still deciding whether you need a virtual address at all, see our guide on <a href="registered-agent-guide.html">do you need a virtual address for your LLC</a> before you sign up.
           </p>
 
-          <p><a href="northwest-registered-agent-review.html" style="font-weight: 700; color: #159A9C;">→ Read Our Full Northwest Review</a></p>
+          <p><a href="northwest-registered-agent-review.html" style="font-weight: 700; color: #159A9C;">Read Our Full Northwest Review →</a></p>
 
           <a href="https://www.northwestregisteredagent.com" target="_blank" rel="noopener" class="btn-provider-cta">
             Start Your LLC with Northwest — $39 + State Fee →
@@ -819,7 +833,7 @@
             Bizee is the best pick for <strong>budget-conscious entrepreneurs</strong> and <strong>side hustlers</strong> who need a legitimate LLC at the absolute lowest cost. It's also great for anyone who wants a <strong>free tax consultation</strong> included — a unique perk that helps with self-employment tax questions.
           </p>
 
-          <p><a href="best-llc-formation-services.html#bizee" style="font-weight: 700; color: #159A9C;">→ Read Our Full Bizee Review</a></p>
+          <p><a href="best-llc-formation-services.html#bizee" style="font-weight: 700; color: #159A9C;">Read Our Full Bizee Review →</a></p>
         </div>
 
 
@@ -879,7 +893,7 @@
             Choose ZenBusiness if you're a <strong>tech-savvy entrepreneur</strong> who values a polished dashboard and mobile access. It's also a good pick if you want <strong>everything managed in one platform</strong>. Nevertheless, consider getting your RA from Northwest separately — you'll save $74/yr while keeping ZenBusiness's dashboard for formation. <span class="category-pill">💼 Business Formation</span>
           </p>
 
-          <p><a href="zenbusiness-vs-northwest.html" style="font-weight: 700; color: #159A9C;">→ Read Our Full ZenBusiness Review</a></p>
+          <p><a href="zenbusiness-vs-northwest.html" style="font-weight: 700; color: #159A9C;">Read Our Full ZenBusiness Review →</a></p>
         </div>
 
 
@@ -939,7 +953,7 @@
             LegalZoom's RA makes sense only if you're <strong>already using their legal services</strong> and want everything under one account. Otherwise, there's no reason to pay $249/yr when Northwest charges $125 and includes privacy protection that LegalZoom doesn't offer.
           </p>
 
-          <p><a href="best-llc-formation-services.html#legalzoom" style="font-weight: 700; color: #159A9C;">→ Read Our Full LegalZoom Review</a></p>
+          <p><a href="best-llc-formation-services.html#legalzoom" style="font-weight: 700; color: #159A9C;">Read Our Full LegalZoom Review →</a></p>
         </div>
 
 
@@ -999,7 +1013,7 @@
             Swyft's RA works best for <strong>experienced business owners</strong> forming a second or third LLC who already know exactly what they need and don't want bundled services. For first-time LLC owners, the top three options on this list are all better choices.
           </p>
 
-          <p><a href="best-llc-services.html#swyft" style="font-weight: 700; color: #159A9C;">→ Read Our Full Swyft Filings Review</a></p>
+          <p><a href="best-llc-services.html#swyft" style="font-weight: 700; color: #159A9C;">Read Our Full Swyft Filings Review →</a></p>
         </div>
 
 
@@ -1135,33 +1149,33 @@
           Before you choose a Registered Agent, make sure you don't fall into these common traps. Each one can cost you hundreds of dollars or put your LLC at risk.
         </p>
 
-        <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem;">
-          <div style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div class="mistake-num-badge">1</div>
+        <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem;">
+          <div style="background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 14px; padding: 1.35rem 1.5rem; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); display: flex; align-items: flex-start; gap: 1.1rem; transition: all 0.2s ease;">
+            <span style="background: #FEE2E2; color: #991B1B; font-weight: 800; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.95rem;">1</span>
             <div>
-              <strong style="color: #12304A; font-size: 1.05rem;">Paying More Than $150/Year for RA Service</strong>
-              <p style="margin: 0.35rem 0 0 0; color: #334155; font-size: 0.95rem; line-height: 1.65;">
-                If you're paying $199/yr (ZenBusiness) or $249/yr (LegalZoom) for Registered Agent service, you're overpaying. The service is essentially the same across all providers — someone receives your mail and scans it. Northwest charges $125/yr and Bizee charges $119/yr for the exact same thing. Over 5 years, switching from LegalZoom to Bizee saves you <strong>$650</strong>. That's money better spent on your actual business — see our full <a href="how-much-does-an-llc-cost.html">LLC cost breakdown by state</a> to understand the complete picture.
+              <h3 style="color: #12304A; font-size: 1.05rem; margin: 0 0 0.4rem 0;">Paying More Than $150/Year for RA Service</h3>
+              <p style="margin: 0; color: #475569; font-size: 0.925rem; line-height: 1.65;">
+                If you're paying $199/yr (ZenBusiness) or $249/yr (LegalZoom) for Registered Agent service, you're overpaying. The service is essentially the same across all providers — receiving mail and scanning it. Northwest charges $125/yr and Bizee charges $119/yr for the exact same thing. Over 5 years, switching from LegalZoom to Bizee saves you <strong>$650</strong>. That's money better spent on your business — see our full <a href="how-much-does-an-llc-cost.html" style="color: #159A9C; font-weight: 700;">LLC cost breakdown by state</a> to calculate your full total.
               </p>
             </div>
           </div>
 
-          <div style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div class="mistake-num-badge">2</div>
+          <div style="background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 14px; padding: 1.35rem 1.5rem; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); display: flex; align-items: flex-start; gap: 1.1rem; transition: all 0.2s ease;">
+            <span style="background: #FEE2E2; color: #991B1B; font-weight: 800; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.95rem;">2</span>
             <div>
-              <strong style="color: #12304A; font-size: 1.05rem;">Ignoring Privacy Protection</strong>
-              <p style="margin: 0.35rem 0 0 0; color: #334155; font-size: 0.95rem; line-height: 1.65;">
-                When you form an LLC, your Registered Agent's address goes on state records. If you're your own RA or use a service that doesn't offer privacy, <strong>your home address becomes public</strong>. Data brokers scrape this within days, and you'll start getting junk mail, spam calls, and your address will appear in Google results. Once it's out there, you can't take it back. Northwest is the only major service that uses their own address on your filings by default — and it's worth choosing them for this reason alone. <span class="category-pill">⚖️ Business & Industrial</span>
+              <h3 style="color: #12304A; font-size: 1.05rem; margin: 0 0 0.4rem 0;">Ignoring Privacy Protection</h3>
+              <p style="margin: 0; color: #475569; font-size: 0.925rem; line-height: 1.65;">
+                When you form an LLC, your Registered Agent's address goes on state records. If you act as your own RA or use a service without privacy options, <strong>your home address becomes public</strong>. Data brokers scrape state registries within days, leading to junk mail, telemarketing, and searchable residential addresses. Northwest automatically uses their commercial address on state filings by default — preserving your privacy.
               </p>
             </div>
           </div>
 
-          <div style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div class="mistake-num-badge">3</div>
+          <div style="background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 14px; padding: 1.35rem 1.5rem; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); display: flex; align-items: flex-start; gap: 1.1rem; transition: all 0.2s ease;">
+            <span style="background: #FEE2E2; color: #991B1B; font-weight: 800; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.95rem;">3</span>
             <div>
-              <strong style="color: #12304A; font-size: 1.05rem;">Forgetting to Check Auto-Renewal Terms</strong>
-              <p style="margin: 0.35rem 0 0 0; color: #334155; font-size: 0.95rem; line-height: 1.65;">
-                Some services bundle RA with "compliance packages" that auto-renew at premium prices. For instance, ZenBusiness's Worry-Free Compliance auto-renews at $199/yr, and LegalZoom's attorney plan renews at $49/month. Before signing up, check exactly what auto-renews and set calendar reminders to cancel anything you don't need. Better yet, choose a service like Northwest that has <strong>zero auto-renewing subscriptions</strong>.
+              <h3 style="color: #12304A; font-size: 1.05rem; margin: 0 0 0.4rem 0;">Forgetting to Check Auto-Renewal Terms</h3>
+              <p style="margin: 0; color: #475569; font-size: 0.925rem; line-height: 1.65;">
+                Some services bundle RA with "compliance packages" that auto-renew at premium prices. For instance, ZenBusiness's Worry-Free Compliance auto-renews at $199/yr, and LegalZoom's attorney plan renews at $49/month. Before signing up, check exactly what auto-renews and set calendar reminders to cancel anything you don't need. Better yet, choose a service like Northwest that has <strong>zero hidden auto-renewing subscriptions</strong>.
               </p>
             </div>
           </div>
@@ -1259,7 +1273,7 @@
              ========================================================================= -->
         <h2>Our Final Recommendation</h2>
 
-        <div style="background: linear-gradient(135deg, #12304A 0%, #0B1928 100%); border: 1.5px solid #159A9C; border-left: 6px solid #159A9C; border-radius: 4px 16px 16px 4px; padding: 1.75rem 2rem; color: #FFFFFF; margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.18);">
+        <div style="background: linear-gradient(135deg, #12304A 0%, #0B1928 100%); border: 1.5px solid #159A9C; border-radius: 16px; padding: 1.75rem 2rem; color: #FFFFFF; margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.18);">
           <div style="font-size: 0.75rem; font-weight: 800; color: #6EE7B7; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">KEY TAKEAWAY</div>
           <p style="margin: 0; font-size: 1.05rem; line-height: 1.65; color: #F8FAFC;">
             After comparing all five <strong>registered agent services</strong>, the choice is clear. <strong>Northwest's privacy-first registered agent service</strong> wins on privacy, transparency, and overall value. <strong>Bizee</strong> wins on raw cost. For most LLC owners, Northwest's $125/yr with privacy protection is the smarter investment. For the tightest budgets, Bizee's $119/yr gets the job done. Either way, there's no reason to pay $199–$249/yr when better, cheaper options exist. <span class="category-pill">⚖️ Business & Corporate Law</span>
@@ -1272,68 +1286,88 @@
              ========================================================================= -->
         <h2 id="faq">Frequently Asked Questions</h2>
 
-        <div class="faq-accordion-item">
-          <div class="faq-accordion-header" onclick="toggleFaq(this)">
-            <span>Do I need a Registered Agent for my LLC?</span>
-            <span class="faq-icon-toggle">▼</span>
-          </div>
-          <div class="faq-accordion-body">
-            Yes. Every LLC in every US state is legally required to have a Registered Agent with a physical street address in the state of formation to receive official state notices and legal service of process.
-          </div>
-        </div>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">1</span>
+                <span>Do I need a Registered Agent for my LLC?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. Every LLC in every US state is legally required to have a Registered Agent with a physical street address in the state of formation to receive official state notices and legal service of process.
+            </div>
+          </details>
 
-        <div class="faq-accordion-item">
-          <div class="faq-accordion-header" onclick="toggleFaq(this)">
-            <span>What is the cheapest Registered Agent service?</span>
-            <span class="faq-icon-toggle">▼</span>
-          </div>
-          <div class="faq-accordion-body">
-            Bizee offers a free Registered Agent for 1 year when you form your LLC through their $0 plan, with renewals at $119/year. Northwest Registered Agent includes a free 1st year with their $39 LLC formation package, with renewals at $125/year and full privacy protection included.
-          </div>
-        </div>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">2</span>
+                <span>What is the cheapest Registered Agent service?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Bizee offers a free Registered Agent for 1 year when you form your LLC through their $0 plan, with renewals at $119/year. Northwest Registered Agent includes a free 1st year with their $39 LLC formation package, with renewals at $125/year and full privacy protection included.
+            </div>
+          </details>
 
-        <div class="faq-accordion-item">
-          <div class="faq-accordion-header" onclick="toggleFaq(this)">
-            <span>Can I change my Registered Agent later?</span>
-            <span class="faq-icon-toggle">▼</span>
-          </div>
-          <div class="faq-accordion-body">
-            Yes. You can change your Registered Agent at any time by submitting a "Statement of Change of Registered Agent" form with your Secretary of State and paying a small state filing fee (ranging from $0 to $50 depending on the state).
-          </div>
-        </div>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">3</span>
+                <span>Can I change my Registered Agent later?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. You can change your Registered Agent at any time by submitting a "Statement of Change of Registered Agent" form with your Secretary of State and paying a small state filing fee (ranging from $0 to $50 depending on the state).
+            </div>
+          </details>
 
-        <div class="faq-accordion-item">
-          <div class="faq-accordion-header" onclick="toggleFaq(this)">
-            <span>Can I be my own Registered Agent?</span>
-            <span class="faq-icon-toggle">▼</span>
-          </div>
-          <div class="faq-accordion-body">
-            Yes, you can act as your own Registered Agent in all 50 states as long as you are at least 18 years old, reside in the state where your LLC is formed, and maintain a physical address (not a P.O. Box) where you are available during regular business hours. However, doing so makes your address a public record.
-          </div>
-        </div>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">4</span>
+                <span>Can I be my own Registered Agent?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes, you can act as your own Registered Agent in all 50 states as long as you are at least 18 years old, reside in the state where your LLC is formed, and maintain a physical address (not a P.O. Box) where you are available during regular business hours. However, doing so makes your address a public record.
+            </div>
+          </details>
 
-        <div class="faq-accordion-item">
-          <div class="faq-accordion-header" onclick="toggleFaq(this)">
-            <span>Which Registered Agent offers the best privacy?</span>
-            <span class="faq-icon-toggle">▼</span>
-          </div>
-          <div class="faq-accordion-body">
-            Northwest Registered Agent is the best choice for privacy. They automatically use their own office address on your public state filings in all 50 states, keeping your personal home address off state databases and search engines.
-          </div>
-        </div>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">5</span>
+                <span>Which Registered Agent offers the best privacy?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Northwest Registered Agent is the best choice for privacy. They automatically use their own office address on your public state filings in all 50 states, keeping your personal home address off state databases and search engines.
+            </div>
+          </details>
 
-        <div class="faq-accordion-item">
-          <div class="faq-accordion-header" onclick="toggleFaq(this)">
-            <span>Is it worth paying more for a premium Registered Agent?</span>
-            <span class="faq-icon-toggle">▼</span>
-          </div>
-          <div class="faq-accordion-body">
-            No. Services charging $199 to $249 per year (like ZenBusiness or LegalZoom) deliver the same core mail scanning and forwarding as $119–$125 services like Bizee or Northwest. Unless you specifically require built-in attorney consultations, paying over $150/year is unnecessary.
-          </div>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">6</span>
+                <span>Is it worth paying more for a premium Registered Agent?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              No. Services charging $199 to $249 per year (like ZenBusiness or LegalZoom) deliver the same core mail scanning and forwarding as $119–$125 services like Bizee or Northwest. Unless you specifically require built-in attorney consultations, paying over $150/year is unnecessary.
+            </div>
+          </details>
         </div>
 
         <!-- Bottom Disclaimer Card -->
-        <div style="background: #F0F9FF; border: 1.5px solid #159A9C; border-left: 5px solid #159A9C; border-radius: 4px 12px 12px 4px; padding: 1.1rem 1.35rem; font-size: 0.875rem; color: #0C4A6E; margin-top: 2rem; margin-bottom: 2rem;">
+        <div style="background: #F0F9FF; border: 1.5px solid #159A9C; border-radius: 12px; padding: 1.1rem 1.35rem; font-size: 0.875rem; color: #0C4A6E; margin-top: 2rem; margin-bottom: 2rem;">
           ℹ️ <strong>Check the renewal before choosing:</strong> Northwest includes registered agent service with formation for the first year, then charges an annual renewal. See the exact timing, inclusions, cancellation considerations, and current rate in our <a href="northwest-registered-agent-review.html" style="color: #159A9C; font-weight: 700; text-decoration: underline;">Northwest annual fee guide</a>.
         </div>
 
