@@ -138,6 +138,48 @@
     .badge-blue { background: #E0F2FE; color: #0369A1; }
     .badge-yellow { background: #FEF9C3; color: #854D0E; }
 
+    /* Global Prose & Heading Parity */
+    .guide-content-container p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.5rem;
+    }
+    .guide-content-container h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #12304A;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-content-container h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #12304A;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: var(--font-heading);
+      line-height: 1.4;
+    }
+    .guide-content-container p a,
+    .guide-content-container td a,
+    .guide-content-container li a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(21, 154, 156, 0.4);
+      text-underline-offset: 3px;
+      transition: all 0.2s ease;
+    }
+    .guide-content-container p a:hover,
+    .guide-content-container td a:hover,
+    .guide-content-container li a:hover {
+      color: #0E7490;
+      text-decoration-color: #0E7490;
+    }
+
     /* Tables */
     .req-table-wrap {
       background: #FFFFFF;
@@ -148,14 +190,14 @@
       margin: 1.5rem 0 2rem 0;
     }
     .req-table-header {
-      background: #F8FAFC;
-      border-bottom: 1px solid #E2E8F0;
-      padding: 0.85rem 1.25rem;
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 0.9rem 1.25rem;
       font-size: 0.85rem;
       font-weight: 800;
-      color: #12304A;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      font-family: var(--font-heading);
     }
     .req-table {
       width: 100%;
@@ -498,30 +540,44 @@
   </header>
 
   <!-- =========================================================================
-       2. BREADCRUMB & HERO HEADER
+       2. MAIN CONTENT AREA (EXACT STYLED CONTAINER matching start-llc.html & llc-guide.html)
        ========================================================================= -->
-  <section style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%); padding: 2.5rem 0 1rem 0; border-bottom: 1px solid #E2E8F0;">
-    <div class="guide-content-container">
-      <div style="font-size: 0.78rem; color: #64748B; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.6rem;">
-        LLC STARTERS &nbsp;&gt;&nbsp; HOW TO START AN LLC &nbsp;&gt;&nbsp; BUSINESS SETUP
-      </div>
+  <main class="guide-content-container">
 
-      <h1 style="font-size: 2.35rem; font-weight: 900; color: #12304A; line-height: 1.25; margin-bottom: 0.85rem; font-family: var(--font-heading);">
+    <!-- BREADCRUMB -->
+    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
+      <a href="index.html" style="color: #64748B; text-decoration: none;">Home</a> &nbsp;/&nbsp; 
+      <a href="llc-guide.html" style="color: #64748B; text-decoration: none;">LLC Guides</a> &nbsp;/&nbsp; 
+      <strong style="color: #12304A;">Business Setup Checklist 2026</strong>
+    </div>
+
+    <article class="guide-article">
+
+      <!-- HEADER TITLE -->
+      <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: #12304A; line-height: 1.2; margin-bottom: 0.75rem; font-family: var(--font-heading);">
         Business Setup After LLC — Complete Checklist 2026
       </h1>
-
-      <div style="display: flex; gap: 1.25rem; font-size: 0.825rem; color: #64748B; align-items: center; margin-bottom: 1.25rem;">
-        <span>📅 7 months ago · Updated 2 weeks ago</span>
-        <span>•</span>
-        <span><strong>Last reviewed:</strong> September 7, 2026</span>
-      </div>
-
-      <p style="font-size: 1.05rem; color: #334155; line-height: 1.7; margin-bottom: 1rem;">
-        Completing your <strong>business setup after LLC</strong> formation is just as critical as the filing itself. Many new owners assume that approval means they are ready to operate — however, skipping the post-formation steps can cost you your liability protection, result in fines, or leave your home address permanently exposed on public records. Fortunately, the entire setup takes less than one week and costs between <strong>$0 and $150/month</strong> for most small LLCs.
+      <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; color: #159A9C; margin-bottom: 1.5rem; line-height: 1.4;">
+        Essential Post-Formation Steps to Protect Your Business & Stay Compliant
       </p>
 
-      <p style="font-size: 0.95rem; color: #475569; line-height: 1.65; margin-bottom: 1.75rem;">
-        This guide covers every step in the exact order you should complete it. Moreover, each section links directly to a detailed guide so you can go as deep as you need. Whether you just formed your LLC or you are still deciding on your <a href="best-llc-formation-services.html" style="color: #159A9C; font-weight: 700; text-decoration: underline;">best LLC formation service</a>, this checklist gets you fully protected from day one.
+      <!-- AUTHOR & REVIEW BAR -->
+      <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: #64748B; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #E2E8F0; flex-wrap: wrap;">
+        <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600; color: #12304A;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> LLC Editorial Team
+        </span>
+        &bull;
+        <span>Verified for 2026</span>
+        &bull;
+        <span>8 Min Read</span>
+      </div>
+
+      <p>
+        Completing your <strong>business setup after LLC</strong> formation is just as critical as the filing itself. Many new owners assume that state approval means they are fully ready to operate — however, skipping post-formation steps can cost you your liability protection, result in fines, or leave your home address permanently exposed on public state records. Fortunately, the entire setup takes less than one week and costs between <strong>$0 and $150/month</strong> for most small LLCs.
+      </p>
+
+      <p>
+        This guide covers every step in the exact order you should complete it. Each section links directly to a detailed resource so you can get fully protected. Whether you just formed your LLC or you are still deciding on the <a href="best-llc-services.html">best LLC formation service</a>, this checklist gets you set up correctly from day one.
       </p>
 
       <!-- 4-Stat Metric Cards Grid -->
@@ -529,7 +585,7 @@
         <div class="stat-metric-card">
           <div class="stat-icon">📋</div>
           <div class="stat-number">6</div>
-          <div class="stat-sub">setup steps total</div>
+          <div class="stat-sub">Setup steps total</div>
         </div>
         <div class="stat-metric-card">
           <div class="stat-icon">💰</div>
@@ -538,29 +594,22 @@
         </div>
         <div class="stat-metric-card">
           <div class="stat-icon">⏱️</div>
-          <div class="stat-number">1 week</div>
-          <div class="stat-sub">total setup time</div>
+          <div class="stat-number">1 Week</div>
+          <div class="stat-sub">Total setup time</div>
         </div>
         <div class="stat-metric-card">
           <div class="stat-icon">🛡️</div>
           <div class="stat-number">Day 1</div>
-          <div class="stat-sub">protection active</div>
+          <div class="stat-sub">Protection active</div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- =========================================================================
-       3. MAIN BODY CONTENT
-       ========================================================================= -->
-  <main class="guide-content-container" style="padding-top: 2.5rem;">
-    
-    <h2 style="font-size: 1.85rem; font-weight: 800; color: #12304A; margin-bottom: 0.75rem;">
-      Business Setup After LLC — Complete Checklist 2026
-    </h2>
-    <p style="color: #334155; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.75rem;">
-      Complete these six steps in order. Each one builds on the previous — specifically, your EIN unlocks your bank account, your operating agreement protects your liability, and your virtual address keeps your home private from day one. Additionally, doing them in this sequence avoids the most common and costly mistakes new LLC owners make.
-    </p>
+      <h2 style="font-size: 1.75rem; font-weight: 800; color: #12304A; margin-top: 2.5rem; margin-bottom: 1rem;">
+        LLC Business Setup Master Checklist
+      </h2>
+      <p>
+        Complete these six steps in order. Each one builds on the previous — specifically, your EIN unlocks your business bank account, your operating agreement protects your personal asset shield, and your virtual address keeps your home address off public state databases from day one.
+      </p>
 
     <!-- Master Interactive Checklist Card -->
     <div class="checklist-master-box">
@@ -1277,9 +1326,10 @@
         <div class="faq-accordion-answer">
           A registered agent is legally required to receive official government notices and lawsuit service of process during business hours. A virtual business address is a commercial street address used for general business mail, banking, websites, and marketing. Services like Northwest Registered Agent offer both in one package.
         </div>
-      </style>
+      </details>
     </div>
 
+    </article>
   </main>
 
   <!-- =========================================================================
