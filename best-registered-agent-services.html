@@ -82,8 +82,9 @@
     /* Callout Boxes */
     .short-on-time-box {
       background: #E6F7F7;
-      border: 1.5px solid #159A9C;
-      border-radius: 14px;
+      border: 1px solid rgba(21, 154, 156, 0.3);
+      border-left: 5px solid #159A9C;
+      border-radius: 4px 14px 14px 4px;
       padding: 1.25rem 1.5rem;
       margin-bottom: 2rem;
       color: #12304A;
@@ -177,29 +178,29 @@
       font-weight: 700;
     }
 
-    /* Provider Review Cards */
+    /* Provider Review Sections - Clean Natural Flow */
     .provider-review-card {
-      /*background: #FFFFFF;
-      border: 1.5px solid #CBD5E1;
-      border-radius: 18px;*/
-      padding: 1.75rem;
-     /*  margin-bottom: 2.75rem;
-      box-shadow: 0 6px 22px rgba(18, 48, 74, 0.06);
-      transition: all 0.2s ease;*/
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 3.5rem;
+      box-shadow: none;
     }
 
     .provider-header-bar {
-      padding: 1rem 1.35rem;
-      border-radius: 12px;
+      padding: 0 0 0.75rem 0;
       margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
-      color: #FFFFFF;
-      border: 1.5px solid rgba(21, 154, 156, 0.4);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #E2E8F0;
     }
     .provider-brand-title {
-      font-size: 1.35rem;
+      font-size: 1.5rem;
       font-weight: 800;
-      color: #FFFFFF;
+      color: #12304A;
+      margin: 0;
+      font-family: var(--font-heading);
     }
 
     /* Quick Stats Table inside provider cards */
@@ -399,9 +400,9 @@
   <!-- =========================================================================
        1. SITEWIDE HEADER NAVIGATION (EXACT HOMEPAGE PARITY)
        ========================================================================= -->
-  <header class="header">
-    <div class="header-container">
-      <a href="index.html" class="logo" aria-label="LLC Primer Home">
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
         <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
       </a>
 
@@ -413,7 +414,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="best-llc-services.html" class="nav-link active" style="color: var(--color-primary); font-weight: 800;">
+          <a href="best-llc-formation-services.html" class="nav-link active" style="color: var(--color-primary); font-weight: 800;">
             LLC Services
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
@@ -431,12 +432,12 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
-            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
-            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
-            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
-            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
-            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+            <a href="what-is-an-llc.html" class="dropdown-link"> What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link"> Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link"> How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link"> How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link"> LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link"> Registered Agent Guide</a>
           </div>
         </div>
 
@@ -449,7 +450,8 @@
             <a href="index.html#after-formation-section" class="dropdown-link">01. Obtain Federal EIN (SS-4 Tax ID)</a>
             <a href="operating-agreement.html" class="dropdown-link">02. Draft Operating Agreement</a>
             <a href="index.html#after-formation-section" class="dropdown-link">03. Open Business Bank Account</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">04. Local Licenses & Permits</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">04. File FinCEN BOI Report</a>
+            <a href="index.html#after-formation-section" class="dropdown-link">05. Business Licenses & Permits</a>
           </div>
         </div>
 
@@ -461,12 +463,13 @@
           <div class="dropdown-menu">
             <a href="quiz.html" class="dropdown-link">🧩 Interactive LLC Quiz (60 Sec)</a>
             <a href="index.html#cost-estimator-section" class="dropdown-link">📊 First-Year Cost Estimator</a>
+            <a href="index.html#spanish-section" class="dropdown-link">🇪🇸 Guía de LLC en Español</a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="index.html#states-section" class="nav-link">
-            50-State Guides
+          <a href="index.html#non-us-section" class="nav-link">
+            Non-Residents 🌐
           </a>
         </div>
       </nav>
@@ -683,7 +686,7 @@
         </p>
 
         <!-- Ranking criteria banner -->
-        <div style="background: #F0F9FF; border: 1.5px solid #159A9C; border-radius: 12px; padding: 1.1rem 1.35rem; font-size: 0.875rem; color: #0C4A6E; margin-bottom: 2.5rem;">
+        <div style="background: #F0F9FF; border: 1.5px solid #159A9C; border-left: 5px solid #159A9C; border-radius: 4px 12px 12px 4px; padding: 1.1rem 1.35rem; font-size: 0.875rem; color: #0C4A6E; margin-bottom: 2.5rem;">
           <strong>📊 How We Ranked These Services:</strong> Our ranking weights five factors: <strong>first-year cost (25%)</strong>, <strong>renewal cost (25%)</strong>, <strong>privacy protection (20%)</strong>, <strong>support quality (15%)</strong>, and <strong>transparency/upsells (15%)</strong>. As a result, services with low long-term costs, strong privacy, and honest pricing rank highest.
         </div>
 
@@ -692,10 +695,10 @@
              ========================================================================= -->
 
         <!-- #1 NORTHWEST -->
-        <div class="provider-review-card" id="northwest" style="border: 2px solid #159A9C; box-shadow: 0 8px 24px rgba(21, 154, 156, 0.12);">
+        <div class="provider-review-card" id="northwest">
           <div class="provider-header-bar">
-            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#1 RANKED SERVICE</div>
-            <div class="provider-brand-title">#1 Northwest Registered Agent — Best Overall</div>
+            <div style="font-size: 0.75rem; color: #159A9C; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">🏅 #1 RANKED REGISTERED AGENT</div>
+            <h2 class="provider-brand-title">#1 Northwest Registered Agent — Best Overall</h2>
           </div>
 
           <div class="quick-stats-table-wrap">
@@ -763,8 +766,8 @@
         <!-- #2 BIZEE -->
         <div class="provider-review-card" id="bizee">
           <div class="provider-header-bar">
-            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#2 RANKED SERVICE</div>
-            <div class="provider-brand-title">#2 Bizee — Best Free Option</div>
+            <div style="font-size: 0.75rem; color: #159A9C; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">🥈 #2 RANKED SERVICE</div>
+            <h2 class="provider-brand-title">#2 Bizee — Best Free Option</h2>
           </div>
 
           <div class="quick-stats-table-wrap">
@@ -805,7 +808,7 @@
 
           <h3>Why Bizee Is #2</h3>
           <p>
-            Bizee offers something no other service does: a <strong>free Registered Agent on their $0 formation plan</strong>. That means you can get both LLC formation and RA service without spending a single dollar beyond the state fee — making it one of the strongest entries in our <a href="best-llc-services.html">best LLC services comparison</a>. Furthermore, their $119/yr renewal is the cheapest in the industry — even $6 less than Northwest. <span class="category-pill">⚖️ Business & Corporate Law</span>
+            Bizee offers something no other service does: a <strong>free Registered Agent on their $0 formation plan</strong>. That means you can get both LLC formation and RA service without spending a single dollar beyond the state fee — making it one of the strongest entries in our <a href="best-llc-formation-services.html">best LLC formation services comparison</a>. Furthermore, their $119/yr renewal is the cheapest in the industry — even $6 less than Northwest. <span class="category-pill">⚖️ Business & Corporate Law</span>
           </p>
           <p>
             The 20-year track record (as Incfile, now Bizee) and 4.7+ Trustpilot rating provide solid trust. However, Bizee lacks the privacy protection that puts Northwest in the top spot. Your home address still goes on public filings.
@@ -816,15 +819,15 @@
             Bizee is the best pick for <strong>budget-conscious entrepreneurs</strong> and <strong>side hustlers</strong> who need a legitimate LLC at the absolute lowest cost. It's also great for anyone who wants a <strong>free tax consultation</strong> included — a unique perk that helps with self-employment tax questions.
           </p>
 
-          <p><a href="best-llc-services.html#bizee" style="font-weight: 700; color: #159A9C;">→ Read Our Full Bizee Review</a></p>
+          <p><a href="best-llc-formation-services.html#bizee" style="font-weight: 700; color: #159A9C;">→ Read Our Full Bizee Review</a></p>
         </div>
 
 
         <!-- #3 ZENBUSINESS -->
         <div class="provider-review-card" id="zenbusiness">
           <div class="provider-header-bar">
-            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#3 RANKED SERVICE</div>
-            <div class="provider-brand-title">#3 ZenBusiness — Best Dashboard Experience</div>
+            <div style="font-size: 0.75rem; color: #0284C7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">🥉 #3 RANKED SERVICE</div>
+            <h2 class="provider-brand-title">#3 ZenBusiness — Best Dashboard Experience</h2>
           </div>
 
           <div class="quick-stats-table-wrap">
@@ -883,8 +886,8 @@
         <!-- #4 LEGALZOOM -->
         <div class="provider-review-card" id="legalzoom">
           <div class="provider-header-bar">
-            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#4 RANKED SERVICE</div>
-            <div class="provider-brand-title">#4 LegalZoom — Best for Attorney Access</div>
+            <div style="font-size: 0.75rem; color: #159A9C; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#4 RANKED SERVICE</div>
+            <h2 class="provider-brand-title">#4 LegalZoom — Best for Attorney Access</h2>
           </div>
 
           <div class="quick-stats-table-wrap">
@@ -936,15 +939,15 @@
             LegalZoom's RA makes sense only if you're <strong>already using their legal services</strong> and want everything under one account. Otherwise, there's no reason to pay $249/yr when Northwest charges $125 and includes privacy protection that LegalZoom doesn't offer.
           </p>
 
-          <p><a href="best-llc-services.html#legalzoom" style="font-weight: 700; color: #159A9C;">→ Read Our Full LegalZoom Review</a></p>
+          <p><a href="best-llc-formation-services.html#legalzoom" style="font-weight: 700; color: #159A9C;">→ Read Our Full LegalZoom Review</a></p>
         </div>
 
 
         <!-- #5 SWYFT FILINGS -->
         <div class="provider-review-card" id="swyft">
           <div class="provider-header-bar">
-            <div style="font-size: 0.75rem; color: #6EE7B7; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#5 RANKED SERVICE</div>
-            <div class="provider-brand-title">#5 Swyft Filings — Best for Repeat Filers</div>
+            <div style="font-size: 0.75rem; color: #159A9C; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 0.2rem;">#5 RANKED SERVICE</div>
+            <h2 class="provider-brand-title">#5 Swyft Filings — Best for Repeat Filers</h2>
           </div>
 
           <div class="quick-stats-table-wrap">
@@ -1256,7 +1259,7 @@
              ========================================================================= -->
         <h2>Our Final Recommendation</h2>
 
-        <div style="background: linear-gradient(135deg, #12304A 0%, #0B1928 100%); border: 1.5px solid #159A9C; border-radius: 16px; padding: 1.75rem 2rem; color: #FFFFFF; margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.18);">
+        <div style="background: linear-gradient(135deg, #12304A 0%, #0B1928 100%); border: 1.5px solid #159A9C; border-left: 6px solid #159A9C; border-radius: 4px 16px 16px 4px; padding: 1.75rem 2rem; color: #FFFFFF; margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.18);">
           <div style="font-size: 0.75rem; font-weight: 800; color: #6EE7B7; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">KEY TAKEAWAY</div>
           <p style="margin: 0; font-size: 1.05rem; line-height: 1.65; color: #F8FAFC;">
             After comparing all five <strong>registered agent services</strong>, the choice is clear. <strong>Northwest's privacy-first registered agent service</strong> wins on privacy, transparency, and overall value. <strong>Bizee</strong> wins on raw cost. For most LLC owners, Northwest's $125/yr with privacy protection is the smarter investment. For the tightest budgets, Bizee's $119/yr gets the job done. Either way, there's no reason to pay $199–$249/yr when better, cheaper options exist. <span class="category-pill">⚖️ Business & Corporate Law</span>
@@ -1330,7 +1333,7 @@
         </div>
 
         <!-- Bottom Disclaimer Card -->
-        <div style="background: #F0F9FF; border: 1.5px solid #159A9C; border-radius: 12px; padding: 1.1rem 1.35rem; font-size: 0.875rem; color: #0C4A6E; margin-top: 2rem; margin-bottom: 2rem;">
+        <div style="background: #F0F9FF; border: 1.5px solid #159A9C; border-left: 5px solid #159A9C; border-radius: 4px 12px 12px 4px; padding: 1.1rem 1.35rem; font-size: 0.875rem; color: #0C4A6E; margin-top: 2rem; margin-bottom: 2rem;">
           ℹ️ <strong>Check the renewal before choosing:</strong> Northwest includes registered agent service with formation for the first year, then charges an annual renewal. See the exact timing, inclusions, cancellation considerations, and current rate in our <a href="northwest-registered-agent-review.html" style="color: #159A9C; font-weight: 700; text-decoration: underline;">Northwest annual fee guide</a>.
         </div>
 
@@ -1341,59 +1344,67 @@
   <!-- =========================================================================
        11. SITEWIDE FOOTER (EXACT HOMEPAGE PARITY)
        ========================================================================= -->
-  <footer class="footer">
-    <div class="footer-container">
+  <footer class="site-footer">
+    <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo logo--footer" aria-label="LLC Primer Home">
-            <img src="logo.png" alt="LLC Primer Logo" style="height: 52px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+        <div>
+          <a href="index.html" class="site-logo" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
           </a>
-          <p class="footer-desc">
-            Simplifying business formation across all 50 states. Step-by-step state guides, compliance tools, and verified provider reviews for entrepreneurs.
+          <p style="font-size:0.88rem; color: #CBD5E1; margin-top:1rem; line-height: 1.6;">
+           LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
           </p>
-          <div style="margin-top: 1rem; font-size: 0.8rem; color: #94A3B8;">
-            © 2026 LLC Primer. All rights reserved.
-          </div>
         </div>
 
         <div>
-          <div class="footer-title">LLC Formation</div>
-          <ul class="footer-links">
-            <li><a href="start-llc.html">How to Start an LLC</a></li>
-            <li><a href="best-llc-services.html">Best LLC Services</a></li>
-            <li><a href="how-much-does-an-llc-cost.html">LLC Costs by State</a></li>
-            <li><a href="operating-agreement.html">LLC Operating Agreement</a></li>
-            <li><a href="registered-agent-guide.html">Registered Agent Guide</a></li>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Popular States</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Wyoming LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Florida LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Texas LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="footer-title">Popular State Guides</div>
-          <ul class="footer-links">
-            <li><a href="start-llc.html#california">California LLC Guide</a></li>
-            <li><a href="start-llc.html#texas">Texas LLC Guide</a></li>
-            <li><a href="start-llc.html#florida">Florida LLC Guide</a></li>
-            <li><a href="start-llc.html#wyoming">Wyoming LLC Guide</a></li>
-            <li><a href="start-llc.html#delaware">Delaware LLC Guide</a></li>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
+            <li><a href="index.html#cost-estimator-section" onclick="openCostCalculatorModal(); return false;" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator (Popup)</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="footer-title">Verified Reviews</div>
-          <ul class="footer-links">
-            <li><a href="northwest-registered-agent-review.html">Northwest Registered Agent</a></li>
-            <li><a href="zenbusiness-vs-northwest.html">ZenBusiness vs Northwest</a></li>
-            <li><a href="best-registered-agent-services.html">Best Registered Agent</a></li>
-            <li><a href="best-llc-services.html">Best LLC Formation Services</a></li>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
+            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">Business Banking</a></li>
           </ul>
         </div>
       </div>
 
-      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 2.5rem; padding-top: 1.5rem; text-align: center; font-size: 0.78rem; color: #64748B;">
-        Disclaimer: LLC Primer is an independent educational portal and review site. We are not a law firm, tax advisor, or government agency. Information provided is for educational purposes only.
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
+        <div>
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state’s official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </div>
+        <div>
+          © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a href="index.html#terms">Terms of Service</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
 
   <script>
     function toggleFaq(headerElement) {
