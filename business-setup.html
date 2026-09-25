@@ -237,23 +237,46 @@
     /* Callout & Warning Boxes */
     .info-callout-light {
       background: #ECFDF5;
-      border: 1.5px solid #10B981;
+      border: 1.5px solid #A7F3D0;
+      border-left: 5px solid #10B981;
       border-radius: 12px;
-      padding: 1.1rem 1.35rem;
-      font-size: 0.875rem;
+      padding: 1.15rem 1.4rem;
+      font-size: 0.925rem;
       color: #065F46;
       margin: 1.5rem 0 2rem 0;
       line-height: 1.6;
     }
     .warning-callout-light {
       background: #FEF3C7;
-      border: 1.5px solid #F59E0B;
+      border: 1.5px solid #FDE68A;
+      border-left: 5px solid #F59E0B;
       border-radius: 12px;
-      padding: 1.1rem 1.35rem;
-      font-size: 0.875rem;
+      padding: 1.15rem 1.4rem;
+      font-size: 0.925rem;
       color: #78350F;
       margin: 1.5rem 0 2rem 0;
       line-height: 1.6;
+    }
+    .callout-box {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-left: 5px solid #159A9C;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
+    }
+    .callout-teal {
+      background: #F0FDFA;
+      border: 1.5px solid #CCFBF1;
+      border-left: 5px solid #159A9C;
+      color: #0F766E;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #BAE6FD;
+      border-left: 5px solid #0284C7;
+      color: #0369A1;
     }
 
     /* 5-Card Virtual Address Grid */
@@ -387,12 +410,12 @@
        1. SITEWIDE HEADER NAVIGATION (EXACT HOMEPAGE PARITY)
        ========================================================================= -->
   <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="site-logo">
-        <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
       </a>
 
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
         <div class="nav-item">
           <a href="start-llc.html" class="nav-link">
             Start an LLC
@@ -400,7 +423,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="best-llc-formation-services.html" class="nav-link">
+          <a href="best-llc-services.html" class="nav-link">
             LLC Services
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
@@ -418,12 +441,12 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
-            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
-            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
-            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
-            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
-            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+            <a href="what-is-an-llc.html" class="dropdown-link"> What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link"> Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link"> How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link"> How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link"> LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link"> Registered Agent Guide</a>
           </div>
         </div>
 
@@ -434,10 +457,10 @@
           </a>
           <div class="dropdown-menu">
             <a href="business-setup.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">01. Business Setup Checklist 2026</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">02. Obtain Federal EIN (SS-4 Tax ID)</a>
+            <a href="business-setup.html#ein-guide-section" class="dropdown-link">02. Obtain Federal EIN (SS-4 Tax ID)</a>
             <a href="operating-agreement.html" class="dropdown-link">03. Draft Operating Agreement</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">04. Open Business Bank Account</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">05. Business Licenses & Permits</a>
+            <a href="business-setup.html#bank-guide-section" class="dropdown-link">04. Open Business Bank Account</a>
+            <a href="business-setup.html#license-guide-section" class="dropdown-link">05. Business Licenses & Permits</a>
           </div>
         </div>
 
@@ -447,15 +470,29 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="quiz.html" class="dropdown-link">10-Question Diagnostic Quiz</a>
-            <a href="index.html#cost-estimator-section" onclick="openCostCalculatorModal(); return false;" class="dropdown-link">LLC Startup Fee Calculator</a>
+            <a href="quiz.html" class="dropdown-link">🧩 Interactive LLC Quiz (60 Sec)</a>
+            <a href="index.html#cost-estimator-section" class="dropdown-link">📊 First-Year Cost Estimator</a>
+            <a href="index.html#spanish-section" class="dropdown-link">🇪🇸 Guía de LLC en Español</a>
           </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#non-us-section" class="nav-link">
+            Non-Residents 🌐
+          </a>
         </div>
       </nav>
 
-      <div style="display: flex; gap: 0.75rem; align-items: center;">
-        <button class="ls-btn ls-btn--ghost" onclick="openSearchModal()" style="padding: 0.55rem 0.85rem; font-size: 0.85rem;">🔍 Search</button>
-        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">Take Quiz</a>
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan →
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
       </div>
     </div>
   </header>
@@ -1311,5 +1348,6 @@
     </div>
   </div>
 
+  <script src="app.js"></script>
 </body>
 </html>
