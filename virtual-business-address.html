@@ -363,6 +363,46 @@
       font-size: 1rem;
     }
 
+    /* Provider Logo Icons with Colored Box Shadows */
+    .provider-logo-icon {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #FFFFFF;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .shadow-northwest {
+      box-shadow: 0 6px 18px rgba(18, 48, 74, 0.45);
+      border: 1.5px solid #CBD5E1;
+    }
+    .shadow-ipostal1 {
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45);
+      border: 1.5px solid #BAE6FD;
+    }
+    .shadow-anytime {
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.45);
+      border: 1.5px solid #CBD5E1;
+    }
+    .shadow-regus {
+      box-shadow: 0 6px 18px rgba(225, 29, 72, 0.45);
+      border: 1.5px solid #FECDD3;
+    }
+    .provider-table-icon {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #FFFFFF;
+      padding: 2px;
+      box-shadow: 0 2px 8px rgba(18, 48, 74, 0.15);
+      border: 1px solid #E2E8F0;
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+
     .pros-cons-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -625,7 +665,10 @@
       <!-- FEATURED PROVIDER BANNER CARD -->
       <div class="best-overall-card">
         <span class="best-overall-badge">FEATURED PROVIDER</span>
-        <h2 style="color: #FFFFFF; font-size: 1.6rem; margin: 0 0 0.5rem 0; font-family: var(--font-heading);">Northwest Registered Agent</h2>
+        <div style="display: flex; align-items: center; gap: 1.15rem; margin: 0.5rem 0 0.75rem 0;">
+          <img src="northwest-logo.jpg" alt="Northwest Registered Agent Logo" class="provider-logo-icon shadow-northwest">
+          <h2 style="color: #FFFFFF; font-size: 1.6rem; margin: 0; font-family: var(--font-heading);">Northwest Registered Agent</h2>
+        </div>
         <p style="color: #E2E8F0; font-size: 0.95rem; line-height: 1.6; margin: 0;">
           Northwest offers several business-address options, including registered-agent service, mail forwarding, and virtual office services. Its current virtual office service starts at $29 per month and includes a commercial business address, mail scanning, phone service, and other office-related features. Availability and permitted uses vary by state and service.
         </p>
@@ -636,7 +679,10 @@
         <div class="provider-card">
           <div>
             <span class="provider-badge badge-teal">NORTHWEST REGISTERED AGENT</span>
-            <div class="provider-title">Northwest Registered Agent</div>
+            <div class="provider-title" style="display: flex; align-items: center; gap: 0.6rem;">
+              <img src="northwest-logo.jpg" alt="Northwest" class="provider-table-icon">
+              <span>Northwest Registered Agent</span>
+            </div>
             <ul class="provider-bullets">
               <li>Commercial business address options</li>
               <li>Mail scanning and forwarding</li>
@@ -651,7 +697,10 @@
         <div class="provider-card">
           <div>
             <span class="provider-badge badge-amber">LOW-COST MAIL OPTION</span>
-            <div class="provider-title">Anytime Mailbox</div>
+            <div class="provider-title" style="display: flex; align-items: center; gap: 0.6rem;">
+              <img src="anytime-mailbox-logo.png" alt="Anytime Mailbox" class="provider-table-icon">
+              <span>Anytime Mailbox</span>
+            </div>
             <ul class="provider-bullets">
               <li>Virtual mailbox locations in the U.S. and internationally</li>
               <li>Plans and features vary by location</li>
@@ -665,7 +714,10 @@
         <div class="provider-card">
           <div>
             <span class="provider-badge badge-blue">LOCATION OPTIONS</span>
-            <div class="provider-title">iPostal1</div>
+            <div class="provider-title" style="display: flex; align-items: center; gap: 0.6rem;">
+              <img src="ipostal1-logo.webp" alt="iPostal1" class="provider-table-icon">
+              <span>iPostal1</span>
+            </div>
             <ul class="provider-bullets">
               <li>Virtual mailbox locations in multiple markets</li>
               <li>Mail scanning and forwarding</li>
@@ -679,7 +731,10 @@
         <div class="provider-card">
           <div>
             <span class="provider-badge badge-purple">OFFICE-BASED OPTION</span>
-            <div class="provider-title">Alliance Virtual Offices</div>
+            <div class="provider-title" style="display: flex; align-items: center; gap: 0.6rem;">
+              <img src="regus-logo.jpg" alt="Regus" class="provider-table-icon">
+              <span>Alliance / Regus</span>
+            </div>
             <ul class="provider-bullets">
               <li>Commercial office and virtual office options</li>
               <li>Business address services</li>
@@ -1023,7 +1078,7 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong style="color: #12304A;">Northwest</strong></td>
+              <td><img src="northwest-logo.jpg" alt="Northwest" class="provider-table-icon"> <strong style="color: #12304A;">Northwest</strong></td>
               <td>Varies by address/service</td>
               <td>Nationwide options</td>
               <td>✓</td>
@@ -1031,7 +1086,7 @@
               <td>Business address and registered-agent services</td>
             </tr>
             <tr>
-              <td><strong>iPostal1</strong></td>
+              <td><img src="ipostal1-logo.webp" alt="iPostal1" class="provider-table-icon"> <strong>iPostal1</strong></td>
               <td>Varies by location</td>
               <td>Large U.S. & international network</td>
               <td>✓</td>
@@ -1039,7 +1094,7 @@
               <td>Multiple location options</td>
             </tr>
             <tr>
-              <td><strong>Anytime Mailbox</strong></td>
+              <td><img src="anytime-mailbox-logo.png" alt="Anytime Mailbox" class="provider-table-icon"> <strong>Anytime Mailbox</strong></td>
               <td>Varies by location</td>
               <td>U.S. & international locations</td>
               <td>✓</td>
@@ -1047,7 +1102,7 @@
               <td>Mail scanning and forwarding</td>
             </tr>
             <tr>
-              <td><strong>Regus</strong></td>
+              <td><img src="regus-logo.jpg" alt="Regus" class="provider-table-icon"> <strong>Regus</strong></td>
               <td>Varies by location and plan</td>
               <td>Worldwide office network</td>
               <td>✓ / Varies</td>
@@ -1081,7 +1136,10 @@
 
       <div class="review-detail-card">
         <div class="review-card-header">
-          <div class="review-card-title">Northwest Registered Agent</div>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <img src="northwest-logo.jpg" alt="Northwest Registered Agent Logo" class="provider-logo-icon shadow-northwest">
+            <div class="review-card-title">Northwest Registered Agent</div>
+          </div>
           <div class="stars-badge">PROVIDER PROFILE</div>
         </div>
 
@@ -1126,7 +1184,10 @@
 
       <div class="review-detail-card">
         <div class="review-card-header">
-          <div class="review-card-title">iPostal1</div>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <img src="ipostal1-logo.webp" alt="iPostal1 Logo" class="provider-logo-icon shadow-ipostal1">
+            <div class="review-card-title">iPostal1</div>
+          </div>
           <div class="stars-badge">PROVIDER PROFILE</div>
         </div>
 
@@ -1171,7 +1232,10 @@
 
       <div class="review-detail-card">
         <div class="review-card-header">
-          <div class="review-card-title">Anytime Mailbox</div>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <img src="anytime-mailbox-logo.png" alt="Anytime Mailbox Logo" class="provider-logo-icon shadow-anytime">
+            <div class="review-card-title">Anytime Mailbox</div>
+          </div>
           <div class="stars-badge">PROVIDER PROFILE</div>
         </div>
 
@@ -1224,7 +1288,7 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Regus</strong></td>
+              <td><img src="regus-logo.jpg" alt="Regus" class="provider-table-icon"> <strong>Regus</strong></td>
               <td>Varies by location and plan</td>
               <td>Business-address and office services with meeting-room options</td>
               <td>Can cost more when you only need mail handling</td>
@@ -1261,22 +1325,22 @@
           <tbody>
             <tr>
               <td><strong>Reducing residential address exposure</strong></td>
-              <td><strong>Northwest</strong></td>
+              <td><img src="northwest-logo.jpg" alt="Northwest" class="provider-table-icon"> <strong>Northwest</strong></td>
               <td>Offers business-address and Registered Agent services that may reduce the need to use a home address for certain business purposes, subject to state and service requirements</td>
             </tr>
             <tr>
               <td><strong>Lower-cost virtual mailbox</strong></td>
-              <td><strong>Anytime Mailbox</strong></td>
+              <td><img src="anytime-mailbox-logo.png" alt="Anytime Mailbox" class="provider-table-icon"> <strong>Anytime Mailbox</strong></td>
               <td>Offers locations with relatively low starting prices, although pricing and features vary by location</td>
             </tr>
             <tr>
               <td><strong>Specific city/neighborhood address</strong></td>
-              <td><strong>iPostal1</strong></td>
+              <td><img src="ipostal1-logo.webp" alt="iPostal1" class="provider-table-icon"> <strong>iPostal1</strong></td>
               <td>Large address network provides a wide selection of locations, with availability and pricing varying by location</td>
             </tr>
             <tr>
               <td><strong>Meeting rooms and professional space</strong></td>
-              <td><strong>Regus</strong></td>
+              <td><img src="regus-logo.jpg" alt="Regus" class="provider-table-icon"> <strong>Regus</strong></td>
               <td>Offers business-address and office solutions, including access to professional workspace at participating locations</td>
             </tr>
             <tr>
@@ -1286,7 +1350,7 @@
             </tr>
             <tr>
               <td><strong>Address + Registered Agent + LLC formation</strong></td>
-              <td><strong>Northwest</strong></td>
+              <td><img src="northwest-logo.jpg" alt="Northwest" class="provider-table-icon"> <strong>Northwest</strong></td>
               <td>Offers LLC formation, Registered Agent service, and business-address options through related services; confirm the current offer and included services before purchasing</td>
             </tr>
           </tbody>
@@ -1313,7 +1377,10 @@
       <div style="background: #ECFDF5; border: 2px solid #10B981; border-radius: 16px; padding: 1.5rem; margin: 2rem 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <div>
           <span style="background: #159a9c; color: #FFFFFF; font-size: 0.68rem; font-weight: 800; padding: 0.2rem 0.55rem; border-radius: 4px; text-transform: uppercase;">★ OUR TOP PICK</span>
-          <h4 style="font-size: 1.15rem; font-weight: 800; color: #12304a; margin: 0.5rem 0 0.25rem 0;">Northwest Registered Agent</h4>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin: 0.5rem 0 0.25rem 0;">
+            <img src="northwest-logo.jpg" alt="Northwest" class="provider-table-icon">
+            <h4 style="font-size: 1.15rem; font-weight: 800; color: #12304a; margin: 0;">Northwest Registered Agent</h4>
+          </div>
           <p style="font-size: 0.875rem; color: #12304a; margin-bottom: 0;">Offers business-address and Registered Agent services alongside LLC formation. Depending on the current formation offer, first-year Registered Agent service and other address-related services may be included. <b>Confirm the current offer, address type, and permitted uses before purchasing</b>.</p>
         </div>
         <a href="northwest-registered-agent-review.html" class="ls-btn ls-btn--emerald" style="padding: 0.75rem 1.35rem; font-size: 0.875rem; white-space: nowrap;">
