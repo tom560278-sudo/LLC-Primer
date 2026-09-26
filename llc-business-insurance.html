@@ -286,21 +286,51 @@
       overflow: hidden;
     }
     .faq-accordion-question {
-      padding: 1.15rem 1.35rem;
+      padding: 1.25rem 1.65rem;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       color: #12304A;
       cursor: pointer;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
     }
     .faq-accordion-answer {
-      padding: 0 1.35rem 1.25rem 1.35rem;
-      font-size: 0.9rem;
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
       color: #475569;
-      line-height: 1.65;
+      line-height: 1.7;
       border-top: 1px dashed #F1F5F9;
       margin-top: 0.25rem;
       padding-top: 1rem;
@@ -1285,8 +1315,11 @@
 <div class="faq-accordion-wrapper">
   <details class="faq-accordion-item">
     <summary class="faq-accordion-question">
-      <span>Does an LLC need business insurance?</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="faq-q-badge-title">
+        <span class="faq-q-badge">1</span>
+        <span>Does an LLC need business insurance?</span>
+      </div>
+      <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </summary>
     <div class="faq-accordion-answer">
       An LLC does not automatically require business insurance simply because it is an LLC. However, insurance may be required by <strong>state law, federal rules, licensing requirements, contracts, landlords, lenders, or the type of business you operate</strong>. Even when insurance is not legally required, it can help address risks that the LLC structure itself does not cover, such as certain third-party injuries, property damage, professional errors, employee-related claims, or other covered losses.
@@ -1295,8 +1328,11 @@
 
   <details class="faq-accordion-item">
     <summary class="faq-accordion-question">
-      <span>How much does LLC business insurance cost?</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="faq-q-badge-title">
+        <span class="faq-q-badge">2</span>
+        <span>How much does LLC business insurance cost?</span>
+      </div>
+      <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </summary>
     <div class="faq-accordion-answer">
       Costs vary significantly by industry, location, revenue, payroll, employees, coverage limits, deductibles, claims history, and policy type. There is no single price that applies to most LLCs. General Liability, Professional Liability, Workers' Compensation, Commercial Property, BOP, and Cyber coverage can each have substantially different pricing. Obtain quotes based on your actual business activities and compare the coverage, limits, deductibles, and exclusions—not just the premium.
@@ -1305,8 +1341,11 @@
 
   <details class="faq-accordion-item">
     <summary class="faq-accordion-question">
-      <span>What's the difference between General Liability and Professional Liability?</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="faq-q-badge-title">
+        <span class="faq-q-badge">3</span>
+        <span>What's the difference between General Liability and Professional Liability?</span>
+      </div>
+      <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </summary>
     <div class="faq-accordion-answer">
       <strong>General Liability</strong> generally addresses certain third-party claims involving bodily injury, property damage, and personal or advertising injury, subject to the policy. <strong>Professional Liability (E&amp;O)</strong> generally addresses certain claims alleging errors, omissions, negligence, or failures in professional services, also subject to the policy. A business may need one, both, or neither depending on its activities, contracts, and risk exposure.
@@ -1315,8 +1354,11 @@
 
   <details class="faq-accordion-item">
     <summary class="faq-accordion-question">
-      <span>Can I get business insurance before my LLC is formed?</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="faq-q-badge-title">
+        <span class="faq-q-badge">4</span>
+        <span>Can I get business insurance before my LLC is formed?</span>
+      </div>
+      <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </summary>
     <div class="faq-accordion-answer">
       Some insurers may allow you to obtain coverage before your LLC is formally formed, while others may require additional information or an established business entity. The appropriate timing depends on the insurer, policy, and when your business activities begin. If you purchase coverage before formation, make sure the named insured and policy information are updated appropriately once the LLC is established.
@@ -1325,8 +1367,11 @@
 
   <details class="faq-accordion-item">
     <summary class="faq-accordion-question">
-      <span>Do I need workers' compensation if I'm the only employee?</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="faq-q-badge-title">
+        <span class="faq-q-badge">5</span>
+        <span>Do I need workers' compensation if I'm the only employee?</span>
+      </div>
+      <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </summary>
     <div class="faq-accordion-answer">
       Not necessarily. Workers' compensation rules vary by state and can depend on whether the worker is an owner, employee, or another type of worker, as well as the business's industry and structure. Some states provide exemptions for certain LLC members or small businesses, while others have broader requirements. Check the workers' compensation rules in each state where your business has employees or workers before assuming you are exempt.

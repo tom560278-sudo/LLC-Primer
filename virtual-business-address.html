@@ -363,12 +363,12 @@
       font-size: 1rem;
     }
 
-    /* Provider Logo Icons on Review Headers (Right-aligned, Enlarged 76px) */
+    /* Provider Logo Icons on Review Headers (Right-aligned, Enlarged 84px) */
     .review-header-logo {
-      width: 76px;
-      height: 76px;
+      width: 84px;
+      height: 84px;
       object-fit: contain;
-      border-radius: 16px;
+      border-radius: 18px;
       background: #FFFFFF;
       padding: 6px;
       flex-shrink: 0;
@@ -446,19 +446,6 @@
       content: "✗ ";
       font-weight: 800;
     }
-      background: #FEF2F2;
-      border: 1px solid #FCA5A5;
-      border-radius: 10px;
-      padding: 1rem 1.15rem;
-    }
-    .pros-title { color: #166534; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.5rem; }
-    .cons-title { color: #991B1B; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.5rem; }
-    
-    .pros-list, .cons-list { list-style: none; padding: 0; margin: 0; font-size: 0.875rem; line-height: 1.6; }
-    .pros-list li { color: #166534; margin-bottom: 0.35rem; }
-    .pros-list li::before { content: "✓ "; font-weight: 800; }
-    .cons-list li { color: #991B1B; margin-bottom: 0.35rem; }
-    .cons-list li::before { content: "✗ "; font-weight: 800; }
 
     /* Custom Tables */
     .custom-table-wrapper {
@@ -557,6 +544,13 @@
       line-height: 1.4;
     }
 
+    .review-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
     @media (max-width: 768px) {
       .provider-4grid { grid-template-columns: 1fr; }
       .risk-4grid { grid-template-columns: 1fr; }
@@ -564,6 +558,7 @@
       .split-compare-body { grid-template-columns: 1fr; }
       .pros-cons-grid { grid-template-columns: 1fr; }
       .toc-list { grid-template-columns: 1fr; }
+      .review-meta-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1152,11 +1147,11 @@
       <div class="review-detail-card">
         <div class="review-card-header">
           <div class="review-card-title">Northwest Registered Agent</div>
-          <img src="images/northwest-logo.png" alt="Northwest Registered Agent Logo" class="review-header-logo shadow-northwest">
+          <img src="images/northwest-icon.jpg" alt="Northwest Registered Agent Icon" class="review-header-logo shadow-northwest">
         </div>
 
         <div style="font-size: 0.9rem; line-height: 1.6; color: #475569; margin-bottom: 1rem;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; margin-bottom: 1rem;">
+          <div class="review-meta-grid">
             <div><strong>Pricing:</strong> Current virtual-office and mail-service pricing varies by service and location</div>
             <div><strong>Registered Agent:</strong> Available</div>
             <div><strong>Locations:</strong> Nationwide options</div>
@@ -1201,7 +1196,7 @@
         </div>
 
         <div style="font-size: 0.9rem; line-height: 1.6; color: #475569; margin-bottom: 1rem;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; margin-bottom: 1rem;">
+          <div class="review-meta-grid">
             <div><strong>Starting Price:</strong> Varies by location and plan</div>
             <div><strong>Locations:</strong> Large U.S. and international network</div>
             <div><strong>Registered Agent:</strong> Not generally included with the virtual mailbox service</div>
@@ -1246,7 +1241,7 @@
         </div>
 
         <div style="font-size: 0.9rem; line-height: 1.6; color: #475569; margin-bottom: 1rem;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; margin-bottom: 1rem;">
+          <div class="review-meta-grid">
             <div><strong>Starting Price:</strong> Varies by location; some locations advertise low-cost plans</div>
             <div><strong>Locations:</strong> U.S. and international locations</div>
             <div><strong>Registered Agent:</strong> Not included as part of the standard virtual mailbox service</div>
