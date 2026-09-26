@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
   <title>LLC Business Insurance (2026 Guide) | LLC Primer</title>
-  <meta name="description" content="Which insurance policies does your LLC actually need? Compare General Liability, E&O, Workers' Comp, BOP, and Cyber insurance costs and coverage requirements for 2026.">
+  <meta name="description" content="Which insurance policies does your LLC actually need? Compare General Liability, E&O, Workers' Comp, BOP, and Cyber insurance costs, coverage matrix, and legal requirements for 2026.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +45,41 @@
       line-height: 1.65;
       color: #7F1D1D;
       margin: 0;
+    }
+
+    /* Callout Box Variants */
+    .callout-mint {
+      background: #ECFDF5;
+      border: 1.5px solid #A7F3D0;
+      border-left: 5px solid #10B981;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      color: #065F46;
+      font-size: 0.925rem;
+      line-height: 1.65;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #BAE6FD;
+      border-left: 5px solid #0284C7;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      color: #0C4A6E;
+      font-size: 0.925rem;
+      line-height: 1.65;
+    }
+    .callout-amber {
+      background: #FFFBEB;
+      border: 1.5px solid #FDE68A;
+      border-left: 5px solid #F59E0B;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      color: #78350F;
+      font-size: 0.925rem;
+      line-height: 1.65;
     }
 
     /* Table of Contents Box */
@@ -103,7 +138,7 @@
       text-align: left;
     }
     .policy-detail-table th {
-      background: #1E3A8A;
+      background: #12304A;
       color: #FFFFFF;
       font-weight: 800;
       font-size: 0.75rem;
@@ -194,6 +229,83 @@
       background: #F8FAFC;
     }
 
+    /* Step Nodes styling */
+    .step-nodes-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.75rem 0;
+    }
+    .step-node-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.25rem;
+      box-shadow: 0 2px 8px rgba(18, 48, 74, 0.03);
+    }
+    .step-node-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #2563EB;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-node-content h4 {
+      margin: 0 0 0.35rem 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #12304A;
+    }
+    .step-node-content p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.55;
+    }
+
+    /* FAQ Accordion */
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin: 1.5rem 0 2.5rem 0;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .faq-accordion-question {
+      padding: 1.15rem 1.35rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-accordion-answer {
+      padding: 0 1.35rem 1.25rem 1.35rem;
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.65;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
+
     /* Footnote Text */
     .section-footnote {
       font-size: 0.875rem;
@@ -233,6 +345,7 @@
       .toc-list { grid-template-columns: 1fr; }
       .policy-detail-table th:first-child { width: 35%; }
       .policy-detail-table th:last-child { width: 65%; }
+      .step-node-item { flex-direction: column; gap: 0.75rem; }
     }
   </style>
 </head>
@@ -619,7 +732,7 @@
       </div>
 
       <!-- =========================================================================
-           SECTION 2: WHICH INSURANCE DOES YOUR LLC ACTUALLY NEED? (IMAGE 5 BOTTOM)
+           SECTION 2: WHICH INSURANCE DOES YOUR LLC ACTUALLY NEED? (IMAGE 1)
            ========================================================================= -->
       <h2 id="matrix">Which Insurance Does Your LLC Actually Need?</h2>
       <p>
@@ -631,55 +744,544 @@
         <table class="custom-table">
           <thead>
             <tr>
-              <th style="width: 25%;">BUSINESS TYPE</th>
-              <th style="width: 35%;">RECOMMENDED COVERAGE</th>
-              <th style="width: 22%;">ESTIMATED COST</th>
-              <th style="width: 18%;">NECESSITY LEVEL</th>
+              <th style="width: 20%;">BUSINESS TYPE</th>
+              <th style="width: 17%;">GENERAL LIABILITY</th>
+              <th style="width: 17%;">PROFESSIONAL (E&O)</th>
+              <th style="width: 16%;">WORKERS' COMP</th>
+              <th style="width: 15%;">PROPERTY</th>
+              <th style="width: 15%;">CYBER</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Freelancers & Solo Consultants</strong></td>
-              <td>General Liability + Professional Liability (E&O)</td>
-              <td>$40 – $90 / mo</td>
-              <td><span class="badge-essential">Essential</span></td>
+              <td><strong>Freelancer / Consultant</strong></td>
+              <td><span style="color: #059669; font-weight: 700;">✓ Recommended</span></td>
+              <td><span style="color: #059669; font-weight: 700;">✓ Essential</span></td>
+              <td><span style="color: #9A3412;">✗ (no employees)</span></td>
+              <td><span style="color: #9A3412;">✗ (home-based)</span></td>
+              <td><span style="color: #64748B;">Optional</span></td>
             </tr>
             <tr>
-              <td><strong>E-commerce & SaaS LLCs</strong></td>
-              <td>General Liability + Cyber Liability</td>
-              <td>$50 – $110 / mo</td>
-              <td><span class="badge-essential">Essential</span></td>
+              <td><strong>E-Commerce Store</strong></td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
+              <td><span style="color: #64748B;">Optional</span></td>
+              <td>If employees</td>
+              <td>If inventory</td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
             </tr>
             <tr>
-              <td><strong>Brick-and-Mortar Retail / Restaurants</strong></td>
-              <td>BOP (General Liability + Property) + Workers' Comp</td>
-              <td>$80 – $220 / mo</td>
-              <td><span class="badge-essential">Required</span></td>
+              <td><strong>Restaurant / Food</strong></td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
+              <td><span style="color: #9A3412;">✗</span></td>
+              <td><span style="color: #2563EB; font-weight: 700;">✓ Required</span></td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
+              <td><span style="color: #64748B;">Optional</span></td>
             </tr>
             <tr>
-              <td><strong>Contractors & Trade LLCs</strong></td>
-              <td>General Liability + Commercial Auto + Workers' Comp</td>
-              <td>$120 – $350 / mo</td>
-              <td><span class="badge-essential">Required</span></td>
+              <td><strong>Construction</strong></td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
+              <td><span style="color: #2563EB; font-weight: 700;">✓ Required</span></td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
+              <td><span style="color: #9A3412;">✗</span></td>
             </tr>
             <tr>
-              <td><strong>Home-Based Services</strong></td>
-              <td>General Liability (or Endorsement on Homeowners)</td>
-              <td>$25 – $45 / mo</td>
-              <td><span class="badge-important">Recommended</span></td>
+              <td><a href="what-is-an-llc.html" style="color: #2563EB; font-weight: 700;">Real Estate LLC</a></td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
+              <td><span style="color: #9A3412;">✗</span></td>
+              <td>If employees</td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
+              <td><span style="color: #64748B;">Optional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Marketing Agency</strong></td>
+              <td><span style="color: #059669; font-weight: 700;">✓ Recommended</span></td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
+              <td>If employees</td>
+              <td><span style="color: #64748B;">Optional</span></td>
+              <td><span style="color: #059669; font-weight: 700;">✓ Recommended</span></td>
+            </tr>
+            <tr>
+              <td><strong>Healthcare Provider</strong></td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
+              <td><span style="color: #2563EB; font-weight: 700;">✓ Malpractice (required)</span></td>
+              <td><span style="color: #2563EB; font-weight: 700;">✓ Required</span></td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential</span></td>
+              <td><span style="color: #059669; font-weight: 800;">✓ Essential (HIPAA)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Home-Based Online Business</strong></td>
+              <td><span style="color: #059669; font-weight: 700;">✓ Recommended</span></td>
+              <td>Depends on service</td>
+              <td><span style="color: #9A3412;">✗ (no employees)</span></td>
+              <td><span style="color: #9A3412;">✗</span></td>
+              <td><span style="color: #64748B;">Optional</span></td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Key Takeaway Banner Card -->
-      <div style="background: linear-gradient(135deg, #12304A 0%, #159A9C 100%); border-radius: 16px; padding: 2rem; color: #FFFFFF; margin-top: 3rem; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.15);">
-        <div style="font-size: 0.75rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">
-          EXECUTIVE SUMMARY
+      <!-- CALLOUT MINT BOX: THE MINIMUM FOR MOST LLCS (IMAGE 1) -->
+      <div class="callout-mint">
+        💡 <strong>The Simple Rule:</strong> If you're a <strong>service-based LLC</strong> (consulting, design, marketing, development), start with <strong>General Liability + Professional Liability (E&O)</strong>. That combination covers the two most common claim types: someone getting hurt and someone saying you messed up their project. Together, they cost roughly <strong>$80–$200/month</strong> and protect against the vast majority of lawsuits a small LLC will face.
+      </div>
+
+      <!-- =========================================================================
+           SECTION 3: HOW MUCH DOES BUSINESS INSURANCE COST? (IMAGE 1)
+           ========================================================================= -->
+      <h2 id="cost">How Much Does Business Insurance Cost?</h2>
+      <p>
+        Insurance costs depend on your industry, location, revenue, and number of employees. However, here are realistic monthly ranges based on national averages for small LLCs.
+      </p>
+
+      <h3>Monthly Cost by Policy Type</h3>
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">POLICY</th>
+              <th style="width: 20%;">MONTHLY COST</th>
+              <th style="width: 20%;">ANNUAL COST</th>
+              <th style="width: 35%;">WHAT AFFECTS PRICE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>General Liability</strong></td>
+              <td><strong style="color: #059669;">$30–$80</strong></td>
+              <td>$360–$960</td>
+              <td>Industry risk, location, revenue</td>
+            </tr>
+            <tr>
+              <td><strong>Professional Liability (E&O)</strong></td>
+              <td><strong>$50–$150</strong></td>
+              <td>$600–$1,800</td>
+              <td>Service type, contract size, claims history</td>
+            </tr>
+            <tr>
+              <td><strong>Workers' Compensation</strong></td>
+              <td><strong>$45–$120</strong></td>
+              <td>$540–$1,440</td>
+              <td>Number of employees, industry risk level</td>
+            </tr>
+            <tr>
+              <td><strong>Commercial Property</strong></td>
+              <td><strong>$25–$70</strong></td>
+              <td>$300–$840</td>
+              <td>Property value, location, building type</td>
+            </tr>
+            <tr>
+              <td><strong>BOP (Bundle)</strong></td>
+              <td><strong style="color: #059669;">$40–$100</strong></td>
+              <td>$480–$1,200</td>
+              <td>Saves 10–15% vs buying GL + Property separately</td>
+            </tr>
+            <tr>
+              <td><strong>Cyber Liability</strong></td>
+              <td><strong>$30–$60</strong></td>
+              <td>$360–$720</td>
+              <td>Data volume, industry, security practices</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Sample Budgets by Business Type</h3>
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">BUSINESS TYPE</th>
+              <th style="width: 30%;">POLICIES NEEDED</th>
+              <th style="width: 22%;">ESTIMATED MONTHLY</th>
+              <th style="width: 23%;">ESTIMATED ANNUAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Solo Freelancer</strong></td>
+              <td>GL + E&O</td>
+              <td><strong style="color: #059669;">$80–$200</strong></td>
+              <td>$960–$2,400</td>
+            </tr>
+            <tr>
+              <td><strong>E-Commerce (no employees)</strong></td>
+              <td>GL + Cyber</td>
+              <td><strong style="color: #059669;">$60–$140</strong></td>
+              <td>$720–$1,680</td>
+            </tr>
+            <tr>
+              <td><strong>Small Retail Store (2 employees)</strong></td>
+              <td>BOP + Workers' Comp</td>
+              <td><strong>$85–$220</strong></td>
+              <td>$1,020–$2,640</td>
+            </tr>
+            <tr>
+              <td><strong>Construction Contractor</strong></td>
+              <td>GL + E&O + Workers' Comp + Property</td>
+              <td><strong style="color: #2563EB;">$150–$420</strong></td>
+              <td>$1,800–$5,040</td>
+            </tr>
+            <tr>
+              <td><strong>Marketing Agency (5 employees)</strong></td>
+              <td>GL + E&O + Workers' Comp + Cyber</td>
+              <td><strong style="color: #2563EB;">$155–$410</strong></td>
+              <td>$1,860–$4,920</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CALLOUT BLUE BOX: HOW TO LOWER YOUR PREMIUMS (IMAGE 1) -->
+      <div class="callout-blue">
+        📊 <strong>How to Lower Your Premiums:</strong> Three strategies consistently reduce insurance costs: <strong>bundling policies</strong> (BOP saves 10–15%), <strong>increasing your deductible</strong> (higher deductible = lower monthly premium), and <strong>paying annually instead of monthly</strong> (most insurers offer a 5–10% discount for annual payment). Additionally, maintaining a clean claims history keeps your rates from increasing at renewal.
+      </div>
+
+      <!-- =========================================================================
+           SECTION 4: INSURANCE THAT'S LEGALLY REQUIRED (IMAGE 2)
+           ========================================================================= -->
+      <h2 id="legally-required">Insurance That's Legally Required</h2>
+      <p>
+        Most business insurance is optional — you choose it to protect your LLC. However, <strong>some types are legally mandated</strong> depending on your state and situation.
+      </p>
+
+      <h3>Workers' Compensation</h3>
+      <p>
+        Nearly every state requires <strong>workers' compensation insurance</strong> as soon as you hire your first employee. The only exception is Texas, where it's technically optional (though still recommended). Operating without workers' comp when required can result in <strong>fines up to $100,000 and even criminal charges</strong> in some states.
+      </p>
+
+      <h3>Commercial Auto Insurance</h3>
+      <p>
+        If your LLC owns or leases vehicles used for business purposes, <strong>commercial auto insurance is required by law</strong> in all 50 states. Your personal auto policy does not cover accidents that happen during business use. If you use a personal car for business errands, ask your insurer about adding a <strong>business-use endorsement</strong> to your personal policy.
+      </p>
+
+      <h3>Industry-Specific Requirements</h3>
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">INDUSTRY</th>
+              <th style="width: 35%;">REQUIRED INSURANCE</th>
+              <th style="width: 40%;">WHY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong style="color: #2563EB;">Healthcare / Medical</strong></td>
+              <td><strong style="color: #2563EB;">Malpractice Insurance</strong></td>
+              <td>Required by state licensing boards to practice</td>
+            </tr>
+            <tr>
+              <td><strong>Construction</strong></td>
+              <td><strong style="color: #2563EB;">General Liability + Workers' Comp</strong></td>
+              <td>Required to obtain building permits and contracts. In New Jersey, minimum GL is $500,000 per occurrence</td>
+            </tr>
+            <tr>
+              <td><strong>Commercial Trucking</strong></td>
+              <td><strong style="color: #2563EB;">Commercial Auto + Cargo Insurance</strong></td>
+              <td>Federal FMCSA requirements</td>
+            </tr>
+            <tr>
+              <td><strong>Liquor-Serving Businesses</strong></td>
+              <td><strong style="color: #2563EB;">Liquor Liability Insurance</strong></td>
+              <td>Required in most states for establishments serving alcohol</td>
+            </tr>
+            <tr>
+              <td><strong>Professional Services (some states)</strong></td>
+              <td>E&O / Professional Liability</td>
+              <td>Required for licensed professionals in certain states</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CALLOUT AMBER BOX: CONTRACTS OFTEN REQUIRE INSURANCE TOO (IMAGE 2) -->
+      <div class="callout-amber">
+        ⚠️ <strong>Contracts Often Require Insurance Too:</strong> Even when insurance isn't legally mandated, many <strong>clients and landlords require proof of insurance</strong> before signing contracts. For example, most commercial leases require General Liability coverage, and many corporate clients require contractors to carry E&O insurance. As a result, not having insurance can cost you business opportunities.
+      </div>
+
+      <!-- =========================================================================
+           SECTION 5: REAL-WORLD SCENARIOS: WHEN INSURANCE SAVES YOUR BUSINESS (IMAGE 2)
+           ========================================================================= -->
+      <h2 id="scenarios">Real-World Scenarios: When Insurance Saves Your Business</h2>
+      <p>
+        Insurance feels abstract until you need it. These real-world scenarios illustrate exactly when each policy type pays for itself.
+      </p>
+
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th style="width: 22%;">SCENARIO</th>
+              <th style="width: 28%;">WITHOUT INSURANCE</th>
+              <th style="width: 28%;">WITH INSURANCE</th>
+              <th style="width: 22%;">POLICY THAT COVERS IT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Client trips on loose carpet at your office</strong></td>
+              <td><span style="color: #991B1B;">You pay $35,000 in medical bills and legal fees out of pocket</span></td>
+              <td><span style="color: #166534; font-weight: 600;">Insurance covers medical bills and legal defense — you pay only your deductible ($500–$1,000)</span></td>
+              <td>General Liability</td>
+            </tr>
+            <tr>
+              <td><strong>Your website design has a bug that costs a client $80,000</strong></td>
+              <td><span style="color: #991B1B;">Client sues your LLC — you pay legal defense plus potential settlement from business or personal assets</span></td>
+              <td><span style="color: #166534; font-weight: 600;">E&O insurance provides legal defense and covers the settlement up to your policy limit</span></td>
+              <td>Professional Liability (E&O)</td>
+            </tr>
+            <tr>
+              <td><strong>Employee hurts their back lifting inventory</strong></td>
+              <td><span style="color: #991B1B;">You face state penalties for no workers' comp, plus $40,000+ in medical bills and potential lawsuits</span></td>
+              <td><span style="color: #166534; font-weight: 600;">Workers' comp covers all medical treatment and 66% of lost wages while they recover</span></td>
+              <td>Workers' Compensation</td>
+            </tr>
+            <tr>
+              <td><strong>Hacker steals 5,000 customer email addresses</strong></td>
+              <td><span style="color: #991B1B;">You pay $75,000+ for breach notification, credit monitoring, legal fees, and reputation damage</span></td>
+              <td><span style="color: #166534; font-weight: 600;">Cyber insurance covers notification costs, credit monitoring, and legal defense</span></td>
+              <td>Cyber Liability</td>
+            </tr>
+            <tr>
+              <td><strong>Fire destroys your office and equipment</strong></td>
+              <td><span style="color: #991B1B;">You lose $60,000 in equipment plus 3 months of revenue while rebuilding</span></td>
+              <td><span style="color: #166534; font-weight: 600;">BOP covers property replacement AND lost income during closure period</span></td>
+              <td>BOP or Commercial Property</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="section-footnote">
+        In every scenario above, the <strong>annual insurance premium is a fraction of the potential loss</strong>. For example, a $600/year General Liability policy can protect you from a $35,000 lawsuit. That's a return on investment you'd take any day.
+      </p>
+
+      <!-- =========================================================================
+           SECTION 6: INSURANCE YOU CAN PROBABLY SKIP (IMAGE 3)
+           ========================================================================= -->
+      <h2 id="skip">Insurance You Can Probably Skip</h2>
+      <p>
+        Insurance agents get paid commissions. As a result, they're incentivized to sell you as many policies as possible. Here's what most small LLCs <strong>don't need</strong>.
+      </p>
+
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th style="width: 20%;">POLICY</th>
+              <th style="width: 25%;">WHY THEY SELL IT</th>
+              <th style="width: 30%;">WHY YOU CAN SKIP IT</th>
+              <th style="width: 25%;">EXCEPTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Business Interruption (standalone)</strong></td>
+              <td>Sounds important — covers lost income during closures</td>
+              <td>Already included in a BOP policy — no need to buy separately</td>
+              <td>Only buy standalone if you can't get a BOP</td>
+            </tr>
+            <tr>
+              <td><strong>Key Person Insurance</strong></td>
+              <td>Covers loss of a critical employee or founder</td>
+              <td>Unnecessary for solo LLCs or small teams where no single person is irreplaceable</td>
+              <td>Consider if your LLC depends entirely on one person's skills or relationships</td>
+            </tr>
+            <tr>
+              <td><strong>Product Liability (for service businesses)</strong></td>
+              <td>Covers injuries caused by products you make or sell</td>
+              <td>If you're a service-based LLC that doesn't manufacture or sell physical products, you don't need this</td>
+              <td>Required for e-commerce, manufacturing, and food businesses</td>
+            </tr>
+            <tr>
+              <td><strong>Commercial Umbrella</strong></td>
+              <td>Extra liability coverage beyond your primary policies</td>
+              <td>Overkill for most small LLCs with less than $1M in revenue — standard limits are usually sufficient</td>
+              <td>Consider once revenue exceeds $1M or if you're in a high-risk industry</td>
+            </tr>
+            <tr>
+              <td><strong>Employment Practices Liability (EPLI)</strong></td>
+              <td>Covers wrongful termination, discrimination, and harassment claims</td>
+              <td>Unnecessary if you have fewer than 5 employees</td>
+              <td>Important once you have a larger team</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CALLOUT BLUE BOX: THE BOTTOM LINE ON SKIPPING COVERAGE (IMAGE 3) -->
+      <div class="callout-blue">
+        💡 <strong>The Bottom Line on Skipping Coverage:</strong> Start with the essentials (General Liability + E&O for service businesses, or BOP for physical locations). You can always add additional coverage later as your LLC grows. It's better to have the right coverage now than to overpay for policies you'll never use.
+      </div>
+
+      <!-- =========================================================================
+           SECTION 7: HOW TO GET BUSINESS INSURANCE STEP BY STEP (IMAGE 3)
+           ========================================================================= -->
+      <h2 id="step-by-step">How to Get Business Insurance (Step by Step)</h2>
+      <p>
+        Getting business insurance is simpler than most people expect. Here's the process from start to finish.
+      </p>
+
+      <div class="step-nodes-wrapper">
+        <div class="step-node-item">
+          <div class="step-node-num">1</div>
+          <div class="step-node-content">
+            <h4>Determine What Coverage You Need</h4>
+            <p>First, use the coverage matrix above to identify which policies your business type requires. Write down the specific coverages you need before shopping — this prevents agents from upselling unnecessary policies.</p>
+          </div>
         </div>
-        <h3 style="color: #FFFFFF; margin-top: 0; margin-bottom: 0.75rem; font-size: 1.35rem;">Protect Your Business Growth for 2026</h3>
+        <div class="step-node-item">
+          <div class="step-node-num">2</div>
+          <div class="step-node-content">
+            <h4>Get Quotes From Multiple Providers</h4>
+            <p>Next, request quotes from at least 3 different providers. You can use online platforms for instant quotes or contact insurance brokers who compare rates from multiple carriers. Prices vary significantly — we've seen the same coverage quoted at $400/year from one provider and $1,200/year from another.</p>
+          </div>
+        </div>
+        <div class="step-node-item">
+          <div class="step-node-num">3</div>
+          <div class="step-node-content">
+            <h4>Compare Coverage, Not Just Price</h4>
+            <p>The cheapest policy isn't always the best. Compare <strong>coverage limits, deductibles, exclusions, and the claims process</strong>. In particular, check what's excluded — some policies exclude specific claim types that might be relevant to your industry.</p>
+          </div>
+        </div>
+        <div class="step-node-item">
+          <div class="step-node-num">4</div>
+          <div class="step-node-content">
+            <h4>Purchase and Get Your Certificate</h4>
+            <p>Finally, once you've chosen a provider, purchase the policy and download your <strong>Certificate of Insurance (COI)</strong>. This is the document you'll share with clients, landlords, and anyone else who requires proof of coverage. Most providers issue COIs digitally within minutes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 8: BEST INSURANCE PROVIDERS FOR SMALL LLCS (IMAGES 3 & 4)
+           ========================================================================= -->
+      <h2 id="providers">Best Insurance Providers for Small LLCs</h2>
+      <p>
+        These providers specialize in small business insurance and offer <strong>online quotes in minutes</strong>. All of them cover LLCs and allow you to customize your coverage.
+      </p>
+
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th style="width: 20%;">PROVIDER</th>
+              <th style="width: 22%;">BEST FOR</th>
+              <th style="width: 18%;">STARTING PRICE</th>
+              <th style="width: 18%;">QUOTE SPEED</th>
+              <th style="width: 22%;">STANDOUT FEATURE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NEXT Insurance</strong></td>
+              <td><strong style="color: #059669;">Freelancers & online businesses</strong></td>
+              <td>$25/month</td>
+              <td>Instant online</td>
+              <td>100% online — purchase, manage, and file claims digitally</td>
+            </tr>
+            <tr>
+              <td><strong>Hiscox</strong></td>
+              <td><strong style="color: #059669;">Professional service LLCs</strong></td>
+              <td>$22.50/month</td>
+              <td>Instant online</td>
+              <td>Specialized E&O coverage for consultants, IT, and marketing</td>
+            </tr>
+            <tr>
+              <td><strong>The Hartford</strong></td>
+              <td>LLCs with employees</td>
+              <td>Custom</td>
+              <td>Same day</td>
+              <td>Strong workers' comp and BOP bundles</td>
+            </tr>
+            <tr>
+              <td><strong>Progressive Commercial</strong></td>
+              <td>LLCs needing auto + liability</td>
+              <td>$40/month</td>
+              <td>Instant online</td>
+              <td>Bundled commercial auto + general liability discounts</td>
+            </tr>
+            <tr>
+              <td><strong>State Farm</strong></td>
+              <td>LLCs wanting local agent support</td>
+              <td>Custom</td>
+              <td>Agent consultation</td>
+              <td>19,000+ local agents for in-person guidance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CALLOUT MINT BOX: OUR RECOMMENDATION (IMAGE 3) -->
+      <div class="callout-mint">
+        💡 <strong>Our Recommendation:</strong> For most small LLCs, start with <strong>NEXT Insurance or Hiscox</strong>. Both offer instant online quotes, low prices, and easy digital management. You can have a policy active within 10 minutes. However, if you have employees and need workers' comp, <strong>The Hartford</strong> offers the best bundled packages.
+      </div>
+
+      <!-- =========================================================================
+           SECTION 9: FREQUENTLY ASKED QUESTIONS (IMAGE 4)
+           ========================================================================= -->
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-accordion-wrapper">
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <span>Does an LLC need business insurance?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            An LLC provides personal liability protection, but it does not protect your business assets from lawsuits or claims. Business insurance protects your company's bank accounts, property, and income from claims involving negligence, accidents, employee injuries, or professional mistakes.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <span>How much does LLC business insurance cost?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            Most small LLCs pay between $30 and $80/month for General Liability. Service-based LLCs needing E&O pay $80–$200/month for combined coverage. Pricing varies by industry risk, location, revenue, and coverage limits.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <span>What's the difference between General Liability and Professional Liability?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            General Liability covers physical risks (bodily injury, property damage, slip-and-fall claims). Professional Liability (Errors & Omissions) covers financial damages caused by mistakes, negligence, or failure to deliver promised professional services.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <span>Can I get business insurance before my LLC is formed?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            Yes, many insurers allow you to apply using your DBA or prospective business name, but it's generally best to form your LLC first so the policy is issued in your legal entity's exact name.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <span>Do I need workers' compensation if I'm the only employee?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            In most states, single-member LLCs without employees are exempt from workers' compensation requirements for themselves, though you can choose to opt in depending on your industry and state rules.
+          </div>
+        </details>
+      </div>
+
+      <!-- KEY TAKEAWAY EXECUTIVE BANNER CARD (IMAGE 4) -->
+      <div style="background: linear-gradient(135deg, #12304A 0%, #2563EB 100%); border-radius: 16px; padding: 2rem; color: #FFFFFF; margin-top: 3rem; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.15);">
+        <div style="font-size: 0.75rem; font-weight: 800; color: #38BDF8; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">
+          KEY TAKEAWAY
+        </div>
+        <h3 style="color: #FFFFFF; margin-top: 0; margin-bottom: 0.75rem; font-size: 1.35rem;">Protect Your LLC Today</h3>
         <p style="color: #E2E8F0; margin-bottom: 0; font-size: 0.95rem; line-height: 1.6;">
-          An LLC provides legal asset separation, but business insurance provides financial security when unexpected claims occur. Start with a foundational <b>General Liability</b> or <b>Business Owner's Policy (BOP)</b>, add <b>E&O</b> if you deliver expert services, and ensure <b>Workers' Comp</b> compliance if you hire employees.
+          <b>Your LLC limits liability for business debts — but insurance protects you from everything else.</b> For most service-based LLCs, General Liability + Professional Liability (E&O) is the essential combo, costing roughly $80–$200/month. Get instant quotes from NEXT Insurance or Hiscox in under 10 minutes. Once you're insured, the final piece of your business setup is getting a <a href="virtual-business-address.html" style="color: #38BDF8; text-decoration: underline;">virtual business address</a> to keep your home address off public records. For the complete post-formation roadmap, see <a href="business-setup.html" style="color: #38BDF8; text-decoration: underline;">what to do after forming your LLC</a>.
         </p>
       </div>
 
@@ -745,7 +1347,7 @@
   <!-- SEARCH MODAL -->
   <div class="modal-overlay" id="searchModalOverlay">
     <div class="modal-card">
-      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <button class="modal-close" onclick="closeSearchModal()"></button>
       <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
       <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
       <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
