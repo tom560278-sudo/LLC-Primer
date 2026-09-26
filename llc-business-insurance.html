@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
-  <title>LLC Business Insurance — Complete 2026 Coverage Guide | LLC Primer</title>
-  <meta name="description" content="Learn about LLC business insurance options including General Liability, Professional Liability, and Workers' Compensation to protect your business assets.">
+  <title>LLC Business Insurance (2026 Guide) | LLC Primer</title>
+  <meta name="description" content="Which insurance policies does your LLC actually need? Compare General Liability, E&O, Workers' Comp, BOP, and Cyber insurance costs and coverage requirements for 2026.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,15 +12,235 @@
   
   <link rel="stylesheet" href="styles.css">
   <style>
-    .guide-content-container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem 3.5rem 1.5rem; width: 100%; }
-    .guide-content-container p { font-size: 1.05rem; line-height: 1.75; color: #334155; margin-bottom: 1.5rem; }
-    .guide-content-container h2 { font-size: 1.75rem; font-weight: 800; color: #12304A; margin-top: 3rem; margin-bottom: 1rem; font-family: var(--font-heading); }
-    .callout-box { background: #FFFFFF; border: 1.5px solid #E2E8F0; border-left: 5px solid #159A9C; border-radius: 14px; padding: 1.25rem 1.5rem; margin: 1.75rem 0; box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04); }
+    /* Scoped Content Container */
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3.5rem 1.5rem;
+      width: 100%;
+    }
+
+    /* Red Alert Warning Box */
+    .alert-red-box {
+      background: #FEF2F2;
+      border: 1.5px solid #FCA5A5;
+      border-left: 5px solid #EF4444;
+      border-radius: 14px;
+      padding: 1.35rem 1.6rem;
+      margin: 1.75rem 0 2.25rem 0;
+      color: #991B1B;
+    }
+    .alert-red-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #991B1B;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+    }
+    .alert-red-text {
+      font-size: 0.925rem;
+      line-height: 1.65;
+      color: #7F1D1D;
+      margin: 0;
+    }
+
+    /* Table of Contents Box */
+    .toc-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      margin: 2rem 0 2.5rem 0;
+    }
+    .toc-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      font-family: var(--font-heading);
+      border-bottom: 2px solid #159A9C;
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+    .toc-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 1.75rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .toc-list li a {
+      font-size: 0.925rem;
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .toc-list li a:hover {
+      color: #0E7490;
+      text-decoration: underline;
+    }
+
+    /* Policy Detail Table (1:1 with Images 4 & 5) */
+    .policy-detail-table-wrapper {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 1.5rem 0 1.25rem 0;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+    }
+    .policy-detail-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+    .policy-detail-table th {
+      background: #1E3A8A;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-family: var(--font-heading);
+    }
+    .policy-detail-table th:first-child {
+      width: 28%;
+    }
+    .policy-detail-table th:last-child {
+      width: 72%;
+    }
+    .policy-detail-table td {
+      padding: 0.9rem 1.25rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+      line-height: 1.55;
+    }
+    .policy-detail-table td:first-child {
+      font-weight: 700;
+      color: #12304A;
+      background: #F8FAFC;
+    }
+    .policy-detail-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Priority Badges */
+    .badge-essential {
+      color: #DC2626;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .badge-essential::before {
+      content: "🔴";
+      font-size: 0.75rem;
+    }
+    .badge-important {
+      color: #D97706;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .badge-important::before {
+      content: "🟡";
+      font-size: 0.75rem;
+    }
+
+    /* Custom Tables */
+    .custom-table-wrapper {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 14px;
+      overflow-x: auto;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      margin: 1.75rem 0;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 0.95rem 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: var(--font-heading);
+    }
+    .custom-table td {
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .custom-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-table tr:nth-child(even) {
+      background: #F8FAFC;
+    }
+
+    /* Footnote Text */
+    .section-footnote {
+      font-size: 0.875rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-top: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Prose Styling */
+    .guide-content-container p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.5rem;
+    }
+    .guide-content-container h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #12304A;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-content-container h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #12304A;
+      margin-top: 2.25rem;
+      margin-bottom: 0.75rem;
+      font-family: var(--font-heading);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .toc-list { grid-template-columns: 1fr; }
+      .policy-detail-table th:first-child { width: 35%; }
+      .policy-detail-table th:last-child { width: 65%; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- SITEHEADER -->
+  <!-- =========================================================================
+       1. SITEWIDE HEADER NAVIGATION
+       ========================================================================= -->
   <header class="site-header">
     <div class="container header-container">
       <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
@@ -29,8 +249,11 @@
 
       <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
         <div class="nav-item">
-          <a href="start-llc.html" class="nav-link">Start an LLC</a>
+          <a href="start-llc.html" class="nav-link">
+            Start an LLC
+          </a>
         </div>
+
         <div class="nav-item">
           <a href="best-llc-services.html" class="nav-link">
             LLC Services
@@ -43,6 +266,7 @@
             <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
           </div>
         </div>
+
         <div class="nav-item">
           <a href="llc-guide.html" class="nav-link">
             LLC Guides
@@ -57,6 +281,7 @@
             <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
           </div>
         </div>
+
         <div class="nav-item">
           <a href="business-setup.html" class="nav-link active" style="color: var(--color-primary); font-weight: 800;">
             Business Setup
@@ -69,6 +294,7 @@
             <a href="llc-business-insurance.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">LLC Business Insurance</a>
           </div>
         </div>
+
         <div class="nav-item">
           <a href="index.html#cost-estimator-section" class="nav-link">
             Tools
@@ -80,16 +306,21 @@
             <a href="index.html#spanish-section" class="dropdown-link">🇪🇸 Guía de LLC en Español</a>
           </div>
         </div>
+
         <div class="nav-item">
-          <a href="index.html#non-us-section" class="nav-link">Non-Residents 🌐</a>
+          <a href="index.html#non-us-section" class="nav-link">
+            Non-Residents 🌐
+          </a>
         </div>
       </nav>
 
       <div class="header-actions">
-        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
-        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">Build LLC Plan →</a>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan →
+        </a>
         <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -97,38 +328,430 @@
     </div>
   </header>
 
+  <!-- =========================================================================
+       2. MAIN CONTENT AREA
+       ========================================================================= -->
   <main class="guide-content-container">
+
+    <!-- BREADCRUMB -->
     <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
-      <a href="index.html" style="color: #64748B; text-decoration: none;">Home</a> &nbsp;/&nbsp; 
+      <a href="index.html" style="color: #64748B; text-decoration: none;">LLC Starters</a> &nbsp;/&nbsp; 
+      <a href="start-llc.html" style="color: #64748B; text-decoration: none;">How to Start an LLC</a> &nbsp;/&nbsp; 
       <a href="business-setup.html" style="color: #64748B; text-decoration: none;">Business Setup</a> &nbsp;/&nbsp; 
       <strong style="color: #12304A;">LLC Business Insurance</strong>
     </div>
 
     <article class="guide-article">
+
+      <!-- HEADER TITLE -->
       <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: #12304A; line-height: 1.2; margin-bottom: 0.75rem; font-family: var(--font-heading);">
-        LLC Business Insurance (2026 Guide)
+        LLC Business Insurance Guide (2026)
       </h1>
-      <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; color: #159A9C; margin-bottom: 1.5rem;">
-        Protect Your Business Assets & Mitigate Operational Risk
+      <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; color: #159A9C; margin-bottom: 1.5rem; line-height: 1.4;">
+        Protect Your Business Assets, Mitigate Operational Risk & Avoid Unnecessary Policies
+      </p>
+
+      <!-- AUTHOR & REVIEW BAR -->
+      <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: #64748B; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #E2E8F0; flex-wrap: wrap;">
+        <span>7 months ago</span>
+        &bull;
+        <span>Updated 2 weeks ago</span>
+        &bull;
+        <span style="font-weight: 700; color: #12304A;">Last reviewed: September 7, 2026</span>
+      </div>
+
+      <p>
+        Here's an uncomfortable truth most LLC owners don't hear: <strong>your LLC alone doesn't fully protect you.</strong> While an LLC separates your personal assets from business debts, it doesn't protect you from lawsuits involving negligence, professional errors, employee injuries, or property damage. That's where <strong>LLC business insurance</strong> comes in.
       </p>
 
       <p>
-        While an LLC shields your personal bank account and home from business debts, it does not protect your business's bank accounts, equipment, or revenue from lawsuits and property damage. <strong>General Liability Insurance</strong> and <strong>BOP (Business Owner Policies)</strong> ensure your company survives unexpected claims.
+        The problem? Insurance companies love selling policies you don't need. A basic freelance consultant doesn't need the same coverage as a construction company. In this guide, we break down exactly which types of insurance your LLC actually needs, how much each one costs, and which ones you can safely skip — so you only pay for what matters.
       </p>
 
-      <div class="callout-box">
-        💡 <strong>Key Takeaway:</strong> Most small LLCs start with General Liability Insurance costing between $30 and $60/month.
+      <!-- RED WARNING ALERT BOX (IMAGE 4) -->
+      <div class="alert-red-box">
+        <div class="alert-red-title">
+          🚨 Why This Matters More Than You Think
+        </div>
+        <p class="alert-red-text">
+          A single lawsuit can cost $50,000–$150,000 in legal fees alone — even if you win. Without insurance, that money comes directly from your business or personal savings. An LLC limits liability for <strong>business debts</strong>, but it won't protect you from <strong>professional negligence claims</strong>, <strong>slip-and-fall lawsuits</strong>, or <strong>employee disputes</strong>. Insurance fills that gap.
+        </p>
       </div>
+
+      <!-- TABLE OF CONTENTS CARD (IMAGE 4) -->
+      <div class="toc-card" id="toc-section">
+        <div class="toc-title">IN THIS GUIDE</div>
+        <ol class="toc-list">
+          <li><a href="#types-explained">1. 6 Types of Business Insurance Explained</a></li>
+          <li><a href="#matrix">2. Which Insurance Does Your LLC Actually Need?</a></li>
+          <li><a href="#cost">3. How Much Does Business Insurance Cost?</a></li>
+          <li><a href="#legally-required">4. Insurance That's Legally Required</a></li>
+          <li><a href="#scenarios">5. Real-World Scenarios: When Insurance Saves Your Business</a></li>
+          <li><a href="#skip">6. Insurance You Can Probably Skip</a></li>
+          <li><a href="#step-by-step">7. How to Get Business Insurance (Step by Step)</a></li>
+          <li><a href="#providers">8. Best Insurance Providers for Small LLCs</a></li>
+          <li><a href="#faq">9. Frequently Asked Questions</a></li>
+        </ol>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 1: 6 TYPES OF BUSINESS INSURANCE EXPLAINED (IMAGES 4 & 5)
+           ========================================================================= -->
+      <h2 id="types-explained">6 Types of Business Insurance Explained</h2>
+      <p>
+        Business insurance isn't one single policy — it's a collection of different coverages, each protecting you from a specific type of risk. Here are the six most common types for LLCs, ranked by how many businesses need them.
+      </p>
+
+      <!-- 1. GENERAL LIABILITY INSURANCE (IMAGE 4) -->
+      <h3>1. General Liability Insurance</h3>
+      <div class="policy-detail-table-wrapper">
+        <table class="policy-detail-table">
+          <thead>
+            <tr>
+              <th>DETAIL</th>
+              <th>GENERAL LIABILITY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>What It Covers</td>
+              <td>Third-party bodily injury, property damage, and advertising claims against your business</td>
+            </tr>
+            <tr>
+              <td>Example</td>
+              <td>A client visits your office and slips on a wet floor — general liability covers their medical bills and your legal defense</td>
+            </tr>
+            <tr>
+              <td>Who Needs It</td>
+              <td><strong>Almost every LLC — this is the foundation of business insurance</strong></td>
+            </tr>
+            <tr>
+              <td>Average Cost</td>
+              <td>$30–$50/month</td>
+            </tr>
+            <tr>
+              <td>Priority</td>
+              <td><span class="badge-essential">Essential</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 2. PROFESSIONAL LIABILITY (E&O) INSURANCE (IMAGE 4) -->
+      <h3>2. Professional Liability (E&O) Insurance</h3>
+      <div class="policy-detail-table-wrapper">
+        <table class="policy-detail-table">
+          <thead>
+            <tr>
+              <th>DETAIL</th>
+              <th>PROFESSIONAL LIABILITY (ERRORS & OMISSIONS)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>What It Covers</td>
+              <td>Claims of professional negligence, mistakes, missed deadlines, or failure to deliver promised services</td>
+            </tr>
+            <tr>
+              <td>Example</td>
+              <td>You're a web developer and a bug in your code causes your client to lose $50,000 in sales — E&O covers the claim</td>
+            </tr>
+            <tr>
+              <td>Who Needs It</td>
+              <td><strong>Service-based LLCs: consultants, developers, designers, accountants, marketers, coaches</strong></td>
+            </tr>
+            <tr>
+              <td>Average Cost</td>
+              <td>$50–$150/month</td>
+            </tr>
+            <tr>
+              <td>Priority</td>
+              <td><span class="badge-essential">Essential for service businesses</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="section-footnote">
+        Licensed professionals such as doctors, lawyers, dentists, and accountants should also review whether their state requires a <a href="what-is-an-llc.html" style="color: #0284C7; font-weight: 700;">Professional LLC (PLLC)</a> instead of a standard LLC — the structure directly affects how malpractice liability is handled.
+      </p>
+
+      <!-- 3. WORKERS' COMPENSATION INSURANCE (IMAGE 5) -->
+      <h3>3. Workers' Compensation Insurance</h3>
+      <div class="policy-detail-table-wrapper">
+        <table class="policy-detail-table">
+          <thead>
+            <tr>
+              <th>DETAIL</th>
+              <th>WORKERS' COMPENSATION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>What It Covers</td>
+              <td>Employee injuries and illnesses that happen on the job — medical bills, lost wages, rehabilitation</td>
+            </tr>
+            <tr>
+              <td>Example</td>
+              <td>A warehouse employee injures their back lifting boxes — workers' comp covers treatment and lost income</td>
+            </tr>
+            <tr>
+              <td>Who Needs It</td>
+              <td><strong>Legally required in most states if you have employees</strong></td>
+            </tr>
+            <tr>
+              <td>Average Cost</td>
+              <td>$45–$120/month (varies by industry risk)</td>
+            </tr>
+            <tr>
+              <td>Priority</td>
+              <td><span class="badge-essential">Legally required (with employees)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="section-footnote">
+        Workers' comp requirements vary significantly by state. New Jersey is among the strictest — fines start at <strong>$5,000 for every 10 days</strong> without coverage, plus potential criminal charges. If your LLC operates there, see the full New Jersey LLC insurance requirements guide for state-specific rules and 2026 cost estimates.
+      </p>
+
+      <!-- 4. COMMERCIAL PROPERTY INSURANCE (IMAGE 5) -->
+      <h3>4. Commercial Property Insurance</h3>
+      <div class="policy-detail-table-wrapper">
+        <table class="policy-detail-table">
+          <thead>
+            <tr>
+              <th>DETAIL</th>
+              <th>COMMERCIAL PROPERTY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>What It Covers</td>
+              <td>Your business property — office space, equipment, inventory, and furniture — against fire, theft, and natural disasters</td>
+            </tr>
+            <tr>
+              <td>Example</td>
+              <td>A pipe bursts in your office and destroys $20,000 worth of computers and equipment</td>
+            </tr>
+            <tr>
+              <td>Who Needs It</td>
+              <td><strong>LLCs with a physical location, expensive equipment, or inventory</strong></td>
+            </tr>
+            <tr>
+              <td>Average Cost</td>
+              <td>$25–$70/month</td>
+            </tr>
+            <tr>
+              <td>Priority</td>
+              <td><span class="badge-important">Important if you have physical assets</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 5. BUSINESS OWNER'S POLICY (BOP) (IMAGE 5) -->
+      <h3>5. Business Owner's Policy (BOP)</h3>
+      <div class="policy-detail-table-wrapper">
+        <table class="policy-detail-table">
+          <thead>
+            <tr>
+              <th>DETAIL</th>
+              <th>BOP (BUNDLE)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>What It Covers</td>
+              <td>Combines General Liability + Commercial Property + Business Interruption into one discounted package</td>
+            </tr>
+            <tr>
+              <td>Example</td>
+              <td>A fire shuts down your retail store for 3 months — BOP covers the property damage AND lost income during closure</td>
+            </tr>
+            <tr>
+              <td>Who Needs It</td>
+              <td><strong>LLCs with a physical location — usually cheaper than buying each policy separately</strong></td>
+            </tr>
+            <tr>
+              <td>Average Cost</td>
+              <td>$40–$100/month (saves 10–15% vs separate policies)</td>
+            </tr>
+            <tr>
+              <td>Priority</td>
+              <td><span class="badge-important">Smart choice for brick-and-mortar businesses</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 6. CYBER LIABILITY INSURANCE (IMAGE 5) -->
+      <h3>6. Cyber Liability Insurance</h3>
+      <div class="policy-detail-table-wrapper">
+        <table class="policy-detail-table">
+          <thead>
+            <tr>
+              <th>DETAIL</th>
+              <th>CYBER LIABILITY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>What It Covers</td>
+              <td>Data breaches, hacking, ransomware attacks, and costs of notifying affected customers</td>
+            </tr>
+            <tr>
+              <td>Example</td>
+              <td>A hacker steals customer credit card data from your e-commerce store — cyber insurance covers breach notification, credit monitoring, and legal defense</td>
+            </tr>
+            <tr>
+              <td>Who Needs It</td>
+              <td><strong>LLCs that store customer data, process payments, or operate online</strong></td>
+            </tr>
+            <tr>
+              <td>Average Cost</td>
+              <td>$30–$80/month</td>
+            </tr>
+            <tr>
+              <td>Priority</td>
+              <td><span class="badge-important">Growing importance — especially for e-commerce and SaaS</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 2: WHICH INSURANCE DOES YOUR LLC ACTUALLY NEED? (IMAGE 5 BOTTOM)
+           ========================================================================= -->
+      <h2 id="matrix">Which Insurance Does Your LLC Actually Need?</h2>
+      <p>
+        Not every LLC needs every type of insurance. Use this matrix to find the exact coverage your business type requires. As a result, you'll avoid both under-insuring and over-paying.
+      </p>
+
+      <h3>Coverage Matrix by Business Type</h3>
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">BUSINESS TYPE</th>
+              <th style="width: 35%;">RECOMMENDED COVERAGE</th>
+              <th style="width: 22%;">ESTIMATED COST</th>
+              <th style="width: 18%;">NECESSITY LEVEL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Freelancers & Solo Consultants</strong></td>
+              <td>General Liability + Professional Liability (E&O)</td>
+              <td>$40 – $90 / mo</td>
+              <td><span class="badge-essential">Essential</span></td>
+            </tr>
+            <tr>
+              <td><strong>E-commerce & SaaS LLCs</strong></td>
+              <td>General Liability + Cyber Liability</td>
+              <td>$50 – $110 / mo</td>
+              <td><span class="badge-essential">Essential</span></td>
+            </tr>
+            <tr>
+              <td><strong>Brick-and-Mortar Retail / Restaurants</strong></td>
+              <td>BOP (General Liability + Property) + Workers' Comp</td>
+              <td>$80 – $220 / mo</td>
+              <td><span class="badge-essential">Required</span></td>
+            </tr>
+            <tr>
+              <td><strong>Contractors & Trade LLCs</strong></td>
+              <td>General Liability + Commercial Auto + Workers' Comp</td>
+              <td>$120 – $350 / mo</td>
+              <td><span class="badge-essential">Required</span></td>
+            </tr>
+            <tr>
+              <td><strong>Home-Based Services</strong></td>
+              <td>General Liability (or Endorsement on Homeowners)</td>
+              <td>$25 – $45 / mo</td>
+              <td><span class="badge-important">Recommended</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Key Takeaway Banner Card -->
+      <div style="background: linear-gradient(135deg, #12304A 0%, #159A9C 100%); border-radius: 16px; padding: 2rem; color: #FFFFFF; margin-top: 3rem; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.15);">
+        <div style="font-size: 0.75rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">
+          EXECUTIVE SUMMARY
+        </div>
+        <h3 style="color: #FFFFFF; margin-top: 0; margin-bottom: 0.75rem; font-size: 1.35rem;">Protect Your Business Growth for 2026</h3>
+        <p style="color: #E2E8F0; margin-bottom: 0; font-size: 0.95rem; line-height: 1.6;">
+          An LLC provides legal asset separation, but business insurance provides financial security when unexpected claims occur. Start with a foundational <b>General Liability</b> or <b>Business Owner's Policy (BOP)</b>, add <b>E&O</b> if you deliver expert services, and ensure <b>Workers' Comp</b> compliance if you hire employees.
+        </p>
+      </div>
+
     </article>
   </main>
 
+  <!-- =========================================================================
+       3. SITEWIDE FOOTER
+       ========================================================================= -->
   <footer class="site-footer">
     <div class="container">
-      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted);">
-        © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a>
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="site-logo" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p style="font-size:0.88rem; color: #CBD5E1; margin-top:1rem; line-height: 1.6;">
+           LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Popular States</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Wyoming LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Florida LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Texas LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
+            <li><a href="index.html#cost-estimator-section" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="ein-guide.html" style="font-size:0.85rem; color:#CBD5E1;">Federal EIN Guide</a></li>
+            <li><a href="best-business-bank-accounts.html" style="font-size:0.85rem; color:#CBD5E1;">Best Bank Accounts</a></li>
+            <li><a href="operating-agreement.html" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
+            <li><a href="business-setup.html" style="font-size:0.85rem; color:#CBD5E1;">Business Setup Checklist</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
+        <div>
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency. Nothing on this site constitutes legal or tax advice.
+        </div>
+        <div>
+          © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a href="index.html#terms">Terms of Service</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>
