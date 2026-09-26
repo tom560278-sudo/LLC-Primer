@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
-  <title>Best Business Bank Accounts for LLCs (2026 Comparison) | LLC Primer</title>
-  <meta name="description" content="Compare the best business bank accounts for LLCs in 2026. Chase, Mercury, Relay, Bluevine, and Novo evaluated by cash handling, interest rates, FDIC insurance, and online setup rules.">
+  <title>Best Bank Accounts for LLCs (2026 Comparison) | LLC Primer</title>
+  <meta name="description" content="Compare the best bank accounts for LLCs in 2026. Chase, Mercury, Relay, Bluevine, and Novo evaluated by cash handling, interest rates, FDIC insurance, and online setup rules.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,6 +59,27 @@
       color: #78350F;
       margin: 1.5rem 0 2rem 0;
       line-height: 1.6;
+    }
+
+    /* Info Callout Box */
+    .callout-box {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-left: 5px solid #159A9C;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
+    }
+
+    .info-callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #BAE6FD;
+      border-left: 5px solid #0284C7;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      color: #0C4A6E;
     }
 
     /* Table of Contents Box */
@@ -138,30 +159,47 @@
       background: #F8FAFC;
     }
 
-    /* Prose Styling */
-    .guide-content-container p {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: #334155;
-      margin-bottom: 1.5rem;
+    /* Steps / Nodes List */
+    .step-nodes-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.75rem 0;
     }
-    .guide-content-container h2 {
-      font-size: 1.75rem;
+    .step-node-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.25rem;
+      box-shadow: 0 2px 8px rgba(18, 48, 74, 0.03);
+    }
+    .step-node-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #12304A;
+      color: #FFFFFF;
       font-weight: 800;
-      color: #12304A;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-      font-family: var(--font-heading);
-      line-height: 1.3;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
-    .guide-content-container h3 {
-      font-size: 1.25rem;
+    .step-node-content h4 {
+      margin: 0 0 0.35rem 0;
+      font-size: 1.05rem;
       font-weight: 700;
       color: #12304A;
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-      font-family: var(--font-heading);
-      line-height: 1.4;
+    }
+    .step-node-content p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.55;
     }
 
     /* FAQ Accordions */
@@ -198,16 +236,43 @@
       padding-top: 1rem;
     }
 
+    /* Prose Styling */
+    .guide-content-container p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.5rem;
+    }
+    .guide-content-container h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #12304A;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-content-container h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #12304A;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: var(--font-heading);
+      line-height: 1.4;
+    }
+
     @media (max-width: 768px) {
       .scope-3col-grid { grid-template-columns: 1fr; }
       .toc-list { grid-template-columns: 1fr; }
+      .step-node-item { flex-direction: column; gap: 0.75rem; }
     }
   </style>
 </head>
 <body>
 
   <!-- =========================================================================
-       1. SITEWIDE HEADER NAVIGATION (EXACT HOMEPAGE PARITY)
+       1. SITEWIDE HEADER NAVIGATION
        ========================================================================= -->
   <header class="site-header">
     <div class="container header-container">
@@ -257,7 +322,7 @@
           </a>
           <div class="dropdown-menu">
             <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
-            <a href="best-business-bank-accounts.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">Best Business Bank Accounts</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">Best Bank Accounts</a>
             <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
             <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
           </div>
@@ -305,14 +370,14 @@
     <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
       <a href="index.html" style="color: #64748B; text-decoration: none;">Home</a> &nbsp;/&nbsp; 
       <a href="business-setup.html" style="color: #64748B; text-decoration: none;">Business Setup</a> &nbsp;/&nbsp; 
-      <strong style="color: #12304A;">Best Business Bank Accounts</strong>
+      <strong style="color: #12304A;">Best Bank Accounts</strong>
     </div>
 
     <article class="guide-article">
 
       <!-- HEADER TITLE -->
       <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: #12304A; line-height: 1.2; margin-bottom: 0.75rem; font-family: var(--font-heading);">
-        Best Business Bank Accounts for LLCs (2026)
+        Best Bank Accounts for LLCs (2026)
       </h1>
       <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; color: #159A9C; margin-bottom: 1.5rem; line-height: 1.4;">
         Top Checking Options for Cash, Online Operations, APY Yields & Asset Protection
@@ -363,7 +428,7 @@
       <div class="toc-card" id="toc-section">
         <div class="toc-title">IN THIS GUIDE</div>
         <ol class="toc-list">
-          <li><a href="#cash-flow">1. Start With How Your LLC Moves Money</a></li>
+          <li><a href="#cash-flow">1. Start With the Way Your LLC Moves Money</a></li>
           <li><a href="#how-built">2. How This Comparison Was Built</a></li>
           <li><a href="#questions">3. Four Questions Before You Apply</a></li>
           <li><a href="#chase">4. Chase for Cash-Heavy LLCs</a></li>
@@ -374,7 +439,7 @@
           <li><a href="#fdic">9. Banks, Fintechs and FDIC Coverage</a></li>
           <li><a href="#address-rules">10. Business Address Rules</a></li>
           <li><a href="#documents">11. Documents to Prepare</a></li>
-          <li><a href="#which-fits">12. Which One Fits Your LLC?</a></li>
+          <li><a href="#which-fits">12. Three Decisions That Matter</a></li>
           <li><a href="#faq">13. Frequently Asked Questions</a></li>
           <li><a href="#sources">14. Sources Checked</a></li>
         </ol>
@@ -426,462 +491,362 @@
       </p>
 
       <!-- =========================================================================
-           SECTION: HOW MUCH DOES A US LLC COST FOR NON-US RESIDENTS? (IMAGES 1-5)
+           SECTION 2: How This 2026 Comparison Was Built
            ========================================================================= -->
-      <h2 id="non-us-costs" style="font-size: 1.85rem; font-weight: 800; color: #12304A; margin-top: 3rem; margin-bottom: 1rem;">
-        How Much Does a US LLC Cost for Non-US Residents? (2026 Breakdown)
-      </h2>
-      
-      <!-- Range Callout Card -->
-      <div style="background: #F3E8FF; border: 1.5px solid #D8B4FE; border-left: 5px solid #9333EA; border-radius: 14px; padding: 1.35rem 1.5rem; margin-bottom: 1.75rem;">
-        <div style="font-size: 0.95rem; color: #581C87; line-height: 1.7;">
-          <p style="margin-bottom: 0.75rem;"><strong>Minimum (Wyoming, DIY):</strong> ~$141 Year 1 — $100 filing + $2 online fee + $39 registered agent. EIN is free from the IRS.</p>
-          <p style="margin-bottom: 0.75rem;"><strong>Typical (Wyoming, formation service):</strong> $300–500 Year 1 — includes state fee, registered agent, EIN filing, operating agreement, and banking setup guidance.</p>
-          <p style="margin-bottom: 0.75rem;"><strong>Annual maintenance (Wyoming):</strong> $101–160 — $62 annual report + $39–100 registered agent renewal.</p>
-          <p style="margin-bottom: 0;"><strong>Full compliance (all-in):</strong> $600–1,200 Year 1 — adds Form 5472 CPA preparation, a virtual office address, and accounting setup.</p>
-        </div>
-      </div>
-
+      <h2 id="how-built">How This 2026 Comparison Was Built</h2>
       <p>
-        Non-US residents pay the same state filing fees as US residents. What adds cost is the EIN process (requires a service if you want help), the mandatory registered agent (non-residents can't be their own), and federal compliance requirements specific to foreign-owned LLCs — most notably Form 5472.
+        We evaluated each provider across five operational dimensions that matter to new LLC owners: branch access, cash deposit rules, interest eligibility, multi-user permissions, and account maintenance terms.
       </p>
 
-      <h3>What costs are required to form a US LLC?</h3>
-      <p>Formation costs divide into three categories: required by law, required in practice, and optional but recommended.</p>
+      <div class="info-callout-blue">
+        <h4 style="margin: 0 0 0.5rem 0; font-size: 1.05rem; font-weight: 800; color: #12304A;">HOW THIS 2026 COMPARISON WAS BUILT</h4>
+        <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.6; color: #0369A1;">
+          <li><strong>Official Disclosures First:</strong> Base terms, fees, and rules were pulled directly from published schedule of fees and terms agreement documents.</li>
+          <li><strong>Cash vs Online Split:</strong> Accounts are split by whether they handle physical cash or operate purely as digital-first platforms.</li>
+          <li><strong>Yield Rules Checked:</strong> Interest rates and APY thresholds were verified against current deposit balance tiers.</li>
+          <li><strong>FDIC Disclosures Verified:</strong> Bank vs Fintech structures are explicitly noted so you know where your funds reside.</li>
+        </ul>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 3: Four Questions to Answer Before You Apply
+           ========================================================================= -->
+      <h2 id="questions">Four Questions to Answer Before You Apply</h2>
+      <p>
+        Before filling out an application online or visiting a branch, review these four core operational questions:
+      </p>
+
+      <div class="step-nodes-wrapper">
+        <div class="step-node-item">
+          <div class="step-node-num">1</div>
+          <div class="step-node-content">
+            <h4>Do you accept physical cash payments?</h4>
+            <p>If your business deposits cash regularly, traditional branch networks like Chase are essential. Digital fintechs either charge fees for cash deposits via third-party networks (like GreenDot) or do not accept physical cash at all.</p>
+          </div>
+        </div>
+        <div class="step-node-item">
+          <div class="step-node-num">2</div>
+          <div class="step-node-content">
+            <h4>How many team members need card access or sub-accounts?</h4>
+            <p>If you have co-founders, contractors, or expense managers who require customized debit cards or dedicated spending categories, platforms like Relay offer up to 20 sub-accounts and 50 debit cards with built-in permission controls.</p>
+          </div>
+        </div>
+        <div class="step-node-item">
+          <div class="step-node-num">3</div>
+          <div class="step-node-content">
+            <h4>Are you seeking APY yield on idle cash balances?</h4>
+            <p>If you keep substantial operating reserve capital, Bluevine offers high interest yields on qualifying balances, whereas traditional business checking accounts generally pay near 0% APY.</p>
+          </div>
+        </div>
+        <div class="step-node-item">
+          <div class="step-node-num">4</div>
+          <div class="step-node-content">
+            <h4>Does your LLC have non-US owners or physical location constraints?</h4>
+            <p>Non-U.S. residents and remote founders require platforms that accommodate digital passport verification and international owner onboarding without requiring physical branch visits.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 4: Chase for Cash-Heavy LLCs
+           ========================================================================= -->
+      <h2 id="chase">A Cash-Heavy LLC: What Chase Changes Day to Day</h2>
+      <p>
+        Chase Business Complete Banking is the primary choice for brick-and-mortar storefronts, restaurants, service businesses, and LLCs that process physical cash deposits or need face-to-face teller support.
+      </p>
 
       <div class="custom-table-wrapper">
         <table class="custom-table">
           <thead>
             <tr>
-              <th style="width: 28%;">COST ITEM</th>
-              <th style="width: 18%;">STATUS</th>
-              <th style="width: 34%;">WHO PAYS IT</th>
-              <th style="width: 20%;">TYPICAL RANGE</th>
+              <th style="width: 35%;">FEATURE / RULE</th>
+              <th style="width: 65%;">CHASE BUSINESS COMPLETE BANKING</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>State filing fee (Articles of Organization)</strong></td>
-              <td><span style="background:#FEE2E2; color:#B91C1C; font-size:0.68rem; font-weight:800; padding:0.2rem 0.5rem; border-radius:4px;">REQUIRED</span></td>
-              <td>Everyone</td>
-              <td>$50–$300</td>
+              <td><strong>Account Type</strong></td>
+              <td>Direct Traditional Bank Account (JPMorgan Chase Bank, N.A.)</td>
             </tr>
             <tr>
-              <td><strong>Registered agent</strong></td>
-              <td><span style="background:#FEE2E2; color:#B91C1C; font-size:0.68rem; font-weight:800; padding:0.2rem 0.5rem; border-radius:4px;">REQUIRED</span></td>
-              <td>Non-residents (must use commercial RA)</td>
-              <td>$39–$300/yr</td>
+              <td><strong>Monthly Fee</strong></td>
+              <td>$15 monthly fee (Waivable with $2,000 minimum daily balance or qualifying activities)</td>
             </tr>
             <tr>
-              <td><strong>EIN from IRS</strong></td>
-              <td><span style="background:#FEF3C7; color:#B45309; font-size:0.68rem; font-weight:800; padding:0.2rem 0.5rem; border-radius:4px;">REQUIRED IN PRACTICE</span></td>
-              <td>Everyone (for banking and taxes)</td>
-              <td>Free (DIY) / $50–200 (service)</td>
+              <td><strong>Cash Deposits</strong></td>
+              <td>Up to $5,000 in cash deposits per monthly statement cycle at no extra charge</td>
             </tr>
             <tr>
-              <td><strong>Operating agreement</strong></td>
-              <td><span style="background:#FEF3C7; color:#B45309; font-size:0.68rem; font-weight:800; padding:0.2rem 0.5rem; border-radius:4px;">REQUIRED IN PRACTICE</span></td>
-              <td>Everyone (banks require it)</td>
-              <td>Free (template) / $100–200 (professional)</td>
+              <td><strong>Branch / ATM Access</strong></td>
+              <td>4,700+ nationwide branches and 15,000+ Chase ATMs</td>
             </tr>
             <tr>
-              <td><strong>BOI report (FinCEN)</strong></td>
-              <td><span style="background:#F1F5F9; color:#475569; font-size:0.68rem; font-weight:800; padding:0.2rem 0.5rem; border-radius:4px;">NOT REQUIRED</span></td>
-              <td>U.S.-formed LLCs are exempt</td>
-              <td>$0</td>
-            </tr>
-            <tr>
-              <td><strong>Business address</strong></td>
-              <td><span style="background:#E0F2FE; color:#0369A1; font-size:0.68rem; font-weight:800; padding:0.2rem 0.5rem; border-radius:4px;">OPTIONAL</span></td>
-              <td>Needed for Mercury bank applications</td>
-              <td>$15–$50/month</td>
-            </tr>
-            <tr>
-              <td><strong>Formation service</strong></td>
-              <td><span style="background:#E0F2FE; color:#0369A1; font-size:0.68rem; font-weight:800; padding:0.2rem 0.5rem; border-radius:4px;">OPTIONAL</span></td>
-              <td>Non-residents who want guided setup</td>
-              <td>$149–$400 service fee</td>
+              <td><strong>FDIC Coverage</strong></td>
+              <td>Direct FDIC Insurance up to $250,000 per depositor (FDIC Certificate #628)</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h3>LLC startup cost breakdown for non-US residents</h3>
-      <p>The table below shows realistic Year 1 costs across the three most common formation setups for non-residents. All figures use verified 2026 fees.</p>
+      <!-- =========================================================================
+           SECTION 5: Mercury: Deposits vs Treasury
+           ========================================================================= -->
+      <h2 id="mercury">Mercury Has Two Very Different Money Stories</h2>
+      <p>
+        Mercury is engineered specifically for tech startups, e-commerce brands, remote software teams, and digital-first LLCs. It provides zero-fee wire transfers, powerful digital dashboards, read/write API access, and multi-user team permissions.
+      </p>
+
+      <div class="warning-callout-light">
+        ⚠️ <strong>MERCURY TREASURY WARNING:</strong><br>
+        Mercury offers standard FDIC-insured deposit accounts through partner banks (Choice Financial Group and Evolve Bank & Trust, with sweep network coverage up to $5M). However, <strong>Mercury Treasury</strong> is a separate investment product holding money market funds and U.S. Treasuries — it is <strong>NOT</strong> an FDIC-insured bank deposit. Investment products carry market risks.
+      </div>
+
+      <!-- =========================================================================
+           SECTION 6: Relay as a Budgeting System
+           ========================================================================= -->
+      <h2 id="relay">Relay Is Really a Budgeting System With Bank Accounts Attached</h2>
+      <p>
+        Relay is designed for business owners who use envelope budgeting or Profit First methodologies. Rather than forcing you to use spreadsheet workarounds, Relay lets you spin up dedicated checking accounts and custom debit cards instantly.
+      </p>
+
+      <div class="info-callout-blue">
+        <h4 style="margin: 0 0 0.5rem 0; font-size: 1.05rem; font-weight: 800; color: #12304A;">RELAY SYSTEM KEY FACTS</h4>
+        <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.6; color: #0369A1;">
+          <li><strong>Up to 20 Individual Checking Accounts:</strong> Create separate sub-accounts for taxes, payroll, owner pay, and operating expenses.</li>
+          <li><strong>Up to 50 Physical or Virtual Debit Cards:</strong> Issue cards to team members with individual dollar spending limits and category controls.</li>
+          <li><strong>FDIC Deposit Partner:</strong> Banking services provided by Thread Bank (Member FDIC), extending up to $2.5M in FDIC sweep coverage.</li>
+        </ul>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 7: Bluevine and the APY Math
+           ========================================================================= -->
+      <h2 id="bluevine">Bluevine Makes You Do the Math Before the Ranking</h2>
+      <p>
+        Bluevine focuses on automated high-yield checking accounts, making it a compelling option for LLCs that hold cash reserves and want to earn yield while maintaining everyday liquidity.
+      </p>
 
       <div class="custom-table-wrapper">
         <table class="custom-table">
           <thead>
             <tr>
-              <th style="width: 25%;">COST ITEM</th>
-              <th style="width: 25%;">DIY (WYOMING)</th>
-              <th style="width: 25%;">NORTHWEST + DIY EIN</th>
-              <th style="width: 25%;">DOOLA</th>
+              <th style="width: 35%;">FEATURE / TIER</th>
+              <th style="width: 65%;">BLUEVINE STANDARD / PLUS / PREMIER</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>State filing fee</strong></td>
-              <td>$102</td>
-              <td>$102</td>
-              <td>Included</td>
+              <td><strong>APY Interest Rate</strong></td>
+              <td>Earn up to 2.00% to 4.25% APY on qualifying checking balances (terms & debit activity requirements apply)</td>
             </tr>
             <tr>
-              <td><strong>Registered agent (Year 1)</strong></td>
-              <td>$39 (Northwest)</td>
-              <td>$39 (Northwest)</td>
-              <td>Included</td>
+              <td><strong>Monthly Fee</strong></td>
+              <td>$0 (Standard tier) or $95/month for Premier tier (waivable with qualifying monthly balance)</td>
             </tr>
             <tr>
-              <td><strong>EIN filing</strong></td>
-              <td>Free (IRS fax)</td>
-              <td>Free (IRS fax)</td>
-              <td>Included</td>
-            </tr>
-            <tr>
-              <td><strong>Operating agreement</strong></td>
-              <td>Free (template)</td>
-              <td>Free (NW includes)</td>
-              <td>Included</td>
-            </tr>
-            <tr>
-              <td><strong>BOI report</strong></td>
-              <td>Not required</td>
-              <td>Not required</td>
-              <td>Not required</td>
-            </tr>
-            <tr>
-              <td><strong>Banking guidance</strong></td>
-              <td>None</td>
-              <td>None</td>
-              <td>Included</td>
-            </tr>
-            <tr>
-              <td><strong>Business address</strong></td>
-              <td>$0–50/mo (extra)</td>
-              <td>Included with NW RA</td>
-              <td>Included</td>
-            </tr>
-            <tr>
-              <td><strong>Year 1 estimate</strong></td>
-              <td><strong>$141–741</strong></td>
-              <td><strong style="color: #10B981;">$141 minimum</strong></td>
-              <td><strong style="color: #159A9C;">From ~$297 + state</strong></td>
+              <td><strong>Cash Deposit Access</strong></td>
+              <td>Supported via GreenDot retail locations ($4.95 deposit fee) or Allpoint+ deposit-taking ATMs</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Northwest Callout -->
+      <!-- =========================================================================
+           SECTION 8: Novo for Simplicity
+           ========================================================================= -->
+      <h2 id="novo">Novo Is the Deliberate Minimalist Pick</h2>
+      <p>
+        Novo is tailored for freelancers, solo service providers, micro-agencies, and independent contractors who want an easy, uncomplicated business account with zero monthly fees.
+      </p>
+
+      <div class="callout-box" style="border-left-color: #159A9C; background: #F8FAFC;">
+        <h4 style="margin: 0 0 0.5rem 0; font-size: 1.05rem; font-weight: 800; color: #12304A;">NOVO KEY HIGHLIGHTS</h4>
+        <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.6; color: #334155;">
+          <li><strong>$0 Monthly Maintenance & $0 Minimum Balance:</strong> No hidden fees or monthly transaction requirements.</li>
+          <li><strong>Global ATM Fee Refunds:</strong> Automatically refunds up to $7 per month in third-party ATM fees worldwide.</li>
+          <li><strong>Express Merchant Payouts:</strong> Seamless integration with Stripe, Square, and PayPal for rapid invoice settlement.</li>
+          <li><strong>Deposit Partner:</strong> Banking services provided by Coastal Community Bank (Member FDIC).</li>
+        </ul>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 9: Banks, Fintechs and FDIC Coverage
+           ========================================================================= -->
+      <h2 id="fdic">Bank vs Fintech: What FDIC Insurance Actually Means</h2>
+      <p>
+        Understanding how your money is protected is critical when opening a business account in 2026.
+      </p>
+
       <div class="callout-box" style="border-left-color: #0284C7; background: #F0F9FF;">
-        Northwest Registered Agent's $39/year is a registered agent fee, not a formation package. To use Northwest, you file Articles of Organization yourself and get the EIN from the IRS directly. Northwest provides a free operating agreement template and includes a business address in your state. Total Year 1 with Northwest: $102 state + $39 RA = <strong>$141 minimum</strong>.
+        <h4 style="margin: 0 0 0.5rem 0; font-size: 1.05rem; font-weight: 800; color: #0369A1;">DIRECT BANK vs. FINTECH PASS-THROUGH INSURANCE</h4>
+        <p style="margin: 0 0 0.75rem 0; font-size: 0.925rem; color: #0C4A6E; line-height: 1.6;">
+          <strong>Direct Banks (e.g. Chase):</strong> The institution itself is a chartered bank holding your funds directly. FDIC insurance covers up to $250,000 per depositor directly through the bank.
+        </p>
+        <p style="margin: 0; font-size: 0.925rem; color: #0C4A6E; line-height: 1.6;">
+          <strong>Fintech Platforms (e.g. Mercury, Relay, Bluevine, Novo):</strong> These are technology companies, not banks. They deposit your funds into FDIC-member partner banks (such as Thread Bank, Choice Financial Group, or Coastal Community Bank). Pass-through FDIC insurance protects your funds against partner bank insolvency up to $250,000 (or higher via multi-bank sweep networks).
+        </p>
       </div>
 
-      <!-- doola Banner Card -->
-      <div style="background: #ECFDF5; border: 2px solid #10B981; border-radius: 16px; padding: 1.5rem; margin: 2rem 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-        <div>
-          <span style="background: #10B981; color: #FFFFFF; font-size: 0.68rem; font-weight: 800; padding: 0.2rem 0.55rem; border-radius: 4px; text-transform: uppercase;">★ OUR TOP PICK</span>
-          <h4 style="font-size: 1.15rem; font-weight: 800; color: #065F46; margin: 0.5rem 0 0.25rem 0;">doola — All-in-One for Non-US Founders</h4>
-          <p style="font-size: 0.875rem; color: #047857; margin-bottom: 0.5rem;">Formation, registered agent, EIN without SSN, operating agreement, and banking setup — everything in one service. No coordination required. Use code <strong>LLCSTARTERS10</strong> for 10% off</p>
-        </div>
-        <a href="https://www.doola.com" target="_blank" rel="noopener" class="ls-btn ls-btn--emerald" style="padding: 0.75rem 1.35rem; font-size: 0.875rem; white-space: nowrap;">
-          Start with doola →
-        </a>
-      </div>
-
-      <!-- Ongoing Annual Costs -->
-      <h3>Ongoing annual costs for a foreign-owned LLC</h3>
-      <p>These costs repeat every year your LLC stays in existence. Missing them triggers loss of good standing, administrative dissolution, or IRS penalties.</p>
-
-      <h4>Annual report / license tax</h4>
-      <p>Every state except New Mexico charges an annual renewal fee. In Wyoming, the minimum is $62/year (with online convenience fee), due the first day of the anniversary month of formation. In Delaware, it's a flat $300 franchise tax due June 1, with a $200 late penalty. Texas charges $0 in annual report fees for most LLCs but imposes a franchise tax on entities with revenue above $2.47 million.</p>
-
-      <h4>Registered agent renewal</h4>
-      <p>Your <a href="best-registered-agent-services.html">registered agent</a> must be maintained year-round. Northwest charges $39/year — the lowest flat rate among reputable services. Budget $39–150/year depending on provider.</p>
-
-      <h4>Form 5472 — mandatory for foreign-owned single-member LLCs</h4>
-      <p>This is the most commonly missed annual expense. Every single-member LLC owned by a non-US person must file Form 5472 plus a pro forma Form 1120 by April 15 each year, regardless of revenue. The IRS does not send reminders. A CPA experienced with foreign-owned entities charges $200–500 for this filing. See the <a href="how-are-llcs-taxed.html">LLC taxes guide</a> for the full compliance picture.</p>
-
-      <!-- Annual Cost by State Table -->
-      <div class="custom-table-wrapper">
-        <table class="custom-table">
-          <thead>
-            <tr>
-              <th style="width: 25%;">STATE</th>
-              <th style="width: 25%;">ANNUAL REPORT FEE</th>
-              <th style="width: 25%;">RA (NORTHWEST)</th>
-              <th style="width: 25%;">TOTAL ANNUAL MINIMUM</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Wyoming</strong></td>
-              <td>$62/yr</td>
-              <td>$39/yr</td>
-              <td><strong style="color: #10B981;">$101/yr</strong></td>
-            </tr>
-            <tr>
-              <td><strong>New Mexico</strong></td>
-              <td>$0</td>
-              <td>$39/yr</td>
-              <td>$39/yr</td>
-            </tr>
-            <tr>
-              <td><strong>Delaware</strong></td>
-              <td>$300/yr</td>
-              <td>$39–200/yr</td>
-              <td>$339–500/yr</td>
-            </tr>
-            <tr>
-              <td><strong>Florida</strong></td>
-              <td>$138.75/yr</td>
-              <td>$39–100/yr</td>
-              <td>$178–239/yr</td>
-            </tr>
-            <tr>
-              <td><strong>Texas</strong></td>
-              <td>$0</td>
-              <td>$39–100/yr</td>
-              <td>$39–100/yr</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p style="font-size: 0.875rem; color: #64748B; font-style: italic;">
-        Add $200–500/year for Form 5472 preparation regardless of state. doola includes this in their compliance packages.
+      <!-- =========================================================================
+           SECTION 10: Business Address Rules
+           ========================================================================= -->
+      <h2 id="address-rules">Can You Use a Virtual Address to Open a Business Bank Account?</h2>
+      <p>
+        Address requirements cause frequent delays during account onboarding.
       </p>
 
-      <!-- Registered Agent Costs Table -->
-      <h3>Registered agent costs</h3>
-      <p>Every US LLC must maintain a registered agent with a physical address in the formation state. Non-residents cannot serve as their own agent without a state address. Commercial registered agent services are the only practical option.</p>
-
-      <div class="custom-table-wrapper">
-        <table class="custom-table">
-          <thead>
-            <tr>
-              <th style="width: 30%;">PROVIDER</th>
-              <th style="width: 25%;">ANNUAL FEE</th>
-              <th style="width: 45%;">NOTES</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong style="color: #159A9C;">Northwest Registered Agent</strong></td>
-              <td><strong style="color: #10B981;">$39/yr</strong></td>
-              <td>Lowest flat rate, includes free business address</td>
-            </tr>
-            <tr>
-              <td>ZenBusiness RA</td>
-              <td>$199/yr</td>
-              <td>Included in some formation plans</td>
-            </tr>
-            <tr>
-              <td>doola RA</td>
-              <td>Included in plans</td>
-              <td>Part of formation packages</td>
-            </tr>
-            <tr>
-              <td>Bizee RA</td>
-              <td>$119/yr</td>
-              <td>First year often included with formation</td>
-            </tr>
-            <tr>
-              <td>LegalZoom RA</td>
-              <td>$249/yr</td>
-              <td>Premium pricing</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="warning-callout-light">
+        💡 <strong>CIP / FINCEN PHYSICAL ADDRESS REQUIREMENT:</strong><br>
+        Under federal Customer Identification Program (CIP) rules, financial institutions must obtain a verified physical residential address or principal place of business street address. Standard P.O. Boxes, registered agent addresses, and commercial mail receiving agency (CMRA) virtual mailboxes are frequently flagged or rejected during bank compliance reviews. Check your provider's accepted address formats before submitting.
       </div>
 
-      <!-- Hidden Costs Section -->
-      <h3>Hidden costs most non-resident founders miss</h3>
-      
-      <p><strong>Form 5472 — $200–500/year</strong><br>
-      Mandatory annual IRS filing for single-member foreign-owned LLCs. Due April 15. IRS penalty for non-filing: <strong style="color: #B91C1C;">$25,000 per form per year</strong> — no minimum revenue threshold, no grace period for new entities. Most non-residents discover this requirement when they're already one year behind. A qualified CPA charges $200–500 to prepare it correctly.</p>
+      <!-- =========================================================================
+           SECTION 11: Documents to Prepare Before Applying
+           ========================================================================= -->
+      <h2 id="documents">Documents to Prepare Before Applying</h2>
+      <p>
+        Have these five document items ready before initiating an account application:
+      </p>
 
-      <p><strong>BOI reporting — generally $0 for a U.S.-formed LLC</strong><br>
-      Under FinCEN's current rule, companies created in the United States — including LLCs owned by non-US residents — are exempt from BOI reporting.</p>
-
-      <p><strong>International transfer fees — 1–3% ongoing</strong><br>
-      Moving money from your US LLC account to your personal account abroad triggers transfer fees and FX conversion. Wise transfers cost 0.3–1.5% depending on currency. SWIFT wires run $15–35 each at most US banks. Budget $50–200/year depending on how often you extract profits.</p>
-
-      <!-- Wyoming Spec Card -->
-      <h3>Wyoming LLC cost for non-US residents — full detail</h3>
-      <p>Wyoming consistently ranks as the best combination of low cost and strong protections for non-resident founders. Here is every cost verified from official sources.</p>
-
-      <div style="background: linear-gradient(135deg, #12304A 0%, #0D2336 100%); border-radius: 20px; padding: 2rem; color: #FFFFFF; margin: 2rem 0;">
-        <h4 style="color: #FFFFFF; font-size: 1.15rem; font-weight: 800; margin-bottom: 1.25rem;">Wyoming LLC — 2026 Verified Cost Breakdown</h4>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-          <div style="background: rgba(255,255,255,0.06); padding: 0.9rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
-            <div style="font-size: 0.68rem; color: #94A3B8; text-transform: uppercase;">ARTICLES OF ORGANIZATION</div>
-            <div style="font-size: 1rem; font-weight: 800; color: #FFF;">$100 + $2 online = $102</div>
+      <div class="step-nodes-wrapper">
+        <div class="step-node-item">
+          <div class="step-node-num">1</div>
+          <div class="step-node-content">
+            <h4>Approved Articles of Organization</h4>
+            <p>State-stamped formation document confirming your LLC's legal existence.</p>
           </div>
-          <div style="background: rgba(255,255,255,0.06); padding: 0.9rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
-            <div style="font-size: 0.68rem; color: #94A3B8; text-transform: uppercase;">ANNUAL REPORT (YEAR 2+)</div>
-            <div style="font-size: 1rem; font-weight: 800; color: #FFF;">$60 + $2 online = $62 min</div>
+        </div>
+        <div class="step-node-item">
+          <div class="step-node-num">2</div>
+          <div class="step-node-content">
+            <h4>IRS EIN Confirmation Letter (CP 575 or 147C)</h4>
+            <p>Official IRS documentation confirming your LLC's Employer Identification Number.</p>
           </div>
-          <div style="background: rgba(255,255,255,0.06); padding: 0.9rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
-            <div style="font-size: 0.68rem; color: #94A3B8; text-transform: uppercase;">REGISTERED AGENT (NORTHWEST)</div>
-            <div style="font-size: 1rem; font-weight: 800; color: #10B981;">$39/year</div>
+        </div>
+        <div class="step-node-item">
+          <div class="step-node-num">3</div>
+          <div class="step-node-content">
+            <h4>LLC Operating Agreement</h4>
+            <p>Executed copy showing ownership percentages, management structure, and signing authority.</p>
           </div>
-          <div style="background: rgba(255,255,255,0.06); padding: 0.9rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
-            <div style="font-size: 0.68rem; color: #94A3B8; text-transform: uppercase;">EIN FROM IRS</div>
-            <div style="font-size: 1rem; font-weight: 800; color: #10B981;">Free</div>
+        </div>
+        <div class="step-node-item">
+          <div class="step-node-num">4</div>
+          <div class="step-node-content">
+            <h4>Government-Issued Photo ID</h4>
+            <p>Unexpired driver's license or passport for all beneficial owners holding 25%+ equity.</p>
           </div>
-          <div style="background: rgba(255,255,255,0.06); padding: 0.9rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
-            <div style="font-size: 0.68rem; color: #94A3B8; text-transform: uppercase;">YEAR 1 TOTAL (DIY MINIMUM)</div>
-            <div style="font-size: 1.1rem; font-weight: 900; color: #38BDF8;">~$141</div>
-          </div>
-          <div style="background: rgba(255,255,255,0.06); padding: 0.9rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
-            <div style="font-size: 0.68rem; color: #94A3B8; text-transform: uppercase;">YEAR 2+ ANNUAL MINIMUM</div>
-            <div style="font-size: 1.1rem; font-weight: 900; color: #38BDF8;">~$101</div>
+        </div>
+        <div class="step-node-item">
+          <div class="step-node-num">5</div>
+          <div class="step-node-content">
+            <h4>Physical Business Address Verification</h4>
+            <p>Utility bill, lease agreement, or physical address verification matching applicant records.</p>
           </div>
         </div>
       </div>
 
-      <!-- Total Cost by Founder Type (4 Profiles) -->
-      <h3>Total cost by founder type</h3>
-      <p>Real numbers for four common profiles. All Wyoming-based.</p>
+      <!-- =========================================================================
+           SECTION 12: Three Decisions That Matter More Than a #1 Ranking
+           ========================================================================= -->
+      <h2 id="which-fits">Three Decisions Matter More Than a #1 Ranking</h2>
+      <p>
+        Rather than looking for a single "best" overall bank, evaluate your choice based on these three practical decisions:
+      </p>
+      <p>
+        <strong>1. Physical Cash Needs vs. Digital Operations:</strong> If cash deposits or local in-person teller interactions are required for daily operations, a traditional branch network like Chase is indispensable. If all revenue flows through digital payments, online fintechs offer superior software integration and zero monthly fees.
+      </p>
+      <p>
+        <strong>2. Single Owner vs. Multi-Member Controls:</strong> Multi-member LLCs or companies with employee card needs benefit significantly from Relay's sub-account structure and granular permission management.
+      </p>
+      <p>
+        <strong>3. Yield Opportunities vs. Simple Convenience:</strong> If keeping cash reserves productive is a top priority, Bluevine offers strong interest rates. If minimal maintenance is your goal, Novo eliminates fee friction completely.
+      </p>
 
-      <div style="background: #F3E8FF; border: 1.5px solid #D8B4FE; border-left: 5px solid #9333EA; border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;">
-        <h4 style="color: #581C87; font-size: 1.05rem; font-weight: 800; margin-bottom: 0.5rem;">Freelancer or consultant</h4>
-        <p style="font-size: 0.9rem; color: #4C1D95; margin-bottom: 0.35rem;">Year 1: $102 state + $39 NW RA + $0 EIN = <strong>$141 minimum</strong></p>
-        <p style="font-size: 0.9rem; color: #4C1D95; margin-bottom: 0.35rem;">Annual: $62 annual report + $39 RA + $200–300 Form 5472 CPA = <strong>$301–401/yr</strong></p>
-        <p style="font-size: 0.825rem; color: #6B21A8; margin-bottom: 0; font-style: italic;">Notes: No inventory, no US employees. Form 5472 is the primary ongoing compliance cost. Mercury bank account: $0/month.</p>
-      </div>
+      <!-- =========================================================================
+           SECTION 13: Frequently Asked Questions
+           ========================================================================= -->
+      <h2 id="faq">Frequently Asked Questions</h2>
 
-      <div style="background: #F3E8FF; border: 1.5px solid #D8B4FE; border-left: 5px solid #9333EA; border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;">
-        <h4 style="color: #581C87; font-size: 1.05rem; font-weight: 800; margin-bottom: 0.5rem;">E-commerce seller</h4>
-        <p style="font-size: 0.9rem; color: #4C1D95; margin-bottom: 0.35rem;">Year 1: $102 state + $39 RA + $0 EIN + $15–50/mo business address = <strong>$321–741</strong></p>
-        <p style="font-size: 0.9rem; color: #4C1D95; margin-bottom: 0.35rem;">Annual: $62 annual report + $39 RA + $300–500 Form 5472 + $100–200 bookkeeping = <strong>$501–801/yr</strong></p>
-        <p style="font-size: 0.825rem; color: #6B21A8; margin-bottom: 0; font-style: italic;">Notes: Sales tax obligations may arise if using US-based fulfillment centers. Budget for US bank account setup — Mercury handles this well for e-commerce.</p>
-      </div>
-
-      <div style="background: #F3E8FF; border: 1.5px solid #D8B4FE; border-left: 5px solid #9333EA; border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;">
-        <h4 style="color: #581C87; font-size: 1.05rem; font-weight: 800; margin-bottom: 0.5rem;">SaaS founder</h4>
-        <p style="font-size: 0.9rem; color: #4C1D95; margin-bottom: 0.35rem;">Year 1: $102 state + $39 RA + formation service = <strong>$300–500</strong></p>
-        <p style="font-size: 0.9rem; color: #4C1D95; margin-bottom: 0.35rem;">Annual: $62 annual report + $39 RA + $400–600 tax prep = <strong>$501–701/yr</strong></p>
-        <p style="font-size: 0.825rem; color: #6B21A8; margin-bottom: 0; font-style: italic;">Notes: Stripe integration is critical — Mercury is the standard for SaaS. LLC taxes remain pass-through by default.</p>
-      </div>
-
-      <div style="background: #F3E8FF; border: 1.5px solid #D8B4FE; border-left: 5px solid #9333EA; border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
-        <h4 style="color: #581C87; font-size: 1.05rem; font-weight: 800; margin-bottom: 0.5rem;">Agency owner</h4>
-        <p style="font-size: 0.9rem; color: #4C1D95; margin-bottom: 0.35rem;">Year 1: $102 state + $39 RA + formation service = <strong>$300–600</strong></p>
-        <p style="font-size: 0.9rem; color: #4C1D95; margin-bottom: 0.35rem;">Annual: $62 annual report + $39 RA + $500–800 accounting + $400–600 tax = <strong>$1,001–1,501/yr</strong></p>
-        <p style="font-size: 0.825rem; color: #6B21A8; margin-bottom: 0; font-style: italic;">Notes: Higher revenue typically increases tax complexity. A part-time bookkeeper becomes worthwhile above $50K annual revenue.</p>
-      </div>
-
-      <!-- DIY vs doola Table -->
-      <h3>DIY vs formation service: honest comparison</h3>
-      
-      <div class="custom-table-wrapper">
-        <table class="custom-table">
-          <thead>
-            <tr>
-              <th style="width: 25%;">FACTOR</th>
-              <th style="width: 25%;">DIY</th>
-              <th style="width: 25%;">NORTHWEST + DIY EIN</th>
-              <th style="width: 25%;">DOOLA</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Formation cost</strong></td>
-              <td>$102 state only</td>
-              <td>$102 state + $39 RA</td>
-              <td>Service fee + state fee</td>
-            </tr>
-            <tr>
-              <td><strong>EIN support</strong></td>
-              <td>Self-file via IRS fax</td>
-              <td>Self-file via IRS fax</td>
-              <td>Handled by doola</td>
-            </tr>
-            <tr>
-              <td><strong>Operating agreement</strong></td>
-              <td>Free template</td>
-              <td>Free (NW provides)</td>
-              <td>Included</td>
-            </tr>
-            <tr>
-              <td><strong>BOI report</strong></td>
-              <td>Not required</td>
-              <td>Not required</td>
-              <td>Not required</td>
-            </tr>
-            <tr>
-              <td><strong>Banking guidance</strong></td>
-              <td>None</td>
-              <td>None</td>
-              <td>Included</td>
-            </tr>
-            <tr>
-              <td><strong>Form 5472 support</strong></td>
-              <td>Hire CPA separately</td>
-              <td>Hire CPA separately</td>
-              <td>Available in compliance plans</td>
-            </tr>
-            <tr>
-              <td><strong>Time required</strong></td>
-              <td>High</td>
-              <td>Medium</td>
-              <td>Low</td>
-            </tr>
-            <tr>
-              <td><strong>Error risk</strong></td>
-              <td>High for first-timers</td>
-              <td>Medium</td>
-              <td>Low</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- FAQ Section matching exact site accordion design -->
-      <h2 id="non-us-faq" style="font-size: 1.85rem; font-weight: 800; color: #12304A; margin-top: 3.5rem; margin-bottom: 1.25rem; font-family: var(--font-heading);">
-        Frequently Asked Questions — Non-US Resident LLC Setup
-      </h2>
       <div class="faq-accordion-wrapper">
         <details class="faq-accordion-item">
           <summary class="faq-accordion-question">
-            <div class="faq-q-badge-title" style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
               <span style="width: 24px; height: 24px; border-radius: 50%; background: #E0F2FE; color: #0284C7; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0;">1</span>
-              <span>Can a non-US resident legally form a US LLC?</span>
+              <span>Can I open a business bank account before receiving my EIN?</span>
             </div>
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <div class="faq-accordion-answer">
-            Yes. You do not need to be a U.S. citizen, permanent resident, or possess an SSN/ITIN to own a U.S. LLC. You can register and maintain an LLC remotely from anywhere in the world.
+            No. U.S. financial institutions require a valid Employer Identification Number (EIN) to verify your entity's tax status with the IRS before opening a business bank account.
           </div>
         </details>
 
         <details class="faq-accordion-item">
           <summary class="faq-accordion-question">
-            <div class="faq-q-badge-title" style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
               <span style="width: 24px; height: 24px; border-radius: 50%; background: #E0F2FE; color: #0284C7; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0;">2</span>
-              <span>Do I have to pay U.S. federal income tax as a non-resident?</span>
+              <span>Do all LLC owners need to be present when opening an account?</span>
             </div>
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <div class="faq-accordion-answer">
-            If your LLC has no U.S. physical presence, no U.S. employees, and is not engaged in a U.S. trade or business (effectively connected income), foreign single-member LLC owners generally owe $0 in federal income tax. However, annual IRS informational Form 5472 filing remains mandatory.
+            For traditional branch accounts like Chase, all beneficial owners holding 25% or more equity usually need to present government ID. For online fintech platforms, identity verification for all major owners is completed digitally during the application process.
           </div>
         </details>
 
         <details class="faq-accordion-item">
           <summary class="faq-accordion-question">
-            <div class="faq-q-badge-title" style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
               <span style="width: 24px; height: 24px; border-radius: 50%; background: #E0F2FE; color: #0284C7; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0;">3</span>
-              <span>How long does it take to get an EIN without an SSN?</span>
+              <span>Can a non-US resident open a US business bank account?</span>
             </div>
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <div class="faq-accordion-answer">
-            Without an SSN/ITIN, you cannot use the instant online assistant. The IRS requires submitting Form SS-4 by fax or phone, which typically takes between 3 to 6 weeks. No service can accelerate this fixed IRS timeline.
+            Yes. Online platforms such as Mercury and Relay permit non-U.S. founders with a U.S. LLC and a valid passport to apply online, provided they meet physical address and documentation guidelines.
           </div>
         </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="width: 24px; height: 24px; border-radius: 50%; background: #E0F2FE; color: #0284C7; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0;">4</span>
+              <span>What happens if my bank or fintech partner bank fails?</span>
+            </div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            Eligible deposit balances held at FDIC-member partner banks are insured up to $250,000 per depositor (and up to $2.5M to $5M when extended through multi-bank sweep networks).
+          </div>
+        </details>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 14: Official Sources Checked for This 2026 Update
+           ========================================================================= -->
+      <h2 id="sources">Official Sources Checked for This 2026 Update</h2>
+      <p>
+        The details on this page were verified against official disclosures and fee schedules:
+      </p>
+      <ul style="color: #334155; line-height: 1.8; margin-bottom: 2rem;">
+        <li><a href="https://www.chase.com/business/banking/checking/business-complete-banking" target="_blank" rel="noopener">Chase Business Complete Banking Schedule of Fees</a></li>
+        <li><a href="https://mercury.com/legal/treasury" target="_blank" rel="noopener">Mercury Bank & Sweep Disclosures (Choice Financial & Evolve Bank & Trust)</a></li>
+        <li><a href="https://relayfi.com/legal/deposit-account-agreement" target="_blank" rel="noopener">Relay Financial & Thread Bank Deposit Agreement</a></li>
+        <li><a href="https://www.bluevine.com/checking/" target="_blank" rel="noopener">Bluevine Checking Account Tiers & APY Terms</a></li>
+        <li><a href="https://www.novo.co/legal/terms" target="_blank" rel="noopener">Novo & Coastal Community Bank Account Agreement</a></li>
+        <li><a href="https://www.fdic.gov/resources/deposit-insurance/" target="_blank" rel="noopener">FDIC Deposit Insurance & Pass-Through Coverage Rules</a></li>
+      </ul>
+
+      <!-- Key Takeaway Banner Card -->
+      <div style="background: linear-gradient(135deg, #12304A 0%, #1E4D74 100%); border-radius: 16px; padding: 2rem; color: #FFFFFF; margin-top: 3rem; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.15);">
+        <div style="font-size: 0.75rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">
+          EXECUTIVE SUMMARY
+        </div>
+        <h3 style="color: #FFFFFF; margin-top: 0; margin-bottom: 0.75rem; font-size: 1.35rem;">Key Takeaway for 2026</h3>
+        <p style="color: #E2E8F0; margin-bottom: 0; font-size: 0.95rem; line-height: 1.6;">
+          Match your business bank account selection to your daily operational reality. Pick <strong>Chase</strong> if you process cash deposits or need branch tellers. Pick <strong>Mercury</strong> or <strong>Relay</strong> for tech-forward, remote digital operations with sub-account management. Choose <strong>Bluevine</strong> to earn interest yields on idle capital, and <strong>Novo</strong> for zero-fee freelancer simplicity.
+        </p>
       </div>
 
     </article>
@@ -925,7 +890,7 @@
           <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
           <ul style="display:flex; flex-direction:column; gap:0.6rem;">
             <li><a href="ein-guide.html" style="font-size:0.85rem; color:#CBD5E1;">Federal EIN Guide</a></li>
-            <li><a href="best-business-bank-accounts.html" style="font-size:0.85rem; color:#CBD5E1;">Business Banking</a></li>
+            <li><a href="best-business-bank-accounts.html" style="font-size:0.85rem; color:#CBD5E1;">Best Bank Accounts</a></li>
             <li><a href="operating-agreement.html" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
             <li><a href="business-setup.html" style="font-size:0.85rem; color:#CBD5E1;">Business Setup Checklist</a></li>
           </ul>
@@ -949,7 +914,7 @@
       <button class="modal-close" onclick="closeSearchModal()">✕</button>
       <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
       <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
-      <div id="searchResults" style="max-height: 250px; overflow-y. auto;"></div>
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
     </div>
   </div>
 
