@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>Obtain Federal EIN (SS-4 Tax ID) — 2026 Official IRS Guide | LLC Primer</title>
+  <meta name="description" content="Learn how to get a free EIN (Employer Identification Number) directly from the IRS for your LLC. Step-by-step 2026 application guide, eligibility rules, and W-9 requirements.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Scoped Content Container */
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3.5rem 1.5rem;
+      width: 100%;
+    }
+
+    /* 4-Stat Metric Cards Grid */
+    .stats-4col-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.15rem;
+      margin: 2rem 0;
+    }
+    .stat-metric-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .stat-metric-card:hover {
+      border-color: #159A9C;
+      transform: translateY(-3px);
+    }
+    .stat-number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #12304A;
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
+      font-family: var(--font-heading);
+    }
+    .stat-sub {
+      font-size: 0.8rem;
+      color: #64748B;
+      line-height: 1.3;
+    }
+
+    /* IRS Official Banner Box */
+    .irs-official-banner {
+      background: #EFF6FF;
+      border: 1.5px solid #3B82F6;
+      border-radius: 14px;
+      padding: 1rem 1.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 1.75rem 0;
+    }
+    .irs-badge {
+      background: #1D4ED8;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    /* Table of Contents Box */
+    .toc-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      margin: 2rem 0 2.5rem 0;
+    }
+    .toc-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      font-family: var(--font-heading);
+      border-bottom: 2px solid #159A9C;
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+    .toc-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 1.75rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .toc-list li a {
+      font-size: 0.925rem;
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .toc-list li a:hover {
+      color: #0E7490;
+      text-decoration: underline;
+    }
+
+    /* Structured Custom Cards & Tables */
+    .structured-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 1.75rem 0;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+    }
+    .structured-card-header {
+      background: #F8FAFC;
+      border-bottom: 1.5px solid #E2E8F0;
+      padding: 0.9rem 1.35rem;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: #12304A;
+      font-family: var(--font-heading);
+    }
+    .structured-row {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 1.35rem;
+      border-bottom: 1px solid #F1F5F9;
+      align-items: flex-start;
+    }
+    .structured-row:last-child {
+      border-bottom: none;
+    }
+    .icon-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+    .icon-check { background: #DCFCE7; color: #166534; }
+    .icon-dash { background: #FEF3C7; color: #B45309; }
+    .icon-cross { background: #FEE2E2; color: #991B1B; }
+
+    /* Tables */
+    .custom-table-wrapper {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 14px;
+      overflow-x: auto;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      margin: 1.75rem 0;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 0.95rem 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: var(--font-heading);
+    }
+    .custom-table td {
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .custom-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-table tr:nth-child(even) {
+      background: #F8FAFC;
+    }
+
+    /* Timeline Workflow Diagram */
+    .timeline-wrapper {
+      position: relative;
+      padding-left: 2rem;
+      margin: 2rem 0;
+      border-left: 3px solid #159A9C;
+    }
+    .timeline-step {
+      position: relative;
+      margin-bottom: 1.75rem;
+    }
+    .timeline-step:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-node {
+      position: absolute;
+      left: -2.6rem;
+      top: 0.15rem;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 3.5px solid #159A9C;
+    }
+    .timeline-step--approved .timeline-node {
+      border-color: #10B981;
+      background: #10B981;
+    }
+    .timeline-kicker {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #159A9C;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.2rem;
+    }
+    .timeline-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #12304A;
+      margin-bottom: 0.35rem;
+    }
+    .timeline-desc {
+      font-size: 0.875rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* Callout Accent Boxes */
+    .callout-box {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-left: 5px solid #159A9C;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
+    }
+    .info-callout-light {
+      background: #ECFDF5;
+      border: 1.5px solid #A7F3D0;
+      border-left: 5px solid #10B981;
+      border-radius: 12px;
+      padding: 1.15rem 1.4rem;
+      font-size: 0.925rem;
+      color: #065F46;
+      margin: 1.5rem 0 2rem 0;
+      line-height: 1.6;
+    }
+    .warning-callout-light {
+      background: #FEF3C7;
+      border: 1.5px solid #FDE68A;
+      border-left: 5px solid #F59E0B;
+      border-radius: 12px;
+      padding: 1.15rem 1.4rem;
+      font-size: 0.925rem;
+      color: #78350F;
+      margin: 1.5rem 0 2rem 0;
+      line-height: 1.6;
+    }
+
+    /* Prose Styling */
+    .guide-content-container p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.5rem;
+    }
+    .guide-content-container h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #12304A;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-content-container h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #12304A;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: var(--font-heading);
+      line-height: 1.4;
+    }
+
+    /* FAQ Accordions */
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin: 1.5rem 0 2.5rem 0;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .faq-accordion-question {
+      padding: 1.15rem 1.35rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-accordion-answer {
+      padding: 0 1.35rem 1.25rem 1.35rem;
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.65;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .stats-4col-grid { grid-template-columns: repeat(2, 1fr); }
+      .toc-list { grid-template-columns: 1fr; }
+      .irs-official-banner { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .stats-4col-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. SITEWIDE HEADER NAVIGATION (EXACT HOMEPAGE PARITY)
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">
+            Start an LLC
+          </a>
+        </div>
+
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link active" style="color: var(--color-primary); font-weight: 800;">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Business Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#cost-estimator-section" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="quiz.html" class="dropdown-link">🧩 Interactive LLC Quiz (60 Sec)</a>
+            <a href="index.html#cost-estimator-section" class="dropdown-link">📊 First-Year Cost Estimator</a>
+            <a href="index.html#spanish-section" class="dropdown-link">🇪🇸 Guía de LLC en Español</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="index.html#non-us-section" class="nav-link">
+            Non-Residents 🌐
+          </a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan →
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT AREA
+       ========================================================================= -->
+  <main class="guide-content-container">
+
+    <!-- BREADCRUMB -->
+    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
+      <a href="index.html" style="color: #64748B; text-decoration: none;">Home</a> &nbsp;/&nbsp; 
+      <a href="business-setup.html" style="color: #64748B; text-decoration: none;">Business Setup</a> &nbsp;/&nbsp; 
+      <strong style="color: #12304A;">Federal EIN Guide</strong>
+    </div>
+
+    <article class="guide-article">
+
+      <!-- HEADER TITLE -->
+      <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: #12304A; line-height: 1.2; margin-bottom: 0.75rem; font-family: var(--font-heading);">
+        Obtain Federal EIN (SS-4 Tax ID)
+      </h1>
+      <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; color: #159A9C; margin-bottom: 1.5rem; line-height: 1.4;">
+        Official 2026 IRS Application Requirements & Step-by-Step Guide
+      </p>
+
+      <!-- AUTHOR & REVIEW BAR -->
+      <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: #64748B; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #E2E8F0; flex-wrap: wrap;">
+        <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600; color: #12304A;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> LLC Editorial Team
+        </span>
+        &bull;
+        <span>Verified for 2026</span>
+        &bull;
+        <span>Last reviewed: September 7, 2026</span>
+      </div>
+
+      <p>
+        An <strong>EIN (Employer Identification Number)</strong> is a nine-digit federal tax identification number issued by the IRS. It is free to obtain directly from the IRS, but an EIN is not automatically required for every LLC. A multi-member LLC, an LLC with employees, and an LLC using certain corporate or excise-tax treatments generally need one. By contrast, a single-member LLC with no employees and no relevant excise-tax liability may not need a separate EIN for federal income-tax purposes.
+      </p>
+
+      <p>
+        That distinction matters because an EIN is often described as a business version of a Social Security number. The analogy is convenient, but it can hide important rules. For example, a disregarded single-member LLC may have its own EIN for banking or employment-tax purposes while still using the owner's taxpayer identification number for certain federal income-tax reporting.
+      </p>
+
+      <p>
+        This guide focuses on the current IRS process: who actually needs an EIN, who can use the online assistant, what changes for international founders, which address information the IRS asks for, and what to save after the number is issued. For the rest of the post-formation setup sequence, see the <a href="business-setup.html">Business Setup hub</a>.
+      </p>
+
+      <!-- 4-Stat Metric Cards Grid -->
+      <div class="stats-4col-grid">
+        <div class="stat-metric-card">
+          <div class="stat-number">$0</div>
+          <div class="stat-sub">IRS fee for an EIN</div>
+        </div>
+        <div class="stat-metric-card">
+          <div class="stat-number">Immediate</div>
+          <div class="stat-sub">Online issuance when approved</div>
+        </div>
+        <div class="stat-metric-card">
+          <div class="stat-number">15 min</div>
+          <div class="stat-sub">Online inactivity timeout</div>
+        </div>
+        <div class="stat-metric-card">
+          <div class="stat-number">1/day</div>
+          <div class="stat-sub">Per responsible party</div>
+        </div>
+      </div>
+
+      <!-- IRS Official Banner Box -->
+      <div class="irs-official-banner">
+        <div style="display: flex; align-items: center; gap: 0.85rem;">
+          <span class="irs-badge">IRS</span>
+          <div>
+            <strong style="color: #1E3A8A; font-size: 0.95rem;">OFFICIAL APPLICATION SOURCE</strong>
+            <div style="color: #3B82F6; font-size: 0.85rem; font-weight: 700;">Get an EIN directly from the IRS</div>
+          </div>
+        </div>
+        <a href="https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online" target="_blank" rel="noopener" class="ls-btn ls-btn--emerald" style="padding: 0.55rem 1.15rem; font-size: 0.85rem; text-decoration: none;">
+          Apply Free on IRS.gov →
+        </a>
+      </div>
+
+      <!-- TABLE OF CONTENTS CARD -->
+      <div class="toc-card" id="toc-section">
+        <div class="toc-title">EIN GUIDE</div>
+        <ol class="toc-list">
+          <li><a href="#need-ein">1. Does your LLC actually need an EIN?</a></li>
+          <li><a href="#online-tool">2. Can you use the IRS online EIN tool?</a></li>
+          <li><a href="#prepare-info">3. What information should you prepare?</a></li>
+          <li><a href="#how-works">4. How the online application works</a></li>
+          <li><a href="#addresses">5. Mailing address vs. physical address</a></li>
+          <li><a href="#international">6. EINs for international and non-U.S. applicants</a></li>
+          <li><a href="#w9-trap">7. The single-member LLC W-9 trap</a></li>
+          <li><a href="#after-issued">8. What to do after the EIN is issued</a></li>
+          <li><a href="#mistakes">9. EIN mistakes worth avoiding</a></li>
+          <li><a href="#faq">10. Frequently asked EIN questions</a></li>
+        </ol>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 1: Does Your LLC Actually Need an EIN?
+           ========================================================================= -->
+      <h2 id="need-ein">Does Your LLC Actually Need an EIN?</h2>
+      <p>
+        The answer depends on federal tax treatment and what the business does. An EIN is mandatory in several common situations, but the IRS also recognizes a narrower case in which a single-member LLC can operate for federal income-tax purposes without a separate EIN.
+      </p>
+
+      <div class="structured-card">
+        <div class="structured-card-header">When an LLC needs a separate EIN</div>
+        
+        <div class="structured-row">
+          <span class="icon-badge icon-check">✓</span>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem;">Two or more members</strong>
+            <div style="font-size: 0.85rem; color: #64748B;">A domestic multi-member LLC is generally treated as a partnership unless it elects corporate classification. Partnerships need an EIN.</div>
+          </div>
+        </div>
+
+        <div class="structured-row">
+          <span class="icon-badge icon-check">✓</span>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem;">Employees</strong>
+            <div style="font-size: 0.85rem; color: #64748B;">A disregarded single-member LLC uses its own name and EIN for federal employment-tax reporting and payments.</div>
+          </div>
+        </div>
+
+        <div class="structured-row">
+          <span class="icon-badge icon-check">✓</span>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem;">Corporation or S corporation tax treatment</strong>
+            <div style="font-size: 0.85rem; color: #64748B;">An LLC taxed as a corporation needs an EIN for the entity's federal filings.</div>
+          </div>
+        </div>
+
+        <div class="structured-row">
+          <span class="icon-badge icon-check">✓</span>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem;">Certain excise-tax obligations</strong>
+            <div style="font-size: 0.85rem; color: #64748B;">A single-member disregarded LLC may need its own EIN when it must file specified excise-tax forms.</div>
+          </div>
+        </div>
+
+        <div class="structured-row">
+          <span class="icon-badge icon-dash">-</span>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem;">Single-member LLC with no employees or relevant excise tax</strong>
+            <div style="font-size: 0.85rem; color: #64748B;">A separate EIN is generally not required for federal income-tax purposes, although a bank or state rule may still make obtaining one useful.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question Callout Card -->
+      <div class="callout-box" style="border-left-color: #0284C7; background: #F0F9FF;">
+        <div style="display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.5rem;">
+          <span style="font-size: 1.1rem; color: #0284C7;">❓</span>
+          <strong style="color: #0369A1; font-size: 0.95rem;">Question that repeatedly comes up among new LLC owners:</strong>
+        </div>
+        <p style="font-style: italic; color: #1E3A8A; font-size: 0.95rem; margin-bottom: 0.75rem;">
+          "I am the only owner and I have no employees. Do I still need an EIN?"
+        </p>
+        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span class="icon-badge icon-check">✓</span>
+          <div style="font-size: 0.9rem; color: #065F46; line-height: 1.6;">
+            <strong>For federal income-tax purposes, not necessarily.</strong> The IRS says a single-member disregarded LLC with no employees and no relevant excise-tax liability does not need a separate EIN. However, the LLC may still obtain one when a bank or state requirement calls for it.
+          </div>
+        </div>
+        <div style="font-size: 0.825rem; color: #64748B; margin-top: 0.75rem; font-style: italic;">
+          The key is to separate the IRS requirement from a bank's onboarding policy. They are not the same rule.
+        </div>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 2: Can You Use the IRS Online EIN Tool?
+           ========================================================================= -->
+      <h2 id="online-tool">Can You Use the IRS Online EIN Tool?</h2>
+      <p>
+        The online assistant is the fastest route when you qualify. The IRS can issue the number immediately after it validates and approves the application. Still, the online tool is not available to every applicant.
+      </p>
+
+      <div class="structured-card">
+        <div class="structured-card-header">Online EIN Assistant eligibility</div>
+        
+        <div class="structured-row">
+          <span class="icon-badge icon-check">✓</span>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem;">The organization is domestic</strong>
+            <div style="font-size: 0.85rem; color: #64748B;">It was formed or created in the United States or a U.S. territory.</div>
+          </div>
+        </div>
+
+        <div class="structured-row">
+          <span class="icon-badge icon-check">✓</span>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem;">The principal place of business is in the U.S. or a U.S. territory</strong>
+            <div style="font-size: 0.85rem; color: #64748B;">If the principal business is outside the United States, the online assistant is not the correct method.</div>
+          </div>
+        </div>
+
+        <div class="structured-row">
+          <span class="icon-badge icon-check">✓</span>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem;">The responsible party can be identified</strong>
+            <div style="font-size: 0.85rem; color: #64748B;">The online process requires the responsible party's valid SSN or ITIN.</div>
+          </div>
+        </div>
+
+        <div class="structured-row">
+          <span class="icon-badge icon-cross">✕</span>
+          <div>
+            <strong style="color: #991B1B; font-size: 0.95rem;">The principal place of business is outside the U.S.</strong>
+            <div style="font-size: 0.85rem; color: #64748B;">International applicants in that situation use the telephone, fax, or mail procedures instead.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning-callout-light">
+        💡 <strong>Online availability now includes weekend hours:</strong><br>
+        Currently, the IRS lists the online tool as available Monday–Friday from 6:00 a.m. to 1:00 a.m. the next day Eastern, Saturday from 6:00 a.m. to 9:00 p.m., and Sunday from 7:00 p.m. to midnight. Availability can change, so use the IRS page above as the final check before applying.
+      </div>
+
+      <!-- =========================================================================
+           SECTION 3: What Information Should You Prepare?
+           ========================================================================= -->
+      <h2 id="prepare-info">What Information Should You Prepare Before Applying?</h2>
+      <p>
+        You do not need a large document package to complete the federal application, but accuracy matters. In particular, the responsible-party and address fields should reflect what the IRS is actually asking for rather than whatever wording appears on a formation-service dashboard.
+      </p>
+
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">INFORMATION</th>
+              <th style="width: 40%;">WHAT TO HAVE READY</th>
+              <th style="width: 35%;">WHY IT MATTERS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Legal entity name</strong></td>
+              <td>The LLC name as formed under state law</td>
+              <td>Inconsistent names can create processing and matching problems.</td>
+            </tr>
+            <tr>
+              <td><strong>Trade name</strong></td>
+              <td>DBA or trade name, if different</td>
+              <td>Form SS-4 separates the legal name from the trade name.</td>
+            </tr>
+            <tr>
+              <td><strong>Responsible party</strong></td>
+              <td>The individual who ultimately owns or controls the entity</td>
+              <td>Nominees are not supposed to apply as the responsible party.</td>
+            </tr>
+            <tr>
+              <td><strong>SSN or ITIN</strong></td>
+              <td>Responsible party's number when using the online tool</td>
+              <td>The online assistant requires it for ordinary non-government applicants.</td>
+            </tr>
+            <tr>
+              <td><strong>Mailing and physical location</strong></td>
+              <td>Where IRS correspondence goes and, if different, the actual street location</td>
+              <td>SS-4 treats mailing and street address as separate fields.</td>
+            </tr>
+            <tr>
+              <td><strong>Entity and activity details</strong></td>
+              <td>Member count, reason for applying, principal activity and employee information</td>
+              <td>These answers help establish the federal tax account correctly.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        If you are forming an LLC, the IRS now tells applicants to form the entity with the state before requesting the EIN. Applying first is better described as a potential source of processing delay, rather than an automatic rejection in every case.
+      </p>
+
+      <!-- =========================================================================
+           SECTION 4: How the Online Application Works
+           ========================================================================= -->
+      <h2 id="how-works">How the Online EIN Application Works</h2>
+      <p>
+        The screens and wording of the IRS assistant can change, so a reliable guide should explain the decisions instead of pretending the interface will always contain the same eight buttons. The current process follows this general sequence.
+      </p>
+
+      <div class="timeline-wrapper">
+        <div class="timeline-step">
+          <div class="timeline-node"></div>
+          <div class="timeline-kicker">BEFORE THE SESSION</div>
+          <div class="timeline-title">Form the LLC and gather the responsible-party information</div>
+          <div class="timeline-desc">Have the legal name, addresses, member count, principal activity and responsible party's SSN or ITIN ready.</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-node"></div>
+          <div class="timeline-kicker">START</div>
+          <div class="timeline-title">Open the EIN Assistant from IRS.gov</div>
+          <div class="timeline-desc">Use the IRS domain rather than an advertisement or a site that mimics a government application.</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-node"></div>
+          <div class="timeline-kicker">ENTITY QUESTIONS</div>
+          <div class="timeline-title">Describe the LLC and why the EIN is being requested</div>
+          <div class="timeline-desc">The answers should match the business that actually exists, including the number of members and the reason for applying.</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-node"></div>
+          <div class="timeline-kicker">IDENTITY</div>
+          <div class="timeline-title">Identify the responsible party</div>
+          <div class="timeline-desc">For ordinary applicants, the responsible party is an individual who ultimately owns or controls the entity — not a nominee used only to file paperwork.</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-node"></div>
+          <div class="timeline-kicker">REVIEW</div>
+          <div class="timeline-title">Check the legal name, addresses and activity before submission</div>
+          <div class="timeline-desc">Because the session expires after 15 minutes of inactivity, prepare first and review carefully before submitting.</div>
+        </div>
+
+        <div class="timeline-step timeline-step--approved">
+          <div class="timeline-node"></div>
+          <div class="timeline-kicker" style="color: #10B981;">IF APPROVED</div>
+          <div class="timeline-title">Save the EIN assignment notice</div>
+          <div class="timeline-desc">The online system lets taxpayers view, print and save the assignment notice (CP 575) at the end of the session. Keep a secure copy with the LLC's permanent records.</div>
+        </div>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 5: Special Rules & Considerations
+           ========================================================================= -->
+      <h2 id="addresses">Special Rules & Considerations</h2>
+
+      <h3>There Is a Daily Limit</h3>
+      <p>
+        The IRS limits issuance to <strong>one EIN per responsible party per day</strong>, regardless of whether the request is made online, by phone, fax, or mail. Therefore, submitting duplicates after an error is not a good troubleshooting strategy. First confirm what happened with the original application.
+      </p>
+
+      <h3>Mailing Address and Physical Address Are Different Fields</h3>
+      <p>
+        Form SS-4 distinguishes the address used for correspondence from the entity's street location. Lines 4a–4b are for the mailing address, and that mailing address may include a P.O. box. Lines 5a–5b ask for a physical street address only when it differs from the mailing address, and the IRS instructions say not to put a P.O. box in the street-address field.
+      </p>
+      <p>
+        This distinction is more useful than a blanket statement that "a virtual address works for an EIN." Some services provide only mail receipt, while others provide different address arrangements. What matters on Form SS-4 is answering the mailing and physical-location questions accurately. If the address later changes, the IRS uses Form 8822-B for business address and responsible-party updates.
+      </p>
+
+      <h3 id="international">Getting an EIN When the Principal Business Is Outside the U.S.</h3>
+      <p>
+        An international founder can obtain an EIN even when the responsible party does not have an SSN or ITIN. However, the application route changes when there is no U.S. legal residence, principal place of business, principal office, or agency.
+      </p>
+
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th style="width: 20%;">ROUTE</th>
+              <th style="width: 45%;">CURRENT IRS PROCEDURE</th>
+              <th style="width: 35%;">TIMING / AVAILABILITY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Phone</strong></td>
+              <td>267-941-1099 for international applicants; caller must be authorized to receive the EIN and answer SS-4 questions</td>
+              <td>Monday–Friday, 6:00 a.m.–11:00 p.m. Eastern</td>
+            </tr>
+            <tr>
+              <td><strong>Fax</strong></td>
+              <td>Form SS-4 to 855-215-1627 from within the U.S. or 304-707-9471 from outside the U.S.</td>
+              <td>Fax service is available 24/7; IRS timing can vary</td>
+            </tr>
+            <tr>
+              <td><strong>Mail</strong></td>
+              <td>Form SS-4 to IRS, Attn: EIN International Operation, Cincinnati, OH 45999</td>
+              <td>IRS says to allow roughly 4 weeks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="w9-trap">A 2026 W-9 Rule That Single-Member LLC Owners Often Miss</h3>
+      <div class="warning-callout-light">
+        💡 <strong>Your LLC EIN is not automatically the TIN you put on Form W-9:</strong><br>
+        For a single-member LLC that is disregarded for federal income-tax purposes, current Form W-9 instructions say to furnish the <strong>owner's TIN</strong>, not the disregarded LLC's EIN, for payee identification. An LLC can therefore have an EIN for one purpose while federal income-tax information reporting still follows the owner's taxpayer identity.
+      </div>
+
+      <h3 id="after-issued">What to Do After the EIN Is Issued</h3>
+      <p>
+        First, save the assignment notice (CP 575) in more than one secure location and record which entity the number belongs to. An EIN should not be casually reused across newly created entities just because the ownership is similar.
+      </p>
+      <p>
+        Next, check the requirements of the bank you actually want to use. An EIN is commonly requested for LLC account opening, along with your approved Articles of Organization and Operating Agreement. If you lose your original assignment documentation, follow the IRS verification process for a <a href="ein-guide.html">147C verification letter</a>.
+      </p>
+      <p>
+        Finally, continue through the post-formation sequence. See the <a href="business-setup.html">business setup checklist</a> to complete banking, licenses, insurance, and compliance in order.
+      </p>
+
+      <!-- =========================================================================
+           SECTION 6: EIN Mistakes Worth Avoiding
+           ========================================================================= -->
+      <h2 id="mistakes">EIN Mistakes Worth Avoiding</h2>
+      
+      <h3>Treating "Free" as "Everyone Must Do It"</h3>
+      <p>The IRS charges nothing for an EIN, but that does not make a separate EIN federally mandatory for every disregarded single-member LLC. Check the actual requirement first, then obtain one if your tax situation, bank, or state calls for it.</p>
+
+      <h3>Using a Nominee as the Responsible Party</h3>
+      <p>The responsible party is supposed to be the individual who ultimately owns or controls the entity. The IRS specifically warns that nominees are not authorized to apply as the responsible party.</p>
+
+      <h3>Assuming an Application Before State Formation Is Automatically Rejected</h3>
+      <p>Form the LLC with the state first. Current IRS guidance says applying before the entity is formed may delay processing.</p>
+
+      <h3>Submitting Another Application Because You Lost the Confirmation</h3>
+      <p>A lost notice is a records problem, not a reason to create a second tax identity. Recover or verify the existing EIN instead. Duplicate numbers can complicate bank records and tax filings.</p>
+
+      <h3>Using the Online Assistant When the Business Is International</h3>
+      <p>If the principal place of business is outside the U.S., use the IRS international routes. The online assistant has a specific domestic eligibility test.</p>
+
+      <!-- =========================================================================
+           SECTION 7: Frequently Asked Questions About EINs
+           ========================================================================= -->
+      <h2 id="faq">Frequently Asked Questions About EINs</h2>
+
+      <h3>Requirement and Online Application</h3>
+      <div class="faq-accordion-wrapper">
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <span>Is an EIN free?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            Yes. The IRS issues Employer Identification Numbers completely free of charge. You should never pay a third party or website to file a standard IRS EIN application unless you are hiring a professional service to handle broader setup tasks.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <span>How fast can I get an EIN online?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            Immediately. If you complete the online EIN Assistant on IRS.gov and your application passes system validation, your EIN is generated instantly and presented in an official assignment notice (CP 575 PDF).
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <span>Can a single-member LLC get an EIN even if the IRS does not require one?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            Yes. Single-member LLCs commonly request an EIN to open a business bank account, avoid sharing their personal SSN on business contracts, or prepare for future hiring.
+          </div>
+        </details>
+      </div>
+
+      <h3>International, Address and Records Questions</h3>
+      <div class="faq-accordion-wrapper">
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <span>Can I get an EIN without an SSN or ITIN?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            Yes. International founders without an SSN or ITIN can apply by calling the IRS international line (+1 267-941-1099) or by submitting Form SS-4 by fax or mail. You write "Foreign" or "N/A" in line 7b.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <span>Can I use a P.O. box on Form SS-4?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            You can use a P.O. box for the mailing address (Lines 4a-4b), but not for the physical street address location (Lines 5a-5b).
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <span>Does an EIN expire?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            No. Once an EIN has been assigned to an entity, it remains the permanent federal tax identification number for that business and is never re-assigned to another company.
+          </div>
+        </details>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 8: Where These EIN Rules Come From
+           ========================================================================= -->
+      <h2>Where These EIN Rules Come From</h2>
+      <p>
+        This page was reviewed against the IRS EIN application portal, Form SS-4 instructions, current IRS single-member LLC guidance, and current Form W-9 instructions. For official filings, always use official government channels:
+      </p>
+      <ul style="color: #334155; line-height: 1.8; margin-bottom: 2rem;">
+        <li><a href="https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online" target="_blank" rel="noopener">Get an Employer Identification Number — IRS.gov</a></li>
+        <li><a href="https://www.irs.gov/forms-pubs/about-form-ss-4" target="_blank" rel="noopener">Form SS-4 Instructions — IRS</a></li>
+        <li><a href="https://www.irs.gov/businesses/small-businesses-self-employed/single-member-limited-liability-companies" target="_blank" rel="noopener">Single-Member LLC Tax Guidance — IRS</a></li>
+        <li><a href="https://www.irs.gov/forms-pubs/about-form-w-9" target="_blank" rel="noopener">Form W-9 and Instructions — IRS</a></li>
+      </ul>
+
+    </article>
+  </main>
+
+  <!-- =========================================================================
+       3. SITEWIDE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="site-logo" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p style="font-size:0.88rem; color: #CBD5E1; margin-top:1rem; line-height: 1.6;">
+           LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Popular States</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Wyoming LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Florida LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Texas LLC Guide</a></li>
+            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
+            <li><a href="index.html#cost-estimator-section" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
+          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
+            <li><a href="ein-guide.html" style="font-size:0.85rem; color:#CBD5E1;">Federal EIN Guide</a></li>
+            <li><a href="best-business-bank-accounts.html" style="font-size:0.85rem; color:#CBD5E1;">Business Banking</a></li>
+            <li><a href="operating-agreement.html" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
+            <li><a href="business-setup.html" style="font-size:0.85rem; color:#CBD5E1;">Business Setup Checklist</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
+        <div>
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency. Nothing on this site constitutes legal or tax advice.
+        </div>
+        <div>
+          © 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a href="index.html#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
