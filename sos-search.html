@@ -322,9 +322,51 @@
       color: #475569; font-size: 0.925rem; line-height: 1.65;
     }
 
+    /* State Cards Grid */
+    .state-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .state-mini-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 1.15rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(18, 48, 74, 0.03);
+      display: flex;
+      flex-direction: column;
+    }
+    .state-mini-card:hover {
+      border-color: #159A9C;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(21, 154, 156, 0.12);
+    }
+    .state-mini-name {
+      font-weight: 800;
+      color: #12304A;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      font-family: var(--font-heading);
+    }
+    .state-mini-fee {
+      font-weight: 800;
+      color: #159A9C;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+    .state-mini-time {
+      font-size: 0.8rem;
+      color: #64748B;
+    }
+
     @media (max-width: 768px) {
       .quick-facts-grid { grid-template-columns: 1fr; }
       .toc-list { columns: 1; }
+      .state-cards-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1035,42 +1077,42 @@
       </div>
 
       <!-- TOP PICK SERVICES -->
-      <div style="background: linear-gradient(135deg, #12304A 0%, #159A9C 100%); border-radius: 20px; padding: 2.25rem; color: #FFFFFF; margin: 3rem 0; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.15);">
-        <div style="text-align: center; max-width: 700px; margin: 0 auto 2rem auto;">
-          <span style="background: #F59E0B; color: #FFFFFF; font-size: 0.75rem; font-weight: 900; padding: 0.3rem 0.85rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.08em; display: inline-block; margin-bottom: 0.75rem;">VERIFIED TOP PICKS</span>
-          <h3 style="color: #FFFFFF; font-size: 1.75rem; font-weight: 800; margin: 0 0 0.5rem 0;">Ready to Form Your LLC?</h3>
-          <p style="color: #DBEAFE; font-size: 0.95rem; margin: 0;">Let a professional service handle state filing, registered agent duties, and document preparation accurately.</p>
+      <div style="background: #FFFFFF; border: 1.5px solid #159A9C; border-radius: 18px; padding: 2rem; margin: 3rem 0; box-shadow: 0 8px 24px rgba(21, 154, 156, 0.08);">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 1.75rem auto;">
+          <span style="background: #E6F7F7; color: #159A9C; font-size: 0.75rem; font-weight: 900; padding: 0.3rem 0.85rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.08em; display: inline-block; margin-bottom: 0.5rem;">VERIFIED TOP PICKS</span>
+          <h3 style="color: #12304A; font-size: 1.6rem; font-weight: 800; margin: 0 0 0.4rem 0; font-family: var(--font-heading);">Ready to Form Your LLC?</h3>
+          <p style="color: #475569; font-size: 0.95rem; margin: 0;">Let a professional service handle state filing, registered agent duties, and document preparation accurately.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-          <div style="background: #FFFFFF; border-radius: 16px; padding: 1.75rem; color: #12304A; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div style="background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 1.5rem; color: #12304A; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-                <h4 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #12304A;">Northwest Registered Agent</h4>
-                <span style="background: #ECFDF5; color: #059669; font-weight: 800; font-size: 0.8rem; padding: 0.25rem 0.65rem; border-radius: 6px;">#1 RATED</span>
+                <h4 style="margin: 0; font-size: 1.2rem; font-weight: 800; color: #12304A; font-family: var(--font-heading);">Northwest Registered Agent</h4>
+                <span style="background: #DCFCE7; color: #15803D; font-weight: 800; font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 6px;">#1 RATED</span>
               </div>
-              <div style="font-size: 1.5rem; font-weight: 900; color: #159A9C; margin-bottom: 0.75rem;">$39 <span style="font-size: 0.85rem; color: #64748B; font-weight: 500;">+ state fee</span></div>
+              <div style="font-size: 1.4rem; font-weight: 900; color: #159A9C; margin-bottom: 0.65rem;">$39 <span style="font-size: 0.85rem; color: #64748B; font-weight: 500;">+ state fee</span></div>
               <p style="font-size: 0.875rem; color: #475569; line-height: 1.6; margin-bottom: 1.25rem;">
                 Includes 1 full year of registered agent service, free privacy protection (uses their address on public records), and local corporate guides.
               </p>
             </div>
-            <a href="https://www.northwestregisteredagent.com/" target="_blank" rel="noopener noreferrer" class="ls-btn ls-btn--emerald" style="text-align: center; text-decoration: none; width: 100%;">
+            <a href="https://www.northwestregisteredagent.com/" target="_blank" rel="noopener noreferrer" class="ls-btn ls-btn--emerald" style="text-align: center; text-decoration: none; width: 100%; font-weight: 700;">
               Form with Northwest ($39) →
             </a>
           </div>
 
-          <div style="background: #FFFFFF; border-radius: 16px; padding: 1.75rem; color: #12304A; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 1.5rem; color: #12304A; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-                <h4 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #12304A;">ZenBusiness</h4>
-                <span style="background: #EFF6FF; color: #2563EB; font-weight: 800; font-size: 0.8rem; padding: 0.25rem 0.65rem; border-radius: 6px;">BEST VALUE</span>
+                <h4 style="margin: 0; font-size: 1.2rem; font-weight: 800; color: #12304A; font-family: var(--font-heading);">ZenBusiness</h4>
+                <span style="background: #EFF6FF; color: #1D4ED8; font-weight: 800; font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 6px;">BEST VALUE</span>
               </div>
-              <div style="font-size: 1.5rem; font-weight: 900; color: #159A9C; margin-bottom: 0.75rem;">$0 <span style="font-size: 0.85rem; color: #64748B; font-weight: 500;">+ state fee</span></div>
+              <div style="font-size: 1.4rem; font-weight: 900; color: #159A9C; margin-bottom: 0.65rem;">$0 <span style="font-size: 0.85rem; color: #64748B; font-weight: 500;">+ state fee</span></div>
               <p style="font-size: 0.875rem; color: #475569; line-height: 1.6; margin-bottom: 1.25rem;">
                 Free $0 starter package handles initial state formation filing, name availability check, and compliance dashboard.
               </p>
             </div>
-            <a href="best-llc-formation-services.html" class="ls-btn" style="background: #12304A; color: #FFFFFF; text-align: center; text-decoration: none; width: 100%;">
+            <a href="best-llc-formation-services.html" class="ls-btn" style="background: #12304A; color: #FFFFFF; text-align: center; text-decoration: none; width: 100%; font-weight: 700;">
               Explore ZenBusiness →
             </a>
           </div>
