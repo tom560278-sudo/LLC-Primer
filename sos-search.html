@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
   <title>Secretary of State Business Search (All 50 States) | LLC Primer</title>
-  <meta name="description" content="Search official Secretary of State business databases across all 50 states to verify LLC name availability and corporate entity records.">
+  <meta name="description" content="Search official Secretary of State business databases across all 50 states to verify LLC name availability, entity status, and public corporate records for 2026.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,20 +12,319 @@
   
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* Scoped Content Container */
     .guide-content-container {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 0 1.5rem 4rem 1.5rem;
+      padding: 0 1.5rem 3.5rem 1.5rem;
       width: 100%;
     }
-    .placeholder-card {
+
+    /* Article Spacing & Typography */
+    .guide-article h2 {
+      font-size: clamp(1.65rem, 3vw, 2.15rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.15rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+    .guide-article h3 {
+      font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 0.85rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-article h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #12304A;
+      margin: 1.5rem 0 0.5rem 0;
+      font-family: var(--font-heading);
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover {
+      color: #0E7490;
+    }
+
+    /* Quick Facts Banner */
+    .quick-facts-banner {
+      background: linear-gradient(135deg, #1E40AF 0%, #1D4ED8 100%);
+      color: #FFFFFF;
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 12px 35px rgba(29, 78, 216, 0.22);
+    }
+    .quick-facts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 1.25rem 0;
+    }
+    .fact-pill {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .fact-pill-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #93C5FD;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+    .fact-pill-val {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
+    /* TOC Box */
+    .toc-card-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .toc-title {
+      font-weight: 800;
+      color: #12304A;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .toc-list {
+      columns: 2;
+      column-gap: 2rem;
+      list-style-type: decimal;
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+    .toc-list li {
+      font-size: 0.9rem;
+      color: #475569;
+      margin-bottom: 0.5rem;
+    }
+    .toc-list a {
+      color: #159A9C;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .toc-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* SOS Search Widget */
+    .sos-widget-card {
+      background: linear-gradient(135deg, #12304A 0%, #0E1E2E 100%);
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
+      border-radius: 20px;
+      padding: 2.25rem;
+      color: #FFFFFF;
+      margin: 2.5rem 0;
+      box-shadow: 0 16px 40px rgba(18, 48, 74, 0.25);
+    }
+    .sos-select {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 0.9rem 1.15rem;
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 600;
+      outline: none;
+      margin: 1rem 0;
+    }
+    .sos-select option {
+      background: #12304A;
+      color: #FFFFFF;
+    }
+
+    /* Result Box in Widget */
+    .sos-result-pane {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Feature List & Step Item Wrappers */
+    .feature-list-box {
       background: #FFFFFF;
       border: 1.5px solid #CBD5E1;
-      border-radius: 20px;
-      padding: 3.5rem 2rem;
-      text-align: center;
-      margin: 3rem 0;
-      box-shadow: 0 8px 30px rgba(18, 48, 74, 0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 1.75rem 0 2rem 0;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+    }
+    .feature-list-header {
+      background: #F8FAFC;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #E2E8F0;
+      font-weight: 800;
+      color: #12304A;
+      font-size: 1.05rem;
+    }
+    .feature-list-item {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #F1F5F9;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .feature-list-item:last-child {
+      border-bottom: none;
+    }
+    .feature-icon-circle {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #DCFCE7;
+      color: #16A34A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-item-wrapper {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-left: 4px solid #159A9C;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(18, 48, 74, 0.03);
+    }
+    .step-item-wrapper.green-border {
+      border-left-color: #059669;
+    }
+    .step-number-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #159A9C;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    /* Custom Tables */
+    .custom-table-wrapper {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 14px;
+      overflow-x: auto;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      margin: 1.5rem 0 2rem 0;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 0.95rem 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: var(--font-heading);
+    }
+    .custom-table td {
+      padding: 0.9rem 1.25rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .custom-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+
+    /* Callout Boxes */
+    .callout-box {
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      font-size: 0.925rem;
+      line-height: 1.65;
+    }
+    .callout-box.green { background: #ECFDF5; border: 1.5px solid #A7F3D0; color: #065F46; }
+    .callout-box.amber { background: #FFFBEB; border: 1.5px solid #FDE68A; color: #92400E; }
+    .callout-box.blue { background: #EFF6FF; border: 1.5px solid #BFDBFE; color: #1E40AF; }
+
+    /* FAQ Section */
+    .faq-accordion-wrapper { margin-top: 1.5rem; }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+    }
+    .faq-accordion-question {
+      padding: 1.15rem 1.35rem;
+      font-weight: 700;
+      color: #12304A;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+    }
+    .faq-q-badge-title { display: flex; align-items: center; gap: 0.75rem; }
+    .faq-q-badge {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: #E6F7F7; color: #159A9C; font-size: 0.8rem;
+      font-weight: 800; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .faq-accordion-answer {
+      padding: 0 1.35rem 1.25rem 3.25rem;
+      color: #475569; font-size: 0.925rem; line-height: 1.65;
+    }
+
+    @media (max-width: 768px) {
+      .quick-facts-grid { grid-template-columns: 1fr; }
+      .toc-list { columns: 1; }
     }
   </style>
 </head>
@@ -42,7 +341,7 @@
 
       <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
         <div class="nav-item">
-          <a href="start-llc.html" class="nav-link" style="color: var(--color-primary); font-weight: 800;">
+          <a href="start-llc.html" class="nav-link">
             Start an LLC
           </a>
         </div>
@@ -134,25 +433,576 @@
        2. MAIN CONTENT AREA
        ========================================================================= -->
   <main class="guide-content-container">
+    
+    <!-- BREADCRUMB NAV -->
     <div style="font-size: 0.78rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2rem; margin-bottom: 0.75rem;">
       <a href="index.html" style="color: #64748B; text-decoration: none;">LLC STARTERS</a> &nbsp;&gt;&nbsp; 
+      <a href="start-llc.html" style="color: #64748B; text-decoration: none;">HOW TO START AN LLC</a> &nbsp;&gt;&nbsp; 
       <a href="tools.html" style="color: #64748B; text-decoration: none;">TOOLS</a> &nbsp;&gt;&nbsp; 
-      <span style="color: #159A9C;">SECRETARY OF STATE SEARCH</span>
+      <span style="color: #159A9C;">SOS BUSINESS SEARCH</span>
     </div>
 
-    <div class="placeholder-card">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">🏛️</div>
-      <h1 style="font-size: 2rem; font-weight: 800; color: #12304A; margin-bottom: 1rem; font-family: var(--font-heading);">
-        Secretary of State Business Search
-      </h1>
-      <p style="font-size: 1.05rem; color: #475569; max-width: 600px; margin: 0 auto 2rem auto; line-height: 1.6;">
-        Our official 50-state Secretary of State business search portal is coming soon. In the meantime, explore our 50-state guides and calculators below.
-      </p>
-      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <a href="tools.html" class="ls-btn ls-btn--emerald" style="padding: 0.75rem 1.5rem; text-decoration: none;">Explore All LLC Tools &rarr;</a>
-        <a href="llc-cost-calculator.html" class="ls-btn" style="padding: 0.75rem 1.5rem; text-decoration: none; background: #12304A; color: #FFF;">LLC Cost Calculator &rarr;</a>
-      </div>
+    <!-- DATE META -->
+    <div style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 1.5rem;">
+      7 months ago &middot; Updated 7 days ago
     </div>
+
+    <article class="guide-article">
+      <h1 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; color: #12304A; line-height: 1.18; margin-bottom: 1.25rem; font-family: var(--font-heading);">
+        Secretary of State Business Search (50-State Directory & Guide)
+      </h1>
+
+      <p style="font-size: 1.05rem; line-height: 1.75; color: #475569;">
+        Before you file a single form or pay a single dollar, there is one step that every future LLC owner must complete first: run a <strong>Secretary of State business search</strong> for your state. If another registered entity already holds your desired name — or something similar enough to cause confusion — your filing will be rejected. More importantly, you typically lose the filing fee. This tool eliminates that risk by giving you direct access to all 50 official state portals, completely free, in under two minutes.
+      </p>
+
+      <p>
+        Each state maintains its own <strong>SOS business search portal</strong>, and no two work exactly the same way. Florida's database is called Sunbiz. Texas splits between the SOS and the Comptroller's office. Delaware runs through its dedicated Division of Corporations, while Wyoming has its own privacy-forward system at wyobiz.wyo.gov. Rather than hunting for the right government URL on your own, our tool sends you directly to the correct portal — regardless of what the state calls it. Whether you need to <strong>check LLC name availability</strong>, look up a vendor, verify a competitor, or confirm your own LLC's active status, this is your starting point.
+      </p>
+
+      <p>
+        This guide explains how to use the tool, how to interpret what you find, what "distinguishable" actually means under state law, and exactly what to do once your name comes back clear. Think of it as the complete resource for <strong>business entity search by state</strong> — covering everything before and after you hit search.
+      </p>
+
+      <!-- QUICK FACTS CARD -->
+      <div class="quick-facts-banner">
+        <h3 style="color: #FFFFFF; margin: 0; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🏛️ Secretary of State Business Search — Quick Facts</span>
+        </h3>
+        <p style="font-size: 0.85rem; color: #93C5FD; margin: 0.25rem 0 1rem 0;">Everything you need to know before running your search</p>
+
+        <div class="quick-facts-grid">
+          <div class="fact-pill">
+            <div class="fact-pill-label">STATES COVERED</div>
+            <div class="fact-pill-val">All 50</div>
+          </div>
+          <div class="fact-pill">
+            <div class="fact-pill-label">COST TO SEARCH</div>
+            <div class="fact-pill-val">$0 — Free</div>
+          </div>
+          <div class="fact-pill">
+            <div class="fact-pill-label">OFFICIAL SOURCES ONLY</div>
+            <div class="fact-pill-val">100%</div>
+          </div>
+          <div class="fact-pill">
+            <div class="fact-pill-label">LLC NAME STANDARD</div>
+            <div class="fact-pill-val">Distinguishable</div>
+          </div>
+          <div class="fact-pill">
+            <div class="fact-pill-label">TIME TO COMPLETE</div>
+            <div class="fact-pill-val">~2 minutes</div>
+          </div>
+          <div class="fact-pill">
+            <div class="fact-pill-label">NAME RESERVATION WINDOW</div>
+            <div class="fact-pill-val">30–120 days</div>
+          </div>
+        </div>
+
+        <div>
+          <a href="tools.html" class="ls-btn ls-btn--emerald" style="padding: 0.5rem 1rem; font-size: 0.85rem; text-decoration: none;">Also try: LLC Name Availability Checker ↗</a>
+        </div>
+      </div>
+
+      <!-- TOC BOX -->
+      <div class="toc-card-box">
+        <div class="toc-title">📑 WHAT'S IN THIS GUIDE</div>
+        <ol class="toc-list">
+          <li><a href="#section-tool">Use the free SOS Business Search tool — all 50 states</a></li>
+          <li><a href="#section-whatis">What is a Secretary of State business entity search?</a></li>
+          <li><a href="#section-reasons">The 4 reasons people run an SOS business search</a></li>
+          <li><a href="#section-stepbystep">How to run a business name search — step by step</a></li>
+          <li><a href="#section-readresults">How to read and interpret your search results</a></li>
+          <li><a href="#section-distinguishable">What "distinguishable" means under state law</a></li>
+          <li><a href="#section-taken">What to do when your preferred name is already taken</a></li>
+          <li><a href="#section-portals">Key differences between the 50 state SOS portals</a></li>
+          <li><a href="#section-faqs">Frequently asked questions</a></li>
+        </ol>
+      </div>
+
+      <!-- INTERACTIVE SOS SEARCH TOOL -->
+      <h2 id="section-tool">Secretary of State Business Search Tool — All 50 States</h2>
+      <p>
+        Select your state below. The tool will display the official Secretary of State portal, provide step-by-step instructions specific to that state's interface, and include a direct button to open the official search — all without requiring you to navigate government homepages on your own.
+      </p>
+
+      <div class="sos-widget-card" id="sosWidget">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏛️</div>
+          <h3 style="color: #FFFFFF; font-size: 1.6rem; margin: 0 0 0.25rem 0;">Secretary of State Business Search</h3>
+          <p style="color: #94A3B8; font-size: 0.875rem; margin: 0;">Find the official business search portal for any U.S. state — instantly</p>
+        </div>
+
+        <label style="font-size: 0.75rem; font-weight: 800; color: #CBD5E1; text-transform: uppercase; letter-spacing: 0.05em; display: block;">
+          SELECT YOUR STATE TO SEARCH BUSINESS RECORDS
+        </label>
+        <select class="sos-select" id="sosStateSelect" onchange="runSosLookup()">
+          <option value="">-- Choose your state --</option>
+        </select>
+
+        <div class="sos-result-pane" id="sosResultPane" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <div>
+              <div style="font-size: 0.75rem; color: #94A3B8; text-transform: uppercase; font-weight: 800;">OFFICIAL GOVERNMENT DATABASE</div>
+              <h4 style="color: #FFFFFF; font-size: 1.25rem; margin: 0.2rem 0 0 0;" id="sosPaneName">Florida Sunbiz (Division of Corporations)</h4>
+            </div>
+            <a id="sosPaneLinkBtn" href="#" target="_blank" class="ls-btn ls-btn--emerald" style="padding: 0.7rem 1.4rem; font-size: 0.9rem; text-decoration: none;">
+              Open Official State Portal ↗
+            </a>
+          </div>
+
+          <p style="font-size: 0.9rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 1rem;" id="sosPaneNotes">
+            Florida's Sunbiz database is updated in real time. Search by corporate name, officer, or registered agent.
+          </p>
+
+          <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="font-size: 0.85rem; color: #A7F3D0;">
+              ✔ <strong>Name is available? Time to make it official.</strong><br>
+              File your LLC today — we recommend <strong>Northwest Registered Agent</strong> ($39 + state fee) or <strong>ZenBusiness</strong> ($0 + state fee).
+            </div>
+            <a href="best-llc-formation-services.html" class="ls-btn" style="background: #059669; color: #FFFFFF; padding: 0.6rem 1.2rem; font-size: 0.85rem; text-decoration: none; white-space: nowrap;">Compare LLC Services →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout-box green">
+        💡 <strong>Pro tip — run both tools for a complete check:</strong> Our <strong>free LLC Name Availability Checker</strong> runs a targeted pass/fail check specifically for LLC name conflicts. This SOS search tool, however, gives you the full official database with entity status, formation history, and registered agent details. Together, they cover both speed and depth — and neither replaces a formal federal trademark search, but both are essential before you file.
+      </div>
+
+      <!-- WHAT IS SECTION -->
+      <h2 id="section-whatis">What Is a Secretary of State Business Entity Search?</h2>
+      <p>
+        Every U.S. state maintains a live, public database of all registered business entities — LLCs, corporations, partnerships, non-profits, and sole proprietorships operating under a registered trade name. The <strong>Secretary of State business entity search</strong> is the public-facing interface for that database. Although most states run it through the SOS office directly, a few use a different agency. Texas routes name searches through the Comptroller's office, while Hawaii uses the Department of Commerce and Consumer Affairs. Regardless of the agency name, however, the function is identical — a searchable, official record of every entity registered to do business in that state.
+      </p>
+
+      <h3>Why the official portal matters — and why third-party tools fall short</h3>
+      <p>
+        Many websites offer "instant LLC name checks," but most of these rely on scraped or cached data that can lag days — or weeks — behind the actual SOS database. As a result, a name that appears available on a third-party site may already be taken in the official records. Consequently, using anything other than the official state portal creates a real risk of a rejected filing. Our tool links directly to the government source for every state, so your <strong>business entity search by state</strong> reflects real-time official records — not a third-party approximation.
+      </p>
+
+      <!-- 4 REASONS SECTION -->
+      <h2 id="section-reasons">The 4 Reasons People Run a Secretary of State Business Search</h2>
+      
+      <div class="feature-list-box">
+        <div class="feature-list-header">
+          4 Key Uses of the SOS Business Entity Search
+        </div>
+        <div class="feature-list-item">
+          <div class="feature-icon-circle">1</div>
+          <div>
+            <div class="feature-item-title">Check LLC name availability before filing</div>
+            <div class="feature-item-desc">The most critical use case. Your LLC name must be distinguishable from all active registered entities in the state. Running this search before you file confirms availability and prevents a rejected application — because most states do not refund filing fees on rejections.</div>
+          </div>
+        </div>
+        <div class="feature-list-item">
+          <div class="feature-icon-circle">2</div>
+          <div>
+            <div class="feature-item-title">Research or verify a business you're working with</div>
+            <div class="feature-item-desc">Before signing a contract, hiring a contractor, or partnering with a vendor, a quick secretary of state business lookup confirms the company is legitimately registered, currently active, and who its registered agent is. Additionally, it reveals whether the business is current on annual report obligations.</div>
+          </div>
+        </div>
+        <div class="feature-list-item">
+          <div class="feature-icon-circle">3</div>
+          <div>
+            <div class="feature-item-title">Confirm your own LLC's status after formation</div>
+            <div class="feature-item-desc">After filing — whether directly or through an LLC formation service — re-run the search on your own entity to verify it appears as 'Active.' This is particularly important if you used an intermediary, since processing delays occasionally occur.</div>
+          </div>
+        </div>
+        <div class="feature-list-item">
+          <div class="feature-icon-circle">4</div>
+          <div>
+            <div class="feature-item-title">Verify registered agent details or annual report status</div>
+            <div class="feature-item-desc">The SOS database shows each entity's registered agent of record, and often displays whether annual report obligations are current. If you're updating your registered agent or checking compliance status, furthermore, this is the only legally authoritative source to verify that information.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout-box blue">
+        ℹ️ <strong>Not all states call it the same thing:</strong> Depending on your state, you may see it called "Business Entity Search," "Corporation Search," "Business Name Search," "Business Registry," or "Business Filing Search." Notably, the name of the office itself also varies — Pennsylvania uses the Department of State, Arizona uses the Corporation Commission, and Hawaii uses the Department of Commerce. Our tool accounts for all of these differences and routes you to the correct portal regardless of what the office or search system is called.
+      </div>
+
+      <!-- STEP BY STEP SECTION -->
+      <h2 id="section-stepbystep">How to Run a Secretary of State Business Name Search — Step by Step</h2>
+      <p>
+        The process is broadly consistent across all 50 states, though the specific interface and filtering options vary considerably. Below is the standard workflow for a <strong>Secretary of State business name lookup</strong> that gives you reliable results — not a surface-level check that misses conflicts and leads to a rejected filing.
+      </p>
+
+      <h3>Steps 1–3: Finding and executing the search</h3>
+
+      <div class="step-item-wrapper">
+        <div class="step-number-badge">1</div>
+        <div>
+          <h4 style="margin-top: 0;">Open the official state portal — not a third-party name checker</h4>
+          <p>
+            Use the tool above to go directly to your state's official SOS business search portal. Third-party 'instant name check' sites frequently rely on stale data and should be avoided. Specifically, only the official Secretary of State database is updated in real time — and it is the only source the filing officer consults when reviewing your application.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-item-wrapper">
+        <div class="step-number-badge">2</div>
+        <div>
+          <h4 style="margin-top: 0;">Search your exact desired name first — including "LLC"</h4>
+          <p>
+            Enter the full name exactly as you intend to register it, including the designator 'LLC.' If an exact active match appears, that name is unavailable. However, an exact match with a dissolved or canceled entity may still be usable in some states — so check the entity status carefully before giving up on the name entirely.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-item-wrapper">
+        <div class="step-number-badge">3</div>
+        <div>
+          <h4 style="margin-top: 0;">Search the core keyword — without "LLC" or any designator</h4>
+          <p>
+            This is the step most people skip — and consequently the one that causes the most rejected filings. Your LLC name must be <strong>distinguishable from existing registered names</strong>, not simply different word-for-word. Therefore, search just the key phrase. For example, if you want 'Sunrise Cleaning LLC,' search 'Sunrise Cleaning' and review all results. A business called 'Sunrise Clean Co.' might block yours, depending on your state's distinguishability standard.
+          </p>
+        </div>
+      </div>
+
+      <h3>Steps 4–6: Evaluating results and locking your name</h3>
+
+      <div class="step-item-wrapper green-border">
+        <div class="step-number-badge" style="background: #059669;">4</div>
+        <div>
+          <h4 style="margin-top: 0;">Filter by entity type — then run the search again without the filter</h4>
+          <p>
+            Most portals allow you to filter results to show only LLCs. Start with that filter for a clean view. Afterward, re-run the same search without any filter to check corporations, LPs, and other entity types. In most states, name conflicts apply across all entity types — consequently, a corporation named 'Blue Sky Inc.' can block 'Blue Sky LLC' from being registered.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-item-wrapper green-border">
+        <div class="step-number-badge" style="background: #059669;">5</div>
+        <div>
+          <h4 style="margin-top: 0;">Check the entity status for every matching result</h4>
+          <p>
+            Active status means the name is off-limits. Inactive, Dissolved, Cancelled, or Expired status requires additional investigation — specifically, a direct call to the SOS office. Some states release dissolved names immediately; others hold them for a reinstatement window of 2–5 years. When status is anything other than Active, therefore, never assume the name is free without confirmation from the state directly.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-item-wrapper green-border">
+        <div class="step-number-badge" style="background: #059669;">6</div>
+        <div>
+          <h4 style="margin-top: 0;">Reserve your name before filing — optional but almost always worth it</h4>
+          <p>
+            Most states allow you to <strong>reserve an LLC name</strong> for 30–120 days for a $10–$25 fee, processed through the same SOS portal. Kentucky, for example, charges $15 to reserve an accepted name for 120 days. If you're not ready to file immediately, a reservation is inexpensive insurance. Someone else can legally register your exact name while you're preparing your <strong><a href="operating-agreement.html">operating agreement</a></strong> or shopping for a <strong><a href="registered-agent-guide.html">registered agent</a></strong>. A name reservation eliminates that risk entirely.
+          </p>
+        </div>
+      </div>
+
+      <!-- READ RESULTS SECTION -->
+      <h2 id="section-readresults">How to Read Your Secretary of State Search Results</h2>
+      <p>
+        Running the <strong>secretary of state corporation search</strong> is straightforward. Interpreting the results correctly, however, is where most first-time LLC owners make costly mistakes. Below is a breakdown of the standard fields you will see across most state portals — and specifically what each one means for your name availability decision.
+      </p>
+
+      <h3>What each field in the results actually means</h3>
+
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>RESULT FIELD</th>
+              <th>WHAT IT MEANS</th>
+              <th>WHAT TO CHECK</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Entity Name</strong></td>
+              <td>Full registered name including legal designator (LLC, Inc, LP, etc.)</td>
+              <td>Check for similarity — not just exact match. Designators alone don't make names distinguishable.</td>
+            </tr>
+            <tr>
+              <td><strong>Entity Status</strong></td>
+              <td>Active · Inactive · Dissolved · Cancelled · Expired · Delinquent</td>
+              <td>Active = name is unavailable. All other statuses require a direct SOS call before assuming the name is free.</td>
+            </tr>
+            <tr>
+              <td><strong>Entity Type</strong></td>
+              <td>LLC · Corporation · LP · LLP · Non-profit · Professional Corp, etc.</td>
+              <td>Conflicts apply across entity types in most states — an "Inc." can block an "LLC" with the same core name.</td>
+            </tr>
+            <tr>
+              <td><strong>Formation / Filing Date</strong></td>
+              <td>Date the entity was officially registered with the state</td>
+              <td>Older entities may have established common-law trademark rights — relevant if considering a similar name.</td>
+            </tr>
+            <tr>
+              <td><strong>Registered Agent</strong></td>
+              <td>Person or service designated to receive legal documents for the entity</td>
+              <td>Useful for vendor research. For your own LLC, see our guide on <strong><a href="registered-agent-guide.html">what a registered agent does</a></strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Principal / Office Address</strong></td>
+              <td>Business address on file with the state</td>
+              <td>Use when researching vendors or contractors to verify they have a legitimate in-state presence.</td>
+            </tr>
+            <tr>
+              <td><strong>Annual Report Status</strong></td>
+              <td>Whether the entity is current on its annual reporting obligations</td>
+              <td>Delinquent status often indicates an abandoned business — potentially relevant when considering name conflict resolution.</td>
+            </tr>
+            <tr>
+              <td><strong>Document / Filing History</strong></td>
+              <td>Full list of all state filings: formation, amendments, agent changes, dissolution</td>
+              <td>Available in most states. Specifically useful for determining whether a dissolved entity has been reinstated before.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>What a "zero result" search actually tells you</h3>
+      <p>
+        An empty search result is a strong indicator — but not a guarantee — that your name is available. Specifically, it confirms that no state-registered entity with that name currently appears in the official database. It does not confirm, however, that the name is distinguishable from all <em>similar</em> names, that no active federal trademark covers your chosen name, or that the name isn't restricted by state law (for example, words like 'bank,' 'attorney,' or 'insurer' typically require additional approvals before the SOS will accept them).
+      </p>
+
+      <div class="callout-box amber">
+        ⚠️ <strong>Always check the USPTO in addition to the SOS database:</strong> A clean <strong>Secretary of State business name search</strong> confirms state-level availability. It does not, however, cover federally registered trademarks at the USPTO, which can prevent you from using a name even if no state LLC holds it. Additionally, common-law trademark rights arise from actual business use — without any registration at all. As a result, the SOS search is the essential first step, but also run a quick search at tmsearch.uspto.gov before committing to your name.
+      </div>
+
+      <!-- DISTINGUISHABLE SECTION -->
+      <h2 id="section-distinguishable">What "Distinguishable" Actually Means — and Why It's the Most Misunderstood Rule in LLC Formation</h2>
+      <p>
+        Every state LLC statute requires your name to be <strong>"distinguishable upon the records"</strong> from all other registered entity names. Notably, this is not the same as "different" or "unique." The legal standard is whether an ordinary person could confuse your business with an existing registered entity. Understanding this distinction is critical before you file — because the SOS filing officer will reject your application if your name isn't sufficiently distinguishable, and you will typically lose the filing fee in the process.
+      </p>
+
+      <h3>What counts — and what doesn't</h3>
+
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>CHANGE YOU MADE</th>
+              <th>DISTINGUISHABLE?</th>
+              <th>WHY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Changed "LLC" to "Inc."</td>
+              <td><strong style="color: #DC2626;">❌ Usually NO</strong></td>
+              <td>Entity designators alone do not make names distinguishable in most states.</td>
+            </tr>
+            <tr>
+              <td>Changed "&" to "and"</td>
+              <td><strong style="color: #DC2626;">❌ Usually NO</strong></td>
+              <td>Punctuation differences are typically stripped during the comparison.</td>
+            </tr>
+            <tr>
+              <td>Added "The" before the name</td>
+              <td><strong style="color: #DC2626;">❌ Usually NO</strong></td>
+              <td>Articles (The, A, An) are ignored in most state name comparisons.</td>
+            </tr>
+            <tr>
+              <td>Changed "Services" to "Service"</td>
+              <td><strong style="color: #DC2626;">❌ Usually NO</strong></td>
+              <td>Minor plural/singular variations generally do not count as distinguishable.</td>
+            </tr>
+            <tr>
+              <td>Added a geographic modifier ("Austin," "Texas," "Northwest")</td>
+              <td><strong style="color: #059669;">✔ Usually YES</strong></td>
+              <td>Geographic modifiers are generally sufficient — however, verify with your specific state's rules.</td>
+            </tr>
+            <tr>
+              <td>Added an industry descriptor that changes business nature</td>
+              <td><strong style="color: #059669;">✔ Usually YES</strong></td>
+              <td>"Blue Sky Consulting LLC" vs. "Blue Sky Landscaping LLC" — different industry words make names distinguishable.</td>
+            </tr>
+            <tr>
+              <td>Entirely different core word, similar theme</td>
+              <td><strong style="color: #059669;">✔ YES</strong></td>
+              <td>"Summit Peak LLC" and "Mountain Top LLC" are distinguishable — similar theme, but different words entirely.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>What to do when your chosen name is borderline</h3>
+      <p>
+        If your desired name is similar to an existing one but you believe it meets the distinguishability standard, you have two practical options. First, add a clear differentiating word to eliminate any ambiguity before you file. Second, submit a pre-filing name availability inquiry to your state's SOS office — most states offer this at no charge, and written confirmation gives you certainty before you pay the filing fee. Additionally, some states (notably Delaware and Wyoming) publish explicit written guidelines on what qualifies as distinguishable, which makes the analysis considerably more predictable. For state-specific naming rules, see the Step 1 section of your <strong><a href="start-llc.html">state formation guide</a></strong>.
+      </p>
+
+      <!-- TAKEN OPTIONS SECTION -->
+      <h2 id="section-taken">Your LLC Name Is Already Taken — Here Are Your Concrete Options</h2>
+      <p>
+        Finding a conflict in your <strong>Secretary of State business search</strong> is frustrating — but discovering it now is far better than after you file and pay. Below are your genuine options when a <strong>business name search</strong> returns a conflict, along with honest tradeoffs for each.
+      </p>
+
+      <div class="feature-list-box">
+        <div class="feature-list-header">
+          Your Options When Your Preferred LLC Name Is Unavailable
+        </div>
+        <div class="feature-list-item">
+          <div class="feature-icon-circle">✓</div>
+          <div>
+            <div class="feature-item-title">Add a geographic or industry modifier</div>
+            <div class="feature-item-desc">The simplest and fastest path. Add a geographic descriptor ("Austin Summit LLC"), an industry modifier ("Summit Digital Marketing LLC"), or a unique qualifier that clearly differentiates the business. Afterward, re-run the business name availability search on the modified version before committing to it.</div>
+          </div>
+        </div>
+        <div class="feature-list-item">
+          <div class="feature-icon-circle">✓</div>
+          <div>
+            <div class="feature-item-title">Register under a legal name and use a DBA for your brand</div>
+            <div class="feature-item-desc">You can form your LLC under any distinguishable name — even something neutral like "Holdings 2026 LLC" — and subsequently file a DBA (Doing Business As) to operate publicly under your preferred brand. The DBA is your public-facing identity; the LLC is the underlying legal entity. Most states charge $10–$50 to register a DBA. For specific requirements, see your state formation guide.</div>
+          </div>
+        </div>
+        <div class="feature-list-item">
+          <div class="feature-icon-circle">?</div>
+          <div>
+            <div class="feature-item-title">Investigate whether the conflicting entity is still active</div>
+            <div class="feature-item-desc">If the entity shows as Dissolved, Cancelled, or Expired, contact your SOS business division directly. Some states release dissolved names immediately upon dissolution; others, however, hold them for the original owner during a reinstatement window of 2–5 years. A quick phone call typically provides a definitive answer in under five minutes.</div>
+          </div>
+        </div>
+        <div class="feature-list-item">
+          <div class="feature-icon-circle">✓</div>
+          <div>
+            <div class="feature-item-title">Form in a different state where the name is available</div>
+            <div class="feature-item-desc">LLC names are state-specific. "Blue Sky Consulting LLC" might be taken in California but entirely available in Wyoming or Delaware. As a result, you can form in a state where the name is free and then register as a foreign LLC in your home state. This adds cost and complexity — nevertheless, it's a legitimate path when your preferred name is critical to your brand. See our guide on <strong><a href="best-state-to-form-an-llc.html">the best state to form an LLC</a></strong> for the full analysis.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout-box green">
+        💡 <strong>Name cleared the search? Reserve it immediately:</strong> Most states charge only $10–$25 to lock your name for 30–120 days. This is worth every dollar — specifically because someone else can legally register your exact name while you're still preparing documents. A name reservation costs less than one hour of any professional's time and eliminates a real risk entirely.
+      </div>
+
+      <!-- PORTALS TABLE SECTION -->
+      <h2 id="section-portals">Key Differences Between the 50 State SOS Business Search Portals</h2>
+      <p>
+        All 50 <strong>Secretary of State business search portals</strong> serve the same core function. In practice, however, they differ significantly in user experience, data depth, search options, and what information they display. Below are the most important variations — particularly for the highest-volume formation states and the ones with the most unique requirements.
+      </p>
+
+      <h3>High-volume states with notable portal differences</h3>
+
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>STATE</th>
+              <th>PORTAL NAME</th>
+              <th>WHAT MAKES IT UNIQUE</th>
+              <th>FORMATION GUIDE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Florida</strong></td>
+              <td>Sunbiz.org</td>
+              <td>One of the fastest and most data-rich portals in the U.S. Real-time updates, full document history, annual report status displayed immediately. Additionally, officer and registered agent information is publicly visible.</td>
+              <td><a href="start-llc.html">Florida LLC guide →</a></td>
+            </tr>
+            <tr>
+              <td><strong>Texas</strong></td>
+              <td>Texas SOS + Comptroller (COA)</td>
+              <td>Texas splits across two systems. The SOS handles filings; the Comptroller's Certificate of Account Status search, however, is the most useful tool for confirming active status and franchise tax compliance. Our tool links to the most relevant portal for name availability.</td>
+              <td><a href="start-llc.html">Texas LLC guide →</a></td>
+            </tr>
+            <tr>
+              <td><strong>California</strong></td>
+              <td>bizfile Online (SOS)</td>
+              <td>Allows direct ordering of certified formation documents. Notably, California imposes strict name restrictions — words like 'bank,' 'trust,' and 'insurance' require written approval from additional state agencies before the SOS will accept an LLC filing using them.</td>
+              <td><a href="start-llc.html">California LLC guide →</a></td>
+            </tr>
+            <tr>
+              <td><strong>Delaware</strong></td>
+              <td>Delaware Division of Corporations</td>
+              <td>The gold standard for corporate transparency. Search by name or entity number, view complete document filing history, and confirm good standing in seconds. Expedited filing options down to same-day processing are available for additional fees.</td>
+              <td><a href="start-llc.html">Delaware LLC guide →</a></td>
+            </tr>
+            <tr>
+              <td><strong>New York</strong></td>
+              <td>NY DOS Corporation & Business Entity DB</td>
+              <td>Straightforward name search with entity status clearly displayed. Importantly, however, New York has a mandatory newspaper publication requirement for new LLCs — this step adds $500–$2,000 to formation costs and is not tracked by the DOS search itself. Many first-time filers are surprised by this requirement.</td>
+              <td><a href="start-llc.html">New York LLC guide →</a></td>
+            </tr>
+            <tr>
+              <td><strong>Wyoming</strong></td>
+              <td>WyoBiz (SOS)</td>
+              <td>Wyoming deliberately limits the data displayed about LLC members — by design, as part of its privacy-first LLC statute. As a result, the search confirms existence and status but shows minimal ownership information. This makes Wyoming one of the top choices for privacy-conscious LLC owners.</td>
+              <td><a href="start-llc.html">Wyoming LLC guide →</a></td>
+            </tr>
+            <tr>
+              <td><strong>New Jersey</strong></td>
+              <td>NJ Division of Revenue — Name Search</td>
+              <td>Searches registered LLCs and trade names (DBAs) together in a single query — which is more comprehensive than most states. Consequently, a New Jersey search is one of the most thorough for catching all potential name conflicts.</td>
+              <td><a href="start-llc.html">New Jersey LLC guide →</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FAQ SECTION -->
+      <h2 id="section-faqs" style="margin-top: 3.5rem;">Secretary of State Business Search — Frequently Asked Questions</h2>
+
+      <div class="faq-accordion-wrapper">
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">1</span>
+              <span>Are Secretary of State business searches completely free?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            Yes, 100% free. Every state Secretary of State office provides free public access to its business entity search database. You do not need an account, credit card, or third-party service to run a preliminary name check.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">2</span>
+              <span>Does a clean search guarantee my LLC name will be approved?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            No. A clean search in the state database shows that no active registered entity currently holds that name. However, state filing examiners make the final determination when you submit your Articles of Organization. Additionally, state availability does not protect against federal trademark infringement at the USPTO.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">3</span>
+              <span>What is the difference between an SOS search and a trademark search?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            An SOS business search checks for registered business entity names within a single state to prevent duplicate corporate filings. A trademark search (via USPTO.gov) checks for nationwide registered brand names and logos to prevent intellectual property infringement. You should conduct both before investing in branding.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">4</span>
+              <span>Can I search for LLC owners or members in the SOS database?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            It depends on the state. States like Florida and Ohio display manager and member names publicly on Sunbiz. Privacy states like Wyoming, Delaware, and New Mexico do not require member names on public record, showing only the registered agent's details.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">5</span>
+              <span>How long does a Secretary of State name reservation last?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            Name reservation windows vary by state, typically ranging from 30 to 120 days. Fees range between $10 and $50. Reserving a name locks it specifically for your use while you prepare your formal filing documents.
+          </div>
+        </details>
+      </div>
+
+    </article>
   </main>
 
   <!-- =========================================================================
@@ -216,5 +1066,40 @@
   </footer>
 
   <script src="app.js"></script>
+  <script>
+    // Populate SOS State Selector
+    document.addEventListener("DOMContentLoaded", () => {
+      const select = document.getElementById("sosStateSelect");
+      if (select && typeof stateData !== "undefined") {
+        stateData.forEach(st => {
+          const opt = document.createElement("option");
+          opt.value = st.code;
+          opt.textContent = `${st.name} (${st.sosName || 'SOS Database'})`;
+          select.appendChild(opt);
+        });
+      }
+    });
+
+    // Run SOS Lookup in Widget
+    function runSosLookup() {
+      const code = document.getElementById("sosStateSelect").value;
+      const pane = document.getElementById("sosResultPane");
+      if (!code) {
+        pane.style.display = "none";
+        return;
+      }
+
+      const st = stateData.find(s => s.code === code);
+      if (!st) return;
+
+      document.getElementById("sosPaneName").textContent = st.sosName || `${st.name} Secretary of State`;
+      document.getElementById("sosPaneLinkBtn").href = st.sosUrl || "#";
+      document.getElementById("sosPaneNotes").innerHTML = `
+        <strong>${st.name} Database Note:</strong> ${st.note || 'Official Secretary of State business search portal for checking entity name availability and active status.'}
+      `;
+
+      pane.style.display = "block";
+    }
+  </script>
 </body>
 </html>

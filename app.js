@@ -62,7 +62,44 @@ document.addEventListener("DOMContentLoaded", () => {
   initCostCalculator();
   initQuizWizard();
   initSearch();
+  initActiveNavHighlighting();
 });
+
+function initActiveNavHighlighting() {
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  
+  // Highlight dropdown items and their parent nav-item
+  const dropdownLinks = document.querySelectorAll('.nav-menu .dropdown-link');
+  dropdownLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && (href === currentPath || (currentPath === '' && href === 'index.html'))) {
+      link.classList.add('active');
+      link.style.color = '#159A9C';
+      link.style.fontWeight = '700';
+
+      const parentNavItem = link.closest('.nav-item');
+      if (parentNavItem) {
+        const parentLink = parentNavItem.querySelector('.nav-link');
+        if (parentLink) {
+          parentLink.classList.add('active');
+          parentLink.style.color = 'var(--color-primary)';
+          parentLink.style.fontWeight = '800';
+        }
+      }
+    }
+  });
+
+  // Highlight direct top-level nav links
+  const topNavLinks = document.querySelectorAll('.nav-menu > .nav-item > .nav-link');
+  topNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href === currentPath && !link.classList.contains('active')) {
+      link.classList.add('active');
+      link.style.color = 'var(--color-primary)';
+      link.style.fontWeight = '800';
+    }
+  });
+}
 
 function populateStateSelectors() {
   const stateSectionSelect = document.getElementById("mainStateSectionSelect");
@@ -286,9 +323,9 @@ function updateCost() {
   const stateName = st ? st.name : "";
   const stateFee = st ? st.fee : 0;
 
-  // Optional toggles (Image 1 style)
-  const agentOptChecked = calcOptAgentToggle ? calcOptAgentToggle.checked : true;
-  const formationOptChecked = calcOptFormationToggle ? calcOptFormationToggle.checked : true;
+  // Optional toggles (Image 1 style) - OFF by default
+  const agentOptChecked = calcOptAgentToggle ? calcOptAgentToggle.checked : false;
+  const formationOptChecked = calcOptFormationToggle ? calcOptFormationToggle.checked : false;
 
   // Annual Report Fee Extraction
   let annualFeeNum = 0;
@@ -313,9 +350,9 @@ function updateCost() {
   const agentLabel = legacyAgentFee > 0 ? "Commercial Registered Agent" : "Self Registered Agent";
 
   // Compute Totals
-  const agentYr1Cost = agentOptChecked ? 0 : 0;
-  const agentYr2Cost = agentOptChecked ? 39 : 0;
   const formationCost = formationOptChecked ? 39 : 0;
+  const agentYr1Cost = agentOptChecked ? (formationOptChecked ? 0 : 125) : 0;
+  const agentYr2Cost = agentOptChecked ? 125 : 0;
 
   // Franchise Tax specials
   let franchiseTaxVal = 0;
@@ -353,7 +390,7 @@ function updateCost() {
   const includeExpedited = calcExpeditedToggle ? calcExpeditedToggle.checked : false;
 
   const totalSetup = stateFee + formationCost + agentYr1Cost + (includeExpedited ? 75 : 0);
-  const totalAnnual = annualFeeNum + franchiseTaxVal + (agentOptChecked ? 39 : 0) + legacyAgentFee;
+  const totalAnnual = annualFeeNum + franchiseTaxVal + agentYr2Cost + legacyAgentFee;
 
   // Update Image 1 elements if present
   const headerStateEl = document.getElementById("calcCostHeaderState");
