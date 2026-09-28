@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>Free LLC Formation Tools (2026 State Databases) | LLC Primer</title>
+  <meta name="description" content="Use free 2026 LLC tools: name availability checker, state filing fee calculator, and startup cost estimator. No account or hidden fees required.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Scoped Content Container for Body Cards */
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3.5rem 1.5rem;
+      width: 100%;
+    }
+
+    /* Article Typography */
+    .guide-article h2 {
+      font-size: clamp(1.65rem, 3vw, 2.15rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.5rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+    .guide-article h3 {
+      font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 1.85rem 0 0.75rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover {
+      color: #0E7490;
+    }
+
+    /* Top Alert Callout Box (Light Blue) */
+    .alert-callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #BAE6FD;
+      border-left: 5px solid #0284C7;
+      border-radius: 14px;
+      padding: 1.15rem 1.35rem;
+      color: #0369A1;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 1.5rem 0 2rem 0;
+    }
+
+    /* Blue Hero Tool Cards */
+    .hero-tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .tool-hero-card {
+      background: linear-gradient(135deg, #1E40AF 0%, #1D4ED8 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      color: #FFFFFF;
+      box-shadow: 0 10px 30px rgba(30, 64, 175, 0.25);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .tool-hero-card--full {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+    }
+    .tool-card-live-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: #10B981;
+      color: #FFFFFF;
+      font-size: 0.65rem;
+      font-weight: 900;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .tool-card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .tool-card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.6rem;
+      font-family: var(--font-heading);
+    }
+    .tool-card-desc {
+      font-size: 0.9rem;
+      color: #DBEAFE;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .tool-tags-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .tool-tag-pill {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+    }
+    .tool-cta-btn {
+      background: #FFFFFF;
+      color: #1D4ED8;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 0.75rem 1.35rem;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+      width: fit-content;
+      text-decoration: none !important;
+    }
+    .tool-cta-btn:hover {
+      background: #F8FAFC;
+      color: #1E40AF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Pro Tip Callout Box (Light Green) */
+    .pro-tip-box {
+      background: #ECFDF5;
+      border: 1.5px solid #A7F3D0;
+      border-left: 5px solid #10B981;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      color: #065F46;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 2rem 0;
+    }
+
+    /* Popular State Grid */
+    .state-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .state-mini-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
+    }
+    .state-mini-card:hover {
+      border-color: #159A9C;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(21, 154, 156, 0.12);
+    }
+    .state-mini-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #12304A;
+      font-family: var(--font-heading);
+    }
+    .state-mini-fee {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #1D4ED8;
+      margin: 0.35rem 0;
+    }
+    .state-mini-time {
+      font-size: 0.775rem;
+      color: #64748B;
+    }
+
+    /* Top Pick Banner Card (Northwest) */
+    .top-pick-card {
+      background: #FFFFFF;
+      border: 2px solid #10B981;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.1);
+    }
+    .top-pick-badge {
+      background: #10B981;
+      color: #FFFFFF;
+      font-size: 0.7rem;
+      font-weight: 900;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      letter-spacing: 0.06em;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ Accordion */
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin: 1.5rem 0 2.5rem 0;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-tools-grid { grid-template-columns: 1fr; }
+      .state-cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .top-pick-card { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .state-cards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. EXECUTIVE GLASSMORPHIC NAVBAR (LLC PRIMER)
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">
+            Start an LLC
+          </a>
+        </div>
+
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link active" style="color: var(--color-primary); font-weight: 800;">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="tools.html" class="nav-link" style="color: #159A9C; font-weight: 800;">
+            Tools
+          </a>
+        </div>
+
+        <div class="nav-cta-wrapper">
+          <a href="quiz.html" class="nav-btn-primary">
+            <span>Find My LLC Fit</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px;height:24px;"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB BAR -->
+  <nav class="breadcrumb-container" aria-label="Breadcrumb navigation" style="background: #F8FAFC; border-bottom: 1px solid #E2E8F0; padding: 0.75rem 0;">
+    <div class="container" style="max-width: 1080px; margin: 0 auto; padding: 0 1.5rem;">
+      <ol class="breadcrumb-list" style="display: flex; gap: 0.5rem; align-items: center; list-style: none; font-size: 0.8rem; color: #64748B; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0; margin: 0;">
+        <li><a href="index.html" style="color: #64748B; text-decoration: none;">LLC Starters</a></li>
+        <li><span style="color: #CBD5E1;">/</span></li>
+        <li><a href="start-llc.html" style="color: #64748B; text-decoration: none;">How to Start an LLC</a></li>
+        <li><span style="color: #CBD5E1;">/</span></li>
+        <li style="color: #159A9C; font-weight: 800;">Tools</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- MAIN ARTICLE CONTAINER -->
+  <main class="guide-content-container">
+    <article class="guide-article">
+
+      <header style="margin-top: 2rem; margin-bottom: 1.5rem;">
+        <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 1rem;">
+          7 months ago · Updated 5 months ago
+        </div>
+
+        <div class="alert-callout-blue">
+          <strong>Free tools, updated 2026.</strong> Every tool on this page connects directly to official government databases. No account required, no hidden fees — just the information you need to start your LLC right.
+        </div>
+
+        <p>
+          Starting an LLC involves more steps than most people expect. Before you file anything, you need to verify your <strong>LLC name availability</strong>, understand the total costs, and know your compliance deadlines. Making a mistake at any of these stages can result in a rejected filing or unexpected fines.
+        </p>
+
+        <p>
+          These free tools are designed to solve exactly those problems. Each one saves you time, reduces the risk of errors, and connects you directly to the official state resources that matter. You do not need to create an account, pay a fee, or hand over your email address to use any of them.
+        </p>
+
+        <p>
+          Whether you are figuring out <strong>how to start an LLC</strong> for the first time or managing an existing business, these tools give you the answers you actually need — fast and for free.
+        </p>
+      </header>
+
+      <!-- =========================================================================
+           SECTION 1: LLC FORMATION TOOLS — ALL FREE
+           ========================================================================= -->
+      <section>
+        <h2>LLC Formation Tools — All Free</h2>
+        <p style="color: #475569; font-size: 0.95rem;">
+          All three tools below are completely free, require no signup, and use verified 2026 data from official Secretary of State sources. Specifically, each tool is designed to answer a different question you will have when starting your LLC.
+        </p>
+
+        <h3>Search, calculate, and estimate your LLC costs</h3>
+
+        <div class="hero-tools-grid">
+          <!-- CARD 1: NAME AVAILABILITY CHECKER -->
+          <div class="tool-hero-card">
+            <span class="tool-card-live-badge">LIVE</span>
+            <div>
+              <div class="tool-card-icon">🔍</div>
+              <div class="tool-card-title">LLC Name Availability Checker</div>
+              <div class="tool-card-desc">
+                Check if your <strong>LLC name is available</strong> in any of the 50 states. Specifically, it searches official Secretary of State databases instantly — therefore no signup or account is needed.
+              </div>
+              <div class="tool-tags-flex">
+                <span class="tool-tag-pill">All 50 states</span>
+                <span class="tool-tag-pill">Official SoS records</span>
+                <span class="tool-tag-pill">Free</span>
+              </div>
+            </div>
+            <a href="index.html#name-search" class="tool-cta-btn">Use the Tool →</a>
+          </div>
+
+          <!-- CARD 2: LLC COST CALCULATOR -->
+          <div class="tool-hero-card">
+            <span class="tool-card-live-badge">LIVE</span>
+            <div>
+              <div class="tool-card-icon">💰</div>
+              <div class="tool-card-title">LLC Cost Calculator</div>
+              <div class="tool-card-desc">
+                Calculate the exact cost to form and maintain your LLC in any state. Consequently, you can compare <strong>filing fee, annual report, and registered agent</strong> costs across all 50 states before you commit.
+              </div>
+              <div class="tool-tags-flex">
+                <span class="tool-tag-pill">All 50 states</span>
+                <span class="tool-tag-pill">Year 1 + ongoing</span>
+                <span class="tool-tag-pill">Free</span>
+              </div>
+            </div>
+            <a href="how-much-does-an-llc-cost.html" class="tool-cta-btn">Use the Tool →</a>
+          </div>
+
+          <!-- CARD 3: STARTUP COST ESTIMATOR (FULL WIDTH) -->
+          <div style="grid-column: 1 / -1; margin-top: 1.5rem;">
+            <h3 style="margin-bottom: 0.75rem;">Get your personalized startup budget</h3>
+            <div class="tool-hero-card tool-hero-card--full">
+              <span class="tool-card-live-badge">LIVE</span>
+              <div>
+                <div class="tool-card-icon">🧮</div>
+                <div class="tool-card-title">LLC Startup Cost Estimator</div>
+                <div class="tool-card-desc" style="max-width: 800px;">
+                  Answer 3 questions and get a <strong>personalized LLC budget</strong> based on your state and business type. Furthermore, it covers state fees, licenses, registered agent costs, and your total year 1 and year 2+ expenses.
+                </div>
+                <div class="tool-tags-flex">
+                  <span class="tool-tag-pill">All 50 states</span>
+                  <span class="tool-tag-pill">8 business types</span>
+                  <span class="tool-tag-pill">Free</span>
+                </div>
+              </div>
+              <a href="how-much-does-an-llc-cost.html" class="tool-cta-btn">Use the Tool →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           SECTION 2: WHY THESE TOOLS MATTER BEFORE YOU FILE
+           ========================================================================= -->
+      <section>
+        <h2>Why These Tools Matter Before You File</h2>
+        <p>
+          Most LLC formation mistakes happen before you even submit your paperwork. Entrepreneurs pick a name without checking state records, underestimate costs, or miss compliance deadlines in year two. These tools exist to prevent exactly those problems.
+        </p>
+
+        <h3>The #1 reason filings get rejected: name conflicts</h3>
+        <p>
+          Every state requires your <strong>LLC name to be distinguishable</strong> from existing entities in its records. That does not just mean avoiding identical names — a name that is too similar can also trigger a rejection. The only way to know for certain is to search the official <strong>Secretary of State database</strong> for your specific state before you file.
+        </p>
+        <p>
+          Additionally, checking name availability at the state level is only the first step. For complete protection, you should also verify that your name does not conflict with existing federal trademarks at USPTO.gov and that the matching domain is available if you plan to build a website.
+        </p>
+
+        <h3>What "distinguishable" actually means</h3>
+        <p>
+          States vary in how strictly they apply the distinguishability rule. In most cases, the following differences are <em>not</em> enough to make a name distinguishable: adding "The" at the start, using singular vs. plural, abbreviating a word, or swapping punctuation. Consequently, your name needs a genuinely unique element — not just a superficial variation of a taken name.
+        </p>
+
+        <div class="pro-tip-box">
+          <strong>Pro Tip:</strong> Search using only the core words of your desired name, without "LLC" at the end. Many state portals strip entity designators automatically, and searching with "LLC" included can cause you to miss conflicts.
+        </div>
+
+        <h3>Name reservation: lock it in before you are ready to file</h3>
+        <p>
+          If your name is available but you are not ready to file immediately, most states let you reserve it for 30 to 120 days for a small fee — typically $10 to $50. This prevents another business from registering the same name while you prepare your formation documents. Your <a href="registered-agent-guide.html">registered agent</a> can help with this step in most states.
+        </p>
+
+        <h3>Do not skip the EIN step</h3>
+        <p>
+          Once your LLC is approved and you have confirmed your name, your next step is to <a href="ein-guide.html">apply for an EIN</a> from the IRS. This is free and takes about 10 minutes online. You need it to open a business bank account, hire employees, and file taxes.
+        </p>
+      </section>
+
+      <!-- =========================================================================
+           SECTION 3: NEED STATE-SPECIFIC HELP?
+           ========================================================================= -->
+      <section>
+        <h2>Need State-Specific Help?</h2>
+        <p>
+          Each state has its own filing fees, processing times, and annual compliance requirements. Our step-by-step LLC guides cover every state individually — with exact fees, official links, and the most common mistakes to avoid.
+        </p>
+
+        <div style="font-size: 0.75rem; font-weight: 800; color: #64748B; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1.5rem; margin-bottom: 0.75rem; font-family: var(--font-heading);">
+          MOST POPULAR STATE LLC GUIDES
+        </div>
+
+        <div class="state-cards-grid">
+          <div class="state-mini-card">
+            <div class="state-mini-name">California</div>
+            <div class="state-mini-fee">$70</div>
+            <div class="state-mini-time">~15 business days</div>
+          </div>
+          <div class="state-mini-card">
+            <div class="state-mini-name">Texas</div>
+            <div class="state-mini-fee">$300</div>
+            <div class="state-mini-time">~12 business days</div>
+          </div>
+          <div class="state-mini-card">
+            <div class="state-mini-name">Florida</div>
+            <div class="state-mini-fee">$125</div>
+            <div class="state-mini-time">~2-3 business days</div>
+          </div>
+          <div class="state-mini-card">
+            <div class="state-mini-name">New York</div>
+            <div class="state-mini-fee">$200</div>
+            <div class="state-mini-time">~7 business days</div>
+          </div>
+          <div class="state-mini-card">
+            <div class="state-mini-name">Wyoming</div>
+            <div class="state-mini-fee">$100</div>
+            <div class="state-mini-time">~15 business days</div>
+          </div>
+          <div class="state-mini-card">
+            <div class="state-mini-name">Delaware</div>
+            <div class="state-mini-fee">$90</div>
+            <div class="state-mini-time">~7-10 business days</div>
+          </div>
+        </div>
+
+        <p style="margin-top: 1rem;">
+          <a href="llc-guide.html">→ See all 50 state LLC guides</a>
+        </p>
+      </section>
+
+      <!-- =========================================================================
+           TOP PICK BANNER CARD (NORTHWEST)
+           ========================================================================= -->
+      <div class="top-pick-card">
+        <div>
+          <span class="top-pick-badge">★ OUR TOP PICK</span>
+          <div style="font-size: 1.15rem; font-weight: 800; color: #12304A; font-family: var(--font-heading);">
+            Northwest Registered Agent
+          </div>
+          <div style="font-size: 0.9rem; color: #475569; margin-top: 0.25rem;">
+            Form your LLC in any state with the most privacy-focused service available. They never sell your data and include a registered agent free for the first year. <strong>$39 + state fee</strong>
+          </div>
+        </div>
+        <a href="northwest-registered-agent-review.html" class="ls-btn ls-btn--emerald" style="white-space: nowrap; padding: 0.85rem 1.5rem; flex-shrink: 0;">
+          Form My LLC →
+        </a>
+      </div>
+
+      <!-- =========================================================================
+           SECTION 4: FREQUENTLY ASKED QUESTIONS
+           ========================================================================= -->
+      <section>
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">1</span>
+                <span>Are these LLC tools really free?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes, 100% free. No credit card, account creation, or email address required. Every tool is designed to give you direct, accurate government data without paywalls.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">2</span>
+                <span>Does a name search guarantee my LLC name will be approved?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              A preliminary search shows current database entries, but official Secretary of State examiners conduct a final review upon filing. Ensuring your name has a unique element minimizes rejection risk.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">3</span>
+                <span>Which states let me reserve an LLC name before filing?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Most states allow name reservation for 30 to 120 days for a small fee ranging between $10 and $50 (e.g. Alabama requires name reservation prior to formation).
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">4</span>
+                <span>Do I need to include "LLC" when searching for a business name?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              No. In fact, searching without "LLC" or designator suffixes is recommended because state portals ignore entity designators and core words determine distinguishability.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">5</span>
+                <span>What happens if my LLC name is already taken?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              If a name is taken or not distinguishable, your filing will be rejected. You must pick a unique name or add distinct designators before re-submitting your Articles of Organization.
+            </div>
+          </details>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- =========================================================================
+       SITEWIDE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p class="footer-tagline">
+            Independent, data-driven LLC formation research and state compliance guides.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Form an LLC</h4>
+          <ul class="footer-links">
+            <li><a href="start-llc.html">How to Start an LLC</a></li>
+            <li><a href="best-llc-services.html">Best LLC Services</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Best State for LLC</a></li>
+            <li><a href="how-much-does-an-llc-cost.html">LLC Cost Breakdown</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">LLC Guides</h4>
+          <ul class="footer-links">
+            <li><a href="what-is-an-llc.html">What is an LLC</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="ein-guide.html">EIN Tax ID Guide</a></li>
+            <li><a href="registered-agent-guide.html">Registered Agent Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Tools & Resources</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html">Free LLC Tools</a></li>
+            <li><a href="quiz.html">LLC Finder Quiz</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Bank Accounts</a></li>
+            <li><a href="llc-business-insurance.html">LLC Business Insurance</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 LLC Primer. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
