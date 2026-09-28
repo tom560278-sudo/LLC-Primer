@@ -271,6 +271,8 @@ function initMobileMenu() {
 
 function updateCost() {
   const calcStateSelect = document.getElementById("calcStateSelect");
+  const calcOptAgentToggle = document.getElementById("calcOptAgentToggle");
+  const calcOptFormationToggle = document.getElementById("calcOptFormationToggle");
   const calcAgentSelect = document.getElementById("calcAgentSelect");
   const calcExpeditedToggle = document.getElementById("calcExpeditedToggle");
 
@@ -284,39 +286,124 @@ function updateCost() {
   const stateName = st ? st.name : "";
   const stateFee = st ? st.fee : 0;
 
+  // Optional toggles (Image 1 style)
+  const agentOptChecked = calcOptAgentToggle ? calcOptAgentToggle.checked : true;
+  const formationOptChecked = calcOptFormationToggle ? calcOptFormationToggle.checked : true;
+
   // Annual Report Fee Extraction
   let annualFeeNum = 0;
-  let annualTextDisplay = "$0.00";
+  let annualTextDisplay = "$0";
   if (st) {
     if (!st.annual || st.annual === "$0" || st.annual === "$0 PIR" || st.annual.includes("$0")) {
       annualFeeNum = 0;
-      annualTextDisplay = "$0.00";
+      annualTextDisplay = "$0";
     } else {
       const match = st.annual.match(/[\d\.]+/);
       if (match) {
         annualFeeNum = parseFloat(match[0]) || 0;
-        annualTextDisplay = `$${annualFeeNum.toFixed(2)}`;
+        annualTextDisplay = `$${annualFeeNum}`;
       } else {
         annualTextDisplay = st.annual;
       }
     }
   }
 
-  // Agent Fee
-  const agentFee = calcAgentSelect ? parseInt(calcAgentSelect.value) || 0 : 0;
-  const agentLabel = agentFee > 0 ? "Commercial Registered Agent" : "Self Registered Agent";
-  const agentCostDisplay = `$${agentFee.toFixed(2)}`;
-
-  // Toggles
-  const includeExpedited = calcExpeditedToggle ? calcExpeditedToggle.checked : false;
+  // Legacy Agent Fee selection
+  const legacyAgentFee = calcAgentSelect ? parseInt(calcAgentSelect.value) || 0 : 0;
+  const agentLabel = legacyAgentFee > 0 ? "Commercial Registered Agent" : "Self Registered Agent";
 
   // Compute Totals
-  const totalSetup = stateFee + (includeExpedited ? 75 : 0);
-  const totalAnnual = annualFeeNum + agentFee;
+  const agentYr1Cost = agentOptChecked ? 0 : 0;
+  const agentYr2Cost = agentOptChecked ? 39 : 0;
+  const formationCost = formationOptChecked ? 39 : 0;
 
-  // Generate Table Rows
+  // Franchise Tax specials
+  let franchiseTaxVal = 0;
+  let franchiseTaxText = "$0/yr";
+  let stateWarningText = "";
+  let costBadgeText = "Moderate Cost";
+
+  if (st) {
+    if (st.code === "DE") {
+      franchiseTaxVal = 300;
+      franchiseTaxText = "$300/yr";
+      stateWarningText = "⚠️ Delaware requires a $300/yr franchise tax. Popular for investor-backed businesses, but expensive for small LLCs.";
+      costBadgeText = "Above Average";
+    } else if (st.code === "CA") {
+      franchiseTaxVal = 800;
+      franchiseTaxText = "$800/yr";
+      stateWarningText = "⚠️ California charges all LLCs a minimum $800 annual franchise tax starting in Year 2 of operation.";
+      costBadgeText = "High Cost State";
+    } else if (st.code === "NY") {
+      stateWarningText = "⚠️ New York requires a 6-week newspaper publication process (~$300–$1,500 depending on county).";
+      costBadgeText = "High Startup Cost";
+    } else if (st.code === "NV") {
+      stateWarningText = "⚠️ Nevada requires a mandatory $150 State Business License fee + $200 Annual List fee every year ($350/yr total).";
+      costBadgeText = "High Ongoing Cost";
+    } else if (st.code === "KY") {
+      stateWarningText = "⚠️ Kentucky requires a $33 county recording fee for Articles of Organization + $175 minimum LLET tax for many for-profit LLCs.";
+      costBadgeText = "Low Base Fee";
+    } else if (stateFee <= 60) {
+      costBadgeText = "Low Cost State";
+    } else if (stateFee >= 200) {
+      costBadgeText = "Above Average";
+    }
+  }
+
+  const includeExpedited = calcExpeditedToggle ? calcExpeditedToggle.checked : false;
+
+  const totalSetup = stateFee + formationCost + agentYr1Cost + (includeExpedited ? 75 : 0);
+  const totalAnnual = annualFeeNum + franchiseTaxVal + (agentOptChecked ? 39 : 0) + legacyAgentFee;
+
+  // Update Image 1 elements if present
+  const headerStateEl = document.getElementById("calcCostHeaderState");
+  const costBadgeEl = document.getElementById("calcCostBadge");
+  const rowStateFeeEl = document.getElementById("calcRowStateFee");
+  const rowAnnualReportEl = document.getElementById("calcRowAnnualReport");
+  const rowAgentFeeEl = document.getElementById("calcRowAgentFee");
+  const rowFormationServiceEl = document.getElementById("calcRowFormationService");
+  const rowFranchiseTaxEl = document.getElementById("calcRowFranchiseTax");
+  const rowFranchiseTaxValEl = document.getElementById("calcRowFranchiseTaxVal");
+  const totalYear1El = document.getElementById("calcTotalYear1");
+  const totalYear2El = document.getElementById("calcTotalYear2");
+  const stateWarningBoxEl = document.getElementById("calcStateWarningBox");
+  const guideBtnEl = document.getElementById("calcGuideBtn");
+
+  if (headerStateEl) headerStateEl.textContent = st ? st.name : "Your State";
+  if (costBadgeEl) costBadgeEl.textContent = st ? costBadgeText : "Select State";
+  if (rowStateFeeEl) rowStateFeeEl.textContent = st ? `$${stateFee}` : "$0";
+  if (rowAnnualReportEl) rowAnnualReportEl.textContent = st ? annualTextDisplay : "$0";
+  if (rowAgentFeeEl) rowAgentFeeEl.textContent = agentOptChecked ? "$0 yr 1 · $39/yr after" : "$0";
+  if (rowFormationServiceEl) rowFormationServiceEl.textContent = formationOptChecked ? "$39" : "$0";
+
+  if (rowFranchiseTaxEl && rowFranchiseTaxValEl) {
+    if (franchiseTaxVal > 0) {
+      rowFranchiseTaxEl.style.display = "flex";
+      rowFranchiseTaxValEl.textContent = franchiseTaxText;
+    } else {
+      rowFranchiseTaxEl.style.display = "none";
+    }
+  }
+
+  if (totalYear1El) totalYear1El.textContent = st ? `$${totalSetup}` : "$0";
+  if (totalYear2El) totalYear2El.textContent = st ? `$${totalAnnual}/yr` : "$0/yr";
+
+  if (stateWarningBoxEl) {
+    if (st && stateWarningText) {
+      stateWarningBoxEl.style.display = "block";
+      stateWarningBoxEl.textContent = stateWarningText;
+    } else {
+      stateWarningBoxEl.style.display = "none";
+    }
+  }
+
+  if (guideBtnEl && st) {
+    guideBtnEl.textContent = `View Full ${st.name} LLC Guide →`;
+    guideBtnEl.href = `llc-guide.html?state=${st.code}`;
+  }
+
+  // Update legacy breakdown table if present
   let rowsHtml = "";
-
   if (!st) {
     rowsHtml = `
       <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
@@ -337,7 +424,7 @@ function updateCost() {
         <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 500;">${agentLabel}</td>
         <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Third-Party / Compliance</td>
         <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Annual Recurring</td>
-        <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 700; text-align: right;">${agentCostDisplay}</td>
+        <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 700; text-align: right;">$${(agentOptChecked ? 39 : legacyAgentFee).toFixed(2)}</td>
       </tr>
       <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
         <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 500;">${stateName} Annual Report / Franchise Tax</td>
@@ -360,7 +447,7 @@ function updateCost() {
   }
 
   if (tbody) tbody.innerHTML = rowsHtml;
-  
+
   if (totalSetupEl) {
     if (st) {
       totalSetupEl.textContent = `$${totalSetup.toFixed(2)}`;
@@ -392,10 +479,12 @@ function updateCost() {
 
 function initCostCalculator() {
   const calcStateSelect = document.getElementById("calcStateSelect");
+  const calcOptAgentToggle = document.getElementById("calcOptAgentToggle");
+  const calcOptFormationToggle = document.getElementById("calcOptFormationToggle");
   const calcAgentSelect = document.getElementById("calcAgentSelect");
   const calcExpeditedToggle = document.getElementById("calcExpeditedToggle");
 
-  [calcStateSelect, calcAgentSelect, calcExpeditedToggle].forEach(el => {
+  [calcStateSelect, calcOptAgentToggle, calcOptFormationToggle, calcAgentSelect, calcExpeditedToggle].forEach(el => {
     if (el) {
       el.addEventListener("change", updateCost);
       el.addEventListener("input", updateCost);

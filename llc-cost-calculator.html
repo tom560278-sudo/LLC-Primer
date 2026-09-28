@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
   <title>LLC Cost Calculator (2026 50-State Fee Estimator) | LLC Primer</title>
-  <meta name="description" content="Calculate your exact LLC formation and annual costs across all 50 states with our free 2026 interactive LLC Cost Calculator. State filing fees, annual report costs, and surprise fees breakdown.">
+  <meta name="description" content="Calculate your exact LLC formation and annual costs across all 50 states with our free 2026 interactive LLC Cost Calculator. Compare filing fees, annual report costs, and optional service toggles.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +52,7 @@
       color: #0E7490;
     }
 
-    /* Tables */
+    /* Custom Tables */
     .custom-table-wrapper {
       background: #FFFFFF;
       border: 1.5px solid #CBD5E1;
@@ -100,30 +100,113 @@
       line-height: 1.65;
       margin: 2rem 0;
     }
-    .warning-yellow-box {
-      background: #FEFCE8;
-      border: 1.5px solid #FDE047;
-      border-left: 5px solid #EAB308;
-      border-radius: 12px;
-      padding: 1.15rem 1.35rem;
-      color: #854D0E;
-      font-size: 0.925rem;
-      line-height: 1.65;
-      margin: 1.75rem 0;
-    }
-    .warning-red-box {
-      background: #FEF2F2;
-      border: 1.5px solid #FCA5A5;
-      border-left: 5px solid #EF4444;
-      border-radius: 12px;
-      padding: 1.15rem 1.35rem;
-      color: #991B1B;
-      font-size: 0.925rem;
-      line-height: 1.65;
-      margin: 1.75rem 0;
+    .bottom-line-box {
+      background: linear-gradient(135deg, #1E40AF 0%, #1D4ED8 100%);
+      border-radius: 16px;
+      padding: 1.75rem;
+      color: #FFFFFF;
+      margin: 2.5rem 0;
+      box-shadow: 0 10px 30px rgba(29, 78, 216, 0.2);
     }
 
-    /* Required Costs Vertical Timeline List */
+    /* Interactive Calculator Card (Image 1 Style) */
+    .calc-card-main {
+      background: #0D2336;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 2.25rem;
+      color: #FFFFFF;
+      margin: 2.5rem 0;
+      box-shadow: 0 16px 45px rgba(18, 48, 74, 0.25);
+    }
+    .calc-input-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Switch Toggles */
+    .toggle-flex-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.875rem;
+      color: #E2E8F0;
+    }
+    .switch-checkbox {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .switch-checkbox input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .switch-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #334155;
+      transition: .3s;
+      border-radius: 24px;
+    }
+    .switch-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+    input:checked + .switch-slider {
+      background-color: #F59E0B;
+    }
+    input:checked + .switch-slider:before {
+      transform: translateX(20px);
+    }
+
+    /* 3 Cheapest States Cards Row */
+    .cheapest-states-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .cheap-state-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      position: relative;
+    }
+    .cheap-state-num {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #64748B;
+      position: absolute;
+      top: 0.6rem;
+      left: 0.8rem;
+    }
+    .cheap-state-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-top: 0.8rem;
+      font-family: var(--font-heading);
+    }
+
+    /* Timeline Steps */
     .timeline-steps-wrapper {
       display: flex;
       flex-direction: column;
@@ -150,51 +233,54 @@
       margin-top: 0.15rem;
       font-family: var(--font-heading);
     }
-    .step-content-box {
-      flex: 1;
-    }
-    .step-title-flex {
+
+    /* Top Pick & Compare Banner Cards */
+    .top-pick-card {
+      background: #FFFFFF;
+      border: 2px solid #10B981;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.4rem;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.1);
     }
-    .step-title-text {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: #12304A;
-      font-family: var(--font-heading);
+    .compare-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
     }
-    .step-tag-badge {
-      font-size: 0.675rem;
-      font-weight: 800;
-      padding: 0.2rem 0.5rem;
-      border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .tag-required { background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; }
-    .tag-free { background: #D1FAE5; color: #065F46; border: 1px solid #6EE7B7; }
 
-    /* Interactive Calculator Card (Dark Navy Homepage Widget) */
-    .dark-calc-card {
-      background: #0D2336;
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 2.25rem;
-      color: #FFFFFF;
-      margin: 2.5rem 0;
-      box-shadow: 0 16px 45px rgba(18, 48, 74, 0.25);
+    /* 3-Card Tools Grid */
+    .tools-3grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0;
     }
-    .calc-input-label {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: #94A3B8;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.5rem;
+    .tool-mini-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.25rem;
+      text-align: center;
+      text-decoration: none !important;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
+    }
+    .tool-mini-card:hover {
+      border-color: #159A9C;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(21, 154, 156, 0.12);
     }
 
     /* FAQ Accordion Styling */
@@ -272,7 +358,10 @@
     }
 
     @media (max-width: 768px) {
-      .dark-calc-card { padding: 1.5rem; }
+      .calc-card-main { padding: 1.5rem; }
+      .cheapest-states-grid { grid-template-columns: 1fr; }
+      .tools-3grid { grid-template-columns: 1fr; }
+      .top-pick-card, .compare-card { flex-direction: column; text-align: center; }
       .timeline-step-item { flex-direction: column; gap: 0.75rem; }
     }
   </style>
@@ -342,23 +431,39 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="tools.html" class="dropdown-link">Free LLC Tools Overview</a>
             <a href="llc-cost-calculator.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">LLC Cost Calculator</a>
-            <a href="quiz.html" class="dropdown-link">LLC Finder Quiz</a>
+            <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
+            <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
+            <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
           </div>
         </div>
 
-        <div class="nav-cta-wrapper">
-          <a href="quiz.html" class="nav-btn-primary">
-            <span>Find My LLC Fit</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;"><polyline points="9 18 15 12 9 6"/></svg>
+        <div class="nav-item">
+          <a href="best-state-to-form-an-llc.html" class="nav-link">
+            Non-Residents
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
+          <div class="dropdown-menu">
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State</a>
+            <a href="ein-guide.html" class="dropdown-link">EIN Guide</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">LLC Cost</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Bank Account</a>
+          </div>
         </div>
       </nav>
 
-      <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px;height:24px;"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan →
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -396,7 +501,7 @@
       </header>
 
       <!-- =========================================================================
-           SECTION 1: LLC COSTS BY STATE — COMPLETE 2026 TABLE (IMAGES 3 & 4)
+           SECTION 1: LLC COSTS BY STATE — COMPLETE 2026 TABLE
            ========================================================================= -->
       <section>
         <h2>LLC Costs by State — Complete 2026 Table</h2>
@@ -481,7 +586,7 @@
           </table>
         </div>
 
-        <!-- GROUP 3: MOST EXPENSIVE STATES (IMAGE 4) -->
+        <!-- GROUP 3: MOST EXPENSIVE STATES -->
         <h3>Most Expensive States — $200+ or High Ongoing Costs</h3>
         <p>
           These states are either expensive to start in, expensive to maintain, or both. Several of them have hidden costs that are not immediately obvious. For instance, California's $70 filing fee looks cheap, but the mandatory $800/yr franchise tax makes it one of the most expensive states in the long run. Similarly, New York's $200 filing fee does not reflect the $300–$1,500 publication requirement.
@@ -526,275 +631,295 @@
       </section>
 
       <!-- =========================================================================
-           SECTION 2: INTERACTIVE LLC COST CALCULATOR WIDGET (IMAGE 4 BOTTOM)
+           SECTION 2: INTERACTIVE LLC COST CALCULATOR WIDGET (IMAGE 1 STYLE)
            ========================================================================= -->
       <section>
-        <div class="dark-calc-card">
-          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-            <span style="font-size: 1.8rem;">💰</span>
-            <h2 style="color: #FFFFFF; font-size: 1.55rem; margin: 0;">LLC Cost Calculator</h2>
+        <div class="calc-card-main">
+          <div style="font-size: 0.75rem; font-weight: 800; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">
+            SELECT YOUR STATE
           </div>
-          <p style="color: #94A3B8; font-size: 0.85rem; margin-bottom: 1.5rem;">
-            State filing fees · Annual report costs · Total year 1 & ongoing · All 50 states · 2026
-          </p>
 
           <div style="margin-bottom: 1.5rem;">
-            <label class="calc-input-label">SELECT YOUR STATE</label>
             <select id="calcStateSelect" class="state-select-box" style="width: 100%; background: #071626; color: #FFFFFF; border: 1.5px solid #1E3A8A; padding: 0.85rem 1rem; border-radius: 10px; font-size: 1rem;">
               <option value="">— Choose a state to see costs —</option>
             </select>
           </div>
 
+          <!-- OPTIONAL SERVICES SWITCH BOX -->
           <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 1.25rem; margin-bottom: 1.5rem;">
-            <div style="font-size: 0.75rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">STATE COST BREAKDOWN</div>
-            
-            <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
-              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.5rem;">
-                <span>🔹 State Filing Fee <span style="font-size: 0.75rem; color: #94A3B8;">(one-time)</span></span>
-                <span id="calcLiveGovFee" style="font-weight: 700; color: #FFFFFF;">$0</span>
+            <div style="font-size: 0.75rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">
+              INCLUDE OPTIONAL SERVICES?
+            </div>
+
+            <div class="toggle-flex-row">
+              <label class="switch-checkbox">
+                <input type="checkbox" id="calcOptAgentToggle" checked>
+                <span class="switch-slider"></span>
+              </label>
+              <div>
+                <strong>Registered Agent</strong> — <strong>$39/yr</strong> <span style="color: #94A3B8;">(Northwest — free yr 1 with formation)</span>
               </div>
-              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.5rem;">
-                <span>🔹 Annual Report Fee</span>
-                <span id="calcAnnualCompliance" style="font-weight: 700; color: #FFFFFF;">$0</span>
-              </div>
-              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.5rem;">
-                <span>🏠 Registered Agent <span style="font-size: 0.75rem; color: #94A3B8;">(yr 1 free w/ formation)</span></span>
-                <span style="font-weight: 700; color: #10B981;">$0</span>
-              </div>
-              <div style="display: flex; justify-content: space-between;">
-                <span>⚙️ Formation Service <span style="font-size: 0.75rem; color: #94A3B8;">(one-time)</span></span>
-                <span style="font-weight: 700; color: #FFFFFF;">$39</span>
+            </div>
+
+            <div class="toggle-flex-row" style="margin-bottom: 0;">
+              <label class="switch-checkbox">
+                <input type="checkbox" id="calcOptFormationToggle" checked>
+                <span class="switch-slider"></span>
+              </label>
+              <div>
+                <strong>Formation Service</strong> — <strong>$39</strong> <span style="color: #94A3B8;">(Northwest — one-time)</span>
               </div>
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-            <div style="background: rgba(245, 158, 11, 0.1); border: 1.5px solid #F59E0B; border-radius: 12px; padding: 1.15rem; text-align: center;">
-              <div style="font-size: 0.75rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.25rem;">YEAR 1 TOTAL</div>
-              <div id="calcTotalSetup" style="font-size: 1.65rem; font-weight: 900; color: #FFFFFF;">$39</div>
+          <!-- DYNAMIC STATE COST CARD -->
+          <div style="background: rgba(13, 35, 54, 0.8); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 1rem; margin-bottom: 1.25rem;">
+              <div>
+                <div style="font-size: 0.75rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.08em;">ESTIMATED LLC COST IN</div>
+                <h3 style="font-size: 1.5rem; color: #FFFFFF; margin: 0.2rem 0 0 0;" id="calcCostHeaderState">Your State</h3>
+              </div>
+              <span style="background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; font-size: 0.75rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 9999px;" id="calcCostBadge">
+                Select State
+              </span>
             </div>
-            <div style="background: rgba(30, 58, 138, 0.4); border: 1.5px solid #1E40AF; border-radius: 12px; padding: 1.15rem; text-align: center;">
-              <div style="font-size: 0.75rem; font-weight: 800; color: #93C5FD; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.25rem;">YEAR 2+ PER YEAR</div>
-              <div style="font-size: 1.65rem; font-weight: 900; color: #FFFFFF;">$0</div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.9rem;">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.6rem;">
+                <span>📄 <strong>State Filing Fee</strong> <span style="font-size: 0.75rem; color: #94A3B8;">(one-time)</span></span>
+                <span id="calcRowStateFee" style="font-weight: 700; color: #FFFFFF;">$0</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.6rem;">
+                <span>📅 <strong>Annual Report Fee</strong></span>
+                <span id="calcRowAnnualReport" style="font-weight: 700; color: #FFFFFF;">$0</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.6rem;">
+                <span>🔒 <strong>Registered Agent</strong> <span style="font-size: 0.75rem; color: #94A3B8;">(yr 1 free w/ formation)</span></span>
+                <span id="calcRowAgentFee" style="font-weight: 700; color: #FFFFFF;">$0 yr 1 · $39/yr after</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.6rem;">
+                <span>⚙️ <strong>Formation Service</strong> <span style="font-size: 0.75rem; color: #94A3B8;">(one-time)</span></span>
+                <span id="calcRowFormationService" style="font-weight: 700; color: #FFFFFF;">$39</span>
+              </div>
+              <div id="calcRowFranchiseTax" style="display: none; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.6rem;">
+                <span>🏷️ <strong>Franchise Tax</strong> <span style="font-size: 0.75rem; color: #94A3B8;">(annual)</span></span>
+                <span id="calcRowFranchiseTaxVal" style="font-weight: 700; color: #F59E0B;">$300/yr</span>
+              </div>
+            </div>
+
+            <!-- TOTALS GRID -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+              <div style="background: rgba(245, 158, 11, 0.1); border: 1.5px solid #F59E0B; border-radius: 12px; padding: 1.15rem; text-align: center;">
+                <div style="font-size: 0.725rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.25rem;">YEAR 1 TOTAL</div>
+                <div id="calcTotalYear1" style="font-size: 1.8rem; font-weight: 900; color: #F59E0B; font-family: var(--font-heading);">$0</div>
+              </div>
+              <div style="background: rgba(30, 58, 138, 0.4); border: 1.5px solid #1E40AF; border-radius: 12px; padding: 1.15rem; text-align: center;">
+                <div style="font-size: 0.725rem; font-weight: 800; color: #93C5FD; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.25rem;">YEAR 2+ PER YEAR</div>
+                <div id="calcTotalYear2" style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; font-family: var(--font-heading);">$0/yr</div>
+              </div>
+            </div>
+
+            <!-- STATE WARNING BANNER BOX -->
+            <div id="calcStateWarningBox" style="display: none; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 10px; padding: 0.85rem 1rem; color: #F87171; font-size: 0.85rem; margin-top: 1.25rem;">
+              ⚠️ State-specific fee warning goes here.
             </div>
           </div>
 
-          <div style="font-size: 0.825rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;">
-            <div>🆓 <strong>EIN:</strong> Free directly from the IRS — never pay for this.</div>
-            <div>🆓 <strong>Operating Agreement:</strong> Free with Northwest when you use their formation service.</div>
+          <!-- FOOTNOTE BADGES -->
+          <div style="font-size: 0.825rem; color: #CBD5E1; display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <div>✅ <strong>EIN:</strong> Free directly from the IRS — never pay for this.</div>
+            <div>✅ <strong>Operating Agreement:</strong> Free with Northwest when you use their formation service.</div>
           </div>
 
+          <!-- CTA BUTTONS -->
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <a href="llc-guide.html" class="ls-btn" style="background: #F59E0B; color: #12304A; font-weight: 800; text-align: center; justify-content: center; padding: 0.85rem;">
+            <a id="calcGuideBtn" href="llc-guide.html" class="ls-btn" style="background: #F59E0B; color: #12304A; font-weight: 800; text-align: center; justify-content: center; padding: 0.85rem;">
               View Full State LLC Guide →
             </a>
-            <a href="northwest-registered-agent-review.html" class="ls-btn ls-btn--blue" style="font-weight: 800; text-align: center; justify-content: center; padding: 0.85rem;">
+            <a id="calcFormBtn" href="northwest-registered-agent-review.html" class="ls-btn ls-btn--blue" style="font-weight: 800; text-align: center; justify-content: center; padding: 0.85rem;">
               Form My LLC — $39 + State Fee ↗
             </a>
           </div>
+
+          <!-- 3 CHEAPEST STATES ROW -->
+          <div style="margin-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1.5rem;">
+            <div style="font-size: 0.85rem; font-weight: 800; color: #FFFFFF; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+              <span>🏆</span> 3 Cheapest States by Total Year 1 Cost
+            </div>
+
+            <div class="cheapest-states-grid">
+              <div class="cheap-state-card">
+                <span class="cheap-state-num">1</span>
+                <div class="cheap-state-name">Montana</div>
+                <div style="font-size: 0.8rem; color: #10B981; font-weight: 700; margin-top: 0.2rem;">$35 Fee · $20/yr</div>
+              </div>
+              <div class="cheap-state-card">
+                <span class="cheap-state-num">2</span>
+                <div class="cheap-state-name">Kentucky</div>
+                <div style="font-size: 0.8rem; color: #10B981; font-weight: 700; margin-top: 0.2rem;">$40 Fee · $15/yr</div>
+              </div>
+              <div class="cheap-state-card">
+                <span class="cheap-state-num">3</span>
+                <div class="cheap-state-name">Hawaii</div>
+                <div style="font-size: 0.8rem; color: #10B981; font-weight: 700; margin-top: 0.2rem;">$51 Fee · $15/yr</div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
       <!-- =========================================================================
-           SECTION 3: REQUIRED COSTS — EVERY LLC PAYS THESE (IMAGE 5)
+           SECTION 3: AFTER YOU KNOW YOUR COSTS — WHAT'S NEXT? (IMAGE 2)
            ========================================================================= -->
       <section>
-        <h2>Required costs — every LLC pays these</h2>
+        <h2>After you know your costs — what's next?</h2>
+        <p>
+          Once you understand the likely costs, the next step is to move through the formation tasks in a sensible order.
+        </p>
 
         <div class="timeline-steps-wrapper">
-          <!-- STEP 1 -->
           <div class="timeline-step-item">
             <div class="step-number-badge">1</div>
-            <div class="step-content-box">
-              <div class="step-title-flex">
-                <span class="step-title-text">State Filing Fee</span>
-                <span class="step-tag-badge tag-required">REQUIRED</span>
+            <div>
+              <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; font-family: var(--font-heading); margin-bottom: 0.3rem;">
+                Check your LLC name availability
               </div>
               <p style="margin-bottom: 0;">
-                This is the fee your state charges to process your Articles of Organization and officially create your LLC. It is non-negotiable — every state requires it. Specifically, filing fees range from <strong>$35 in Montana to $500 in Massachusetts</strong>. Most states fall between $50 and $150.
+                Before filing, verify your LLC name against the appropriate state records. Our free <a href="index.html#name-search">LLC name availability checker</a> helps you locate the official state search and work through the availability check before submitting formation documents.
               </p>
             </div>
           </div>
 
-          <!-- STEP 2 -->
           <div class="timeline-step-item">
             <div class="step-number-badge">2</div>
-            <div class="step-content-box">
-              <div class="step-title-flex">
-                <span class="step-title-text">Annual Report Fee</span>
-                <span class="step-tag-badge tag-required">REQUIRED IN MOST STATES</span>
+            <div>
+              <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; font-family: var(--font-heading); margin-bottom: 0.3rem;">
+                Follow your state's formation steps
               </div>
               <p style="margin-bottom: 0;">
-                Most states require LLCs to file an annual or biennial report to keep records current. The fee varies widely — from $0 in Arizona, Missouri, and New Mexico to $500/yr in Massachusetts. Furthermore, this is the cost most entrepreneurs overlook when choosing a state. A state that looks cheap to start in can consequently become very expensive to maintain.
+                Each state has a specific process. Find your state's complete step-by-step guide in our <a href="start-llc.html">how to start an LLC</a> section — all 50 states, updated 2026.
               </p>
             </div>
           </div>
 
-          <!-- STEP 3 -->
           <div class="timeline-step-item">
             <div class="step-number-badge">3</div>
-            <div class="step-content-box">
-              <div class="step-title-flex">
-                <span class="step-title-text">Registered Agent</span>
-                <span class="step-tag-badge tag-required">REQUIRED IN ALL STATES</span>
+            <div>
+              <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; font-family: var(--font-heading); margin-bottom: 0.3rem;">
+                Choose your registered agent
               </div>
               <p style="margin-bottom: 0;">
-                Every LLC must maintain a <a href="registered-agent-guide.html">registered agent</a> that satisfies the rules of its formation state. In many states, an eligible owner or another qualifying person can serve without paying a commercial agent fee. Professional services set their own prices and may bundle document forwarding, privacy features, compliance reminders, or formation assistance, so compare the current renewal terms rather than relying on an old advertised rate.
+                Every LLC needs a registered agent arrangement that satisfies its state's rules. You can compare DIY and professional options in our <a href="best-registered-agent-services.html">registered agent services comparison</a>, including current pricing and renewal terms.
               </p>
             </div>
           </div>
 
-          <!-- STEP 4 -->
           <div class="timeline-step-item">
             <div class="step-number-badge">4</div>
-            <div class="step-content-box">
-              <div class="step-title-flex">
-                <span class="step-title-text">EIN — Federal Tax ID</span>
-                <span class="step-tag-badge tag-free">FREE</span>
+            <div>
+              <div style="font-size: 1.1rem; font-weight: 800; color: #12304A; font-family: var(--font-heading); margin-bottom: 0.3rem;">
+                Get your EIN for free
               </div>
               <p style="margin-bottom: 0;">
-                An <a href="ein-guide.html">EIN</a> is a federal tax identification number used in many common banking, tax, and employment situations. The IRS issues EINs for free. Eligible applicants using the IRS online process can receive the number immediately after completing the application; fax, mail, and international application routes follow different timelines.
+                Apply directly through the IRS when your LLC needs an EIN; the federal application itself is free. An EIN is required in several common employment and tax situations and is frequently requested for <a href="best-business-bank-accounts.html">business banking</a>.
               </p>
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- =========================================================================
-           SECTION 4: STATE-SPECIFIC SURPRISE COSTS (IMAGE 5)
-           ========================================================================= -->
-      <section>
-        <h2>State-specific surprise costs</h2>
-        <p>
-          Several states have hidden costs that are not immediately obvious from the filing fee alone. That makes it important to check your specific state before committing to a formation location.
-        </p>
-
-        <div class="custom-table-wrapper">
-          <table class="custom-table">
-            <thead>
-              <tr>
-                <th style="width: 22%;">STATE</th>
-                <th style="width: 38%;">HIDDEN / EXTRA COST</th>
-                <th style="width: 25%;">AMOUNT</th>
-                <th style="width: 15%;">WHEN</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Kentucky</strong></td>
-                <td>County copy + LLET for many for-profit LLCs</td>
-                <td><strong style="color: #1D4ED8;">$33 county + $175 minimum LLET*</strong></td>
-                <td>Formation + taxable year</td>
-              </tr>
-              <tr>
-                <td><strong>California</strong></td>
-                <td>Minimum franchise tax</td>
-                <td><strong style="color: #1D4ED8;">$800/yr</strong></td>
-                <td>Year 1+</td>
-              </tr>
-              <tr>
-                <td><strong>New York</strong></td>
-                <td>Publication requirement (2 newspapers)</td>
-                <td><strong style="color: #1D4ED8;">$300–$1,500+</strong></td>
-                <td>One-time</td>
-              </tr>
-              <tr>
-                <td><strong>Nevada</strong></td>
-                <td>Annual List + State Business License</td>
-                <td><strong style="color: #1D4ED8;">$350/yr</strong></td>
-                <td>Annual</td>
-              </tr>
-              <tr>
-                <td><strong>Delaware</strong></td>
-                <td>Annual franchise tax</td>
-                <td><strong style="color: #1D4ED8;">$300/yr</strong></td>
-                <td>Annual</td>
-              </tr>
-              <tr>
-                <td><strong>Maryland</strong></td>
-                <td>Annual report fee</td>
-                <td><strong style="color: #1D4ED8;">$300/yr</strong></td>
-                <td>Annual</td>
-              </tr>
-              <tr>
-                <td><strong>Tennessee</strong></td>
-                <td>Annual report + franchise tax + 6.5% excise tax</td>
-                <td><strong style="color: #1D4ED8;">$300+/yr</strong></td>
-                <td>Annual</td>
-              </tr>
-              <tr>
-                <td><strong>Massachusetts</strong></td>
-                <td>Highest filing + annual fees in the U.S.</td>
-                <td><strong style="color: #1D4ED8;">$500 + $500/yr</strong></td>
-                <td>Both</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="bottom-line-box">
+          <div style="font-size: 0.75rem; font-weight: 900; color: #93C5FD; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">
+            💡 BOTTOM LINE
+          </div>
+          <p style="font-size: 0.95rem; line-height: 1.65; color: #FFFFFF; margin: 0;">
+            A low filing fee is only one part of LLC cost. Compare the formation filing, state or local follow-up filings, annual or biennial reports, state taxes, and any optional services over several years. Kentucky is a good example: the Secretary of State filing is only $40, but a standard short Articles filing also has a $33 county-recording step, and many for-profit LLCs should separately budget for the minimum LLET.
+          </p>
         </div>
 
-        <p style="font-size: 0.85rem; color: #64748B; font-style: italic;">
-          *Kentucky's LLET is a tax obligation, not a Secretary of State filing fee, and exemptions or different calculations can apply. The $175 figure is the minimum for many subject entities, not a universal charge for every LLC.
-        </p>
-      </section>
-
-      <!-- =========================================================================
-           SECTION 5: OPTIONAL COSTS WORTH CONSIDERING
-           ========================================================================= -->
-      <section>
-        <h2>Optional costs worth considering</h2>
-        <p>
-          Formation services are optional. If you prefer not to prepare and submit the filing yourself, a private provider can handle the formation paperwork and may bundle registered-agent or compliance features. Provider pricing and renewal terms change, so keep the service charge separate from the government filing fees shown in this calculator and check the current checkout before ordering.
+        <p style="font-size: 0.8rem; color: #64748B; font-style: italic; margin-bottom: 2rem;">
+          <strong>Affiliate disclosure:</strong> If you purchase through the sponsored link below, LLCStarters may earn a commission at no additional cost to you. The calculator and state fee information are not conditioned on using a paid provider.
         </p>
 
-        <div class="warning-yellow-box">
-          <strong>⚠️ The foreign LLC trap:</strong> Forming in a lower-fee state does not automatically remove obligations where the business actually operates. If your out-of-state LLC is considered to be transacting business in another state, foreign qualification may be required there as well, adding another layer of filings, fees, and compliance.
+        <!-- TOP PICK CARD (NORTHWEST) -->
+        <div class="top-pick-card">
+          <div>
+            <span style="background: #10B981; color: #FFF; font-size: 0.7rem; font-weight: 900; padding: 0.2rem 0.6rem; border-radius: 6px; letter-spacing: 0.06em; display: inline-block; margin-bottom: 0.5rem;">★ OUR TOP PICK</span>
+            <div style="font-size: 1.15rem; font-weight: 800; color: #12304A; font-family: var(--font-heading);">
+              Northwest Registered Agent
+            </div>
+            <div style="font-size: 0.875rem; color: #475569; margin-top: 0.25rem;">
+              One commercial formation option for owners who prefer filing assistance instead of preparing the state paperwork themselves. Check current pricing, included services, and renewal terms before ordering.
+            </div>
+          </div>
+          <a href="northwest-registered-agent-review.html" class="ls-btn ls-btn--emerald" style="white-space: nowrap; padding: 0.85rem 1.4rem; flex-shrink: 0;">
+            Check Northwest's Current Offer →
+          </a>
+        </div>
+
+        <!-- COMPARE ALL SERVICES CARD -->
+        <div class="compare-card">
+          <div>
+            <div style="font-size: 1.15rem; font-weight: 800; color: #12304A; font-family: var(--font-heading);">
+              Compare All LLC Services
+            </div>
+            <div style="font-size: 0.875rem; color: #475569; margin-top: 0.25rem;">
+              ZenBusiness vs Northwest vs LegalZoom — side-by-side comparison of pricing, features, and what's actually worth paying for in 2026.
+            </div>
+          </div>
+          <a href="best-llc-services.html" class="ls-btn ls-btn--blue" style="white-space: nowrap; padding: 0.85rem 1.4rem; flex-shrink: 0;">
+            See Comparison →
+          </a>
+        </div>
+
+        <!-- MORE FREE LLC TOOLS (3-CARD GRID) -->
+        <div style="font-size: 0.75rem; font-weight: 800; color: #64748B; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2.5rem; margin-bottom: 0.75rem; font-family: var(--font-heading);">
+          MORE FREE LLC TOOLS
+        </div>
+
+        <div class="tools-3grid">
+          <a href="index.html#name-search" class="tool-mini-card">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔍</div>
+            <div style="font-size: 1rem; font-weight: 800; color: #12304A; font-family: var(--font-heading);">LLC Name Checker</div>
+            <div style="font-size: 0.75rem; font-weight: 700; color: #159A9C; margin: 0.25rem 0;">Free</div>
+            <div style="font-size: 0.775rem; color: #64748B;">Search all 50 states instantly</div>
+          </a>
+
+          <a href="tools.html" class="tool-mini-card">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🛠️</div>
+            <div style="font-size: 1rem; font-weight: 800; color: #12304A; font-family: var(--font-heading);">All LLC Tools</div>
+            <div style="font-size: 0.75rem; font-weight: 700; color: #159A9C; margin: 0.25rem 0;">Free</div>
+            <div style="font-size: 0.775rem; color: #64748B;">Tools to start and run your LLC</div>
+          </a>
+
+          <a href="how-much-does-an-llc-cost.html" class="tool-mini-card">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📘</div>
+            <div style="font-size: 1rem; font-weight: 800; color: #12304A; font-family: var(--font-heading);">LLC Cost Guide</div>
+            <div style="font-size: 0.75rem; font-weight: 700; color: #159A9C; margin: 0.25rem 0;">Full guide</div>
+            <div style="font-size: 0.775rem; color: #64748B;">Every LLC cost explained in detail</div>
+          </a>
         </div>
       </section>
 
       <!-- =========================================================================
-           SECTION 6: SHOULD YOU FORM YOUR LLC IN A DIFFERENT STATE?
-           ========================================================================= -->
-      <section>
-        <h2>Should You Form Your LLC in a Different State?</h2>
-        <p>
-          Every year, thousands of entrepreneurs form LLCs in Wyoming, Delaware, or Nevada after reading that these are "the best states for business." In most cases, however, this is a costly mistake for small business owners.
-        </p>
-
-        <h3>The foreign LLC problem explained</h3>
-
-        <div class="warning-red-box">
-          <strong>⚠️ The double-fee trap:</strong> If you form an LLC in one state but conduct enough business in another state to trigger foreign qualification, you may end up maintaining registrations in both jurisdictions. That can mean a second filing fee, a second registered-agent requirement, and additional recurring compliance rather than a simple one-state cost comparison.
-        </div>
-
-        <p>
-          For many small businesses, forming where the business is genuinely based and operated is the simplest route. A different formation state can make sense in particular legal, ownership, investment, or operational situations, but it should be chosen for a real business reason rather than a headline filing fee alone.
-        </p>
-
-        <p style="font-weight: 700; color: #12304A; font-size: 1.1rem; margin-top: 2rem;">
-          After you know your costs — what's next?
-        </p>
-        <p>
-          Once you have budgeted your formation and annual expenses, explore our step-by-step <a href="start-llc.html">state formation guide</a> or compare top-rated <a href="best-llc-services.html">LLC formation services</a> to get started.
-        </p>
-      </section>
-
-      <!-- =========================================================================
-           SECTION 7: FREQUENTLY ASKED QUESTIONS
+           SECTION 4: CATEGORIZED FREQUENTLY ASKED QUESTIONS (IMAGE 2)
            ========================================================================= -->
       <section style="margin-top: 3rem;">
-        <h2>Frequently Asked Questions</h2>
+        <h2>LLC Cost Calculator — Frequently Asked Questions</h2>
 
+        <!-- CATEGORY 1 -->
+        <h3>Filing Fees and State Costs</h3>
         <div class="faq-accordion-wrapper">
           <details class="faq-accordion-item">
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">1</span>
-                <span>How much does an LLC cost on average in the U.S.?</span>
+                <span>How much does it cost to start an LLC?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              The average state filing fee across all 50 states is approximately $130. Initial filing fees range from $35 (Montana) to $500 (Massachusetts).
+              The national average filing fee is ~$132. State filing fees range from $35 (Montana) to $500 (Massachusetts). When adding registered agent costs and licenses, most entrepreneurs spend between $150 and $400 in year 1.
             </div>
           </details>
 
@@ -802,12 +927,12 @@
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">2</span>
-                <span>What are the ongoing yearly costs for an LLC?</span>
+                <span>What is the cheapest state to form an LLC?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              Ongoing costs include state annual or biennial report fees ($0 to $500/yr), state franchise taxes (e.g. $800/yr in California), and registered agent fees ($0 if self, $100-$300/yr for commercial services).
+              Montana ($35), Kentucky ($40), and Arkansas ($45) offer the lowest upfront filing fees. However, always form in the state where your business operates to avoid paying foreign LLC registration fees in multiple states.
             </div>
           </details>
 
@@ -815,12 +940,85 @@
             <summary class="faq-accordion-question">
               <div class="faq-q-badge-title">
                 <span class="faq-q-badge">3</span>
-                <span>Is an EIN free to get for an LLC?</span>
+                <span>Are there states with no annual LLC fee?</span>
               </div>
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq-accordion-answer">
-              Yes, an Employer Identification Number (EIN) is 100% free directly from the IRS website (IRS.gov). You never need to pay a service for an EIN.
+              Yes! Arizona, Missouri, New Mexico, Ohio, and South Carolina require $0 ongoing annual report fees for standard LLCs.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">4</span>
+                <span>Can LLC fees be deducted from taxes?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes, state filing fees, registered agent expenses, and business licenses are generally deductible as business startup or organizational expenses under IRS rules.
+            </div>
+          </details>
+        </div>
+
+        <!-- CATEGORY 2 -->
+        <h3>California, New York, and High-Cost States</h3>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">5</span>
+                <span>What is California's $800 franchise tax?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              California imposes a mandatory $800 minimum annual franchise tax on all active LLCs starting in Year 2 of operation, regardless of whether the business earns income or operates at a loss.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">6</span>
+                <span>Why is a New York LLC so expensive?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              New York Section 206 requires newly formed LLCs to publish a formation notice in two local newspapers once a week for 6 consecutive weeks. Newspaper publishing costs range from $300 in rural counties to over $1,500 in NYC.
+            </div>
+          </details>
+        </div>
+
+        <!-- CATEGORY 3 -->
+        <h3>Choosing the Right State for Your LLC</h3>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">7</span>
+                <span>Is the EIN free?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes! An EIN (Employer Identification Number) is 100% free directly from the official IRS website (IRS.gov). You should never pay a third-party service for an EIN.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">8</span>
+                <span>Should I form my LLC in Wyoming or Delaware?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Unless you are seeking venture capital funding (Delaware) or operating purely online with no physical state presence (Wyoming), you should form your LLC in your home state to avoid foreign registration fees in multiple states.
             </div>
           </details>
         </div>
@@ -830,7 +1028,7 @@
   </main>
 
   <!-- =========================================================================
-       SITEWIDE FOOTER
+       SITEWIDE FOOTER (1:1 Match with best-llc-services.html)
        ========================================================================= -->
   <footer class="site-footer">
     <div class="container footer-container">
@@ -876,18 +1074,21 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 LLC Primer. All rights reserved.</p>
+        <p>&copy; 2026 LLC Primer. All rights reserved. | <a href="index.html#privacy">Privacy Policy</a> | <a href="index.html#terms">Terms of Service</a></p>
       </div>
     </div>
   </footer>
 
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">✕</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees & Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      if (typeof initCostCalculator === "function") {
-        initCostCalculator();
-      }
-    });
-  </script>
 </body>
 </html>
