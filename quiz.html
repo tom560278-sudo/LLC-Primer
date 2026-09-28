@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
-  <title>Interactive LLC Formation Quiz 2026 | LLC Primer</title>
-  <meta name="description" content="Take our 2026 diagnostic quiz to discover your recommended LLC state, formation path, cost breakdown, and step-by-step checklist.">
+  <title>Business Structure Quiz: Sole Prop, LLC, S-Corp, or C-Corp? | LLC Primer</title>
+  <meta name="description" content="Take our 2026 diagnostic quiz to discover your recommended business structure (Sole Prop, LLC, S-Corp, C-Corp), state formation path, cost breakdown, and step-by-step checklist.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,25 +12,14 @@
   
   <link rel="stylesheet" href="styles.css">
   <style>
-    body {
-      background: #FFFFFF !important;
-      color: #12304A !important;
-    }
-    .quiz-page-wrapper {
-      min-height: 80vh;
-      background: #F8FAFC;
-      padding: 2rem 0 3.5rem 0;
-    }
-
+    /* Quiz Scoped & Article Custom Styles */
     .quiz-card-frame {
       background: #FFFFFF;
       border: 1.5px solid #E2E8F0;
       border-radius: 20px;
-      padding: 2.5rem 2.25rem;
-      max-width: 840px;
-      margin: 0 auto;
-      box-shadow: 0 10px 35px #12304a14;
-      position: relative;
+      padding: 2.25rem;
+      box-shadow: 0 10px 30px rgba(18, 48, 74, 0.06);
+      margin: 2rem 0;
       color: #12304A;
     }
 
@@ -38,7 +27,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
       padding-bottom: 1rem;
       border-bottom: 1px solid #E2E8F0;
     }
@@ -56,7 +45,7 @@
       background: #E2E8F0;
       border-radius: 5px;
       overflow: hidden;
-      margin-bottom: 2.25rem;
+      margin-bottom: 2rem;
     }
 
     .quiz-progress-fill-bar {
@@ -67,24 +56,25 @@
     }
 
     .quiz-question-title {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: #12304A;
       margin-bottom: 0.5rem;
       line-height: 1.35;
+      font-family: var(--font-heading);
     }
 
     .quiz-question-desc {
       font-size: 0.95rem;
       color: #475569;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
     }
 
     .quiz-grid-2col {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
-      margin-bottom: 2.25rem;
+      margin-bottom: 2rem;
     }
 
     .quiz-choice-card {
@@ -102,13 +92,13 @@
       background: #F8FAFC;
       border-color: #159A9C;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px #159a9c20;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.12);
     }
 
     .quiz-choice-card.selected {
       background: rgba(21, 154, 156, 0.08);
       border-color: #159A9C;
-      box-shadow: 0 0 15px #159a9c33;
+      box-shadow: 0 0 15px rgba(21, 154, 156, 0.2);
     }
 
     .quiz-choice-title {
@@ -116,6 +106,7 @@
       font-weight: 700;
       color: #12304A;
       margin-bottom: 0.35rem;
+      font-family: var(--font-heading);
     }
 
     .quiz-choice-desc {
@@ -133,31 +124,14 @@
 
     @media (max-width: 768px) {
       .quiz-grid-2col { grid-template-columns: 1fr; }
-      .quiz-card-frame { padding: 2rem 1.5rem; }
+      .quiz-card-frame { padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
   <!-- =========================================================================
-       0. TOP ANNOUNCEMENT BAR
-       ========================================================================= 
-  <div style="background: #12304A; border-bottom: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.8rem; color: #CBD5E1; padding: 0.5rem 0;">
-    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
-      <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #f5d20b; box-shadow: 0 0 10px #159A9C;"></span>
-        <strong style="color: #F8FAFC;">2026 DIAGNOSTIC ENGINE</strong> · Personalized LLC Route & Cost Blueprint
-      </div>
-      <div style="display: flex; align-items: center; gap: 1.25rem;">
-        <a href="index.html#states-section" style="color: #CBD5E1; font-weight: 500;">🏛️ All 50 States</a>
-        <a href="start-llc.html" style="color: #CBD5E1; font-weight: 500;">📚 LLC Guidance</a>
-        <a href="quiz.html" style="color: #159A9C; font-weight: 700;">🧩 Take Quiz →</a>
-      </div>
-    </div>
-  </div>-->
-
-  <!-- =========================================================================
-       1. EXECUTIVE NAVBAR (MATCHING INDEX.HTML EXACTLY)
+       1. EXECUTIVE GLASSMORPHIC NAVBAR (LLC PRIMER)
        ========================================================================= -->
   <header class="site-header">
     <div class="container header-container">
@@ -173,29 +147,43 @@
         </div>
 
         <div class="nav-item">
-          <a href="index.html#states-section" class="nav-link">
-            State Guides
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="index.html#states-section" class="dropdown-link">🏛️ 50-State Formation Guides & Fees</a>
-            <a href="index.html#states-section" onclick="selectStateAndOpenModal('WY')" class="dropdown-link">⭐ Wyoming LLC Guide</a>
-            <a href="index.html#states-section" onclick="selectStateAndOpenModal('DE')" class="dropdown-link">⭐ Delaware LLC Guide</a>
-            <a href="index.html#states-section" onclick="selectStateAndOpenModal('TX')" class="dropdown-link">⭐ Texas LLC Guide</a>
-            <a href="index.html#states-section" onclick="selectStateAndOpenModal('FL')" class="dropdown-link">⭐ Florida LLC Guide</a>
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="index.html#after-formation-section" class="nav-link">
+          <a href="llc-guide.html" class="nav-link">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">
             Business Setup
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="index.html#after-formation-section" class="dropdown-link">01. Obtain Federal EIN (SS-4 Tax ID)</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">02. Draft Operating Agreement</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">03. Open Business Bank Account</a>
-            <a href="index.html#after-formation-section" class="dropdown-link">04. File FinCEN BOI Report</a>
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
           </div>
         </div>
 
@@ -208,7 +196,7 @@
             <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
             <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
             <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
-            <a href="quiz.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">Business Structure Quiz</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
             <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
           </div>
         </div>
@@ -228,8 +216,11 @@
       </nav>
 
       <div class="header-actions">
-        <a href="index.html" class="ls-btn ls-btn--outline" style="font-size: 0.85rem; color: #FFF; border-color: rgba(255,255,255,0.2);">
-          ← Return to Home
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan →
         </a>
         <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -238,17 +229,75 @@
     </div>
   </header>
 
-
   <!-- =========================================================================
-       2. QUIZ CONTAINER (LIGHT BACKGROUND & SLEEK CARDS)
+       2. MAIN CONTENT AREA
        ========================================================================= -->
-  <div class="quiz-page-wrapper">
-    <div class="container">
+  <main class="guide-content-container">
+    
+    <!-- BREADCRUMB NAV -->
+    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
+      <a href="index.html" style="color: #64748B; text-decoration: none;">LLC Primer</a> &nbsp;/&nbsp; 
+      <a href="tools.html" style="color: #64748B; text-decoration: none;">Tools</a> &nbsp;/&nbsp; 
+      <strong style="color: #12304A;">Business Structure Quiz</strong>
+    </div>
+
+    <article class="guide-article">
+      <h1 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; color: #12304A; line-height: 1.18; margin-bottom: 1.25rem; font-family: var(--font-heading);">
+        Business Structure Quiz: Sole Prop, LLC, S-Corp, or C-Corp?
+      </h1>
+
+      <p style="font-size: 1.05rem; line-height: 1.75; color: #475569;">
+        Find out which business structure fits your business model, profit goals, and liability needs in under 2 minutes. Choosing the wrong structure can cost you thousands in unnecessary taxes or expose your personal assets to business liabilities.
+      </p>
+
+      <!-- QUICK FACTS BOX -->
+      <div style="background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 1.5rem 1.75rem; margin: 1.5rem 0 2rem 0; box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);">
+        <div style="font-size: 0.75rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">QUICK FACTS</div>
+        <h3 style="margin: 0 0 1rem 0; color: #12304A; font-size: 1.25rem;">Business Structure — At a Glance</h3>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center;">
+          <div style="background: #F8FAFC; padding: 0.85rem; border-radius: 10px;">
+            <div style="font-size: 0.75rem; color: #64748B; font-weight: 600;">Time Required</div>
+            <div style="font-size: 0.95rem; font-weight: 800; color: #12304A; margin-top: 0.2rem;">⏱️ 2 Minutes</div>
+          </div>
+          <div style="background: #F8FAFC; padding: 0.85rem; border-radius: 10px;">
+            <div style="font-size: 0.75rem; color: #64748B; font-weight: 600;">Structures Covered</div>
+            <div style="font-size: 0.85rem; font-weight: 800; color: #12304A; margin-top: 0.2rem;">Sole Prop, LLC, S-Corp, C-Corp</div>
+          </div>
+          <div style="background: #F8FAFC; padding: 0.85rem; border-radius: 10px;">
+            <div style="font-size: 0.75rem; color: #64748B; font-weight: 600;">Ideal For</div>
+            <div style="font-size: 0.85rem; font-weight: 800; color: #12304A; margin-top: 0.2rem;">New &amp; Growing Founders</div>
+          </div>
+          <div style="background: #F8FAFC; padding: 0.85rem; border-radius: 10px;">
+            <div style="font-size: 0.75rem; color: #64748B; font-weight: 600;">Result</div>
+            <div style="font-size: 0.85rem; font-weight: 800; color: #059669; margin-top: 0.2rem;">Instant Recommendation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOC BOX -->
+      <div class="toc-card-box">
+        <div class="toc-title">📑 WHAT'S IN THIS GUIDE</div>
+        <ol class="toc-list">
+          <li><a href="#quiz-section">Take the 60-second Business Structure Quiz</a></li>
+          <li><a href="#section-four-explained">The four business structures explained</a></li>
+          <li><a href="#section-sole-prop">1. Sole Proprietorship — Simple, but zero liability protection</a></li>
+          <li><a href="#section-llc">2. Limited Liability Company (LLC) — The sweet spot for small business</a></li>
+          <li><a href="#section-scorp">3. S-Corporation (S-Corp Election) — Tax savings for profitable LLCs</a></li>
+          <li><a href="#section-ccorp">4. C-Corporation (C-Corp) — Built for venture capital &amp; startups</a></li>
+          <li><a href="#section-comparison">Side-by-side comparison of all 4 business structures</a></li>
+          <li><a href="#section-faqs">Frequently asked questions</a></li>
+        </ol>
+      </div>
+
+      <!-- QUIZ WIDGET -->
+      <h2 id="quiz-section">Business Structure Quiz — Find Your Best Fit in 2 Minutes</h2>
+      <p>Answer the 6 diagnostic questions below to get an instant tailored recommendation based on your business stage, residency, asset protection needs, and profit goals:</p>
+
       <div class="quiz-card-frame">
         <div class="quiz-header-bar">
           <div class="quiz-step-counter" id="quizStepCounterText">Question 1 of 6</div>
           <span style="font-size: 0.75rem; color: #159A9C; font-weight: 800; background: rgba(21, 154, 156, 0.12); padding: 0.3rem 0.75rem; border-radius: 9999px;">
-            ✓ 60-Second LLC Diagnostic
+            ✓ 60-Second Business Diagnostic
           </span>
         </div>
 
@@ -271,11 +320,11 @@
             </div>
             <div class="quiz-choice-card" onclick="chooseOption('goal', 'reduce_costs', this)">
               <div class="quiz-choice-title">💰 Calculate Formation Costs</div>
-              <div class="quiz-choice-desc">Determine government filing fees & ongoing expenses</div>
+              <div class="quiz-choice-desc">Determine government filing fees &amp; ongoing expenses</div>
             </div>
             <div class="quiz-choice-card" onclick="chooseOption('goal', 'understand_options', this)">
               <div class="quiz-choice-title">📚 Learn Compliance Rules</div>
-              <div class="quiz-choice-desc">Understand EIN, Operating Agreements & privacy</div>
+              <div class="quiz-choice-desc">Understand EIN, Operating Agreements &amp; privacy</div>
             </div>
           </div>
           <div class="quiz-actions-row">
@@ -286,19 +335,19 @@
 
         <!-- QUESTION 2 -->
         <div class="quiz-step-block" id="quizQ2" style="display: none;">
-          <div class="quiz-question-title">2. What type of business will your LLC operate?</div>
+          <div class="quiz-question-title">2. What type of business will your entity operate?</div>
           <div class="quiz-question-desc">This helps tailor tax classification and state compliance recommendations:</div>
           <div class="quiz-grid-2col">
             <div class="quiz-choice-card selected" onclick="chooseOption('reason', 'assets', this)">
               <div class="quiz-choice-title">🛡️ Personal Asset Protection</div>
-              <div class="quiz-choice-desc">Shield savings, personal bank accounts & house</div>
+              <div class="quiz-choice-desc">Shield savings, personal bank accounts &amp; house</div>
             </div>
             <div class="quiz-choice-card" onclick="chooseOption('reason', 'business', this)">
               <div class="quiz-choice-title">💼 Local Service / Retail</div>
               <div class="quiz-choice-desc">Physical store, local service, or consultancy</div>
             </div>
             <div class="quiz-choice-card" onclick="chooseOption('reason', 'online', this)">
-              <div class="quiz-choice-title">🛒 E-Commerce & Online Store</div>
+              <div class="quiz-choice-title">🛒 E-Commerce &amp; Online Store</div>
               <div class="quiz-choice-desc">Shopify, Amazon, Stripe, digital products</div>
             </div>
             <div class="quiz-choice-card" onclick="chooseOption('reason', 'real_estate', this)">
@@ -465,66 +514,303 @@
         <div class="quiz-step-block" id="quizResultsBlock" style="display: none;">
           <div id="dynamicQuizResults"></div>
           <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="index.html" class="ls-btn" style="color: #12304A; border: 1.5px solid #12304A; padding: 0.75rem 1.5rem;">← Return to Homepage</a>
+            <a href="index.html" class="ls-btn" style="color: #12304A; border: 1.5px solid #12304A; padding: 0.75rem 1.5rem; text-decoration: none;">← Return to Homepage</a>
             <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.5rem;" onclick="location.reload();">Restart Quiz 🔄</button>
           </div>
         </div>
-
       </div>
-    </div>
-  </div>
+
+      <div class="callout-box green" style="margin: 2.5rem 0;">
+        💡 <strong>Pro Tip:</strong> You don't have to stay with your initial business structure forever. Many businesses start as a Sole Proprietorship or single-member LLC, then elect S-Corp tax status once net profit exceeds $80k–$100k/year.
+      </div>
+
+      <!-- DETAILED GUIDANCE CONTENT -->
+      <h2 id="section-four-explained">The Four Business Structures Explained</h2>
+      <p>
+        Choosing the right legal structure is one of the first and most critical decisions every entrepreneur faces. The legal entity you choose determines your <strong>personal liability exposure, income tax obligations, fundraising capability, and ongoing administrative burden</strong>.
+      </p>
+
+      <p>
+        The core trade-off every business owner faces comes down to balancing <strong>simplicity vs. personal asset protection &amp; tax savings</strong>. Below is a detailed breakdown of each structure.
+      </p>
+
+      <!-- 1. SOLE PROP -->
+      <h2 id="section-sole-prop">1. Sole Proprietorship — Simple, but zero liability protection</h2>
+      <p>
+        A Sole Proprietorship is an unincorporated business owned and operated by one person. It is the default structure when you start doing business without registering a formal legal entity with your state.
+      </p>
+
+      <div style="background: #FFFBEB; border-left: 5px solid #F59E0B; border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+        <h4 style="margin-top: 0; color: #92400E;">⚠️ Key Characteristics &amp; Risks:</h4>
+        <ul style="margin: 0.5rem 0 0 0; padding-left: 1.25rem; color: #78350F; line-height: 1.6; font-size: 0.95rem;">
+          <li><strong>Zero Personal Asset Protection:</strong> There is no legal distinction between you and your business. Business debts, lawsuits, or slip-and-fall claims can jeopardize your personal savings, home, and assets.</li>
+          <li><strong>Pass-Through Taxing:</strong> Profits are reported directly on Schedule C of your personal Form 1040 tax return. All net profit is subject to 15.3% Self-Employment Tax.</li>
+          <li><strong>Zero State Formation Fees:</strong> No Articles of Organization filing is required (though local business licenses or DBAs may still apply).</li>
+        </ul>
+      </div>
+
+      <p><strong>Best for:</strong> Low-risk, low-revenue side projects or freelancers testing a business concept before formally committing capital.</p>
+
+      <!-- 2. LLC -->
+      <h2 id="section-llc">2. Limited Liability Company (LLC) — The sweet spot for most small businesses</h2>
+      <p>
+        A Limited Liability Company is a legal entity created under state law that combines the personal asset protection of a corporation with the tax simplicity and operational flexibility of a partnership.
+      </p>
+
+      <div style="background: #F0FDFA; border-left: 5px solid #159A9C; border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+        <h4 style="margin-top: 0; color: #0F766E;">✨ Key Features &amp; Benefits:</h4>
+        <ul style="margin: 0.5rem 0 0 0; padding-left: 1.25rem; color: #115E59; line-height: 1.6; font-size: 0.95rem;">
+          <li><strong>Limited Liability Shield:</strong> Protects your personal assets (home, personal savings, vehicle) from business liabilities, lawsuits, and commercial debts.</li>
+          <li><strong>Default Pass-Through Taxation:</strong> Avoids corporate double taxation. Profits pass directly to members' personal tax returns.</li>
+          <li><strong>Flexible Tax Classification:</strong> An LLC can choose to be taxed as a Sole Prop/Disregarded Entity, Partnership, S-Corp, or C-Corp.</li>
+          <li><strong>Minimal Corporate Formalities:</strong> Unlike corporations, LLCs are not strictly required to hold formal annual shareholder meetings or maintain board minutes.</li>
+        </ul>
+      </div>
+
+      <p><strong>Best for:</strong> 90%+ of small business owners, freelancers, e-commerce sellers, consultants, and real estate investors looking for strong asset protection without corporate bureaucracy.</p>
+
+      <!-- 3. S-CORP -->
+      <h2 id="section-scorp">3. S-Corporation (S-Corp Election) — Tax savings for profitable LLCs</h2>
+      <p>
+        An S-Corporation is not a separate legal business entity; it is a <strong>tax classification election</strong> made with the IRS (via Form 2553). An LLC or C-Corp can elect to be taxed as an S-Corp to reduce self-employment taxes once net profit becomes substantial.
+      </p>
+
+      <div style="background: #FFFFFF; border: 2px solid #10B981; border-radius: 16px; padding: 1.75rem; margin: 2rem 0; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.08);">
+        <div style="font-size: 0.75rem; font-weight: 900; color: #059669; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">TAX SAVINGS EXAMPLE</div>
+        <h3 style="margin: 0 0 1rem 0; color: #12304A; font-size: 1.3rem;">$100,000 Profit Tax Savings Example (LLC vs. S-Corp)</h3>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1rem;">
+          <div style="background: #F8FAFC; padding: 1.25rem; border-radius: 12px; border: 1px solid #E2E8F0;">
+            <h4 style="margin: 0 0 0.5rem 0; color: #64748B; font-size: 0.95rem;">Standard Single-Member LLC</h4>
+            <div style="font-size: 1.4rem; font-weight: 800; color: #DC2626;">~$15,300 Tax</div>
+            <p style="font-size: 0.85rem; color: #475569; margin: 0.5rem 0 0 0;">Entire $100k net profit subject to 15.3% Self-Employment Tax (Social Security &amp; Medicare).</p>
+          </div>
+
+          <div style="background: #ECFDF5; padding: 1.25rem; border-radius: 12px; border: 1px solid #A7F3D0;">
+            <h4 style="margin: 0 0 0.5rem 0; color: #065F46; font-size: 0.95rem;">LLC Taxed as S-Corp</h4>
+            <div style="font-size: 1.4rem; font-weight: 800; color: #059669;">~$7,650 Tax</div>
+            <p style="font-size: 0.85rem; color: #065F46; margin: 0.5rem 0 0 0;">Pay yourself $50k reasonable salary (SE tax on $50k only). Take remaining $50k as dividend distribution (0% SE tax). <strong>Saves ~$7,650/yr!</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <p><strong>Best for:</strong> Profitable LLCs making over <strong>$80,000 to $100,000 in net annual profit</strong> per owner.</p>
+
+      <!-- 4. C-CORP -->
+      <h2 id="section-ccorp">4. C-Corporation (C-Corp) — Built for venture capital &amp; growth startups</h2>
+      <p>
+        A C-Corporation is a standard corporate structure where the company exists as a completely independent legal person from its owners. It is the mandatory legal vehicle if you plan to raise institutional capital from venture capital (VC) firms, issue stock options, or go public.
+      </p>
+
+      <div style="background: #EFF6FF; border-left: 5px solid #2563EB; border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+        <h4 style="margin-top: 0; color: #1E40AF;">🏢 Key Features &amp; Considerations:</h4>
+        <ul style="margin: 0.5rem 0 0 0; padding-left: 1.25rem; color: #1E3A8A; line-height: 1.6; font-size: 0.95rem;">
+          <li><strong>Venture Capital Preferred:</strong> VC funds almost exclusively invest in Delaware C-Corporations due to standardized stock classes (Preferred Shares).</li>
+          <li><strong>Double Taxation:</strong> Profits are taxed at the corporate rate (21%), and dividends distributed to shareholders are taxed again on personal returns.</li>
+          <li><strong>Strict Corporate Governance:</strong> Requires Board of Directors, regular formal meetings, corporate minutes, and detailed bylaws.</li>
+        </ul>
+      </div>
+
+      <p><strong>Best for:</strong> High-growth tech startups seeking VC investment, issuing employee stock equity, or planning an eventual IPO.</p>
+
+      <!-- SIDE BY SIDE COMPARISON -->
+      <h2 id="section-comparison" style="margin-top: 3.5rem;">Side-by-Side Comparison of All 4 Business Structures</h2>
+      <p>Compare key legal, financial, and tax features across all four business options:</p>
+
+      <div class="custom-table-wrapper">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>FEATURE</th>
+              <th>SOLE PROP</th>
+              <th>LLC</th>
+              <th>S-CORP ELECTION</th>
+              <th>C-CORP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Personal Liability Protection</strong></td>
+              <td><strong style="color: #DC2626;">❌ No</strong></td>
+              <td><strong style="color: #059669;">✔ Yes</strong></td>
+              <td><strong style="color: #059669;">✔ Yes</strong></td>
+              <td><strong style="color: #059669;">✔ Yes</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Pass-Through Taxing</strong></td>
+              <td><strong style="color: #059669;">✔ Yes</strong></td>
+              <td><strong style="color: #059669;">✔ Yes (Default)</strong></td>
+              <td><strong style="color: #059669;">✔ Yes</strong></td>
+              <td><strong style="color: #DC2626;">❌ No (Double Tax)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Self-Employment Tax Savings</strong></td>
+              <td><strong style="color: #DC2626;">❌ None (15.3%)</strong></td>
+              <td><strong style="color: #DC2626;">❌ None (Default)</strong></td>
+              <td><strong style="color: #059669;">✔ High (On Distributions)</strong></td>
+              <td><strong style="color: #D97706;">⚠️ N/A (Payroll Tax)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Setup &amp; Operating Complexity</strong></td>
+              <td>Zero / None</td>
+              <td>Low to Moderate</td>
+              <td>Moderate</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td><strong>Annual State Fees / Maintenance</strong></td>
+              <td>$0</td>
+              <td>$0 – $800/yr</td>
+              <td>$0 – $800/yr + Payroll</td>
+              <td>High Corporate Franchise Tax</td>
+            </tr>
+            <tr>
+              <td><strong>Investor / VC Friendly</strong></td>
+              <td><strong style="color: #DC2626;">❌ No</strong></td>
+              <td><strong style="color: #D97706;">⚠️ Rare</strong></td>
+              <td><strong style="color: #D97706;">⚠️ Restricted (100 Max)</strong></td>
+              <td><strong style="color: #059669;">✔ Top Pick (VC Preferred)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>IRS Tax Return Form</strong></td>
+              <td>Schedule C (Form 1040)</td>
+              <td>Schedule C / Form 1065</td>
+              <td>Form 1120-S</td>
+              <td>Form 1120</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FAQ SECTION -->
+      <h2 id="section-faqs" style="margin-top: 3.5rem;">Business Structure Quiz — Frequently Asked Questions</h2>
+
+      <div class="faq-accordion-wrapper">
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">1</span>
+              <span>Can I switch my business structure later as my company grows?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            Yes! It is common to start as a Sole Proprietorship or Single-Member LLC, and then convert to an S-Corporation tax status once net profit exceeds $80,000–$100,000 per year. LLCs can also convert to a C-Corporation if raising venture capital.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">2</span>
+              <span>Is an LLC always better than a Sole Proprietorship?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            For personal asset protection, yes. A Sole Proprietorship offers zero protection against lawsuits or business debt. An LLC creates a separate legal shield protecting personal savings, home, and vehicles.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">3</span>
+              <span>When should an LLC elect S-Corp tax status?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            An S-Corp election makes economic sense when net business profit exceeds $80,000 to $100,000 per year. At that income level, the self-employment tax savings on dividend distributions outweigh the additional payroll processing and tax return filing costs.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">4</span>
+              <span>Why do venture capitalists prefer C-Corporations over LLCs?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            VC funds prefer Delaware C-Corps because they can issue Preferred Stock with stock option pools (ESOPs), avoid pass-through K-1 tax forms, and comply with institutional investor charter restrictions.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">5</span>
+              <span>Does forming an LLC require a lawyer?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            No. Most entrepreneurs file their LLC directly with the Secretary of State or use a professional filing service like Northwest Registered Agent ($39) or ZenBusiness ($0). Complex multi-member LLCs or custom corporate structures may benefit from legal counsel.
+          </div>
+        </details>
+      </div>
+
+    </article>
+  </main>
 
   <!-- =========================================================================
-       3. FOOTER (MATCHING INDEX.HTML EXACTLY)
+       3. SITE FOOTER
        ========================================================================= -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-container">
       <div class="footer-grid">
-        <div>
-          <a href="index.html" class="site-logo" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
             <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
           </a>
-          <p style="font-size:0.88rem; color:#CBD5E1; margin-top:1rem; line-height:1.6;">
-            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step compliance resources to help founders start and maintain an LLC in any US state.
+          <p class="footer-desc">
+            LLC Primer provides verified 50-state formation guides, fee calculators, and expert reviews to help entrepreneurs launch and maintain compliant US businesses.
           </p>
         </div>
 
-        <div>
-          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Popular States</h4>
-          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
-            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Wyoming LLC Guide</a></li>
-            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Delaware LLC Guide</a></li>
-            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Florida LLC Guide</a></li>
-            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">Texas LLC Guide</a></li>
-            <li><a href="index.html#states-section" style="font-size:0.85rem; color:#CBD5E1;">California LLC Guide</a></li>
+        <div class="footer-col">
+          <h4 class="footer-heading">LLC Guides</h4>
+          <ul class="footer-links">
+            <li><a href="what-is-an-llc.html">What is an LLC</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Best State for LLC</a></li>
+            <li><a href="how-much-does-an-llc-cost.html">How Much Does An LLC Cost</a></li>
+            <li><a href="how-are-llcs-taxed.html">How Are LLCs Taxed</a></li>
+            <li><a href="operating-agreement.html">LLC Operating Agreement</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Free Calculators</h4>
-          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
-            <li><a href="quiz.html" style="font-size:0.85rem; color:#CBD5E1;">10-Question Diagnostic Quiz</a></li>
-            <li><a href="index.html#cost-estimator-section" style="font-size:0.85rem; color:#CBD5E1;">State Fee Calculator</a></li>
+        <div class="footer-col">
+          <h4 class="footer-heading">Services &amp; Reviews</h4>
+          <ul class="footer-links">
+            <li><a href="best-llc-services.html">Best LLC Services</a></li>
+            <li><a href="northwest-registered-agent-review.html">Northwest Review</a></li>
+            <li><a href="zenbusiness-vs-northwest.html">ZenBusiness vs Northwest</a></li>
+            <li><a href="best-registered-agent-services.html">Best Registered Agent</a></li>
+            <li><a href="best-llc-formation-services.html">Best LLC Formation Services</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4 style="font-size:0.95rem; color:#FFF; margin-bottom:1.25rem;">Post-Formation</h4>
-          <ul style="display:flex; flex-direction:column; gap:0.6rem;">
-            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">EIN Application Guide</a></li>
-            <li><a href="index.html#decisions-section" style="font-size:0.85rem; color:#CBD5E1;">Operating Agreement</a></li>
-            <li><a href="index.html#after-formation-section" style="font-size:0.85rem; color:#CBD5E1;">Business Banking</a></li>
+        <div class="footer-col">
+          <h4 class="footer-heading">Business Setup &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="ein-guide.html">Federal EIN Guide</a></li>
+            <li><a href="best-business-bank-accounts.html">Best Business Checking</a></li>
+            <li><a href="virtual-business-address.html">Virtual Address</a></li>
+            <li><a href="llc-business-insurance.html">LLC Business Insurance</a></li>
+            <li><a href="llc-cost-calculator.html">LLC Cost Calculator</a></li>
+            <li><a href="llc-startup-cost-estimator.html">Startup Cost Estimator</a></li>
+            <li><a href="quiz.html">LLC Finder Quiz</a></li>
           </ul>
         </div>
       </div>
 
-      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:2rem; font-size:0.775rem; color:var(--text-muted); display:flex; flex-direction:column; gap:1rem; text-align:left;">
-        <div>
-          <b>Disclaimer:</b> LLC Primer is an educational resource and business software provider. We are not a law firm or legal filing service and do not provide legal or financial advice. All state filing fees are verified against official Secretary of State portals for 2026.
-        </div>
-        <div>
-          © 2026 LLC Primer. All rights reserved. | Privacy Policy | Terms of Service
-        </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 LLC Primer. All rights reserved.</p>
+        <p class="disclaimer">
+          Disclaimer: LLC Primer is an independent educational portal and research platform. We are not a law firm, tax advisor, or Secretary of State office. Content on this site is provided for informational purposes only.
+        </p>
       </div>
     </div>
   </footer>
@@ -605,12 +891,12 @@
                 <li>1. Form Wyoming LLC with Registered Agent ($39 + $100 state fee)</li>
                 <li>2. Obtain EIN via IRS Form SS-4 Fax Application (No SSN required)</li>
                 <li>3. Open US Business Bank Account (Mercury or Relay online)</li>
-                <li>4. Connect Stripe & PayPal for international client billing</li>
+                <li>4. Connect Stripe &amp; PayPal for international client billing</li>
               </ul>
             </div>
 
-            <a href="index.html#states-section" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem;">
-              View Wyoming LLC Guide & Fee Details →
+            <a href="index.html#states-section" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none;">
+              View Wyoming LLC Guide &amp; Fee Details →
             </a>
           </div>
         `;
@@ -634,7 +920,7 @@
               </ul>
             </div>
 
-            <a href="index.html#states-section" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem;">
+            <a href="index.html#states-section" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none;">
               View ${selectedStateCode} Filing Guide →
             </a>
           </div>
