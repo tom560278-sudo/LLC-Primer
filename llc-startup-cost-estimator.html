@@ -937,7 +937,7 @@
                 <strong style="color: #FFFFFF; font-size: 0.95rem; display: block;">Registered Agent Service</strong>
                 <span style="font-size: 0.8rem; color: #94A3B8;">$125/yr (Free Year 1 with Northwest formation service)</span>
               </div>
-              <input type="checkbox" id="estOptAgentToggle" checked onchange="runEstimatorCalc()" style="width: 20px; height: 20px; accent-color: #159A9C;">
+              <input type="checkbox" id="estOptAgentToggle" onchange="runEstimatorCalc()" style="width: 20px; height: 20px; accent-color: #159A9C;">
             </label>
           </div>
 
@@ -945,9 +945,9 @@
             <label style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
               <div>
                 <strong style="color: #FFFFFF; font-size: 0.95rem; display: block;">Northwest Formation Service ($39)</strong>
-                <span style="font-size: 0.8rem; color: #94A3B8;">Files Articles, includes free Registered Agent Year 1 & Operating Agreement</span>
+                <span style="font-size: 0.8rem; color: #94A3B8;">Files Articles, includes free Registered Agent Year 1 &amp; Operating Agreement</span>
               </div>
-              <input type="checkbox" id="estOptFormationToggle" checked onchange="runEstimatorCalc()" style="width: 20px; height: 20px; accent-color: #159A9C;">
+              <input type="checkbox" id="estOptFormationToggle" onchange="runEstimatorCalc()" style="width: 20px; height: 20px; accent-color: #159A9C;">
             </label>
           </div>
 
@@ -1580,17 +1580,25 @@
 
     // Calculate budget in estimator
     function runEstimatorCalc() {
-      const stateCode = document.getElementById('estStateSelect').value;
-      const bizType = document.getElementById('estBizTypeSelect').value;
-      const agentOpt = document.getElementById('estOptAgentToggle').checked;
-      const formationOpt = document.getElementById('estOptFormationToggle').checked;
+      const stateCode = document.getElementById('estStateSelect') ? document.getElementById('estStateSelect').value : '';
+      const bizType = document.getElementById('estBizTypeSelect') ? document.getElementById('estBizTypeSelect').value : 'online';
+      const agentOpt = document.getElementById('estOptAgentToggle') ? document.getElementById('estOptAgentToggle').checked : false;
+      const formationOpt = document.getElementById('estOptFormationToggle') ? document.getElementById('estOptFormationToggle').checked : false;
 
-      // Access state data from STATE_DATA in app.js or fallback table
-      let stateInfo = (typeof STATE_DATA !== 'undefined' && STATE_DATA[stateCode]) ? STATE_DATA[stateCode] : { name: stateCode, fee: 100, annual: 0 };
+      let st = (typeof stateData !== 'undefined') ? stateData.find(s => s.code === stateCode) : null;
       
-      const filingFee = stateInfo.fee || 100;
-      const annualFee = stateInfo.annual || 0;
-      const licenseEst = BIZ_LICENSE_ESTIMATES[bizType] || 100;
+      const stateName = st ? st.name : (stateCode ? stateCode : 'Select State');
+      const filingFee = st ? st.fee : 0;
+      
+      let annualFee = 0;
+      if (st && st.annual) {
+        const match = st.annual.match(/[\d\.]+/);
+        if (match && !st.annual.includes("$0")) {
+          annualFee = parseFloat(match[0]) || 0;
+        }
+      }
+      
+      const licenseEst = stateCode ? (BIZ_LICENSE_ESTIMATES[bizType] || 100) : 0;
 
       let formationFee = formationOpt ? 39 : 0;
       let agentFeeYear1 = 0;
@@ -1606,54 +1614,62 @@
         }
       }
 
-      const totalYear1 = filingFee + annualFee + licenseEst + formationFee + agentFeeYear1;
-      const totalYear2 = annualFee + agentFeeYear2;
+      const totalYear1 = stateCode ? (filingFee + annualFee + licenseEst + formationFee + agentFeeYear1) : 0;
+      const totalYear2 = stateCode ? (annualFee + agentFeeYear2) : 0;
 
       // Update UI elements
-      document.getElementById('estStateName').textContent = stateInfo.name || stateCode;
-      document.getElementById('estResYear1').textContent = '$' + totalYear1;
-      document.getElementById('estResYear2').textContent = '$' + totalYear2 + '/yr';
+      if (document.getElementById('estStateName')) document.getElementById('estStateName').textContent = stateName;
+      if (document.getElementById('estResYear1')) document.getElementById('estResYear1').textContent = '$' + totalYear1;
+      if (document.getElementById('estResYear2')) document.getElementById('estResYear2').textContent = '$' + totalYear2 + '/yr';
 
-      document.getElementById('estBreakStateFee').textContent = '$' + filingFee;
-      document.getElementById('estBreakAnnualFee').textContent = '$' + annualFee + '/yr';
-      document.getElementById('estBreakLicenseFee').textContent = '$' + licenseEst;
-      document.getElementById('estBreakFormationFee').textContent = formationOpt ? '$39' : '$0 (DIY)';
+      if (document.getElementById('estBreakStateFee')) document.getElementById('estBreakStateFee').textContent = '$' + filingFee;
+      if (document.getElementById('estBreakAnnualFee')) document.getElementById('estBreakAnnualFee').textContent = '$' + annualFee + '/yr';
+      if (document.getElementById('estBreakLicenseFee')) document.getElementById('estBreakLicenseFee').textContent = '$' + licenseEst;
+      if (document.getElementById('estBreakFormationFee')) document.getElementById('estBreakFormationFee').textContent = formationOpt ? '$39' : '$0 (DIY)';
 
-      if (agentOpt && formationOpt) {
-        document.getElementById('estBreakAgentFee').textContent = '$0 (Included Free Year 1)';
-      } else if (agentOpt) {
-        document.getElementById('estBreakAgentFee').textContent = '$125';
-      } else {
-        document.getElementById('estBreakAgentFee').textContent = '$0 (DIY Agent)';
+      if (document.getElementById('estBreakAgentFee')) {
+        if (agentOpt && formationOpt) {
+          document.getElementById('estBreakAgentFee').textContent = '$0 (Included Free Year 1)';
+        } else if (agentOpt) {
+          document.getElementById('estBreakAgentFee').textContent = '$125';
+        } else {
+          document.getElementById('estBreakAgentFee').textContent = '$0 (DIY Agent)';
+        }
       }
 
       // State warning banner
       const warnBox = document.getElementById('estWarningBanner');
-      if (stateCode === 'CA') {
-        warnBox.style.display = 'block';
-        warnBox.innerHTML = '⚠️ <strong>California Warning:</strong> $800 Annual Franchise Tax applies starting in Year 2, regardless of business income.';
-      } else if (stateCode === 'NY') {
-        warnBox.style.display = 'block';
-        warnBox.innerHTML = '⚠️ <strong>New York Warning:</strong> Mandatory newspaper publication required within 120 days ($300–$1,500+ depending on county).';
-      } else if (stateCode === 'NV') {
-        warnBox.style.display = 'block';
-        warnBox.innerHTML = '⚠️ <strong>Nevada Warning:</strong> Mandatory $200 Annual List + $150 State Business License fee required annually.';
-      } else if (stateCode === 'DE') {
-        warnBox.style.display = 'block';
-        warnBox.innerHTML = '⚠️ <strong>Delaware Warning:</strong> $300 Annual Franchise Tax due every year by June 1st.';
-      } else {
-        warnBox.style.display = 'none';
+      if (warnBox) {
+        if (stateCode === 'CA') {
+          warnBox.style.display = 'block';
+          warnBox.innerHTML = '⚠️ <strong>California Warning:</strong> $800 Annual Franchise Tax applies starting in Year 2, regardless of business income.';
+        } else if (stateCode === 'NY') {
+          warnBox.style.display = 'block';
+          warnBox.innerHTML = '⚠️ <strong>New York Warning:</strong> Mandatory newspaper publication required within 120 days ($300–$1,500+ depending on county).';
+        } else if (stateCode === 'NV') {
+          warnBox.style.display = 'block';
+          warnBox.innerHTML = '⚠️ <strong>Nevada Warning:</strong> Mandatory $200 Annual List + $150 State Business License fee required annually.';
+        } else if (stateCode === 'DE') {
+          warnBox.style.display = 'block';
+          warnBox.innerHTML = '⚠️ <strong>Delaware Warning:</strong> $300 Annual Franchise Tax due every year by June 1st.';
+        } else {
+          warnBox.style.display = 'none';
+        }
       }
     }
 
-    // Toggle FAQs
-    function toggleFaq(elem) {
-      const parent = elem.closest('.faq-item');
-      parent.classList.toggle('active');
-    }
-
-    // Run initial calculation on load
+    // Populate state select in estimator on load
     document.addEventListener('DOMContentLoaded', function() {
+      const select = document.getElementById("estStateSelect");
+      if (select && typeof stateData !== 'undefined') {
+        select.innerHTML = '<option value="">— Select Your State —</option>';
+        stateData.forEach(st => {
+          const opt = document.createElement("option");
+          opt.value = st.code;
+          opt.textContent = `${st.name} ($${st.fee} filing fee)`;
+          select.appendChild(opt);
+        });
+      }
       runEstimatorCalc();
     });
   </script>

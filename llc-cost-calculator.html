@@ -748,12 +748,12 @@
           </div>
 
           <div style="margin-bottom: 1.5rem;">
-            <select id="calcStateSelect" class="state-select-box" style="width: 100%; background: #071626; color: #FFFFFF; border: 1.5px solid #1E3A8A; padding: 0.85rem 1rem; border-radius: 10px; font-size: 1rem;">
+            <select id="calcStateSelect" class="state-select-box" onchange="updateCost()" style="width: 100%; background: #071626; color: #FFFFFF; border: 1.5px solid #1E3A8A; padding: 0.85rem 1rem; border-radius: 10px; font-size: 1rem;">
               <option value="">— Choose a state to see costs —</option>
             </select>
           </div>
 
-          <!-- OPTIONAL SERVICES SWITCH BOX -->
+          <!-- OPTIONAL SERVICES SWITCH BOX (OFF BY DEFAULT) -->
           <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 1.25rem; margin-bottom: 1.5rem;">
             <div style="font-size: 0.75rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">
               INCLUDE OPTIONAL SERVICES?
@@ -761,7 +761,7 @@
 
             <div class="toggle-flex-row">
               <label class="switch-checkbox">
-                <input type="checkbox" id="calcOptAgentToggle" checked>
+                <input type="checkbox" id="calcOptAgentToggle" onchange="updateCost()">
                 <span class="switch-slider"></span>
               </label>
               <div>
@@ -771,7 +771,7 @@
 
             <div class="toggle-flex-row" style="margin-bottom: 0;">
               <label class="switch-checkbox">
-                <input type="checkbox" id="calcOptFormationToggle" checked>
+                <input type="checkbox" id="calcOptFormationToggle" onchange="updateCost()">
                 <span class="switch-slider"></span>
               </label>
               <div>
@@ -785,7 +785,7 @@
             <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 1rem; margin-bottom: 1.25rem;">
               <div>
                 <div style="font-size: 0.75rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.08em;">ESTIMATED LLC COST IN</div>
-                <h3 style="font-size: 1.5rem; color: #FFFFFF; margin: 0.2rem 0 0 0;" id="calcCostHeaderState">Your State</h3>
+                <h3 style="font-size: 1.5rem; color: #FFFFFF; margin: 0.2rem 0 0 0;" id="calcCostHeaderState">Select State</h3>
               </div>
               <span style="background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; font-size: 0.75rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 9999px;" id="calcCostBadge">
                 Select State
@@ -803,15 +803,15 @@
               </div>
               <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.6rem;">
                 <span>🔒 <strong>Registered Agent</strong> <span style="font-size: 0.75rem; color: #94A3B8;">(yr 1 free w/ formation)</span></span>
-                <span id="calcRowAgentFee" style="font-weight: 700; color: #FFFFFF;">$0 yr 1 · $39/yr after</span>
+                <span id="calcRowAgentFee" style="font-weight: 700; color: #FFFFFF;">$0</span>
               </div>
               <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.6rem;">
                 <span>⚙️ <strong>Formation Service</strong> <span style="font-size: 0.75rem; color: #94A3B8;">(one-time)</span></span>
-                <span id="calcRowFormationService" style="font-weight: 700; color: #FFFFFF;">$39</span>
+                <span id="calcRowFormationService" style="font-weight: 700; color: #FFFFFF;">$0</span>
               </div>
               <div id="calcRowFranchiseTax" style="display: none; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.6rem;">
                 <span>🏷️ <strong>Franchise Tax</strong> <span style="font-size: 0.75rem; color: #94A3B8;">(annual)</span></span>
-                <span id="calcRowFranchiseTaxVal" style="font-weight: 700; color: #F59E0B;">$300/yr</span>
+                <span id="calcRowFranchiseTaxVal" style="font-weight: 700; color: #F59E0B;">$0</span>
               </div>
             </div>
 
@@ -829,49 +829,23 @@
 
             <!-- STATE WARNING BANNER BOX -->
             <div id="calcStateWarningBox" style="display: none; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 10px; padding: 0.85rem 1rem; color: #F87171; font-size: 0.85rem; margin-top: 1.25rem;">
-              ⚠️ State-specific fee warning goes here.
             </div>
           </div>
 
           <!-- FOOTNOTE BADGES -->
-          <div style="font-size: 0.825rem; color: #CBD5E1; display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+          <div style="font-size: 0.825rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;">
             <div>✅ <strong>EIN:</strong> Free directly from the IRS — never pay for this.</div>
             <div>✅ <strong>Operating Agreement:</strong> Free with Northwest when you use their formation service.</div>
           </div>
 
           <!-- CTA BUTTONS -->
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <a id="calcGuideBtn" href="llc-guide.html" class="ls-btn" style="background: #F59E0B; color: #12304A; font-weight: 800; text-align: center; justify-content: center; padding: 0.85rem;">
+            <a id="calcGuideBtn" href="start-llc.html" class="ls-btn" style="background: #F59E0B; color: #12304A; font-weight: 800; text-align: center; justify-content: center; padding: 0.85rem; text-decoration: none;">
               View Full State LLC Guide →
             </a>
-            <a id="calcFormBtn" href="northwest-registered-agent-review.html" class="ls-btn ls-btn--blue" style="font-weight: 800; text-align: center; justify-content: center; padding: 0.85rem;">
+            <a id="calcFormBtn" href="https://www.northwestregisteredagent.com/" target="_blank" rel="noopener noreferrer" class="ls-btn ls-btn--blue" style="font-weight: 800; text-align: center; justify-content: center; padding: 0.85rem; text-decoration: none;">
               Form My LLC — $39 + State Fee ↗
             </a>
-          </div>
-
-          <!-- 3 CHEAPEST STATES ROW -->
-          <div style="margin-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1.5rem;">
-            <div style="font-size: 0.85rem; font-weight: 800; color: #FFFFFF; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-              <span>🏆</span> 3 Cheapest States by Total Year 1 Cost
-            </div>
-
-            <div class="cheapest-states-grid">
-              <div class="cheap-state-card">
-                <span class="cheap-state-num">1</span>
-                <div class="cheap-state-name">Montana</div>
-                <div style="font-size: 0.8rem; color: #10B981; font-weight: 700; margin-top: 0.2rem;">$35 Fee · $20/yr</div>
-              </div>
-              <div class="cheap-state-card">
-                <span class="cheap-state-num">2</span>
-                <div class="cheap-state-name">Kentucky</div>
-                <div style="font-size: 0.8rem; color: #10B981; font-weight: 700; margin-top: 0.2rem;">$40 Fee · $15/yr</div>
-              </div>
-              <div class="cheap-state-card">
-                <span class="cheap-state-num">3</span>
-                <div class="cheap-state-name">Hawaii</div>
-                <div style="font-size: 0.8rem; color: #10B981; font-weight: 700; margin-top: 0.2rem;">$51 Fee · $15/yr</div>
-              </div>
-            </div>
           </div>
 
         </div>

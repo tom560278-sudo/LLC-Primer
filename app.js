@@ -107,9 +107,7 @@ function populateStateSelectors() {
   const bottomCtaStateSelect = document.getElementById("bottomCtaStateSelect");
   const calcStateSelect = document.getElementById("calcStateSelect");
 
-  const defaultOptionText = "-- Select Your State --";
-
-  [stateSectionSelect, ctaStateSelect, bottomCtaStateSelect, calcStateSelect].forEach(select => {
+  [stateSectionSelect, ctaStateSelect, bottomCtaStateSelect].forEach(select => {
     if (!select) return;
     select.innerHTML = `<option value="">${defaultOptionText}</option>`;
     stateData.forEach(st => {
@@ -119,6 +117,16 @@ function populateStateSelectors() {
       select.appendChild(opt);
     });
   });
+
+  if (calcStateSelect) {
+    calcStateSelect.innerHTML = `<option value="">— Choose a state to see costs —</option>`;
+    stateData.forEach(st => {
+      const opt = document.createElement("option");
+      opt.value = st.code;
+      opt.textContent = st.name;
+      calcStateSelect.appendChild(opt);
+    });
+  }
 
   if (ctaStateSelect) {
     ctaStateSelect.addEventListener("change", (e) => onStateSelectedInCta(e.target.value));

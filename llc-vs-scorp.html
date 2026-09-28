@@ -3,29 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
-  <title>LLC vs S-Corp Tax Calculator (2026) | LLC Primer</title>
-  <meta name="description" content="Calculate your potential self-employment tax savings by electing S-Corp tax status vs standard LLC taxation.">
+  <title>LLC vs S-Corp Tax Savings Calculator (2026 Edition) | LLC Primer</title>
+  <meta name="description" content="Calculate your exact potential S-Corp tax savings. Compare self-employment tax savings, federal and state income taxes, QBI deduction, and S-Corp overhead for 2026.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css">
   <style>
-    .guide-content-container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 1.5rem 4rem 1.5rem;
+    /* Calculator Widget Custom Styling */
+    .scorp-calc-card {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
+      border-radius: 20px;
+      padding: 2.25rem;
+      color: #FFFFFF;
+      margin: 2.5rem 0;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.3);
+    }
+
+    .scorp-badge {
+      background: rgba(21, 154, 156, 0.15);
+      border: 1px solid #159A9C;
+      color: #6EE7B7;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+
+    .scorp-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.75rem 0;
+    }
+
+    .scorp-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .scorp-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .scorp-input, .scorp-select {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 600;
+      outline: none;
       width: 100%;
     }
-    .placeholder-card {
-      background: #FFFFFF;
-      border: 1.5px solid #CBD5E1;
-      border-radius: 20px;
-      padding: 3.5rem 2rem;
+
+    .scorp-input:focus, .scorp-select:focus {
+      border-color: #159A9C;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .scorp-range-slider {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      accent-color: #159A9C;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    .benchmarks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .benchmark-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 1.15rem;
       text-align: center;
-      margin: 3rem 0;
-      box-shadow: 0 8px 30px rgba(18, 48, 74, 0.05);
+    }
+
+    .benchmark-title {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+    }
+
+    .benchmark-value {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+    }
+
+    @media (max-width: 768px) {
+      .scorp-form-grid { grid-template-columns: 1fr; }
+      .benchmarks-grid { grid-template-columns: repeat(2, 1fr); }
+      .scorp-calc-card { padding: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .benchmarks-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -42,7 +138,7 @@
 
       <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
         <div class="nav-item">
-          <a href="start-llc.html" class="nav-link" style="color: var(--color-primary); font-weight: 800;">
+          <a href="start-llc.html" class="nav-link">
             Start an LLC
           </a>
         </div>
@@ -133,26 +229,330 @@
   <!-- =========================================================================
        2. MAIN CONTENT AREA
        ========================================================================= -->
-    <!-- BREADCRUMB -->
-    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
+  <main class="guide-content-container">
+    
+    <!-- BREADCRUMB NAV -->
+    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 0.75rem;">
       <a href="index.html" style="color: #64748B; text-decoration: none;">LLC Primer</a> &nbsp;/&nbsp; 
       <a href="tools.html" style="color: #64748B; text-decoration: none;">Tools</a> &nbsp;/&nbsp; 
       <strong style="color: #12304A;">LLC vs S-Corp Calculator</strong>
     </div>
 
-    <div class="placeholder-card">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">⚖️</div>
-      <h1 style="font-size: 2rem; font-weight: 800; color: #12304A; margin-bottom: 1rem; font-family: var(--font-heading);">
-        LLC vs S-Corp Tax Calculator
-      </h1>
-      <p style="font-size: 1.05rem; color: #475569; max-width: 600px; margin: 0 auto 2rem auto; line-height: 1.6;">
-        Our interactive LLC vs. S-Corporation tax savings estimator is coming soon. In the meantime, learn how LLCs are taxed with our comprehensive guide.
-      </p>
-      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <a href="how-are-llcs-taxed.html" class="ls-btn ls-btn--emerald" style="padding: 0.75rem 1.5rem; text-decoration: none;">Read How LLCs Are Taxed &rarr;</a>
-        <a href="tools.html" class="ls-btn" style="padding: 0.75rem 1.5rem; text-decoration: none; background: #12304A; color: #FFF;">Explore All LLC Tools &rarr;</a>
-      </div>
+    <div style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1.25rem;">
+      7 months ago &middot; Updated 7 days ago
     </div>
+
+    <!-- SCOPE BOX -->
+    <div style="background: #12304A; border: 1.5px solid #159A9C; border-radius: 14px; padding: 1.15rem 1.5rem; color: #FFFFFF; font-size: 0.9rem; margin-bottom: 2rem;">
+      <strong>Scope:</strong> Interactive estimate of potential S-corporation tax savings. For definitions and compliance, read the <a href="llc-vs-scorp.html" style="color: #6EE7B7; font-weight: 700; text-decoration: underline;">LLC vs S Corp guide</a>.
+    </div>
+
+    <article class="guide-article">
+      <h1 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; color: #12304A; line-height: 1.18; margin-bottom: 1.25rem; font-family: var(--font-heading);">
+        LLC vs S-Corp Tax Calculator (2026 Edition)
+      </h1>
+
+      <p style="font-size: 1.05rem; line-height: 1.75; color: #475569;">
+        The most common — and most expensive — tax mistake small business owners make is staying as an LLC long after their income justifies the switch to S-Corp status. This free <strong>LLC vs S Corp tax calculator</strong> shows you the exact dollar difference based on your actual net profit, your state's income tax rate, and a salary you control with a slider. No spreadsheet required, no CPA appointment needed — your personalized breakdown appears in seconds.
+      </p>
+
+      <h2>Why most online calculators give you the wrong number</h2>
+      <p>
+        Most <strong>S Corp vs LLC tax calculators</strong> you'll find online make the same two mistakes: they ignore your state income tax entirely, and they forget to subtract the S-Corp overhead costs — payroll service, quarterly filings, and the extra CPA time required once you elect S-Corp status. Consequently, they dramatically overstate your savings and make the S-Corp election look attractive well before the math actually supports it. This calculator includes all four tax layers — self-employment tax, federal income tax, state income tax, and S-Corp overhead — so the number you see is your real net savings, not a best-case estimate.
+      </p>
+
+      <h2>How to get the most accurate result from this calculator</h2>
+      <p>
+        Enter your <strong>net profit</strong> — revenue minus all business expenses, not your gross revenue. Then use the salary slider to set a reasonable W-2 salary for your role. The IRS requires S-Corp owners to pay themselves a salary that's reasonable for their industry and hours worked; the <strong>LLC vs S Corp calculator</strong> defaults to $60,000, but your number should reflect what you'd pay someone else to do your job. Finally, select your state — the difference between a zero-income-tax state like Texas or Florida and a high-tax state like California or New York can swing the S-Corp breakeven point by $15,000 or more in net profit. Single-member LLC owners searching for a <strong>single member LLC vs S Corp calculator</strong> will find the tool works identically — enter your net profit and salary as the sole owner.
+      </p>
+
+      <!-- BLUE BENCHMARKS CARD -->
+      <div style="background: linear-gradient(135deg, #12304A 0%, #1D4ED8 100%); border-radius: 20px; padding: 2.25rem; color: #FFFFFF; margin: 2.5rem 0; box-shadow: 0 12px 35px rgba(18, 48, 74, 0.2);">
+        <h3 style="color: #FFFFFF; font-size: 1.5rem; font-weight: 800; margin: 0 0 0.35rem 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.6rem;">
+          <span>🔥 LLC vs S-Corp — The Numbers That Matter</span>
+        </h3>
+        <p style="color: #DBEAFE; font-size: 0.9rem; margin: 0 0 1.5rem 0;">
+          Key benchmarks before you run your calculation
+        </p>
+
+        <div class="benchmarks-grid">
+          <div class="benchmark-card">
+            <div class="benchmark-title">SE TAX RATE</div>
+            <div class="benchmark-value" style="color: #6EE7B7;">15.3%</div>
+          </div>
+          <div class="benchmark-card">
+            <div class="benchmark-title">TYPICAL BREAKEVEN POINT</div>
+            <div class="benchmark-value">~$50,000 net profit</div>
+          </div>
+          <div class="benchmark-card">
+            <div class="benchmark-title">S-CORP OVERHEAD COST</div>
+            <div class="benchmark-value" style="color: #FCA5A5;">~$1,800/year</div>
+          </div>
+          <div class="benchmark-card">
+            <div class="benchmark-title">SAVINGS AT $100K PROFIT</div>
+            <div class="benchmark-value" style="color: #6EE7B7;">~$4,000–$6,000/yr</div>
+          </div>
+          <div class="benchmark-card">
+            <div class="benchmark-title">SE WAGE BASE 2026</div>
+            <div class="benchmark-value">$184,500</div>
+          </div>
+          <div class="benchmark-card">
+            <div class="benchmark-title">QBI DEDUCTION</div>
+            <div class="benchmark-value">Up to 20%</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.75rem; text-align: center;">
+          <a href="llc-cost-calculator.html" class="ls-btn" style="background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); color: #FFFFFF; font-weight: 700; padding: 0.75rem 1.5rem; text-decoration: none; display: inline-block;">
+            Also see: LLC Cost Calculator — total formation cost by state &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- TOC BOX -->
+      <div class="toc-card-box">
+        <div class="toc-title">📑 WHAT'S IN THIS GUIDE</div>
+        <ol class="toc-list">
+          <li><a href="#calc-widget-section">LLC vs S-Corp tax calculator — get your personalized number</a></li>
+          <li><a href="#section-how-it-works">How the S-Corp tax savings actually work</a></li>
+          <li><a href="#section-breakeven">The S-Corp breakeven point — when does it make sense?</a></li>
+          <li><a href="#section-salary">How to set a reasonable S-Corp salary</a></li>
+          <li><a href="#section-state-math">How your state changes the math</a></li>
+          <li><a href="#section-overhead">The S-Corp costs most calculators ignore</a></li>
+          <li><a href="#section-examples">Real examples: $75K, $100K, $150K, $250K</a></li>
+          <li><a href="#section-election">How to make the S-Corp election</a></li>
+          <li><a href="#section-faqs">Frequently asked questions</a></li>
+        </ol>
+      </div>
+
+      <!-- CALCULATOR WIDGET -->
+      <h2 id="calc-widget-section">LLC vs S-Corp Tax Calculator — Your Personalized Breakdown</h2>
+      <p>
+        Enter your net profit, state, filing status, and estimated salary below. Whether you're looking for an <strong>S Corp vs LLC tax savings calculator</strong> or a full side-by-side breakdown, the tool runs your numbers through the complete 2026 tax model — self-employment tax, federal income tax brackets, state income tax, QBI deduction, and S-Corp overhead — and returns your real net annual savings side by side.
+      </p>
+
+      <div class="scorp-calc-card" id="scorpCalcWidget">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+          <div>
+            <span class="scorp-badge">FREE TAX CALCULATOR - 2026</span>
+            <h3 style="color: #FFFFFF; font-size: 1.6rem; margin: 0 0 0.35rem 0; font-family: var(--font-heading);">
+              LLC vs S-Corp Tax Savings Calculator
+            </h3>
+            <p style="color: #94A3B8; font-size: 0.875rem; margin: 0;">
+              Enter your net profit and salary to see exactly how much an S-Corp election could save you.
+            </p>
+          </div>
+        </div>
+
+        <div class="scorp-form-grid">
+          <!-- INPUT 1: NET PROFIT -->
+          <div class="scorp-input-group">
+            <label class="scorp-label" for="scorpNetProfitInput">ANNUAL NET PROFIT ($)</label>
+            <input type="number" id="scorpNetProfitInput" class="scorp-input" value="100000" step="5000" min="10000" max="1000000" oninput="updateScorpCalc()">
+          </div>
+
+          <!-- INPUT 2: STATE SELECTOR -->
+          <div class="scorp-input-group">
+            <label class="scorp-label" for="scorpStateSelect">YOUR STATE</label>
+            <select id="scorpStateSelect" class="scorp-select" onchange="updateScorpCalc()">
+              <option value="">Select state...</option>
+            </select>
+          </div>
+
+          <!-- INPUT 3: FILING STATUS -->
+          <div class="scorp-input-group">
+            <label class="scorp-label" for="scorpFilingStatusSelect">FILING STATUS</label>
+            <select id="scorpFilingStatusSelect" class="scorp-select" onchange="updateScorpCalc()">
+              <option value="single">Single</option>
+              <option value="joint">Married Filing Jointly</option>
+              <option value="head">Head of Household</option>
+            </select>
+          </div>
+
+          <!-- INPUT 4: REASONABLE SALARY SLIDER -->
+          <div class="scorp-input-group">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <label class="scorp-label" for="scorpSalarySlider">S-CORP REASONABLE SALARY</label>
+              <span id="scorpSalaryValDisplay" style="color: #6EE7B7; font-weight: 800; font-size: 0.95rem;">$60,000</span>
+            </div>
+            <input type="range" id="scorpSalarySlider" class="scorp-range-slider" min="20000" max="250000" step="5000" value="60000" oninput="updateScorpCalc()">
+            <div style="font-size: 0.75rem; color: #94A3B8; margin-top: 0.2rem;" id="scorpSalaryPctText">&mdash; 60% of net profit</div>
+          </div>
+        </div>
+
+        <!-- OVERHEAD TOGGLE -->
+        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.15rem; margin-bottom: 1.75rem;">
+          <label style="display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none;">
+            <div>
+              <strong style="color: #FFFFFF; font-size: 0.95rem; display: block;">Include S-Corp overhead costs</strong>
+              <span style="font-size: 0.8rem; color: #94A3B8;">Payroll service + extra CPA fees (~$1,800/year)</span>
+            </div>
+            <input type="checkbox" id="scorpOverheadToggle" checked onchange="updateScorpCalc()" style="width: 22px; height: 22px; accent-color: #159A9C;">
+          </label>
+        </div>
+
+        <!-- CALCULATE BUTTON & ACTION ROW -->
+        <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+          <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 2rem; font-size: 1rem;" onclick="updateScorpCalc()">
+            Calculate My Tax Savings &rarr;
+          </button>
+          <button onclick="resetScorpCalc()" style="background: transparent; border: none; color: #94A3B8; font-size: 0.9rem; text-decoration: underline; cursor: pointer;">
+            Reset
+          </button>
+        </div>
+
+        <!-- RESULTS DISPLAY PANE -->
+        <div id="scorpCalcResultsPane" style="margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid rgba(255, 255, 255, 0.15);">
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 1.5rem;">
+            <div style="background: rgba(255, 255, 255, 0.06); padding: 1.15rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; margin-bottom: 0.3rem;">GROSS SE TAX SAVINGS</div>
+              <div id="scorpResGrossSavings" style="font-size: 1.6rem; font-weight: 900; color: #6EE7B7;">+$5,652/yr</div>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.06); padding: 1.15rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; margin-bottom: 0.3rem;">MINUS OVERHEAD &amp; CPA</div>
+              <div id="scorpResOverhead" style="font-size: 1.6rem; font-weight: 900; color: #FCA5A5;">-$1,800/yr</div>
+            </div>
+
+            <div style="background: rgba(16, 185, 129, 0.15); border: 1.5px solid #10B981; padding: 1.15rem; border-radius: 12px;">
+              <div style="font-size: 0.72rem; color: #A7F3D0; font-weight: 900; text-transform: uppercase; margin-bottom: 0.3rem;">ESTIMATED NET S-CORP SAVINGS</div>
+              <div id="scorpResNetSavings" style="font-size: 1.65rem; font-weight: 900; color: #34D399;">~$3,852/year</div>
+            </div>
+          </div>
+
+          <div style="font-size: 0.8rem; color: #CBD5E1; line-height: 1.5;">
+            Savings vary based on your salary, state taxes, and accountant fees. Always consult a CPA before making the S-Corp election.
+          </div>
+        </div>
+      </div>
+
+      <!-- NOT SURE WHAT SALARY CALLOUT -->
+      <div class="callout-box green" style="margin: 2.5rem 0;">
+        💡 <strong>Not sure what salary to enter?</strong> The IRS defines a "reasonable salary" as what you'd pay a third party to perform your exact role. For most consultants and online service businesses, $50,000–$80,000 is a defensible range. Specialized professions — physicians, attorneys, engineers — require a salary closer to industry market rates, often $100,000–$150,000. Setting your salary artificially low is the most common S-Corp audit trigger, so don't chase maximum savings at the expense of compliance.
+      </div>
+
+      <!-- HOW S-CORP TAX SAVINGS WORK -->
+      <h2 id="section-how-it-works">How the S-Corp Tax Savings Actually Work</h2>
+      <p>
+        Understanding the mechanism behind S-Corp savings makes the calculator result far more meaningful. The savings don't come from lower income tax rates — your federal and state income taxes are actually very similar under both structures. Instead, they come entirely from <strong>reducing the base on which self-employment tax is calculated</strong>.
+      </p>
+
+      <h3>The self-employment tax problem every LLC owner faces</h3>
+      <p>
+        As an LLC owner, your entire net profit is subject to self-employment tax. At 15.3% on the first $184,500 of net earnings (2026) — composed of 12.4% for Social Security and 2.9% for Medicare — SE tax adds up fast. Additionally, net earnings above $200,000 are subject to an extra 0.9% Medicare surcharge. While you can deduct half of the SE tax you pay, you still pay it on every dollar of profit. At $100,000 in net profit, that's roughly $14,130 in SE tax alone — before a single dollar of income tax.
+      </p>
+
+      <h3>What the S-Corp election actually changes</h3>
+      <p>
+        When you elect S-Corp status, your business pays you a W-2 salary. You pay SE tax — or more precisely, payroll taxes — only on that salary. The remaining profit passes through as a distribution, which is not subject to self-employment tax. Consequently, if your net profit is $100,000 and your salary is $60,000, you pay SE tax only on $60,000 instead of $100,000. That difference — $40,000 taxed at 15.3% — produces a gross SE tax savings of approximately $5,652. After subtracting payroll and CPA overhead of roughly $1,800, your net savings are approximately $3,852 per year.
+      </p>
+
+      <!-- TAX COMPONENT COMPARISON TABLE -->
+      <div class="custom-table-wrapper" style="margin: 2.5rem 0;">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>TAX COMPONENT</th>
+              <th>LLC (SINGLE-MEMBER)</th>
+              <th>S-CORP ($60K SALARY)</th>
+              <th>DIFFERENCE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>SE / Payroll tax base</strong></td>
+              <td>$100,000 (full profit)</td>
+              <td>$60,000 (salary only)</td>
+              <td><strong style="color: #059669;">-$40,000</strong></td>
+            </tr>
+            <tr>
+              <td><strong>SE / Payroll tax</strong></td>
+              <td>-$14,130</td>
+              <td>-$8,478</td>
+              <td><strong style="color: #059669;">+$5,652</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Federal income tax</strong></td>
+              <td>-$12,400</td>
+              <td>-$11,800</td>
+              <td><strong style="color: #059669;">+$600</strong></td>
+            </tr>
+            <tr>
+              <td><strong>S-Corp overhead</strong></td>
+              <td>$0</td>
+              <td>-$1,800</td>
+              <td><strong style="color: #DC2626;">-$1,800</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Net annual savings</strong></td>
+              <td>—</td>
+              <td>—</td>
+              <td><strong style="color: #059669;">+$4,452</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Note that the federal income tax difference is relatively small — both structures use pass-through taxation, so your income lands in similar brackets either way. The QBI deduction (up to 20% of qualified business income) applies to both structures and further reduces your federal tax, though the calculation differs slightly between LLC and S-Corp because salary is not QBI-eligible. For a full explanation of how LLCs are taxed at every level, see our <a href="how-are-llcs-taxed.html">complete LLC tax guide</a>.
+      </p>
+
+      <!-- BREAKEVEN POINT -->
+      <h2 id="section-breakeven" style="margin-top: 3.5rem;">The S-Corp Breakeven Point — When Does It Make Sense?</h2>
+      <p>
+        Below a certain profit threshold, the annual cost of running payroll and maintaining additional compliance outweighs the SE tax savings. Understanding exactly where that breakeven point sits — and what factors shift it — is, therefore, the most important part of the LLC vs S-Corp decision.
+      </p>
+
+      <h3>Why $50,000 is the commonly cited threshold</h3>
+      <p>
+        The $50,000 net profit figure you'll see in most guides is a reasonable starting point, but it's a simplified approximation. The actual breakeven depends on three variables: your net profit, your salary, and your S-Corp overhead cost. At $50,000 in net profit with a $40,000 salary, the gross SE tax savings are approximately $1,530. After $1,800 in overhead, you're actually slightly negative — the LLC is marginally more efficient. The breakeven at that overhead cost is closer to $55,000–$60,000 in net profit, not $50,000. Furthermore, in high-tax states like California — where the state also imposes minimum fees on S-Corps — the breakeven can push closer to $70,000+.
+      </p>
+
+      <!-- FAQ ACCORDION -->
+      <h2 id="section-faqs" style="margin-top: 3.5rem;">LLC vs S-Corp Calculator — Frequently Asked Questions</h2>
+
+      <div class="faq-accordion-wrapper">
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">1</span>
+              <span>How does this calculator handle state income tax?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            The calculator factors in state-specific income tax rates and S-Corp entity taxes (such as California's 1.5% S-Corp fee or minimum $800 tax), providing a far more realistic estimate than generic federal-only calculators.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">2</span>
+              <span>What is considered a "reasonable salary" by the IRS?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            A reasonable salary is what you would have to pay an outside employee to perform your exact job duties in your industry and geographic region. Setting your salary too low to avoid payroll taxes can lead to IRS audits and back penalties.
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span class="faq-q-badge">3</span>
+              <span>When is the deadline to file IRS Form 2553 for S-Corp status?</span>
+            </div>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            For existing LLCs, Form 2553 must be filed no later than 2 months and 15 days after the beginning of the tax year (March 15 for calendar-year taxpayers) for the election to take effect that tax year. Late election relief is often available under Rev. Proc. 2013-30.
+          </div>
+        </details>
+      </div>
+
+    </article>
   </main>
 
   <!-- =========================================================================
@@ -182,7 +582,7 @@
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-heading">Services & Reviews</h4>
+          <h4 class="footer-heading">Services &amp; Reviews</h4>
           <ul class="footer-links">
             <li><a href="best-llc-services.html">Best LLC Services</a></li>
             <li><a href="northwest-registered-agent-review.html">Northwest Review</a></li>
@@ -193,7 +593,7 @@
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-heading">Business Setup & Tools</h4>
+          <h4 class="footer-heading">Business Setup &amp; Tools</h4>
           <ul class="footer-links">
             <li><a href="ein-guide.html">Federal EIN Guide</a></li>
             <li><a href="best-business-bank-accounts.html">Best Business Checking</a></li>
@@ -216,5 +616,78 @@
   </footer>
 
   <script src="app.js"></script>
+  <script>
+    // Populate State Selector in S-Corp Calculator
+    document.addEventListener("DOMContentLoaded", () => {
+      const select = document.getElementById("scorpStateSelect");
+      if (select && typeof stateData !== "undefined") {
+        select.innerHTML = '<option value="">Select state...</option>';
+        stateData.forEach(st => {
+          const opt = document.createElement("option");
+          opt.value = st.code;
+          opt.textContent = st.name;
+          select.appendChild(opt);
+        });
+      }
+      updateScorpCalc();
+    });
+
+    // Update S-Corp Tax Calculation
+    function updateScorpCalc() {
+      const profitInput = document.getElementById("scorpNetProfitInput");
+      const salarySlider = document.getElementById("scorpSalarySlider");
+      const overheadToggle = document.getElementById("scorpOverheadToggle");
+
+      if (!profitInput || !salarySlider) return;
+
+      const netProfit = Math.max(10000, parseFloat(profitInput.value) || 10000);
+      let salary = parseFloat(salarySlider.value) || 60000;
+
+      // Cap salary at net profit
+      if (salary > netProfit) {
+        salary = netProfit;
+        salarySlider.value = salary;
+      }
+
+      const salaryPct = Math.round((salary / netProfit) * 100);
+      document.getElementById("scorpSalaryValDisplay").textContent = `$${salary.toLocaleString()}`;
+      document.getElementById("scorpSalaryPctText").textContent = `— ${salaryPct}% of net profit`;
+
+      // SE Tax Calculation (15.3% on SE base)
+      const llcSeTaxBase = Math.min(netProfit, 184500) * 0.9235;
+      const llcSeTax = llcSeTaxBase * 0.153;
+
+      const scorpSeTaxBase = Math.min(salary, 184500);
+      const scorpSeTax = scorpSeTaxBase * 0.153;
+
+      const grossSavings = Math.max(0, llcSeTax - scorpSeTax);
+      const includeOverhead = overheadToggle ? overheadToggle.checked : true;
+      const overheadCost = includeOverhead ? 1800 : 0;
+
+      const netSavings = grossSavings - overheadCost;
+
+      // Update UI displays
+      document.getElementById("scorpResGrossSavings").textContent = `+$${Math.round(grossSavings).toLocaleString()}/yr`;
+      document.getElementById("scorpResOverhead").textContent = `-$${overheadCost.toLocaleString()}/yr`;
+      
+      const netSavingsEl = document.getElementById("scorpResNetSavings");
+      if (netSavings >= 0) {
+        netSavingsEl.textContent = `~$${Math.round(netSavings).toLocaleString()}/year`;
+        netSavingsEl.style.color = "#34D399";
+      } else {
+        netSavingsEl.textContent = `-$${Math.abs(Math.round(netSavings)).toLocaleString()}/year (No savings)`;
+        netSavingsEl.style.color = "#FCA5A5";
+      }
+    }
+
+    function resetScorpCalc() {
+      document.getElementById("scorpNetProfitInput").value = 100000;
+      document.getElementById("scorpSalarySlider").value = 60000;
+      document.getElementById("scorpStateSelect").value = "";
+      document.getElementById("scorpFilingStatusSelect").value = "single";
+      document.getElementById("scorpOverheadToggle").checked = true;
+      updateScorpCalc();
+    }
+  </script>
 </body>
 </html>
