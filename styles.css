@@ -583,16 +583,21 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
 
 .dropdown-link {
   display: block;
-  padding: 0.6rem 0.85rem;
-  font-size: 0.875rem;
-  color: var(--text-main);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: #12304A;
+  font-family: var(--font-body);
   border-radius: var(--radius-sm);
   white-space: normal;
+  line-height: 1.45;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .dropdown-link:hover {
-  background: rgba(21, 154, 156, 0.1);
-  color: var(--color-primary);
+  background: rgba(21, 154, 156, 0.08);
+  color: #159A9C;
   padding-left: 1.1rem;
 }
 
