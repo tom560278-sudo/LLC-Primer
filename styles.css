@@ -176,6 +176,125 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
   box-sizing: border-box;
 }
 
+/* Standard Table Styling for Guide & Tool Pages */
+.guide-article table, .scorp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid #E2E8F0;
+  box-shadow: 0 4px 16px rgba(18, 48, 74, 0.05);
+  background: #FFFFFF;
+}
+
+.guide-article th, .scorp-table th {
+  background: #12304A;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.825rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 1.15rem;
+  text-align: left;
+  border-bottom: 2px solid #159A9C;
+}
+
+.guide-article td, .scorp-table td {
+  padding: 0.95rem 1.15rem;
+  font-size: 0.925rem;
+  color: #334155;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.guide-article tr:nth-child(even) td, .scorp-table tr:nth-child(even) td {
+  background-color: #F8FAFC;
+}
+
+.guide-article tr:last-child td, .scorp-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Callout Banners */
+.callout-green {
+  background: #ECFDF5;
+  border: 1.5px solid #10B981;
+  border-radius: 14px;
+  padding: 1.15rem 1.5rem;
+  color: #065F46;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin: 1.75rem 0;
+}
+
+.callout-yellow {
+  background: #FEF3C7;
+  border: 1.5px solid #F59E0B;
+  border-radius: 14px;
+  padding: 1.15rem 1.5rem;
+  color: #92400E;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin: 1.75rem 0;
+}
+
+.callout-blue-light {
+  background: #F0FDFA;
+  border: 1.5px solid #99F6E4;
+  border-radius: 14px;
+  padding: 1.15rem 1.5rem;
+  color: #0F766E;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin: 1.75rem 0;
+}
+
+/* Key Takeaways Card */
+.key-takeaways-card {
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  border: 1.5px solid #3B82F6;
+  border-radius: 18px;
+  padding: 1.75rem 2rem;
+  color: #FFFFFF;
+  margin: 2.25rem 0;
+  box-shadow: 0 10px 30px rgba(29, 78, 216, 0.2);
+  line-height: 1.65;
+}
+
+/* Step-by-Step Numbered Timeline List */
+.path-timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.path-timeline-step {
+  display: flex;
+  gap: 1.25rem;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 14px rgba(18, 48, 74, 0.03);
+  align-items: flex-start;
+}
+
+.path-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2563EB;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 .section-padding {
   padding: 2.5rem 0;
 }

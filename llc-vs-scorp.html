@@ -80,20 +80,21 @@
     }
 
     .scorp-input, .scorp-select {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      background: #0D2336 !important;
+      border: 1.5px solid #159A9C !important;
       border-radius: 10px;
       padding: 0.85rem 1rem;
-      color: #FFFFFF;
+      color: #FFFFFF !important;
       font-size: 1rem;
       font-weight: 600;
       outline: none;
       width: 100%;
     }
 
-    .scorp-input:focus, .scorp-select:focus {
-      border-color: #159A9C;
-      background: rgba(255, 255, 255, 0.12);
+    .scorp-select option {
+      background-color: #0D2336 !important;
+      color: #FFFFFF !important;
+      padding: 10px;
     }
 
     .scorp-range-slider {
@@ -136,25 +137,99 @@
       font-family: var(--font-heading);
     }
 
-    .scorp-select {
-      background: #0D2336 !important;
-      color: #FFFFFF !important;
-      border: 1.5px solid #159A9C !important;
-      cursor: pointer;
+    /* Threshold analysis card rows */
+    .threshold-item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.15rem 1.25rem;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      margin-bottom: 0.85rem;
+      box-shadow: 0 2px 8px rgba(18, 48, 74, 0.03);
     }
-    .scorp-select option {
-      background-color: #0D2336 !important;
-      color: #FFFFFF !important;
-      padding: 10px;
+
+    .threshold-badge-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      font-weight: 800;
+    }
+
+    .threshold-badge-red { background: #FEE2E2; color: #DC2626; }
+    .threshold-badge-yellow { background: #FEF3C7; color: #D97706; }
+    .threshold-badge-green { background: #D1FAE5; color: #059669; }
+
+    /* Numbered Path Steps */
+    .path-step-card {
+      display: flex;
+      gap: 1.25rem;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.35rem 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.03);
+      align-items: flex-start;
+    }
+
+    .path-step-num-bubble {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #2563EB;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Shortcut Grid Cards */
+    .sc-grid-6col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+
+    .sc-card-item {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.25rem;
+      text-decoration: none;
+      color: #12304A;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(18, 48, 74, 0.04);
+    }
+
+    .sc-card-item:hover {
+      border-color: #159A9C;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(21, 154, 156, 0.12);
     }
 
     @media (max-width: 768px) {
       .scorp-form-grid { grid-template-columns: 1fr; }
       .benchmarks-grid { grid-template-columns: repeat(2, 1fr); }
       .scorp-calc-card { padding: 1.5rem; }
+      .sc-grid-6col { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 480px) {
       .benchmarks-grid { grid-template-columns: 1fr; }
+      .sc-grid-6col { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -276,7 +351,7 @@
     </div>
 
     <!-- SCOPE BOX -->
-    <div style="background: #F0FDFA; border: 1.5px solid #99F6E4; border-radius: 14px; padding: 1.15rem 1.5rem; color: #0F766E; font-size: 0.9rem; margin-bottom: 2rem;">
+    <div class="callout-blue-light">
       <strong style="color: #115E59;">Scope:</strong> Interactive estimate of potential S-corporation tax savings. For definitions and compliance, read our complete guidance below.
     </div>
 
@@ -353,11 +428,11 @@
           <li><a href="#calc-widget-section">LLC vs S-Corp tax calculator — get your personalized number</a></li>
           <li><a href="#section-how-it-works">How the S-Corp tax savings actually work</a></li>
           <li><a href="#section-breakeven">The S-Corp breakeven point — when does it make sense?</a></li>
-          <li><a href="#section-salary">How to set a reasonable S-Corp salary</a></li>
-          <li><a href="#section-state-math">How your state changes the math</a></li>
+          <li><a href="#section-salary">How to set a reasonable S-Corp salary — the IRS standard</a></li>
+          <li><a href="#section-state-math">How your state changes the LLC vs S-Corp math</a></li>
           <li><a href="#section-overhead">The S-Corp costs most calculators ignore</a></li>
-          <li><a href="#section-examples">Real examples: $75K, $100K, $150K, $250K</a></li>
-          <li><a href="#section-election">How to make the S-Corp election</a></li>
+          <li><a href="#section-examples">Real examples: LLC vs S-Corp at $75K, $100K, $150K, and $250K</a></li>
+          <li><a href="#section-election">How to make the S-Corp election — step by step</a></li>
           <li><a href="#section-faqs">Frequently asked questions</a></li>
         </ol>
       </div>
@@ -456,19 +531,15 @@
               <div id="scorpResNetSavings" style="font-size: 1.65rem; font-weight: 900; color: #34D399;">~$3,852/year</div>
             </div>
           </div>
-
-          <div style="font-size: 0.8rem; color: #CBD5E1; line-height: 1.5;">
-            Savings vary based on your salary, state taxes, and accountant fees. Always consult a CPA before making the S-Corp election.
-          </div>
         </div>
       </div>
 
-      <!-- NOT SURE WHAT SALARY CALLOUT -->
-      <div class="callout-box green" style="margin: 2.5rem 0;">
-        💡 <strong>Not sure what salary to enter?</strong> The IRS defines a "reasonable salary" as what you'd pay a third party to perform your exact role. For most consultants and online service businesses, $50,000–$80,000 is a defensible range. Specialized professions — physicians, attorneys, engineers — require a salary closer to industry market rates, often $100,000–$150,000. Setting your salary artificially low is the most common S-Corp audit trigger, so don't chase maximum savings at the expense of compliance.
+      <!-- GREEN SALARY CALLOUT BOX (FROM IMAGE 1) -->
+      <div class="callout-green">
+        <strong>💡 Not sure what salary to enter?</strong> The IRS defines a "reasonable salary" as what you'd pay a third party to perform your exact role. For most consultants and online service businesses, $50,000 – $80,000 is a defensible range. Specialized professions — physicians, attorneys, engineers — require a salary closer to industry market rates, often $100,000 – $150,000. Setting your salary artificially low is the most common S-Corp audit trigger, so don't chase maximum savings at the expense of compliance.
       </div>
 
-      <!-- HOW S-CORP TAX SAVINGS WORK -->
+      <!-- SECTION: HOW THE S-CORP TAX SAVINGS ACTUALLY WORK -->
       <h2 id="section-how-it-works">How the S-Corp Tax Savings Actually Work</h2>
       <p>
         Understanding the mechanism behind S-Corp savings makes the calculator result far more meaningful. The savings don't come from lower income tax rates — your federal and state income taxes are actually very similar under both structures. Instead, they come entirely from <strong>reducing the base on which self-employment tax is calculated</strong>.
@@ -484,107 +555,646 @@
         When you elect S-Corp status, your business pays you a W-2 salary. You pay SE tax — or more precisely, payroll taxes — only on that salary. The remaining profit passes through as a distribution, which is not subject to self-employment tax. Consequently, if your net profit is $100,000 and your salary is $60,000, you pay SE tax only on $60,000 instead of $100,000. That difference — $40,000 taxed at 15.3% — produces a gross SE tax savings of approximately $5,652. After subtracting payroll and CPA overhead of roughly $1,800, your net savings are approximately $3,852 per year.
       </p>
 
-      <!-- TAX COMPONENT COMPARISON TABLE -->
-      <div class="custom-table-wrapper" style="margin: 2.5rem 0;">
-        <table class="custom-table">
-          <thead>
-            <tr>
-              <th>TAX COMPONENT</th>
-              <th>LLC (SINGLE-MEMBER)</th>
-              <th>S-CORP ($60K SALARY)</th>
-              <th>DIFFERENCE</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>SE / Payroll tax base</strong></td>
-              <td>$100,000 (full profit)</td>
-              <td>$60,000 (salary only)</td>
-              <td><strong style="color: #059669;">-$40,000</strong></td>
-            </tr>
-            <tr>
-              <td><strong>SE / Payroll tax</strong></td>
-              <td>-$14,130</td>
-              <td>-$8,478</td>
-              <td><strong style="color: #059669;">+$5,652</strong></td>
-            </tr>
-            <tr>
-              <td><strong>Federal income tax</strong></td>
-              <td>-$12,400</td>
-              <td>-$11,800</td>
-              <td><strong style="color: #059669;">+$600</strong></td>
-            </tr>
-            <tr>
-              <td><strong>S-Corp overhead</strong></td>
-              <td>$0</td>
-              <td>-$1,800</td>
-              <td><strong style="color: #DC2626;">-$1,800</strong></td>
-            </tr>
-            <tr>
-              <td><strong>Net annual savings</strong></td>
-              <td>—</td>
-              <td>—</td>
-              <td><strong style="color: #059669;">+$4,452</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- TABLE 1: SE & TAX COMPARISON (FROM IMAGE 1) -->
+      <table class="scorp-table">
+        <thead>
+          <tr>
+            <th>TAX COMPONENT</th>
+            <th>LLC (SINGLE-MEMBER)</th>
+            <th>S-CORP ($60K SALARY)</th>
+            <th>DIFFERENCE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SE / Payroll tax base</strong></td>
+            <td>$100,000 (full profit)</td>
+            <td>$60,000 (salary only)</td>
+            <td><strong style="color: #059669;">-$40,000</strong></td>
+          </tr>
+          <tr>
+            <td><strong>SE / Payroll tax</strong></td>
+            <td>~$14,130</td>
+            <td>~$8,478</td>
+            <td><strong style="color: #059669;">-$5,652</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Federal income tax</strong></td>
+            <td>~$12,400</td>
+            <td>~$11,800</td>
+            <td><strong style="color: #059669;">-$600</strong></td>
+          </tr>
+          <tr>
+            <td><strong>S-Corp overhead</strong></td>
+            <td>$0</td>
+            <td>~$1,800</td>
+            <td><strong style="color: #DC2626;">+$1,800</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Net annual savings</strong></td>
+            <td>—</td>
+            <td>—</td>
+            <td><strong style="color: #059669; font-size: 1.05rem;">~$4,452</strong></td>
+          </tr>
+        </tbody>
+      </table>
 
-      <p>
+      <p style="font-size: 0.95rem; color: #64748B;">
         Note that the federal income tax difference is relatively small — both structures use pass-through taxation, so your income lands in similar brackets either way. The QBI deduction (up to 20% of qualified business income) applies to both structures and further reduces your federal tax, though the calculation differs slightly between LLC and S-Corp because salary is not QBI-eligible. For a full explanation of how LLCs are taxed at every level, see our <a href="how-are-llcs-taxed.html">complete LLC tax guide</a>.
       </p>
 
-      <!-- BREAKEVEN POINT -->
-      <h2 id="section-breakeven" style="margin-top: 3.5rem;">The S-Corp Breakeven Point — When Does It Make Sense?</h2>
+      <!-- SECTION: THE S-CORP BREAKEVEN POINT -->
+      <h2 id="section-breakeven">The S-Corp Breakeven Point — When Does It Make Sense?</h2>
       <p>
         Below a certain profit threshold, the annual cost of running payroll and maintaining additional compliance outweighs the SE tax savings. Understanding exactly where that breakeven point sits — and what factors shift it — is, therefore, the most important part of the LLC vs S-Corp decision.
       </p>
 
       <h3>Why $50,000 is the commonly cited threshold</h3>
       <p>
-        The $50,000 net profit figure you'll see in most guides is a reasonable starting point, but it's a simplified approximation. The actual breakeven depends on three variables: your net profit, your salary, and your S-Corp overhead cost. At $50,000 in net profit with a $40,000 salary, the gross SE tax savings are approximately $1,530. After $1,800 in overhead, you're actually slightly negative — the LLC is marginally more efficient. The breakeven at that overhead cost is closer to $55,000–$60,000 in net profit, not $50,000. Furthermore, in high-tax states like California — where the state also imposes minimum fees on S-Corps — the breakeven can push closer to $70,000+.
+        The $50,000 net profit figure you'll see in most guides is a reasonable starting point, but it's a simplified approximation. The actual breakeven depends on three variables: your net profit, your salary, and your S-Corp overhead cost. At $50,000 in net profit with a $40,000 salary, the gross SE tax savings are approximately $1,530. After $1,800 in overhead, you're actually slightly negative — the LLC is marginally more efficient. The breakeven at that overhead cost is closer to $55,000–$60,000 in net profit, not $50,000. Furthermore, in high-tax states like California — where the state also imposes minimum fees on S-Corps — the breakeven can push closer to $80,000.
       </p>
 
-      <!-- FAQ ACCORDION -->
-      <h2 id="section-faqs" style="margin-top: 3.5rem;">LLC vs S-Corp Calculator — Frequently Asked Questions</h2>
+      <h3>Four profit levels and what the math says at each</h3>
+
+      <!-- BREAKEVEN THRESHOLDS CARD (FROM IMAGE 2) -->
+      <div style="background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 18px; padding: 1.75rem; margin: 1.75rem 0; box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);">
+        <div style="font-size: 0.85rem; font-weight: 800; color: #12304A; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">
+          S-Corp breakeven analysis — key thresholds
+        </div>
+
+        <div class="threshold-item-row">
+          <div class="threshold-badge-icon threshold-badge-red">✕</div>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">Under $40,000 net profit — LLC wins clearly</strong>
+            <span style="font-size: 0.875rem; color: #475569; line-height: 1.5; display: block;">
+              SE tax savings are under $900/year. After $1,800 in overhead, the S-Corp costs more than the LLC. Stay as an LLC and focus on growing revenue — the election can be made at any time in a future tax year.
+            </span>
+          </div>
+        </div>
+
+        <div class="threshold-item-row">
+          <div class="threshold-badge-icon threshold-badge-yellow">-</div>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">$40,000–$60,000 net profit — marginal, evaluate carefully</strong>
+            <span style="font-size: 0.875rem; color: #475569; line-height: 1.5; display: block;">
+              This is the gray zone. Gross SE savings are $1,500 – $3,000, but overhead typically erases most of the benefit. The decision depends heavily on your state, your salary, and whether you can negotiate a lower payroll service cost.
+            </span>
+          </div>
+        </div>
+
+        <div class="threshold-item-row">
+          <div class="threshold-badge-icon threshold-badge-green">✓</div>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">$60,000–$150,000 net profit — S-Corp makes clear sense</strong>
+            <span style="font-size: 0.875rem; color: #475569; line-height: 1.5; display: block;">
+              This is the sweet spot where the S-Corp election delivers real, consistent value with manageable compliance requirements. Use the calculator above to confirm your specific number.
+            </span>
+          </div>
+        </div>
+
+        <div class="threshold-item-row" style="margin-bottom: 0;">
+          <div class="threshold-badge-icon threshold-badge-green">✓</div>
+          <div>
+            <strong style="color: #12304A; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">Over $150,000 net profit — S-Corp saves significantly</strong>
+            <span style="font-size: 0.875rem; color: #475569; line-height: 1.5; display: block;">
+              Above $184,500 (the Social Security wage base), the SE tax on LLC distributions is only the 2.9% Medicare rate — which means the incremental savings from S-Corp status diminish on the highest income portion. However, total savings at this level are typically $8,000 – $15,000/year — substantial regardless of overhead costs.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: REASONABLE SALARY -->
+      <h2 id="section-salary">How to Set a Reasonable S-Corp Salary — The IRS Standard</h2>
+      <p>
+        Your S-Corp salary is the most consequential variable in the LLC vs S-Corp calculator — and it's the one the IRS pays the most attention to. Setting it too low is the primary audit risk with S-Corp status. Chasing maximum savings by setting it too high, however, unnecessarily shrinks your net benefit. Understanding the IRS standard gives you a defensible number that maximizes savings without creating compliance exposure.
+      </p>
+
+      <h3>What "reasonable compensation" actually means</h3>
+      <p>
+        The IRS defines reasonable compensation as the salary you would pay a non-owner employee to perform the same services. Specifically, it considers your industry, the nature of your work, your hours, your comparable market rate, and your company's revenue. There is no fixed formula or safe harbor — the IRS evaluates it based on facts and circumstances. However, several court cases have established practical benchmarks: in <em>Watson v. Commissioner</em> (2012), the Tax Court ruled that a CPA earning $200,000+ in distributions while paying himself $24,000 in salary was clearly unreasonable. Consequently, most tax professionals recommend setting your salary between 40% and 60% of net profit as a starting point, then validating it against salary surveys for your role.
+      </p>
+
+      <h3>Salary benchmarks by profession</h3>
+
+      <!-- TABLE 2: SALARY BENCHMARKS TABLE (FROM IMAGE 2) -->
+      <table class="scorp-table">
+        <thead>
+          <tr>
+            <th>PROFESSION / BUSINESS TYPE</th>
+            <th>TYPICAL REASONABLE SALARY RANGE</th>
+            <th>NOTES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Freelance designer / developer</strong></td>
+            <td>$55,000 – $85,000</td>
+            <td>Based on BLS median for role</td>
+          </tr>
+          <tr>
+            <td><strong>Online consultant / coach</strong></td>
+            <td>$50,000 – $80,000</td>
+            <td>Depends on specialty and hours</td>
+          </tr>
+          <tr>
+            <td><strong>Real estate investor / agent</strong></td>
+            <td>$40,000 – $70,000</td>
+            <td>Lower if passive income portion is high</td>
+          </tr>
+          <tr>
+            <td><strong>Licensed CPA (own firm)</strong></td>
+            <td>$80,000 – $130,000</td>
+            <td>IRS scrutinizes licensed professionals closely</td>
+          </tr>
+          <tr>
+            <td><strong>Physician / dentist</strong></td>
+            <td>$150,000 – $250,000</td>
+            <td>High IRS scrutiny — salary must match market</td>
+          </tr>
+          <tr>
+            <td><strong>E-commerce / Amazon seller</strong></td>
+            <td>$45,000 – $75,000</td>
+            <td>Consider separating owner-operator from passive income</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- YELLOW CALLOUT (FROM IMAGE 2) -->
+      <div class="callout-yellow">
+        <strong>⚠️ The IRS uses BLS salary data to benchmark your compensation:</strong> The Bureau of Labor Statistics Occupational Employment Statistics database is one of the primary tools IRS auditors use to evaluate S-Corp salaries. Before filing your first S-Corp return, verify that your salary falls within the BLS range for your occupation and document your rationale. A one-page memo from your CPA explaining the salary determination is inexpensive insurance against an audit adjustment.
+      </div>
+
+      <!-- SECTION: STATE MATH -->
+      <h2 id="section-state-math">How Your State Changes the LLC vs S-Corp Math</h2>
+      <p>
+        Federal SE tax savings are the same regardless of where you live. However, your state's treatment of LLCs and S-Corps can significantly shift the net savings in either direction — sometimes making the S-Corp election clearly superior, and occasionally making it worse than staying as an LLC.
+      </p>
+
+      <h3>States where S-Corp savings are highest</h3>
+      <p>
+        States with high income tax rates but no additional S-Corp-specific fees benefit the most from the S-Corp structure. In California, the 9.3% state income tax on middle-bracket income means that every dollar shifted from SE income to distribution also saves state tax, amplifying the federal savings. Similarly, Oregon (9.9%), Minnesota (9.85%), and New Jersey (6.37%) all produce meaningful additional savings on top of the federal SE tax reduction.
+      </p>
+
+      <h3>States where the S-Corp math is less favorable</h3>
+      <p>
+        While California's state income tax amplifies federal S-Corp savings, the state also imposes an $800 minimum franchise tax on S-Corps and LLCs alike, plus a 1.5% S-Corp net income tax on top of personal income tax. Consequently, the net California S-Corp advantage is significantly lower than the federal calculation alone suggests. New York City similarly imposes a general corporation tax on S-Corps that doesn't apply to LLCs, making the LLC more attractive for NYC-based business owners at certain income levels.
+      </p>
+
+      <!-- BLUE INFO CALLOUT (FROM IMAGE 3) -->
+      <div class="callout-blue-light">
+        <strong>ℹ️ Zero-income-tax states: the math is simpler:</strong> In states with no income tax — Texas, Florida, Nevada, Washington, Wyoming, South Dakota, and Alaska — the S-Corp savings calculation is purely federal. There are no additional state-level complications, no minimum S-Corp fees beyond the standard LLC annual report, and no state-level income tax amplification. In these states, the breakeven point is typically $55,000–$65,000 in net profit.
+      </div>
+
+      <!-- SECTION: OVERHEAD COSTS -->
+      <h2 id="section-overhead">The S-Corp Costs Most Calculators Ignore</h2>
+      <p>
+        Gross SE tax savings are not the same as net savings — yet most <strong>S Corp vs LLC calculators</strong> treat them as identical. In reality, electing S-Corp status adds real, recurring annual costs that must be netted against the savings before the comparison is honest.
+      </p>
+
+      <h3>What S-Corp overhead actually costs in practice</h3>
+
+      <!-- OVERHEAD BREAKDOWN CARD WIDGET (FROM IMAGE 3) -->
+      <div style="background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 18px; overflow: hidden; margin: 1.75rem 0; box-shadow: 0 4px 16px rgba(18, 48, 74, 0.05);">
+        <div style="background: #12304A; color: #FFFFFF; padding: 1.15rem 1.5rem; font-family: var(--font-heading); font-size: 1rem; font-weight: 800; display: flex; align-items: center; gap: 0.6rem;">
+          <span>💸 Typical S-Corp Annual Overhead — Full Breakdown</span>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 0; border: none; box-shadow: none;">
+          <tbody>
+            <tr>
+              <td style="padding: 1rem 1.25rem; font-size: 0.925rem; color: #334155; border-bottom: 1px solid #E2E8F0;">
+                📄 <strong>Payroll service</strong> (Gusto, QuickBooks Payroll, etc.)
+              </td>
+              <td style="padding: 1rem 1.25rem; font-size: 0.95rem; font-weight: 800; color: #12304A; text-align: right; border-bottom: 1px solid #E2E8F0;">
+                $500 – $900 / year
+              </td>
+            </tr>
+            <tr style="background-color: #F8FAFC;">
+              <td style="padding: 1rem 1.25rem; font-size: 0.925rem; color: #334155; border-bottom: 1px solid #E2E8F0;">
+                📑 <strong>Additional CPA time</strong> (Form 1120-S + payroll filings)
+              </td>
+              <td style="padding: 1rem 1.25rem; font-size: 0.95rem; font-weight: 800; color: #12304A; text-align: right; border-bottom: 1px solid #E2E8F0;">
+                $500 – $1,500 / year
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem 1.25rem; font-size: 0.925rem; color: #334155; border-bottom: 1px solid #E2E8F0;">
+                📊 <strong>Quarterly payroll tax deposits</strong> (940/941)
+              </td>
+              <td style="padding: 1rem 1.25rem; font-size: 0.95rem; font-weight: 800; color: #64748B; text-align: right; border-bottom: 1px solid #E2E8F0;">
+                Time cost only
+              </td>
+            </tr>
+            <tr style="background-color: #F8FAFC;">
+              <td style="padding: 1rem 1.25rem; font-size: 0.925rem; color: #334155; border-bottom: 1px solid #E2E8F0;">
+                🏛️ <strong>State S-Corp registration / franchise fees</strong> (if applicable)
+              </td>
+              <td style="padding: 1rem 1.25rem; font-size: 0.95rem; font-weight: 800; color: #12304A; text-align: right; border-bottom: 1px solid #E2E8F0;">
+                $0 – $800 / year
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem 1.25rem; font-size: 0.925rem; color: #334155; border-bottom: 1px solid #E2E8F0;">
+                📝 <strong>Form 2553 S-Corp election</strong> (one-time, IRS fee)
+              </td>
+              <td style="padding: 1rem 1.25rem; font-size: 0.95rem; font-weight: 800; color: #059669; text-align: right; border-bottom: 1px solid #E2E8F0;">
+                $0 (free)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="background: #F1F5F9; padding: 1.15rem 1.5rem; display: flex; align-items: center; justify-content: space-between; border-top: 2px solid #E2E8F0;">
+          <strong style="color: #12304A; font-size: 1rem;">Total typical annual overhead</strong>
+          <span style="font-size: 1.25rem; font-weight: 900; color: #2563EB; font-family: var(--font-heading);">$1,000 – $3,200 / year</span>
+        </div>
+        <div style="padding: 0.75rem 1.5rem; font-size: 0.78rem; color: #64748B; background: #F8FAFC;">
+          *The calculator uses $1,800/year as a reasonable middle estimate. You can toggle this off to see gross savings before overhead.
+        </div>
+      </div>
+
+      <h3>How to reduce S-Corp overhead costs</h3>
+      <p>
+        Overhead is not fixed — there's meaningful room to optimize it. Specifically, using a modern payroll service like Gusto or Wave Payroll at $40–$75/month instead of a full-service payroll bureau cuts costs by $300–$600/year. Additionally, if your CPA already handles your LLC taxes, the marginal cost of upgrading to Form 1120-S is typically $300–$600 rather than a full additional engagement. Therefore, business owners who are already working with a CPA and use a lean payroll tool can often bring total S-Corp overhead below $1,200/year, improving the net savings materially.
+      </p>
+
+      <!-- SECTION: REAL EXAMPLES -->
+      <h2 id="section-examples">Real Examples — LLC vs S-Corp at $75K, $100K, $150K, and $250K</h2>
+      <p>
+        The following examples use the same methodology as the calculator above: 2026 tax rates, single filing status, $60,000 salary (except the $250K example), Texas as a zero-income-tax benchmark state, and $1,800 in S-Corp overhead included.
+      </p>
+
+      <h3>Examples at typical small business income levels</h3>
+
+      <!-- TABLE 3: INCOME EXAMPLES TABLE (FROM IMAGES 3 & 4) -->
+      <table class="scorp-table">
+        <thead>
+          <tr>
+            <th>NET PROFIT</th>
+            <th>SALARY USED</th>
+            <th>LLC TOTAL TAX</th>
+            <th>S-CORP TOTAL TAX</th>
+            <th>GROSS SAVINGS</th>
+            <th>NET SAVINGS</th>
+            <th>VERDICT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>$75,000</strong></td>
+            <td>$50,000</td>
+            <td>~$18,900</td>
+            <td>~$17,200</td>
+            <td>+$1,700</td>
+            <td><strong style="color: #DC2626;">-$100</strong></td>
+            <td><span style="color: #D97706; font-weight: 700;">⚠️ Marginal</span></td>
+          </tr>
+          <tr>
+            <td><strong>$100,000</strong></td>
+            <td>$60,000</td>
+            <td>~$26,500</td>
+            <td>~$22,200</td>
+            <td>+$4,300</td>
+            <td><strong style="color: #059669;">+$2,500</strong></td>
+            <td><span style="color: #059669; font-weight: 700;">✓ Worth it</span></td>
+          </tr>
+          <tr>
+            <td><strong>$150,000</strong></td>
+            <td>$75,000</td>
+            <td>~$40,100</td>
+            <td>~$33,000</td>
+            <td>+$7,100</td>
+            <td><strong style="color: #059669;">+$5,300</strong></td>
+            <td><span style="color: #059669; font-weight: 700;">✓ Clear win</span></td>
+          </tr>
+          <tr>
+            <td><strong>$250,000</strong></td>
+            <td>$90,000</td>
+            <td>~$68,500</td>
+            <td>~$58,400</td>
+            <td>+$10,100</td>
+            <td><strong style="color: #059669;">+$8,300</strong></td>
+            <td><span style="color: #059669; font-weight: 700;">✓ Strong case</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size: 0.95rem; color: #64748B;">
+        These are illustrative estimates — your actual numbers will differ based on your state, filing status, deductions, and salary. Use the <strong>tax calculator LLC vs S Corp</strong> above with your real inputs for a personalized figure. Additionally, note that the $75K example is marginal specifically at a $50K salary in a no-tax state — in a high-tax state like California or New York, the same $75K earner would see meaningfully positive net savings due to state income tax amplification.
+      </p>
+
+      <h3>The 5-year and 10-year perspective</h3>
+      <p>
+        Because the S-Corp overhead is relatively fixed, the benefit compounds significantly over time. Notably, a business owner saving $4,000/year net keeps an extra $20,000 over five years and $40,000 over ten years — entirely from one IRS form. Furthermore, as your revenue grows, the savings increase proportionally while overhead stays roughly flat. This means an owner who makes the S-Corp election at $100,000 and grows to $200,000 over five years sees an accelerating return on the same administrative investment.
+      </p>
+
+      <!-- SECTION: HOW TO MAKE THE S-CORP ELECTION -->
+      <h2 id="section-election">How to Make the S-Corp Election — Step by Step</h2>
+      <p>
+        If the calculator confirms that S-Corp status is worth it for your situation, the actual election process is straightforward. There are two paths depending on whether you already have an LLC or are forming a new entity.
+      </p>
+
+      <h3>Path 1 — LLC electing S-Corp tax status (most common)</h3>
+
+      <!-- 5 STEP NUMBERED PATH CARDS (FROM IMAGE 4) -->
+      <div style="margin: 1.5rem 0 2.5rem 0;">
+        <div class="path-step-card">
+          <div class="path-step-num-bubble">1</div>
+          <div>
+            <strong style="color: #12304A; font-size: 1rem; display: block; margin-bottom: 0.35rem;">Confirm S-Corp eligibility for your LLC</strong>
+            <span style="font-size: 0.9rem; color: #475569; line-height: 1.6; display: block;">
+              Your LLC must have fewer than 100 members, all members must be U.S. citizens or permanent residents, and your LLC must have a single class of membership interest. Additionally, certain types of businesses — financial institutions, insurance companies, and international sales corporations — are ineligible for S-Corp status.
+            </span>
+          </div>
+        </div>
+
+        <div class="path-step-card">
+          <div class="path-step-num-bubble">2</div>
+          <div>
+            <strong style="color: #12304A; font-size: 1rem; display: block; margin-bottom: 0.35rem;">File Form 2553 with the IRS</strong>
+            <span style="font-size: 0.9rem; color: #475569; line-height: 1.6; display: block;">
+              Form 2553 is the Election by a Small Business Corporation form. It's free to file and can be submitted online, by mail, or by fax. To apply the election to the current tax year, you must file by March 15 of that year (or within 75 days of formation for a new entity). For the following tax year, you can file at any point before December 31.
+            </span>
+          </div>
+        </div>
+
+        <div class="path-step-card">
+          <div class="path-step-num-bubble">3</div>
+          <div>
+            <strong style="color: #12304A; font-size: 1rem; display: block; margin-bottom: 0.35rem;">Set up payroll before your first paycheck</strong>
+            <span style="font-size: 0.9rem; color: #475569; line-height: 1.6; display: block;">
+              Once the S-Corp election is active, you must pay yourself a W-2 salary — not just take distributions. Set up a payroll service like Gusto or QuickBooks Payroll, establish your salary amount, and begin running payroll. Payroll taxes (Form 941) must be deposited quarterly at a minimum.
+            </span>
+          </div>
+        </div>
+
+        <div class="path-step-card">
+          <div class="path-step-num-bubble">4</div>
+          <div>
+            <strong style="color: #12304A; font-size: 1rem; display: block; margin-bottom: 0.35rem;">File Form 1120-S annually instead of Schedule C</strong>
+            <span style="font-size: 0.9rem; color: #475569; line-height: 1.6; display: block;">
+              S-Corps file a separate corporate tax return — Form 1120-S — in addition to your personal return. Your CPA will prepare a Schedule K-1 that flows your share of S-Corp income to your personal Form 1040. This is the main reason S-Corp accounting costs more than LLC accounting.
+            </span>
+          </div>
+        </div>
+
+        <div class="path-step-card" style="margin-bottom: 0;">
+          <div class="path-step-num-bubble">5</div>
+          <div>
+            <strong style="color: #12304A; font-size: 1rem; display: block; margin-bottom: 0.35rem;">Update your operating agreement and bank account</strong>
+            <span style="font-size: 0.9rem; color: #475569; line-height: 1.6; display: block;">
+              Notify your bank of the S-Corp election, update your operating agreement or corporate bylaws to reflect the tax status change, and confirm that your registered agent is aware of the new filing obligations. See our <a href="operating-agreement.html">operating agreement guide</a> for required provisions.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <h3>Path 2 — Form a new S-Corp or convert from scratch</h3>
+      <p>
+        If you're starting fresh, you can form a corporation (not an LLC) and simultaneously elect S-Corp status by filing Form 2553 within 75 days of incorporation. Alternatively, you can form an LLC and make the S-Corp election at the same time. Either way, the most efficient path for most small business owners is a formation service that handles both steps together. <a href="best-llc-services.html">ZenBusiness</a> includes S-Corp election support in their formation packages and handles the Form 2553 filing on your behalf.
+      </p>
+
+      <!-- RECOMMENDATION CARDS (FROM IMAGE 4) -->
+      <div style="display: flex; flex-direction: column; gap: 1.25rem; margin: 1.75rem 0 2.5rem 0;">
+        <!-- CARD 1: ZENBUSINESS TOP PICK -->
+        <div style="background: #F0FDF4; border: 2px solid #10B981; border-radius: 16px; padding: 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.08);">
+          <div style="flex: 1; min-width: 280px;">
+            <span style="font-size: 0.72rem; font-weight: 800; color: #047857; text-transform: uppercase; letter-spacing: 0.06em; background: #D1FAE5; padding: 0.25rem 0.65rem; border-radius: 6px; display: inline-block; margin-bottom: 0.5rem;">★ OUR TOP PICK</span>
+            <h4 style="font-size: 1.2rem; color: #12304A; margin: 0 0 0.5rem 0; font-family: var(--font-heading);">Best for S-Corp Election: ZenBusiness</h4>
+            <p style="font-size: 0.875rem; color: #334155; margin: 0 0 0.75rem 0; line-height: 1.5;">
+              Their platform handles LLC formation, registered agent service, and S-Corp election (Form 2553) in one place. Their compliance dashboard tracks your annual report deadlines and payroll obligations, and their support team can walk you through the election process step by step. Rated 4.8/5 across 12,000+ reviews.
+            </p>
+            <div style="font-size: 0.8rem; font-weight: 700; color: #059669;">
+              From $0 + state fee &middot; S-Corp election service included &middot; Compliance dashboard
+            </div>
+          </div>
+          <div>
+            <a href="best-llc-services.html" class="ls-btn ls-btn--emerald" style="background: #059669; color: #FFFFFF; font-weight: 800; padding: 0.85rem 1.6rem; text-decoration: none; border-radius: 10px; display: inline-block;">
+              View ZenBusiness &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 2: NORTHWEST SECOND PICK -->
+        <div style="background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+          <div style="flex: 1; min-width: 280px;">
+            <h4 style="font-size: 1.15rem; color: #12304A; margin: 0 0 0.5rem 0; font-family: var(--font-heading);">Northwest Registered Agent — Best to Start with an LLC First</h4>
+            <p style="font-size: 0.875rem; color: #475569; margin: 0 0 0.75rem 0; line-height: 1.5;">
+              If your calculator result is in the marginal zone and you want to form an LLC now while waiting to evaluate the S-Corp election, Northwest forms your LLC for $39 plus the state fee — the lowest flat price in the industry. They include a registered agent address, privacy protection, and lifetime support with no hidden upsells.
+            </p>
+            <div style="font-size: 0.8rem; font-weight: 700; color: #159A9C;">
+              ★ $39 + state fee &middot; Registered agent included &middot; Privacy-first policy
+            </div>
+          </div>
+          <div>
+            <a href="northwest-registered-agent-review.html" class="ls-btn" style="background: #2563EB; color: #FFFFFF; font-weight: 800; padding: 0.85rem 1.6rem; text-decoration: none; border-radius: 10px; display: inline-block;">
+              Form Your LLC &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELATED TOOLS & SHORTCUT GRID (FROM IMAGE 4) -->
+      <h2>Related tools and deep-dive guides</h2>
+      <div style="font-size: 0.75rem; font-weight: 800; color: #64748B; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem;">
+        🔍 CONTINUE YOUR RESEARCH
+      </div>
+
+      <div class="sc-grid-6col">
+        <a href="llc-vs-scorp.html" class="sc-card-item">
+          <div>
+            <div style="font-size: 1.25rem; margin-bottom: 0.35rem;">🏷️</div>
+            <strong style="font-size: 0.95rem; font-family: var(--font-heading);">LLC vs S-Corp</strong>
+            <p style="font-size: 0.8rem; color: #64748B; margin: 0.25rem 0 0 0;">Full structural comparison</p>
+          </div>
+          <span style="font-size: 0.75rem; color: #159A9C; font-weight: 700; margin-top: 0.85rem;">Beyond the tax math &rarr;</span>
+        </a>
+
+        <a href="how-are-llcs-taxed.html" class="sc-card-item">
+          <div>
+            <div style="font-size: 1.25rem; margin-bottom: 0.35rem;">🏛️</div>
+            <strong style="font-size: 0.95rem; font-family: var(--font-heading);">LLC Taxes</strong>
+            <p style="font-size: 0.8rem; color: #64748B; margin: 0.25rem 0 0 0;">All tax obligations explained</p>
+          </div>
+          <span style="font-size: 0.75rem; color: #159A9C; font-weight: 700; margin-top: 0.85rem;">Federal + state guide &rarr;</span>
+        </a>
+
+        <a href="how-are-llcs-taxed.html" class="sc-card-item">
+          <div>
+            <div style="font-size: 1.25rem; margin-bottom: 0.35rem;">💰</div>
+            <strong style="font-size: 0.95rem; font-family: var(--font-heading);">LLC Tax Benefits</strong>
+            <p style="font-size: 0.8rem; color: #64748B; margin: 0.25rem 0 0 0;">Deductions + savings strategies</p>
+          </div>
+          <span style="font-size: 0.75rem; color: #159A9C; font-weight: 700; margin-top: 0.85rem;">Beyond SE tax &rarr;</span>
+        </a>
+
+        <a href="quiz.html" class="sc-card-item">
+          <div>
+            <div style="font-size: 1.25rem; margin-bottom: 0.35rem;">📑</div>
+            <strong style="font-size: 0.95rem; font-family: var(--font-heading);">Structure Quiz</strong>
+            <p style="font-size: 0.8rem; color: #64748B; margin: 0.25rem 0 0 0;">LLC - S-Corp - Sole Prop - C-Corp</p>
+          </div>
+          <span style="font-size: 0.75rem; color: #159A9C; font-weight: 700; margin-top: 0.85rem;">6-question recommendation &rarr;</span>
+        </a>
+
+        <a href="llc-cost-calculator.html" class="sc-card-item">
+          <div>
+            <div style="font-size: 1.25rem; margin-bottom: 0.35rem;">🧮</div>
+            <strong style="font-size: 0.95rem; font-family: var(--font-heading);">LLC Cost Calculator</strong>
+            <p style="font-size: 0.8rem; color: #64748B; margin: 0.25rem 0 0 0;">Formation cost by state</p>
+          </div>
+          <span style="font-size: 0.75rem; color: #159A9C; font-weight: 700; margin-top: 0.85rem;">All 50 states &rarr;</span>
+        </a>
+
+        <a href="best-llc-services.html" class="sc-card-item">
+          <div>
+            <div style="font-size: 1.25rem; margin-bottom: 0.35rem;">🏆</div>
+            <strong style="font-size: 0.95rem; font-family: var(--font-heading);">Best LLC Services</strong>
+            <p style="font-size: 0.8rem; color: #64748B; margin: 0.25rem 0 0 0;">Ranked + reviewed 2026</p>
+          </div>
+          <span style="font-size: 0.75rem; color: #159A9C; font-weight: 700; margin-top: 0.85rem;">Side-by-side comparison &rarr;</span>
+        </a>
+      </div>
+
+      <!-- KEY TAKEAWAY BOX (FROM IMAGE 4) -->
+      <div class="key-takeaways-card">
+        <div style="font-size: 0.8rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #93C5FD; margin-bottom: 0.65rem;">
+          🔑 KEY TAKEAWAY
+        </div>
+        <p style="margin: 0; font-size: 0.975rem; color: #FFFFFF; line-height: 1.65;">
+          The S-Corp election saves money by reducing the base on which self-employment tax is calculated — not by changing your income tax rate. At <strong>under $50,000</strong> in net profit, the LLC is almost always more efficient. Between <strong>$50,000 and $80,000</strong> in net profit, the answer depends on your state, salary, and overhead costs — use the calculator to confirm. Above <strong>$80,000</strong>, the S-Corp election typically produces clear, consistent net savings of $3,000–$10,000+ per year. The election is made via <strong>IRS Form 2553</strong> and can be done at any time for the following tax year. Use <a href="best-llc-services.html" style="color: #93C5FD; text-decoration: underline;">ZenBusiness</a> if you want the election handled for you, or start with an <a href="northwest-registered-agent-review.html" style="color: #93C5FD; text-decoration: underline;">LLC via Northwest</a> and elect S-Corp status once your profit crosses your personal breakeven threshold.
+        </p>
+      </div>
+
+      <!-- CATEGORIZED FAQS (FROM IMAGES 4 & 5) -->
+      <h2 id="section-faqs">Frequently Asked Questions — LLC vs S-Corp Tax Calculator</h2>
+      
+      <div class="faq-accordion-wrapper">
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span>How accurate is this LLC vs S-Corp tax calculator?</span>
+            </div>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            <p>
+              This calculator uses official 2026 IRS tax brackets, self-employment tax rates (15.3%), Medicare surcharges, state income tax rates, QBI deduction models, and realistic administrative overhead estimates. While it provides a highly accurate diagnostic estimate, actual tax liabilities depend on itemized deductions, local taxes, retirement contributions, and CPA guidance.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span>What net profit level should I consider S-Corp status?</span>
+            </div>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            <p>
+              Most businesses begin seeing meaningful net savings above $50,000 to $60,000 in net profit. Below $40,000 in net profit, S-Corp payroll setup and tax return preparation costs usually exceed self-employment tax savings.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Salary, overhead, and how the election works</h3>
+      
+      <div class="faq-accordion-wrapper">
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span>How do I determine my reasonable S-Corp salary?</span>
+            </div>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            <p>
+              The IRS requires S-Corp owner-employees to pay themselves a "reasonable salary" based on market rates for similar work. Benchmarks can be obtained from Bureau of Labor Statistics (BLS) data, industry salary surveys, or guidance from your CPA.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span>Can a single-member LLC elect S-Corp status?</span>
+            </div>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            <p>
+              Yes. Single-member LLCs are eligible to elect S-Corp tax status with the IRS by submitting Form 2553. The legal entity remains a single-member LLC under state law while being taxed as an S-Corporation federally.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <h3 style="margin-top: 2rem;">S-Corp overhead costs — what to expect</h3>
 
       <div class="faq-accordion-wrapper">
         <details class="faq-accordion-item">
           <summary class="faq-accordion-question">
             <div class="faq-q-badge-title">
-              <span class="faq-q-badge">1</span>
-              <span>How does this calculator handle state income tax?</span>
+              <span>What does S-Corp overhead actually cost per year?</span>
             </div>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <div class="faq-accordion-answer">
-            The calculator factors in state-specific income tax rates and S-Corp entity taxes (such as California's 1.5% S-Corp fee or minimum $800 tax), providing a far more realistic estimate than generic federal-only calculators.
+            <p>
+              Typical annual S-Corp overhead includes automated payroll software ($500–$900/yr), Form 1120-S corporate tax return preparation by a CPA ($500–$1,500/yr), and state corporate franchise fees if applicable ($0–$800/yr). Average total overhead is roughly $1,800/year.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Timing, deadlines, and reversing the election</h3>
+
+      <div class="faq-accordion-wrapper">
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span>When is the deadline to file Form 2553 for S-Corp election?</span>
+            </div>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            <p>
+              To take effect in the current tax year, IRS Form 2553 must be filed no later than 2 months and 15 days after the beginning of the tax year (March 15th for calendar-year taxpayers). Elections filed later take effect the following tax year unless relief for late election is granted by the IRS.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Reversing the election and liability protection</h3>
+
+      <div class="faq-accordion-wrapper">
+        <details class="faq-accordion-item">
+          <summary class="faq-accordion-question">
+            <div class="faq-q-badge-title">
+              <span>Can I reverse an S-Corp election if it no longer makes sense?</span>
+            </div>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-accordion-answer">
+            <p>
+              Yes. You can revoke an S-Corp tax election by submitting a statement of revocation to the IRS. Once revoked, the LLC reverts back to standard pass-through taxation (sole proprietorship or partnership).
+            </p>
           </div>
         </details>
 
         <details class="faq-accordion-item">
           <summary class="faq-accordion-question">
             <div class="faq-q-badge-title">
-              <span class="faq-q-badge">2</span>
-              <span>What is considered a "reasonable salary" by the IRS?</span>
+              <span>Does the S-Corp election affect my LLC's liability protection?</span>
             </div>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <div class="faq-accordion-answer">
-            A reasonable salary is what you would have to pay an outside employee to perform your exact job duties in your industry and geographic region. Setting your salary too low to avoid payroll taxes can lead to IRS audits and back penalties.
-          </div>
-        </details>
-
-        <details class="faq-accordion-item">
-          <summary class="faq-accordion-question">
-            <div class="faq-q-badge-title">
-              <span class="faq-q-badge">3</span>
-              <span>When is the deadline to file IRS Form 2553 for S-Corp status?</span>
-            </div>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </summary>
-          <div class="faq-accordion-answer">
-            For existing LLCs, Form 2553 must be filed no later than 2 months and 15 days after the beginning of the tax year (March 15 for calendar-year taxpayers) for the election to take effect that tax year. Late election relief is often available under Rev. Proc. 2013-30.
+            <p>
+              No. Electing S-Corp status is strictly a federal tax classification. Your underlying entity remains a state-level LLC, preserving all personal asset protection, limited liability status, and corporate shield benefits provided under state statute.
+            </p>
           </div>
         </details>
       </div>
@@ -593,83 +1203,77 @@
   </main>
 
   <!-- =========================================================================
-       3. SITE FOOTER
+       SITEWIDE FOOTER
        ========================================================================= -->
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-grid">
-        <div class="footer-brand">
+        <div class="footer-col brand-col">
           <a href="index.html" class="footer-logo">
             <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
           </a>
-          <p class="footer-desc">
-            LLC Primer provides verified 50-state formation guides, fee calculators, and expert reviews to help entrepreneurs launch and maintain compliant US businesses.
+          <p class="footer-tagline">
+            Independent, data-driven LLC formation research and state compliance guides.
           </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Form an LLC</h4>
+          <ul class="footer-links">
+            <li><a href="start-llc.html">How to Start an LLC</a></li>
+            <li><a href="best-llc-services.html">Best LLC Services</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Best State for LLC</a></li>
+            <li><a href="how-much-does-an-llc-cost.html">LLC Cost Breakdown</a></li>
+          </ul>
         </div>
 
         <div class="footer-col">
           <h4 class="footer-heading">LLC Guides</h4>
           <ul class="footer-links">
             <li><a href="what-is-an-llc.html">What is an LLC</a></li>
-            <li><a href="best-state-to-form-an-llc.html">Best State for LLC</a></li>
-            <li><a href="how-much-does-an-llc-cost.html">How Much Does An LLC Cost</a></li>
-            <li><a href="how-are-llcs-taxed.html">How Are LLCs Taxed</a></li>
-            <li><a href="operating-agreement.html">LLC Operating Agreement</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="ein-guide.html">EIN Tax ID Guide</a></li>
+            <li><a href="registered-agent-guide.html">Registered Agent Guide</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-heading">Services &amp; Reviews</h4>
+          <h4 class="footer-heading">Tools &amp; Resources</h4>
           <ul class="footer-links">
-            <li><a href="best-llc-services.html">Best LLC Services</a></li>
-            <li><a href="northwest-registered-agent-review.html">Northwest Review</a></li>
-            <li><a href="zenbusiness-vs-northwest.html">ZenBusiness vs Northwest</a></li>
-            <li><a href="best-registered-agent-services.html">Best Registered Agent</a></li>
-            <li><a href="best-llc-formation-services.html">Best LLC Formation Services</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4 class="footer-heading">Business Setup &amp; Tools</h4>
-          <ul class="footer-links">
-            <li><a href="ein-guide.html">Federal EIN Guide</a></li>
-            <li><a href="best-business-bank-accounts.html">Best Business Checking</a></li>
-            <li><a href="virtual-business-address.html">Virtual Address</a></li>
-            <li><a href="llc-business-insurance.html">LLC Business Insurance</a></li>
+            <li><a href="tools.html">Free LLC Tools</a></li>
             <li><a href="llc-cost-calculator.html">LLC Cost Calculator</a></li>
-            <li><a href="llc-startup-cost-estimator.html">Startup Cost Estimator</a></li>
             <li><a href="quiz.html">LLC Finder Quiz</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Bank Accounts</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright">&copy; 2026 LLC Primer. All rights reserved.</p>
-        <p class="disclaimer">
-          Disclaimer: LLC Primer is an independent educational portal and research platform. We are not a law firm, tax advisor, or Secretary of State office. Content on this site is provided for informational purposes only.
-        </p>
+        <p>&copy; 2026 LLC Primer. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script src="app.js"></script>
   <script>
-    // Populate State Selector in S-Corp Calculator
     document.addEventListener("DOMContentLoaded", () => {
-      const select = document.getElementById("scorpStateSelect");
-      if (select && typeof stateData !== "undefined") {
-        select.innerHTML = '<option value="">Select state...</option>';
-        stateData.forEach(st => {
-          const opt = document.createElement("option");
-          opt.value = st.code;
-          opt.textContent = st.name;
-          select.appendChild(opt);
-        });
-      }
+      populateScorpStateSelect();
       updateScorpCalc();
     });
 
-    // Update S-Corp Tax Calculation
+    function populateScorpStateSelect() {
+      const select = document.getElementById("scorpStateSelect");
+      if (!select || typeof stateData === "undefined") return;
+
+      select.innerHTML = `<option value="">Select state...</option>`;
+      stateData.forEach(st => {
+        const opt = document.createElement("option");
+        opt.value = st.code;
+        opt.textContent = `${st.name} (${st.code})`;
+        select.appendChild(opt);
+      });
+    }
+
     function updateScorpCalc() {
       const profitInput = document.getElementById("scorpNetProfitInput");
       const salarySlider = document.getElementById("scorpSalarySlider");
