@@ -17,6 +17,177 @@
       margin: 0 auto;
       padding: 0 1.5rem 3.5rem 1.5rem;
       width: 100%;
+      box-sizing: border-box;
+    }
+
+    .metric-4grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .metric-card-pill {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .metric-card-pill:hover {
+      border-color: #159A9C;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(21, 154, 156, 0.12);
+    }
+    .metric-card-pill .icon {
+      font-size: 1.35rem;
+      margin-bottom: 0.25rem;
+    }
+    .metric-card-pill .num {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #12304A;
+      line-height: 1.15;
+      font-family: var(--font-heading);
+    }
+    .metric-card-pill .label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .affiliate-disc-box {
+      background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+      border: 1.5px solid #CBD5E1;
+      border-left: 4px solid #159A9C;
+      border-radius: 12px;
+      padding: 0.9rem 1.25rem;
+      font-size: 0.825rem;
+      color: #475569;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(18, 48, 74, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .affiliate-disc-box strong {
+      color: #12304A;
+      font-weight: 800;
+    }
+    .affiliate-disc-badge {
+      background: #E6F7F7;
+      color: #159A9C;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    .top-pick-card {
+      background: #FFFFFF;
+      border: 2px solid #10B981;
+      border-radius: 18px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .toc-card-box {
+      background: #F8FAFC;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+    }
+    .toc-card-box h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
+    .toc-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem 2rem;
+      font-size: 0.9rem;
+    }
+    .toc-links-grid a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .toc-links-grid a:hover {
+      text-decoration: underline;
+      color: #0E7490;
+    }
+
+    .nw-package-green-box {
+      background: #0F766E;
+      border-radius: 20px;
+      padding: 2rem;
+      color: #FFFFFF;
+      margin: 2rem 0 2.5rem 0;
+      box-shadow: 0 12px 32px rgba(15, 118, 110, 0.2);
+    }
+    .feature-2col-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .feature-item-card {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 1.15rem;
+      color: #12304A;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.03);
+      transition: all 0.2s ease;
+    }
+    .feature-item-card:hover {
+      border-color: #159A9C;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(21, 154, 156, 0.1);
+    }
+
+    .ratings-3grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .rating-card-box {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 1.35rem 1.15rem;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: all 0.2s ease;
+    }
+    .rating-card-box:hover {
+      border-color: #159A9C;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(21, 154, 156, 0.12);
     }
 
     .guide-article h2 {
@@ -1665,6 +1836,7 @@
         <div class="footer-col">
           <h4 class="footer-heading">Post-Formation</h4>
           <ul class="footer-links">
+            <li><a href="business-setup.html">Post-LLC Setup Checklist</a></li>
             <li><a href="ein-guide.html">EIN Application Guide</a></li>
             <li><a href="operating-agreement.html">Operating Agreement</a></li>
             <li><a href="best-business-bank-accounts.html">Business Banking</a></li>

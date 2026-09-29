@@ -1926,7 +1926,6 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
 }
 
 .footer-copyright a, .footer-bottom a {
-  color: #CBD5E1 !important;
   text-decoration: underline !important;
 }
 
