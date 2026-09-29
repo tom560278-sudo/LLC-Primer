@@ -2159,7 +2159,6 @@ table {
   max-width: 100% !important;
   overflow-x: auto !important;
   -webkit-overflow-scrolling: touch;
-  margin: 1.5rem 0;
   border-radius: 12px;
 }
 
@@ -2228,5 +2227,165 @@ details.faq-accordion-item[open] .faq-chevron {
   border-top: 1px dashed #F1F5F9;
   padding-top: 1rem;
 }
+
+/* ==========================================================================
+   COMPREHENSIVE RESPONSIVE POLISH SITEWIDE (MOBILE, TABLET, DESKTOP)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .hero-showcase-grid,
+  .calc-split-container,
+  .calc-main-2col,
+  .states-split-layout,
+  .compare-pillars-grid,
+  .state-hero-grid,
+  .specs-2col-grid,
+  .pros-cons-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Global Page Container Padding */
+  .guide-content-container,
+  .container,
+  main,
+  section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Fluid Responsive Headings */
+  h1, .guide-article h1 {
+    font-size: clamp(1.65rem, 5vw, 2.2rem) !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+
+  h2, .guide-article h2 {
+    font-size: clamp(1.3rem, 4vw, 1.7rem) !important;
+    line-height: 1.3 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    word-break: break-word !important;
+  }
+
+  h3, .guide-article h3 {
+    font-size: clamp(1.1rem, 3.5vw, 1.35rem) !important;
+    line-height: 1.35 !important;
+    word-break: break-word !important;
+  }
+
+  /* Override all 2-column inline grid styles on mobile */
+  div[style*="grid-template-columns: repeat(2"],
+  div[style*="grid-template-columns: 1fr 1fr"],
+  div[style*="grid-template-columns:repeat(2"],
+  .specs-2col-grid,
+  .pros-cons-grid,
+  .cluster-grid,
+  .two-col-grid,
+  .cards-grid,
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Provider & Service Review Cards */
+  .provider-review-card,
+  .doola-hero-card,
+  .top-pick-card,
+  .bottom-line-card,
+  .hero-pick-box {
+    padding: 1.25rem 1rem !important;
+    border-radius: 16px !important;
+    margin: 1.5rem 0 !important;
+  }
+
+  .provider-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    padding: 1rem 1.15rem !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+  }
+
+  .provider-title {
+    font-size: 1.2rem !important;
+  }
+
+  /* Golden Price Badge Responsiveness */
+  div[style*="border-radius: 50%"][style*="width: 110px"],
+  div[style*="border-radius: 50%"][style*="width: 100px"],
+  div[style*="border-radius: 50%"][style*="width: 90px"] {
+    width: 85px !important;
+    height: 85px !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  div[style*="border-radius: 50%"] span[style*="font-size: 1.75rem"],
+  div[style*="border-radius: 50%"] span[style*="font-size: 1.6rem"] {
+    font-size: 1.4rem !important;
+  }
+
+  /* Feature Pills & Badges Wrap */
+  .doola-pills-row,
+  .quick-pills-wrap,
+  div[style*="flex-wrap: wrap"] {
+    gap: 0.4rem !important;
+  }
+
+  /* Callout & Banner Boxes */
+  .callout-green,
+  .callout-blue,
+  .callout-yellow,
+  .callout-red,
+  .recommendation-box,
+  .quick-answer-box,
+  .source-banner-box,
+  .cluster-box {
+    padding: 1rem 1.15rem !important;
+    border-radius: 12px !important;
+    margin: 1.25rem 0 !important;
+  }
+
+  /* Mobile CTA Buttons */
+  .ls-btn,
+  .btn,
+  .cta-btn,
+  .review-cta {
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    display: inline-flex !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Spec Rows in Provider Cards */
+  .spec-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.25rem !important;
+    padding: 0.65rem 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-accordion-question {
+    padding: 1rem 1.15rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .faq-accordion-answer {
+    padding: 0 1.15rem 1rem 1.15rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
 
 
