@@ -315,7 +315,7 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
 
 /* Key Takeaways Card */
 .key-takeaways-card {
-  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  background: linear-gradient(135deg, #12304a 0%, #0e7490 100%);
   border: 1.5px solid #3B82F6;
   border-radius: 18px;
   padding: 1.75rem 2rem;
@@ -1840,11 +1840,12 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
   width: 100% !important;
 }
 
-.site-footer .container {
+.site-footer .container, .footer-container {
   max-width: 1400px !important;
   width: 100% !important;
   margin: 0 auto !important;
   padding: 0 2.5rem !important;
+  box-sizing: border-box !important;
 }
 
 .footer-grid {
@@ -1855,14 +1856,27 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
   text-align: left !important;
 }
 
-.footer-grid h4 {
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline, .footer-desc {
+  font-size: 0.88rem !important;
+  color: #CBD5E1 !important;
+  margin-top: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+.footer-heading, .footer-grid h4 {
   color: #FFFFFF !important;
   font-size: 0.95rem !important;
   margin-bottom: 1.25rem !important;
   font-weight: 700 !important;
+  font-family: var(--font-heading) !important;
 }
 
-.footer-grid ul {
+.footer-links, .footer-grid ul {
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -1871,25 +1885,25 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
   gap: 0.6rem !important;
 }
 
-.footer-grid li {
+.footer-links li, .footer-grid li {
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-.footer-grid a {
+.footer-links a, .footer-grid a {
   color: #CBD5E1 !important;
   font-size: 0.85rem !important;
   text-decoration: none !important;
   transition: color 0.2s ease !important;
 }
 
-.footer-grid a:hover {
+.footer-links a:hover, .footer-grid a:hover {
   color: #159A9C !important;
   text-decoration: underline !important;
 }
 
-.footer-copyright-bar {
+.footer-bottom-bar, .footer-copyright-bar, .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   padding-top: 2rem !important;
   font-size: 0.775rem !important;
@@ -1898,6 +1912,26 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
   flex-direction: column !important;
   gap: 1rem !important;
   text-align: left !important;
+}
+
+.footer-disclaimer, .disclaimer {
+  font-size: 0.775rem !important;
+  color: #94A3B8 !important;
+  line-height: 1.6 !important;
+}
+
+.footer-copyright, .copyright {
+  font-size: 0.775rem !important;
+  color: #94A3B8 !important;
+}
+
+.footer-copyright a, .footer-bottom a {
+  color: #CBD5E1 !important;
+  text-decoration: underline !important;
+}
+
+.footer-copyright a:hover, .footer-bottom a:hover {
+  color: #159A9C !important;
 }
 
 
