@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>LLC Annual Report Deadline Tracker (2026) | All 50 States | LLC Primer</title>
+  <meta name="description" content="Free 2026 50-state LLC annual report deadline tracker tool. Find your state's due date, filing fee, late penalties, and direct Secretary of State filing portal links.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3.5rem 1.5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover { color: #0E7490; }
+
+    /* At a Glance Dark Blue Hero Box */
+    .at-a-glance-box {
+      background: linear-gradient(135deg, #0d2336 0%, #159A9C 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      color: #FFFFFF;
+      margin: 2rem 0;
+      box-shadow: 0 12px 36px rgba(18, 48, 74, 0.18);
+    }
+    .glance-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      font-family: var(--font-heading);
+    }
+    .glance-sub {
+      font-size: 0.88rem;
+      color: #CBD5E1;
+      margin-bottom: 1.5rem;
+    }
+    .glance-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .glance-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      padding: 1.15rem 1rem;
+      text-align: center;
+    }
+    .glance-card-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+    }
+    .glance-card-val {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.25;
+      font-family: var(--font-heading);
+    }
+
+    .glance-cta-btn {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      padding: 0.65rem 1.25rem;
+      border-radius: 10px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .glance-cta-btn:hover {
+      background: #FFFFFF;
+      color: #12304A;
+    }
+
+    /* TOC Card Box */
+    .toc-card-box {
+      background: #F8FAFC;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+    }
+    .toc-card-box h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
+    .toc-links-ol {
+      margin: 0;
+      padding-left: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .toc-links-ol li a {
+      color: #159A9C;
+      font-weight: 600;
+      font-size: 0.925rem;
+      text-decoration: none;
+    }
+    .toc-links-ol li a:hover {
+      text-decoration: underline;
+      color: #0E7490;
+    }
+
+    /* Interactive Tracker Widget */
+    .tracker-widget-container {
+      background: #0d2336;
+      border: 1.5px solid #159A9C;
+      border-radius: 20px;
+      padding: 2.25rem;
+      color: #FFFFFF;
+      margin: 2.5rem 0;
+      box-shadow: 0 16px 40px rgba(13, 35, 54, 0.3);
+    }
+    .tracker-widget-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
+    }
+    .tracker-widget-desc {
+      text-align: center;
+      color: #CBD5E1;
+      font-size: 0.925rem;
+      margin-bottom: 1.75rem;
+    }
+    .tracker-select-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #94A3B8;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .tracker-select-input {
+      width: 100%;
+      padding: 0.9rem 1.15rem;
+      border-radius: 12px;
+      border: 1.5px solid #159A9C;
+      background: #1E293B;
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 600;
+      outline: none;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-body);
+    }
+
+    .tracker-result-card {
+      background: #1E293B;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .tr-metric-item {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 0.85rem;
+      text-align: center;
+    }
+    .tr-metric-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+    .tr-metric-val {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #6EE7B7;
+    }
+    .tr-sos-btn-wrap {
+      grid-column: 1 / -1;
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: rgba(21, 154, 156, 0.15);
+      border: 1px solid #159A9C;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+    }
+
+    /* Banners & Callouts */
+    .callout-green {
+      background: #ECFDF5;
+      border: 1.5px solid #A7F3D0;
+      border-left: 5px solid #10B981;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      color: #065F46;
+      margin: 2rem 0;
+      line-height: 1.65;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #BAE6FD;
+      border-left: 5px solid #0284C7;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      color: #0369A1;
+      margin: 2rem 0;
+      line-height: 1.65;
+    }
+    .callout-yellow {
+      background: #FEF3C7;
+      border: 1.5px solid #FDE68A;
+      border-left: 5px solid #F59E0B;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      color: #78350F;
+      margin: 2rem 0;
+      line-height: 1.65;
+    }
+    .callout-red {
+      background: #FEE2E2;
+      border: 1.5px solid #FCA5A5;
+      border-left: 5px solid #EF4444;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      color: #7F1D1D;
+      margin: 2rem 0;
+      line-height: 1.65;
+    }
+
+    /* Tables */
+    .styled-table-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
+      margin: 1.75rem 0;
+    }
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    .styled-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 0.95rem 1.15rem;
+      font-size: 0.785rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .styled-table td {
+      padding: 0.95rem 1.15rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .styled-table tr:last-child td { border-bottom: none; }
+    .styled-table tr:nth-child(even) { background: #F8FAFC; }
+
+    /* Timeline Stepper Box */
+    .timeline-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .timeline-step-card {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 1.35rem 1.65rem;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .step-num-badge {
+      background: #12304A;
+      color: #FFFFFF;
+      font-size: 0.9rem;
+      font-weight: 800;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #12304A;
+      margin-bottom: 0.35rem;
+      font-family: var(--font-heading);
+    }
+    .step-desc {
+      font-size: 0.925rem;
+      color: #475569;
+      line-height: 1.65;
+    }
+
+    /* Checklist Item Cards */
+    .checklist-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .check-item-box {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 1.35rem;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+    }
+    .check-icon-head {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 700;
+      color: #12304A;
+      font-size: 1.025rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Recommendation Cards */
+    .top-pick-card {
+      background: #FFFFFF;
+      border: 2px solid #10B981;
+      border-radius: 18px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .top-pick-card-blue {
+      background: #FFFFFF;
+      border: 2px solid #159A9C;
+      border-radius: 18px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 8px 24px rgba(21, 154, 156, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Accordion FAQ */
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2.5rem;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: all 0.25s ease;
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .glance-grid { grid-template-columns: repeat(2, 1fr); }
+      .tracker-result-card { grid-template-columns: repeat(2, 1fr); }
+      .checklist-card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. EXECUTIVE GLASSMORPHIC NAVBAR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">
+            Start an LLC
+          </a>
+        </div>
+
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="tools.html" class="nav-link active">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="llc-annual-report-tracker.html" class="dropdown-link" style="color: #159A9C; font-weight: 700;">Annual Report Tracker</a>
+            <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
+            <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
+            <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
+            <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan →
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT AREA
+       ========================================================================= -->
+  <main class="guide-content-container">
+
+    <!-- BREADCRUMB -->
+    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
+      <a href="index.html" style="color: #64748B; text-decoration: none;">LLC Starters</a> &nbsp;/&nbsp; 
+      <a href="start-llc.html" style="color: #64748B; text-decoration: none;">How to Start an LLC</a> &nbsp;/&nbsp; 
+      <a href="tools.html" style="color: #64748B; text-decoration: none;">Tools</a> &nbsp;/&nbsp; 
+      <strong style="color: #12304A;">Annual Report Tracker</strong>
+    </div>
+
+    <article class="guide-article">
+      <!-- HEADER TITLE -->
+      <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: #12304A; line-height: 1.2; margin-bottom: 0.75rem; font-family: var(--font-heading);">
+        LLC Annual Report Deadline Tracker — All 50 States (2026)
+      </h1>
+      <p style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.5rem;">
+        7 months ago · Updated 2 weeks ago
+      </p>
+
+      <p>
+        Every LLC in the United States has a compliance deadline most owners don't know about until it's too late — the <strong>LLC annual report</strong>. Miss it, and your state will hit you with a late fee. Ignore it long enough, and your LLC gets administratively dissolved. That means another business can legally register your company name, your liability protection disappears, and you have to pay reinstatement fees on top of everything else. This free <strong>LLC annual report deadline tracker</strong> exists specifically to prevent that from happening to you.
+      </p>
+
+      <h2>Why annual report rules vary so much from state to state</h2>
+      <p>
+        Every state handles annual reports differently. Some states call it a Statement of Information. Others call it an Annual Registration, a Periodic Report, or a Franchise Tax Return. A few states charge nothing at all — while others charge up to $500. Deadlines range from fixed calendar dates like April 15 to rolling anniversary-based dates tied to the month your LLC was formed. Meanwhile, four states require no report at all. Understanding exactly what your state requires is therefore not optional — it is a fundamental part of running a compliant LLC.
+      </p>
+
+      <h2>How to use this guide</h2>
+      <p>
+        This tool gives you instant access to the deadline, fee, filing frequency, and official state portal for every one of the 50 states. Below the tool, this guide explains exactly what an <strong>LLC annual report</strong> is, what happens when you miss the deadline, and how to make sure you never have to deal with a late fee or dissolution notice. Whether you just formed your LLC or have been running one for years, this is the resource to bookmark.
+      </p>
+
+      <!-- AT A GLANCE DARK BLUE CARD BOX -->
+      <div class="at-a-glance-box">
+        <div class="glance-title">📊 LLC Annual Report — At a Glance</div>
+        <div class="glance-sub">Key facts before you check your state's deadline</div>
+
+        <div class="glance-grid">
+          <div class="glance-card">
+            <div class="glance-card-label">STATES COVERED</div>
+            <div class="glance-card-val">All 50</div>
+          </div>
+          <div class="glance-card">
+            <div class="glance-card-label">STATES WITH NO REPORT</div>
+            <div class="glance-card-val">AZ · MO · NM · SC</div>
+          </div>
+          <div class="glance-card">
+            <div class="glance-card-label">LOWEST FEE</div>
+            <div class="glance-card-val">$0 (ID · MN · MS)</div>
+          </div>
+          <div class="glance-card">
+            <div class="glance-card-label">HIGHEST FEE</div>
+            <div class="glance-card-val">$500 (Massachusetts)</div>
+          </div>
+          <div class="glance-card">
+            <div class="glance-card-label">MOST COMMON FREQUENCY</div>
+            <div class="glance-card-val">Annual</div>
+          </div>
+          <div class="glance-card">
+            <div class="glance-card-label">CONSEQUENCE OF MISSING</div>
+            <div class="glance-card-val">Late fee + dissolution</div>
+          </div>
+        </div>
+
+        <a href="llc-cost-calculator.html" class="glance-cta-btn">Also check: LLC Cost Calculator — total formation cost by state →</a>
+      </div>
+
+      <!-- TOC CARD BOX -->
+      <div class="toc-card-box">
+        <h3>📋 WHAT'S IN THIS GUIDE</h3>
+        <ol class="toc-links-ol">
+          <li><a href="#tracker-section">1. Use the Annual Report Deadline Tracker — all 50 states</a></li>
+          <li><a href="#what-is-section">2. What is an LLC annual report?</a></li>
+          <li><a href="#deadlines-fees-section">3. Annual report deadlines and fees by state</a></li>
+          <li><a href="#missing-deadline-section">4. What happens if you miss your annual report deadline</a></li>
+          <li><a href="#no-report-states-section">5. States that don't require an annual report</a></li>
+          <li><a href="#step-by-step-section">6. How to file your LLC annual report — step by step</a></li>
+          <li><a href="#cost-breakdown-section">7. What does it cost to file an LLC annual report?</a></li>
+          <li><a href="#after-filing-section">8. What to do after you file your annual report</a></li>
+          <li><a href="#faq-section">9. Frequently asked questions</a></li>
+        </ol>
+      </div>
+
+      <!-- TRACKER TOOL SECTION -->
+      <section id="tracker-section">
+        <h2>LLC Annual Report Deadline Tracker — All 50 States</h2>
+        <p>
+          Select your state below to instantly see your <strong>LLC annual report deadline</strong>, filing fee, how often you need to file, and a direct link to the official state portal. The info box shows you exactly what is required so you know at a glance whether you're in good shape or need to act now.
+        </p>
+
+        <div class="tracker-widget-container">
+          <div style="font-size: 2.2rem; text-align: center; margin-bottom: 0.5rem;">📅</div>
+          <div class="tracker-widget-title">LLC Annual Report Deadline Tracker</div>
+          <div class="tracker-widget-desc">Find your state's filing deadline, fee, and direct link to file — all 50 states.</div>
+
+          <label class="tracker-select-label" for="stateSelectInput">SELECT YOUR STATE TO SEE ANNUAL REPORT REQUIREMENTS</label>
+          <select id="stateSelectInput" class="tracker-select-input" onchange="renderStateTrackerData(this.value)">
+            <option value="FL">Florida (May 1 | $138.75 Fee | $400 Late Fee)</option>
+            <option value="CA">California (Anniversary Month | $20 Biennial | $250 Late Fee)</option>
+            <option value="TX">Texas (May 15 | $0 Fee | 5% Tax Penalty)</option>
+
+            <option value="AL">Alabama (April 15 | $100 Fee)</option>
+            <option value="AK">Alaska (Jan 2 | $100 Biennial)</option>
+            <option value="AZ">Arizona (No Annual Report Required | $0)</option>
+            <option value="AR">Arkansas (May 1 | $150 Franchise Tax)</option>
+            <option value="CO">Colorado (Anniversary Month | $10 Fee)</option>
+            <option value="CT">Connecticut (Anniversary Month | $80 Fee)</option>
+            <option value="DE">Delaware (June 1 | $300 Tax)</option>
+
+            <option value="GA">Georgia (April 1 | $50 Fee)</option>
+            <option value="HI">Hawaii (Anniversary Quarter | $15 Fee)</option>
+            <option value="ID">Idaho (Anniversary Month | $0 Fee)</option>
+            <option value="IL">Illinois (Anniversary Month | $75 Fee)</option>
+            <option value="IN">Indiana (Anniversary Month | $50 Biennial)</option>
+            <option value="IA">Iowa (April 1 | $60 Biennial)</option>
+            <option value="KS">Kansas (April 15 | $55 Fee)</option>
+            <option value="KY">Kentucky (June 30 | $15 Fee)</option>
+            <option value="LA">Louisiana (Anniversary Month | $30 Fee)</option>
+            <option value="ME">Maine (June 1 | $85 Fee)</option>
+
+            <option value="MD">Maryland (April 15 | $300 Fee)</option>
+            <option value="MA">Massachusetts (Anniversary Date | $500 Fee)</option>
+            <option value="MI">Michigan (Feb 15 | $25 Fee)</option>
+            <option value="MN">Minnesota (Dec 31 | $0 Fee)</option>
+            <option value="MS">Mississippi (April 15 | $0 Fee)</option>
+            <option value="MO">Missouri (No Annual Report Required | $0)</option>
+            <option value="MT">Montana (April 15 | $20 Fee)</option>
+            <option value="NE">Nebraska (April 1 | $10 Biennial)</option>
+            <option value="NV">Nevada (Anniversary Month | $350 Fee)</option>
+            <option value="NH">New Hampshire (April 1 | $100 Fee)</option>
+
+            <option value="NJ">New Jersey (Anniversary Month | $75 Fee)</option>
+            <option value="NM">New Mexico (No Annual Report Required | $0)</option>
+            <option value="NY">New York (Anniversary Month | $9 Biennial)</option>
+            <option value="NC">North Carolina (April 15 | $202 Fee)</option>
+            <option value="ND">North Dakota (Nov 15 | $50 Fee)</option>
+            <option value="OH">Ohio (No Annual Report | $0)</option>
+            <option value="OK">Oklahoma (Anniversary Month | $25 Fee)</option>
+            <option value="OR">Oregon (Anniversary Date | $100 Fee)</option>
+            <option value="PA">Pennsylvania (Decennial | $7 Fee every 10 yrs)</option>
+            <option value="RI">Rhode Island (Nov 1 | $50 Fee)</option>
+
+            <option value="SC">South Carolina (No Annual Report Required | $0)</option>
+            <option value="SD">South Dakota (Anniversary Month | $50 Fee)</option>
+            <option value="TN">Tennessee (4th Month after Fiscal Year | $300 Min)</option>
+            <option value="UT">Utah (Anniversary Month | $18 Fee)</option>
+            <option value="VT">Vermont (Anniversary Month | $35 Fee)</option>
+            <option value="VA">Virginia (Anniversary Month | $50 Fee)</option>
+            <option value="WA">Washington (Anniversary Month | $60 Fee)</option>
+            <option value="WV">West Virginia (July 1 | $25 Fee)</option>
+            <option value="WI">Wisconsin (Anniversary Quarter | $25 Fee)</option>
+            <option value="WY">Wyoming (Anniversary Month | $60 Min Fee)</option>
+          </select>
+
+          <div id="trackerDisplayArea" class="tracker-result-card">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- GREEN CALENDAR ALERT BANNER -->
+      <div class="callout-green">
+        💡 <strong>Set a calendar reminder right now:</strong> The single most effective way to avoid a late fee is to add your annual report deadline to your calendar the moment you finish reading this page. Set it 30 days before the due date so you have time to gather any required information. If you'd rather not think about it at all, registered agent services like <a href="northwest-registered-agent-review.html"><strong>Northwest Registered Agent</strong></a> and <a href="zenbusiness-vs-northwest.html"><strong>ZenBusiness</strong></a> send automatic compliance reminders and can file on your behalf.
+      </div>
+
+      <!-- WHAT IS AN LLC ANNUAL REPORT SECTION -->
+      <section id="what-is-section">
+        <h2>What Is an LLC Annual Report?</h2>
+        <p>
+          An <strong>LLC annual report</strong> is a mandatory filing that most states require every LLC to submit on a regular schedule — typically once a year, though some states require it every two years or even every ten. Despite the name, it is not a financial report and has nothing to do with your income, expenses, or taxes. Instead, it serves one specific purpose: confirming to the state that your LLC still exists, is still operating, and that your registered contact information is current and accurate.
+        </p>
+
+        <h3>What information does an annual report actually contain?</h3>
+        <p>
+          The required information varies by state, but most <strong>LLC annual reports</strong> ask for the same core details. Specifically, you typically need to confirm or update your LLC's legal name, principal business address, the name and address of your <a href="registered-agent-guide.html"><strong>registered agent</strong></a>, and the names of your members or managers. In some states — particularly those with anniversary-based deadlines — the form is pre-filled with your current information, and you simply verify it and pay the fee. In others, however, you must complete the form from scratch each year.
+        </p>
+
+        <h3>Why states require it — and why it matters to you</h3>
+        <p>
+          States use the annual report system for two main reasons. First, it allows the state to maintain an accurate, current database of every active business entity — which is the same database you search when you use our <a href="sos-search.html"><strong>Secretary of State Business Search tool</strong></a>. Second, it generates revenue. Annual report fees are a significant source of income for most state governments. Consequently, states take non-compliance seriously — and the penalties for missing a deadline are real.
+        </p>
+
+        <div class="callout-blue">
+          ℹ️ <strong>It goes by many names depending on your state:</strong> Depending on where your LLC is registered, you may see this filing called an Annual Report, Statement of Information, Annual Registration, Periodic Report, Annual Renewal, Annual Statement, Biennial Report, or Franchise Tax Return. Regardless of what your state calls it, the underlying purpose is the same — and the consequences of missing it are equally real no matter what name appears on the form.
+        </div>
+      </section>
+
+      <!-- DEADLINES AND FEES TABLE SECTION -->
+      <section id="deadlines-fees-section">
+        <h2>LLC Annual Report Deadlines and Fees by State — 2026</h2>
+        <p>
+          The tables below give you a quick overview of the <strong>annual report requirements</strong> for the most commonly searched states. For a complete, interactive breakdown of all 50 states — including the official filing link and a live countdown to your next deadline — use the tracker tool above.
+        </p>
+
+        <h3>Fixed-date deadline states — same due date every year</h3>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>STATE</th>
+                <th>DUE DATE</th>
+                <th>FEE</th>
+                <th>FREQUENCY</th>
+                <th>LATE FEE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Florida</strong></td>
+                <td>May 1</td>
+                <td>$138.75</td>
+                <td>Annual</td>
+                <td><strong style="color:#B91C1C;">$400 after Sep 1</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Georgia</strong></td>
+                <td>April 1</td>
+                <td>$50</td>
+                <td>Annual</td>
+                <td>$25</td>
+              </tr>
+              <tr>
+                <td><strong>Kentucky</strong></td>
+                <td>June 30</td>
+                <td>$15</td>
+                <td>Annual</td>
+                <td>$10</td>
+              </tr>
+              <tr>
+                <td><strong>Maryland</strong></td>
+                <td>April 15</td>
+                <td>$300</td>
+                <td>Annual</td>
+                <td>$30/month</td>
+              </tr>
+              <tr>
+                <td><strong>Michigan</strong></td>
+                <td>February 15</td>
+                <td>$25</td>
+                <td>Annual</td>
+                <td>$10</td>
+              </tr>
+              <tr>
+                <td><strong>Minnesota</strong></td>
+                <td>December 31</td>
+                <td>$0</td>
+                <td>Annual</td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td><strong>Mississippi</strong></td>
+                <td>April 15</td>
+                <td>$0</td>
+                <td>Annual</td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td><strong>North Carolina</strong></td>
+                <td>April 15</td>
+                <td>$202</td>
+                <td>Annual</td>
+                <td>$50</td>
+              </tr>
+              <tr>
+                <td><strong>North Dakota</strong></td>
+                <td>November 15</td>
+                <td>$50</td>
+                <td>Annual</td>
+                <td>$25</td>
+              </tr>
+              <tr>
+                <td><strong>Texas</strong></td>
+                <td>May 15</td>
+                <td>$0 (most LLCs)</td>
+                <td>Annual</td>
+                <td>5% of tax owed</td>
+              </tr>
+              <tr>
+                <td><strong>West Virginia</strong></td>
+                <td>July 1</td>
+                <td>$25</td>
+                <td>Annual</td>
+                <td>$25</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Anniversary-based deadline states — due date tied to formation month</h3>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>STATE</th>
+                <th>DUE DATE</th>
+                <th>FEE</th>
+                <th>FREQUENCY</th>
+                <th>LATE FEE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>California</strong></td>
+                <td>Anniversary month</td>
+                <td>$20</td>
+                <td>Biennial</td>
+                <td>$250</td>
+              </tr>
+              <tr>
+                <td><strong>Colorado</strong></td>
+                <td>Anniversary month</td>
+                <td>$10</td>
+                <td>Annual</td>
+                <td>$50</td>
+              </tr>
+              <tr>
+                <td><strong>Connecticut</strong></td>
+                <td>Anniversary month</td>
+                <td>$80</td>
+                <td>Annual</td>
+                <td>$50</td>
+              </tr>
+              <tr>
+                <td><strong>Illinois</strong></td>
+                <td>Anniversary month</td>
+                <td>$75</td>
+                <td>Annual</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+                <td><strong>New Jersey</strong></td>
+                <td>Anniversary month</td>
+                <td>$75</td>
+                <td>Annual</td>
+                <td>$25</td>
+              </tr>
+              <tr>
+                <td><strong>New York</strong></td>
+                <td>Anniversary month</td>
+                <td>$9</td>
+                <td>Biennial</td>
+                <td>Dissolution risk</td>
+              </tr>
+              <tr>
+                <td><strong>Wyoming</strong></td>
+                <td>Anniversary month</td>
+                <td>$60 min</td>
+                <td>Annual</td>
+                <td>$25</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout-yellow">
+          ⚠️ <strong>Florida's deadline is the most dangerous in the country:</strong> Florida is the only state that escalates the penalty to $400 plus risk of administrative dissolution — if you miss the September 1 secondary deadline. The primary deadline is May 1, but many LLC owners don't realize there's a second cutoff in September after which the consequences become significantly more severe. If your LLC is registered in Florida, treat May 1 as an absolute hard deadline and don't wait until September.
+        </div>
+      </section>
+
+      <!-- WHAT HAPPENS IF YOU MISS SECTION -->
+      <section id="missing-deadline-section">
+        <h2>What Happens If You Miss Your LLC Annual Report Deadline</h2>
+        <p>
+          Missing an <strong>LLC annual report deadline</strong> triggers a predictable and escalating sequence of consequences. Understanding this sequence is important — not to scare you, but because the earlier you catch a missed filing, the cheaper and easier it is to fix. Most states give you a grace period before the most serious consequences kick in.
+        </p>
+
+        <h3>The 4-stage consequence timeline</h3>
+        <div class="timeline-container">
+          <div class="timeline-step-card">
+            <div class="step-num-badge">1</div>
+            <div>
+              <div class="step-title" style="color: #0369A1;">IMMEDIATELY AFTER THE DEADLINE PASSES — Late fee applied to your account</div>
+              <div class="step-desc">Most states automatically add a late filing penalty to your LLC's account the moment the deadline passes. These range from $10 (Michigan, Colorado) to $400 (Florida after September 1). At this stage, however, the fix is simple: file the report and pay the penalty. Your LLC remains in good standing.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">2</div>
+            <div>
+              <div class="step-title" style="color: #B45309;">30-90 DAYS AFTER THE DEADLINE — LLC status changes to "Delinquent" or "Not in Good Standing"</div>
+              <div class="step-desc">After a grace period — typically 30 to 90 days depending on the state — your LLC's status in the <a href="sos-search.html">Secretary of State database</a> changes to Delinquent, Past Due, or Not in Good Standing. Consequently, you can no longer open a business bank account, get a loan, enter into contracts that require good standing certificates, or register as a foreign LLC in other states until the status is resolved.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">3</div>
+            <div>
+              <div class="step-title" style="color: #B91C1C;">90-180 DAYS AFTER THE DEADLINE — Administrative dissolution — your LLC is officially inactive</div>
+              <div class="step-desc">Beyond the delinquency window, if the late filing goes unresolved for an extended period, the state administratively dissolves your LLC. This is the most serious consequence — and notably, it has cascading effects. Your liability protection disappears, meaning your personal assets are no longer shielded from business debts. Additionally, your LLC name becomes available for other businesses to register. Your <a href="operating-agreement.html">operating agreement</a> and any contracts your LLC has signed may also be affected.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">4</div>
+            <div>
+              <div class="step-title" style="color: #475569;">AFTER DISSOLUTION — Reinstatement — more expensive and time-consuming than just filing on time</div>
+              <div class="step-desc">Most states allow you to reinstate a dissolved LLC by filing a reinstatement application, paying all back annual report fees, and paying a reinstatement penalty — which is typically $100-$300 on top of everything else. Some states, however, require you to re-form the LLC entirely if the dissolution has been in place for more than a year. As a result, the total cost of reinstatement often exceeds $500 — compared to a $10-$75 on-time filing fee.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout-red">
+          🚨 <strong>Dissolved LLC = your name is up for grabs:</strong> Once your LLC is administratively dissolved, your registered business name immediately becomes available for other entities to register. If a competitor or anyone else registers it first, you cannot use it for your reinstated LLC — and you may have to rebrand entirely. This is one of the most overlooked and painful consequences of missing an annual report deadline.
+        </div>
+      </section>
+
+      <!-- STATES THAT DONT REQUIRE SECTION -->
+      <section id="no-report-states-section">
+        <h2>States That Don't Require an LLC Annual Report</h2>
+        <p>
+          A small number of states have eliminated the annual report requirement for LLCs entirely. If you're forming a new LLC and want to minimize ongoing compliance obligations, these states are worth considering — though it's important to understand that "no annual report" does not mean "zero ongoing compliance." Other requirements may still apply.
+        </p>
+
+        <h3>Arizona and Missouri — minimal ongoing compliance</h3>
+        <div class="checklist-card-grid">
+          <div class="check-item-box">
+            <div class="check-icon-head">🌵 Arizona — No annual report required</div>
+            <p style="font-size: 0.88rem; color: #475569; margin: 0;">
+              Arizona LLCs have no annual reporting obligation. However, you must maintain a statutory agent (registered agent) in the state and publish a formation notice in a newspaper when you first form. After that, ongoing compliance is minimal — one of the main reasons Arizona is increasingly popular for LLC formation.
+            </p>
+          </div>
+          <div class="check-item-box">
+            <div class="check-icon-head">🎷 Missouri — No annual report required</div>
+            <p style="font-size: 0.88rem; color: #475569; margin: 0;">
+              Missouri LLCs have no annual report obligation. Combined with no franchise tax and a relatively low $50 formation fee, Missouri offers some of the lowest ongoing compliance costs in the country. Notably, you still need to maintain a registered agent in Missouri and keep your business information current with the state.
+            </p>
+          </div>
+        </div>
+
+        <h3>New Mexico and South Carolina — privacy and county-level nuances</h3>
+        <div class="checklist-card-grid">
+          <div class="check-item-box">
+            <div class="check-icon-head">🌶️ New Mexico — No annual report required</div>
+            <p style="font-size: 0.88rem; color: #475569; margin: 0;">
+              New Mexico is one of the most privacy-friendly states for LLC formation, and also requires no annual report. As a result, it's popular among online business owners who want minimal ongoing obligations. Additionally, New Mexico does not require member names to be disclosed in formation documents — adding another layer of privacy.
+            </p>
+          </div>
+          <div class="check-item-box">
+            <div class="check-icon-head">🌴 South Carolina — No annual report required for most LLCs</div>
+            <p style="font-size: 0.88rem; color: #475569; margin: 0;">
+              South Carolina does not require LLCs to file an annual report with the Secretary of State. However, LLCs in South Carolina may owe Business Personal Property Tax filed annually with the county — so while the SOS report is eliminated, a separate county-level filing may still apply depending on your business assets.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout-blue">
+          ℹ️ <strong>Pennsylvania — the outlier: one report every 10 years:</strong> Pennsylvania sits in a category of its own. Rather than an annual or biennial report, Pennsylvania requires only a Decennial Report — once every ten years — for just $7. For most practical purposes this is effectively no ongoing reporting burden, which makes Pennsylvania an underrated choice for low-maintenance LLC compliance.
+        </div>
+      </section>
+
+      <!-- STEP BY STEP FILING SECTION -->
+      <section id="step-by-step-section">
+        <h2>How to File Your LLC Annual Report — Step by Step</h2>
+        <p>
+          Filing an <strong>LLC annual report</strong> is generally straightforward once you know exactly what your state requires. The process takes 5–15 minutes in most states and can be completed entirely online. Below is the standard workflow that applies across the majority of states.
+        </p>
+
+        <h3>Before you start — what to have ready</h3>
+        <div class="timeline-container">
+          <div class="timeline-step-card">
+            <div class="step-num-badge">1</div>
+            <div>
+              <div class="step-title">Confirm your state's deadline and current filing fee</div>
+              <div class="step-desc">Use the tracker above to check your exact due date and fee before you start. Fees occasionally change year to year, and filing in the wrong period (especially for biennial filers) is a common mistake. Specifically, biennial filers sometimes file in the wrong year and either miss their actual deadline or file a duplicate — both of which cause complications.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">2</div>
+            <div>
+              <div class="step-title">Gather your LLC's current information</div>
+              <div class="step-desc">Most states ask you to confirm or update your LLC's legal name, principal office address, <a href="registered-agent-guide.html">registered agent</a> name and address, and the names of members or managers. If any of this information has changed since your last filing — for example, you moved, changed your registered agent, or added a member — this is the moment to update it officially. Additionally, have your LLC's state-issued entity number or filing ID ready, as most online portals require it to locate your account.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">3</div>
+            <div>
+              <div class="step-title">Open the official state portal — not a third-party service</div>
+              <div class="step-desc">Use the direct link in the tracker above to open your state's official filing portal. Avoid third-party sites that charge a service fee to "help you file" — they are simply middlemen that charge $50–$200 to fill out a form you can complete yourself in 10 minutes for the standard state fee. Consequently, using the official portal directly always saves you money and gives you a direct confirmation of receipt from the state.</div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Filing and confirming your submission</h3>
+        <div class="timeline-container">
+          <div class="timeline-step-card">
+            <div class="step-num-badge">4</div>
+            <div>
+              <div class="step-title">Complete the form and pay the filing fee</div>
+              <div class="step-desc">Most state portals walk you through the form step by step. In many states — particularly those with pre-filled anniversary-based systems — you simply review your existing information, confirm it's accurate, and pay. The filing fee is typically paid by credit or debit card. Some states also accept ACH bank transfers. After payment, you will generally receive an immediate on-screen confirmation and a confirmation email.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">5</div>
+            <div>
+              <div class="step-title">Save your confirmation and update your LLC records</div>
+              <div class="step-desc">Download or screenshot the filing confirmation immediately. Save it alongside your LLC's formation documents — your Articles of Organization, <a href="operating-agreement.html">operating agreement</a>, and EIN confirmation letter. Some lenders, landlords, and contract partners ask for proof of good standing when you enter into agreements, and your annual report confirmation is part of that compliance record. Additionally, set your next year's reminder in your calendar before you close the portal tab.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">6</div>
+            <div>
+              <div class="step-title">Verify your LLC status in the state database after filing</div>
+              <div class="step-desc">Within 1–5 business days of filing, run a quick search on your LLC using our <a href="sos-search.html">Secretary of State Business Search tool</a> to confirm your status shows as "Active" or "Good Standing." In most states the update is immediate or same day, but in some states — notably Maryland and North Carolina — processing takes a few days. If your status doesn't update within a week, contact the SOS office directly to confirm receipt.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COST BREAKDOWN SECTION -->
+      <section id="cost-breakdown-section">
+        <h2>What Does It Cost to File an LLC Annual Report?</h2>
+        <p>
+          The cost of filing varies dramatically by state — from completely free to $500 per year. Understanding this cost upfront is essential, because the <strong>LLC annual report fee</strong> is a recurring obligation that adds up over the lifetime of your business. Below is an honest breakdown of the range you'll encounter.
+        </p>
+
+        <h3>Annual report fees across the spectrum</h3>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>CATEGORY</th>
+                <th>STATES</th>
+                <th>TYPICAL COST</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Free ($0)</strong></td>
+                <td>Idaho, Minnesota, Mississippi</td>
+                <td><strong style="color:#166534;">$0 / year</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Low Fee</strong></td>
+                <td>Alabama ($100), Colorado ($10), Kentucky ($15), Utah ($18), Wisconsin ($25)</td>
+                <td><strong>$10–$25 / year</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Mid Range</strong></td>
+                <td>New Jersey ($75), Illinois ($75), Florida ($138.75), Washington ($60), Oregon ($100)</td>
+                <td><strong>$50–$150 / year</strong></td>
+              </tr>
+              <tr>
+                <td><strong>High Fee</strong></td>
+                <td>Nevada ($350), Maryland ($300), North Carolina ($202)</td>
+                <td><strong style="color:#B91C1C;">$200–$350 / year</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Highest in Country</strong></td>
+                <td>Massachusetts ($500/year)</td>
+                <td><strong style="color:#B91C1C;">$500 / year</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Biennial</strong></td>
+                <td>California ($20), Indiana ($50), New York ($9), Ohio ($0)</td>
+                <td><strong>$9–$50 every 2 years</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout-blue" style="text-align: center; padding: 1.5rem;">
+          <div style="font-size: 0.85rem; font-weight: 800; color: #64748B; text-transform: uppercase;">TYPICAL ANNUAL LLC COMPLIANCE COST (REPORT + REGISTERED AGENT)</div>
+          <div style="font-size: 2rem; font-weight: 800; color: #12304A; margin: 0.35rem 0;">$89 – $549 / year</div>
+          <div style="font-size: 0.85rem; color: #64748B;">For the full picture of what your LLC costs to form and maintain — including state filing fees, registered agent costs, and annual report fees — see our <a href="how-much-does-an-llc-cost.html">complete guide to LLC costs</a> or use the <a href="llc-cost-calculator.html">LLC Cost Calculator</a>.</div>
+        </div>
+
+        <h3>The hidden cost most LLC owners overlook</h3>
+        <p>
+          Beyond the state filing fee itself, there's a cost most new LLC owners don't account for: the time and mental overhead of tracking compliance deadlines manually. For LLCs in anniversary-based states, the due date changes depending on when your LLC was formed — which means it's easy to lose track, especially if you have multiple LLCs or are busy running your business. As a result, many experienced LLC owners use a registered agent service not just for mail handling but specifically for the compliance calendar and reminders included in the annual fee. At $39–$125 per year, that service often costs less than a single late filing penalty.
+        </p>
+      </section>
+
+      <!-- AFTER FILING SECTION -->
+      <section id="after-filing-section">
+        <h2>Annual Report Filed — What to Check and Do Next</h2>
+        <p>
+          Filing your annual report is not the end of your LLC's compliance obligations for the year. Instead, it's a useful prompt to run through a quick compliance checklist. Here are the most important follow-up steps — particularly relevant if anything has changed in your LLC over the past year.
+        </p>
+
+        <h3>Post-filing compliance checklist</h3>
+        <div class="checklist-card-grid">
+          <div class="check-item-box">
+            <div class="check-icon-head">
+              <span style="color: #10B981; font-weight: 900;">✓</span> Verify your registered agent is still current and reachable
+            </div>
+            <p style="font-size: 0.88rem; color: #475569; margin: 0;">
+              Your <a href="registered-agent-guide.html">registered agent</a> is the entity that receives official legal and government mail on behalf of your LLC. If you've moved, changed agents, or your agent's address has changed, update that information with the state immediately — not just on the annual report, but as a separate filing in most states. An unreachable registered agent is one of the most common causes of missed legal notices.
+            </p>
+          </div>
+
+          <div class="check-item-box">
+            <div class="check-icon-head">
+              <span style="color: #10B981; font-weight: 900;">✓</span> Confirm your operating agreement reflects current ownership
+            </div>
+            <p style="font-size: 0.88rem; color: #475569; margin: 0;">
+              If your LLC gained or lost members, changed ownership percentages, or modified its management structure during the year, update your <a href="operating-agreement.html">operating agreement</a> accordingly. The annual report is a useful annual trigger for this review — and an outdated operating agreement is a liability in any legal or financial dispute involving your LLC.
+            </p>
+          </div>
+        </div>
+
+        <h3>Tax obligations and setting your next reminder</h3>
+        <div class="checklist-card-grid">
+          <div class="check-item-box">
+            <div class="check-icon-head">
+              <span style="color: #10B981; font-weight: 900;">✓</span> Check whether any state tax obligations have changed
+            </div>
+            <p style="font-size: 0.88rem; color: #475569; margin: 0;">
+              Some states impose franchise taxes, gross receipts taxes, or business privilege taxes separately from the annual report. Texas, for example, requires a Franchise Tax Report annually regardless of whether your revenue exceeds the threshold. Additionally, if your LLC's revenue has grown, you may have crossed thresholds that trigger new tax or licensing requirements. Our <a href="how-are-llcs-taxed.html">LLC taxes guide</a> covers the most common state-level tax obligations.
+            </p>
+          </div>
+
+          <div class="check-item-box">
+            <div class="check-icon-head">
+              <span style="color: #10B981; font-weight: 900;">✓</span> Set your next deadline reminder — before you close this page
+            </div>
+            <p style="font-size: 0.88rem; color: #475569; margin: 0;">
+              Add next year's filing deadline to your calendar right now, with a 30-day advance reminder. If your state uses an anniversary-based system, the due month is tied to your LLC's formation month — not a fixed calendar date. Alternatively, if you'd rather delegate this entirely, both <a href="northwest-registered-agent-review.html"><strong>Northwest Registered Agent</strong></a> and <a href="zenbusiness-vs-northwest.html"><strong>ZenBusiness</strong></a> include automatic compliance reminders in their registered agent plans.
+            </p>
+          </div>
+        </div>
+
+        <!-- RECOMMENDATION CARDS -->
+        <div class="top-pick-card">
+          <div>
+            <div style="background: #10B981; color: #FFF; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 6px; text-transform: uppercase; display: inline-block; margin-bottom: 0.5rem;">OUR TOP PICK</div>
+            <h3 style="margin: 0 0 0.35rem 0; font-size: 1.25rem;">Northwest Registered Agent — Best for Compliance Tracking</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: #475569; max-width: 650px;">
+              Northwest sends you annual report reminders before every deadline, handles filing on your behalf if you want, and includes a registered agent address that keeps your home address off public records. No upsells, no hidden fees — just the most straightforward registered agent service in the industry.
+              <br><strong style="color: #065F46;">• $39/year + state fees • Compliance reminders included • Best privacy policy in the industry</strong>
+            </p>
+          </div>
+          <a href="northwest-registered-agent-review.html" class="ls-btn ls-btn--emerald" style="padding: 0.75rem 1.25rem; font-size: 0.9rem; text-decoration: none;">Review Northwest →</a>
+        </div>
+
+        <div class="top-pick-card-blue">
+          <div>
+            <div style="background: #159A9C; color: #FFF; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 6px; text-transform: uppercase; display: inline-block; margin-bottom: 0.5rem;">SMART DASHBOARD</div>
+            <h3 style="margin: 0 0 0.35rem 0; font-size: 1.25rem;">ZenBusiness — Best Compliance Dashboard for New LLCs</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: #475569; max-width: 650px;">
+              ZenBusiness includes a compliance calendar and automatic deadline alerts in all paid plans. Their dashboard shows your upcoming filings, tracks your registered agent status, and gives you one-click filing for annual reports in most states. A strong choice if you prefer a visual compliance management interface.
+              <br><strong style="color: #0F766E;">• Registered agent from $199/year • Compliance dashboard included • 5-star rated</strong>
+            </p>
+          </div>
+          <a href="zenbusiness-vs-northwest.html" class="ls-btn" style="padding: 0.75rem 1.25rem; font-size: 0.9rem; text-decoration: none; background: #12304A; color: #FFF;">Compare Providers →</a>
+        </div>
+      </section>
+
+      <!-- FAQ ACCORDION SECTION -->
+      <section id="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>What happens if I file my LLC annual report late?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              If you file late, your state will impose a late fee ranging from $10 to $400 depending on the state. If it remains unpaid after 30-90 days, your LLC status changes to "Not in Good Standing." If ignored for 90-180 days, the state will administratively dissolve your LLC.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Is an LLC annual report the same as filing taxes?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              No. An annual report is a state corporate compliance filing that verifies your business address and registered agent details. It has nothing to do with your income, revenue, or federal tax returns (IRS Form 1040 / 1065 / 1120S).
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Which states do not require an LLC annual report?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Arizona, Missouri, New Mexico, and South Carolina require no annual report from LLCs with the Secretary of State. Pennsylvania requires a report only once every 10 years (Decennial Report).
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Can I file my LLC annual report myself without paying a service fee?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes! You can file directly on your state's Secretary of State official website in 10-15 minutes and pay only the state filing fee. You do not need to pay third-party filing services.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>What if my LLC had no income or business activity this year?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              You must still file the annual report and pay the state fee. The annual report maintains your legal corporate existence with the state regardless of whether your business made money.
+            </div>
+          </details>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- =========================================================================
+       3. SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p class="footer-tagline">
+            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Popular States</h4>
+          <ul class="footer-links">
+            <li><a href="best-state-to-form-an-llc.html">Wyoming LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Delaware LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Florida LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Texas LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">California LLC Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Free Calculators</h4>
+          <ul class="footer-links">
+            <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
+            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Post-Formation</h4>
+          <ul class="footer-links">
+            <li><a href="business-setup.html">Post-LLC Setup</a></li>
+            <li><a href="ein-guide.html">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </p>
+        <div class="footer-copyright">
+          &copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    const stateDataMap = {
+      FL: { name: "Florida", due: "May 1 annually", fee: "$138.75", penalty: "$400 late fee after Sep 1", freq: "Annual", link: "https://dos.fl.gov/sunbiz/" },
+      CA: { name: "California", due: "End of formation month", fee: "$20", penalty: "$250 late fee", freq: "Biennial (every 2 yrs)", link: "https://bizfileonline.sos.ca.gov/" },
+      TX: { name: "Texas", due: "May 15 annually", fee: "$0 (most LLCs)", penalty: "5% penalty + interest", freq: "Annual", link: "https://comptroller.texas.gov/taxes/franchise/" },
+      NY: { name: "New York", due: "End of formation month", fee: "$9", penalty: "Loss of good standing", freq: "Biennial (every 2 yrs)", link: "https://dos.ny.gov/e-statement-filing" },
+      WY: { name: "Wyoming", due: "1st day of formation month", fee: "$60 min", penalty: "$25 late fee", freq: "Annual", link: "https://wyobiz.wyo.gov/" },
+      DE: { name: "Delaware", due: "June 1 annually", fee: "$300 tax", penalty: "$200 late penalty", freq: "Annual Tax", link: "https://corp.delaware.gov/paytaxes/" },
+      GA: { name: "Georgia", due: "April 1 annually", fee: "$50", penalty: "$25 late fee", freq: "Annual", link: "https://ecorp.sos.ga.gov/" },
+      NC: { name: "North Carolina", due: "April 15 annually", fee: "$202", penalty: "$50 late fee", freq: "Annual", link: "https://www.sosnc.gov/" },
+      IL: { name: "Illinois", due: "1st day of formation month", fee: "$75", penalty: "$100 late penalty", freq: "Annual", link: "https://www.ilsos.gov/" },
+      MI: { name: "Michigan", due: "February 15 annually", fee: "$25", penalty: "$10 late fee", freq: "Annual", link: "https://cofs.lara.state.mi.us/" },
+      OH: { name: "Ohio", due: "None required for LLCs", fee: "$0", penalty: "N/A", freq: "None", link: "https://www.ohiosos.gov/" },
+      PA: { name: "Pennsylvania", due: "Decennial (every 10 yrs)", fee: "$7", penalty: "Loss of protection", freq: "10-Year Decennial", link: "https://www.dos.pa.gov/" },
+      MA: { name: "Massachusetts", due: "Anniversary date", fee: "$500", penalty: "$100 late penalty", freq: "Annual", link: "https://www.sec.state.ma.us/cor/" },
+      AZ: { name: "Arizona", due: "No annual report required", fee: "$0", penalty: "N/A", freq: "None", link: "https://ecorp.azcc.gov/" },
+      MO: { name: "Missouri", due: "No annual report required", fee: "$0", penalty: "N/A", freq: "None", link: "https://bsd.sos.mo.gov/" },
+      NM: { name: "New Mexico", due: "No annual report required", fee: "$0", penalty: "N/A", freq: "None", link: "https://portal.sos.state.nm.us/" },
+      SC: { name: "South Carolina", due: "No annual report required", fee: "$0", penalty: "N/A", freq: "None", link: "https://businessfilings.sc.gov/" }
+    };
+
+    function renderStateTrackerData(st) {
+      const area = document.getElementById("trackerDisplayArea");
+      const d = stateDataMap[st] || {
+        name: st + " State", due: "Anniversary / Fixed date", fee: "$25–$100", penalty: "$25–$100 late fee", freq: "Annual", link: "https://www.google.com/search?q=" + st + "+secretary+of+state+annual+report"
+      };
+
+      area.innerHTML = `
+        <div class="tr-metric-item">
+          <div class="tr-metric-label">STATE</div>
+          <div class="tr-metric-val" style="color:#FFF;">${d.name}</div>
+        </div>
+        <div class="tr-metric-item">
+          <div class="tr-metric-label">DUE DATE</div>
+          <div class="tr-metric-val">${d.due}</div>
+        </div>
+        <div class="tr-metric-item">
+          <div class="tr-metric-label">FILING FEE</div>
+          <div class="tr-metric-val">${d.fee}</div>
+        </div>
+        <div class="tr-metric-item">
+          <div class="tr-metric-label">LATE PENALTY</div>
+          <div class="tr-metric-val" style="color:#FCA5A5;">${d.penalty}</div>
+        </div>
+        <div class="tr-sos-btn-wrap">
+          <div>
+            <strong style="color:#FFF;">Official State Portal (${d.name}):</strong> 
+            <span style="font-size:0.85rem; color:#CBD5E1;">File directly with Secretary of State</span>
+          </div>
+          <a href="${d.link}" target="_blank" rel="noopener" style="background:#159A9C; color:#FFF; padding:0.6rem 1.15rem; border-radius:8px; font-weight:700; text-decoration:none; font-size:0.875rem;">File Directly with State SOS →</a>
+        </div>
+      `;
+    }
+
+    // Default load Florida
+    renderStateTrackerData("FL");
+  </script>
+</body>
+</html>
