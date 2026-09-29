@@ -246,7 +246,7 @@
       align-items: flex-start;
     }
     .step-num-badge {
-      background: #12304A;
+      background: #159a9c;
       color: #FFFFFF;
       font-size: 0.9rem;
       font-weight: 800;
@@ -428,6 +428,13 @@
       font-family: var(--font-heading);
     }
     .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-chevron {
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    details.faq-accordion-item[open] .faq-chevron {
+      transform: rotate(180deg);
+    }
     .faq-accordion-answer {
       padding: 0 1.65rem 1.35rem 1.65rem;
       font-size: 0.95rem;
@@ -550,7 +557,7 @@
 
     <!-- BREADCRUMB -->
     <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
-      <a href="index.html" style="color: #64748B; text-decoration: none;">LLC Starters</a> &nbsp;/&nbsp; 
+      <a href="index.html" style="color: #64748B; text-decoration: none;">LLC Primer</a> &nbsp;/&nbsp; 
       <a href="non-resident-llc-guide.html" style="color: #64748B; text-decoration: none;">Non-Residents</a> &nbsp;/&nbsp; 
       <strong style="color: #12304A;">Best State</strong>
     </div>

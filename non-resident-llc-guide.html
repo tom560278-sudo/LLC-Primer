@@ -330,6 +330,13 @@
       font-family: var(--font-heading);
     }
     .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-chevron {
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    details.faq-accordion-item[open] .faq-chevron {
+      transform: rotate(180deg);
+    }
     .faq-accordion-answer {
       padding: 0 1.65rem 1.35rem 1.65rem;
       font-size: 0.95rem;
