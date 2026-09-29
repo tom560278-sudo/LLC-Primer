@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>How to Form a US LLC as a Non-US Resident (2026 Guide) | LLC Primer</title>
+  <meta name="description" content="Complete 2026 guide to forming a US LLC for non-residents without an SSN, US address, or visa. Compare Wyoming vs Delaware, EIN application without SSN, US bank account setup, Form 5472, and taxes.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3.5rem 1.5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover { color: #0E7490; }
+
+    .guide-article ul, .guide-article ol {
+      padding-left: 1.65rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+    .guide-article ul li, .guide-article ol li {
+      margin-bottom: 0.65rem !important;
+      line-height: 1.7 !important;
+      color: #334155 !important;
+    }
+
+    /* Meta Bar */
+    .source-banner-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 0.85rem 1.15rem;
+      font-size: 0.875rem;
+      color: #475569;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Quick Answer Blue Box */
+    .quick-answer-box {
+      background: #F0F9FF;
+      border: 1.5px solid #BAE6FD;
+      border-left: 5px solid #0284C7;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      color: #0369A1;
+      margin: 1.75rem 0 2.25rem 0;
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    /* TOC Box */
+    .toc-card-box {
+      background: #F8FAFC;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+    }
+    .toc-card-box h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
+    .toc-links-ol {
+      margin: 0;
+      padding-left: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .toc-links-ol li a {
+      color: #159A9C;
+      font-weight: 600;
+      font-size: 0.925rem;
+      text-decoration: none;
+    }
+    .toc-links-ol li a:hover {
+      text-decoration: underline;
+      color: #0E7490;
+    }
+
+    /* Callout Boxes */
+    .callout-green {
+      background: #ECFDF5;
+      border: 1.5px solid #A7F3D0;
+      border-left: 5px solid #10B981;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      color: #065F46;
+      margin: 2rem 0;
+      line-height: 1.65;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #BAE6FD;
+      border-left: 5px solid #0284C7;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      color: #0369A1;
+      margin: 2rem 0;
+      line-height: 1.65;
+    }
+    .callout-yellow {
+      background: #FEF3C7;
+      border: 1.5px solid #FDE68A;
+      border-left: 5px solid #F59E0B;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      color: #78350F;
+      margin: 2rem 0;
+      line-height: 1.65;
+    }
+    .callout-red {
+      background: #FEE2E2;
+      border: 1.5px solid #FCA5A5;
+      border-left: 5px solid #EF4444;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      color: #7F1D1D;
+      margin: 2rem 0;
+      line-height: 1.65;
+    }
+
+    /* Comparison Table */
+    .styled-table-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
+      margin: 1.75rem 0;
+    }
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    .styled-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 0.95rem 1.15rem;
+      font-size: 0.785rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .styled-table td {
+      padding: 0.95rem 1.15rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .styled-table tr:last-child td { border-bottom: none; }
+    .styled-table tr:nth-child(even) { background: #F8FAFC; }
+
+    /* Timeline Stepper Box */
+    .timeline-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .timeline-step-card {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 1.35rem 1.65rem;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .step-num-badge {
+      background: #12304A;
+      color: #FFFFFF;
+      font-size: 0.9rem;
+      font-weight: 800;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Service CTA Box */
+    .service-cta-box {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      box-shadow: 0 4px 14px rgba(18, 48, 74, 0.04);
+      flex-wrap: wrap;
+    }
+
+    /* Recommendation Cards */
+    .top-pick-card {
+      background: #FFFFFF;
+      border: 2px solid #10B981;
+      border-radius: 18px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Dark Blue Bottom Line Card */
+    .bottom-line-card {
+      background: linear-gradient(135deg, #0d2336 0%, #159A9C 100%);
+      border-radius: 18px;
+      padding: 1.75rem 2rem;
+      color: #FFFFFF;
+      margin: 2.5rem 0;
+      box-shadow: 0 12px 32px rgba(13, 35, 54, 0.2);
+    }
+
+    /* Cluster Cards */
+    .cluster-box {
+      background: #F8FAFC;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 18px;
+      padding: 1.75rem;
+      margin: 2.5rem 0;
+    }
+    .cluster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .cluster-item-link {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 0.85rem 1.15rem;
+      color: #159A9C;
+      font-weight: 700;
+      font-size: 0.925rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .cluster-item-link:hover {
+      border-color: #159A9C;
+      background: #F0FDFA;
+      transform: translateX(4px);
+    }
+
+    /* Accordion FAQ */
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2.5rem;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: all 0.25s ease;
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. EXECUTIVE GLASSMORPHIC NAVBAR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">
+            Start an LLC
+          </a>
+        </div>
+
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="tools.html" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="llc-annual-report-tracker.html" class="dropdown-link">Annual Report Tracker</a>
+            <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
+            <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
+            <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
+            <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="non-resident-llc-guide.html" class="nav-link active" style="color: var(--color-primary); font-weight: 800;">
+            Non-Residents
+          </a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan →
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT AREA
+       ========================================================================= -->
+  <main class="guide-content-container">
+
+    <!-- BREADCRUMB -->
+    <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
+      <a href="index.html" style="color: #64748B; text-decoration: none;">LLC Starters</a> &nbsp;/&nbsp; 
+      <strong style="color: #12304A;">Non-Residents</strong>
+    </div>
+
+    <article class="guide-article">
+      <!-- HEADER TITLE -->
+      <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: #12304A; line-height: 1.2; margin-bottom: 0.75rem; font-family: var(--font-heading);">
+        How to Form a US LLC as a Non-US Resident (2026 Guide)
+      </h1>
+      <p style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.25rem;">
+        3 months ago · Updated 3 weeks ago
+      </p>
+
+      <div class="source-banner-box">
+        <strong>Last reviewed:</strong> September 7, 2026 &nbsp;|&nbsp; <strong>Official source:</strong> IRS international business guidance provides the primary guidance used in this guide.
+      </div>
+
+      <p>
+        Starting a US LLC as a non-US resident is easier than most people think. Foreign entrepreneurs can legally form a <strong>US LLC for non-residents</strong> without US citizenship, a visa, or a Social Security Number (SSN).
+      </p>
+
+      <p>
+        Whether you're looking to create a <strong>Wyoming LLC as a foreigner</strong>, obtain an EIN without an SSN, open a US business bank account remotely, or understand the tax requirements of a <strong>foreign-owned LLC</strong>, this guide explains every step.
+      </p>
+
+      <p>
+        You'll learn how to form an <strong>LLC in the USA as a non-resident</strong>, which state is best, how much it costs, what compliance requirements apply, and which mistakes international founders most commonly make.
+      </p>
+
+      <!-- QUICK ANSWER BOX -->
+      <div class="quick-answer-box">
+        <strong>Quick answer:</strong> Yes, a foreigner can open an LLC in the United States without living in the US, without an SSN, and without visiting the country. Wyoming is usually the preferred state for international founders because of its low costs, privacy protections, and simple compliance requirements.
+      </div>
+
+      <!-- TOC CARD BOX -->
+      <div class="toc-card-box">
+        <h3>📋 IN THIS GUIDE</h3>
+        <ol class="toc-links-ol">
+          <li><a href="#can-non-resident-form">1. Can a non-US resident form a US LLC?</a></li>
+          <li><a href="#what-you-need">2. What you need — and what you don't</a></li>
+          <li><a href="#choosing-state">3. Choosing the right state</a></li>
+          <li><a href="#step-by-step">4. How to form your LLC step by step</a></li>
+          <li><a href="#getting-ein">5. Getting your EIN without an SSN</a></li>
+          <li><a href="#bank-account">6. Opening a US bank account remotely</a></li>
+          <li><a href="#taxes-section">7. Taxes for foreign-owned LLCs</a></li>
+          <li><a href="#ongoing-compliance">8. Ongoing compliance requirements</a></li>
+          <li><a href="#cost-section">9. How much does it cost?</a></li>
+          <li><a href="#doola-vs-northwest">10. Doola vs Northwest for non-residents</a></li>
+          <li><a href="#faq-section">11. Frequently asked questions</a></li>
+        </ol>
+      </div>
+
+      <p>
+        A <strong>non-US resident can form a US LLC</strong> without citizenship, residency, or a Social Security Number. The process is entirely online. Wyoming processes Articles of Organization in 1–3 business days. What you actually need is minimal: a registered agent with a US address, a filed formation document, and an EIN from the IRS.
+      </p>
+
+      <p>
+        This guide covers every step — from choosing a state to opening a bank account remotely — including the tax obligations most international guides quietly leave out.
+      </p>
+
+      <!-- SECTION 1 -->
+      <section id="can-non-resident-form">
+        <h2>1. Can a non-US resident form a US LLC?</h2>
+        <p>
+          Yes. US law does not require citizenship, residency, or physical presence to form an LLC. Citizens of 180+ countries have done it entirely online without visiting the United States. There is no minimum ownership stake, no requirement for a US partner, and no government approval process beyond the standard Secretary of State filing.
+        </p>
+        <p>
+          If you're wondering <a href="what-is-an-llc.html">what an LLC is</a> and whether it's the right structure for your situation, the short answer is that it combines liability protection with pass-through taxation — and it's the most common business structure for international founders entering the US market.
+        </p>
+
+        <div class="callout-blue">
+          ℹ️ Non-US residents can own a US LLC as a <a href="what-is-an-llc.html">single-member LLC</a> (one owner) or as part of a multi-member LLC alongside other foreign or US-based members. Single-member is the most common choice — simpler compliance and fewer moving parts.
+        </div>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section id="what-you-need">
+        <h2>2. What you need — and what you don't</h2>
+        <p>
+          The list of actual requirements is shorter than most guides suggest. Here's the honest breakdown.
+        </p>
+
+        <h3>What you do need</h3>
+        <ul>
+          <li><strong>Registered agent</strong> — a person or commercial service with a physical address in your formation state. Required by law. As a non-resident, you'll need a professional RA service since you don't have a state address.</li>
+          <li><strong>Articles of Organization</strong> — the formation document filed with the Secretary of State. In Wyoming: $100 filing fee plus an applicable online processing fee. Approved in 1–3 business days online.</li>
+          <li><strong>EIN (Employer Identification Number)</strong> — your LLC's federal tax ID. Required for banking, payroll, and most payment processors. Applied for after formation. By phone: same day; by fax: approximately 4 business days; by mail: 4–5 weeks. Processing delays can occur during high-volume periods.</li>
+          <li><strong>Passport</strong> — to verify your identity when applying for an EIN and opening a bank account.</li>
+        </ul>
+
+        <h3>What you don't need</h3>
+        <ul>
+          <li>US citizenship or permanent residency</li>
+          <li>Social Security Number (SSN)</li>
+          <li>ITIN — helpful for personal US tax filings, not required for formation</li>
+          <li>A US mailing address — your registered agent handles this</li>
+          <li>A US bank account before forming the LLC</li>
+          <li>A physical visit to the United States at any point</li>
+        </ul>
+
+        <div class="callout-green">
+          💡 A <a href="virtual-business-address.html">virtual business address</a> gives your LLC a professional US presence for client-facing communications. It's separate from your registered agent address — the RA is for legal and government notices only.
+        </div>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section id="choosing-state">
+        <h2>3. Choosing the right state</h2>
+        <p>
+          Your LLC doesn't need to be formed in the state where your customers are. Non-residents almost always choose between three states.
+        </p>
+
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>STATE</th>
+                <th>FILING FEE</th>
+                <th>ANNUAL FEE</th>
+                <th>STATE INCOME TAX</th>
+                <th>PRIVACY</th>
+                <th>BEST FOR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Wyoming</strong></td>
+                <td>$100 + processing fee</td>
+                <td>$60/yr minimum</td>
+                <td>None</td>
+                <td><strong style="color:#10B981;">Strong</strong></td>
+                <td>Most non-residents</td>
+              </tr>
+              <tr>
+                <td><strong>Delaware</strong></td>
+                <td>$90</td>
+                <td>$300/yr</td>
+                <td>None on out-of-state income</td>
+                <td>Moderate</td>
+                <td>VC-backed startups</td>
+              </tr>
+              <tr>
+                <td><strong>New Mexico</strong></td>
+                <td>$50</td>
+                <td>$0</td>
+                <td>None on out-of-state income</td>
+                <td>Limited</td>
+                <td>Budget-first founders</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          <strong>Wyoming is the right starting point for most non-residents.</strong> No state income tax, member names are not in public records, the $60 annual report fee is the lowest among popular formation states, and the entire process runs online. Delaware makes sense if you're building for VC funding — institutional investors expect Delaware C-Corps or LLCs. New Mexico charges no annual report fee, which saves money long-term, but its privacy protections are weaker and it's less recognized internationally.
+        </p>
+
+        <p>
+          For a detailed breakdown with real scenarios, see our guide to the <a href="best-state-to-form-an-llc.html">best state for non-US resident LLCs</a>. The general <a href="best-state-to-form-an-llc.html">best state to form an LLC</a> guide covers the full 50-state picture.
+        </p>
+      </section>
+
+      <!-- SECTION 4 -->
+      <section id="step-by-step">
+        <h2>4. How to form your US LLC as a non-resident</h2>
+        <p>
+          Every step can be completed online from your home country. The formation itself is fast — the EIN is the slow part.
+        </p>
+
+        <div class="timeline-container">
+          <div class="timeline-step-card">
+            <div class="step-num-badge">1</div>
+            <div>
+              <div class="step-title">Choose your state</div>
+              <div class="step-desc">Wyoming for most cases. Delaware if you need VC funding. New Mexico if eliminating the annual report fee is your priority. You don't need to operate in the state you form in — most non-resident LLCs never have a physical presence in their formation state.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">2</div>
+            <div>
+              <div class="step-title">Choose your registered agent</div>
+              <div class="step-desc">Every LLC needs a registered agent with a physical address in the formation state. As a non-resident, you'll use a commercial RA service. <a href="northwest-registered-agent-review.html">Northwest Registered Agent</a> charges $39/year in Wyoming — a flat rate with no hidden renewal hikes.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">3</div>
+            <div>
+              <div class="step-title">File Articles of Organization</div>
+              <div class="step-desc">This document officially creates your LLC. Submit it to the Secretary of State with the state filing fee. Wyoming processes online filings within 1–3 business days and confirms approval by email.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">4</div>
+            <div>
+              <div class="step-title">Draft an operating agreement</div>
+              <div class="step-desc">Not always required by law, but essential in practice. Banks, payment processors, and investors will ask for it. An <a href="operating-agreement.html">operating agreement</a> defines ownership percentages, member roles, and how profits are distributed. Get one before you try to open a bank account.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">5</div>
+            <div>
+              <div class="step-title">Apply for your EIN</div>
+              <div class="step-desc">Your EIN is your LLC's federal tax identification number. Without an SSN, apply by calling the IRS international line (+1 267-941-1099) to receive it the same day, or fax Form SS-4 to the IRS for processing in approximately 4 business days. The online EIN application is not available to non-residents. Mail applications take 4–5 weeks. Processing delays can occur during high-volume IRS periods.</div>
+            </div>
+          </div>
+
+          <div class="timeline-step-card">
+            <div class="step-num-badge">6</div>
+            <div>
+              <div class="step-title">Set up your annual compliance calendar</div>
+              <div class="step-desc">Note your LLC's formation date — Wyoming's annual report is due the first day of your anniversary month each year. Set a reminder for your registered agent renewal and your Form 5472 filing (due April 15 annually). Annual compliance is the most overlooked step for non-residents and the one that creates the most expensive problems when missed.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DOOLA TOP PICK CTA BOX -->
+        <div class="top-pick-card">
+          <div>
+            <div style="background: #10B981; color: #FFF; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 6px; text-transform: uppercase; display: inline-block; margin-bottom: 0.5rem;">★ OUR TOP PICK</div>
+            <h3 style="margin: 0 0 0.35rem 0; font-size: 1.25rem;">doola — Built for Non-US Founders</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: #475569; max-width: 650px;">
+              Handles the entire formation process: Articles of Organization, registered agent, operating agreement, EIN without SSN, and US bank account setup. No visit to the US required. 
+              <br><strong style="color: #065F46;">Use code LLCSTARTERS10 for 10% off</strong>
+            </p>
+          </div>
+          <a href="https://www.doola.com" target="_blank" rel="noopener" class="ls-btn ls-btn--emerald" style="padding: 0.75rem 1.25rem; font-size: 0.9rem; text-decoration: none;">Start with doola →</a>
+        </div>
+      </section>
+
+      <!-- SECTION 5 -->
+      <section id="getting-ein">
+        <h2>5. Getting your EIN without an SSN</h2>
+        <p>
+          Non-US residents cannot use the IRS online EIN application — it requires an SSN or ITIN. Three methods are available: phone (same day), fax (approximately 4 business days), and mail (4–5 weeks). Call the IRS international line at <strong>+1 (267) 941-1099</strong> with a completed Form SS-4 ready to receive your EIN the same day. Fax your completed SS-4 to 304-707-9471 (from outside the US) with a return fax number to receive it in approximately 4 business days. Processing delays can occur during high-volume periods. Plan your bank account opening around this timeline.
+        </p>
+
+        <p>
+          Once the IRS issues your EIN, they send a CP575 confirmation letter by mail to your registered agent's address. Keep the original — banks will ask for it and replacements require a separate 147c letter request.
+        </p>
+
+        <div class="callout-yellow">
+          ⚠️ <strong>Don't attempt to use a nominee's SSN or a third-party workaround to speed up the EIN process.</strong> It creates IRS compliance problems that are far more expensive to fix than following the proper non-resident channel — phone or fax directly with the IRS.
+        </div>
+
+        <p>
+          For the complete tax application walkthrough, what to do if the IRS rejects your application, and when to consider a paid EIN service, see our <a href="ein-guide.html">EIN guide for non-US residents</a>. The general <a href="ein-guide.html">EIN for LLC guide</a> covers the full process for context.
+        </p>
+
+        <div class="service-cta-box">
+          <div>
+            <strong style="color: #12304A;">doola EIN Service:</strong> <span style="font-size: 0.9rem; color: #475569;">doola files your Form SS-4 with the IRS and follows up on your behalf. No SSN required. Designed specifically for international founders who don't want to navigate the IRS tax process alone.</span>
+          </div>
+          <a href="https://www.doola.com" target="_blank" rel="noopener" class="ls-btn" style="background: #0284C7; color: #FFF; padding: 0.65rem 1.15rem; font-size: 0.875rem; text-decoration: none; flex-shrink: 0;">Get your EIN with doola →</a>
+        </div>
+      </section>
+
+      <!-- SECTION 6 -->
+      <section id="bank-account">
+        <h2>6. Opening a US bank account remotely</h2>
+        <p>
+          You can open a US business bank account remotely — but only after you have your EIN. Most banks won't open accounts without one. The most widely used options for foreign-owned LLCs are Mercury Bank and Relay Bank, both of which accept non-residents without an SSN and run fully online applications.
+        </p>
+
+        <ul>
+          <li><strong>Mercury</strong> — a fintech platform (not a bank; banking services provided through partner FDIC-member banks). No monthly fees, strong API and fintech integrations. Widely used by e-commerce and SaaS founders. Accepts non-residents without an SSN, but approval is not guaranteed and depends on your country of residence, business model, and compliance review. Note: registered agent addresses are not accepted as your principal business address.</li>
+          <li><strong>Relay</strong> — business-focused with multiple sub-accounts, no transaction fees. Relay may accept non-residents but is generally stricter than Mercury. Requirements typically include an SSN or ITIN, a physical US business address (not a PO box or virtual mailbox), and evidence of US operating presence. Approval is not guaranteed for non-residents without an ITIN.</li>
+          <li><strong>Wise Business</strong> — multi-currency, strong for international payments. Technically a money transfer service rather than a US bank, but functions as one for most operational purposes.</li>
+        </ul>
+
+        <p>
+          To apply you'll need your EIN, Articles of Organization, operating agreement, and passport. Most accounts are approved within 2–5 business days once your EIN is in hand.
+        </p>
+
+        <p>
+          For a full comparison including which banks reject non-residents most often and what to do after a rejection, see our <a href="best-business-bank-accounts.html">US bank account guide for non-residents</a>. The <a href="best-business-bank-accounts.html">business bank account guide</a> has broader context on US banking options.
+        </p>
+
+        <div class="service-cta-box">
+          <div>
+            <strong style="color: #12304A;">doola Banking Setup:</strong> <span style="font-size: 0.9rem; color: #475569;">doola's formation packages include US bank account setup through Mercury or Relay. Already have your LLC? doola can still get you banked as a standalone service.</span>
+          </div>
+          <a href="https://www.doola.com" target="_blank" rel="noopener" class="ls-btn" style="background: #0284C7; color: #FFF; padding: 0.65rem 1.15rem; font-size: 0.875rem; text-decoration: none; flex-shrink: 0;">Get banked with doola →</a>
+        </div>
+      </section>
+
+      <!-- SECTION 7 -->
+      <section id="taxes-section">
+        <h2>7. Taxes for foreign-owned LLCs</h2>
+        <p>
+          This is the section most formation guides skip. It's also the one that creates the most expensive surprises for non-residents.
+        </p>
+
+        <h3>Pass-through taxation</h3>
+        <p>
+          A US LLC is a pass-through entity by default. The LLC pays no federal income tax at the entity level — profits flow through to the members, who report them on their own tax returns. For non-US members, this means US-source income appears on Form 1040-NR (US Non-Resident Alien Income Tax Return). Foreign-source income is reported in your home country per local tax law. See our <a href="how-are-llcs-taxed.html">LLC taxes guide</a> for a full breakdown of how pass-through taxation works in practice.
+        </p>
+
+        <h3>Effectively Connected Income (ECI)</h3>
+        <p>
+          If your LLC is actively conducting business in the United States — meaning the income is generated through US-based activity, not just passively received — that income is classified as Effectively Connected Income and is subject to US federal tax at graduated rates. If your business operates entirely outside the US with no US employees, offices, or physical activity, ECI generally does not apply. The distinction matters a great deal, and it's not always obvious which side your business falls on.
+        </p>
+
+        <h3>Form 5472 — the filing most non-residents miss</h3>
+        <p>
+          If you own a single-member US LLC as a non-US person, your LLC is classified as a foreign-owned disregarded entity. Foreign-owned single-member LLCs commonly have reportable transactions that trigger <strong>Form 5472 plus a pro forma Form 1120</strong> filing requirements. Because most LLCs create reportable transactions during formation, funding, or operation, founders should treat Form 5472 as a critical annual compliance obligation unless a qualified CPA determines otherwise. The deadline is April 15. The IRS penalty for a missing or incomplete filing: <strong>$25,000 per occurrence</strong>. Work with a CPA experienced in foreign-owned US entities to confirm your specific obligations.
+        </p>
+
+        <div class="callout-red">
+          🚨 <strong>Treat Form 5472 as mandatory until a CPA tells you otherwise.</strong> Most LLCs create reportable transactions during formation or operation that trigger the filing requirement. Missing it costs $25,000. Most US-focused accountants are unfamiliar with it — work with a CPA who specializes in foreign-owned US entities, or use a service like doola that handles it as part of their compliance package.
+        </div>
+
+        <h3>Multi-member LLCs with foreign members</h3>
+        <p>
+          A multi-member LLC is taxed as a partnership by default. The LLC files Form 1065 with K-1s for each member. If any member is a non-US person, the LLC may be required to withhold and remit US tax on their distributive share of US-source income. The withholding rate for non-resident aliens is generally 30%, reduced by applicable tax treaty.
+        </p>
+
+        <h3>Tax treaties</h3>
+        <p>
+          The US has income tax treaties with 60+ countries. Treaty provisions can reduce withholding rates, eliminate double taxation on certain income types, and modify how ECI is classified. Whether a treaty applies to your situation depends on your country of residence, the type of income, and how your LLC is structured. This is not a DIY determination — get country-specific advice.
+        </p>
+      </section>
+
+      <!-- SECTION 8 -->
+      <section id="ongoing-compliance">
+        <h2>8. Ongoing compliance requirements</h2>
+        <p>
+          Forming the LLC is a one-time event. Keeping it in good standing requires annual action.
+        </p>
+
+        <h3>BOI report (FinCEN) — 2025 update</h3>
+        <p>
+          As of FinCEN's 2025 interim final rule, domestic entities formed in the United States are generally exempt from Beneficial Ownership Information (BOI) reporting requirements. BOI reporting obligations primarily apply to certain foreign entities registered to do business in the United States. If your LLC is a domestic US LLC formed in Wyoming, Delaware, or another US state, consult a qualified attorney or CPA to confirm your current BOI status under the most recent FinCEN guidance before filing. Requirements in this area have changed and may continue to evolve.
+        </p>
+
+        <h3>Annual report</h3>
+        <p>
+          Wyoming requires an annual report due the first day of the month your LLC was formed. The fee is $60 or $0.0002 × the total value of Wyoming-based assets, whichever is greater. For most non-resident LLCs with no Wyoming assets, the $60 minimum applies. Delaware's annual LLC tax starts at $300. New Mexico has no annual report requirement.
+        </p>
+
+        <h3>Registered agent renewal</h3>
+        <p>
+          Your <a href="registered-agent-guide.html">registered agent</a> must remain active at all times. If you miss a renewal payment and your RA lapses, your LLC can lose good standing and may fail to receive legal notices — including IRS correspondence.
+        </p>
+
+        <h3>Form 5472 (annual)</h3>
+        <p>
+          Due every April 15 for most foreign-owned single-member LLCs. Because nearly all LLCs have at least one reportable transaction during formation or operation, treat this as a required annual filing unless a qualified CPA determines otherwise. This is separate from any income tax return you may owe as an individual.
+        </p>
+      </section>
+
+      <!-- SECTION 9 -->
+      <section id="cost-section">
+        <h2>9. How much does a US LLC cost for a non-resident?</h2>
+        <div class="callout-blue">
+          <strong>Wyoming minimum — Year 1:</strong> $100 (Articles of Organization) + applicable online processing fee + $39 (registered agent) = approximately $141–$150 depending on the processing fee applied. EIN is free if you apply directly via IRS phone or fax. With doola handling formation, EIN, operating agreement, and banking intro: from $297.
+          <br><br>
+          <strong>Year 2+:</strong> $60 minimum (annual report) + applicable processing fee + $39 (RA renewal) = approximately $99–$105/year ongoing.
+        </div>
+
+        <p>
+          Delaware costs more in ongoing fees: $90 filing + $300 annual LLC tax due June 1 each year + RA service. Late payments trigger a $200 penalty plus interest. Realistic Year 1 total: $450–$600. Year 2+: $350+. The Delaware premium is only worth it if VC funding is actually on your roadmap.
+        </p>
+        <p>
+          Common costs non-residents underestimate: Form 5472 preparation ($200–$500 with a qualified CPA), and registered agent renewal fees in Year 2. Consult a CPA regarding your specific BOI reporting obligations under our <a href="how-much-does-an-llc-cost.html">non-resident LLC cost guide</a>. Use the <a href="llc-cost-calculator.html">LLC cost calculator</a> for a quick state-by-state estimate.
+        </p>
+      </section>
+
+      <!-- SECTION 10 -->
+      <section id="doola-vs-northwest">
+        <h2>10. Doola vs Northwest: which is better for non-residents?</h2>
+        <p>
+          They serve different parts of the process, and for non-residents the distinction matters.
+        </p>
+        <p>
+          <a href="https://www.doola.com" target="_blank" rel="noopener"><strong>doola</strong></a> is built specifically for international founders. It handles formation, EIN without SSN, US bank account intro, bookkeeping, and tax compliance including Form 5472. If you want one service to take you from zero to compliant without navigating US government processes on your own, doola is the right call.
+        </p>
+        <p>
+          <a href="northwest-registered-agent-review.html"><strong>Northwest Registered Agent</strong></a> is the best standalone registered agent service at $39/year. If you've already formed your LLC — or if you want to handle formation yourself — Northwest handles the RA obligation cleanly and affordably. It does not offer EIN filing for non-residents, banking setup, or tax compliance.
+        </p>
+        <p>
+          For most non-residents starting from scratch: doola covers more of what you actually need. For those who've already formed their LLC and just need ongoing RA service: Northwest wins on price. Check our full <a href="zenbusiness-vs-northwest.html">doola vs Northwest</a> comparison for a side-by-side breakdown. See <a href="best-llc-services.html">best LLC services</a> for the full market picture.
+        </p>
+
+        <div class="top-pick-card">
+          <div>
+            <div style="background: #10B981; color: #FFF; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 6px; text-transform: uppercase; display: inline-block; margin-bottom: 0.5rem;">★ OUR TOP PICK</div>
+            <h3 style="margin: 0 0 0.35rem 0; font-size: 1.25rem;">doola — From Formation to Compliance</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: #475569; max-width: 650px;">
+              LLC formation, EIN without SSN, US bank account, bookkeeping, and Form 5472 filing — all in one place. Built for founders who aren't based in the US.
+              <br><strong style="color: #065F46;">Use code LLCSTARTERS10 for 10% off</strong>
+            </p>
+          </div>
+          <a href="https://www.doola.com" target="_blank" rel="noopener" class="ls-btn ls-btn--emerald" style="padding: 0.75rem 1.25rem; font-size: 0.9rem; text-decoration: none;">See doola pricing →</a>
+        </div>
+
+        <div class="bottom-line-card">
+          <div style="font-size: 0.75rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #6EE7B7; margin-bottom: 0.5rem;">BOTTOM LINE</div>
+          <div style="font-size: 0.975rem; line-height: 1.65; color: #FFFFFF;">
+            Non-US residents can form a US LLC legally, quickly, and entirely online. Wyoming works for most international founders — low cost, strong privacy, no state income tax. Two things consistently catch people off guard: the EIN can take days to weeks depending on method (phone is same day; fax approximately 4 business days; mail 4–5 weeks), and Form 5472 is a critical annual compliance requirement for most foreign-owned single-member LLCs. Build both into your timeline before you launch.
+          </div>
+        </div>
+
+        <!-- CLUSTER LINKS BOX -->
+        <div class="cluster-box">
+          <h3 style="margin-top:0; font-size:1.15rem; color:#12304A;">Explore the full non-resident LLC cluster</h3>
+          <p style="font-size:0.875rem; color:#64748B; margin-bottom:1rem;">Each guide covers one part of the process in full detail.</p>
+          <div class="cluster-grid">
+            <a href="best-business-bank-accounts.html" class="cluster-item-link">US Bank Account for Non-Resident LLCs — Mercury, Relay, and Wise compared →</a>
+            <a href="how-much-does-an-llc-cost.html" class="cluster-item-link">Non-Resident LLC Cost Breakdown — Year 1, Year 2, and hidden fees →</a>
+            <a href="best-state-to-form-an-llc.html" class="cluster-item-link">Best State for Non-US Residents — Wyoming vs Delaware vs New Mexico →</a>
+            <a href="ein-guide.html" class="cluster-item-link">EIN for Non-Resident LLCs — How to apply without an SSN →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 11 -->
+      <section id="faq-section">
+        <h2>11. Frequently Asked Questions</h2>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Can a non-US resident form a US LLC?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. Non-US residents can legally form and 100% own a US LLC without US citizenship, residency, a visa, or physical presence in the United States.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Do I need an SSN to form a US LLC?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              No. You do not need a Social Security Number to form an LLC or to get an EIN for your LLC from the IRS.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Do I need an ITIN to form a US LLC?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              No. An ITIN is not required to form an LLC or to obtain an EIN. It is only required later if you file personal US income tax returns.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Can I get an EIN without an SSN?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. You can get an EIN by calling the IRS international line at +1 (267) 941-1099 for same-day issuance, or by faxing Form SS-4 for processing in approximately 4 business days.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>What is the best state for a non-US resident to form an LLC?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Wyoming is the best choice for most non-residents due to zero state income tax, low $60 annual report fees, strong owner privacy, and quick online processing.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Can a non-US resident open a US business bank account?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. Online business banking platforms like Mercury, Relay, and Wise accept foreign-owned US LLCs without requiring a physical visit to the US once your EIN is issued.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>What is Form 5472 and do I need to file it?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Form 5472 is an annual IRS information return required for foreign-owned single-member LLCs with reportable transactions. Missing it carries a $25,000 penalty.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Do non-resident LLC owners pay US taxes?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              You only pay US federal income tax on US-sourced Effectively Connected Income (ECI). Income generated entirely outside the US with no US physical operations is generally not subject to US income tax.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Do I need to file a BOI report for my US LLC?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Under FinCEN's 2025 interim final rule, domestic entities formed in the US are generally exempt from BOI reporting requirements. BOI reporting primarily applies to foreign entities registered to do business in the US.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <span>Can a foreigner own 100% of a US LLC?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#159A9C" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. A non-US citizen or non-resident alien can own 100% of a US LLC as a single-member LLC.
+            </div>
+          </details>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- =========================================================================
+       3. SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p class="footer-tagline">
+            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Popular States</h4>
+          <ul class="footer-links">
+            <li><a href="best-state-to-form-an-llc.html">Wyoming LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Delaware LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Florida LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Texas LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">California LLC Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Free Calculators</h4>
+          <ul class="footer-links">
+            <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
+            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Post-Formation</h4>
+          <ul class="footer-links">
+            <li><a href="business-setup.html">Post-LLC Setup</a></li>
+            <li><a href="ein-guide.html">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </p>
+        <div class="footer-copyright">
+          &copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
