@@ -109,7 +109,7 @@ function populateStateSelectors() {
 
   [stateSectionSelect, ctaStateSelect, bottomCtaStateSelect].forEach(select => {
     if (!select) return;
-    select.innerHTML = `<option value="">${defaultOptionText}</option>`;
+    select.innerHTML = `<option value="">— Select a State —</option>`;
     stateData.forEach(st => {
       const opt = document.createElement("option");
       opt.value = st.code;
