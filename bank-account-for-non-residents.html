@@ -44,16 +44,14 @@
     .cluster-item-link { background:#FFFFFF; border:1px solid #CBD5E1; border-radius:10px; padding:0.85rem 1.15rem; color:#159A9C; font-weight:700; font-size:0.925rem; text-decoration:none; transition:all 0.2s ease; display:block; }
     .cluster-item-link:hover { border-color:#159A9C; background:#F0FDFA; transform:translateX(4px); }
 
-    /* FAQ — Plus icon style (matching image 5 reference) */
-    .faq-accordion-wrapper { display:flex; flex-direction:column; gap:0; margin-bottom:2.5rem; border:1.5px solid #E2E8F0; border-radius:16px; overflow:hidden; }
-    .faq-accordion-item { background:#FFFFFF; border-bottom:1px solid #E2E8F0; transition:all 0.2s ease; }
+    
     .faq-accordion-item:last-child { border-bottom:none; }
-    .faq-accordion-item[open] { background:#F8FAFC; }
-    .faq-accordion-question { padding:1.1rem 1.5rem; font-weight:600; font-size:1rem; color:#12304A; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none; list-style:none; gap:1rem; }
-    .faq-accordion-question::-webkit-details-marker { display:none; }
-    .faq-plus-icon { flex-shrink:0; width:22px; height:22px; border-radius:50%; background:#E2E8F0; display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:700; color:#475569; transition:all 0.2s ease; line-height:1; }
-    details.faq-accordion-item[open] .faq-plus-icon { background:#159A9C; color:#fff; transform:rotate(45deg); }
-    .faq-accordion-answer { padding:0 1.5rem 1.25rem 1.5rem; font-size:0.95rem; color:#475569; line-height:1.7; }
+    
+    
+    
+    
+    details.faq-accordion-item[open] 
+    
 
     /* Bank detail card */
     .bank-detail-card { background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:16px; overflow:hidden; margin:1.5rem 0; }
@@ -80,6 +78,83 @@
     .bottom-line-card { background:linear-gradient(135deg,#0d2336 0%,#159A9C 100%); border-radius:18px; padding:1.75rem 2rem; margin:2.5rem 0; }
     .bottom-line-card p { color:#fff; margin:0; line-height:1.7; }
     .bottom-line-label { font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.07em; color:rgba(255,255,255,0.6); margin-bottom:0.65rem; }
+    /* Standard Site FAQ Accordion Styles */
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -571,10 +646,15 @@
       <!-- ============================================================ -->
       <section id="faq">
         <h2>Frequently Asked Questions</h2>
-        <div class="faq-accordion-wrapper">
-
+                <div class="faq-accordion-wrapper">
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Can a non-US resident open a US business bank account?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">1</span>
+                <span>Can a non-US resident open a US business bank account?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>Yes. Some financial institutions and fintech platforms accept applications from non-U.S. residents without requiring a U.S. visit, but eligibility depends on the provider, country of residence, business activity, address, ownership structure, and verification documents.</p>
               <p>Mercury currently supports eligible U.S. companies with international founders and does not require the owner to be a U.S. citizen or resident. It does, however, require existing or planned U.S. operations and an eligible principal-place-of-business address.</p>
@@ -584,7 +664,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Do I need an SSN to open a US business bank account?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">2</span>
+                <span>Do I need an SSN to open a US business bank account?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>Not necessarily. U.S. financial platforms can have different identification requirements for non-U.S. owners.</p>
               <p>For example, Mercury states that international founders do not need to be U.S. citizens or residents, while its application process requires identity and business verification. Wise's U.S.-business verification guidance says non-U.S. beneficial owners can generally provide a photo ID rather than a U.S. SSN.</p>
@@ -593,7 +679,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Do I need an ITIN to open a US business bank account?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">3</span>
+                <span>Do I need an ITIN to open a US business bank account?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>Not necessarily. An ITIN is an individual U.S. taxpayer identification number and is separate from an EIN, which identifies the business.</p>
               <p>Some providers may accept non-U.S. identification without an ITIN, while others can have additional owner-identification requirements. An ITIN can be relevant for certain U.S. tax situations, but obtaining one does not automatically make an applicant eligible for every banking platform.</p>
@@ -602,7 +694,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Can I open a US business bank account remotely without visiting the US?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">4</span>
+                <span>Can I open a US business bank account remotely without visiting the US?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>Yes, some providers support remote applications. Mercury states that eligible international founders can apply without being U.S. citizens or residents, and Wise describes its business verification process as online.</p>
               <p>Traditional banks can have different onboarding requirements, including in-person verification for some non-resident applicants. Check the individual bank's current policy rather than assuming that every traditional U.S. bank requires a branch visit.</p>
@@ -610,7 +708,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Which bank is best for a foreign-owned LLC?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">5</span>
+                <span>Which bank is best for a foreign-owned LLC?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>There is no single best provider for every foreign-owned LLC. Compare the providers based on <strong>country eligibility, address requirements, payment-processor compatibility, FDIC or other applicable protection, fees, currencies, transaction limits, accounting integrations, and business activity restrictions</strong>.</p>
               <p>Mercury, Wise Business, Relay, Airwallex, and traditional banks have different product structures and eligibility rules. A provider that works for one non-resident founder may not accept another because of country, address, industry, or ownership requirements.</p>
@@ -618,7 +722,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Can I use Mercury without visiting the US?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">6</span>
+                <span>Can I use Mercury without visiting the US?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>Yes, eligible international founders can apply remotely. Mercury states that international founders do not need U.S. citizenship or residency, but the company must be formed and registered in the U.S. or a U.S. territory, have existing or planned U.S. operations, and provide an eligible principal-place-of-business address.</p>
               <p>A registered-agent address, P.O. box, and UPS Store address are not accepted as the company's principal physical address.</p>
@@ -627,7 +737,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Can I use Relay without an SSN?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">7</span>
+                <span>Can I use Relay without an SSN?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>Relay's current eligibility and beneficial-owner verification requirements should be checked directly before applying. An ITIN should not be described as a guaranteed substitute for every Relay eligibility requirement.</p>
               <p>Relay can also impose country, business-address, business-activity, and U.S.-operations requirements. Having a U.S. LLC alone does not guarantee eligibility.</p>
@@ -635,7 +751,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Is Wise Business a real bank account?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">8</span>
+                <span>Is Wise Business a real bank account?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>Wise Business is not a traditional U.S. bank. It provides payment and account-detail services through Wise's financial infrastructure.</p>
               <p>Wise explains that its account details are a way to receive money into a Wise account rather than separate bank accounts. Availability of USD account details depends on the customer's country and eligibility.</p>
@@ -644,7 +766,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Can I use Stripe with a non-US resident LLC bank account?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">9</span>
+                <span>Can I use Stripe with a non-US resident LLC bank account?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>Potentially, but Stripe eligibility and payout requirements should be checked separately from the bank or fintech's eligibility.</p>
               <p>Stripe determines whether a business can use its services based on the business's country, structure, owner information, products, and compliance requirements. A U.S. LLC owner living outside the United States does not automatically qualify for every Stripe service or payout arrangement.</p>
@@ -653,7 +781,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">How long does it take to open a US business bank account as a non-resident?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">10</span>
+                <span>How long does it take to open a US business bank account as a non-resident?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>There is no reliable universal timeline.</p>
               <p>The EIN can be an important prerequisite. For international applicants who cannot use the IRS online EIN application, the IRS currently permits telephone, fax, and mail applications. The IRS says international applicants can receive an EIN by telephone, while fax applications are generally processed within about four business days and mailed applications take approximately four weeks.</p>
@@ -662,7 +796,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">What documents are required to open a US business bank account as a non-resident?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">11</span>
+                <span>What documents are required to open a US business bank account as a non-resident?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>Requirements vary by provider, but commonly requested information includes:</p>
               <ul>
@@ -681,7 +821,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">What if my Mercury application is denied?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">12</span>
+                <span>What if my Mercury application is denied?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>A rejected application does not invalidate the LLC or change its state-law standing. It affects the company's ability to use that particular financial institution.</p>
               <p>If Mercury declines an application, review the provider's stated reason and contact Mercury support if clarification or additional documentation may resolve the issue. Do not assume that submitting another application with the same information will produce a different result.</p>
@@ -690,7 +836,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Can I use a virtual address for my US business bank account?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">13</span>
+                <span>Can I use a virtual address for my US business bank account?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>Do not assume that a virtual address will satisfy a financial institution's physical-address requirement.</p>
               <p>Mercury currently states that its principal physical address cannot be a registered-agent address, P.O. box, UPS Store address, or virtual address.</p>
@@ -700,7 +852,13 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Do I need an LLC before opening a US business bank account?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">14</span>
+                <span>Do I need an LLC before opening a US business bank account?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>For an account intended for a U.S. LLC, the LLC generally needs to be formed before you can provide the company's formation and ownership documents to the financial institution.</p>
               <p>The EIN is also commonly required as part of the business-account application. However, the exact onboarding sequence varies by provider, so avoid treating LLC formation, EIN issuance, and bank approval as one universal three-step process.</p>
@@ -708,14 +866,19 @@
           </details>
 
           <details class="faq-accordion-item">
-            <summary class="faq-accordion-question">Can I open multiple US business bank accounts for my LLC?<span class="faq-plus-icon">+</span></summary>
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">15</span>
+                <span>Can I open multiple US business bank accounts for my LLC?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="faq-accordion-answer">
               <p>A business can potentially maintain accounts with multiple financial institutions, subject to each provider's terms and eligibility requirements.</p>
               <p>Multiple accounts can be useful for separating operating cash, payment-processing receipts, international transfers, or specific business expenses. However, each account creates additional records and reconciliation work.</p>
               <p>If you use Mercury, Wise Business, Relay, or another provider together, keep the LLC's bookkeeping and account ownership information consistent across all platforms.</p>
             </div>
           </details>
-
         </div>
       </section>
 

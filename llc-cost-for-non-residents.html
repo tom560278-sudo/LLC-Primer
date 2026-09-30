@@ -45,20 +45,97 @@
     .cluster-grid { display:flex; flex-direction:column; gap:0.75rem; margin-top:1rem; }
     .cluster-item-link { background:#FFFFFF; border:1px solid #CBD5E1; border-radius:10px; padding:0.85rem 1.15rem; color:#159A9C; font-weight:700; font-size:0.925rem; text-decoration:none; transition:all 0.2s ease; display:block; }
     .cluster-item-link:hover { border-color:#159A9C; background:#F0FDFA; transform:translateX(4px); }
-    .faq-accordion-wrapper { display:flex; flex-direction:column; gap:0; margin-bottom:2.5rem; border:1.5px solid #E2E8F0; border-radius:16px; overflow:hidden; }
-    .faq-accordion-item { background:#FFFFFF; border-bottom:1px solid #E2E8F0; transition:all 0.2s ease; }
-    .faq-accordion-item[open] { background:#F8FAFC; }
-    .faq-accordion-question { padding:1.1rem 1.5rem; font-weight:600; font-size:1rem; color:#12304A; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none; list-style:none; gap:1rem; }
-    .faq-accordion-question::-webkit-details-marker { display:none; }
+    
+    
+    
+    
+    
     
     details.faq-accordion-item[open] 
-    .faq-accordion-answer { padding:0 1.5rem 1.25rem 1.5rem; font-size:0.95rem; color:#475569; line-height:1.7; }
+    
     /* Cost scenario cards */
     .cost-scenario-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin:1.5rem 0; }
     .cost-card { background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.1rem 1.25rem; }
     .cost-card-label { font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.05em; color:#159A9C; margin-bottom:0.3rem; }
     .cost-card-value { font-size:1.5rem; font-weight:800; color:#12304A; line-height:1; margin-bottom:0.25rem; }
     .cost-card-sub { font-size:0.8rem; color:#64748B; line-height:1.4; }
+    /* Standard Site FAQ Accordion Styles */
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -605,37 +682,202 @@
 
 <section id="faq">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-accordion-wrapper">
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">How much does a US LLC cost for non-US residents?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">There is no single nationwide startup price. For example, a Wyoming LLC has a <strong>$100 state formation fee</strong>, plus any applicable online processing fee, and a commercial registered-agent service is a separate cost. The IRS does not charge for EIN issuance. A formation service can add its own service fee depending on the package selected.<br><br>Ongoing costs can include the state's annual tax or report, registered-agent renewal, accounting, and any applicable federal or state tax filings. Form 5472 should be budgeted for <strong>when its filing requirements apply</strong>, rather than treated as a mandatory annual cost for every foreign-owned single-member LLC.</div></details>
+          <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">1</span>
+                <span>How much does a US LLC cost for non-US residents?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              There is no single nationwide startup price. For example, a Wyoming LLC has a <strong>$100 state formation fee</strong>, plus any applicable online processing fee, and a commercial registered-agent service is a separate cost. The IRS does not charge for EIN issuance. A formation service can add its own service fee depending on the package selected.<br><br>Ongoing costs can include the state's annual tax or report, registered-agent renewal, accounting, and any applicable federal or state tax filings. Form 5472 should be budgeted for <strong>when its filing requirements apply</strong>, rather than treated as a mandatory annual cost for every foreign-owned single-member LLC.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">Is Wyoming the cheapest state to form an LLC?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">Wyoming has a <strong>$100 formation fee</strong> and a <strong>$60 minimum annual license tax</strong>, although the annual amount can be higher under Wyoming's statutory calculation. New Mexico generally does not require domestic LLCs to file an annual report, while Delaware LLCs currently pay a <strong>$300 annual tax</strong> and generally do not file an annual report.<br><br>The lowest filing cost is not necessarily the lowest overall business cost. Compare recurring state requirements, registered-agent costs, actual operating location, foreign qualification, taxes, licensing, and funding plans before choosing a state.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">2</span>
+                <span>Is Wyoming the cheapest state to form an LLC?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Wyoming has a <strong>$100 formation fee</strong> and a <strong>$60 minimum annual license tax</strong>, although the annual amount can be higher under Wyoming's statutory calculation. New Mexico generally does not require domestic LLCs to file an annual report, while Delaware LLCs currently pay a <strong>$300 annual tax</strong> and generally do not file an annual report.<br><br>The lowest filing cost is not necessarily the lowest overall business cost. Compare recurring state requirements, registered-agent costs, actual operating location, foreign qualification, taxes, licensing, and funding plans before choosing a state.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">Is an EIN free for non-US residents?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">Yes. The IRS does not charge an EIN issuance fee. If your principal place of business is outside the United States, you cannot use the standard online EIN application. International applicants can apply by telephone, fax, or mail using the methods specified by the IRS.<br><br>The IRS international phone number is <strong>267-941-1099</strong>. International applicants outside the United States can fax Form SS-4 to <strong>304-707-9471</strong>. The IRS says fax applications are generally processed within about four business days, while mail applications should be submitted several weeks before the EIN is needed. Actual processing can take longer.<br><br>Third-party providers can prepare or submit the SS-4 on your behalf, but they do not create a separate IRS processing channel or guarantee faster issuance.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">3</span>
+                <span>Is an EIN free for non-US residents?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. The IRS does not charge an EIN issuance fee. If your principal place of business is outside the United States, you cannot use the standard online EIN application. International applicants can apply by telephone, fax, or mail using the methods specified by the IRS.<br><br>The IRS international phone number is <strong>267-941-1099</strong>. International applicants outside the United States can fax Form SS-4 to <strong>304-707-9471</strong>. The IRS says fax applications are generally processed within about four business days, while mail applications should be submitted several weeks before the EIN is needed. Actual processing can take longer.<br><br>Third-party providers can prepare or submit the SS-4 on your behalf, but they do not create a separate IRS processing channel or guarantee faster issuance.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">Do non-US residents need a registered agent?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">A U.S. LLC generally must maintain an eligible registered agent under the law of its state. The registered agent must satisfy that state's address and availability requirements.<br><br>A non-resident owner who does not have an eligible person or address in the formation state will commonly use a commercial registered-agent service. Provider pricing and renewal terms should be checked before purchase.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">4</span>
+                <span>Do non-US residents need a registered agent?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              A U.S. LLC generally must maintain an eligible registered agent under the law of its state. The registered agent must satisfy that state's address and availability requirements.<br><br>A non-resident owner who does not have an eligible person or address in the formation state will commonly use a commercial registered-agent service. Provider pricing and renewal terms should be checked before purchase.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">What annual fees do non-residents pay for a US LLC?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">The recurring cost depends on the formation state and the company's circumstances.<br><br>For example, Wyoming's minimum annual license tax is <strong>$60</strong>, and its annual report is due on the first day of the anniversary month. Delaware LLCs generally do not file an annual report but pay a <strong>$300 annual tax</strong>, due June 1. Florida currently charges <strong>$138.75</strong> for an LLC annual report, while New Mexico generally does not require a domestic LLC annual report.<br><br>Registered-agent renewal, accounting, federal reporting, licenses, and other business expenses are separate.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">5</span>
+                <span>What annual fees do non-residents pay for a US LLC?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              The recurring cost depends on the formation state and the company's circumstances.<br><br>For example, Wyoming's minimum annual license tax is <strong>$60</strong>, and its annual report is due on the first day of the anniversary month. Delaware LLCs generally do not file an annual report but pay a <strong>$300 annual tax</strong>, due June 1. Florida currently charges <strong>$138.75</strong> for an LLC annual report, while New Mexico generally does not require a domestic LLC annual report.<br><br>Registered-agent renewal, accounting, federal reporting, licenses, and other business expenses are separate.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">Is Delaware more expensive than Wyoming?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">For a basic state-fee comparison, Delaware has a higher recurring LLC tax. Delaware LLCs currently pay <strong>$300 per year</strong>, while Wyoming's minimum annual license tax is <strong>$60</strong>. Wyoming's formation fee is $100.<br><br>Delaware may be relevant for businesses considering institutional investment, complex financing, or legal structures commonly used in Delaware. Wyoming may be considered by businesses primarily evaluating lower recurring state costs. The appropriate choice depends on the company's actual circumstances rather than a universal cost ranking.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">6</span>
+                <span>Is Delaware more expensive than Wyoming?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              For a basic state-fee comparison, Delaware has a higher recurring LLC tax. Delaware LLCs currently pay <strong>$300 per year</strong>, while Wyoming's minimum annual license tax is <strong>$60</strong>. Wyoming's formation fee is $100.<br><br>Delaware may be relevant for businesses considering institutional investment, complex financing, or legal structures commonly used in Delaware. Wyoming may be considered by businesses primarily evaluating lower recurring state costs. The appropriate choice depends on the company's actual circumstances rather than a universal cost ranking.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">Can I form a US LLC myself as a non-resident?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">Yes. A non-resident can generally handle the formation process directly by filing with the chosen state, maintaining an eligible registered agent, preparing appropriate business documents, and obtaining an EIN using the IRS method available to international applicants.<br><br>If you have no legal residence, principal place of business, or principal office or agency in the United States or its territories, the IRS says you cannot use its online EIN application. International applicants can instead use the telephone, fax, or mail procedures described in the current Form SS-4 instructions.<br><br>U.S.-formed companies are currently exempt from federal BOI reporting under FinCEN's current rule. Certain entities formed under foreign law and registered to do business in the United States can have different requirements.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">7</span>
+                <span>Can I form a US LLC myself as a non-resident?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes. A non-resident can generally handle the formation process directly by filing with the chosen state, maintaining an eligible registered agent, preparing appropriate business documents, and obtaining an EIN using the IRS method available to international applicants.<br><br>If you have no legal residence, principal place of business, or principal office or agency in the United States or its territories, the IRS says you cannot use its online EIN application. International applicants can instead use the telephone, fax, or mail procedures described in the current Form SS-4 instructions.<br><br>U.S.-formed companies are currently exempt from federal BOI reporting under FinCEN's current rule. Certain entities formed under foreign law and registered to do business in the United States can have different requirements.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">What is the lowest-cost way to start a US LLC as a non-resident?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">A lower-cost approach is generally to file directly with a state, use a suitable registered-agent service where required, obtain the EIN directly from the IRS at no charge, and prepare appropriate business documents yourself.<br><br>New Mexico generally does not require domestic LLCs to file an annual report, while Wyoming has a $100 formation fee and a $60 minimum annual license tax. The lowest initial filing cost should not be the only consideration: registered-agent pricing, actual business activity, foreign qualification, banking requirements, taxes, and federal reporting can affect the total cost.<br><br>Form 5472 should be considered <strong>when its reporting requirements apply</strong>, rather than automatically adding a $200&ndash;500 annual CPA cost to every foreign-owned LLC.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">8</span>
+                <span>What is the lowest-cost way to start a US LLC as a non-resident?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              A lower-cost approach is generally to file directly with a state, use a suitable registered-agent service where required, obtain the EIN directly from the IRS at no charge, and prepare appropriate business documents yourself.<br><br>New Mexico generally does not require domestic LLCs to file an annual report, while Wyoming has a $100 formation fee and a $60 minimum annual license tax. The lowest initial filing cost should not be the only consideration: registered-agent pricing, actual business activity, foreign qualification, banking requirements, taxes, and federal reporting can affect the total cost.<br><br>Form 5472 should be considered <strong>when its reporting requirements apply</strong>, rather than automatically adding a $200&ndash;500 annual CPA cost to every foreign-owned LLC.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">Are there hidden fees when forming a US LLC?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">Potential additional costs include registered-agent renewal, a separate business or physical address when required by a financial institution, bookkeeping, tax preparation, state licenses, foreign qualification, and applicable federal information returns.<br><br>A U.S.-formed LLC is currently exempt from BOI reporting under FinCEN's current rule, so BOI filing should not automatically be included in the startup budget for a U.S.-formed LLC.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">9</span>
+                <span>Are there hidden fees when forming a US LLC?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Potential additional costs include registered-agent renewal, a separate business or physical address when required by a financial institution, bookkeeping, tax preparation, state licenses, foreign qualification, and applicable federal information returns.<br><br>A U.S.-formed LLC is currently exempt from BOI reporting under FinCEN's current rule, so BOI filing should not automatically be included in the startup budget for a U.S.-formed LLC.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">How much should I budget for the first year as a non-resident?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">A practical budget depends on the state and the services you use. For a Wyoming example, start with the <strong>$100 state formation fee</strong>, applicable online processing charges, registered-agent service, and any optional formation, address, accounting, or compliance services.<br><br>An applicable Form 5472 filing can create an additional professional-service cost, but the filing is not automatically required for every foreign-owned single-member LLC. The IRS requires Form 5472 when the applicable reporting corporation has reportable transactions with a related party.<br><br>For that reason, a single universal first-year or two-year budget is less useful than separating <strong>state fees, provider fees, federal compliance, and optional services</strong>.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">10</span>
+                <span>How much should I budget for the first year as a non-resident?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              A practical budget depends on the state and the services you use. For a Wyoming example, start with the <strong>$100 state formation fee</strong>, applicable online processing charges, registered-agent service, and any optional formation, address, accounting, or compliance services.<br><br>An applicable Form 5472 filing can create an additional professional-service cost, but the filing is not automatically required for every foreign-owned single-member LLC. The IRS requires Form 5472 when the applicable reporting corporation has reportable transactions with a related party.<br><br>For that reason, a single universal first-year or two-year budget is less useful than separating <strong>state fees, provider fees, federal compliance, and optional services</strong>.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">Does doola include EIN support for non-residents?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">doola offers EIN assistance as part of certain formation packages and services. The exact process, pricing, and inclusions should be checked against the current plan before purchase.<br><br>The IRS permits authorized third parties to assist with an EIN application, but the EIN is still issued by the IRS. International applicants without a U.S. principal place of business use the IRS procedures for international applicants.<br><br>doola may also offer bookkeeping, tax, and compliance services through separate plans. These services should be evaluated based on the specific federal and state obligations that apply to the LLC.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">11</span>
+                <span>Does doola include EIN support for non-residents?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              doola offers EIN assistance as part of certain formation packages and services. The exact process, pricing, and inclusions should be checked against the current plan before purchase.<br><br>The IRS permits authorized third parties to assist with an EIN application, but the EIN is still issued by the IRS. International applicants without a U.S. principal place of business use the IRS procedures for international applicants.<br><br>doola may also offer bookkeeping, tax, and compliance services through separate plans. These services should be evaluated based on the specific federal and state obligations that apply to the LLC.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">Do I need accounting services for my non-resident LLC?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">Professional accounting services are not automatically required simply because an LLC has a non-U.S. owner. However, maintaining accurate books and records can be particularly important when the LLC has foreign-related transactions, multiple owners, employees, inventory, or federal and state filing obligations.<br><br>If Form 5472 applies, the underlying records need to support the information reported to the IRS. Professional bookkeeping and tax-preparation costs depend on transaction volume and complexity.<br><br>The IRS can assess a <strong>$25,000 penalty for a failure to file a complete and correct Form 5472 when the form is required</strong>, with additional continuation penalties possible after IRS notification.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">12</span>
+                <span>Do I need accounting services for my non-resident LLC?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Professional accounting services are not automatically required simply because an LLC has a non-U.S. owner. However, maintaining accurate books and records can be particularly important when the LLC has foreign-related transactions, multiple owners, employees, inventory, or federal and state filing obligations.<br><br>If Form 5472 applies, the underlying records need to support the information reported to the IRS. Professional bookkeeping and tax-preparation costs depend on transaction volume and complexity.<br><br>The IRS can assess a <strong>$25,000 penalty for a failure to file a complete and correct Form 5472 when the form is required</strong>, with additional continuation penalties possible after IRS notification.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">How much does a virtual address cost for a US LLC?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">Virtual mailbox and business-address services are priced by provider, location, and features. A registered-agent address should not automatically be treated as a physical operating address.<br><br>This distinction is particularly important for banking. Mercury currently states that its physical-address requirement cannot be satisfied with a registered-agent address, virtual address, mail center, or P.O. box.<br><br>Do not purchase a virtual address solely because you expect it to satisfy a bank or payment processor. Check the provider's current address requirements first.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">13</span>
+                <span>How much does a virtual address cost for a US LLC?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Virtual mailbox and business-address services are priced by provider, location, and features. A registered-agent address should not automatically be treated as a physical operating address.<br><br>This distinction is particularly important for banking. Mercury currently states that its physical-address requirement cannot be satisfied with a registered-agent address, virtual address, mail center, or P.O. box.<br><br>Do not purchase a virtual address solely because you expect it to satisfy a bank or payment processor. Check the provider's current address requirements first.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">Can I reduce my annual LLC costs as a non-resident?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">Yes, some costs can be reduced without ignoring compliance obligations. Filing directly with the state, obtaining the EIN directly from the IRS, using appropriate self-prepared business documents, and selecting a registered-agent service based on actual requirements can reduce service costs.<br><br>U.S.-formed companies are currently exempt from BOI reporting under FinCEN's current rule. However, state filings, taxes, licenses, registered-agent requirements, and applicable federal reporting still need to be addressed.<br><br>Do not omit a required federal or state filing simply to reduce costs.</div></details>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">14</span>
+                <span>Can I reduce my annual LLC costs as a non-resident?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              Yes, some costs can be reduced without ignoring compliance obligations. Filing directly with the state, obtaining the EIN directly from the IRS, using appropriate self-prepared business documents, and selecting a registered-agent service based on actual requirements can reduce service costs.<br><br>U.S.-formed companies are currently exempt from BOI reporting under FinCEN's current rule. However, state filings, taxes, licenses, registered-agent requirements, and applicable federal reporting still need to be addressed.<br><br>Do not omit a required federal or state filing simply to reduce costs.
+            </div>
+          </details>
 
-    <details class="faq-accordion-item"><summary class="faq-accordion-question">What happens if I don't pay annual LLC fees?<span class="faq-plus-icon">+</span></summary><div class="faq-accordion-answer">The consequences depend on the state and the specific obligation.<br><br>In Wyoming, annual reports for LLCs are due on the first day of the anniversary month, and Wyoming provides a reinstatement process for entities that become inactive. The state's rules should be checked for the applicable dissolution and reinstatement consequences.<br><br>Delaware LLCs that fail to pay the required annual tax can face a <strong>$200 penalty plus interest</strong>.<br><br>A required Form 5472 that is not filed can result in a <strong>$25,000 penalty</strong>, with additional continuation penalties possible after IRS notification. This applies when Form 5472 is required; it is not a penalty imposed simply because an LLC has a foreign owner.<br><br>Annual state and federal compliance should therefore be tracked separately rather than treated as one universal LLC renewal requirement.</div></details>
-  </div>
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-question">
+              <div class="faq-q-badge-title">
+                <span class="faq-q-badge">15</span>
+                <span>What happens if I don't pay annual LLC fees?</span>
+              </div>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion-answer">
+              The consequences depend on the state and the specific obligation.<br><br>In Wyoming, annual reports for LLCs are due on the first day of the anniversary month, and Wyoming provides a reinstatement process for entities that become inactive. The state's rules should be checked for the applicable dissolution and reinstatement consequences.<br><br>Delaware LLCs that fail to pay the required annual tax can face a <strong>$200 penalty plus interest</strong>.<br><br>A required Form 5472 that is not filed can result in a <strong>$25,000 penalty</strong>, with additional continuation penalties possible after IRS notification. This applies when Form 5472 is required; it is not a penalty imposed simply because an LLC has a foreign owner.<br><br>Annual state and federal compliance should therefore be tracked separately rather than treated as one universal LLC renewal requirement.
+            </div>
+          </details>
+        </div>
 </section>
 
 
