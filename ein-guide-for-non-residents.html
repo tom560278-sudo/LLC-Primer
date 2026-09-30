@@ -4,132 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
   <title>EIN Guide for Non-US Residents (2026) | LLC Primer</title>
-  <meta name="description" content="Complete 2026 guide on how non-US residents can get an EIN for their US LLC — without an SSN. Covers Form SS-4, phone/fax/mail methods, processing times, and common mistakes.">
+  <meta name="description" content="Complete 2026 guide on how non-US residents can get an EIN for their US LLC without an SSN. Covers Form SS-4, phone/fax/mail methods, processing times, and common mistakes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* ── Page-specific styles ───────────────────────── */
-    .guide-hero {
-      background: linear-gradient(135deg, #0D2336 0%, #12304A 60%, #0E3D50 100%);
-      padding: 3rem 0 2.5rem;
-      border-bottom: 1px solid rgba(21,154,156,0.2);
-    }
-    .guide-hero-inner { max-width: 860px; }
-    .breadcrumb { font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
-    .breadcrumb a { color: #94A3B8; text-decoration: none; } .breadcrumb a:hover { color: #159A9C; }
-    .guide-meta-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin: 1rem 0 0 0; font-size: 0.82rem; color: #94A3B8; }
-    .guide-meta-row span { display: flex; align-items: center; gap: 0.3rem; }
-    .quick-answer-box { background: #E6F7F7; border-left: 4px solid #159A9C; border-radius: 0 10px 10px 0; padding: 1.1rem 1.4rem; margin: 1.5rem 0; }
-    .quick-answer-box strong { color: #0E7490; }
-    .quick-answer-box ul { margin: 0.6rem 0 0 1.2rem; } .quick-answer-box li { color: #1e4a5f; font-size: 0.92rem; line-height: 1.7; }
-
-    /* ── Two-column layout ── */
-    .guide-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2.5rem; align-items: start; }
-    @media(max-width:900px){ .guide-layout { grid-template-columns: 1fr; } .toc-sidebar { display: none; } }
-
-    /* ── TOC Sidebar ── */
-    .toc-sidebar { position: sticky; top: 90px; background: #fff; border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.25rem; box-shadow: 0 4px 18px rgba(18,48,74,0.07); }
-    .toc-sidebar h4 { font-size: 0.78rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.85rem; }
-    .toc-sidebar ol { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.45rem; }
-    .toc-sidebar ol li a { font-size: 0.82rem; color: #334155; text-decoration: none; line-height: 1.4; }
-    .toc-sidebar ol li a:hover { color: #159A9C; }
-
-    /* ── Article content ── */
-    .guide-article h2 { font-size: 1.55rem; color: #12304A; font-weight: 800; margin: 2.2rem 0 0.75rem; padding-top: 0.5rem; border-top: 2px solid #F1F5F9; }
-    .guide-article h3 { font-size: 1.15rem; color: #12304A; font-weight: 700; margin: 1.5rem 0 0.5rem; }
-    .guide-article h4 { font-size: 1rem; color: #12304A; font-weight: 700; margin: 1.2rem 0 0.4rem; }
-    .guide-article p { color: #475569; line-height: 1.75; margin-bottom: 0.9rem; font-size: 0.97rem; }
-    .guide-article ul, .guide-article ol { color: #475569; font-size: 0.95rem; padding-left: 1.4rem; line-height: 1.8; margin-bottom: 1rem; }
-    .guide-article li { margin-bottom: 0.3rem; }
-    .guide-article strong { color: #12304A; }
-    .guide-article a { color: #159A9C; text-decoration: underline; }
-
-    /* ── Info box variants ── */
-    .info-box { border-radius: 10px; padding: 1.1rem 1.4rem; margin: 1.4rem 0; font-size: 0.92rem; line-height: 1.7; }
-    .info-box.teal { background: #E6F7F7; border-left: 4px solid #159A9C; color: #1e4a5f; }
-    .info-box.yellow { background: #FFFBEB; border-left: 4px solid #F59E0B; color: #78350F; }
-    .info-box.red { background: #FEF2F2; border-left: 4px solid #EF4444; color: #7F1D1D; }
-    .info-box.green { background: #F0FDF4; border-left: 4px solid #22C55E; color: #14532D; }
-    .info-box strong { font-weight: 700; }
-
-    /* ── Requirements table ── */
-    .req-table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.875rem; }
-    .req-table th { background: #12304A; color: #fff; padding: 0.65rem 1rem; text-align: left; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
-    .req-table td { padding: 0.65rem 1rem; border-bottom: 1px solid #E2E8F0; color: #334155; vertical-align: top; line-height: 1.5; }
-    .req-table tr:nth-child(even) td { background: #F8FAFC; }
-    .badge-req { background: #FEE2E2; color: #991B1B; font-size: 0.72rem; font-weight: 800; padding: 0.15rem 0.55rem; border-radius: 4px; text-transform: uppercase; }
-    .badge-opt { background: #E2E8F0; color: #475569; font-size: 0.72rem; font-weight: 800; padding: 0.15rem 0.55rem; border-radius: 4px; text-transform: uppercase; }
-    .badge-req-fax { background: #FEF9C3; color: #78350F; font-size: 0.72rem; font-weight: 800; padding: 0.15rem 0.55rem; border-radius: 4px; text-transform: uppercase; }
-
-    /* ── ID comparison table ── */
-    .id-table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.875rem; }
-    .id-table th { background: #12304A; color: #fff; padding: 0.6rem 0.9rem; text-align: left; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
-    .id-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid #E2E8F0; color: #334155; line-height: 1.5; font-size: 0.875rem; }
-    .id-table tr:nth-child(even) td { background: #F8FAFC; }
-    .yes-cell { color: #15803D; font-weight: 700; }
-    .no-cell { color: #64748B; }
-
-    /* ── Processing time table ── */
-    .proc-table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.875rem; }
-    .proc-table th { background: #12304A; color: #fff; padding: 0.65rem 1rem; text-align: left; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
-    .proc-table td { padding: 0.65rem 1rem; border-bottom: 1px solid #E2E8F0; color: #334155; line-height: 1.5; }
-    .proc-table tr:nth-child(even) td { background: #F8FAFC; }
-
-    /* ── DIY vs Service table ── */
-    .compare-table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.825rem; }
-    .compare-table th { background: #12304A; color: #fff; padding: 0.6rem 0.8rem; text-align: left; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
-    .compare-table td { padding: 0.6rem 0.8rem; border-bottom: 1px solid #E2E8F0; color: #334155; line-height: 1.5; vertical-align: top; }
-    .compare-table tr:nth-child(even) td { background: #F8FAFC; }
-
-    /* ── Numbered steps ── */
-    .step-list { display: flex; flex-direction: column; gap: 1.5rem; margin: 1.4rem 0; }
-    .step-item { display: flex; gap: 1rem; align-items: flex-start; }
-    .step-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #fff; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-top: 0.15rem; }
-    .step-body h4 { margin: 0 0 0.4rem; color: #12304A; font-size: 1rem; font-weight: 700; }
-    .step-body p { margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.65; }
-
-    /* ── Sponsored option box ── */
-    .sponsored-box { background: linear-gradient(135deg, #12304A 0%, #1e4a6a 100%); border: 1.5px solid rgba(21,154,156,0.4); border-radius: 14px; padding: 1.5rem; margin: 1.8rem 0; }
-    .sponsored-tag { font-size: 0.7rem; font-weight: 800; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
-    .sponsored-box h3 { color: #fff; font-size: 1.15rem; font-weight: 800; margin: 0 0 0.5rem; }
-    .sponsored-box p { color: #CBD5E1; font-size: 0.88rem; line-height: 1.6; margin: 0 0 1rem; }
-    .sponsored-features { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
-    .sponsored-feat { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 0.5rem 0.85rem; font-size: 0.8rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.15rem; }
-    .sponsored-feat strong { color: #fff; font-size: 0.95rem; font-weight: 800; }
-    .sponsored-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1rem; font-size: 0.78rem; color: #94A3B8; }
-    .sponsored-badges span { display: flex; align-items: center; gap: 0.3rem; }
-    .sponsored-note { font-size: 0.78rem; color: #94A3B8; line-height: 1.5; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; margin-top: 0.25rem; }
-    .sponsored-cta { display: inline-flex; align-items: center; gap: 0.4rem; background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #fff; font-weight: 800; font-size: 0.9rem; padding: 0.75rem 1.5rem; border-radius: 9999px; text-decoration: none; margin-bottom: 0.5rem; }
-
-    /* ── Common mistakes list ── */
-    .mistake-list { display: flex; flex-direction: column; gap: 0.85rem; margin: 1.2rem 0; }
-    .mistake-item { display: flex; gap: 0.85rem; align-items: flex-start; background: #FEF2F2; border: 1px solid #FECACA; border-radius: 10px; padding: 0.85rem 1rem; }
-    .mistake-item .m-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .mistake-item p { margin: 0; color: #7F1D1D; font-size: 0.88rem; line-height: 1.6; }
-    .mistake-item strong { color: #991B1B; }
+    .guide-content-container { max-width:1080px; margin:0 auto; padding:0 1.5rem 3.5rem 1.5rem; width:100%; box-sizing:border-box; }
+    .guide-article h2 { font-size:clamp(1.75rem,3.2vw,2.3rem); font-weight:800; color:#12304A; margin:2.75rem 0 1.25rem 0; font-family:var(--font-heading); line-height:1.25; }
+    .guide-article h3 { font-size:clamp(1.25rem,2.3vw,1.55rem); font-weight:700; color:#12304A; margin:2rem 0 1rem 0; font-family:var(--font-heading); line-height:1.3; }
+    .guide-article h4 { font-size:1.1rem; font-weight:700; color:#12304A; margin:1.5rem 0 0.75rem 0; }
+    .guide-article p { font-size:1rem; line-height:1.75; color:#334155; margin-bottom:1.25rem; }
+    .guide-article a { color:#159A9C; font-weight:600; text-decoration:underline; }
+    .guide-article a:hover { color:#0E7490; }
+    .guide-article ul,.guide-article ol { padding-left:1.65rem!important; margin-bottom:1.5rem!important; }
+    .guide-article ul li,.guide-article ol li { margin-bottom:0.65rem!important; line-height:1.7!important; color:#334155!important; }
+    .source-banner-box { background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.85rem 1.15rem; font-size:0.875rem; color:#475569; margin-bottom:1.5rem; }
+    .quick-answer-box { background:#F0F9FF; border:1.5px solid #BAE6FD; border-left:5px solid #0284C7; border-radius:14px; padding:1.25rem 1.5rem; color:#0369A1; margin:1.75rem 0 2.25rem 0; line-height:1.65; font-size:0.95rem; }
+    .toc-card-box { background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:16px; padding:1.5rem 1.75rem; margin-bottom:3rem; box-shadow:0 4px 16px rgba(18,48,74,0.04); }
+    .toc-card-box h3 { font-size:0.95rem; font-weight:800; color:#12304A; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:1rem; margin-top:0; }
+    .toc-links-ol { margin:0; padding-left:1.35rem; display:flex; flex-direction:column; gap:0.5rem; }
+    .toc-links-ol li a { color:#159A9C; font-weight:600; font-size:0.925rem; text-decoration:none; }
+    .toc-links-ol li a:hover { text-decoration:underline; color:#0E7490; }
+    .callout-green { background:#ECFDF5; border:1.5px solid #A7F3D0; border-left:5px solid #10B981; border-radius:14px; padding:1.25rem 1.5rem; color:#065F46; margin:2rem 0; line-height:1.65; }
+    .callout-blue { background:#F0F9FF; border:1.5px solid #BAE6FD; border-left:5px solid #0284C7; border-radius:14px; padding:1.25rem 1.5rem; color:#0369A1; margin:2rem 0; line-height:1.65; }
+    .callout-yellow { background:#FEF3C7; border:1.5px solid #FDE68A; border-left:5px solid #F59E0B; border-radius:14px; padding:1.25rem 1.5rem; color:#78350F; margin:2rem 0; line-height:1.65; }
+    .callout-red { background:#FEE2E2; border:1.5px solid #FCA5A5; border-left:5px solid #EF4444; border-radius:14px; padding:1.25rem 1.5rem; color:#7F1D1D; margin:2rem 0; line-height:1.65; }
+    .styled-table { width:100%; border-collapse:collapse; text-align:left; font-size:0.875rem; }
+    .styled-table th { background:#12304A; color:#FFFFFF; padding:0.95rem 1.15rem; font-size:0.785rem; font-weight:800; text-transform:uppercase; letter-spacing:0.05em; }
+    .styled-table td { padding:0.95rem 1.15rem; border-bottom:1px solid #E2E8F0; color:#334155; vertical-align:top; }
+    .styled-table tr:last-child td { border-bottom:none; }
+    .styled-table tr:nth-child(even) { background:#F8FAFC; }
+    .badge-req { background:#FEE2E2; color:#991B1B; font-size:0.72rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:4px; text-transform:uppercase; white-space:nowrap; }
+    .badge-opt { background:#E2E8F0; color:#475569; font-size:0.72rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:4px; text-transform:uppercase; white-space:nowrap; }
+    .badge-prac { background:#FEF9C3; color:#78350F; font-size:0.72rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:4px; text-transform:uppercase; white-space:nowrap; }
+    .timeline-container { display:flex; flex-direction:column; gap:1.25rem; margin:2rem 0; }
+    .timeline-step-card { background:#FFFFFF; border:1.5px solid #CBD5E1; border-radius:16px; padding:1.35rem 1.65rem; box-shadow:0 4px 16px rgba(18,48,74,0.04); display:flex; gap:1.25rem; align-items:flex-start; }
+    .step-num-badge { background:#159a9c; color:#FFFFFF; font-size:0.9rem; font-weight:800; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .top-pick-card { background:#FFFFFF; border:2px solid #eeaa36; border-radius:18px; padding:1.5rem 1.75rem; margin-bottom:1.5rem; box-shadow:0 8px 24px rgba(16,185,129,0.12); display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; }
+    .bottom-line-card { background:linear-gradient(135deg,#0d2336 0%,#159A9C 100%); border-radius:18px; padding:1.75rem 2rem; color:#FFFFFF; margin:2.5rem 0; box-shadow:0 12px 32px rgba(13,35,54,0.2); }
+    .cluster-box { background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:18px; padding:1.75rem; margin:2.5rem 0; }
+    .cluster-grid { display:flex; flex-direction:column; gap:0.75rem; margin-top:1rem; }
+    .cluster-item-link { background:#FFFFFF; border:1px solid #CBD5E1; border-radius:10px; padding:0.85rem 1.15rem; color:#159A9C; font-weight:700; font-size:0.925rem; text-decoration:none; transition:all 0.2s ease; display:block; }
+    .cluster-item-link:hover { border-color:#159A9C; background:#F0FDFA; transform:translateX(4px); }
+    .faq-accordion-wrapper { display:flex; flex-direction:column; gap:0.85rem; margin-bottom:2.5rem; }
+    .faq-accordion-item { background:#FFFFFF; border:1.5px solid #CBD5E1; border-radius:16px; overflow:hidden; box-shadow:0 4px 16px rgba(18,48,74,0.04); transition:all 0.25s ease; }
+    .faq-accordion-item[open] { border-color:#159A9C; box-shadow:0 6px 20px rgba(21,154,156,0.12); }
+    .faq-accordion-question { padding:1.25rem 1.65rem; font-weight:700; font-size:1.05rem; color:#12304A; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none; font-family:var(--font-heading); list-style:none; }
+    .faq-accordion-question::-webkit-details-marker { display:none; }
+    .faq-chevron { transition:transform 0.25s ease; flex-shrink:0; width:20px; height:20px; }
+    details.faq-accordion-item[open] .faq-chevron { transform:rotate(180deg); }
+    .faq-accordion-answer { padding:1rem 1.65rem 1.35rem 1.65rem; font-size:0.95rem; color:#475569; line-height:1.7; border-top:1px dashed #F1F5F9; }
   </style>
 </head>
 <body>
-
-  <!-- =========================================================================
-       NAVBAR
-       ========================================================================= -->
   <header class="site-header">
     <div class="container header-container">
-      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
-        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display:flex;align-items:center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height:56px;width:auto;object-fit:contain;">
       </a>
       <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item"><a href="start-llc.html" class="nav-link">Start an LLC</a></div>
         <div class="nav-item">
-          <a href="start-llc.html" class="nav-link">Start an LLC</a>
-        </div>
-        <div class="nav-item">
-          <a href="best-llc-services.html" class="nav-link">
-            LLC Services
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
+          <a href="best-llc-services.html" class="nav-link">LLC Services<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="dropdown-menu">
             <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
             <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
@@ -138,10 +75,7 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="llc-guide.html" class="nav-link">
-            LLC Guides
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
+          <a href="llc-guide.html" class="nav-link">LLC Guides<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="dropdown-menu">
             <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
             <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
@@ -152,10 +86,7 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="business-setup.html" class="nav-link">
-            Business Setup
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
+          <a href="business-setup.html" class="nav-link">Business Setup<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="dropdown-menu">
             <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
             <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
@@ -164,10 +95,7 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="tools.html" class="nav-link">
-            Tools
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
+          <a href="tools.html" class="nav-link">Tools<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="dropdown-menu">
             <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
             <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
@@ -178,14 +106,11 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="non-resident-llc-guide.html" class="nav-link active" style="color: var(--color-primary); font-weight: 800;">
-            Non-Residents
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
+          <a href="non-resident-llc-guide.html" class="nav-link active" style="color:var(--color-primary);font-weight:800;">Non-Residents<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="dropdown-menu">
             <a href="best-state-for-non-us-residents.html" class="dropdown-link">Best State for Non-US Residents</a>
-            <a href="ein-guide-for-non-residents.html" class="dropdown-link" style="color:#159A9C; font-weight:700;">EIN Guide</a>
-            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">LLC Cost</a>
+            <a href="ein-guide-for-non-residents.html" class="dropdown-link" style="color:#159A9C;font-weight:700;">EIN Guide</a>
+            <a href="llc-cost-for-non-residents.html" class="dropdown-link">LLC Cost</a>
             <a href="best-business-bank-accounts.html" class="dropdown-link">Bank Account</a>
           </div>
         </div>
@@ -194,9 +119,7 @@
         <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
-        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
-          Build LLC Plan →
-        </a>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding:0.6rem 1.35rem;font-size:0.875rem;background:var(--color-primary-gradient);">Build LLC Plan →</a>
         <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -204,613 +127,322 @@
     </div>
   </header>
 
-  <!-- =========================================================================
-       HERO
-       ========================================================================= -->
-  <section class="guide-hero">
-    <div class="container">
-      <div class="guide-hero-inner">
-        <div class="breadcrumb">
-          <a href="index.html">Home</a> <span>›</span>
-          <a href="non-resident-llc-guide.html">Non-Residents</a> <span>›</span>
-          <span style="color:#CBD5E1;">EIN Guide for Non-US Residents</span>
-        </div>
-        <div class="ls-kicker-pill" style="background: rgba(21,154,156,0.12); border-color: var(--color-primary); color: var(--color-primary); margin-bottom: 0.85rem;">
-          <span class="ls-kicker-dot" style="background:#f5d20b; box-shadow:0 0 8px #159A9C;"></span>
-          NON-US RESIDENTS · 2026 GUIDE
-        </div>
-        <h1 style="font-size: clamp(1.9rem,4vw,2.8rem); color:#F8FAFC; font-weight:800; line-height:1.2; margin-bottom:0.9rem;">
-          EIN Guide for Non-US Residents:<br>
-          <span style="background: linear-gradient(135deg,#159A9C,#0E7490); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">How to Get an EIN Without an SSN</span>
-        </h1>
-        <p style="color:#CBD5E1; font-size:1rem; line-height:1.7; max-width:720px; margin-bottom:1rem;">
-          Getting an <strong style="color:#fff;">EIN for non-US residents</strong> is one of the most important steps after forming a US LLC. Without an EIN, you won't be able to open most US business bank accounts, verify your company with Stripe, or meet key IRS filing requirements.
-        </p>
-        <p style="color:#94A3B8; font-size:0.95rem; line-height:1.7; max-width:720px; margin-bottom:0.5rem;">
-          Many international founders assume they need a Social Security Number first. They don't. The IRS allows foreign entrepreneurs to obtain an <strong style="color:#CBD5E1;">EIN without an SSN</strong> or ITIN through its international application process. This guide explains the complete process, including Form SS-4, IRS phone and fax applications, processing times, common mistakes, and the fastest way to obtain an EIN for a foreign-owned LLC in 2026.
-        </p>
+  <main class="guide-content-container">
+    <div style="font-size:0.85rem;color:#64748B;margin-top:1.5rem;margin-bottom:1rem;">
+      <a href="index.html" style="color:#64748B;text-decoration:none;">LLC Primer</a> &nbsp;/&nbsp;
+      <a href="non-resident-llc-guide.html" style="color:#64748B;text-decoration:none;">Non-Residents</a> &nbsp;/&nbsp;
+      <strong style="color:#12304A;">EIN Guide for Non-US Residents</strong>
+    </div>
 
-        <div class="quick-answer-box" style="margin-top:1.5rem; max-width:700px;">
-          <strong>Quick answer:</strong> A non-US resident can get an EIN without an SSN, ITIN, US address, visa, or US citizenship. Most foreign founders receive their EIN the same day through the IRS international phone line or within approximately four business days using the IRS fax method.
+    <article class="guide-article">
+      <h1 style="font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:800;color:#12304A;line-height:1.2;margin-bottom:0.75rem;font-family:var(--font-heading);">
+        EIN Guide for Non-US Residents (2026): How to Get an EIN Without an SSN
+      </h1>
+
+      <div class="source-banner-box">
+        <strong>Last reviewed:</strong> September 7, 2026 &nbsp;·&nbsp;
+        <strong>Official source:</strong> <a href="https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers" target="_blank" rel="noopener">IRS employer identification number guidance</a> provides the primary guidance used in this guide.
+      </div>
+
+      <p><strong>Getting an EIN for non-US residents</strong> is one of the most important steps after forming a US LLC. Without an EIN, you won't be able to open most US business bank accounts, verify your company with Stripe, or meet key IRS filing requirements.</p>
+      <p>Many international founders assume they need a Social Security Number first. They don't. The IRS allows foreign entrepreneurs to obtain an <strong>EIN without an SSN</strong> or ITIN through its international application process.</p>
+      <p>If you're wondering <strong>how to get an EIN without an SSN</strong>, whether a foreign-owned LLC qualifies, or simply asking <strong>can a foreigner get an EIN</strong>, the answer is yes. Thousands of non-US residents successfully obtain EINs every year without visiting the United States or becoming US tax residents.</p>
+      <p>This guide explains the complete process, including Form SS-4, IRS phone and fax applications, processing times, common mistakes, and the fastest way to obtain an EIN for a foreign-owned LLC in 2026.</p>
+
+      <div class="quick-answer-box">
+        <strong>Quick answer:</strong> A non-US resident can get an EIN without an SSN, ITIN, US address, visa, or US citizenship. Most foreign founders receive their EIN the same day through the IRS international phone line or within approximately four business days using the IRS fax method.
+      </div>
+
+      <ul>
+        <li>Can non-US residents get an EIN? <strong>Yes</strong></li>
+        <li>SSN required? <strong>No</strong></li>
+        <li>ITIN required? <strong>No</strong></li>
+        <li>LLC must be formed first? <strong>Yes (in most cases)</strong></li>
+        <li>US address required? <strong>No</strong></li>
+        <li>Cost? <strong>Free from IRS; $50–200 if using a service</strong></li>
+        <li>Processing time? <strong>4 business days (fax) / same day (phone) / 4–5 weeks (mail)</strong></li>
+      </ul>
+
+      <div class="toc-card-box">
+        <h3>In This Guide</h3>
+        <ol class="toc-links-ol">
+          <li><a href="#what-is-ein">What is an EIN?</a></li>
+          <li><a href="#who-needs-ein">Why non-US residents need an EIN</a></li>
+          <li><a href="#ein-without-ssn">Can you get an EIN without an SSN?</a></li>
+          <li><a href="#itin">Do you need an ITIN?</a></li>
+          <li><a href="#requirements">Requirements checklist</a></li>
+          <li><a href="#form-ss4">Form SS-4 explained</a></li>
+          <li><a href="#how-to-apply">How to apply step by step</a></li>
+          <li><a href="#processing-times">Processing times</a></li>
+          <li><a href="#fast-paid-option">Fast paid option: 1 Day EIN</a></li>
+          <li><a href="#is-ein-free">Is an EIN free?</a></li>
+          <li><a href="#common-mistakes">Common mistakes foreign founders make</a></li>
+          <li><a href="#ein-and-banking">EIN and business banking</a></li>
+          <li><a href="#ein-and-stripe">EIN and Stripe</a></li>
+          <li><a href="#ein-and-taxes">EIN and LLC taxes</a></li>
+          <li><a href="#doola">doola EIN assistance for non-US residents</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </div>
+
+      <section id="what-is-ein">
+        <h2>What is an EIN?</h2>
+        <p>An Employer Identification Number is a nine-digit tax identification number issued by the IRS to identify a business entity for federal tax purposes. The format is <strong>XX-XXXXXXX</strong>. It's sometimes called a Federal Tax ID Number, Federal Employer Identification Number (FEIN), or Tax Identification Number (TIN).</p>
+        <p>Despite the word "employer" in the name, you don't need employees to get an EIN. Single-person LLCs routinely need EINs for banking, payment processing, and tax compliance purposes.</p>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead><tr><th>Identifier</th><th>Issued By</th><th>For Whom</th><th>Purpose</th><th>Non-Residents Need It?</th></tr></thead>
+            <tbody>
+              <tr><td><strong>EIN</strong></td><td>IRS</td><td>Business entities</td><td>Federal business tax ID</td><td style="color:#15803D;font-weight:700;">Yes — for the LLC</td></tr>
+              <tr><td><strong>SSN</strong></td><td>Social Security Administration</td><td>US citizens + authorized workers</td><td>Personal federal tax ID</td><td style="color:#64748B;">No (not required for EIN)</td></tr>
+              <tr><td><strong>ITIN</strong></td><td>IRS</td><td>Non-resident individuals with US tax obligations</td><td>Personal tax ID for non-residents</td><td style="color:#64748B;">No (not required for EIN)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout-yellow">An EIN does not create your LLC, authorize you to do business, or serve as a business license. It identifies your LLC in the IRS system for tax reporting. Your LLC is created when the state approves your Articles of Organization — the EIN is a separate, subsequent step.</div>
+      </section>
+
+      <section id="who-needs-ein">
+        <h2>Why non-US residents need an EIN</h2>
+        <p>Several critical business functions require an EIN before they work. Trying to skip this step creates blockers at every turn.</p>
+        <ul>
+          <li><strong>Business bank accounts</strong> — Mercury, Relay, and every major US bank or fintech requires your EIN before opening a business account. Without an EIN, you cannot open the account.</li>
+          <li><strong>Stripe</strong> — Stripe requires EIN verification when you add your US LLC as the business entity. Without it, your Stripe account defaults to personal identity verification, which doesn't match your LLC structure.</li>
+          <li><strong>Federal tax compliance</strong> — your LLC's federal tax returns (Form 1065 for multi-member LLCs) and the mandatory Form 5472 for foreign-owned single-member LLCs require an EIN.</li>
+          <li><strong>Payroll</strong> — if your LLC ever hires US employees or US-based contractors on payroll, an EIN is legally required.</li>
+          <li><strong>Amazon seller account</strong> — Amazon requires an EIN to open a professional seller account linked to a US LLC entity.</li>
+          <li><strong>Business credit</strong> — establishing business credit under your LLC requires an EIN. Business credit applications tie to the EIN, not to you personally.</li>
+        </ul>
+        <div class="callout-green">If you formed a US LLC as a non-resident, obtaining an EIN should usually be your next step. For most international founders, the EIN becomes the key document required for banking, payment processing, and IRS compliance.</div>
+      </section>
+
+      <section id="ein-without-ssn">
+        <h2>Can you get an EIN without an SSN?</h2>
+        <p>Yes. The IRS explicitly accommodates foreign applicants without an SSN through its phone and fax application methods. Form SS-4 has a field (line 7b) for the responsible party's SSN or ITIN — foreign applicants who have neither enter <strong>"N/A" or "foreign"</strong> in that field. The IRS accepts these applications and issues EINs to foreign entities.</p>
+        <p>What is <em>not</em> available to non-residents without an SSN or ITIN is the IRS online EIN application at irs.gov/EIN. This system requires the responsible party to have a valid SSN or ITIN. Non-residents use the phone or fax method instead.</p>
+        <div class="callout-blue">The IRS international phone line (+1 267-941-1099) is available to applicants outside the US Monday through Friday, 6:00 AM to 11:00 PM Eastern Time. If you call with a completed Form SS-4 in front of you, an IRS representative will issue your EIN the same day. This is the fastest method — but it requires patience during busy periods. Fax is more reliable for applicants who can't wait on hold.</div>
+      </section>
+
+      <section id="itin">
+        <h2>Do you need an ITIN to get an EIN?</h2>
+        <p>No. An Individual Taxpayer Identification Number (ITIN) is not required to get an EIN for your LLC. The EIN is your LLC's identifier. The ITIN would be your personal identifier if you needed to file a US personal tax return. They serve different purposes and are applied for separately.</p>
+        <p>Where an ITIN becomes relevant later:</p>
+        <ul>
+          <li>If your LLC earns US-source income that requires you to file a personal Form 1040-NR, you'll need an SSN or ITIN to complete that return. Without one, you cannot file personally — though your LLC's EIN handles entity-level filings.</li>
+          <li>Some banks (notably Relay) require an SSN or ITIN from the beneficial owner to open a business account. Mercury and Wise Business do not require it.</li>
+          <li>Stripe may request ITIN for certain tax withholding forms (W-8BEN) — though EIN typically handles the business verification portion.</li>
+        </ul>
+        <div class="callout-yellow">Getting an ITIN is a separate, slower process that involves filing Form W-7 with supporting identity documents by mail to the IRS ITIN Operation in Austin, TX. The ITIN application process takes 7–8 weeks. It is not a prerequisite for your EIN — do not delay your EIN application while waiting for an ITIN.</div>
+      </section>
+
+      <section id="requirements">
+        <h2>Requirements to get an EIN as a non-US resident</h2>
+        <p>Have the following ready before starting any EIN application method.</p>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead><tr><th>Item</th><th>Status</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Formed LLC</strong></td><td><span class="badge-req">Required</span></td><td>LLC must be approved before applying — you need the formation date and state.</td></tr>
+              <tr><td><strong>LLC legal name</strong></td><td><span class="badge-req">Required</span></td><td>Exactly as it appears on Articles of Organization.</td></tr>
+              <tr><td><strong>State of formation</strong></td><td><span class="badge-req">Required</span></td><td>The state where you filed the LLC.</td></tr>
+              <tr><td><strong>Responsible party name</strong></td><td><span class="badge-req">Required</span></td><td>Must be an individual person — not the LLC itself.</td></tr>
+              <tr><td><strong>Responsible party address</strong></td><td><span class="badge-req">Required</span></td><td>Your personal address outside the US is acceptable.</td></tr>
+              <tr><td><strong>Business mailing address</strong></td><td><span class="badge-req">Required</span></td><td>Your RA address or virtual office address is fine here.</td></tr>
+              <tr><td><strong>Business purpose</strong></td><td><span class="badge-req">Required</span></td><td>Specific description of what the LLC does.</td></tr>
+              <tr><td><strong>SSN or ITIN</strong></td><td><span class="badge-opt">Optional</span></td><td>Enter "N/A" or "foreign" on line 7b if you have neither.</td></tr>
+              <tr><td><strong>Return fax number</strong></td><td><span class="badge-prac">Required for fax</span></td><td>IRS faxes the EIN back to this number within 4 business days.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="form-ss4">
+        <h2>Form SS-4 explained</h2>
+        <p>Form SS-4 — Application for Employer Identification Number — is the IRS document used to apply for an EIN. You download it free from irs.gov, fill it out, and submit by fax, phone, or mail. Do not try to complete it on the spot for the phone application without having it ready first — IRS representatives ask for the information line by line.</p>
+        <h3>Lines 1–2: Legal name and trade name</h3>
+        <p>Line 1 is the exact legal name of your LLC as it appears on the Articles of Organization. If your LLC is "Smith Global Holdings LLC," write it exactly that way — no abbreviations, no variations. Line 2 is for a DBA name if you use one. Most LLCs leave Line 2 blank.</p>
+        <h3>Lines 4a–4b: Mailing address</h3>
+        <p>This is where the IRS will mail the CP575 EIN confirmation letter. Use your registered agent's address or your US virtual office address. Do not use your personal address outside the US as the mailing address — international mail delivery from the IRS is unreliable and slow.</p>
+        <h3>Lines 7a–7b: Responsible party</h3>
+        <p>The responsible party is the individual who controls, manages, or directs the LLC and its funds. For a single-member LLC owned by you, that's you. The IRS requires the responsible party to be an individual person, not the LLC itself. Write your name on Line 7a. On Line 7b (SSN/ITIN), if you have neither, write "N/A" or "foreign." The IRS accepts this.</p>
+        <h3>Lines 8a–8c: LLC information</h3>
+        <p>Check the box indicating the entity type is a Limited Liability Company. Line 8b asks for the number of members — enter 1 if you're the sole owner. Line 8c asks how the LLC is classified for tax purposes — single-member LLCs default to disregarded entity, which is what you want for most non-resident founders.</p>
+        <h3>Line 9: Reason for applying</h3>
+        <p>For new LLCs, check "Started a new business." This is the correct selection for a newly formed LLC that has not yet operated.</p>
+        <h3>Line 10: Date business started</h3>
+        <p>Enter the date your Articles of Organization were approved by the state — the date on your formation confirmation. Do not leave this blank.</p>
+        <h3>Line 16: Business activity</h3>
+        <p>Be specific. "Online business" or "consulting" is too vague and may cause delays. Write something like: "SaaS software development and subscription sales" or "Digital marketing consulting services to small businesses." Specific descriptions reduce review delays.</p>
+        <div class="callout-red">Never list the LLC itself as the responsible party. The IRS will reject or delay applications where Line 7a shows the LLC name instead of an individual's name. This is the most common error on SS-4 applications from non-residents who don't read the instructions.</div>
+      </section>
+
+      <section id="how-to-apply">
+        <h2>How to apply for an EIN without an SSN</h2>
+        <p>Three methods are available for non-residents. Phone is fastest. Fax is most reliable for those who can receive a fax. Mail is slowest but requires no phone or fax equipment.</p>
+        <div class="timeline-container">
+          <div class="timeline-step-card">
+            <div class="step-num-badge">1</div>
+            <div><div><b>Form your LLC first</b></div><div style="color:#334155;line-height:1.7;margin-top:0.35rem;">Your LLC must exist before you can apply for its EIN. File your Articles of Organization with the state, wait for approval, and retrieve your formation date from the confirmation document. Wyoming approves online filings the same day. You need the formation date for Form SS-4 Line 10.</div></div>
+          </div>
+          <div class="timeline-step-card">
+            <div class="step-num-badge">2</div>
+            <div><div><b>Download and complete Form SS-4</b></div><div style="color:#334155;line-height:1.7;margin-top:0.35rem;">Get the current version from irs.gov. Fill in every required field. LLC name must match Articles of Organization exactly. For responsible party, use an individual's name. For Line 7b, if you have no SSN or ITIN, enter "N/A." Business mailing address: use your registered agent's US address. Your personal non-US address is fine as the responsible party's address.</div></div>
+          </div>
+          <div class="timeline-step-card">
+            <div class="step-num-badge">3</div>
+            <div><div><b>Choose your application method</b></div><div style="color:#334155;line-height:1.7;margin-top:0.35rem;"><strong>Phone (same day):</strong> Call +1 (267) 941-1099, Mon–Fri 6 AM–11 PM ET. Have your completed SS-4 ready.<br><br><strong>Fax (~4 business days):</strong> Fax to 304-707-9471 (outside US). Include your return fax number on the form.<br><br><strong>Mail (4–5 weeks):</strong> Attn EIN International Operation, Cincinnati, OH 45999. Last resort only.</div></div>
+          </div>
+          <div class="timeline-step-card">
+            <div class="step-num-badge">4</div>
+            <div><div><b>Receive your EIN</b></div><div style="color:#334155;line-height:1.7;margin-top:0.35rem;">By phone, you receive it verbally — write it on the upper right corner of your SS-4. By fax, the IRS leaves an EIN assignment notice to your return fax. Physical CP575 mails to your business address in 4–6 weeks regardless of method.</div></div>
+          </div>
+          <div class="timeline-step-card">
+            <div class="step-num-badge">5</div>
+            <div><div><b>Retrieve your CP575 and keep it safe</b></div><div style="color:#334155;line-height:1.7;margin-top:0.35rem;">The CP575 is the official IRS confirmation letter. Banks require it during account opening. If you lose it, you cannot get another — request a 147C letter instead (serves as proof of your EIN).</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="processing-times">
+        <h2>EIN processing times for non-US residents</h2>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead><tr><th>Method</th><th>Time to Receive EIN</th><th>Return Requirement</th><th>Best For</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Phone (+1 267-941-1099)</strong></td><td>Same day (during call)</td><td>Have SS-4 ready; patience for hold times</td><td>Fastest option, works well for most time zones</td></tr>
+              <tr><td><strong>Fax (international fax)</strong></td><td>~4 business days</td><td>Must include return fax number on SS-4</td><td>Reliable; no language barrier on phone</td></tr>
+              <tr><td><strong>Mail</strong></td><td>4–5 weeks</td><td>Mail to IRS, Cincinnati, OH 45999</td><td>Last resort only; slowest option</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout-yellow">Factors that extend processing time: incomplete Form SS-4 (missing LLC name, formation date, or business description), listing the LLC itself as the responsible party, providing an incorrect or missing return fax number, or applying during IRS peak periods (January–April). Fill the form correctly the first time.</div>
+        <p>The CP575 confirmation letter arrives by mail to your registered address regardless of which application method you used. This takes 4–6 weeks from when your EIN is issued. The letter is the one <strong>document you keep permanently</strong> — it cannot be reissued. Once your EIN is issued by phone or fax, you can typically begin the bank account application process immediately. Most banks accept the EIN number itself as evidence; the CP575 provides secondary confirmation.</p>
+      </section>
+
+      <section id="fast-paid-option">
+        <h2>Fast paid option: 1 Day EIN</h2>
+        <div class="top-pick-card">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#eeaa36;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.4rem;">⭐ OUR TOP PICK</div>
+            <div style="font-weight:800;color:#12304A;font-size:1rem;margin-bottom:0.4rem;">doola — EIN, Formation, and Compliance</div>
+            <div style="font-size:0.9rem;color:#475569;">LLC formation + EIN without SSN, registered agent, banking setup, and Form 5472 filing — everything a non-US resident needs in one service. Use code <strong>LLCPRIMER10</strong> for 10% off.</div>
+          </div>
+          <a href="https://doola.com" target="_blank" rel="noopener sponsored" class="ls-btn ls-btn--emerald" style="white-space:nowrap;padding:0.85rem 1.5rem;background:var(--color-primary-gradient);">Start with doola →</a>
+        </div>
+      </section>
+
+      <section id="is-ein-free">
+        <h2>Is an EIN free?</h2>
+        <p>Yes. The IRS does not charge any fee to issue an EIN. Whether you apply by phone, fax, mail, or online, the EIN from the IRS costs nothing.</p>
+        <p>What costs money:</p>
+        <ul>
+          <li><strong>Third-party EIN services ($50–200)</strong> — these prepare and submit your Form SS-4 on your behalf. You pay for coordination and error-checking, not the EIN itself.</li>
+          <li><strong>Online fax services ($2–15)</strong> — services like eFax, mFax, and HelloFax charge per-page or monthly fees to send/receive faxes.</li>
+          <li><strong>Doola's EIN service</strong> — covered as part of their formation packages. A service fee for handling the application on your behalf, not an IRS fee.</li>
+        </ul>
+        <div class="callout-red">The IRS online EIN application at irs.gov/EIN is free and immediate for US-based applicants with SSN/ITIN. Non-residents cannot use this system. If a service tells you it can get you an EIN "faster" through the online system without an SSN — it can't. The IRS system blocks non-SSN/ITIN applicants. Any service claiming otherwise is either incorrect or using a method that creates compliance problems.</div>
+      </section>
+
+      <section id="common-mistakes">
+        <h2>Common EIN mistakes foreign founders make</h2>
+        <ul>
+          <li><strong>Listing the LLC as the responsible party on Line 7a.</strong> The IRS will reject or delay applications where Line 7a shows the LLC name instead of an individual's name. This is explicitly prohibited in the IRS instructions.</li>
+          <li><strong>Leaving Line 7b blank instead of "N/A."</strong> If you have no SSN or ITIN, write "N/A" or "foreign" — don't leave the field empty. Empty fields suggest incomplete applications.</li>
+          <li><strong>Using a vague business description.</strong> "Online business" or "consulting" on Line 16 triggers manual review. Write a specific description of what the LLC actually does.</li>
+          <li><strong>Not including a return fax number.</strong> Without a return fax number, the IRS mails the CP575 instead of faxing your EIN back — adding 4–6 weeks to the process.</li>
+          <li><strong>Sending duplicate applications.</strong> If you don't receive your EIN within the expected timeframe, call the IRS Business &amp; Specialty Tax line at 1-800-829-4933 to check status. Do not re-fax the same application — the IRS processes duplicates separately and may issue two EINs, creating compliance complications.</li>
+          <li><strong>Confusing the EIN with an ITIN.</strong> Some non-residents apply for an ITIN thinking it will let them open a bank account or use payment processors. The LLC's EIN is what banks and Stripe need.</li>
+          <li><strong>Applying under the wrong entity type.</strong> Line 8a: select "Limited Liability Company." Do not select corporation, sole proprietor, or any other type unless that actually describes your structure.</li>
+        </ul>
+      </section>
+
+      <section id="ein-and-banking">
+        <h2>EIN and business banking</h2>
+        <p>Your EIN is the gateway to your US bank account. Every major banking platform for non-residents — Mercury, Relay, Wise Business — requires your EIN as part of the account application. Without it, applications are returned or rejected.</p>
+        <p>The typical banking document sequence is:</p>
+        <ul>
+          <li>Form LLC → receive Articles of Organization</li>
+          <li>Apply for EIN → receive EIN (4 business days by fax, same day by phone)</li>
+          <li>Apply for bank account using EIN + Articles + operating agreement + passport</li>
+          <li>Account approved within 1–5 business days</li>
+        </ul>
+        <p>The EIN is the rate-limiting step in the banking process. Plan your EIN application as soon as your LLC is approved, not after. For the complete banking setup process, including Mercury eligibility, prohibited countries, and common rejection causes, see our <a href="best-business-bank-accounts.html">business bank account guide for non-US residents</a>.</p>
+      </section>
+
+      <section id="ein-and-stripe">
+        <h2>EIN and Stripe</h2>
+        <p>Stripe asks for your EIN and may request the CP575 confirmation letter or 147C letter as supporting documentation. Without an EIN, you cannot complete your business verification under an LLC — your account defaults to individual status, which mismatches your legal structure.</p>
+        <p>This has tax implications: Stripe processes 1099-K forms for accounts that receive over $600/year in payments. If properly verified, your LLC receives this 1099-K under the LLC's EIN, not your personal name. Without proper EIN verification, the 1099-K may be issued to you personally, creating a mismatch with your foreign-owned LLC's tax structure.</p>
+      </section>
+
+      <section id="ein-and-taxes">
+        <h2>EIN and LLC taxes</h2>
+        <p>Having an EIN does not change your tax obligations — it just makes it possible to fulfill them. The EIN appears on every federal tax form your LLC files.</p>
+        <p>For a single-member foreign-owned LLC: the LLC's EIN goes on Form 5472 (mandatory annual filing) and the attached pro forma Form 1120. These filings do not create an additional tax — they inform the IRS of your ownership structure. The $25,000 IRS penalty for missing them applies regardless of whether you have an EIN or not.</p>
+        <p>For a multi-member LLC with foreign members: the EIN goes on Form 1065 and the Schedule K-1s issued to each member. Multi-member LLCs with foreign members have additional withholding obligations that the EIN is used to track.</p>
+        <p>The EIN does not affect whether your income is US-taxable — that's determined by where business activity occurs (Effectively Connected Income rules). For the full picture of tax obligations for foreign-owned LLCs, see our <a href="how-are-llcs-taxed.html">LLC taxes guide</a>. The general <a href="ein-guide.html">EIN for LLC guide</a> covers the full EIN process for all LLC types.</p>
+      </section>
+
+      <section id="doola">
+        <h2>doola EIN assistance for non-US residents</h2>
+        <p>The DIY EIN process for non-residents is manageable — it's a form and a fax. But errors on Form SS-4 cause delays measured in weeks, and it will not give clear error messages when something is wrong. For a first-time founder unfamiliar with IRS procedures, a service that handles the SS-4 preparation and submission is a reasonable investment.</p>
+        <p>Northwest Registered Agent does not offer standalone EIN services for non-residents. Their registered agent service is excellent at $39/year, but the EIN process requires separate handling. See the <a href="zenbusiness-vs-northwest.html">doola vs Northwest comparison</a> for a full breakdown of what each service covers. If you only need an RA and are confident handling the EIN yourself by phone, Northwest at $39/year plus the free IRS phone application is the most cost-effective path.</p>
+
+        <div class="top-pick-card">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#eeaa36;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.4rem;">⭐ OUR TOP PICK</div>
+            <div style="font-weight:800;color:#12304A;font-size:1rem;margin-bottom:0.4rem;">doola — EIN, Formation, and Compliance</div>
+            <div style="font-size:0.9rem;color:#475569;">LLC formation + EIN without SSN, registered agent, banking setup, and Form 5472 filing — everything a non-US resident needs in one service. Use code <strong>LLCPRIMER10</strong> for 10% off.</div>
+          </div>
+          <a href="https://doola.com" target="_blank" rel="noopener sponsored" class="ls-btn ls-btn--emerald" style="white-space:nowrap;padding:0.85rem 1.5rem;background:var(--color-primary-gradient);">Start with doola →</a>
         </div>
 
-        <div class="guide-meta-row">
-          <span>🗓️ <strong style="color:#CBD5E1;">Last reviewed:</strong> September 7, 2026</span>
-          <span>📋 <strong style="color:#CBD5E1;">Official source:</strong> <a href="https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers" target="_blank" rel="noopener" style="color:#159A9C;">IRS Employer Identification Number guidance</a></span>
+        <div class="bottom-line-card">
+          <div style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.07em;color:rgba(255,255,255,0.6);margin-bottom:0.5rem;">BOTTOM LINE</div>
+          <p style="margin:0;color:#FFFFFF;line-height:1.7;">Most non-US residents can get an EIN in one business day by calling the IRS international line (+1 267-941-1099) with a completed Form SS-4. Fax takes approximately 4 business days if you include a return fax number. The EIN is free from the IRS. The most common causes of delays are listing the LLC as responsible party, vague business descriptions, and missing return fax numbers. Get your EIN the day your LLC is approved — it's the bottleneck before banking, Stripe, and tax compliance all become possible.</p>
+        </div>
+      </section>
+
+      <div class="cluster-box">
+        <h3 style="margin:0 0 0.25rem;color:#12304A;font-size:1.05rem;">Continue building your non-resident LLC</h3>
+        <div class="cluster-grid">
+          <a href="non-resident-llc-guide.html" class="cluster-item-link">LLC for non-US residents — complete 2026 guide</a>
+          <a href="best-business-bank-accounts.html" class="cluster-item-link">US bank account for non-US residents — Mercury, Relay, and Wise compared</a>
+          <a href="llc-cost-for-non-residents.html" class="cluster-item-link">LLC cost for non-US residents — verified 2026 fee breakdown</a>
+          <a href="best-state-for-non-us-residents.html" class="cluster-item-link">Best state for non-US residents — Wyoming vs Delaware vs New Mexico</a>
+          <a href="ein-guide.html" class="cluster-item-link">EIN for an LLC — complete guide for all LLC types</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- =========================================================================
-       MAIN CONTENT
-       ========================================================================= -->
-  <main style="padding: 2.5rem 0 3rem; background:#F6F9FC;">
-    <div class="container">
-      <div class="guide-layout">
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Can a non-US resident get an EIN?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">Yes. The IRS allows foreign applicants to obtain an EIN using Form SS-4 submitted by phone, fax, or mail. No SSN, ITIN, US address, or US citizenship is required.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Do I need an SSN to get an EIN?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">No. On Form SS-4 Line 7b, enter "N/A" or "foreign" if you have neither an SSN nor ITIN. The IRS accepts this and issues EINs to foreign applicants through the phone or fax method.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Do I need an ITIN to get an EIN?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">No. An ITIN is your personal tax ID — it is not required to get an EIN for your LLC. Apply for the EIN immediately after formation. Don't delay waiting for an ITIN, as the ITIN process takes 7–8 weeks.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Is an EIN free?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">Yes. The IRS does not charge any fee for issuing an EIN. Applying directly by phone, fax, or mail costs nothing. Third-party services charge for their preparation and handling, not the EIN itself.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Can I apply for an EIN online as a non-US resident?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">No. The IRS online EIN application requires a valid SSN or ITIN for the responsible party. Non-residents without either must use the phone, fax, or mail method.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Can I get an EIN before opening a bank account?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">Yes — and you should. Most US banks require your EIN before they will open a business account. Get your EIN as soon as your LLC is approved, then use it in the bank application.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">How long does it take to get an EIN for a non-US resident?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">Same day by phone, approximately 4 business days by fax, and 4–5 weeks by mail. Phone is the fastest — call the IRS international line at +1 267-941-1099 with a completed SS-4 in front of you.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Can I get an EIN for a Wyoming LLC as a non-US resident?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">Yes. Wyoming is one of the most popular formation states for non-residents. Once your Wyoming LLC is approved (often same day online), you apply for an EIN from the IRS using the same phone or fax process as any other state.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">What is Form SS-4?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">Form SS-4 (Application for Employer Identification Number) is the IRS form used to apply for an EIN. Non-residents download it free from irs.gov, complete all required fields, and submit it by phone, fax, or mail. It cannot be submitted online by non-residents.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Can my EIN application be rejected?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">Yes. Common rejection reasons: listing the LLC as responsible party, leaving Line 7b blank instead of "N/A," providing a vague business description, or submitting before the LLC is formed. Fix the error and resubmit. Do not send duplicate applications.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Do I need a US address to get an EIN?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">No US address is required for the responsible party — your foreign address is acceptable. However, the business mailing address (where the IRS mails the CP575) should be a US address — typically your registered agent's address — because international mail delivery from the IRS is unreliable.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Does an EIN expire?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">No. Once issued, an EIN is permanent and assigned to your LLC for its lifetime. It does not need to be renewed. If your LLC is dissolved, the EIN is retired — but a new LLC later requires a new EIN application.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Can I change EIN information after it's issued?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">Some information can be updated by calling the IRS Business &amp; Specialty Tax Line. Changing the responsible party to another person requires filing Form 8822-B. The EIN number itself never changes.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Can I use an EIN for Stripe?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">Yes. Stripe requires an EIN to verify your US LLC as a business entity. Once verified, Stripe links your LLC's tax identity to the account, which allows proper 1099-K tax reporting under the LLC's EIN rather than your personal name.</div></details>
+        </div>
+      </section>
 
-        <!-- ── ARTICLE ── -->
-        <article class="guide-article">
-
-          <!-- Who Needs an EIN -->
-          <h2 id="who-needs-ein">Who Needs an EIN as a Non-US Resident?</h2>
-          <p>Most foreign-owned LLCs should obtain an EIN immediately after formation. Even when an EIN is not legally required on day one, getting it early avoids delays when opening bank accounts, setting up payment processors, and meeting federal tax obligations.</p>
-          <ul>
-            <li>Single-member foreign-owned LLCs filing <strong>Form 5472</strong></li>
-            <li>Multi-member LLCs filing <strong>Form 1065</strong></li>
-            <li>Businesses opening a <strong>US bank account</strong></li>
-            <li>Companies using <strong>Stripe, PayPal</strong>, or other payment processors</li>
-            <li>Amazon FBA and e-commerce sellers</li>
-            <li>Freelancers, consultants, agencies, and SaaS founders serving US customers</li>
-          </ul>
-          <div class="info-box teal">
-            If you formed a US LLC as a non-resident, obtaining an EIN should usually be your next step. For most international founders, the EIN becomes the key document required for banking, payment processing, and IRS compliance.
-          </div>
-
-          <!-- What is an EIN -->
-          <h2 id="what-is-ein">What is an EIN?</h2>
-          <p>An Employer Identification Number is a nine-digit tax identification number issued by the IRS to identify a business entity for federal tax purposes. The format is <strong>XX-XXXXXXX</strong>. It's sometimes called a Federal Tax ID Number, Federal Employer Identification Number (FEIN), or Tax Identification Number (TIN).</p>
-          <p>Despite the word "employer" in the name, you don't need employees to get an EIN. LLCs use it for banking, payment processing, and tax compliance purposes.</p>
-
-          <div class="table-responsive">
-            <table class="id-table">
-              <thead>
-                <tr>
-                  <th>Identifier</th>
-                  <th>Issued By</th>
-                  <th>For Whom</th>
-                  <th>Purpose</th>
-                  <th>Non-Residents Need It?</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>EIN</strong></td>
-                  <td>IRS</td>
-                  <td>Business entities</td>
-                  <td>Federal business tax ID</td>
-                  <td class="yes-cell">Yes — for the LLC</td>
-                </tr>
-                <tr>
-                  <td><strong>SSN</strong></td>
-                  <td>Social Security Administration</td>
-                  <td>US citizens + authorized workers</td>
-                  <td>Personal federal tax ID</td>
-                  <td class="no-cell">No (not required for EIN)</td>
-                </tr>
-                <tr>
-                  <td><strong>ITIN</strong></td>
-                  <td>IRS</td>
-                  <td>Non-resident individuals with US tax obligations</td>
-                  <td>Personal tax ID for non-residents</td>
-                  <td class="no-cell">No (not required for EIN)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="info-box yellow">
-            An EIN does not create your LLC, authorize you to do business, or serve as a business license. It identifies your LLC in the IRS system for tax reporting. Your LLC is created when the state approves your Articles of Organization — the EIN is a separate, subsequent step.
-          </div>
-
-          <!-- Why non-US residents need an EIN -->
-          <h2 id="why-need-ein">Why non-US residents need an EIN</h2>
-          <p>Several critical business functions require an EIN before they work. Trying to skip this step creates blockers at every turn:</p>
-          <ul>
-            <li><strong>Business bank accounts</strong> — Mercury, Relay, and every major US bank or fintech requires your EIN before opening a business account. Without an EIN, you cannot open the account. See our guide on <a href="best-business-bank-accounts.html">business bank accounts for non-US residents</a> for the full banking setup process.</li>
-            <li><strong>Stripe</strong> — Stripe requires EIN verification when you add your US LLC as the business entity. Without it, your Stripe account defaults to personal identity verification, which doesn't match your LLC structure.</li>
-            <li><strong>Federal tax compliance</strong> — your LLC's federal tax returns (Form 1065 for multi-member LLCs) and the mandatory Form 5472 for foreign-owned single-member LLCs require an EIN. You cannot file these returns without one.</li>
-            <li><strong>Payroll</strong> — if your LLC ever hires US employees or US-based contractors on payroll, an EIN is legally required. Payroll processors will not run without it.</li>
-            <li><strong>Amazon seller account</strong> — Amazon requires an EIN to open a professional seller account linked to a US LLC entity.</li>
-            <li><strong>Business credit</strong> — establishing business credit under your LLC (rather than personal credit) requires an EIN. Business credit applications tie to the EIN, not to you personally.</li>
-          </ul>
-
-          <!-- Can you get an EIN without an SSN -->
-          <h2 id="ein-without-ssn">Can you get an EIN without an SSN?</h2>
-          <p>Yes. The IRS explicitly accommodates foreign applicants without an SSN through its phone and fax application methods. Form SS-4 has a field (line 7b) for the responsible party's SSN or ITIN — foreign applicants who have neither enter "N/A" or "foreign" in that field. The IRS accepts these applications and issues EINs to foreign entities.</p>
-          <p>What is not available to non-residents without an SSN or ITIN is the IRS <em>online</em> EIN application at irs.gov/EIN. This system requires the responsible party to have a valid SSN or ITIN. Non-residents use the phone or fax method instead.</p>
-
-          <div class="info-box teal">
-            The IRS international phone line (+1 267-941-1099) is available to applicants outside the US Monday through Friday, 6:00 AM to 11:00 PM Eastern Time. If you call with a completed Form SS-4 in front of you, an IRS representative will issue your EIN the same day. This is the fastest method — but it requires patience during busy periods. Fax is more reliable for applicants who can't wait on hold.
-          </div>
-
-          <!-- ITIN -->
-          <h2 id="itin">Do you need an ITIN to get an EIN?</h2>
-          <p>No. An Individual Taxpayer Identification Number (ITIN) is not required to get an EIN for your LLC. The EIN is your LLC's identifier. The ITIN would be your personal identifier if you needed to file a US personal tax return. They serve different purposes and are applied for separately.</p>
-          <p>Where an ITIN becomes relevant later:</p>
-          <ul>
-            <li>If your LLC earns US-source income that requires you to file a personal Form 1040-NR, you'll need an SSN or ITIN to complete that return. Without one, you cannot file personally — though your LLC's EIN handles the entity-level filings.</li>
-            <li>Some banks (notably Relay) require an SSN or ITIN from the beneficial owner to open a business account. If you want Relay access, getting an ITIN eventually makes sense. Mercury and Wise Business do not require it.</li>
-            <li>Stripe may request ITIN for certain tax withholding forms (W-8BEN) — though EIN typically handles the business verification portion.</li>
-          </ul>
-          <div class="info-box yellow">
-            Getting an ITIN is a separate, slower process that involves filing Form W-7 with supporting identity documents by mail to the IRS ITIN Operation in Austin, TX. The ITIN application process takes 7–8 weeks. It is not a prerequisite for your EIN — do not delay your EIN application while waiting for an ITIN.
-          </div>
-
-          <!-- Requirements -->
-          <h2 id="requirements">Requirements to get an EIN as a non-US resident</h2>
-          <p>Have the following ready before starting any EIN application method:</p>
-          <div class="table-responsive">
-            <table class="req-table">
-              <thead>
-                <tr>
-                  <th>Item</th>
-                  <th>Status</th>
-                  <th>Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Formed LLC</strong></td>
-                  <td><span class="badge-req">Required</span></td>
-                  <td>LLC must be approved before applying — you need the formation date and state.</td>
-                </tr>
-                <tr>
-                  <td><strong>LLC legal name</strong></td>
-                  <td><span class="badge-req">Required</span></td>
-                  <td>Exactly as it appears on Articles of Organization.</td>
-                </tr>
-                <tr>
-                  <td><strong>State of formation</strong></td>
-                  <td><span class="badge-req">Required</span></td>
-                  <td>The state where you filed the LLC (e.g., Wyoming).</td>
-                </tr>
-                <tr>
-                  <td><strong>Responsible party name</strong></td>
-                  <td><span class="badge-req">Required</span></td>
-                  <td>Must be an individual person — not the LLC itself.</td>
-                </tr>
-                <tr>
-                  <td><strong>Responsible party address</strong></td>
-                  <td><span class="badge-req">Required</span></td>
-                  <td>Your personal address outside the US is acceptable.</td>
-                </tr>
-                <tr>
-                  <td><strong>Business mailing address</strong></td>
-                  <td><span class="badge-req">Required</span></td>
-                  <td>Your RA address or virtual office address is fine here.</td>
-                </tr>
-                <tr>
-                  <td><strong>Business purpose</strong></td>
-                  <td><span class="badge-req">Required</span></td>
-                  <td>Specific description of what the LLC does.</td>
-                </tr>
-                <tr>
-                  <td><strong>SSN or ITIN</strong></td>
-                  <td><span class="badge-opt">Optional</span></td>
-                  <td>Enter "N/A" or "foreign" on line 7b if you have neither.</td>
-                </tr>
-                <tr>
-                  <td><strong>Return fax number</strong></td>
-                  <td><span class="badge-req-fax">Required for fax</span></td>
-                  <td>IRS faxes this back to the number within 4 business days.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Form SS-4 explained -->
-          <h2 id="form-ss4">Form SS-4 explained</h2>
-          <p>Form SS-4 — Application for Employer Identification Number — is the IRS document used to apply for an EIN. You download it free from irs.gov, fill it out, and submit by fax, phone, or mail. Do not try to complete it on the spot for the phone application without having it ready first — IRS representatives ask for the information line by line.</p>
-
-          <h3>Lines 1–2: Legal name and trade name</h3>
-          <p>Line 1 is the exact legal name of your LLC as it appears on the Articles of Organization. If your LLC is "Smith Global Holdings LLC," write it exactly that way — no abbreviations, no variations. Line 2 is for a DBA name if you use one. Most LLCs leave Line 2 blank.</p>
-
-          <h3>Lines 4a–4b: Mailing address</h3>
-          <p>This is where the IRS will mail the CP575 EIN confirmation letter. Use your registered agent's address or your US virtual office address. Do not use your personal address outside the US as the mailing address — the CP575 will be mailed here, and international mail delivery from the IRS is unreliable and slow.</p>
-
-          <h3>Lines 7a–7b: Responsible party</h3>
-          <p>The responsible party is the individual who controls, manages, or directs the LLC and its funds. For a single-member LLC owned by you, that's you. Important: the IRS requires the responsible party to be an individual person, not the LLC itself. Write your name on Line 7a. On Line 7b (SSN/ITIN), if you have neither, write "N/A" or "foreign." The IRS accepts this.</p>
-
-          <h3>Lines 8a–8c: LLC information</h3>
-          <p>Check the box indicating the entity type is a Limited Liability Company. Line 8b asks for the number of members — enter 1 if you're the sole owner. Line 8c asks how the LLC is classified for tax purposes — single-member LLCs default to disregarded entity, which is what you want for most non-resident founders.</p>
-
-          <h3>Line 9: Reason for applying</h3>
-          <p>For new LLCs, check "Started a new business." This is the correct selection for a newly formed LLC that has not yet operated.</p>
-
-          <h3>Line 10: Date business started</h3>
-          <p>Enter the date your Articles of Organization were approved by the state — the date on your formation confirmation. Do not leave this blank.</p>
-
-          <h3>Line 16: Business activity</h3>
-          <p>Be specific. "Online business" or "consulting" is too vague and may cause delays. Write something like: "SaaS software development and subscription sales" or "Digital marketing consulting services to small businesses." Specific descriptions reduce review delays.</p>
-
-          <div class="info-box red">
-            Never list the LLC itself as the responsible party. The IRS will reject or delay applications where Line 7a shows the LLC name instead of an individual's name. This is the most common error on SS-4 applications from non-residents who don't read the instructions.
-          </div>
-
-          <!-- How to apply without SSN -->
-          <h2 id="how-to-apply">How to apply for an EIN without an SSN</h2>
-          <p>Three methods are available for non-residents. Phone is fastest. Fax is most reliable for those who can receive a fax. Mail is slowest but requires no phone or fax equipment.</p>
-
-          <div class="step-list">
-            <div class="step-item">
-              <div class="step-num">1</div>
-              <div class="step-body">
-                <h4>Form your LLC first</h4>
-                <p>Your LLC must exist before you can apply for its EIN. File your Articles of Organization with the state, wait for approval, and retrieve your formation date from the confirmation document. Wyoming approves online filings the same day. You need the formation date for Form SS-4 Line 10.</p>
-              </div>
-            </div>
-            <div class="step-item">
-              <div class="step-num">2</div>
-              <div class="step-body">
-                <h4>Download and complete Form SS-4</h4>
-                <p>Get the current version from <a href="https://www.irs.gov/pub/irs-pdf/fss4.pdf" target="_blank" rel="noopener">irs.gov/forms/pub/fss4.pdf</a> — or form at irs.gov. Fill in every required field. LLC name must match Articles of Organization exactly. For responsible party, use an individual's name. For Line 7b, if you have no SSN or ITIN, Business mailing address: use your registered agent's US address. Include your personal address as the responsible party's address — your non-US address is fine here.</p>
-              </div>
-            </div>
-            <div class="step-item">
-              <div class="step-num">3</div>
-              <div class="step-body">
-                <h4>Choose your application method</h4>
-                <p><strong>Phone (fastest — same day):</strong> Call +1 (267) 941-1099, Monday–Friday, 6:00 AM – 11:00 PM Eastern Time. Have your completed SS-4 ready. An IRS representative will guide you line by line and issue your EIN verbally during the call.<br><br>
-                <strong>Fax (~4 business days):</strong> Fax your signed, completed SS-4 to 304-707-9471 (from outside the US) or 855-215-1627 (inside the US). Include your return fax number at the top of Form SS-4. The IRS faxes back the EIN to that number. Use an online fax service (eFax, mFax, HelloFax) if you don't have a physical fax machine.<br><br>
-                <strong>Mail (4–5 weeks):</strong> Mail your signed SS-4 to: Attn EIN International Operation, Cincinnati, OH 45999. Slowest option — only use if phone and fax are unavailable.</p>
-              </div>
-            </div>
-            <div class="step-item">
-              <div class="step-num">4</div>
-              <div class="step-body">
-                <h4>Receive your EIN</h4>
-                <p>By phone, you receive your EIN verbally during the call. Write it down on the upper right corner of your Form SS-4 and keep it. By fax, the IRS leaves an EIN assignment notice to your return fax number. By mail, the IRS mails a CP575 notice. Your EIN arrives regardless of method in CP575 format mailed to your business address — expect 4–5 weeks for the physical CP575 even if you received the number by phone or fax.</p>
-              </div>
-            </div>
-            <div class="step-item">
-              <div class="step-num">5</div>
-              <div class="step-body">
-                <h4>Retrieve your CP575 and keep it safe</h4>
-                <p>The CP575 is the official IRS confirmation letter. Banks require it during account opening. If you lose it, you cannot get another one — you must request a 147C letter instead (a verification letter that serves as proof of your EIN). See our guide on the IRS 147C letter for how to request it.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- EIN Processing Times -->
-          <h2 id="processing-times">EIN processing times for non-US residents</h2>
-          <div class="table-responsive">
-            <table class="proc-table">
-              <thead>
-                <tr>
-                  <th>Method</th>
-                  <th>Time to Receive EIN</th>
-                  <th>Return Requirement</th>
-                  <th>Best For</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Phone (+1 267-941-1099)</strong></td>
-                  <td>Same day (during call)</td>
-                  <td>Must have SS-4 ready, have patience for hold times</td>
-                  <td>Fastest option, works well for most time zones</td>
-                </tr>
-                <tr>
-                  <td><strong>Fax (international fax)</strong></td>
-                  <td>~4 business days</td>
-                  <td>Must include return fax number on SS-4</td>
-                  <td>Reliable; no language barrier on phone</td>
-                </tr>
-                <tr>
-                  <td><strong>Mail</strong></td>
-                  <td>4–5 weeks</td>
-                  <td>Mail to IRS, Cincinnati, OH 45999</td>
-                  <td>Last resort only; slowest option</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="info-box yellow">
-            Factors that extend processing time: incomplete Form SS-4 (a missing LLC name, formation date, or business description), listing the LLC itself as the responsible party, providing an incorrect or missing return fax number, or applying during IRS peak periods (January–April). Any error on the form forces the IRS to follow up, which adds weeks to the timeline. Fill the form correctly the first time.
-          </div>
-
-          <p>The CP575 confirmation letter arrives by mail to your registered address regardless of which application method you used. This takes 4–6 weeks from when your EIN is issued. The letter is the one <strong>document you keep permanently</strong> — it cannot be reissued. Once your EIN is issued by phone or fax, you can typically begin the bank account application process immediately using that number. Most banks accept the EIN number itself as evidence; the CP575 provides secondary confirmation.</p>
-
-          <!-- Fast paid option -->
-          <h2 id="fast-paid-option">Fast paid option: 1 Day EIN</h2>
-
-          <div class="sponsored-box">
-            <div class="sponsored-tag">⭐ Sponsored Option</div>
-            <h3>Need a faster done-for-you option? 1 Day EIN</h3>
-            <p>If you would rather not handle the LLC formation and EIN process yourself, <strong>1 Day EIN</strong> offers an expedited package designed for non-US founders.</p>
-            <p>According to 1 Day EIN, its <strong>$399 all-in package</strong> includes LLC formation, EIN, registered agent service, and a US business address, with <strong>state filing fees included</strong>.</p>
-            <div class="sponsored-features">
-              <div class="sponsored-feat"><strong>$399</strong> all-in<br><span style="font-size:0.75rem;">Formation, RA, registered agent + address + state fees</span></div>
-              <div class="sponsored-feat"><strong>1 business day</strong><br><span style="font-size:0.75rem;">Advertised (for formations Monday–Friday)</span></div>
-              <div class="sponsored-feat"><strong>$50/year</strong><br><span style="font-size:0.75rem;">Registered agent + US address renewals</span></div>
-            </div>
-            <div class="sponsored-badges">
-              <span>✓ 1000+ LLCs formed</span>
-              <span>✓ 72-hour money-back guarantee</span>
-            </div>
-            <div class="info-box teal" style="margin:0 0 1rem;">
-              The EIN itself is free from the IRS. With a paid provider, you are paying for LLC formation and application handling fee for the EIN number itself.
-            </div>
-            <a href="#" class="sponsored-cta" target="_blank" rel="noopener sponsored">See the 1 Day EIN expedited option →</a>
-            <p style="font-size:0.75rem; color:#94A3B8; margin:0.4rem 0 0;">Paid service. RA option remains free.</p>
-            <div class="sponsored-note">Sponsored placement: This placement is sponsored content. The quote included above is retrieved and confirmed over the existing website, evaluation, and placement of the service.</div>
-          </div>
-
-          <!-- Is an EIN free -->
-          <h2 id="is-ein-free">Is an EIN free?</h2>
-          <p>Yes. The IRS does not charge any fee to issue an EIN. Whether you apply by phone, fax, mail, or online, the EIN from the IRS costs nothing.</p>
-          <p>What costs money:</p>
-          <ul>
-            <li><strong>Third-party EIN services ($50–200)</strong> — these prepare and submit your Form SS-4 on your behalf. You pay for coordination and error-checking — not for the EIN itself.</li>
-            <li><strong>Online fax services ($2–15)</strong> — if you don't have a physical fax machine, you'll use an online fax service to submit your SS-4 and receive the IRS fax-back. Services like eFax, mFax, and HelloFax charge per-page or monthly fees.</li>
-            <li><strong>Doola's EIN service</strong> — covered as part of their formation packages. Not a standalone IRS fee, but a service fee for handling the application on your behalf.</li>
-          </ul>
-          <div class="info-box red">
-            The IRS online EIN application at irs.gov/EIN is free and immediate for US-based applicants with SSN/ITIN. Non-residents cannot use this system. If a service tells you it can get you an EIN "faster" through the online system without an SSN — it can't. The IRS system blocks non-SSN/ITIN applicants. Any service claiming otherwise is either incorrect or using a method that creates compliance problems.
-          </div>
-
-          <!-- DIY vs Service -->
-          <h2 id="diy-vs-service">DIY EIN vs using a service</h2>
-          <div class="table-responsive">
-            <table class="compare-table">
-              <thead>
-                <tr>
-                  <th>Factor</th>
-                  <th>DIY (IRS fax or phone)</th>
-                  <th>1 Day EIN</th>
-                  <th>Doola</th>
-                  <th>Northwest + EIN Service</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Cost</strong></td>
-                  <td>Free + fax service ($2–15)</td>
-                  <td>$399 all-in formation package</td>
-                  <td>Included in formation</td>
-                  <td>$9 + $39 RA + EIN service $50–$62</td>
-                </tr>
-                <tr>
-                  <td><strong>Form SS-4 preparation</strong></td>
-                  <td>Self-prepared</td>
-                  <td>Handled</td>
-                  <td>Handled</td>
-                  <td>Varies by service</td>
-                </tr>
-                <tr>
-                  <td><strong>EIN processing time</strong></td>
-                  <td>Same day (phone) / ~4 days (fax)</td>
-                  <td>Advertised as 1 business day, Monday–Friday</td>
-                  <td>Same IRS timeline</td>
-                  <td>Same IRS timeline</td>
-                </tr>
-                <tr>
-                  <td><strong>Registered agent</strong></td>
-                  <td>Not included</td>
-                  <td>Included, $50/year renewal</td>
-                  <td>Included with eligible formation plans</td>
-                  <td>Available separately</td>
-                </tr>
-                <tr>
-                  <td><strong>US business address</strong></td>
-                  <td>Not included</td>
-                  <td>Included</td>
-                  <td>Plan-dependent</td>
-                  <td>Not included with basic RA service</td>
-                </tr>
-                <tr>
-                  <td><strong>Application handling</strong></td>
-                  <td>You handle IRS contact and follow-up</td>
-                  <td>Handled by provider</td>
-                  <td>Handled</td>
-                  <td>Varies by service</td>
-                </tr>
-                <tr>
-                  <td><strong>Best for</strong></td>
-                  <td>Founders comfortable handling the IRS process themselves</td>
-                  <td>Non-US founders prioritizing speed and an all-in formation package</td>
-                  <td>Founders wanting broader formation and ongoing compliance support</td>
-                  <td>Founders primarily looking for registered agent service</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p style="font-size:0.78rem; color:#94A3B8;"><em>Disclaimer: 1 Day EIN is a sponsored partner of LLCPrimer. Service details and pricing for Doola are provided by the respective providers. LLCPrimer has not verified the accuracy of those details independently.</em></p>
-
-          <!-- Common mistakes -->
-          <h2 id="common-mistakes">Common EIN mistakes foreign founders make</h2>
-          <div class="mistake-list">
-            <div class="mistake-item">
-              <div class="m-icon">❌</div>
-              <p><strong>Applying before forming the LLC.</strong> You need your LLC's formation date and state to complete Form SS-4. Apply after your Articles of Organization are approved — not before.</p>
-            </div>
-            <div class="mistake-item">
-              <div class="m-icon">❌</div>
-              <p><strong>Listing the LLC as the responsible party on Line 7a.</strong> The IRS requires an individual person — not a business entity — as the responsible party. This is the single most common rejection reason for non-resident applications.</p>
-            </div>
-            <div class="mistake-item">
-              <div class="m-icon">❌</div>
-              <p><strong>Leaving the business purpose vague.</strong> Writing "online business" or "consulting" is too generic and invites IRS review delays. Be specific: "SaaS software development and subscription sales to US businesses."</p>
-            </div>
-            <div class="mistake-item">
-              <div class="m-icon">❌</div>
-              <p><strong>Using the IRS online portal without an SSN/ITIN.</strong> The online EIN system is not available to non-residents without an SSN or ITIN. Using a workaround or a service that claims to bypass this creates compliance risks.</p>
-            </div>
-            <div class="mistake-item">
-              <div class="m-icon">❌</div>
-              <p><strong>Not including a return fax number for fax applications.</strong> The IRS faxes the EIN back to the number you provide on the form. Without a valid return fax number, you won't receive it — and you'll have to follow up by phone.</p>
-            </div>
-            <div class="mistake-item">
-              <div class="m-icon">❌</div>
-              <p><strong>Using the registered agent's address as the responsible party's address.</strong> The responsible party's address must be a real personal address — not a registered agent address. The RA address belongs in the business mailing address fields.</p>
-            </div>
-            <div class="mistake-item">
-              <div class="m-icon">❌</div>
-              <p><strong>Assuming you need an ITIN before you can get an EIN.</strong> You don't. Apply for the EIN immediately after LLC formation. The ITIN process takes 7–8 weeks and is not a prerequisite.</p>
-            </div>
-          </div>
-
-          <!-- EIN and business banking -->
-          <h2 id="ein-and-banking">EIN and business banking</h2>
-          <p>Once you have your EIN, opening a US business bank account is the next logical step. Most US banks and fintechs that serve non-residents require both the EIN and a valid business address. The most frequently used options for non-US-owned LLCs are:</p>
-          <ul>
-            <li><strong>Mercury</strong> — fully online, no in-person visit, accepts EIN + formation documents</li>
-            <li><strong>Relay</strong> — accepts EIN; may request SSN/ITIN from beneficial owner</li>
-            <li><strong>Wise Business</strong> — multi-currency, accepts EIN, no SSN required</li>
-            <li><strong>Payoneer</strong> — useful for international payment receiving</li>
-          </ul>
-          <p>See our full <a href="best-business-bank-accounts.html">business bank account guide for non-US residents</a> for setup steps, document requirements, and what each bank requires from foreign-owned LLCs.</p>
-
-          <!-- EIN and Stripe -->
-          <h2 id="ein-and-stripe">EIN and Stripe</h2>
-          <p>Stripe verifies your LLC using the EIN, business name, and registered address during onboarding. Without an EIN, Stripe may default to personal identity verification, which doesn't align with the LLC entity type and can block certain account features.</p>
-          <p>Once your EIN is confirmed by Stripe, it links your LLC's tax identity to your Stripe account. This is also what allows Stripe to issue 1099-K forms and handle tax reporting for your US LLC correctly.</p>
-
-          <!-- EIN and taxes -->
-          <h2 id="ein-and-taxes">EIN and taxes</h2>
-          <p>For a single-member foreign-owned LLC (disregarded entity), the IRS requires an annual <strong>Form 5472</strong> and a pro-forma <strong>Form 1120</strong> to report any transactions between the LLC and its foreign owner. This filing requires an EIN.</p>
-          <p>For a multi-member LLC, a <strong>Form 1065</strong> partnership return is required. This also requires an EIN.</p>
-          <p>Both filings have a deadline of March 15 for the prior tax year. Penalties for missing Form 5472 are $25,000 per violation — making the EIN one of the most critical compliance items for foreign-owned LLCs.</p>
-
-          <!-- FAQ -->
-          <h2 id="faq">FAQ</h2>
-          <div class="faq-accordion-wrapper">
-
-            <details class="faq-accordion-item">
-              <summary class="faq-accordion-question">
-                <div class="faq-q-badge-title">
-                  <span class="faq-q-badge">01</span>
-                  <span>Can I get an EIN before my LLC is approved?</span>
-                </div>
-                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-              </summary>
-              <div class="faq-accordion-answer">
-                <p>No. You need the LLC's formation date and state to complete Form SS-4. Wait until you have your Articles of Organization approval confirmation, then apply for the EIN immediately after.</p>
-              </div>
-            </details>
-
-            <details class="faq-accordion-item">
-              <summary class="faq-accordion-question">
-                <div class="faq-q-badge-title">
-                  <span class="faq-q-badge">02</span>
-                  <span>How long does it take to get an EIN as a non-US resident?</span>
-                </div>
-                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-              </summary>
-              <div class="faq-accordion-answer">
-                <p>Same day by phone, approximately 4 business days by fax, and 4–5 weeks by mail. Phone is the fastest method — call the IRS international line at +1 267-941-1099 with a completed SS-4 in front of you.</p>
-              </div>
-            </details>
-
-            <details class="faq-accordion-item">
-              <summary class="faq-accordion-question">
-                <div class="faq-q-badge-title">
-                  <span class="faq-q-badge">03</span>
-                  <span>Do I need an SSN or ITIN to get an EIN?</span>
-                </div>
-                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-              </summary>
-              <div class="faq-accordion-answer">
-                <p>No. On Form SS-4 Line 7b, you enter "N/A" or "foreign" if you have neither an SSN nor ITIN. The IRS accepts this and issues EINs to foreign applicants through the phone or fax method.</p>
-              </div>
-            </details>
-
-            <details class="faq-accordion-item">
-              <summary class="faq-accordion-question">
-                <div class="faq-q-badge-title">
-                  <span class="faq-q-badge">04</span>
-                  <span>Can I use the IRS online EIN application as a non-resident?</span>
-                </div>
-                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-              </summary>
-              <div class="faq-accordion-answer">
-                <p>No. The IRS online EIN application at irs.gov/EIN requires a valid SSN or ITIN for the responsible party. Non-residents without either must use the phone, fax, or mail method.</p>
-              </div>
-            </details>
-
-            <details class="faq-accordion-item">
-              <summary class="faq-accordion-question">
-                <div class="faq-q-badge-title">
-                  <span class="faq-q-badge">05</span>
-                  <span>What if I lose my CP575 confirmation letter?</span>
-                </div>
-                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-              </summary>
-              <div class="faq-accordion-answer">
-                <p>The IRS cannot reissue a CP575. However, you can request a 147C letter — an official verification of your EIN — by calling the IRS Business and Specialty Tax Line. This serves as an alternative proof of EIN for banks and other institutions.</p>
-              </div>
-            </details>
-
-            <details class="faq-accordion-item">
-              <summary class="faq-accordion-question">
-                <div class="faq-q-badge-title">
-                  <span class="faq-q-badge">06</span>
-                  <span>Do I need to file taxes in the US with my LLC EIN?</span>
-                </div>
-                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-              </summary>
-              <div class="faq-accordion-answer">
-                <p>Yes. Single-member foreign-owned LLCs must file Form 5472 and a pro-forma Form 1120 annually with the IRS, even if the LLC has no US-sourced income. Multi-member LLCs file Form 1065. Both require your EIN. The deadline is March 15 for the prior tax year. Missing Form 5472 carries a $25,000 minimum penalty per violation.</p>
-              </div>
-            </details>
-
-          </div>
-
-        </article>
-
-        <!-- ── SIDEBAR TOC ── -->
-        <aside class="toc-sidebar">
-          <h4>In This Guide</h4>
-          <ol>
-            <li><a href="#who-needs-ein">Who Needs an EIN as a Non-US Resident?</a></li>
-            <li><a href="#what-is-ein">What is an EIN?</a></li>
-            <li><a href="#why-need-ein">Why non-US residents need an EIN</a></li>
-            <li><a href="#ein-without-ssn">Can you get an EIN without an SSN?</a></li>
-            <li><a href="#itin">Do you need an ITIN?</a></li>
-            <li><a href="#requirements">Requirements checklist</a></li>
-            <li><a href="#form-ss4">Form SS-4 explained</a></li>
-            <li><a href="#how-to-apply">How to apply step by step</a></li>
-            <li><a href="#processing-times">Processing times</a></li>
-            <li><a href="#fast-paid-option">Fast paid option: 1 Day EIN</a></li>
-            <li><a href="#is-ein-free">Is an EIN free?</a></li>
-            <li><a href="#diy-vs-service">DIY EIN vs using a service</a></li>
-            <li><a href="#common-mistakes">Common mistakes foreign founders make</a></li>
-            <li><a href="#ein-and-banking">EIN and business banking</a></li>
-            <li><a href="#ein-and-stripe">EIN and Stripe</a></li>
-            <li><a href="#ein-and-taxes">EIN and taxes</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ol>
-        </aside>
-
-      </div>
-    </div>
+    </article>
   </main>
 
-  <!-- =========================================================================
-       FOOTER
-       ========================================================================= -->
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-grid">
         <div class="footer-col brand-col">
-          <a href="index.html" class="footer-logo">
-            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
-          </a>
-          <p class="footer-tagline">
-            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
-          </p>
+          <a href="index.html" class="footer-logo"><img src="logo.png" alt="LLC Primer Logo" style="height:48px;width:auto;object-fit:contain;"></a>
+          <p class="footer-tagline">LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.</p>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Non-Residents</h4>
@@ -840,16 +472,11 @@
         </div>
       </div>
       <div class="footer-bottom-bar">
-        <p class="footer-disclaimer">
-          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
-        </p>
-        <div class="footer-copyright">
-          &copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
-        </div>
+        <p class="footer-disclaimer"><b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you.</p>
+        <div class="footer-copyright">&copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></div>
       </div>
     </div>
   </footer>
-
   <script src="app.js"></script>
 </body>
 </html>

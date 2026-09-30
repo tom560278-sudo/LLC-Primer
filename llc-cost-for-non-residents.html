@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>US LLC Cost for Non-US Residents (2026) | LLC Primer</title>
+  <meta name="description" content="How much does a US LLC cost for non-US residents in 2026? Complete breakdown of state fees, registered agent costs, EIN, Form 5472, and annual costs by state.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-content-container { max-width:1080px; margin:0 auto; padding:0 1.5rem 3.5rem 1.5rem; width:100%; box-sizing:border-box; }
+    .guide-article h2 { font-size:clamp(1.75rem,3.2vw,2.3rem); font-weight:800; color:#12304A; margin:2.75rem 0 1.25rem 0; font-family:var(--font-heading); line-height:1.25; }
+    .guide-article h3 { font-size:clamp(1.25rem,2.3vw,1.55rem); font-weight:700; color:#12304A; margin:2rem 0 1rem 0; font-family:var(--font-heading); line-height:1.3; }
+    .guide-article h4 { font-size:1.1rem; font-weight:700; color:#12304A; margin:1.5rem 0 0.75rem 0; }
+    .guide-article p { font-size:1rem; line-height:1.75; color:#334155; margin-bottom:1.25rem; }
+    .guide-article a { color:#159A9C; font-weight:600; text-decoration:underline; }
+    .guide-article a:hover { color:#0E7490; }
+    .guide-article ul,.guide-article ol { padding-left:1.65rem!important; margin-bottom:1.5rem!important; }
+    .guide-article ul li,.guide-article ol li { margin-bottom:0.65rem!important; line-height:1.7!important; color:#334155!important; }
+    .source-banner-box { background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.85rem 1.15rem; font-size:0.875rem; color:#475569; margin-bottom:1.5rem; }
+    .quick-answer-box { background:#F0F9FF; border:1.5px solid #BAE6FD; border-left:5px solid #0284C7; border-radius:14px; padding:1.25rem 1.5rem; color:#0369A1; margin:1.75rem 0 2.25rem 0; line-height:1.65; font-size:0.95rem; }
+    .toc-card-box { background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:16px; padding:1.5rem 1.75rem; margin-bottom:3rem; box-shadow:0 4px 16px rgba(18,48,74,0.04); }
+    .toc-card-box h3 { font-size:0.95rem; font-weight:800; color:#12304A; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:1rem; margin-top:0; }
+    .toc-links-ol { margin:0; padding-left:1.35rem; display:flex; flex-direction:column; gap:0.5rem; }
+    .toc-links-ol li a { color:#159A9C; font-weight:600; font-size:0.925rem; text-decoration:none; }
+    .toc-links-ol li a:hover { text-decoration:underline; color:#0E7490; }
+    .callout-green { background:#ECFDF5; border:1.5px solid #A7F3D0; border-left:5px solid #10B981; border-radius:14px; padding:1.25rem 1.5rem; color:#065F46; margin:2rem 0; line-height:1.65; }
+    .callout-blue { background:#F0F9FF; border:1.5px solid #BAE6FD; border-left:5px solid #0284C7; border-radius:14px; padding:1.25rem 1.5rem; color:#0369A1; margin:2rem 0; line-height:1.65; }
+    .callout-yellow { background:#FEF3C7; border:1.5px solid #FDE68A; border-left:5px solid #F59E0B; border-radius:14px; padding:1.25rem 1.5rem; color:#78350F; margin:2rem 0; line-height:1.65; }
+    .callout-red { background:#FEE2E2; border:1.5px solid #FCA5A5; border-left:5px solid #EF4444; border-radius:14px; padding:1.25rem 1.5rem; color:#7F1D1D; margin:2rem 0; line-height:1.65; }
+    .callout-purple { background:#F5F3FF; border:1.5px solid #DDD6FE; border-left:5px solid #7C3AED; border-radius:14px; padding:1.25rem 1.5rem; color:#4C1D95; margin:2rem 0; line-height:1.65; }
+    .styled-table { width:100%; border-collapse:collapse; text-align:left; font-size:0.875rem; }
+    .styled-table th { background:#12304A; color:#FFFFFF; padding:0.95rem 1.15rem; font-size:0.785rem; font-weight:800; text-transform:uppercase; letter-spacing:0.05em; }
+    .styled-table td { padding:0.95rem 1.15rem; border-bottom:1px solid #E2E8F0; color:#334155; vertical-align:top; line-height:1.5; }
+    .styled-table tr:last-child td { border-bottom:none; }
+    .styled-table tr:nth-child(even) { background:#F8FAFC; }
+    .badge-req { background:#FEE2E2; color:#991B1B; font-size:0.72rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:4px; text-transform:uppercase; white-space:nowrap; }
+    .badge-prac { background:#FEF9C3; color:#78350F; font-size:0.72rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:4px; text-transform:uppercase; white-space:nowrap; }
+    .badge-opt { background:#E2E8F0; color:#475569; font-size:0.72rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:4px; text-transform:uppercase; white-space:nowrap; }
+    .badge-notreq { background:#F1F5F9; color:#64748B; font-size:0.72rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:4px; text-transform:uppercase; white-space:nowrap; }
+    .top-pick-card { background:#FFFFFF; border:2px solid #eeaa36; border-radius:18px; padding:1.5rem 1.75rem; margin-bottom:1.5rem; box-shadow:0 8px 24px rgba(16,185,129,0.12); display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; }
+    .cluster-box { background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:18px; padding:1.75rem; margin:2.5rem 0; }
+    .cluster-grid { display:flex; flex-direction:column; gap:0.75rem; margin-top:1rem; }
+    .cluster-item-link { background:#FFFFFF; border:1px solid #CBD5E1; border-radius:10px; padding:0.85rem 1.15rem; color:#159A9C; font-weight:700; font-size:0.925rem; text-decoration:none; transition:all 0.2s ease; display:block; }
+    .cluster-item-link:hover { border-color:#159A9C; background:#F0FDFA; transform:translateX(4px); }
+    .faq-accordion-wrapper { display:flex; flex-direction:column; gap:0.85rem; margin-bottom:2.5rem; }
+    .faq-accordion-item { background:#FFFFFF; border:1.5px solid #CBD5E1; border-radius:16px; overflow:hidden; box-shadow:0 4px 16px rgba(18,48,74,0.04); transition:all 0.25s ease; }
+    .faq-accordion-item[open] { border-color:#159A9C; box-shadow:0 6px 20px rgba(21,154,156,0.12); }
+    .faq-accordion-question { padding:1.25rem 1.65rem; font-weight:700; font-size:1.05rem; color:#12304A; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none; font-family:var(--font-heading); list-style:none; }
+    .faq-accordion-question::-webkit-details-marker { display:none; }
+    .faq-chevron { transition:transform 0.25s ease; flex-shrink:0; width:20px; height:20px; }
+    details.faq-accordion-item[open] .faq-chevron { transform:rotate(180deg); }
+    .faq-accordion-answer { padding:1rem 1.65rem 1.35rem 1.65rem; font-size:0.95rem; color:#475569; line-height:1.7; border-top:1px dashed #F1F5F9; }
+    /* Cost scenario cards */
+    .cost-scenario-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin:1.5rem 0; }
+    .cost-card { background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.1rem 1.25rem; }
+    .cost-card-label { font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.05em; color:#159A9C; margin-bottom:0.3rem; }
+    .cost-card-value { font-size:1.5rem; font-weight:800; color:#12304A; line-height:1; margin-bottom:0.25rem; }
+    .cost-card-sub { font-size:0.8rem; color:#64748B; line-height:1.4; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display:flex;align-items:center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height:56px;width:auto;object-fit:contain;">
+      </a>
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item"><a href="start-llc.html" class="nav-link">Start an LLC</a></div>
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">LLC Services<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link">LLC Guides<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">Business Setup<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="tools.html" class="nav-link">Tools<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
+            <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
+            <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
+            <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
+            <a href="llc-annual-report-tracker.html" class="dropdown-link">Annual Report Tracker</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="non-resident-llc-guide.html" class="nav-link active" style="color:var(--color-primary);font-weight:800;">Non-Residents<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="best-state-for-non-us-residents.html" class="dropdown-link">Best State for Non-US Residents</a>
+            <a href="ein-guide-for-non-residents.html" class="dropdown-link">EIN Guide</a>
+            <a href="llc-cost-for-non-residents.html" class="dropdown-link" style="color:#159A9C;font-weight:700;">LLC Cost</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Bank Account</a>
+          </div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding:0.6rem 1.35rem;font-size:0.875rem;background:var(--color-primary-gradient);">Build LLC Plan →</a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="guide-content-container">
+    <div style="font-size:0.85rem;color:#64748B;margin-top:1.5rem;margin-bottom:1rem;">
+      <a href="index.html" style="color:#64748B;text-decoration:none;">LLC Primer</a> &nbsp;/&nbsp;
+      <a href="non-resident-llc-guide.html" style="color:#64748B;text-decoration:none;">Non-Residents</a> &nbsp;/&nbsp;
+      <strong style="color:#12304A;">LLC Cost</strong>
+    </div>
+
+    <article class="guide-article">
+      <h1 style="font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:800;color:#12304A;line-height:1.2;margin-bottom:0.75rem;font-family:var(--font-heading);">
+        US LLC Cost for Non-US Residents: Quick Answer
+      </h1>
+
+      <div class="source-banner-box">
+        <strong>Last reviewed:</strong> September 7, 2026 &nbsp;·&nbsp;
+        <strong>Official source:</strong> <a href="https://www.irs.gov/forms-pubs/about-form-5472" target="_blank" rel="noopener">IRS Form 5472 guidance</a> provides the primary guidance used in this guide.
+      </div>
+
+      <p><strong>A US LLC for a non-US resident typically costs between $141 and $500 to start</strong>, depending on the state and whether you form the company yourself or use a formation service.</p>
+      <p>For most foreign entrepreneurs, the lowest-cost option is a DIY Wyoming LLC. In that scenario, you pay the state filing fee, maintain a registered agent, and apply for an EIN directly with the IRS. The total startup cost can be as low as <strong>$141</strong>.</p>
+      <p>If you prefer a done-for-you solution that includes EIN assistance, compliance guidance, registered agent service, and banking support, expect to spend <strong>$300–500 during the first year</strong>. Ongoing annual costs are usually between <strong>$100 and $600</strong>, depending on the state, registered agent provider, and tax compliance requirements.</p>
+
+      <div class="quick-answer-box">
+        <strong>Quick summary:</strong> Most non-US founders spend $300–1,200 during their first year when formation costs, registered agent fees, banking setup, and Form 5472 compliance are included. Wyoming remains the most popular choice because it combines low filing fees, strong privacy protections, and relatively low annual maintenance costs.
+      </div>
+
+      <div class="styled-table-wrap">
+        <table class="styled-table">
+          <thead><tr><th>Formation Scenario</th><th>Year 1 Cost</th><th>Typical Annual Cost</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Wyoming LLC (DIY)</strong></td><td>~$141</td><td>~$60–600</td></tr>
+            <tr><td><strong>Wyoming LLC + Formation Service</strong></td><td>$300–500</td><td>$100–600</td></tr>
+            <tr><td><strong>New Mexico LLC (DIY)</strong></td><td>~$51</td><td>~$39–500</td></tr>
+            <tr><td><strong>Fully Managed Compliance Setup</strong></td><td>$600–1,200</td><td>$100–1,000+</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-green">Most non-US founders spend $300–1,200 during their first year when formation costs, registered agent fees, EIN setup, and Form 5472 compliance are included. Wyoming remains the most popular choice because it offers low startup costs, strong privacy protections, and relatively inexpensive annual maintenance.</div>
+
+      <div class="toc-card-box">
+        <h3>In This Guide</h3>
+        <ol class="toc-links-ol">
+          <li><a href="#how-much">How much does a US LLC cost for non-US residents?</a></li>
+          <li><a href="#required-costs">Required formation costs</a></li>
+          <li><a href="#startup-breakdown">Startup cost breakdown</a></li>
+          <li><a href="#annual-costs">Annual ongoing costs</a></li>
+          <li><a href="#is-ein-free">Is an EIN free?</a></li>
+          <li><a href="#registered-agent-costs">Registered agent costs</a></li>
+          <li><a href="#virtual-address">Virtual address costs</a></li>
+          <li><a href="#hidden-costs">Hidden costs most founders miss</a></li>
+          <li><a href="#cheapest-states">Cheapest states compared</a></li>
+          <li><a href="#wyoming-detail">Wyoming LLC cost in detail</a></li>
+          <li><a href="#total-by-founder">Total cost by founder type</a></li>
+          <li><a href="#doola">How doola changes the cost equation</a></li>
+          <li><a href="#diy-vs-service">DIY vs formation service</a></li>
+          <li><a href="#common-mistakes">Common cost mistakes</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </div>
+
+      <p>The <strong>LLC cost for non-US residents</strong> breaks into two buckets: what you pay once to form the LLC, and what you pay every year to keep it alive. The minimum realistic first-year cost in Wyoming — the most popular state for non-residents — is around $141 if you handle everything yourself. With a formation service that covers EIN, registered agent, and compliance needs, expect $300–500. Annual costs run $99–250 depending on your registered agent and compliance needs.</p>
+      <p>This guide uses verified 2026 fees from official state sources. See the full <a href="how-much-does-an-llc-cost.html">how much does an LLC cost</a> guide for all 50 states. Here we focus on what non-residents specifically need to budget.</p>
+
+      <section id="how-much">
+        <h2>How much does a US LLC cost for non-US residents?</h2>
+        <p>It depends on the state, but here is the honest range across all scenarios:</p>
+        <ul>
+          <li><strong>Minimum (Wyoming, DIY):</strong> ~$141 Year 1 — $100 filing + $2 online fee + $39 registered agent. EIN is free from the IRS.</li>
+          <li><strong>Typical (Wyoming, formation service):</strong> $300–500 Year 1 — includes state fee, registered agent, EIN filing, operating agreement, and banking setup guidance.</li>
+          <li><strong>Annual maintenance (Wyoming):</strong> $101–160 — $62 annual report + $39–100 registered agent renewal.</li>
+          <li><strong>Full compliance (all-in):</strong> $600–1,200 Year 1 — adds Form 5472 CPA preparation, a virtual office address, and accounting setup.</li>
+        </ul>
+        <p>Non-US residents pay the same state filing fees as US residents. What adds cost is the EIN process (if you want help), the mandatory registered agent (non-residents can't be their own), and federal compliance requirements specific to foreign-owned LLCs — most notably Form 5472.</p>
+      </section>
+
+      <section id="required-costs">
+        <h2>What costs are required to form a US LLC?</h2>
+        <p>Formation costs divide into three categories: required by law, required in practice, and optional but recommended.</p>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead><tr><th>Cost Item</th><th>Status</th><th>Who Pays It</th><th>Typical Range</th></tr></thead>
+            <tbody>
+              <tr><td><strong>State filing fee (Articles of Organization)</strong></td><td><span class="badge-req">Required</span></td><td>Everyone</td><td>$50–$300</td></tr>
+              <tr><td><strong>Registered agent</strong></td><td><span class="badge-req">Required</span></td><td>Non-residents (must use commercial RA)</td><td>$39–$300/yr</td></tr>
+              <tr><td><strong>EIN from IRS</strong></td><td><span class="badge-prac">Required in Practice</span></td><td>Everyone (for banking and taxes)</td><td>Free / $50–200 (service)</td></tr>
+              <tr><td><strong>Operating agreement</strong></td><td><span class="badge-prac">Required in Practice</span></td><td>Everyone (banks require it)</td><td>Free (template) / $100–200 (professional)</td></tr>
+              <tr><td><strong>BOI report (FinCEN)</strong></td><td><span class="badge-notreq">Not Required</span></td><td>US-formed LLCs are currently exempt</td><td>$0</td></tr>
+              <tr><td><strong>Business address</strong></td><td><span class="badge-opt">Optional</span></td><td>Needed for Mercury bank applications</td><td>$15–50/month</td></tr>
+              <tr><td><strong>Formation service</strong></td><td><span class="badge-opt">Optional</span></td><td>Non-residents who want guided setup</td><td>$49–400 service fee</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="startup-breakdown">
+        <h2>LLC startup cost breakdown for non-US residents</h2>
+        <p>The table below shows realistic Year 1 costs across the three most common formation setups for non-residents. All figures use verified 2026 fees.</p>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead><tr><th>Cost Item</th><th>DIY (Wyoming)</th><th>Northwest + DIY EIN</th><th>Doola</th></tr></thead>
+            <tbody>
+              <tr><td><strong>State filing fee</strong></td><td>$102</td><td>$102</td><td>Included</td></tr>
+              <tr><td><strong>Registered agent (Year 1)</strong></td><td>$39 (Northwest)</td><td>$39 (Northwest)</td><td>Included</td></tr>
+              <tr><td><strong>EIN filing</strong></td><td>Free (IRS fax)</td><td>Free (IRS fax)</td><td>Included</td></tr>
+              <tr><td><strong>Operating agreement</strong></td><td>Free (template)</td><td>Free (NW included)</td><td>Included</td></tr>
+              <tr><td><strong>BOI report</strong></td><td>Not required</td><td>Not required</td><td>Not required</td></tr>
+              <tr><td><strong>Banking guidance</strong></td><td>None</td><td>None</td><td>Included</td></tr>
+              <tr><td><strong>Business address</strong></td><td>$0–50/mo (extra)</td><td>Included with NW RA</td><td>Plan-dependent</td></tr>
+              <tr><td><strong>Year 1 estimate</strong></td><td><strong>$141–741</strong></td><td><strong>$141 minimum</strong></td><td><strong>From ~$237 + state</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Northwest Registered Agent's $39/year is a registered agent fee, not a formation package. To use Northwest, you file Articles of Organization yourself and get the EIN from the IRS directly. Northwest provides a free operating agreement template and includes a business address in your state. Total Year 1 with Northwest: $102 state + $39 RA = $141 minimum.</p>
+
+        <div class="top-pick-card">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#eeaa36;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.4rem;">⭐ OUR TOP PICK</div>
+            <div style="font-weight:800;color:#12304A;font-size:1rem;margin-bottom:0.4rem;">doola — All-In-One for Non-US Founders</div>
+            <div style="font-size:0.9rem;color:#475569;">Formation + registered agent + EIN without SSN, operating agreement, and banking setup — everything in one service, no coordination required. Use code <strong>LLCPRIMER10</strong> for 10% off.</div>
+          </div>
+          <a href="https://doola.com" target="_blank" rel="noopener sponsored" class="ls-btn ls-btn--emerald" style="white-space:nowrap;padding:0.85rem 1.5rem;background:var(--color-primary-gradient);">Start with doola →</a>
+        </div>
+      </section>
+
+      <section id="annual-costs">
+        <h2>Ongoing annual costs for a foreign-owned LLC</h2>
+        <p>These costs repeat every year your LLC stays in existence. Missing them triggers loss of good standing, administrative dissolution, or IRS penalties.</p>
+
+        <h3>Annual report / license tax</h3>
+        <p>Almost every state except New Mexico charges an annual renewal fee. In Wyoming, the minimum is $62/year (with online convenience fee), due the first day of the anniversary month of formation. In Delaware, it's a flat $300 franchise tax due June 1, with a $200 late penalty. Texas charges $0 in annual report fees for most LLCs but imposes a franchise tax on entities with revenue above $2.47 million.</p>
+
+        <h3>Registered agent renewal</h3>
+        <p>Your <a href="registered-agent-guide.html">registered agent</a> must be maintained year-round. Northwest charges $39/year — the lowest flat rate among reputable services. Budget $39–150/year depending on provider.</p>
+
+        <h3>Form 5472 — mandatory for foreign-owned single-member LLCs</h3>
+        <p>This is the most commonly missed annual expense. Every single-member LLC owned by a non-US person must file Form 5472 plus a pro forma Form 1120 by April 15 each year, regardless of revenue. The IRS does not send reminders. A CPA experienced with foreign-owned entities charges $200–500 for this filing. See the <a href="how-are-llcs-taxed.html">LLC taxes guide</a> for the full compliance picture.</p>
+
+        <h3>Annual cost by state</h3>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead><tr><th>State</th><th>Annual Report Fee</th><th>RA (Northwest)</th><th>Total Annual Minimum</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Wyoming</strong></td><td>$62/yr</td><td>$39/yr</td><td style="font-weight:700;color:#15803D;">$101/yr</td></tr>
+              <tr><td><strong>New Mexico</strong></td><td>$0</td><td>$39/yr</td><td>$39/yr</td></tr>
+              <tr><td><strong>Delaware</strong></td><td>$300–$350/yr</td><td>$39–$100/yr</td><td>$339–$600/yr</td></tr>
+              <tr><td><strong>Florida</strong></td><td>$200–$138.75/yr</td><td>$39–$100/yr</td><td>$178–$235/yr</td></tr>
+              <tr><td><strong>Texas</strong></td><td>$0</td><td>$39–$100/yr</td><td>$39–$100/yr</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><em>Add $200–500/year for Form 5472 preparation regardless of state. doola includes this in their compliance packages.</em></p>
+      </section>
+
+      <section id="is-ein-free">
+        <h2>Is an EIN free?</h2>
+        <p>The IRS does not charge for EIN issuance. Applying directly through the IRS costs nothing. The catch for non-residents: the online EIN application requires an SSN or ITIN. Non-residents apply via fax (Form SS-4) or by calling the IRS international line — both are free but take 3–6 weeks in 2026.</p>
+        <p>Third-party EIN services charge $50–200 to prepare and submit your Form SS-4 for you. They have no faster channel to the IRS — they submit the same fax, wait the same 3–6 weeks. You pay for coordination, not speed.</p>
+        <div class="callout-red">No service can accelerate IRS EIN processing for non-residents. If a service promises a fast EIN without an SSN, it either uses a workaround you shouldn't touch or is making a claim it cannot deliver. The 3–6 week IRS timeline is fixed.</div>
+        <p>For the complete fax application walkthrough and what to do if the IRS rejects your application, see our <a href="ein-guide-for-non-residents.html">EIN guide for non-US residents</a> and the general <a href="ein-guide.html">EIN for LLC guide</a>.</p>
+      </section>
+
+      <section id="registered-agent-costs">
+        <h2>Registered agent costs</h2>
+        <p>Every US LLC must maintain a registered agent with a physical address in the formation state. Non-residents cannot serve as their own agent without a state address. Commercial registered agent services are the only practical option.</p>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead><tr><th>Provider</th><th>Annual Fee</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Northwest Registered Agent</strong></td><td style="color:#15803D;font-weight:700;">$39/yr</td><td>Lowest flat rate; includes free business address</td></tr>
+              <tr><td><strong>ZenBusiness RA</strong></td><td>$99/yr</td><td>Included in some formation plans</td></tr>
+              <tr><td><strong>doola RA</strong></td><td>Included in plans</td><td>Part of formation packages</td></tr>
+              <tr><td><strong>Spiegel RA</strong></td><td>$0/yr first year</td><td>First year often included with formation</td></tr>
+              <tr><td><strong>LegalZoom RA</strong></td><td>$249/yr</td><td>Premium pricing</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><a href="northwest-registered-agent-review.html">Northwest Registered Agent</a> at $39/year is the default choice for non-residents managing RA separately from formation. The $39/year also includes a free business address in your state, which also helps with Mercury bank applications.</p>
+      </section>
+
+      <section id="virtual-address">
+        <h2>Virtual address costs</h2>
+        <p>A business address is separate from your registered agent address. Mercury Bank no longer accepts an RA address as your business address — you need a distinct US business address for banking applications.</p>
+        <ul>
+          <li><strong>Northwest Registered Agent</strong> — includes a free business address in your formation state as part of their $39/yr RA service. Best value for non-residents.</li>
+          <li><strong>iPostal1</strong> — from $9.99/month for a digital mailbox with plans at $15–45/month for scanning and forwarding. Good for operations that receive physical mail.</li>
+          <li><strong>Opus Virtual Offices</strong> — $49/month, includes a real street address and mail scanning. Often used by founders who want a professional business address separate from their RA.</li>
+          <li><strong>doola Business Address</strong> — included in some formation and compliance plans. Check current plan details before purchasing.</li>
+        </ul>
+      </section>
+
+      <section id="hidden-costs">
+        <h2>Hidden costs most founders miss</h2>
+        <ul>
+          <li><strong>Form 5472 filing ($200–500/year)</strong> — every single-member foreign-owned LLC must file this annually. Missing it costs $25,000 per violation. Most guides don't mention this until after formation.</li>
+          <li><strong>Bank account setup time</strong> — Mercury, Relay, and Wise do not charge for basic accounts, but some founders pay $15–50/month for business checking with premium features. Budget for this.</li>
+          <li><strong>Operating agreement legal review ($100–400)</strong> — a template operating agreement is fine for basic LLCs, but if you have multiple members or complex ownership, professional review is worth the cost.</li>
+          <li><strong>State foreign qualification fees</strong> — if your LLC operates in a state other than where it was formed, you may need to register as a foreign LLC there. Fees range from $50–500 depending on the state.</li>
+          <li><strong>Annual report late fees</strong> — Wyoming charges $2/month for late annual reports. Delaware charges $200 for late franchise tax payments. Florida has a $400 late fee. Set calendar reminders.</li>
+          <li><strong>Stripe and payment processor verification costs</strong> — not monetary, but time-consuming. Budget 1–2 weeks for Stripe verification after your EIN is confirmed.</li>
+        </ul>
+      </section>
+
+      <section id="cheapest-states">
+        <h2>Cheapest states compared</h2>
+        <p>For non-residents, the cheapest Year 1 cost comes from New Mexico or Wyoming. New Mexico has no annual report for domestic LLCs, making it the lowest recurring state cost. Wyoming has a $62/yr minimum annual report but offers better banking reputation and stronger privacy protections.</p>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead><tr><th>State</th><th>Filing Fee</th><th>Year 1 Total (DIY + NW RA)</th><th>Annual Min After Year 1</th><th>Annual Report?</th></tr></thead>
+            <tbody>
+              <tr><td><strong>New Mexico</strong></td><td>$50</td><td>~$89</td><td>$39/yr (RA only)</td><td>No</td></tr>
+              <tr><td><strong>Wyoming</strong></td><td>$102</td><td>~$141</td><td>$101/yr</td><td>Yes ($62 min)</td></tr>
+              <tr><td><strong>Colorado</strong></td><td>$50</td><td>~$89</td><td>$89/yr</td><td>Yes ($10)</td></tr>
+              <tr><td><strong>Montana</strong></td><td>$70</td><td>~$109</td><td>$59/yr</td><td>Yes ($20)</td></tr>
+              <tr><td><strong>Delaware</strong></td><td>$110</td><td>~$149</td><td>$339+/yr</td><td>Yes ($300 min)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout-blue">For non-residents who want the cheapest possible setup, New Mexico is technically the lowest cost. However, Wyoming is generally recommended because it has better banking reputation (Mercury and Relay accept Wyoming LLCs more consistently), stronger privacy laws, and a more established LLC ecosystem. The $62/yr annual report is a reasonable tradeoff.</div>
+      </section>
+
+      <section id="wyoming-detail">
+        <h2>Wyoming LLC cost in detail</h2>
+        <p>Wyoming is the most popular state for non-US residents forming a US LLC. Here is the complete verified 2026 cost breakdown:</p>
+        <div class="cost-scenario-grid">
+          <div class="cost-card"><div class="cost-card-label">State Filing Fee</div><div class="cost-card-value">$102</div><div class="cost-card-sub">$100 + $2 online convenience fee</div></div>
+          <div class="cost-card"><div class="cost-card-label">Registered Agent</div><div class="cost-card-value">$39/yr</div><div class="cost-card-sub">Northwest (lowest flat rate)</div></div>
+          <div class="cost-card"><div class="cost-card-label">EIN</div><div class="cost-card-value">Free</div><div class="cost-card-sub">Direct IRS fax or phone</div></div>
+          <div class="cost-card"><div class="cost-card-label">Annual Report</div><div class="cost-card-value">$62/yr</div><div class="cost-card-sub">Minimum (due anniversary month)</div></div>
+        </div>
+        <ul>
+          <li><strong>Year 1 DIY minimum:</strong> $141 ($102 state + $39 RA)</li>
+          <li><strong>Year 1 with formation service:</strong> $300–500</li>
+          <li><strong>Recurring annual (Year 2+):</strong> $101 minimum ($62 annual report + $39 RA)</li>
+          <li><strong>With Form 5472 CPA filing:</strong> $301–601/yr</li>
+        </ul>
+        <p>Wyoming approves online LLC filings the same business day in most cases. The annual report is due on the first day of the LLC's anniversary month. Wyoming does not impose a state income tax on LLC profits, making it attractive for foreign-owned businesses with no US-source income.</p>
+      </section>
+
+      <section id="total-by-founder">
+        <h2>Total cost by founder type</h2>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead><tr><th>Founder Type</th><th>Year 1 Estimated Cost</th><th>Best Option</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Solo founder, DIY comfortable</strong></td><td>$141–200</td><td>Northwest RA + DIY EIN by phone/fax</td></tr>
+              <tr><td><strong>Solo founder, wants help</strong></td><td>$300–500</td><td>doola or similar formation + EIN service</td></tr>
+              <tr><td><strong>Multi-member LLC</strong></td><td>$400–800</td><td>Formation service + operating agreement review</td></tr>
+              <tr><td><strong>Full compliance (Form 5472 + CPA)</strong></td><td>$600–1,200</td><td>doola Business or similar all-in service</td></tr>
+              <tr><td><strong>E-commerce / Amazon seller</strong></td><td>$300–600</td><td>Wyoming LLC + business address for Mercury</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="doola">
+        <h2>How doola changes the cost equation</h2>
+        <p>doola bundles LLC formation, registered agent, EIN without SSN, operating agreement, banking setup, and Form 5472 filing into a single service. For non-residents who want to avoid coordinating multiple providers, this reduces setup friction significantly.</p>
+        <p>The trade-off: doola's all-in plans cost more upfront than a DIY approach. If you're comfortable calling the IRS by phone, downloading a state form, and tracking your own annual report deadline, the DIY path is considerably cheaper in Year 1.</p>
+        <div class="top-pick-card">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#eeaa36;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.4rem;">⭐ OUR TOP PICK</div>
+            <div style="font-weight:800;color:#12304A;font-size:1rem;margin-bottom:0.4rem;">doola — All-In-One for Non-US Founders</div>
+            <div style="font-size:0.9rem;color:#475569;">Formation + registered agent + EIN without SSN, operating agreement, and banking setup — everything in one service, no coordination required. Use code <strong>LLCPRIMER10</strong> for 10% off.</div>
+          </div>
+          <a href="https://doola.com" target="_blank" rel="noopener sponsored" class="ls-btn ls-btn--emerald" style="white-space:nowrap;padding:0.85rem 1.5rem;background:var(--color-primary-gradient);">Start with doola →</a>
+        </div>
+      </section>
+
+      <section id="diy-vs-service">
+        <h2>DIY vs formation service</h2>
+        <div class="styled-table-wrap">
+          <table class="styled-table">
+            <thead><tr><th>Factor</th><th>DIY (IRS fax or phone)</th><th>doola</th><th>Northwest + DIY EIN</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Year 1 cost</strong></td><td>$141–300</td><td>From ~$237 + state</td><td>$141 minimum</td></tr>
+              <tr><td><strong>EIN handling</strong></td><td>Self-prepared; you call IRS</td><td>Handled</td><td>Self-prepared</td></tr>
+              <tr><td><strong>Banking guidance</strong></td><td>None</td><td>Included</td><td>None</td></tr>
+              <tr><td><strong>Form 5472</strong></td><td>You hire CPA separately</td><td>Included in compliance plans</td><td>You hire CPA separately</td></tr>
+              <tr><td><strong>Time to complete</strong></td><td>1–2 weeks (self-managed)</td><td>1–5 business days</td><td>1–2 weeks</td></tr>
+              <tr><td><strong>Best for</strong></td><td>Cost-conscious founders comfortable with IRS process</td><td>Founders wanting everything done in one place</td><td>Founders who only need RA at lowest cost</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="common-mistakes">
+        <h2>Common cost mistakes</h2>
+        <ul>
+          <li><strong>Forgetting Form 5472 each year.</strong> This is the most expensive mistake. The $25,000 IRS penalty for a missed Form 5472 is real and automatic. Budget $200–500/year for a CPA to prepare it.</li>
+          <li><strong>Choosing Delaware without a business reason.</strong> Delaware's $300/year franchise tax makes it significantly more expensive than Wyoming for businesses that don't need Delaware's corporate law advantages.</li>
+          <li><strong>Paying for an EIN service when the IRS is free.</strong> Third-party EIN services ($50–200) submit the same fax to the IRS that you can send yourself. They do not speed up the process.</li>
+          <li><strong>Missing annual report deadlines.</strong> Late fees range from $2/month (Wyoming) to $400 (Florida). Set a calendar reminder for your LLC's anniversary month.</li>
+          <li><strong>Not budgeting for a business address.</strong> Mercury Bank requires a real US business address, not an RA address. Factor in $0 (Northwest RA includes one) to $50/month depending on provider.</li>
+          <li><strong>Underestimating Year 2+ costs.</strong> First-year costs often look low because some services waive fees or bundle them. Budget $100–600/year in recurring costs from Year 2 onwards.</li>
+        </ul>
+      </section>
+
+      <div class="cluster-box">
+        <h3 style="margin:0 0 0.25rem;color:#12304A;font-size:1.05rem;">Continue building your non-resident LLC</h3>
+        <div class="cluster-grid">
+          <a href="non-resident-llc-guide.html" class="cluster-item-link">LLC for non-US residents — complete 2026 guide</a>
+          <a href="best-state-for-non-us-residents.html" class="cluster-item-link">Best state for non-US residents — Wyoming vs Delaware vs New Mexico</a>
+          <a href="ein-guide-for-non-residents.html" class="cluster-item-link">EIN for non-US residents — how to get an EIN without an SSN</a>
+          <a href="best-business-bank-accounts.html" class="cluster-item-link">US bank account for non-US residents — Mercury, Relay, and Wise compared</a>
+          <a href="how-much-does-an-llc-cost.html" class="cluster-item-link">How much does an LLC cost — full 50-state fee breakdown</a>
+        </div>
+      </div>
+
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-accordion-wrapper">
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">How much does a Wyoming LLC cost for a non-US resident in 2026?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">The minimum Year 1 cost is approximately $141: $102 state filing fee + $39 for Northwest Registered Agent. EIN is free from the IRS. Annual maintenance from Year 2 is $101/yr minimum ($62 annual report + $39 RA). Add $200–500/yr for Form 5472 CPA preparation.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Do non-US residents pay more to form an LLC than US residents?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">State filing fees are the same for everyone. What adds cost for non-residents: mandatory commercial registered agent (can't be your own), EIN application assistance (optional but often helpful), and Form 5472 annual filing (mandatory for foreign-owned single-member LLCs).</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">What is the cheapest US LLC for a non-US resident?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">New Mexico has the lowest Year 1 cost at approximately $89 ($50 filing + $39 RA) with no annual report requirement. Wyoming is $141 Year 1 with a $62/yr annual report. Wyoming is generally preferred because it has better banking reputation and privacy laws.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Is Form 5472 really mandatory for foreign-owned LLCs?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">Yes. Every single-member LLC with a non-US owner must file Form 5472 (with a pro forma Form 1120) by April 15 each year, regardless of whether the LLC earned any money. The IRS does not send reminders. Missing it triggers a $25,000 automatic penalty per violation.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Can I be my own registered agent as a non-US resident?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">No. A registered agent must have a physical address in the formation state and must be available during business hours to accept legal documents. As a non-resident, you do not have a state address, so you must use a commercial registered agent service.</div></details>
+          <details class="faq-accordion-item"><summary class="faq-accordion-question">Does doola include Form 5472 filing?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-accordion-answer">doola includes Form 5472 preparation in their compliance plans (not all formation plans). Check their current plan details before purchasing — compliance plans typically cost more than basic formation packages but cover the annual IRS filing requirement.</div></details>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-logo"><img src="logo.png" alt="LLC Primer Logo" style="height:48px;width:auto;object-fit:contain;"></a>
+          <p class="footer-tagline">LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Non-Residents</h4>
+          <ul class="footer-links">
+            <li><a href="non-resident-llc-guide.html">Non-Resident LLC Guide</a></li>
+            <li><a href="best-state-for-non-us-residents.html">Best State for Non-US Residents</a></li>
+            <li><a href="ein-guide-for-non-residents.html">EIN Guide for Non-US Residents</a></li>
+            <li><a href="llc-cost-for-non-residents.html">LLC Cost for Non-US Residents</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Free Calculators</h4>
+          <ul class="footer-links">
+            <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
+            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="llc-cost-calculator.html">State Fee Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Post-Formation</h4>
+          <ul class="footer-links">
+            <li><a href="business-setup.html">Post-LLC Setup</a></li>
+            <li><a href="ein-guide.html">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer"><b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you.</p>
+        <div class="footer-copyright">&copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
