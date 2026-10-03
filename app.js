@@ -705,14 +705,11 @@ function initSearch() {
       'Wisconsin':'how-to-start-llc-in-wisconsin.html','Wyoming':'how-to-start-llc-in-wyoming.html'
     };
     resultsContainer.innerHTML = matches.map(s => {
-      const guideUrl = stateGuideUrls[s.name] || '';
+      const guideUrl = stateGuideUrls[s.name] || '#';
       return `
-        <div style="padding:0.6rem 0.75rem; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; align-items:center; justify-content:space-between; gap:0.75rem;">
-          <div style="cursor:pointer;" onclick="closeSearchModal(); selectStateInSection('${s.code}'); location.href='#states-section';">
-            <strong style="color:#FFFFFF">${s.name} LLC</strong> — <span style="color:var(--color-primary)">$${s.fee} State Fee</span> <span style="color:#94A3B8;font-size:0.8rem;">(${s.speed})</span>
-          </div>
-          ${guideUrl ? `<a href="${guideUrl}" style="flex-shrink:0;background:#159A9C;color:#fff;font-size:0.75rem;font-weight:700;padding:0.25rem 0.6rem;border-radius:6px;text-decoration:none;white-space:nowrap;">State Guide →</a>` : ''}
-        </div>
+        <a href="${guideUrl}" style="display:block; padding:0.6rem 0.75rem; border-bottom:1px solid rgba(255,255,255,0.07); text-decoration:none; color:inherit;">
+          <strong style="color:#FFFFFF">${s.name} LLC</strong> — <span style="color:var(--color-primary)">$${s.fee} State Fee</span> <span style="color:#94A3B8;font-size:0.8rem;">(${s.speed})</span>
+        </a>
       `;
     }).join("");
   });
