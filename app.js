@@ -677,11 +677,44 @@ function initSearch() {
       return;
     }
 
-    resultsContainer.innerHTML = matches.map(s => `
-      <div style="padding:0.6rem; border-bottom:1px solid rgba(255,255,255,0.05); cursor:pointer;" onclick="closeSearchModal(); selectStateInSection('${s.code}'); location.href='#states-section';">
-        <strong style="color:#FFFFFF">${s.name} LLC</strong> — <span style="color:var(--color-primary)">$${s.fee} State Fee</span> (${s.speed})
-      </div>
-    `).join("");
+    const stateGuideUrls = {
+      'Alabama':'how-to-start-llc-in-alabama.html','Alaska':'how-to-start-llc-in-alaska.html',
+      'Arizona':'how-to-start-llc-in-arizona.html','Arkansas':'how-to-start-llc-in-arkansas.html',
+      'California':'how-to-start-llc-in-california.html','Colorado':'how-to-start-llc-in-colorado.html',
+      'Connecticut':'how-to-start-llc-in-connecticut.html','Delaware':'how-to-start-llc-in-delaware.html',
+      'Florida':'how-to-start-llc-in-florida.html','Georgia':'how-to-start-llc-in-georgia.html',
+      'Hawaii':'how-to-start-llc-in-hawaii.html','Idaho':'how-to-start-llc-in-idaho.html',
+      'Illinois':'how-to-start-llc-in-illinois.html','Indiana':'how-to-start-llc-in-indiana.html',
+      'Iowa':'how-to-start-llc-in-iowa.html','Kansas':'how-to-start-llc-in-kansas.html',
+      'Kentucky':'how-to-start-llc-in-kentucky.html','Louisiana':'how-to-start-llc-in-louisiana.html',
+      'Maine':'how-to-start-llc-in-maine.html','Maryland':'how-to-start-llc-in-maryland.html',
+      'Massachusetts':'how-to-start-llc-in-massachusetts.html','Michigan':'how-to-start-llc-in-michigan.html',
+      'Minnesota':'how-to-start-llc-in-minnesota.html','Mississippi':'how-to-start-llc-in-mississippi.html',
+      'Missouri':'how-to-start-llc-in-missouri.html','Montana':'how-to-start-llc-in-montana.html',
+      'Nebraska':'how-to-start-llc-in-nebraska.html','Nevada':'how-to-start-llc-in-nevada.html',
+      'New Hampshire':'how-to-start-llc-in-new-hampshire.html','New Jersey':'how-to-start-llc-in-new-jersey.html',
+      'New Mexico':'how-to-start-llc-in-new-mexico.html','New York':'how-to-start-llc-in-new-york.html',
+      'North Carolina':'how-to-start-llc-in-north-carolina.html','North Dakota':'how-to-start-llc-in-north-dakota.html',
+      'Ohio':'how-to-start-llc-in-ohio.html','Oklahoma':'how-to-start-llc-in-oklahoma.html',
+      'Oregon':'how-to-start-llc-in-oregon.html','Pennsylvania':'how-to-start-llc-in-pennsylvania.html',
+      'Rhode Island':'how-to-start-llc-in-rhode-island.html','South Carolina':'how-to-start-llc-in-south-carolina.html',
+      'South Dakota':'how-to-start-llc-in-south-dakota.html','Tennessee':'how-to-start-llc-in-tennessee.html',
+      'Texas':'how-to-start-llc-in-texas.html','Utah':'how-to-start-llc-in-utah.html',
+      'Vermont':'how-to-start-llc-in-vermont.html','Virginia':'how-to-start-llc-in-virginia.html',
+      'Washington':'how-to-start-llc-in-washington.html','West Virginia':'how-to-start-llc-in-west-virginia.html',
+      'Wisconsin':'how-to-start-llc-in-wisconsin.html','Wyoming':'how-to-start-llc-in-wyoming.html'
+    };
+    resultsContainer.innerHTML = matches.map(s => {
+      const guideUrl = stateGuideUrls[s.name] || '';
+      return `
+        <div style="padding:0.6rem 0.75rem; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; align-items:center; justify-content:space-between; gap:0.75rem;">
+          <div style="cursor:pointer;" onclick="closeSearchModal(); selectStateInSection('${s.code}'); location.href='#states-section';">
+            <strong style="color:#FFFFFF">${s.name} LLC</strong> — <span style="color:var(--color-primary)">$${s.fee} State Fee</span> <span style="color:#94A3B8;font-size:0.8rem;">(${s.speed})</span>
+          </div>
+          ${guideUrl ? `<a href="${guideUrl}" style="flex-shrink:0;background:#159A9C;color:#fff;font-size:0.75rem;font-weight:700;padding:0.25rem 0.6rem;border-radius:6px;text-decoration:none;white-space:nowrap;">State Guide →</a>` : ''}
+        </div>
+      `;
+    }).join("");
   });
 }
 
