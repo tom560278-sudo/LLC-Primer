@@ -80,7 +80,7 @@
       transition: all 0.2s ease;
       display: inline-block;
     }
-    .styled-table-wrap {
+    .custom-table-wrap {
       background: #FFFFFF;
       border: 1.5px solid #CBD5E1;
       border-radius: 16px;
@@ -88,28 +88,33 @@
       box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
       margin: 1.75rem 0;
     }
-    .styled-table {
+    .custom-data-table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.875rem;
     }
-    .styled-table th {
+    .custom-data-table th {
       background: #12304A;
       color: #FFFFFF;
-      padding: 0.95rem 1.15rem;
-      font-size: 0.785rem;
+      font-size: 0.825rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .styled-table td {
-      padding: 0.95rem 1.15rem;
-      border-bottom: 1px solid #E2E8F0;
+    .custom-data-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.925rem;
       color: #334155;
+      border-bottom: 1px solid #E2E8F0;
     }
-    .styled-table tr:last-child td { border-bottom: none; }
-    .styled-table tr:nth-child(even) { background: #F8FAFC; }
+    .custom-data-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-data-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
     .callout-green {
       background: #ECFDF5;
       border: 1.5px solid #10B981;
@@ -138,11 +143,12 @@
       margin: 1.75rem 0;
     }
     .faq-accordion-wrapper {
+      width: 100%;
+      max-width: 100%;
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
       margin-bottom: 2rem;
-      width: 100% !important;
     }
     .faq-accordion-item {
       background: #FFFFFF;
@@ -150,10 +156,16 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
-      transition: border-color 0.25s ease;
-      width: 100% !important;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
     }
-    .faq-accordion-item:hover { border-color: #159A9C; }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
     .faq-accordion-question {
       padding: 1.25rem 1.65rem;
       font-weight: 700;
@@ -167,7 +179,34 @@
       list-style: none;
       font-family: var(--font-heading);
     }
-    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
+    }
     .faq-accordion-answer {
       padding: 0 1.65rem 1.35rem 1.65rem;
       font-size: 0.95rem;
@@ -375,12 +414,7 @@
   <section style="background:white;padding:1.5rem 0 0 0;">
     <div class="guide-content-container">
       <div style="font-size:0.85rem;color:#64748B;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;"><a href="index.html" style="color:#64748B;text-decoration:none;font-weight:500;">Home</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a><span style="color:#CBD5E1;">/</span><span style="color:#12304A;font-weight:700;">Multi-Member LLC</span></div>
-      <div class="review-check-banner">
-  <div style="position:relative;z-index:2;">
-    <div style="font-size:0.75rem;font-weight:800;color:#F59E0B;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">LAST REVIEWED &middot; OCTOBER 2026</div>
     <div style="color:#E2E8F0;font-size:0.875rem;">Official source: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/limited-liability-company-llc" target="_blank" rel="noopener">IRS guidance on limited liability companies</a> provides the primary federal tax guidance used in this guide.</div>
-  </div>
-</div>
       <h1 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:900;color:#12304A;line-height:1.2;margin-bottom:1.25rem;">Multi-Member LLC: How It Works in 2026</h1>
       <p>A multi-member LLC is a limited liability company with two or more owners, known as members. It is commonly used by business partners, co-founders, family businesses, real-estate ventures, and other businesses with multiple owners who want a flexible legal structure.</p>
       <p>By default, a domestic LLC with two or more members is generally classified by the IRS as a partnership for federal income tax purposes unless it elects to be treated as a corporation. Under the default partnership classification, the LLC generally files Form 1065, U.S. Return of Partnership Income, and provides a Schedule K-1 to each member reporting that member's share of partnership items.</p>
@@ -406,7 +440,7 @@
     <div class="guide-content-container">
 
       <h2 id="key-facts">Multi-Member LLC &mdash; 2026 Key Facts</h2>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Key Fact</th><th>2026 Details</th></tr></thead><tbody><tr><td>IRS Default Classification</td><td>Partnership</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Key Fact</th><th>2026 Details</th></tr></thead><tbody><tr><td>IRS Default Classification</td><td>Partnership</td></tr>
 <tr><td>Federal Information Return</td><td>Form 1065</td></tr>
 <tr><td>2025 Calendar-Year Return Due 2026</td><td>March 16, 2026 (March 15 falls on Sunday)</td></tr>
 <tr><td>Late Form 1065 Penalty</td><td>$255 per partner per month, up to 12 months</td></tr>
@@ -415,7 +449,7 @@
 </tbody></table></div>
 
       <h2 id="vs-single">Multi-Member LLC vs Single-Member LLC at a Glance</h2>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Feature</th><th>Single-Member LLC</th><th>Multi-Member LLC</th></tr></thead><tbody><tr><td>Owners</td><td>1</td><td>2 or more</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Feature</th><th>Single-Member LLC</th><th>Multi-Member LLC</th></tr></thead><tbody><tr><td>Owners</td><td>1</td><td>2 or more</td></tr>
 <tr><td>IRS default</td><td>Disregarded entity</td><td>Partnership</td></tr>
 <tr><td>Federal return</td><td>Generally reported on owner's return</td><td>Form 1065</td></tr>
 <tr><td>K-1 issued</td><td>No under default</td><td>Yes &mdash; one per member</td></tr>
@@ -427,7 +461,7 @@
       <p>A multi-member LLC is an LLC with two or more owners, called members. Under state law, the LLC is generally a separate legal entity from its members. The LLC can own property, enter contracts, conduct business, and be involved in legal proceedings in its own name. The LLC structure can provide limited liability to its members, but that protection is not absolute. Personal guarantees, a member's own wrongful conduct, certain tax obligations, and failures to observe applicable legal requirements can create personal exposure. For a broader overview, see <a href="what-is-an-llc.html">what an LLC is</a>.</p>
 
       <h3>Who Can Be a Member</h3>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Who Can Be a Member</th><th>Notes</th></tr></thead><tbody><tr><td>U.S. individuals</td><td>Generally can hold membership interests</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Who Can Be a Member</th><th>Notes</th></tr></thead><tbody><tr><td>U.S. individuals</td><td>Generally can hold membership interests</td></tr>
 <tr><td>Foreign nationals / non-U.S. persons</td><td>Generally possible; additional tax reporting and withholding rules may apply</td></tr>
 <tr><td>Other LLCs or partnerships</td><td>Generally possible, subject to applicable law</td></tr>
 <tr><td>Corporations</td><td>Generally can hold an interest in an LLC</td></tr>
@@ -477,7 +511,7 @@
 
       <h2 id="distributions">Profit Distribution and Guaranteed Payments</h2>
       <p>Under partnership taxation, distributions and guaranteed payments are different concepts and have different tax treatment. Do not simply treat LLC payments as wages.</p>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Payment Type</th><th>Distributions</th><th>Guaranteed Payments</th></tr></thead><tbody><tr><td>Purpose</td><td>Transfer of partnership cash or property to partner</td><td>Payments determined without regard to partnership income (e.g., for services or use of capital)</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Payment Type</th><th>Distributions</th><th>Guaranteed Payments</th></tr></thead><tbody><tr><td>Purpose</td><td>Transfer of partnership cash or property to partner</td><td>Payments determined without regard to partnership income (e.g., for services or use of capital)</td></tr>
 <tr><td>Generally deductible by LLC</td><td>No</td><td>Generally yes, subject to partnership tax rules</td></tr>
 <tr><td>K-1 reporting</td><td>Reflected through capital/distribution info</td><td>Generally separately reported where required</td></tr>
 <tr><td>W-2 issued</td><td>No</td><td>No under default partnership taxation</td></tr>
@@ -487,7 +521,7 @@
       <p>A multi-member LLC can have higher accounting and tax-preparation costs than a single-member LLC because the default partnership classification generally requires a separate Form 1065 and K-1 reporting. For current state-by-state costs, see our <a href="how-much-does-an-llc-cost.html">LLC cost guide</a>.</p>
 
       <h3>Annual Compliance Calendar &mdash; Multi-Member LLC</h3>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Deadline</th><th>Typical Action</th><th>Important Note</th></tr></thead><tbody><tr><td>March 16, 2026</td><td>File 2025 Form 1065</td><td>Calendar-year partnership deadline moved from Sunday March 15</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Deadline</th><th>Typical Action</th><th>Important Note</th></tr></thead><tbody><tr><td>March 16, 2026</td><td>File 2025 Form 1065</td><td>Calendar-year partnership deadline moved from Sunday March 15</td></tr>
 <tr><td>March 16, 2026</td><td>Furnish 2025 Schedule K-1 information</td><td>K-1 information needed for members' tax reporting</td></tr>
 <tr><td>March 16, 2026</td><td>Form 2553 if making timely 2026 S-corp election</td><td>Eligibility and election rules apply</td></tr>
 <tr><td>April 15, 2026</td><td>Individual federal income-tax return</td><td>Individual members have separate filing obligations</td></tr>
@@ -500,12 +534,12 @@
 
       <h2 id="mistakes">5 Costly Mistakes Multi-Member LLCs Make</h2>
       <p>The federal penalty for a late Form 1065 is $255 for each month or part of a month, multiplied by the number of persons who were partners during the tax year, for up to 12 months, subject to applicable exceptions and reasonable-cause rules.</p>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Members</th><th>1 Month Late</th><th>3 Months Late</th><th>6 Months Late</th><th>12 Months Late (Max Period)</th></tr></thead><tbody><tr><td>2 members</td><td>$510</td><td>$1,530</td><td>$3,060</td><td>$6,120</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Members</th><th>1 Month Late</th><th>3 Months Late</th><th>6 Months Late</th><th>12 Months Late (Max Period)</th></tr></thead><tbody><tr><td>2 members</td><td>$510</td><td>$1,530</td><td>$3,060</td><td>$6,120</td></tr>
 <tr><td>3 members</td><td>$765</td><td>$2,295</td><td>$4,590</td><td>$9,180</td></tr>
 <tr><td>5 members</td><td>$1,275</td><td>$3,825</td><td>$7,650</td><td>$15,300</td></tr>
 <tr><td>10 members</td><td>$2,550</td><td>$7,650</td><td>$15,300</td><td>$30,600</td></tr>
 </tbody></table></div>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>#</th><th>Mistake</th><th>Potential Consequence</th><th>Better Practice</th></tr></thead><tbody><tr><td>1</td><td>Filing Form 1065 late</td><td>Potential $255-per-partner-per-month penalty</td><td>File on time or request an extension when appropriate</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>#</th><th>Mistake</th><th>Potential Consequence</th><th>Better Practice</th></tr></thead><tbody><tr><td>1</td><td>Filing Form 1065 late</td><td>Potential $255-per-partner-per-month penalty</td><td>File on time or request an extension when appropriate</td></tr>
 <tr><td>2</td><td>No written operating agreement</td><td>State default rules may apply when members' agreement is not documented</td><td>Put ownership, voting, allocations, transfers, and exits in writing</td></tr>
 <tr><td>3</td><td>Issuing W-2s to members under default partnership taxation</td><td>Incorrect employment-tax and income-tax reporting</td><td>Members of a partnership generally are not employees</td></tr>
 <tr><td>4</td><td>Ignoring estimated taxes</td><td>Members may owe interest or underpayment penalties</td><td>Each member should evaluate federal and state estimated-tax obligations</td></tr>
@@ -514,7 +548,7 @@
 
       <h2 id="s-corp">S Corp Election for Multi-Member LLCs</h2>
       <p>A multi-member LLC can potentially elect S corporation tax treatment if it satisfies the applicable eligibility requirements. An S corporation is a federal tax status, not a separate state-law entity type. An LLC can remain an LLC under state law while being taxed federally as an S corporation. For the 2026 calendar year, the normal Form 2553 deadline was March 16, 2026 (because March 15 is a Sunday). For more information, see our <a href="llc-vs-scorp.html">LLC vs S Corp guide</a> and <a href="llc-startup-cost-estimator.html">LLC vs. S-Corp Tax Calculator</a>.</p>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Requirement</th><th>Default Partnership</th><th>S-Corp Election</th></tr></thead><tbody><tr><td>Maximum shareholders for federal S status</td><td>No comparable 100-shareholder limit</td><td>100 shareholders maximum</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Requirement</th><th>Default Partnership</th><th>S-Corp Election</th></tr></thead><tbody><tr><td>Maximum shareholders for federal S status</td><td>No comparable 100-shareholder limit</td><td>100 shareholders maximum</td></tr>
 <tr><td>Nonresident-alien owners</td><td>Generally possible with additional rules</td><td>Generally not permitted</td></tr>
 <tr><td>Corporate shareholders</td><td>Generally possible</td><td>Generally not permitted</td></tr>
 <tr><td>Partnership/LLC shareholders</td><td>Generally possible</td><td>Generally not permitted</td></tr>
@@ -544,38 +578,110 @@
 
       <h2 id="faq">Frequently Asked Questions &mdash; Multi-Member LLC</h2>
       <div class="faq-accordion-wrapper">
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Does a multi-member LLC need to file a separate tax return? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Generally, yes. A domestic multi-member LLC classified as a partnership generally files Form 1065, U.S. Return of Partnership Income. The return is generally an information return rather than a federal income-tax payment by the partnership itself. Partnership income and other tax items generally pass through to the members. An LLC can elect a different federal tax classification, so the exact filing requirement depends on the entity's tax status.</p></div>
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">01</span>
+          <span>Does a multi-member LLC need to file a separate tax return?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Generally, yes. A domestic multi-member LLC classified as a partnership generally files Form 1065, U.S. Return of Partnership Income. The return is generally an information return rather than a federal income-tax payment by the partnership itself. Partnership income and other tax items generally pass through to the members. An LLC can elect a different federal tax classification, so the exact filing requirement depends on the entity's tax status.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">What is the penalty for filing Form 1065 late? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>For returns subject to the current rate, the IRS instructions state a penalty of $255 for each month or part of a month, multiplied by the number of persons who were partners during the tax year, for up to 12 months. Reasonable-cause exceptions may apply. For a calendar-year partnership's 2025 return filed in 2026, the normal March 15 deadline moves to March 16 because March 15, 2026 is a Sunday.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">02</span>
+          <span>What is the penalty for filing Form 1065 late?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>For returns subject to the current rate, the IRS instructions state a penalty of $255 for each month or part of a month, multiplied by the number of persons who were partners during the tax year, for up to 12 months. Reasonable-cause exceptions may apply. For a calendar-year partnership's 2025 return filed in 2026, the normal March 15 deadline moves to March 16 because March 15, 2026 is a Sunday.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Do all multi-member LLC owners pay self-employment tax? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Not necessarily on every dollar of partnership income. Self-employment-tax treatment depends on the partner's status, activities, and the nature of the partnership income. The rules can be particularly complex for members who claim limited-partner treatment or who have different levels of participation in the business. Do not estimate liability solely by multiplying total K-1 income by 15.3%.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">03</span>
+          <span>Do all multi-member LLC owners pay self-employment tax?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Not necessarily on every dollar of partnership income. Self-employment-tax treatment depends on the partner's status, activities, and the nature of the partnership income. The rules can be particularly complex for members who claim limited-partner treatment or who have different levels of participation in the business. Do not estimate liability solely by multiplying total K-1 income by 15.3%.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can a multi-member LLC member receive a W-2? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Under default partnership taxation, members of the partnership generally are not employees of the partnership for federal employment-tax purposes and generally do not receive W-2 wages for their ownership income. If the LLC elects S corporation taxation, the federal employment-tax rules are different. Shareholder-employees who perform services generally need reasonable compensation through payroll.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">04</span>
+          <span>Can a multi-member LLC member receive a W-2?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Under default partnership taxation, members of the partnership generally are not employees of the partnership for federal employment-tax purposes and generally do not receive W-2 wages for their ownership income. If the LLC elects S corporation taxation, the federal employment-tax rules are different. Shareholder-employees who perform services generally need reasonable compensation through payroll.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">How are profits split in a multi-member LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>The answer depends on the operating agreement, applicable state law, and federal partnership-tax rules. Members can establish agreed economic arrangements, but special tax allocations must satisfy applicable federal tax requirements. An operating agreement should therefore be drafted with both business and tax consequences in mind.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">05</span>
+          <span>How are profits split in a multi-member LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>The answer depends on the operating agreement, applicable state law, and federal partnership-tax rules. Members can establish agreed economic arrangements, but special tax allocations must satisfy applicable federal tax requirements. An operating agreement should therefore be drafted with both business and tax consequences in mind.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can a corporation or another LLC be a member? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Generally, yes, when the LLC is taxed as a partnership and applicable state law permits the ownership structure. However, an S corporation election has substantially narrower ownership rules. Partnerships, corporations, and nonresident-alien shareholders generally cannot own S corporation stock.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">06</span>
+          <span>Can a corporation or another LLC be a member?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Generally, yes, when the LLC is taxed as a partnership and applicable state law permits the ownership structure. However, an S corporation election has substantially narrower ownership rules. Partnerships, corporations, and nonresident-alien shareholders generally cannot own S corporation stock.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">What happens if a member wants to leave the LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>The answer depends on the operating agreement and the LLC's state law. A well-drafted agreement can establish procedures for voluntary withdrawal, buyouts, transfers, death, disability, disputes, and valuation. Without clear provisions, the state's default rules may control and may produce results the members did not anticipate. There is no universal rule that a departing member automatically causes the LLC to dissolve.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">07</span>
+          <span>What happens if a member wants to leave the LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>The answer depends on the operating agreement and the LLC's state law. A well-drafted agreement can establish procedures for voluntary withdrawal, buyouts, transfers, death, disability, disputes, and valuation. Without clear provisions, the state's default rules may control and may produce results the members did not anticipate. There is no universal rule that a departing member automatically causes the LLC to dissolve.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can a husband and wife own a multi-member LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Yes. In certain circumstances, a married couple who jointly owns an LLC in a community-property state may be eligible for special federal tax treatment under the IRS's rules. The nine community-property states generally recognized are Arizona, California, Idaho, Louisiana, Nevada, New Mexico, Texas, Washington, and Wisconsin. Do not assume that every husband-and-wife LLC can simply file Schedule C instead of Form 1065.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">08</span>
+          <span>Can a husband and wife own a multi-member LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Yes. In certain circumstances, a married couple who jointly owns an LLC in a community-property state may be eligible for special federal tax treatment under the IRS's rules. The nine community-property states generally recognized are Arizona, California, Idaho, Louisiana, Nevada, New Mexico, Texas, Washington, and Wisconsin. Do not assume that every husband-and-wife LLC can simply file Schedule C instead of Form 1065.</p>
+      </div>
     </details>
+
       </div>
     </div>
   </main>

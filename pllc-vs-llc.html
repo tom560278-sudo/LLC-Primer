@@ -80,7 +80,7 @@
       transition: all 0.2s ease;
       display: inline-block;
     }
-    .styled-table-wrap {
+    .custom-table-wrap {
       background: #FFFFFF;
       border: 1.5px solid #CBD5E1;
       border-radius: 16px;
@@ -88,28 +88,33 @@
       box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
       margin: 1.75rem 0;
     }
-    .styled-table {
+    .custom-data-table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.875rem;
     }
-    .styled-table th {
+    .custom-data-table th {
       background: #12304A;
       color: #FFFFFF;
-      padding: 0.95rem 1.15rem;
-      font-size: 0.785rem;
+      font-size: 0.825rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .styled-table td {
-      padding: 0.95rem 1.15rem;
-      border-bottom: 1px solid #E2E8F0;
+    .custom-data-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.925rem;
       color: #334155;
+      border-bottom: 1px solid #E2E8F0;
     }
-    .styled-table tr:last-child td { border-bottom: none; }
-    .styled-table tr:nth-child(even) { background: #F8FAFC; }
+    .custom-data-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-data-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
     .callout-green {
       background: #ECFDF5;
       border: 1.5px solid #10B981;
@@ -138,11 +143,12 @@
       margin: 1.75rem 0;
     }
     .faq-accordion-wrapper {
+      width: 100%;
+      max-width: 100%;
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
       margin-bottom: 2rem;
-      width: 100% !important;
     }
     .faq-accordion-item {
       background: #FFFFFF;
@@ -150,10 +156,16 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
-      transition: border-color 0.25s ease;
-      width: 100% !important;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
     }
-    .faq-accordion-item:hover { border-color: #159A9C; }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
     .faq-accordion-question {
       padding: 1.25rem 1.65rem;
       font-weight: 700;
@@ -167,7 +179,34 @@
       list-style: none;
       font-family: var(--font-heading);
     }
-    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
+    }
     .faq-accordion-answer {
       padding: 0 1.65rem 1.35rem 1.65rem;
       font-size: 0.95rem;
@@ -375,12 +414,7 @@
   <section style="background:white;padding:1.5rem 0 0 0;">
     <div class="guide-content-container">
       <div style="font-size:0.85rem;color:#64748B;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;"><a href="index.html" style="color:#64748B;text-decoration:none;font-weight:500;">Home</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a><span style="color:#CBD5E1;">/</span><span style="color:#12304A;font-weight:700;">PLLC vs LLC</span></div>
-      <div class="review-check-banner">
-  <div style="position:relative;z-index:2;">
-    <div style="font-size:0.75rem;font-weight:800;color:#F59E0B;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">LAST REVIEWED &middot; OCTOBER 2026</div>
     <div style="color:#E2E8F0;font-size:0.875rem;">Last reviewed: October 5, 2026 &middot; Jurisdictions reviewed: 51 / 51. PLLC rules are primarily determined by state law and professional licensing statutes.</div>
-  </div>
-</div>
       <h1 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:900;color:#12304A;line-height:1.2;margin-bottom:1.25rem;">PLLC vs LLC (2026): All 50 States + Professional Entity Guide</h1>
       <div class="key-numbers-grid">
         <div class="key-number-card"><div class="kn-value">51/51</div><div class="kn-label">Jurisdictions reviewed</div></div>
@@ -412,7 +446,7 @@
 
       <h2 id="difference">PLLC vs LLC: What the Distinction Actually Means</h2>
       <p>An LLC is a state-law business entity. A PLLC, where the term is used, is generally a professional-services version or status within a state's LLC framework. States do not implement professional LLCs uniformly.</p>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Question</th><th>Standard LLC</th><th>Professional LLC / PLLC Model</th></tr></thead><tbody><tr><td>Who may use it?</td><td>Depends on state law and whether the activity is a regulated professional service</td><td>Generally limited to licensed professionals or qualifying professional services, with ownership rules varying by state and profession</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Question</th><th>Standard LLC</th><th>Professional LLC / PLLC Model</th></tr></thead><tbody><tr><td>Who may use it?</td><td>Depends on state law and whether the activity is a regulated professional service</td><td>Generally limited to licensed professionals or qualifying professional services, with ownership rules varying by state and profession</td></tr>
 <tr><td>Separate national entity type?</td><td>No. LLCs are created under state law</td><td>No. 'PLLC' is not a separate federal tax classification</td></tr>
 <tr><td>Board approval before filing?</td><td>Not generally a universal requirement</td><td>May be required in some states or professions, but there is no nationwide filing sequence</td></tr>
 <tr><td>Name must say PLLC?</td><td>State naming law controls</td><td>Not universally. Some states permit professional LLCs to use ordinary LLC endings or multiple permitted variants</td></tr>
@@ -422,7 +456,7 @@
 
       <h2 id="liability">Malpractice Liability: Separate Your Own Acts from Entity Debts</h2>
       <p>One of the most important distinctions in professional-entity planning is the difference between entity-level liability and personal professional liability. Forming an LLC or PLLC does not automatically eliminate a professional's personal responsibility for their own negligent or wrongful professional acts.</p>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Exposure</th><th>What to Assume</th><th>Key Point</th></tr></thead><tbody><tr><td>Your own professional negligence</td><td>Do not assume the LLC or PLLC protects you</td><td>Professional statutes and licensing rules can preserve personal responsibility</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Exposure</th><th>What to Assume</th><th>Key Point</th></tr></thead><tbody><tr><td>Your own professional negligence</td><td>Do not assume the LLC or PLLC protects you</td><td>Professional statutes and licensing rules can preserve personal responsibility</td></tr>
 <tr><td>Another professional's malpractice</td><td>Entity may provide protection to an uninvolved owner in some circumstances</td><td>Participation, supervision, agency, and profession-specific rules can affect the result</td></tr>
 <tr><td>Ordinary entity debts</td><td>LLC liability rules generally apply</td><td>Subject to guarantees, improper distributions, veil-piercing doctrines</td></tr>
 <tr><td>Insurance requirements</td><td>Profession- and state-specific</td><td>Professional liability insurance may be mandatory in some settings</td></tr>
@@ -433,7 +467,7 @@
       <p>This guide does not use a simple "PLLC states vs. non-PLLC states" count because that approach can produce misleading results. Some jurisdictions expressly authorize PLLCs. Others allow professional services through ordinary LLCs, profession-specific LLC structures, or specialized professional entities.</p>
 
       <h3>Alabama through Florida</h3>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Jurisdiction</th><th>2026 Professional-Entity Model</th><th>Professional LLC Route?</th><th>Entity / Name Model</th></tr></thead><tbody><tr><td>Alabama</td><td>Professional-service LLC / profession-specific rules</td><td>Yes, subject to profession law</td><td>LLC designator with professional-service restrictions</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Jurisdiction</th><th>2026 Professional-Entity Model</th><th>Professional LLC Route?</th><th>Entity / Name Model</th></tr></thead><tbody><tr><td>Alabama</td><td>Professional-service LLC / profession-specific rules</td><td>Yes, subject to profession law</td><td>LLC designator with professional-service restrictions</td></tr>
 <tr><td>Alaska</td><td>No broad PLLC model identified; professional corporation available</td><td>No broad PLLC route</td><td>Professional Corporation</td></tr>
 <tr><td>Arizona</td><td>Explicit professional LLC framework</td><td>Yes</td><td>Professional LLC / PLLC</td></tr>
 <tr><td>Arkansas</td><td>Explicit professional LLC framework</td><td>Yes</td><td>Professional LLC / PLLC</td></tr>
@@ -445,7 +479,7 @@
 <tr><td>Florida</td><td>Professional LLC framework under applicable professional and LLC statutes</td><td>Yes</td><td>PLLC / professional LLC</td></tr>
 </tbody></table></div>
       <h3>Georgia through New Hampshire</h3>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Jurisdiction</th><th>2026 Professional-Entity Model</th><th>Professional LLC Route?</th><th>Entity / Name Model</th></tr></thead><tbody><tr><td>Georgia</td><td>Professional-service LLC under profession-specific provisions</td><td>Yes, subject to profession law</td><td>LLC / professional limited liability company</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Jurisdiction</th><th>2026 Professional-Entity Model</th><th>Professional LLC Route?</th><th>Entity / Name Model</th></tr></thead><tbody><tr><td>Georgia</td><td>Professional-service LLC under profession-specific provisions</td><td>Yes, subject to profession law</td><td>LLC / professional limited liability company</td></tr>
 <tr><td>Hawaii</td><td>Professional corporation is a principal professional entity</td><td>No broad PLLC route</td><td>Professional Corporation</td></tr>
 <tr><td>Idaho</td><td>Professional LLC framework</td><td>Yes</td><td>Professional LLC</td></tr>
 <tr><td>Illinois</td><td>Explicit professional limited liability company framework</td><td>Yes</td><td>PLLC</td></tr>
@@ -457,7 +491,7 @@
 <tr><td>Maine</td><td>Professional LLC framework</td><td>Yes</td><td>Professional LLC</td></tr>
 </tbody></table></div>
       <h3>Maryland through New Hampshire (continued)</h3>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Jurisdiction</th><th>2026 Professional-Entity Model</th><th>Professional LLC Route?</th><th>Entity / Name Model</th></tr></thead><tbody><tr><td>Maryland</td><td>Professional-service LLC under applicable licensing rules</td><td>Yes, subject to profession</td><td>LLC</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Jurisdiction</th><th>2026 Professional-Entity Model</th><th>Professional LLC Route?</th><th>Entity / Name Model</th></tr></thead><tbody><tr><td>Maryland</td><td>Professional-service LLC under applicable licensing rules</td><td>Yes, subject to profession</td><td>LLC</td></tr>
 <tr><td>Massachusetts</td><td>Professional LLC framework</td><td>Yes</td><td>Professional LLC</td></tr>
 <tr><td>Michigan</td><td>Professional service LLC</td><td>Yes</td><td>Professional Service LLC</td></tr>
 <tr><td>Minnesota</td><td>Professional-firm LLC framework</td><td>Yes</td><td>LLC / professional firm</td></tr>
@@ -469,7 +503,7 @@
 <tr><td>New Hampshire</td><td>PLLC framework</td><td>Yes</td><td>PLLC</td></tr>
 </tbody></table></div>
       <h3>New Jersey through Rhode Island</h3>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Jurisdiction</th><th>2026 Professional-Entity Model</th><th>Professional LLC Route?</th><th>Entity / Name Model</th></tr></thead><tbody><tr><td>New Jersey</td><td>Professional corporation/association and profession-specific structures</td><td>No broad statewide PLLC subtype identified</td><td>Professional corporation / other permitted entity</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Jurisdiction</th><th>2026 Professional-Entity Model</th><th>Professional LLC Route?</th><th>Entity / Name Model</th></tr></thead><tbody><tr><td>New Jersey</td><td>Professional corporation/association and profession-specific structures</td><td>No broad statewide PLLC subtype identified</td><td>Professional corporation / other permitted entity</td></tr>
 <tr><td>New Mexico</td><td>Profession-specific professional LLC routes</td><td>Yes for qualifying professions</td><td>Professional LLC / profession-specific structure</td></tr>
 <tr><td>New York</td><td>Explicit professional service LLC framework</td><td>Yes</td><td>PLLC / professional service LLC</td></tr>
 <tr><td>North Carolina</td><td>Explicit professional LLC framework</td><td>Yes</td><td>PLLC / professional LLC</td></tr>
@@ -481,7 +515,7 @@
 <tr><td>Rhode Island</td><td>Professional-service LLC framework</td><td>Yes, subject to licensing rules</td><td>LLC</td></tr>
 </tbody></table></div>
       <h3>South Carolina through Wyoming</h3>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Jurisdiction</th><th>2026 Professional-Entity Model</th><th>Professional LLC Route?</th><th>Entity / Name Model</th></tr></thead><tbody><tr><td>South Carolina</td><td>Ordinary LLC subject to profession-specific licensing rules</td><td>Yes, subject to profession</td><td>LLC</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Jurisdiction</th><th>2026 Professional-Entity Model</th><th>Professional LLC Route?</th><th>Entity / Name Model</th></tr></thead><tbody><tr><td>South Carolina</td><td>Ordinary LLC subject to profession-specific licensing rules</td><td>Yes, subject to profession</td><td>LLC</td></tr>
 <tr><td>South Dakota</td><td>Professional LLC framework</td><td>Yes</td><td>Professional LLC</td></tr>
 <tr><td>Tennessee</td><td>Professional LLC framework</td><td>Yes</td><td>PLLC</td></tr>
 <tr><td>Texas</td><td>Explicit PLLC and profession-specific entity rules</td><td>Yes</td><td>PLLC</td></tr>
@@ -511,7 +545,7 @@
 
       <h2 id="tax">How a PLLC Is Taxed Federally in 2026</h2>
       <p>The IRS does not create a separate federal tax classification simply because a state calls an entity a PLLC. Federal taxation generally follows the same LLC classification framework. See our <a href="llc-vs-scorp.html">LLC vs S-Corp guide</a> for additional information on S-corporation elections.</p>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Federal Situation</th><th>General Treatment</th></tr></thead><tbody><tr><td>Single-member LLC/PLLC</td><td>Generally disregarded for federal income-tax purposes unless corporate election made</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Federal Situation</th><th>General Treatment</th></tr></thead><tbody><tr><td>Single-member LLC/PLLC</td><td>Generally disregarded for federal income-tax purposes unless corporate election made</td></tr>
 <tr><td>Multi-member LLC/PLLC</td><td>Generally classified as partnership unless eligible corporate election made</td></tr>
 <tr><td>Corporate election</td><td>An eligible LLC can elect corporate treatment under federal tax rules</td></tr>
 <tr><td>S corporation election</td><td>An eligible entity may elect S-corp treatment if all applicable requirements satisfied</td></tr>
@@ -520,7 +554,7 @@
 
       <h2 id="pc">PLLC vs Professional Corporation</h2>
       <p>Neither entity is automatically the better choice. The permitted professional entity can be determined by state law and profession-specific rules before tax and administrative considerations are even compared.</p>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Decision Factor</th><th>Professional LLC / PLLC</th><th>Professional Corporation / Association</th></tr></thead><tbody><tr><td>Availability</td><td>Depends on state and profession</td><td>Depends on state and profession</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Decision Factor</th><th>Professional LLC / PLLC</th><th>Professional Corporation / Association</th></tr></thead><tbody><tr><td>Availability</td><td>Depends on state and profession</td><td>Depends on state and profession</td></tr>
 <tr><td>Governance</td><td>LLC operating-agreement framework subject to professional restrictions</td><td>Corporate governance framework subject to professional restrictions</td></tr>
 <tr><td>Own malpractice</td><td>Do not assume personal professional liability disappears</td><td>Do not assume personal professional liability disappears</td></tr>
 <tr><td>Federal tax</td><td>Follows LLC classification and election rules</td><td>Follows applicable corporate tax rules and elections</td></tr>
@@ -531,46 +565,136 @@
 
       <h2 id="faq">PLLC vs LLC Frequently Asked Questions</h2>
       <div class="faq-accordion-wrapper">
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">What is the main difference between a PLLC and an LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>A PLLC or professional LLC is a state-law structure designed for qualifying professional services. The exact definition, ownership requirements and filing process vary by jurisdiction. It is not a separate federal tax classification.</p></div>
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">01</span>
+          <span>What is the main difference between a PLLC and an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>A PLLC or professional LLC is a state-law structure designed for qualifying professional services. The exact definition, ownership requirements and filing process vary by jurisdiction. It is not a separate federal tax classification.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">How many states allow PLLCs? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>A single number is misleading. Some states expressly authorize PLLCs, while others allow professional services through ordinary LLCs, profession-specific LLC structures or specialized professional entities. LLC Primer uses a jurisdiction-by-jurisdiction model rather than presenting one national PLLC count.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">02</span>
+          <span>How many states allow PLLCs?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>A single number is misleading. Some states expressly authorize PLLCs, while others allow professional services through ordinary LLCs, profession-specific LLC structures or specialized professional entities. LLC Primer uses a jurisdiction-by-jurisdiction model rather than presenting one national PLLC count.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can a doctor, lawyer or CPA always form a PLLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>No. The permitted entity depends on the state and profession. A profession may be permitted to use a PLLC in one state and required or limited to another professional entity in another state.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">03</span>
+          <span>Can a doctor, lawyer or CPA always form a PLLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>No. The permitted entity depends on the state and profession. A profession may be permitted to use a PLLC in one state and required or limited to another professional entity in another state.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can a professional use an ordinary LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Sometimes. Several jurisdictions permit certain professional services through an ordinary LLC subject to professional licensing restrictions. Other states or professions require a specialized professional entity.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">04</span>
+          <span>Can a professional use an ordinary LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Sometimes. Several jurisdictions permit certain professional services through an ordinary LLC subject to professional licensing restrictions. Other states or professions require a specialized professional entity.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Does a PLLC name always have to contain 'PLLC'? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>No. Naming rules vary by state. Some jurisdictions permit professional LLCs to use ordinary LLC endings or multiple statutory variations.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">05</span>
+          <span>Does a PLLC name always have to contain 'PLLC'?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>No. Naming rules vary by state. Some jurisdictions permit professional LLCs to use ordinary LLC endings or multiple statutory variations.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Is licensing-board approval always required before filing? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>No. Some states require professional licensing-body certification or approval, while others use different verification procedures or do not require advance approval.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">06</span>
+          <span>Is licensing-board approval always required before filing?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>No. Some states require professional licensing-body certification or approval, while others use different verification procedures or do not require advance approval.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Does a standard LLC protect a professional from their own malpractice? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Do not assume so. The entity may protect against certain business liabilities, but professional licensing and malpractice rules can preserve personal responsibility for a professional's own conduct.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">07</span>
+          <span>Does a standard LLC protect a professional from their own malpractice?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Do not assume so. The entity may protect against certain business liabilities, but professional licensing and malpractice rules can preserve personal responsibility for a professional's own conduct.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Does a PLLC protect me from another member's malpractice? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>The entity may provide protection in some circumstances, but participation, supervision, agency principles and profession-specific laws can affect the result.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">08</span>
+          <span>Does a PLLC protect me from another member's malpractice?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>The entity may provide protection in some circumstances, but participation, supervision, agency principles and profession-specific laws can affect the result.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Is malpractice insurance required for every PLLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>No. Insurance requirements vary by profession and jurisdiction. Some practices may have specific insurance or financial-responsibility requirements, while others may purchase coverage as a risk-management measure.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">09</span>
+          <span>Is malpractice insurance required for every PLLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>No. Insurance requirements vary by profession and jurisdiction. Some practices may have specific insurance or financial-responsibility requirements, while others may purchase coverage as a risk-management measure.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Is a PLLC taxed differently from a standard LLC by the IRS? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Not simply because it is called a PLLC. The IRS generally applies the same LLC classification framework based on ownership and valid tax elections.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">10</span>
+          <span>Is a PLLC taxed differently from a standard LLC by the IRS?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Not simply because it is called a PLLC. The IRS generally applies the same LLC classification framework based on ownership and valid tax elections.</p>
+      </div>
     </details>
+
       </div>
     </div>
   </main>

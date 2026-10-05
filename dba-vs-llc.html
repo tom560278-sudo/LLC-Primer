@@ -80,7 +80,7 @@
       transition: all 0.2s ease;
       display: inline-block;
     }
-    .styled-table-wrap {
+    .custom-table-wrap {
       background: #FFFFFF;
       border: 1.5px solid #CBD5E1;
       border-radius: 16px;
@@ -88,28 +88,33 @@
       box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
       margin: 1.75rem 0;
     }
-    .styled-table {
+    .custom-data-table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.875rem;
     }
-    .styled-table th {
+    .custom-data-table th {
       background: #12304A;
       color: #FFFFFF;
-      padding: 0.95rem 1.15rem;
-      font-size: 0.785rem;
+      font-size: 0.825rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .styled-table td {
-      padding: 0.95rem 1.15rem;
-      border-bottom: 1px solid #E2E8F0;
+    .custom-data-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.925rem;
       color: #334155;
+      border-bottom: 1px solid #E2E8F0;
     }
-    .styled-table tr:last-child td { border-bottom: none; }
-    .styled-table tr:nth-child(even) { background: #F8FAFC; }
+    .custom-data-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-data-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
     .callout-green {
       background: #ECFDF5;
       border: 1.5px solid #10B981;
@@ -138,11 +143,12 @@
       margin: 1.75rem 0;
     }
     .faq-accordion-wrapper {
+      width: 100%;
+      max-width: 100%;
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
       margin-bottom: 2rem;
-      width: 100% !important;
     }
     .faq-accordion-item {
       background: #FFFFFF;
@@ -150,10 +156,16 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
-      transition: border-color 0.25s ease;
-      width: 100% !important;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
     }
-    .faq-accordion-item:hover { border-color: #159A9C; }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
     .faq-accordion-question {
       padding: 1.25rem 1.65rem;
       font-weight: 700;
@@ -167,7 +179,34 @@
       list-style: none;
       font-family: var(--font-heading);
     }
-    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
+    }
     .faq-accordion-answer {
       padding: 0 1.65rem 1.35rem 1.65rem;
       font-size: 0.95rem;
@@ -375,12 +414,7 @@
   <section style="background:white;padding:1.5rem 0 0 0;">
     <div class="guide-content-container">
       <div style="font-size:0.85rem;color:#64748B;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;"><a href="index.html" style="color:#64748B;text-decoration:none;font-weight:500;">Home</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a><span style="color:#CBD5E1;">/</span><span style="color:#12304A;font-weight:700;">DBA vs LLC</span></div>
-      <div class="review-check-banner">
-  <div style="position:relative;z-index:2;">
-    <div style="font-size:0.75rem;font-weight:800;color:#F59E0B;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">LAST REVIEWED &middot; OCTOBER 2026</div>
     <div style="color:#E2E8F0;font-size:0.875rem;">Official sources: The U.S. Small Business Administration (SBA) provides general guidance on business names, DBAs, and business structures. State-specific filing requirements and fees should be verified with the appropriate state agency.</div>
-  </div>
-</div>
       <h1 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:900;color:#12304A;line-height:1.2;margin-bottom:1.25rem;">DBA vs LLC (2026)</h1>
       <p>Most people searching DBA vs LLC are comparing two things that are not actually alternatives. A DBA is generally a registered business name. An LLC is a legal business entity. They can work together rather than compete with each other.</p>
       <p>A DBA (Doing Business As) &mdash; also called a fictitious business name, assumed name, or trade name in some jurisdictions &mdash; allows a person or existing business entity to operate under a name different from its legal name. It does not, by itself, create a separate legal entity or provide limited liability protection.</p>
@@ -409,7 +443,7 @@
     <div class="guide-content-container">
 
       <h2 id="quick">DBA vs LLC &mdash; Full Comparison Table</h2>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Feature</th><th>DBA (Doing Business As)</th><th>LLC (Limited Liability Company)</th></tr></thead><tbody><tr><td>What it is</td><td>A registered business name</td><td>A legal business entity</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Feature</th><th>DBA (Doing Business As)</th><th>LLC (Limited Liability Company)</th></tr></thead><tbody><tr><td>What it is</td><td>A registered business name</td><td>A legal business entity</td></tr>
 <tr><td>Personal liability protection</td><td>None by itself</td><td>Generally provides limited liability protection</td></tr>
 <tr><td>Separate legal entity</td><td>No</td><td>Yes</td></tr>
 <tr><td>Formation cost</td><td>Varies by jurisdiction</td><td>Varies by state</td></tr>
@@ -478,7 +512,7 @@
 
       <h2 id="taxes">DBA vs LLC Taxes</h2>
       <p>A DBA does not change your federal tax classification. If you are a sole proprietor who registers a DBA, you are still taxed as a sole proprietor. An LLC has tax flexibility &mdash; a single-member LLC is generally treated as a disregarded entity by default, but an LLC can elect corporate or S-corp treatment.</p>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Structure</th><th>Tax Treatment</th></tr></thead><tbody><tr><td>Sole proprietor + DBA</td><td>Owner is taxed as sole proprietor; DBA does not change the classification</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Structure</th><th>Tax Treatment</th></tr></thead><tbody><tr><td>Sole proprietor + DBA</td><td>Owner is taxed as sole proprietor; DBA does not change the classification</td></tr>
 <tr><td>Single-member LLC (default)</td><td>Disregarded entity for federal income tax; similar to sole proprietorship</td></tr>
 <tr><td>Multi-member LLC (default)</td><td>Generally taxed as partnership; Form 1065 required</td></tr>
 <tr><td>LLC + S-corp election</td><td>Pass-through with payroll; owner must receive reasonable compensation</td></tr>
@@ -517,7 +551,7 @@
       <p>The conversion is generally: Form the LLC &rarr; Get EIN &rarr; Open business bank account &rarr; Transfer business activity &rarr; Update DBA registration if needed. See our <a href="start-llc.html">how to start an LLC guide</a> for state-by-step instructions.</p>
 
       <h2 id="full-comparison">DBA vs LLC vs Corporation vs S-Corporation</h2>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Structure</th><th>What It Is</th><th>Liability</th><th>Default Tax</th><th>Complexity</th></tr></thead><tbody><tr><td>DBA</td><td>Registered name only</td><td>None</td><td>No change</td><td>Simple</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Structure</th><th>What It Is</th><th>Liability</th><th>Default Tax</th><th>Complexity</th></tr></thead><tbody><tr><td>DBA</td><td>Registered name only</td><td>None</td><td>No change</td><td>Simple</td></tr>
 <tr><td>Sole Proprietorship + DBA</td><td>Individual + name registration</td><td>None</td><td>Schedule C</td><td>Simple</td></tr>
 <tr><td>Single-Member LLC</td><td>State legal entity</td><td>Generally yes</td><td>Disregarded entity (Schedule C default)</td><td>Moderate</td></tr>
 <tr><td>Multi-Member LLC</td><td>State legal entity</td><td>Generally yes</td><td>Partnership (Form 1065 default)</td><td>Moderate-High</td></tr>
@@ -549,54 +583,162 @@
 
       <h2 id="faq">Frequently Asked Questions</h2>
       <div class="faq-accordion-wrapper">
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">What is the difference between a DBA and an LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>A DBA is a registered business name. An LLC is a legal business entity. A DBA does not create a separate legal entity or provide liability protection.</p></div>
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">01</span>
+          <span>What is the difference between a DBA and an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>A DBA is a registered business name. An LLC is a legal business entity. A DBA does not create a separate legal entity or provide liability protection.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Do I need an LLC if I have a DBA? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Not necessarily. A DBA is simply a name registration. If you want liability protection and a separate legal entity, you need to form an LLC or another business entity.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">02</span>
+          <span>Do I need an LLC if I have a DBA?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Not necessarily. A DBA is simply a name registration. If you want liability protection and a separate legal entity, you need to form an LLC or another business entity.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can an LLC have a DBA? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Yes. An LLC can register a DBA (doing business as) to operate under a different brand name. The LLC remains the legal entity behind the DBA.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">03</span>
+          <span>Can an LLC have a DBA?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Yes. An LLC can register a DBA (doing business as) to operate under a different brand name. The LLC remains the legal entity behind the DBA.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Does a DBA provide liability protection? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>No. A DBA is a name registration and does not create a separate legal entity or provide limited liability protection.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">04</span>
+          <span>Does a DBA provide liability protection?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>No. A DBA is a name registration and does not create a separate legal entity or provide limited liability protection.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Is a DBA the same as an LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>No. A DBA is a registered business name. An LLC is a legal entity created under state law.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">05</span>
+          <span>Is a DBA the same as an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>No. A DBA is a registered business name. An LLC is a legal entity created under state law.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can I have a DBA without an LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Yes. A sole proprietor, partnership, existing LLC, or corporation can all register a DBA.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">06</span>
+          <span>Can I have a DBA without an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Yes. A sole proprietor, partnership, existing LLC, or corporation can all register a DBA.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">How much does a DBA cost compared to an LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>DBA costs vary by state, county, and city and are generally lower than LLC formation costs. However, DBA costs are jurisdiction-specific and should be verified with the local government. LLC formation fees can range from roughly $35 to $500+ depending on the state.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">07</span>
+          <span>How much does a DBA cost compared to an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>DBA costs vary by state, county, and city and are generally lower than LLC formation costs. However, DBA costs are jurisdiction-specific and should be verified with the local government. LLC formation fees can range from roughly $35 to $500+ depending on the state.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Does a DBA protect my business name? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>A DBA registration provides limited name protection within the jurisdiction. It generally does not provide trademark protection.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">08</span>
+          <span>Does a DBA protect my business name?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>A DBA registration provides limited name protection within the jurisdiction. It generally does not provide trademark protection.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can I use both a DBA and an LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Yes. Many businesses form an LLC and then register a DBA to operate under a different brand name. The LLC provides liability protection while the DBA provides branding flexibility.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">09</span>
+          <span>Can I use both a DBA and an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Yes. Many businesses form an LLC and then register a DBA to operate under a different brand name. The LLC provides liability protection while the DBA provides branding flexibility.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Do I need to pay taxes differently with a DBA? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Not because of the DBA itself. A DBA does not change your tax classification. You are taxed based on your underlying business structure.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">10</span>
+          <span>Do I need to pay taxes differently with a DBA?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Not because of the DBA itself. A DBA does not change your tax classification. You are taxed based on your underlying business structure.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can an LLC operate under multiple DBAs? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Yes, generally. A single LLC may be able to register multiple DBAs and operate multiple brands, depending on state and local rules.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">11</span>
+          <span>Can an LLC operate under multiple DBAs?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Yes, generally. A single LLC may be able to register multiple DBAs and operate multiple brands, depending on state and local rules.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Which is better for a small business, DBA or LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>For liability protection and a formal business entity, an LLC is generally more appropriate. A DBA is useful when you simply want to operate under a different name without creating a new entity.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">12</span>
+          <span>Which is better for a small business, DBA or LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>For liability protection and a formal business entity, an LLC is generally more appropriate. A DBA is useful when you simply want to operate under a different name without creating a new entity.</p>
+      </div>
     </details>
+
       </div>
     </div>
   </main>

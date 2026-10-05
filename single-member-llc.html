@@ -80,35 +80,41 @@
       transition: all 0.2s ease;
       display: inline-block;
     }
-    .styled-table-wrap {
+    .custom-table-wrap {
       background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
       margin: 1.75rem 0;
     }
-    .styled-table {
+    .custom-data-table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.875rem;
     }
-    .styled-table th {
+    .custom-data-table th {
       background: #12304A;
       color: #FFFFFF;
-      padding: 0.95rem 1.15rem;
-      font-size: 0.785rem;
+      font-size: 0.825rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .styled-table td {
-      padding: 0.95rem 1.15rem;
-      border-bottom: 1px solid #E2E8F0;
+    .custom-data-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.925rem;
       color: #334155;
+      border-bottom: 1px solid #E2E8F0;
     }
-    .styled-table tr:last-child td { border-bottom: none; }
-    .styled-table tr:nth-child(even) { background: #F8FAFC; }
+    .custom-data-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-data-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
     .callout-green {
       background: #ECFDF5;
       border: 1.5px solid #10B981;
@@ -137,11 +143,12 @@
       margin: 1.75rem 0;
     }
     .faq-accordion-wrapper {
+      width: 100%;
+      max-width: 100%;
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
       margin-bottom: 2rem;
-      width: 100% !important;
     }
     .faq-accordion-item {
       background: #FFFFFF;
@@ -149,10 +156,16 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
-      transition: border-color 0.25s ease;
-      width: 100% !important;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
     }
-    .faq-accordion-item:hover { border-color: #159A9C; }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
     .faq-accordion-question {
       padding: 1.25rem 1.65rem;
       font-weight: 700;
@@ -166,7 +179,34 @@
       list-style: none;
       font-family: var(--font-heading);
     }
-    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-accordion-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
+    }
     .faq-accordion-answer {
       padding: 0 1.65rem 1.35rem 1.65rem;
       font-size: 0.95rem;
@@ -385,7 +425,7 @@
     <div class="guide-content-container">
 
       <h2 id="key-facts">Single-Member LLC &mdash; 2026 Key Facts</h2>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Key Fact</th><th>2026 Details</th></tr></thead><tbody><tr><td>Owners</td><td>1 member</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Key Fact</th><th>2026 Details</th></tr></thead><tbody><tr><td>Owners</td><td>1 member</td></tr>
 <tr><td>Default federal tax classification</td><td>Disregarded entity</td></tr>
 <tr><td>Typical federal income-tax reporting</td><td>Schedule C with Form 1040</td></tr>
 <tr><td>Self-employment tax</td><td>Generally applies to net earnings from self-employment</td></tr>
@@ -397,7 +437,7 @@
 </tbody></table></div>
 
       <h2 id="vs-sole">Single-Member LLC vs Sole Proprietorship &mdash; Quick Comparison</h2>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Feature</th><th>Sole Proprietorship</th><th>Single-Member LLC</th></tr></thead><tbody><tr><td>Formation</td><td>Generally no state entity filing</td><td>Articles of Organization</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Feature</th><th>Sole Proprietorship</th><th>Single-Member LLC</th></tr></thead><tbody><tr><td>Formation</td><td>Generally no state entity filing</td><td>Articles of Organization</td></tr>
 <tr><td>Liability</td><td>No separate entity</td><td>Can provide limited liability</td></tr>
 <tr><td>Default Tax</td><td>Schedule C</td><td>Disregarded entity (similar to sole prop)</td></tr>
 <tr><td>S-Corp election</td><td>Not available</td><td>Available if eligible</td></tr>
@@ -420,7 +460,7 @@
       </ul>
 
       <h2 id="taxes">How a Single-Member LLC Is Taxed in 2026</h2>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Federal Tax Classification</th><th>Treatment</th></tr></thead><tbody><tr><td>Default &mdash; disregarded entity</td><td>Commonly reported on Schedule C</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Federal Tax Classification</th><th>Treatment</th></tr></thead><tbody><tr><td>Default &mdash; disregarded entity</td><td>Commonly reported on Schedule C</td></tr>
 <tr><td>S-Corp election</td><td>Salary + business distributions under S-corp rules</td></tr>
 <tr><td>C-Corp election</td><td>Corporation-level federal income tax treatment</td></tr>
 <tr><td>Self-employment tax</td><td>Generally applies to net earnings from self-employment</td></tr>
@@ -432,7 +472,7 @@
       <p>Under the default federal classification, a single-member LLC does not pay federal income tax at the entity level. Instead, the owner's business income and expenses are generally reported on the owner's individual return, commonly Schedule C, with self-employment tax generally calculated on Schedule SE. The self-employment tax rate is generally 15.3%, but the calculation uses 92.35% of net profit. For 2026, the Social Security wage base is $184,500.</p>
 
       <h3>2026 Key Tax Deadlines for Single-Member LLCs</h3>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Filing / Action</th><th>Form</th><th>2026 Deadline</th><th>Notes</th></tr></thead><tbody><tr><td>Individual federal return</td><td>Form 1040</td><td>April 15, 2026</td><td>Extension moves filing to October 15</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Filing / Action</th><th>Form</th><th>2026 Deadline</th><th>Notes</th></tr></thead><tbody><tr><td>Individual federal return</td><td>Form 1040</td><td>April 15, 2026</td><td>Extension moves filing to October 15</td></tr>
 <tr><td>S-Corp election for 2026</td><td>Form 2553</td><td>March 16, 2026</td><td>March 15 falls on Sunday</td></tr>
 <tr><td>C-Corp election</td><td>Form 8832</td><td>Depends on desired effective date</td><td>IRS election timing rules apply</td></tr>
 <tr><td>Q1 estimated tax</td><td>Form 1040-ES</td><td>April 15, 2026</td><td>When estimated-tax requirements met</td></tr>
@@ -442,7 +482,7 @@
 </tbody></table></div>
 
       <h3>Top Tax Deductions to Review in 2026</h3>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Deduction / Provision</th><th>2026 Details</th></tr></thead><tbody><tr><td>Business mileage</td><td>72.5&cent; Jan&ndash;Jun / 76&cent; Jul&ndash;Dec</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Deduction / Provision</th><th>2026 Details</th></tr></thead><tbody><tr><td>Business mileage</td><td>72.5&cent; Jan&ndash;Jun / 76&cent; Jul&ndash;Dec</td></tr>
 <tr><td>Home office deduction</td><td>Qualifying home office under IRS rules (regular or simplified method)</td></tr>
 <tr><td>Depreciation and Section 179</td><td>Qualifying business equipment; check 2026 bonus-depreciation rules</td></tr>
 <tr><td>QBI deduction</td><td>Up to 20% of qualified business income, subject to income thresholds and rules</td></tr>
@@ -468,7 +508,7 @@
       </div>
 
       <h3>Formation Cost by State &mdash; Quick Reference</h3>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>State</th><th>Example Formation Fee</th><th>Ongoing State Cost</th><th>Important Note</th></tr></thead><tbody><tr><td>Kentucky</td><td>$40</td><td>Annual report fee applies</td><td>Verify current fee</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>State</th><th>Example Formation Fee</th><th>Ongoing State Cost</th><th>Important Note</th></tr></thead><tbody><tr><td>Kentucky</td><td>$40</td><td>Annual report fee applies</td><td>Verify current fee</td></tr>
 <tr><td>New Mexico</td><td>$50</td><td>No regular annual report fee</td><td>Other taxes may still apply</td></tr>
 <tr><td>Missouri</td><td>$50</td><td>No regular annual report fee</td><td>Verify current state requirements</td></tr>
 <tr><td>Colorado</td><td>$50</td><td>Periodic report fee applies</td><td>Filing requirements differ from annual-fee assumptions</td></tr>
@@ -479,7 +519,7 @@
       <p>For a broader discussion of formation and ongoing costs, see <a href="how-much-does-an-llc-cost.html">how much an LLC costs</a>.</p>
 
       <h2 id="vs-multi">Single-Member vs Multi-Member LLC</h2>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Feature</th><th>Single-Member LLC</th><th>Multi-Member LLC</th></tr></thead><tbody><tr><td>Owners</td><td>1</td><td>2 or more</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>Feature</th><th>Single-Member LLC</th><th>Multi-Member LLC</th></tr></thead><tbody><tr><td>Owners</td><td>1</td><td>2 or more</td></tr>
 <tr><td>IRS default</td><td>Disregarded entity</td><td>Partnership</td></tr>
 <tr><td>Federal return</td><td>Generally on owner's return</td><td>Form 1065</td></tr>
 <tr><td>K-1 issued</td><td>No under default</td><td>Yes &mdash; one per member</td></tr>
@@ -504,7 +544,7 @@
       </ul>
 
       <h2 id="mistakes">5 Mistakes That Can Put Your Single-Member LLC Protection at Risk</h2>
-      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>#</th><th>Mistake</th><th>Potential Problem</th><th>Better Practice</th></tr></thead><tbody><tr><td>1</td><td>Commingling personal and business funds</td><td>Makes financial separation harder to demonstrate</td><td>Use dedicated business banking and bookkeeping</td></tr>
+      <div class="custom-table-wrap"><table class="custom-data-table"><thead><tr><th>#</th><th>Mistake</th><th>Potential Problem</th><th>Better Practice</th></tr></thead><tbody><tr><td>1</td><td>Commingling personal and business funds</td><td>Makes financial separation harder to demonstrate</td><td>Use dedicated business banking and bookkeeping</td></tr>
 <tr><td>2</td><td>Ignoring the operating agreement</td><td>Leaves ownership and management procedures undocumented</td><td>Maintain an appropriate written agreement</td></tr>
 <tr><td>3</td><td>Missing state filings</td><td>Can result in penalties, loss of good standing, or administrative dissolution</td><td>Track all state deadlines</td></tr>
 <tr><td>4</td><td>Signing personally when LLC should be contracting party</td><td>May create personal contractual liability</td><td>Sign in LLC's proper legal capacity</td></tr>
@@ -532,46 +572,136 @@
 
       <h2 id="faq">Frequently Asked Questions &mdash; Single-Member LLC</h2>
       <div class="faq-accordion-wrapper">
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Does a single-member LLC need to file a separate federal income-tax return? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Usually not under the default federal classification. A domestic single-member LLC is generally treated as a disregarded entity, so an individual owner commonly reports the business activity on Schedule C with Form 1040. However, other federal filings may apply depending on the business. If the LLC elects S-corporation or C-corporation taxation, separate entity-level federal returns generally become applicable.</p></div>
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">01</span>
+          <span>Does a single-member LLC need to file a separate federal income-tax return?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Usually not under the default federal classification. A domestic single-member LLC is generally treated as a disregarded entity, so an individual owner commonly reports the business activity on Schedule C with Form 1040. However, other federal filings may apply depending on the business. If the LLC elects S-corporation or C-corporation taxation, separate entity-level federal returns generally become applicable.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">What is the self-employment tax rate for a single-member LLC in 2026? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>The general self-employment tax rate is 15.3%, consisting of Social Security and Medicare taxes. The calculation generally applies to 92.35% of net earnings from self-employment, subject to the applicable Social Security wage base and other rules. For 2026, the Social Security wage base is $184,500. Additional Medicare tax can apply to certain higher-income taxpayers.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">02</span>
+          <span>What is the self-employment tax rate for a single-member LLC in 2026?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>The general self-employment tax rate is 15.3%, consisting of Social Security and Medicare taxes. The calculation generally applies to 92.35% of net earnings from self-employment, subject to the applicable Social Security wage base and other rules. For 2026, the Social Security wage base is $184,500. Additional Medicare tax can apply to certain higher-income taxpayers.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Is a single-member LLC the same as a sole proprietorship for taxes? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Not exactly, although a default-taxed single-member LLC can have similar federal income-tax reporting. Both can commonly use Schedule C when owned by an individual, but the LLC is a state-law entity that can provide limited liability and can generally elect corporate tax treatment if eligible.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">03</span>
+          <span>Is a single-member LLC the same as a sole proprietorship for taxes?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Not exactly, although a default-taxed single-member LLC can have similar federal income-tax reporting. Both can commonly use Schedule C when owned by an individual, but the LLC is a state-law entity that can provide limited liability and can generally elect corporate tax treatment if eligible.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Do I need an EIN for a single-member LLC with no employees? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Not always. A single-member LLC without employees may, in certain circumstances, use the owner's Social Security number for federal income-tax purposes. However, obtaining an EIN is often useful for banking, vendors, state registrations, hiring employees, and future tax elections. An EIN is free from the IRS.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">04</span>
+          <span>Do I need an EIN for a single-member LLC with no employees?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Not always. A single-member LLC without employees may, in certain circumstances, use the owner's Social Security number for federal income-tax purposes. However, obtaining an EIN is often useful for banking, vendors, state registrations, hiring employees, and future tax elections. An EIN is free from the IRS.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can a single-member LLC elect S-corp taxation? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Yes, if it meets the applicable eligibility requirements. The LLC generally files Form 2553 to elect S-corporation status. The LLC remains an LLC under state law; the election changes its federal tax treatment.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">05</span>
+          <span>Can a single-member LLC elect S-corp taxation?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Yes, if it meets the applicable eligibility requirements. The LLC generally files Form 2553 to elect S-corporation status. The LLC remains an LLC under state law; the election changes its federal tax treatment.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can I convert a sole proprietorship to a single-member LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Generally, yes. A common approach is to form the LLC with the state, obtain any necessary EIN and registrations, open business banking, update contracts and licenses, and move the business activity into the LLC. Some states provide specific statutory conversion procedures, while others may require forming a new LLC and transferring the business.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">06</span>
+          <span>Can I convert a sole proprietorship to a single-member LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Generally, yes. A common approach is to form the LLC with the state, obtain any necessary EIN and registrations, open business banking, update contracts and licenses, and move the business activity into the LLC. Some states provide specific statutory conversion procedures, while others may require forming a new LLC and transferring the business.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can a single-member LLC have employees? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Yes. An LLC can hire employees regardless of whether it has one or multiple members. Once you become an employer, federal and state employment-tax, payroll, wage, workers' compensation, and reporting requirements may apply. An EIN is generally required for an employer.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">07</span>
+          <span>Can a single-member LLC have employees?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Yes. An LLC can hire employees regardless of whether it has one or multiple members. Once you become an employer, federal and state employment-tax, payroll, wage, workers' compensation, and reporting requirements may apply. An EIN is generally required for an employer.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">How do I pay myself from a single-member LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Under the default tax classification, an individual owner commonly takes money through an owner's draw rather than treating the payment as a W-2 salary. The owner's federal tax liability is generally based on the business's taxable profit rather than simply the amount withdrawn. If the LLC elects S-corporation taxation, the owner generally needs to follow S-corp payroll and reasonable-compensation rules.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">08</span>
+          <span>How do I pay myself from a single-member LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Under the default tax classification, an individual owner commonly takes money through an owner's draw rather than treating the payment as a W-2 salary. The owner's federal tax liability is generally based on the business's taxable profit rather than simply the amount withdrawn. If the LLC elects S-corporation taxation, the owner generally needs to follow S-corp payroll and reasonable-compensation rules.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">Can a married couple form a single-member LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>Possibly for federal tax purposes in certain circumstances in community-property states. The IRS has special rules for spouses who jointly own an LLC in community-property states: Arizona, California, Idaho, Louisiana, Nevada, New Mexico, Texas, Washington, and Wisconsin. Eligibility depends on the ownership arrangement, state law, and applicable IRS requirements.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">09</span>
+          <span>Can a married couple form a single-member LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>Possibly for federal tax purposes in certain circumstances in community-property states. The IRS has special rules for spouses who jointly own an LLC in community-property states: Arizona, California, Idaho, Louisiana, Nevada, New Mexico, Texas, Washington, and Wisconsin. Eligibility depends on the ownership arrangement, state law, and applicable IRS requirements.</p>
+      </div>
     </details>
-    <details class="faq-accordion-item">
-      <summary class="faq-accordion-question">What happens if I miss my state's annual report deadline? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-accordion-answer"><p>The consequences depend on the state. A missed filing can result in late fees, loss of good standing, administrative dissolution, or other penalties. Some states provide reinstatement procedures. Administrative dissolution can affect the LLC's legal status and should be addressed promptly.</p></div>
+
+        <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">10</span>
+          <span>What happens if I miss my state's annual report deadline?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer">
+        <p>The consequences depend on the state. A missed filing can result in late fees, loss of good standing, administrative dissolution, or other penalties. Some states provide reinstatement procedures. Administrative dissolution can affect the LLC's legal status and should be addressed promptly.</p>
+      </div>
     </details>
+
       </div>
     </div>
   </main>
