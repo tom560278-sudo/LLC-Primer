@@ -245,7 +245,6 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
   border-collapse: collapse;
   border-radius: 14px;
   overflow: hidden;
-  border: 1.5px solid #E2E8F0;
   box-shadow: 0 4px 16px rgba(18, 48, 74, 0.05);
   background: #FFFFFF;
 }
