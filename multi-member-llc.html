@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>Multi-Member LLC: How It Works in 2026 | LLC Primer</title>
+  <meta name="description" content="Complete guide to multi-member LLCs in 2026. Understand partnership taxation, Form 1065, K-1 reporting, operating agreements, profit splits, S-corp election, and late-filing penalties.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 0.05rem 1.5rem;
+      width: 100%;
+    }
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article ul {
+      padding-left: 1.65rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+    .guide-article ul li {
+      margin-bottom: 0.65rem !important;
+      line-height: 1.7 !important;
+      color: #334155 !important;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover { color: #0E7490; }
+    .review-check-banner {
+      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      color: #F8FAFC;
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(18, 48, 74, 0.22);
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
+    }
+    .review-check-banner a {
+      color: #94def3;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(110, 231, 183, 0.25);
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .styled-table-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
+      margin: 1.75rem 0;
+    }
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    .styled-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 0.95rem 1.15rem;
+      font-size: 0.785rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .styled-table td {
+      padding: 0.95rem 1.15rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .styled-table tr:last-child td { border-bottom: none; }
+    .styled-table tr:nth-child(even) { background: #F8FAFC; }
+    .callout-green {
+      background: #ECFDF5;
+      border: 1.5px solid #10B981;
+      border-left: 5px solid #059669;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #065F46;
+      margin: 1.75rem 0;
+    }
+    .callout-yellow {
+      background: #FFFBEB;
+      border: 1.5px solid #F59E0B;
+      border-left: 5px solid #D97706;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #78350F;
+      margin: 1.75rem 0;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #0284C7;
+      border-left: 5px solid #0369A1;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #0C4A6E;
+      margin: 1.75rem 0;
+    }
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+      width: 100% !important;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease;
+      width: 100% !important;
+    }
+    .faq-accordion-item:hover { border-color: #159A9C; }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
+    .key-numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .key-number-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-align: center;
+    }
+    .key-number-card .kn-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #159A9C;
+      font-family: var(--font-heading);
+    }
+    .key-number-card .kn-label {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-top: 0.3rem;
+    }
+    .toc-card-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .toc-card-box h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+    .toc-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem 2rem;
+      font-size: 0.9rem;
+    }
+    .toc-links-grid a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .continue-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .continue-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-decoration: none !important;
+      display: block;
+    }
+    .continue-card:hover { border-color: #159A9C; }
+    .continue-card .cc-title {
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: #12304A;
+    }
+    .continue-card .cc-sub {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-top: 0.25rem;
+    }
+    .nw-promo-box {
+      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      color: #FFFFFF;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nw-promo-box .nw-text { flex: 1; min-width: 200px; }
+    .nw-promo-box .nw-btn {
+      background: #FFFFFF;
+      color: #0d2336;
+      font-weight: 800;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .key-numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .toc-links-grid { grid-template-columns: 1fr; }
+      .continue-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">Start an LLC</a>
+        </div>
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="tools.html" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
+            <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
+            <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
+            <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
+            <a href="llc-annual-report-tracker.html" class="dropdown-link">Annual Report Tracker</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="non-resident-llc-guide.html" class="nav-link">
+            Non-Residents
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="best-state-for-non-us-residents.html" class="dropdown-link">Best State</a>
+            <a href="ein-guide-for-non-residents.html" class="dropdown-link">EIN Guide</a>
+            <a href="llc-cost-for-non-residents.html" class="dropdown-link">LLC Cost</a>
+            <a href="bank-account-for-non-residents.html" class="dropdown-link">Bank Account</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan &rarr;
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section style="background:white;padding:1.5rem 0 0 0;">
+    <div class="guide-content-container">
+      <div style="font-size:0.85rem;color:#64748B;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;"><a href="index.html" style="color:#64748B;text-decoration:none;font-weight:500;">Home</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a><span style="color:#CBD5E1;">/</span><span style="color:#12304A;font-weight:700;">Multi-Member LLC</span></div>
+      <div class="review-check-banner">
+  <div style="position:relative;z-index:2;">
+    <div style="font-size:0.75rem;font-weight:800;color:#F59E0B;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">LAST REVIEWED &middot; OCTOBER 2026</div>
+    <div style="color:#E2E8F0;font-size:0.875rem;">Official source: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/limited-liability-company-llc" target="_blank" rel="noopener">IRS guidance on limited liability companies</a> provides the primary federal tax guidance used in this guide.</div>
+  </div>
+</div>
+      <h1 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:900;color:#12304A;line-height:1.2;margin-bottom:1.25rem;">Multi-Member LLC: How It Works in 2026</h1>
+      <p>A multi-member LLC is a limited liability company with two or more owners, known as members. It is commonly used by business partners, co-founders, family businesses, real-estate ventures, and other businesses with multiple owners who want a flexible legal structure.</p>
+      <p>By default, a domestic LLC with two or more members is generally classified by the IRS as a partnership for federal income tax purposes unless it elects to be treated as a corporation. Under the default partnership classification, the LLC generally files Form 1065, U.S. Return of Partnership Income, and provides a Schedule K-1 to each member reporting that member's share of partnership items.</p>
+
+      <div class="toc-card-box">
+        <h3>What You'll Learn</h3>
+        <div class="toc-links-grid">
+          <a href="#what-is">What Is a Multi-Member LLC</a>
+          <a href="#taxes">How a Multi-Member LLC Is Taxed</a>
+          <a href="#k1">How Does a Multi-Member LLC K-1 Work?</a>
+          <a href="#operating">Operating Agreement: Why It Matters</a>
+          <a href="#how-to-form">How to Form One &mdash; Step by Step</a>
+          <a href="#distributions">Profit Distribution and Guaranteed Payments</a>
+          <a href="#costs">Costs and Annual Compliance</a>
+          <a href="#mistakes">5 Costly Mistakes Multi-Member LLCs Make</a>
+          <a href="#faq">Frequently Asked Questions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-article" style="padding:2rem 0 4rem 0;">
+    <div class="guide-content-container">
+
+      <h2 id="key-facts">Multi-Member LLC &mdash; 2026 Key Facts</h2>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Key Fact</th><th>2026 Details</th></tr></thead><tbody><tr><td>IRS Default Classification</td><td>Partnership</td></tr>
+<tr><td>Federal Information Return</td><td>Form 1065</td></tr>
+<tr><td>2025 Calendar-Year Return Due 2026</td><td>March 16, 2026 (March 15 falls on Sunday)</td></tr>
+<tr><td>Late Form 1065 Penalty</td><td>$255 per partner per month, up to 12 months</td></tr>
+<tr><td>Members Allowed</td><td>No federal income-tax membership cap under default partnership classification</td></tr>
+<tr><td>Self-Employment Tax</td><td>Depends on member's status, activities, and applicable partnership tax rules</td></tr>
+</tbody></table></div>
+
+      <h2 id="vs-single">Multi-Member LLC vs Single-Member LLC at a Glance</h2>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Feature</th><th>Single-Member LLC</th><th>Multi-Member LLC</th></tr></thead><tbody><tr><td>Owners</td><td>1</td><td>2 or more</td></tr>
+<tr><td>IRS default</td><td>Disregarded entity</td><td>Partnership</td></tr>
+<tr><td>Federal return</td><td>Generally reported on owner's return</td><td>Form 1065</td></tr>
+<tr><td>K-1 issued</td><td>No under default</td><td>Yes &mdash; one per member</td></tr>
+<tr><td>2025 return due 2026</td><td>N/A</td><td>March 16, 2026</td></tr>
+<tr><td>Complexity</td><td>Generally lower</td><td>Generally higher</td></tr>
+</tbody></table></div>
+
+      <h2 id="what-is">What Is a Multi-Member LLC</h2>
+      <p>A multi-member LLC is an LLC with two or more owners, called members. Under state law, the LLC is generally a separate legal entity from its members. The LLC can own property, enter contracts, conduct business, and be involved in legal proceedings in its own name. The LLC structure can provide limited liability to its members, but that protection is not absolute. Personal guarantees, a member's own wrongful conduct, certain tax obligations, and failures to observe applicable legal requirements can create personal exposure. For a broader overview, see <a href="what-is-an-llc.html">what an LLC is</a>.</p>
+
+      <h3>Who Can Be a Member</h3>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Who Can Be a Member</th><th>Notes</th></tr></thead><tbody><tr><td>U.S. individuals</td><td>Generally can hold membership interests</td></tr>
+<tr><td>Foreign nationals / non-U.S. persons</td><td>Generally possible; additional tax reporting and withholding rules may apply</td></tr>
+<tr><td>Other LLCs or partnerships</td><td>Generally possible, subject to applicable law</td></tr>
+<tr><td>Corporations</td><td>Generally can hold an interest in an LLC</td></tr>
+<tr><td>Certain trusts and estates</td><td>May hold interests depending on circumstances and applicable law</td></tr>
+</tbody></table></div>
+      <div class="callout-yellow"><strong>S-Corp Eligibility Restriction:</strong> Different rules apply if the LLC elects S corporation taxation. S corporation eligibility is more restrictive: generally no more than 100 shareholders, no partnerships or corporations as shareholders, generally no nonresident-alien shareholders, and must satisfy other requirements. Certain trusts, estates, and tax-exempt organizations can qualify under specific rules.</div>
+
+      <h2 id="taxes">How a Multi-Member LLC Is Taxed in 2026</h2>
+      <h3>Step 1: LLC Files Form 1065</h3>
+      <p>Under the default partnership classification, the LLC generally files Form 1065, U.S. Return of Partnership Income. For a calendar-year partnership, the normal federal deadline is March 15. For the 2025 tax year, March 15, 2026 falls on a Sunday, so the return is timely if filed by Monday, March 16, 2026. Form 1065 is generally an information return &mdash; the partnership normally does not pay federal income tax on ordinary partnership income at the entity level.</p>
+
+      <h3>Step 2: LLC Issues Schedule K-1 to Each Member</h3>
+      <p>Each member generally receives a Schedule K-1 (Form 1065) reporting that member's share of partnership income, deductions, credits, and other relevant tax items. The K-1 is an important part of the member's personal tax reporting, but not every amount shown on a K-1 is automatically subject to the same tax treatment.</p>
+
+      <h3>Step 3: Each Member Reports Partnership Items on Their Own Return</h3>
+      <p>Ordinary business income commonly flows through to Schedule E, Part II for an individual partner, while separately stated items can have different reporting requirements. It is not accurate to assume that every member's entire K-1 amount is automatically subject to a flat 15.3% self-employment tax.</p>
+
+      <h2 id="k1">How Does a Multi-Member LLC K-1 Work?</h2>
+      <p>The complete flow: Form 1065 is filed &rarr; Schedule K-1 prepared for each member &rarr; Members use K-1 info on their own tax returns &rarr; Self-employment and estimated-tax rules considered separately.</p>
+      <div class="callout-blue"><strong>Important:</strong> A K-1 is not itself a tax bill. It is an information statement used to determine what the member reports and how particular items are treated.</div>
+
+      <h2 id="operating">Operating Agreement: Why It Matters</h2>
+      <p>In a multi-member LLC, the <a href="operating-agreement.html">operating agreement</a> is one of the most important governing documents. Without a comprehensive agreement, the LLC may instead be governed partly by the state's default LLC rules, which vary significantly by state.</p>
+
+      <h3>Essential Clauses to Include</h3>
+      <ul>
+        <li>Ownership percentages and capital contributions</li>
+        <li>Profit and loss allocation rules</li>
+        <li>Capital accounts and tax provisions</li>
+        <li>Tax distribution provisions</li>
+        <li>Management structure: member-managed or manager-managed</li>
+        <li>Voting rights and decision thresholds</li>
+        <li>Buyout and exit provisions</li>
+        <li>Transfer restrictions</li>
+      </ul>
+      <div class="callout-yellow"><strong>Special Allocations Require Care:</strong> Partnership tax rules under IRC &sect;704(b) can permit special allocations when applicable requirements are satisfied. Not every allocation written into an operating agreement will automatically be respected for federal tax purposes. Special allocations should be reviewed by a qualified tax professional.</div>
+
+      <h2 id="how-to-form">How to Form a Multi-Member LLC &mdash; Step by Step</h2>
+      <div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><div><strong style="color:#12304A;">Choose and verify your business name</strong><p style="margin:0.4rem 0 0 0;color:#334155;">Choose a name that satisfies your state's LLC naming requirements and is distinguishable from existing entities when required by state law. Search the appropriate Secretary of State database before filing.</p></div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><div><strong style="color:#12304A;">Appoint a registered agent</strong><p style="margin:0.4rem 0 0 0;color:#334155;">Most states require an LLC to designate a <a href="registered-agent-guide.html">registered agent</a> with an address in the state where the LLC is formed.</p></div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><div><strong style="color:#12304A;">File Articles of Organization</strong><p style="margin:0.4rem 0 0 0;color:#334155;">Submit the required formation document to the appropriate state agency. State filing fees generally range from roughly $35 to $500. See our <a href="start-llc.html">how to start an LLC guide</a> for state-specific instructions.</p></div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div><div><strong style="color:#12304A;">Draft and sign the operating agreement</strong><p style="margin:0.4rem 0 0 0;color:#334155;">Create an <a href="operating-agreement.html">operating agreement</a> that reflects the members' actual agreement on ownership, capital contributions, management, voting, profit and loss allocations, distributions, transfers, member departures, and dissolution.</p></div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div><div><strong style="color:#12304A;">Get your EIN from the IRS</strong><p style="margin:0.4rem 0 0 0;color:#334155;">A multi-member LLC classified as a partnership generally needs an Employer Identification Number (EIN) for federal tax administration. See our <a href="ein-guide.html">EIN guide</a> for the application process.</p></div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">6</div><div><strong style="color:#12304A;">Open a dedicated business bank account</strong><p style="margin:0.4rem 0 0 0;color:#334155;">Open a <a href="best-business-bank-accounts.html">business bank account</a> in the LLC's name and keep business transactions separate from members' personal finances.</p></div></div>
+      </div>
+
+      <h2 id="distributions">Profit Distribution and Guaranteed Payments</h2>
+      <p>Under partnership taxation, distributions and guaranteed payments are different concepts and have different tax treatment. Do not simply treat LLC payments as wages.</p>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Payment Type</th><th>Distributions</th><th>Guaranteed Payments</th></tr></thead><tbody><tr><td>Purpose</td><td>Transfer of partnership cash or property to partner</td><td>Payments determined without regard to partnership income (e.g., for services or use of capital)</td></tr>
+<tr><td>Generally deductible by LLC</td><td>No</td><td>Generally yes, subject to partnership tax rules</td></tr>
+<tr><td>K-1 reporting</td><td>Reflected through capital/distribution info</td><td>Generally separately reported where required</td></tr>
+<tr><td>W-2 issued</td><td>No</td><td>No under default partnership taxation</td></tr>
+</tbody></table></div>
+
+      <h2 id="costs">Multi-Member LLC Costs and Annual Compliance</h2>
+      <p>A multi-member LLC can have higher accounting and tax-preparation costs than a single-member LLC because the default partnership classification generally requires a separate Form 1065 and K-1 reporting. For current state-by-state costs, see our <a href="how-much-does-an-llc-cost.html">LLC cost guide</a>.</p>
+
+      <h3>Annual Compliance Calendar &mdash; Multi-Member LLC</h3>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Deadline</th><th>Typical Action</th><th>Important Note</th></tr></thead><tbody><tr><td>March 16, 2026</td><td>File 2025 Form 1065</td><td>Calendar-year partnership deadline moved from Sunday March 15</td></tr>
+<tr><td>March 16, 2026</td><td>Furnish 2025 Schedule K-1 information</td><td>K-1 information needed for members' tax reporting</td></tr>
+<tr><td>March 16, 2026</td><td>Form 2553 if making timely 2026 S-corp election</td><td>Eligibility and election rules apply</td></tr>
+<tr><td>April 15, 2026</td><td>Individual federal income-tax return</td><td>Individual members have separate filing obligations</td></tr>
+<tr><td>June 15, 2026</td><td>Individual estimated-tax payment, if applicable</td><td>Individual due dates can differ from partnership's filing date</td></tr>
+<tr><td>September 15, 2026</td><td>Extended Form 1065 deadline if valid extension filed</td><td>Extension generally extends filing time, not tax-payment obligations</td></tr>
+<tr><td>January 15, 2027</td><td>Individual estimated-tax payment, if applicable</td><td>Applies where required</td></tr>
+</tbody></table></div>
+
+      <p>Use the <a href="llc-annual-report-tracker.html">LLC Annual Report Tracker</a> to track your state's annual report deadlines and filing requirements.</p>
+
+      <h2 id="mistakes">5 Costly Mistakes Multi-Member LLCs Make</h2>
+      <p>The federal penalty for a late Form 1065 is $255 for each month or part of a month, multiplied by the number of persons who were partners during the tax year, for up to 12 months, subject to applicable exceptions and reasonable-cause rules.</p>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Members</th><th>1 Month Late</th><th>3 Months Late</th><th>6 Months Late</th><th>12 Months Late (Max Period)</th></tr></thead><tbody><tr><td>2 members</td><td>$510</td><td>$1,530</td><td>$3,060</td><td>$6,120</td></tr>
+<tr><td>3 members</td><td>$765</td><td>$2,295</td><td>$4,590</td><td>$9,180</td></tr>
+<tr><td>5 members</td><td>$1,275</td><td>$3,825</td><td>$7,650</td><td>$15,300</td></tr>
+<tr><td>10 members</td><td>$2,550</td><td>$7,650</td><td>$15,300</td><td>$30,600</td></tr>
+</tbody></table></div>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>#</th><th>Mistake</th><th>Potential Consequence</th><th>Better Practice</th></tr></thead><tbody><tr><td>1</td><td>Filing Form 1065 late</td><td>Potential $255-per-partner-per-month penalty</td><td>File on time or request an extension when appropriate</td></tr>
+<tr><td>2</td><td>No written operating agreement</td><td>State default rules may apply when members' agreement is not documented</td><td>Put ownership, voting, allocations, transfers, and exits in writing</td></tr>
+<tr><td>3</td><td>Issuing W-2s to members under default partnership taxation</td><td>Incorrect employment-tax and income-tax reporting</td><td>Members of a partnership generally are not employees</td></tr>
+<tr><td>4</td><td>Ignoring estimated taxes</td><td>Members may owe interest or underpayment penalties</td><td>Each member should evaluate federal and state estimated-tax obligations</td></tr>
+<tr><td>5</td><td>Commingling personal and business funds</td><td>Can weaken evidence that business is operated separately</td><td>Maintain separate business accounts and accurate records</td></tr>
+</tbody></table></div>
+
+      <h2 id="s-corp">S Corp Election for Multi-Member LLCs</h2>
+      <p>A multi-member LLC can potentially elect S corporation tax treatment if it satisfies the applicable eligibility requirements. An S corporation is a federal tax status, not a separate state-law entity type. An LLC can remain an LLC under state law while being taxed federally as an S corporation. For the 2026 calendar year, the normal Form 2553 deadline was March 16, 2026 (because March 15 is a Sunday). For more information, see our <a href="llc-vs-scorp.html">LLC vs S Corp guide</a> and <a href="llc-startup-cost-estimator.html">LLC vs. S-Corp Tax Calculator</a>.</p>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Requirement</th><th>Default Partnership</th><th>S-Corp Election</th></tr></thead><tbody><tr><td>Maximum shareholders for federal S status</td><td>No comparable 100-shareholder limit</td><td>100 shareholders maximum</td></tr>
+<tr><td>Nonresident-alien owners</td><td>Generally possible with additional rules</td><td>Generally not permitted</td></tr>
+<tr><td>Corporate shareholders</td><td>Generally possible</td><td>Generally not permitted</td></tr>
+<tr><td>Partnership/LLC shareholders</td><td>Generally possible</td><td>Generally not permitted</td></tr>
+<tr><td>W-2 for owner-employees</td><td>Partners generally are not employees</td><td>Required for shareholder-employees performing services</td></tr>
+<tr><td>Federal information return</td><td>Form 1065</td><td>Form 1120-S</td></tr>
+<tr><td>One class of stock</td><td>Not applicable</td><td>Required</td></tr>
+</tbody></table></div>
+
+      <div class="nw-promo-box">
+  <div class="nw-text">
+    <div style="font-size:0.75rem;font-weight:800;color:#F59E0B;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;">FEATURED FORMATION SERVICE</div>
+    <div style="font-size:1.1rem;font-weight:800;margin-bottom:0.4rem;">Northwest Registered Agent</div>
+    <div style="font-size:0.875rem;color:#CBD5E1;">LLC formation from $39 + state fee &middot; Registered agent included first year &middot; Renewal $125/year</div>
+  </div>
+  <a href="northwest-registered-agent-review.html" class="nw-btn">See Full Review &rarr;</a>
+</div>
+
+      <h2 id="continue">Continue Building Your LLC</h2>
+      <div class="continue-grid">
+  <a href="llc-vs-scorp.html" class="continue-card"><div class="cc-title">LLC vs S-Corp</div><div class="cc-sub">Tax classification compared</div></a>
+  <a href="how-are-llcs-taxed.html" class="continue-card"><div class="cc-title">LLC Tax Benefits</div><div class="cc-sub">QBI, deductions &amp; planning basics</div></a>
+  <a href="single-member-llc.html" class="continue-card"><div class="cc-title">Single-Member LLC</div><div class="cc-sub">Compare the single-owner structure</div></a>
+  <a href="llc-annual-report-tracker.html" class="continue-card"><div class="cc-title">Annual Report Deadlines</div><div class="cc-sub">Keep up with state compliance</div></a>
+  <a href="best-llc-formation-services.html" class="continue-card"><div class="cc-title">Best LLC Formation Services</div><div class="cc-sub">Compare formation-service options</div></a>
+  <a href="operating-agreement.html" class="continue-card"><div class="cc-title">Operating Agreement</div><div class="cc-sub">Document ownership, management &amp; member rights</div></a>
+</div>
+
+      <h2 id="faq">Frequently Asked Questions &mdash; Multi-Member LLC</h2>
+      <div class="faq-accordion-wrapper">
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Does a multi-member LLC need to file a separate tax return? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Generally, yes. A domestic multi-member LLC classified as a partnership generally files Form 1065, U.S. Return of Partnership Income. The return is generally an information return rather than a federal income-tax payment by the partnership itself. Partnership income and other tax items generally pass through to the members. An LLC can elect a different federal tax classification, so the exact filing requirement depends on the entity's tax status.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">What is the penalty for filing Form 1065 late? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>For returns subject to the current rate, the IRS instructions state a penalty of $255 for each month or part of a month, multiplied by the number of persons who were partners during the tax year, for up to 12 months. Reasonable-cause exceptions may apply. For a calendar-year partnership's 2025 return filed in 2026, the normal March 15 deadline moves to March 16 because March 15, 2026 is a Sunday.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Do all multi-member LLC owners pay self-employment tax? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Not necessarily on every dollar of partnership income. Self-employment-tax treatment depends on the partner's status, activities, and the nature of the partnership income. The rules can be particularly complex for members who claim limited-partner treatment or who have different levels of participation in the business. Do not estimate liability solely by multiplying total K-1 income by 15.3%.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can a multi-member LLC member receive a W-2? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Under default partnership taxation, members of the partnership generally are not employees of the partnership for federal employment-tax purposes and generally do not receive W-2 wages for their ownership income. If the LLC elects S corporation taxation, the federal employment-tax rules are different. Shareholder-employees who perform services generally need reasonable compensation through payroll.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">How are profits split in a multi-member LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>The answer depends on the operating agreement, applicable state law, and federal partnership-tax rules. Members can establish agreed economic arrangements, but special tax allocations must satisfy applicable federal tax requirements. An operating agreement should therefore be drafted with both business and tax consequences in mind.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can a corporation or another LLC be a member? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Generally, yes, when the LLC is taxed as a partnership and applicable state law permits the ownership structure. However, an S corporation election has substantially narrower ownership rules. Partnerships, corporations, and nonresident-alien shareholders generally cannot own S corporation stock.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">What happens if a member wants to leave the LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>The answer depends on the operating agreement and the LLC's state law. A well-drafted agreement can establish procedures for voluntary withdrawal, buyouts, transfers, death, disability, disputes, and valuation. Without clear provisions, the state's default rules may control and may produce results the members did not anticipate. There is no universal rule that a departing member automatically causes the LLC to dissolve.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can a husband and wife own a multi-member LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Yes. In certain circumstances, a married couple who jointly owns an LLC in a community-property state may be eligible for special federal tax treatment under the IRS's rules. The nine community-property states generally recognized are Arizona, California, Idaho, Louisiana, Nevada, New Mexico, Texas, Washington, and Wisconsin. Do not assume that every husband-and-wife LLC can simply file Schedule C instead of Form 1065.</p></div>
+    </details>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p class="footer-tagline">
+            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Popular States</h4>
+          <ul class="footer-links">
+            <li><a href="best-state-to-form-an-llc.html">Wyoming LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Delaware LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Florida LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Texas LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">California LLC Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Free Calculators</h4>
+          <ul class="footer-links">
+            <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
+            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Post-Formation</h4>
+          <ul class="footer-links">
+            <li><a href="business-setup.html">Post-LLC Setup</a></li>
+            <li><a href="ein-guide.html">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </p>
+        <div class="footer-copyright">
+          &copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">&#x2715;</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees &amp; Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

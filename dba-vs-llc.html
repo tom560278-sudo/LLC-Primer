@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>DBA vs LLC (2026): Full Comparison | LLC Primer</title>
+  <meta name="description" content="Compare DBA vs LLC for 2026. Understand what a DBA actually does, why an LLC provides liability protection, cost comparison, tax differences, and when to use both together.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 0.05rem 1.5rem;
+      width: 100%;
+    }
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article ul {
+      padding-left: 1.65rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+    .guide-article ul li {
+      margin-bottom: 0.65rem !important;
+      line-height: 1.7 !important;
+      color: #334155 !important;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover { color: #0E7490; }
+    .review-check-banner {
+      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      color: #F8FAFC;
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(18, 48, 74, 0.22);
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
+    }
+    .review-check-banner a {
+      color: #94def3;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(110, 231, 183, 0.25);
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .styled-table-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
+      margin: 1.75rem 0;
+    }
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    .styled-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 0.95rem 1.15rem;
+      font-size: 0.785rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .styled-table td {
+      padding: 0.95rem 1.15rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .styled-table tr:last-child td { border-bottom: none; }
+    .styled-table tr:nth-child(even) { background: #F8FAFC; }
+    .callout-green {
+      background: #ECFDF5;
+      border: 1.5px solid #10B981;
+      border-left: 5px solid #059669;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #065F46;
+      margin: 1.75rem 0;
+    }
+    .callout-yellow {
+      background: #FFFBEB;
+      border: 1.5px solid #F59E0B;
+      border-left: 5px solid #D97706;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #78350F;
+      margin: 1.75rem 0;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #0284C7;
+      border-left: 5px solid #0369A1;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #0C4A6E;
+      margin: 1.75rem 0;
+    }
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+      width: 100% !important;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease;
+      width: 100% !important;
+    }
+    .faq-accordion-item:hover { border-color: #159A9C; }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
+    .key-numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .key-number-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-align: center;
+    }
+    .key-number-card .kn-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #159A9C;
+      font-family: var(--font-heading);
+    }
+    .key-number-card .kn-label {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-top: 0.3rem;
+    }
+    .toc-card-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .toc-card-box h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+    .toc-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem 2rem;
+      font-size: 0.9rem;
+    }
+    .toc-links-grid a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .continue-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .continue-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-decoration: none !important;
+      display: block;
+    }
+    .continue-card:hover { border-color: #159A9C; }
+    .continue-card .cc-title {
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: #12304A;
+    }
+    .continue-card .cc-sub {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-top: 0.25rem;
+    }
+    .nw-promo-box {
+      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      color: #FFFFFF;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nw-promo-box .nw-text { flex: 1; min-width: 200px; }
+    .nw-promo-box .nw-btn {
+      background: #FFFFFF;
+      color: #0d2336;
+      font-weight: 800;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .key-numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .toc-links-grid { grid-template-columns: 1fr; }
+      .continue-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">Start an LLC</a>
+        </div>
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="tools.html" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
+            <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
+            <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
+            <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
+            <a href="llc-annual-report-tracker.html" class="dropdown-link">Annual Report Tracker</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="non-resident-llc-guide.html" class="nav-link">
+            Non-Residents
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="best-state-for-non-us-residents.html" class="dropdown-link">Best State</a>
+            <a href="ein-guide-for-non-residents.html" class="dropdown-link">EIN Guide</a>
+            <a href="llc-cost-for-non-residents.html" class="dropdown-link">LLC Cost</a>
+            <a href="bank-account-for-non-residents.html" class="dropdown-link">Bank Account</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan &rarr;
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section style="background:white;padding:1.5rem 0 0 0;">
+    <div class="guide-content-container">
+      <div style="font-size:0.85rem;color:#64748B;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;"><a href="index.html" style="color:#64748B;text-decoration:none;font-weight:500;">Home</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a><span style="color:#CBD5E1;">/</span><span style="color:#12304A;font-weight:700;">DBA vs LLC</span></div>
+      <div class="review-check-banner">
+  <div style="position:relative;z-index:2;">
+    <div style="font-size:0.75rem;font-weight:800;color:#F59E0B;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">LAST REVIEWED &middot; OCTOBER 2026</div>
+    <div style="color:#E2E8F0;font-size:0.875rem;">Official sources: The U.S. Small Business Administration (SBA) provides general guidance on business names, DBAs, and business structures. State-specific filing requirements and fees should be verified with the appropriate state agency.</div>
+  </div>
+</div>
+      <h1 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:900;color:#12304A;line-height:1.2;margin-bottom:1.25rem;">DBA vs LLC (2026)</h1>
+      <p>Most people searching DBA vs LLC are comparing two things that are not actually alternatives. A DBA is generally a registered business name. An LLC is a legal business entity. They can work together rather than compete with each other.</p>
+      <p>A DBA (Doing Business As) &mdash; also called a fictitious business name, assumed name, or trade name in some jurisdictions &mdash; allows a person or existing business entity to operate under a name different from its legal name. It does not, by itself, create a separate legal entity or provide limited liability protection.</p>
+      <p>An LLC (Limited Liability Company) is a legal business structure created under state law. An LLC can provide liability protection between the business and its owners, subject to applicable law and the circumstances of a particular claim.</p>
+      <div class="callout-blue"><strong>The more useful question:</strong> Do you need an LLC, a DBA, or both?</div>
+
+      <div class="toc-card-box">
+        <h3>What This Guide Covers</h3>
+        <div class="toc-links-grid">
+          <a href="#what-dba">What is a DBA &mdash; and what it actually does</a>
+          <a href="#what-llc">What is an LLC &mdash; and why it exists</a>
+          <a href="#distinction">The critical distinction most guides miss</a>
+          <a href="#costs">DBA vs LLC cost</a>
+          <a href="#taxes">DBA vs LLC taxes</a>
+          <a href="#which">Which one do you actually need?</a>
+          <a href="#together">Using an LLC + DBA together</a>
+          <a href="#convert">When to move from DBA-only to an LLC</a>
+          <a href="#full-comparison">DBA vs LLC vs Corporation vs S-Corp</a>
+          <a href="#faq">Frequently asked questions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-article" style="padding:2rem 0 4rem 0;">
+    <div class="guide-content-container">
+
+      <h2 id="quick">DBA vs LLC &mdash; Full Comparison Table</h2>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Feature</th><th>DBA (Doing Business As)</th><th>LLC (Limited Liability Company)</th></tr></thead><tbody><tr><td>What it is</td><td>A registered business name</td><td>A legal business entity</td></tr>
+<tr><td>Personal liability protection</td><td>None by itself</td><td>Generally provides limited liability protection</td></tr>
+<tr><td>Separate legal entity</td><td>No</td><td>Yes</td></tr>
+<tr><td>Formation cost</td><td>Varies by jurisdiction</td><td>Varies by state</td></tr>
+<tr><td>Ongoing costs</td><td>Depends on local renewal rules</td><td>State reports, taxes, and other requirements may apply</td></tr>
+<tr><td>Tax treatment</td><td>Does not change underlying tax status</td><td>Can have different federal tax classifications</td></tr>
+<tr><td>Business name use</td><td>Allows operation under another name</td><td>Operates under its legal entity name unless it uses a DBA</td></tr>
+<tr><td>Name protection</td><td>Limited and jurisdiction-specific</td><td>Entity-name protection generally applies under state law</td></tr>
+<tr><td>Trademark protection</td><td>No</td><td>Not by itself</td></tr>
+<tr><td>Compliance</td><td>Usually simpler</td><td>Generally more ongoing compliance</td></tr>
+<tr><td>Registered agent</td><td>Usually not required solely because of DBA</td><td>Generally required for an LLC</td></tr>
+<tr><td>Multiple brands</td><td>Can be used for multiple business names where permitted</td><td>One LLC may operate multiple brands using DBAs</td></tr>
+<tr><td>Best for</td><td>Branding or operating under a different name</td><td>Creating a formal business entity</td></tr>
+</tbody></table></div>
+
+      <h2 id="what-dba">What Is a DBA (Doing Business As)?</h2>
+      <p>A DBA &mdash; short for "Doing Business As" &mdash; is generally a registration that allows a person or business to operate under a name different from its legal name. The terminology varies by jurisdiction: fictitious name, assumed name, trade name, or DBA. Registering a DBA does not itself provide legal protection.</p>
+
+      <h3>What a DBA Actually Does</h3>
+      <ul>
+        <li>Allows operation under a business name different from your personal legal name</li>
+        <li>Allows an existing LLC or corporation to operate under a different brand name</li>
+        <li>Use a separate business name on marketing materials, invoices, contracts, and documents</li>
+        <li>Meet a state or local registration requirement for assumed or fictitious names</li>
+        <li>Establish a public record connecting a trade name with the underlying owner or entity</li>
+      </ul>
+      <p><strong>However:</strong> A DBA does not create a separate legal entity. If a sole proprietor registers a DBA, the underlying business is still generally a sole proprietorship. The DBA does not separate the owner's personal assets from the business's liabilities.</p>
+
+      <h3>Who Typically Uses a DBA</h3>
+      <ul>
+        <li><strong>Sole proprietors</strong> &mdash; A freelancer named Sarah Johnson might operate under the brand "Coastal Web Design" without forming an LLC</li>
+        <li><strong>Existing LLCs</strong> &mdash; An LLC called Rivera Enterprises LLC might operate a landscaping business under the brand "Green Thumb Landscaping"</li>
+        <li><strong>Corporations and other entities</strong> &mdash; May use an assumed or fictitious name where permitted by state law</li>
+        <li><strong>Businesses with multiple brands</strong> &mdash; An owner may use one legal entity for several brands instead of creating a separate entity for every brand</li>
+      </ul>
+      <div class="callout-yellow"><strong>Important:</strong> Registering a DBA does not give you nationwide trademark rights. The SBA distinguishes between entity names, DBAs, trademarks, and domain names because each serves a different purpose.</div>
+
+      <h2 id="what-llc">What Is an LLC (Limited Liability Company)?</h2>
+      <p>An LLC is a legal business entity created under state law. Unlike a DBA, an LLC is an actual legal structure. It can own property, enter contracts, maintain its own business records, and incur liabilities separately from its owners.</p>
+
+      <h3>What an LLC Can Provide</h3>
+      <ul>
+        <li>Limited liability protection under applicable state law</li>
+        <li>Separate legal identity from its owners</li>
+        <li>Flexible federal tax classification</li>
+        <li>A formal structure for ownership and management</li>
+        <li>The ability to operate under the LLC's legal name or a registered DBA</li>
+        <li>A framework for separating business and personal finances</li>
+      </ul>
+      <p>For federal tax purposes, a <a href="single-member-llc.html">single-member LLC</a> is generally treated as a disregarded entity by default. A <a href="multi-member-llc.html">multi-member LLC</a> is generally treated as a partnership. An eligible LLC may also elect S-corporation tax treatment. For a complete explanation, see our guide on <a href="how-are-llcs-taxed.html">how LLCs are taxed</a>.</p>
+
+      <h2 id="distinction">The Critical Distinction Most Guides Miss</h2>
+      <p>A DBA is a name. An LLC is a legal entity. They are not two versions of the same business structure.</p>
+      <div class="callout-blue">
+        <strong>Simple Example:</strong><br>
+        <strong>Without an LLC:</strong> Sarah Johnson &rarr; DBA: Coastal Web Design &mdash; The DBA gives Sarah a business name, but does not create a separate legal entity.<br><br>
+        <strong>With an LLC:</strong> Coastal Design LLC &rarr; DBA: Coastal Web Design &mdash; The LLC is the legal entity; the DBA is simply the operating or brand name.
+      </div>
+      <p>Liability protection comes from the legal entity &mdash; not from the DBA registration. Think of an LLC as the legal structure and a DBA as the brand name. One LLC may be able to operate several brands using separate DBAs, depending on state and local rules.</p>
+
+      <h2 id="costs">DBA vs LLC Cost: What You Actually Pay</h2>
+      <p>There is no single nationwide DBA or LLC price. DBA fees can be set by a state, county, city, or another local government. LLC formation fees are generally established by the state where the LLC is formed. For state-specific LLC costs, see our <a href="how-much-does-an-llc-cost.html">LLC cost guide</a>.</p>
+      <ul>
+        <li><strong>DBA costs:</strong> Vary by jurisdiction; some jurisdictions require newspaper publication; renewal periods differ</li>
+        <li><strong>LLC formation costs:</strong> Generally range from $35 to $500+ depending on the state; additional registered-agent, annual-report, and operating-agreement costs may apply</li>
+      </ul>
+
+      <h2 id="taxes">DBA vs LLC Taxes</h2>
+      <p>A DBA does not change your federal tax classification. If you are a sole proprietor who registers a DBA, you are still taxed as a sole proprietor. An LLC has tax flexibility &mdash; a single-member LLC is generally treated as a disregarded entity by default, but an LLC can elect corporate or S-corp treatment.</p>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Structure</th><th>Tax Treatment</th></tr></thead><tbody><tr><td>Sole proprietor + DBA</td><td>Owner is taxed as sole proprietor; DBA does not change the classification</td></tr>
+<tr><td>Single-member LLC (default)</td><td>Disregarded entity for federal income tax; similar to sole proprietorship</td></tr>
+<tr><td>Multi-member LLC (default)</td><td>Generally taxed as partnership; Form 1065 required</td></tr>
+<tr><td>LLC + S-corp election</td><td>Pass-through with payroll; owner must receive reasonable compensation</td></tr>
+<tr><td>C corporation</td><td>Corporate-level federal income tax at 21% federal rate</td></tr>
+</tbody></table></div>
+
+      <h2 id="which">Which One Do You Actually Need?</h2>
+      <h3>Consider a DBA Only If</h3>
+      <ul>
+        <li>You are an existing LLC or corporation and simply want to operate under another brand name</li>
+        <li>You want a business name without creating a new entity</li>
+        <li>Your state or local government requires a fictitious-name registration for your business name</li>
+      </ul>
+      <h3>Consider an LLC If</h3>
+      <ul>
+        <li>You want to separate your personal assets from business liabilities</li>
+        <li>Your business creates meaningful liability exposure</li>
+        <li>You want a formal legal entity</li>
+        <li>You expect employees, significant contracts, or business assets</li>
+        <li>You're considering different tax treatment in the future</li>
+      </ul>
+      <h3>Consider Both (LLC + DBA) If</h3>
+      <ul>
+        <li>You want the liability protection of an LLC AND want to operate under a different brand name</li>
+        <li>Your LLC name is formal/legal but you want a consumer-friendly brand name</li>
+        <li>You operate multiple brands under one LLC</li>
+      </ul>
+      <p>Not sure which structure fits your situation? Try our <a href="quiz.html">Business Structure Quiz</a> for an educational comparison.</p>
+
+      <h2 id="together">Using an LLC + DBA Together</h2>
+      <p>An LLC and a DBA are not mutually exclusive. Many businesses use both. For example, Maria owns Sunset Realty LLC (the legal entity). She also operates a property-management company and registers a DBA called "Golden Gate Property Management." Both names appear in her marketing, but the underlying legal entity is the same LLC.</p>
+      <div class="callout-green"><strong>Benefits of LLC + DBA combination:</strong> Liability protection through the LLC; flexible branding through the DBA; one legal entity can operate multiple brands; reduced formation cost compared to creating a new LLC for each brand. Note: The DBA does not create a separate liability shield for each brand. The underlying LLC and its liability protection apply to all DBA operations.</div>
+
+      <h2 id="convert">When to Move from DBA-Only to an LLC</h2>
+      <p>Consider moving from a sole proprietorship with a DBA to an LLC when the business has meaningful liability exposure, revenue or contracts are growing, you're hiring employees, taking on significant business assets, or business partners are entering the picture.</p>
+      <p>The conversion is generally: Form the LLC &rarr; Get EIN &rarr; Open business bank account &rarr; Transfer business activity &rarr; Update DBA registration if needed. See our <a href="start-llc.html">how to start an LLC guide</a> for state-by-step instructions.</p>
+
+      <h2 id="full-comparison">DBA vs LLC vs Corporation vs S-Corporation</h2>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Structure</th><th>What It Is</th><th>Liability</th><th>Default Tax</th><th>Complexity</th></tr></thead><tbody><tr><td>DBA</td><td>Registered name only</td><td>None</td><td>No change</td><td>Simple</td></tr>
+<tr><td>Sole Proprietorship + DBA</td><td>Individual + name registration</td><td>None</td><td>Schedule C</td><td>Simple</td></tr>
+<tr><td>Single-Member LLC</td><td>State legal entity</td><td>Generally yes</td><td>Disregarded entity (Schedule C default)</td><td>Moderate</td></tr>
+<tr><td>Multi-Member LLC</td><td>State legal entity</td><td>Generally yes</td><td>Partnership (Form 1065 default)</td><td>Moderate-High</td></tr>
+<tr><td>LLC + S-Corp election</td><td>State entity + federal tax election</td><td>Generally yes</td><td>Pass-through with payroll</td><td>Higher</td></tr>
+<tr><td>C Corporation</td><td>State legal entity</td><td>Generally yes</td><td>Corporate-level tax</td><td>Higher</td></tr>
+</tbody></table></div>
+      <p>For a more detailed comparison, see our guides on <a href="llc-vs-corporation.html">LLC vs Corporation</a> and <a href="llc-vs-sole-proprietorship.html">LLC vs Sole Proprietorship</a>.</p>
+
+      <div class="nw-promo-box">
+  <div class="nw-text">
+    <div style="font-size:0.75rem;font-weight:800;color:#F59E0B;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;">FEATURED FORMATION SERVICE</div>
+    <div style="font-size:1.1rem;font-weight:800;margin-bottom:0.4rem;">Northwest Registered Agent</div>
+    <div style="font-size:0.875rem;color:#CBD5E1;">LLC formation from $39 + state fee &middot; Registered agent included first year &middot; Renewal $125/year</div>
+  </div>
+  <a href="northwest-registered-agent-review.html" class="nw-btn">See Full Review &rarr;</a>
+</div>
+
+      <div class="callout-blue" id="takeaway"><strong>Key Takeaway:</strong> A DBA is a name &mdash; it gives you the ability to operate under a different name but does not create a separate legal entity or provide liability protection. An LLC is a legal entity &mdash; it creates a formal structure that can provide liability protection, flexible tax classification, and business separation. The two are not alternatives; many businesses use both.</div>
+
+      <h2 id="continue">Continue Building Your LLC</h2>
+      <div class="continue-grid">
+  <a href="what-is-an-llc.html" class="continue-card"><div class="cc-title">What Is an LLC</div><div class="cc-sub">Definition, types &amp; how it works</div></a>
+  <a href="start-llc.html" class="continue-card"><div class="cc-title">How to Start an LLC</div><div class="cc-sub">Step-by-step in your state</div></a>
+  <a href="how-much-does-an-llc-cost.html" class="continue-card"><div class="cc-title">LLC Formation Costs</div><div class="cc-sub">Every fee by state 2026</div></a>
+  <a href="single-member-llc.html" class="continue-card"><div class="cc-title">Single-Member LLC</div><div class="cc-sub">Taxes, setup &amp; S-Corp election</div></a>
+  <a href="llc-vs-sole-proprietorship.html" class="continue-card"><div class="cc-title">LLC vs Sole Proprietorship</div><div class="cc-sub">Full legal and tax comparison</div></a>
+  <a href="llc-vs-corporation.html" class="continue-card"><div class="cc-title">LLC vs Corporation</div><div class="cc-sub">Ownership, taxes &amp; growth</div></a>
+</div>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="faq-accordion-wrapper">
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">What is the difference between a DBA and an LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>A DBA is a registered business name. An LLC is a legal business entity. A DBA does not create a separate legal entity or provide liability protection.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Do I need an LLC if I have a DBA? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Not necessarily. A DBA is simply a name registration. If you want liability protection and a separate legal entity, you need to form an LLC or another business entity.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can an LLC have a DBA? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Yes. An LLC can register a DBA (doing business as) to operate under a different brand name. The LLC remains the legal entity behind the DBA.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Does a DBA provide liability protection? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>No. A DBA is a name registration and does not create a separate legal entity or provide limited liability protection.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Is a DBA the same as an LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>No. A DBA is a registered business name. An LLC is a legal entity created under state law.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can I have a DBA without an LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Yes. A sole proprietor, partnership, existing LLC, or corporation can all register a DBA.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">How much does a DBA cost compared to an LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>DBA costs vary by state, county, and city and are generally lower than LLC formation costs. However, DBA costs are jurisdiction-specific and should be verified with the local government. LLC formation fees can range from roughly $35 to $500+ depending on the state.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Does a DBA protect my business name? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>A DBA registration provides limited name protection within the jurisdiction. It generally does not provide trademark protection.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can I use both a DBA and an LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Yes. Many businesses form an LLC and then register a DBA to operate under a different brand name. The LLC provides liability protection while the DBA provides branding flexibility.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Do I need to pay taxes differently with a DBA? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Not because of the DBA itself. A DBA does not change your tax classification. You are taxed based on your underlying business structure.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can an LLC operate under multiple DBAs? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Yes, generally. A single LLC may be able to register multiple DBAs and operate multiple brands, depending on state and local rules.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Which is better for a small business, DBA or LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>For liability protection and a formal business entity, an LLC is generally more appropriate. A DBA is useful when you simply want to operate under a different name without creating a new entity.</p></div>
+    </details>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p class="footer-tagline">
+            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Popular States</h4>
+          <ul class="footer-links">
+            <li><a href="best-state-to-form-an-llc.html">Wyoming LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Delaware LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Florida LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Texas LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">California LLC Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Free Calculators</h4>
+          <ul class="footer-links">
+            <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
+            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Post-Formation</h4>
+          <ul class="footer-links">
+            <li><a href="business-setup.html">Post-LLC Setup</a></li>
+            <li><a href="ein-guide.html">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </p>
+        <div class="footer-copyright">
+          &copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">&#x2715;</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees &amp; Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>Series LLC (2026): How It Works, States & Rules | LLC Primer</title>
+  <meta name="description" content="Complete guide to Series LLCs in 2026. Learn which states allow series LLCs, how filing mechanics differ, liability separation rules, tax treatment, and when separate LLCs may be better.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 0.05rem 1.5rem;
+      width: 100%;
+    }
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article ul {
+      padding-left: 1.65rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+    .guide-article ul li {
+      margin-bottom: 0.65rem !important;
+      line-height: 1.7 !important;
+      color: #334155 !important;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover { color: #0E7490; }
+    .review-check-banner {
+      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      color: #F8FAFC;
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(18, 48, 74, 0.22);
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
+    }
+    .review-check-banner a {
+      color: #94def3;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(110, 231, 183, 0.25);
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .styled-table-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
+      margin: 1.75rem 0;
+    }
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    .styled-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 0.95rem 1.15rem;
+      font-size: 0.785rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .styled-table td {
+      padding: 0.95rem 1.15rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .styled-table tr:last-child td { border-bottom: none; }
+    .styled-table tr:nth-child(even) { background: #F8FAFC; }
+    .callout-green {
+      background: #ECFDF5;
+      border: 1.5px solid #10B981;
+      border-left: 5px solid #059669;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #065F46;
+      margin: 1.75rem 0;
+    }
+    .callout-yellow {
+      background: #FFFBEB;
+      border: 1.5px solid #F59E0B;
+      border-left: 5px solid #D97706;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #78350F;
+      margin: 1.75rem 0;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #0284C7;
+      border-left: 5px solid #0369A1;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #0C4A6E;
+      margin: 1.75rem 0;
+    }
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+      width: 100% !important;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease;
+      width: 100% !important;
+    }
+    .faq-accordion-item:hover { border-color: #159A9C; }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
+    .key-numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .key-number-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-align: center;
+    }
+    .key-number-card .kn-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #159A9C;
+      font-family: var(--font-heading);
+    }
+    .key-number-card .kn-label {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-top: 0.3rem;
+    }
+    .toc-card-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .toc-card-box h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+    .toc-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem 2rem;
+      font-size: 0.9rem;
+    }
+    .toc-links-grid a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .continue-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .continue-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-decoration: none !important;
+      display: block;
+    }
+    .continue-card:hover { border-color: #159A9C; }
+    .continue-card .cc-title {
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: #12304A;
+    }
+    .continue-card .cc-sub {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-top: 0.25rem;
+    }
+    .nw-promo-box {
+      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      color: #FFFFFF;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nw-promo-box .nw-text { flex: 1; min-width: 200px; }
+    .nw-promo-box .nw-btn {
+      background: #FFFFFF;
+      color: #0d2336;
+      font-weight: 800;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .key-numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .toc-links-grid { grid-template-columns: 1fr; }
+      .continue-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">Start an LLC</a>
+        </div>
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="tools.html" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
+            <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
+            <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
+            <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
+            <a href="llc-annual-report-tracker.html" class="dropdown-link">Annual Report Tracker</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="non-resident-llc-guide.html" class="nav-link">
+            Non-Residents
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="best-state-for-non-us-residents.html" class="dropdown-link">Best State</a>
+            <a href="ein-guide-for-non-residents.html" class="dropdown-link">EIN Guide</a>
+            <a href="llc-cost-for-non-residents.html" class="dropdown-link">LLC Cost</a>
+            <a href="bank-account-for-non-residents.html" class="dropdown-link">Bank Account</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan &rarr;
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section style="background:white;padding:1.5rem 0 0 0;">
+    <div class="guide-content-container">
+      <div style="font-size:0.85rem;color:#64748B;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;"><a href="index.html" style="color:#64748B;text-decoration:none;font-weight:500;">Home</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a><span style="color:#CBD5E1;">/</span><span style="color:#12304A;font-weight:700;">Series LLC</span></div>
+      <div class="review-check-banner">
+  <div style="position:relative;z-index:2;">
+    <div style="font-size:0.75rem;font-weight:800;color:#F59E0B;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">LAST REVIEWED &middot; OCTOBER 2026</div>
+    <div style="color:#E2E8F0;font-size:0.875rem;">Official sources: State statutes, Secretary of State or equivalent agency materials, and federal sources where applicable. Series LLC rules are primarily determined by state law.</div>
+  </div>
+</div>
+      <h1 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:900;color:#12304A;line-height:1.2;margin-bottom:1.25rem;">Series LLC (2026): How It Works, States &amp; Rules</h1>
+      <div class="key-numbers-grid">
+        <div class="key-number-card"><div class="kn-value">52</div><div class="kn-label">Jurisdictions reviewed</div></div>
+        <div class="key-number-card"><div class="kn-value">24</div><div class="kn-label">With domestic series framework</div></div>
+        <div class="key-number-card"><div class="kn-value">4</div><div class="kn-label">Series structures explained</div></div>
+        <div class="key-number-card"><div class="kn-value">0</div><div class="kn-label">Universal filing rules assumed</div></div>
+        <div class="key-number-card"><div class="kn-value">State-Specific</div><div class="kn-label">All Series LLC rules</div></div>
+        <div class="key-number-card"><div class="kn-value">Proposed</div><div class="kn-label">IRS Series LLC regulations (not final)</div></div>
+      </div>
+      <p>A Series LLC is not one standardized legal structure. In 2026, states use different approaches to series, including protected series, registered series, designated series and series created under a parent LLC's governing documents.</p>
+      <p>The rule that matters most: Series LLC law is state-specific. Formation procedures, public filings, recordkeeping requirements, recurring obligations, tax treatment and liability protections can differ substantially. Do not assume that a Series LLC formed under one state's law will operate the same way in another state.</p>
+
+      <div class="toc-card-box">
+        <h3>Series LLC Guide &mdash; 2026</h3>
+        <div class="toc-links-grid">
+          <a href="#models">Four Series LLC models to distinguish</a>
+          <a href="#availability">Which states allow a Series LLC?</a>
+          <a href="#mechanics">How filing mechanics vary</a>
+          <a href="#shield">What creates the internal liability separation?</a>
+          <a href="#costs">Series LLC costs and recurring compliance</a>
+          <a href="#tax">Federal and state tax treatment</a>
+          <a href="#comparison">Series LLC vs. separate LLCs</a>
+          <a href="#formation">A safer Series LLC formation workflow</a>
+          <a href="#when">When a Series LLC may or may not fit</a>
+          <a href="#faq">Frequently asked questions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-article" style="padding:2rem 0 4rem 0;">
+    <div class="guide-content-container">
+
+      <h2 id="models">A Series LLC Can Use Several Different Legal Models</h2>
+      <p>The term "Series LLC" describes a family of structures rather than one nationwide filing system. For broader entity comparisons, see <a href="llc-vs-corporation.html">LLC vs. corporation</a> and <a href="what-is-an-llc.html">what is an LLC</a>.</p>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Legal Model</th><th>How It Generally Works</th></tr></thead><tbody><tr><td>Parent-document series</td><td>The parent LLC's formation documents and operating agreement establish the authority to create series, with the statute determining the conditions for liability separation.</td></tr>
+<tr><td>Protected-series designation</td><td>A series is created or activated through a state-specific designation or similar filing under a protected-series statute.</td></tr>
+<tr><td>Registered or designated series</td><td>A series uses a separate public filing or certificate connected to the parent LLC and may have additional filing or recurring fees.</td></tr>
+<tr><td>Dual protected + registered system</td><td>The jurisdiction provides more than one series mechanism, with different formation, filing and legal consequences for each model.</td></tr>
+</tbody></table></div>
+
+      <h2 id="availability">Which States Allow a Series LLC in 2026?</h2>
+      <p>The table below applies one consistent editorial test: does the jurisdiction currently provide a domestic statutory framework for creating a Series LLC, protected series or comparable domestic series structure? Foreign-series recognition alone does not automatically count as domestic Series LLC authorization.</p>
+
+      <h3>Alabama through Delaware</h3>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Jurisdiction</th><th>Domestic 2026 Regime?</th><th>Current Framework</th><th>Official Source</th></tr></thead><tbody><tr><td>Alabama</td><td>YES</td><td>Series permitted under the Alabama LLC Act</td><td><a href="https://alison.legislature.state.al.us/code-of-alabama?section=10A-5A-11.16" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Alaska</td><td>NO</td><td>Current domestic LLC framework does not provide a comparable Series LLC regime</td><td><a href="https://www.commerce.alaska.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Arizona</td><td>NO</td><td>Foreign-series provisions do not establish a comparable domestic Series LLC regime</td><td><a href="https://www.azleg.gov/ars/29/03102.htm" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Arkansas</td><td>YES</td><td>Series/protected-series framework</td><td><a href="https://www.sos.arkansas.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>California</td><td>NO</td><td>California does not provide a domestic Series LLC formation mechanism</td><td><a href="https://www.ftb.ca.gov/file/business/types/limited-liability-company/series-limited-liability-company.html" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Colorado</td><td>NO</td><td>Current law does not provide a domestic protected-series formation regime</td><td><a href="https://leg.colorado.gov" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Connecticut</td><td>NO</td><td>Current LLC law does not provide a comparable domestic protected-series regime</td><td><a href="https://www.cga.ct.gov" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Delaware</td><td>YES</td><td>Protected and registered series</td><td><a href="https://delcode.delaware.gov/title6/c018/sc02/" target="_blank" rel="noopener">Official source</a></td></tr>
+</tbody></table></div>
+      <h3>Florida through Nevada</h3>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Jurisdiction</th><th>Domestic 2026 Regime?</th><th>Current Framework</th><th>Official Source</th></tr></thead><tbody><tr><td>Florida</td><td>YES</td><td>Protected-series provisions effective July 1, 2026</td><td><a href="https://dos.fl.gov/sunbiz/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Georgia</td><td>NO</td><td>Current law does not provide the comparable domestic framework</td><td><a href="https://www.legis.ga.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Hawaii</td><td>NO</td><td>Recognition of certain foreign structures does not create a comparable domestic regime</td><td><a href="https://data.capitol.hawaii.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Idaho</td><td>NO</td><td>Current domestic LLC framework does not provide a comparable protected-series regime</td><td><a href="https://sos.idaho.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Illinois</td><td>YES</td><td>Series LLC and designated-series framework</td><td><a href="https://www.ilsos.gov/departments/business-services/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Indiana</td><td>YES</td><td>Domestic Series LLC framework</td><td><a href="https://www.in.gov/sos/business/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Iowa</td><td>YES</td><td>Uniform Protected Series Act framework</td><td><a href="https://www.legis.iowa.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Kansas</td><td>YES</td><td>Domestic series framework</td><td><a href="https://www.sos.ks.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Kentucky</td><td>NO</td><td>Recognition of certain protected-series concepts does not create a general domestic regime</td><td><a href="https://apps.legislature.ky.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Louisiana</td><td>NO</td><td>Current domestic LLC law does not provide the comparable Series LLC framework</td><td><a href="https://www.legis.la.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+</tbody></table></div>
+      <h3>Maine through Nevada (continued)</h3>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Jurisdiction</th><th>Domestic 2026 Regime?</th><th>Current Framework</th><th>Official Source</th></tr></thead><tbody><tr><td>Maine</td><td>NO</td><td>Foreign designated-series structures recognized, but not domestic authorization</td><td><a href="https://legislature.maine.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Maryland</td><td>NO</td><td>Foreign series recognition only</td><td><a href="https://mgaleg.maryland.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Massachusetts</td><td>NO</td><td>Current Chapter 156C does not provide a comparable protected-series regime</td><td><a href="https://malegislature.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Michigan</td><td>NO</td><td>Current Michigan LLC Act does not provide a protected-series creation regime</td><td><a href="https://www.legislature.mi.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Minnesota</td><td>NO</td><td>Classes or series of membership interests are not treated as a protected-series liability regime</td><td><a href="https://www.revisor.mn.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Mississippi</td><td>NO</td><td>Current LLC law addresses classes/series of financial interests rather than the protected-series model</td><td><a href="https://sos.ms.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Missouri</td><td>YES</td><td>Designated-series framework</td><td><a href="https://revisor.mo.gov/main/OneSection.aspx?section=347.186" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Montana</td><td>YES</td><td>Series LLC framework</td><td><a href="https://sosmt.gov/business/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Nebraska</td><td>YES</td><td>Uniform Protected Series Act</td><td><a href="https://nebraskalegislature.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Nevada</td><td>YES</td><td>Series under Chapter 86</td><td><a href="https://www.leg.state.nv.us/" target="_blank" rel="noopener">Official source</a></td></tr>
+</tbody></table></div>
+      <h3>New Hampshire through Pennsylvania</h3>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Jurisdiction</th><th>Domestic 2026 Regime?</th><th>Current Framework</th><th>Official Source</th></tr></thead><tbody><tr><td>New Hampshire</td><td>NO</td><td>Current domestic LLC law does not provide the comparable protected-series framework</td><td><a href="https://gc.nh.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>New Jersey</td><td>NO</td><td>Current domestic LLC framework does not provide the comparable protected-series regime</td><td><a href="https://pub.njleg.state.nj.us/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>New Mexico</td><td>NO</td><td>Current Limited Liability Company Act does not provide the comparable domestic regime</td><td><a href="https://www.sos.nm.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>New York</td><td>NO</td><td>Current LLC Law does not provide the comparable domestic Series LLC regime</td><td><a href="https://www.nysenate.gov/legislation/laws/LLC" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>North Carolina</td><td>NO</td><td>Current Chapter 57D does not provide a comparable protected-series regime</td><td><a href="https://library.ncleg.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>North Dakota</td><td>YES</td><td>Series under the North Dakota LLC Act</td><td><a href="https://ndlegis.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Ohio</td><td>YES</td><td>Statutory series under ORC &sect;1706.761</td><td><a href="https://codes.ohio.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Oklahoma</td><td>YES</td><td>Protected and registered series</td><td><a href="https://www.oklegislature.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Oregon</td><td>NO</td><td>Current Chapter 63 does not provide a comparable Series LLC regime</td><td><a href="https://www.oregonlegislature.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Pennsylvania</td><td>NO</td><td>Current Chapter 88 does not provide the comparable protected-series regime</td><td><a href="https://www.legis.state.pa.us/" target="_blank" rel="noopener">Official source</a></td></tr>
+</tbody></table></div>
+      <h3>Rhode Island through Puerto Rico</h3>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Jurisdiction</th><th>Domestic 2026 Regime?</th><th>Current Framework</th><th>Official Source</th></tr></thead><tbody><tr><td>Rhode Island</td><td>NO</td><td>Current law does not provide the comparable domestic protected-series regime</td><td><a href="https://webserver.rilegislature.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>South Carolina</td><td>NO</td><td>Current LLC Act does not provide a comparable protected-series regime</td><td><a href="https://www.scstatehouse.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>South Dakota</td><td>YES</td><td>Parent LLC and series structure</td><td><a href="https://sdsos.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Tennessee</td><td>YES</td><td>Protected-series framework</td><td><a href="https://www.capitol.tn.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Texas</td><td>YES</td><td>Protected and registered series</td><td><a href="https://www.sos.state.tx.us/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Utah</td><td>YES</td><td>Statutory series</td><td><a href="https://le.utah.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Vermont</td><td>NO</td><td>Foreign series recognition does not establish a comparable domestic mechanism</td><td><a href="https://legislature.vermont.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Virginia</td><td>YES</td><td>Protected-series framework</td><td><a href="https://www.scc.virginia.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Washington</td><td>NO</td><td>Current Chapter 25.15 does not provide a comparable Series LLC regime</td><td><a href="https://app.leg.wa.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>West Virginia</td><td>YES</td><td>Protected-series framework</td><td><a href="https://code.wvlegislature.gov/31B-14/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Wisconsin</td><td>NO</td><td>Classes/series provisions do not create the comparable protected-series liability structure</td><td><a href="https://docs.legis.wisconsin.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Wyoming</td><td>YES</td><td>Series LLC</td><td><a href="https://sos.wyo.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>District of Columbia</td><td>YES</td><td>Series under D.C. Code &sect;29-802.06</td><td><a href="https://code.dccouncil.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+<tr><td>Puerto Rico</td><td>YES</td><td>Series LLC framework</td><td><a href="https://transicion2016.pr.gov/" target="_blank" rel="noopener">Official source</a></td></tr>
+</tbody></table></div>
+
+      <div class="callout-blue"><strong>Why the distinction matters:</strong> Not every statute that mentions a "series" creates a Series LLC with internal liability segregation. Provisions allowing different classes or series of membership interests can address ownership or economic rights without creating the type of horizontal liability separation associated with a protected series.</div>
+
+      <h2 id="mechanics">How Series LLC Filing Mechanics Vary by State</h2>
+      <p>Some states require a public filing for each series. Florida's protected-series provisions, effective July 1, 2026, allow an existing active Florida LLC to file a Designation of Protected Series online for $25 per protected series. The protected series itself does not file a separate annual report; the parent Florida LLC continues to file its annual report.</p>
+      <p>Delaware, Texas and Oklahoma distinguish between protected series and registered series. Delaware expressly defines and regulates both. This distinction can affect filing requirements, public records, recurring costs and the legal characteristics of the series.</p>
+      <div class="callout-yellow"><strong>Recurring compliance can be parent-level or series-level:</strong> A new series may create a separate designation or certificate fee, additional annual or biennial filing obligations, separate tax or registration requirements, additional bookkeeping requirements, or other state-specific compliance costs.</div>
+
+      <h2 id="shield">The Internal Liability Separation Is Conditional, Not Automatic</h2>
+      <p>The principal reason businesses consider a Series LLC is the possibility of separating liabilities among the parent and individual series. But the protection is statutory and conditional. It is not created simply by naming something "Series 1" or "Protected Series."</p>
+      <p>Depending on the jurisdiction, the relevant requirements can include: separate or identifiable records; provisions in the operating agreement; statements or notices in the parent formation document; a public series designation; proper identification of assets; compliance with the state's series statute; and other conditions imposed by the governing law.</p>
+      <div class="callout-yellow"><strong>Does forming a Series LLC guarantee that a creditor can never reach another series?</strong> No. The liability separation provided by a Series LLC depends on the governing state's statute and compliance with its conditions. Cross-state activity can also create additional questions about recognition, registration, and choice of law.</div>
+
+      <h2 id="costs">Series LLC Costs: The "One Fee" Assumption Is Unsafe</h2>
+      <p>Illinois can impose series-level costs. Nebraska and Virginia can also create series-specific obligations. Delaware distinguishes parent and registered-series obligations. Florida's 2026 protected-series system uses a different approach: the parent LLC files the annual report while a Florida protected series does not file a separate annual report, and the designation fee is $25 per series.</p>
+
+      <h2 id="tax">Series LLC Tax Treatment: Separate Federal Guidance from State Law</h2>
+      <p>The IRS issued proposed regulations concerning the federal tax classification of series LLCs in REG-119921-09. The proposal addresses how a series may be treated for federal tax purposes, but the document is a notice of proposed rulemaking, not a final regulation. An IRS private letter ruling may provide useful historical context for a particular taxpayer, but it does not establish a general rule that applies automatically to every Series LLC.</p>
+      <p>Questions involving EINs, employment taxes, partnership returns, corporate elections, disregarded-entity treatment, and information reporting should be evaluated for the actual structure rather than determined solely from the word "series." State tax treatment should also be reviewed independently. California, for example, does not provide domestic Series LLC formation, but its tax authorities address qualifying foreign Series LLC structures. Texas uses its own franchise-tax and information-reporting framework.</p>
+
+      <h2 id="comparison">Series LLC vs. Multiple Separate LLCs</h2>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Question</th><th>Series LLC</th><th>Separate LLCs</th></tr></thead><tbody><tr><td>State availability</td><td>Available only where domestic series framework exists</td><td>Available under laws of all states</td></tr>
+<tr><td>Formation of additional businesses</td><td>May allow additional series under one parent</td><td>Each business or asset uses its own LLC</td></tr>
+<tr><td>Recurring fees</td><td>May be parent-level, series-level, or both</td><td>Each LLC generally has its own state obligations</td></tr>
+<tr><td>Liability separation</td><td>Depends on statutory requirements and compliance</td><td>Each LLC is a separate legal entity under its governing law</td></tr>
+<tr><td>Multi-state complexity</td><td>Can become complicated when another state does not recognize the structure</td><td>More conventional and generally easier to explain to third parties</td></tr>
+<tr><td>Tax administration</td><td>Can require additional series-specific analysis</td><td>Still requires tax classification analysis</td></tr>
+<tr><td>Banking and records</td><td>Strong internal separation important</td><td>Each LLC naturally has its own legal identity and records</td></tr>
+</tbody></table></div>
+
+      <h2 id="formation">A Safer Series LLC Formation Workflow</h2>
+      <div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1rem;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:0.9rem;min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><div><strong style="color:#12304A;">Confirm domestic availability</strong> &mdash; Determine whether the formation jurisdiction actually provides the Series LLC or protected-series structure you intend to use.</div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1rem;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:0.9rem;min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><div><strong style="color:#12304A;">Identify the state's specific series model</strong> &mdash; Determine whether the state uses protected series, registered series, designated series, parent-document series, or more than one model.</div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1rem;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:0.9rem;min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><div><strong style="color:#12304A;">Form or review the parent LLC</strong> &mdash; Make sure the parent LLC's formation documents comply with the applicable series statute.</div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1rem;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:0.9rem;min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div><div><strong style="color:#12304A;">Complete every required series filing</strong> &mdash; If the state requires a designation, certificate or other public filing, complete it before treating the series as formed.</div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1rem;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:0.9rem;min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div><div><strong style="color:#12304A;">Build the operating agreement around the statute</strong> &mdash; The operating agreement should address ownership, management, assets, liabilities, and distributions consistently with the governing state law.</div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1rem;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:0.9rem;min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">6</div><div><strong style="color:#12304A;">Maintain separate records</strong> &mdash; Track the assets, liabilities, income and expenses associated with each series separately where required or appropriate.</div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1rem;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:0.9rem;min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">7</div><div><strong style="color:#12304A;">Map recurring obligations before creating additional series</strong> &mdash; Determine whether each new series creates another filing, tax, registration or annual/biennial obligation.</div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1rem;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:0.9rem;min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">8</div><div><strong style="color:#12304A;">Check federal and state tax treatment</strong> &mdash; If the business will operate in multiple states, review foreign qualification and state tax consequences before relying on the Series LLC structure. For general formation planning, see the <a href="llc-guide.html">LLC Guide</a>.</div></div>
+      </div>
+
+      <h2 id="when">When a Series LLC May Fit &mdash; and When Separate LLCs May Be Cleaner</h2>
+      <h3>A Series LLC May Be Worth Evaluating When</h3>
+      <ul>
+        <li>The formation state clearly authorizes the structure you intend to use</li>
+        <li>You manage multiple related assets or business activities</li>
+        <li>The ownership structure is compatible with a parent-and-series arrangement</li>
+        <li>You can maintain separate records consistently</li>
+        <li>The state's series-level costs are reasonable for your situation</li>
+        <li>Your legal and tax advisers are comfortable with the structure</li>
+      </ul>
+      <h3>Separate LLCs May Be Cleaner When</h3>
+      <ul>
+        <li>Important assets or businesses operate in states without a comparable domestic Series LLC framework</li>
+        <li>Lenders, investors or counterparties expect conventional standalone entities</li>
+        <li>Ownership differs substantially between businesses or assets</li>
+        <li>Series-level filing and recurring costs eliminate the expected savings</li>
+        <li>The structure would create significant tax or accounting complexity</li>
+        <li>Simpler administration is more important than consolidating entities under one parent LLC</li>
+      </ul>
+
+      <h2 id="faq">Series LLC Frequently Asked Questions</h2>
+      <div class="faq-accordion-wrapper">
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can different series have different owners? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Possibly, depending on the governing state's statute and the parent LLC's operating agreement. Ownership rights should be structured consistently with the applicable law rather than assumed from another state's Series LLC model.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Does each series need its own bank account? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Not every state statute uses identical banking language. Separate accounts can nevertheless be a practical way to maintain clear records and demonstrate separation between series. The governing statute and professional advice should control the final structure.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can one series sign a contract without binding the others? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>A protected series may have separate rights and liabilities under the governing statute, but the result depends on the applicable law, contract language, and how the series is structured and maintained.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can a Series LLC own real estate in more than one state? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Potentially, but owning or operating property in another state can trigger foreign-qualification, recording, tax, and recognition issues. A Series LLC formed in one state should not be assumed to receive identical treatment in every state where it owns property.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Does every series need a separate EIN? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Not automatically. Federal tax identification depends on the federal tax classification and circumstances of the parent and series. The IRS's proposed Series LLC regulations (REG-119921-09) should not be treated as a final universal EIN rule.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can one series be closed without terminating the parent LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Many Series LLC statutes allow individual series to be terminated or dissolved without terminating the parent, but the exact procedure is state-specific.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can I convert an ordinary LLC into a Series LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>The answer depends on the formation state's law. Some states allow an existing LLC to establish a protected series through a designation or similar filing. Florida, for example, states that an existing active Florida LLC becomes a Florida Series LLC when it designates its first protected series.</p></div>
+    </details>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p class="footer-tagline">
+            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Popular States</h4>
+          <ul class="footer-links">
+            <li><a href="best-state-to-form-an-llc.html">Wyoming LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Delaware LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Florida LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Texas LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">California LLC Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Free Calculators</h4>
+          <ul class="footer-links">
+            <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
+            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Post-Formation</h4>
+          <ul class="footer-links">
+            <li><a href="business-setup.html">Post-LLC Setup</a></li>
+            <li><a href="ein-guide.html">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </p>
+        <div class="footer-copyright">
+          &copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">&#x2715;</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees &amp; Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

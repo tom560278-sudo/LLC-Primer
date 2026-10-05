@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>Single-Member LLC: How It Works in 2026 | LLC Primer</title>
+  <meta name="description" content="Complete guide to single-member LLCs in 2026. Learn how disregarded entity taxation works, liability protection, S-corp election deadline, formation steps, and ongoing compliance.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 0.05rem 1.5rem;
+      width: 100%;
+    }
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article ul {
+      padding-left: 1.65rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+    .guide-article ul li {
+      margin-bottom: 0.65rem !important;
+      line-height: 1.7 !important;
+      color: #334155 !important;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover { color: #0E7490; }
+    .review-check-banner {
+      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      color: #F8FAFC;
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(18, 48, 74, 0.22);
+      border: 1.5px solid rgba(21, 154, 156, 0.4);
+    }
+    .review-check-banner a {
+      color: #94def3;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(110, 231, 183, 0.25);
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .styled-table-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
+      margin: 1.75rem 0;
+    }
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    .styled-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      padding: 0.95rem 1.15rem;
+      font-size: 0.785rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .styled-table td {
+      padding: 0.95rem 1.15rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .styled-table tr:last-child td { border-bottom: none; }
+    .styled-table tr:nth-child(even) { background: #F8FAFC; }
+    .callout-green {
+      background: #ECFDF5;
+      border: 1.5px solid #10B981;
+      border-left: 5px solid #059669;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #065F46;
+      margin: 1.75rem 0;
+    }
+    .callout-yellow {
+      background: #FFFBEB;
+      border: 1.5px solid #F59E0B;
+      border-left: 5px solid #D97706;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #78350F;
+      margin: 1.75rem 0;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #0284C7;
+      border-left: 5px solid #0369A1;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #0C4A6E;
+      margin: 1.75rem 0;
+    }
+    .faq-accordion-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+      width: 100% !important;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease;
+      width: 100% !important;
+    }
+    .faq-accordion-item:hover { border-color: #159A9C; }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
+    .key-numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .key-number-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-align: center;
+    }
+    .key-number-card .kn-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #159A9C;
+      font-family: var(--font-heading);
+    }
+    .key-number-card .kn-label {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-top: 0.3rem;
+    }
+    .toc-card-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .toc-card-box h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+    .toc-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem 2rem;
+      font-size: 0.9rem;
+    }
+    .toc-links-grid a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .continue-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .continue-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-decoration: none !important;
+      display: block;
+    }
+    .continue-card:hover { border-color: #159A9C; }
+    .continue-card .cc-title {
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: #12304A;
+    }
+    .continue-card .cc-sub {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-top: 0.25rem;
+    }
+    .nw-promo-box {
+      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      color: #FFFFFF;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nw-promo-box .nw-text { flex: 1; min-width: 200px; }
+    .nw-promo-box .nw-btn {
+      background: #FFFFFF;
+      color: #0d2336;
+      font-weight: 800;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .key-numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .toc-links-grid { grid-template-columns: 1fr; }
+      .continue-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">Start an LLC</a>
+        </div>
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="tools.html" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
+            <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
+            <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
+            <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
+            <a href="llc-annual-report-tracker.html" class="dropdown-link">Annual Report Tracker</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="non-resident-llc-guide.html" class="nav-link">
+            Non-Residents
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="best-state-for-non-us-residents.html" class="dropdown-link">Best State</a>
+            <a href="ein-guide-for-non-residents.html" class="dropdown-link">EIN Guide</a>
+            <a href="llc-cost-for-non-residents.html" class="dropdown-link">LLC Cost</a>
+            <a href="bank-account-for-non-residents.html" class="dropdown-link">Bank Account</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan &rarr;
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section style="background:white;padding:1.5rem 0 0 0;">
+    <div class="guide-content-container">
+      <div style="font-size:0.85rem;color:#64748B;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;"><a href="index.html" style="color:#64748B;text-decoration:none;font-weight:500;">Home</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a><span style="color:#CBD5E1;">/</span><span style="color:#12304A;font-weight:700;">Single-Member LLC</span></div>
+      <div class="review-check-banner">
+  <div style="position:relative;z-index:2;">
+    <div style="font-size:0.75rem;font-weight:800;color:#F59E0B;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">LAST REVIEWED &middot; OCTOBER 2026</div>
+    <div style="color:#E2E8F0;font-size:0.875rem;">Official source: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/limited-liability-company-llc" target="_blank" rel="noopener">IRS guidance on limited liability companies</a> provides the primary federal tax guidance used in this guide.</div>
+  </div>
+</div>
+      <h1 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:900;color:#12304A;line-height:1.2;margin-bottom:1.25rem;">Single-Member LLC: How It Works in 2026</h1>
+      <p>A single-member LLC (SMLLC) is a limited liability company formed under state law with exactly one owner, called a member. It is a common structure for freelancers, consultants, independent contractors, online businesses, investors, and other businesses operated by one owner.</p>
+      <p>A single-member LLC can provide a liability barrier between the business and its owner, subject to state law and important exceptions. At the federal level, the IRS generally treats a domestic single-member LLC as a disregarded entity by default for income-tax purposes unless the LLC makes an election to be taxed as a corporation.</p>
+      <p>That distinction is important: an LLC can be legally separate from its owner under state law while being disregarded as a separate entity for federal income-tax purposes.</p>
+
+      <div class="toc-card-box">
+        <h3>What You'll Learn</h3>
+        <div class="toc-links-grid">
+          <a href="#what-is">What Is a Single-Member LLC</a>
+          <a href="#taxes">How a Single-Member LLC Is Taxed in 2026</a>
+          <a href="#protection">Liability Protection: What It Covers</a>
+          <a href="#how-to-form">How to Form One &mdash; Step by Step</a>
+          <a href="#vs-multi">Single-Member vs Multi-Member LLC</a>
+          <a href="#s-corp">S Corp Election for Single-Member LLCs</a>
+          <a href="#costs">Costs and Annual Compliance</a>
+          <a href="#mistakes">5 Mistakes That Can Put Protection at Risk</a>
+          <a href="#faq">Frequently Asked Questions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-article" style="padding:2rem 0 4rem 0;">
+    <div class="guide-content-container">
+
+      <h2 id="key-facts">Single-Member LLC &mdash; 2026 Key Facts</h2>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Key Fact</th><th>2026 Details</th></tr></thead><tbody><tr><td>Owners</td><td>1 member</td></tr>
+<tr><td>Default federal tax classification</td><td>Disregarded entity</td></tr>
+<tr><td>Typical federal income-tax reporting</td><td>Schedule C with Form 1040</td></tr>
+<tr><td>Self-employment tax</td><td>Generally applies to net earnings from self-employment</td></tr>
+<tr><td>2026 individual return deadline</td><td>April 15, 2026</td></tr>
+<tr><td>2026 S-corp election deadline</td><td>March 16, 2026 (calendar-year 2026 election)</td></tr>
+<tr><td>2026 business mileage rate</td><td>72.5&cent; Jan&ndash;Jun / 76&cent; Jul&ndash;Dec</td></tr>
+<tr><td>Social Security wage base 2026</td><td>$184,500</td></tr>
+<tr><td>Corporate tax election</td><td>Possible through Form 8832</td></tr>
+</tbody></table></div>
+
+      <h2 id="vs-sole">Single-Member LLC vs Sole Proprietorship &mdash; Quick Comparison</h2>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Feature</th><th>Sole Proprietorship</th><th>Single-Member LLC</th></tr></thead><tbody><tr><td>Formation</td><td>Generally no state entity filing</td><td>Articles of Organization</td></tr>
+<tr><td>Liability</td><td>No separate entity</td><td>Can provide limited liability</td></tr>
+<tr><td>Default Tax</td><td>Schedule C</td><td>Disregarded entity (similar to sole prop)</td></tr>
+<tr><td>S-Corp election</td><td>Not available</td><td>Available if eligible</td></tr>
+<tr><td>Legal entity</td><td>No</td><td>Yes &mdash; state-created LLC</td></tr>
+<tr><td>Registered agent</td><td>Not required</td><td>Generally required</td></tr>
+</tbody></table></div>
+
+      <h2 id="what-is">What Is a Single-Member LLC</h2>
+      <p>A single-member LLC, often abbreviated SMLLC, is a limited liability company formed under state law with exactly one owner. The LLC can generally enter contracts, own property, maintain its own bank account, conduct business, and incur obligations in its own name. For federal income-tax purposes, a domestic single-member LLC is generally treated as a disregarded entity unless it elects to be classified as a corporation.</p>
+      <p>This is why an SMLLC can be both a separate legal entity under state law and disregarded as a separate entity for federal income-tax purposes. "Disregarded entity" refers to federal income-tax classification only. It does not mean the LLC disappears legally. For a broader introduction, see our guide on <a href="what-is-an-llc.html">what an LLC is</a>.</p>
+
+      <h3>Who Uses a Single-Member LLC</h3>
+      <ul>
+        <li>Freelancers and independent contractors</li>
+        <li>Consultants and professional service businesses</li>
+        <li>Designers, developers, and creators</li>
+        <li>E-commerce businesses</li>
+        <li>Real-estate-related businesses</li>
+        <li>Small retail and local service businesses</li>
+      </ul>
+
+      <h2 id="taxes">How a Single-Member LLC Is Taxed in 2026</h2>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Federal Tax Classification</th><th>Treatment</th></tr></thead><tbody><tr><td>Default &mdash; disregarded entity</td><td>Commonly reported on Schedule C</td></tr>
+<tr><td>S-Corp election</td><td>Salary + business distributions under S-corp rules</td></tr>
+<tr><td>C-Corp election</td><td>Corporation-level federal income tax treatment</td></tr>
+<tr><td>Self-employment tax</td><td>Generally applies to net earnings from self-employment</td></tr>
+<tr><td>QBI deduction</td><td>May be available to eligible taxpayers, subject to rules</td></tr>
+</tbody></table></div>
+      <p>For a broader explanation, see our guide on <a href="how-are-llcs-taxed.html">how LLCs are taxed</a>.</p>
+
+      <h3>Default Tax: Schedule C and Self-Employment Tax</h3>
+      <p>Under the default federal classification, a single-member LLC does not pay federal income tax at the entity level. Instead, the owner's business income and expenses are generally reported on the owner's individual return, commonly Schedule C, with self-employment tax generally calculated on Schedule SE. The self-employment tax rate is generally 15.3%, but the calculation uses 92.35% of net profit. For 2026, the Social Security wage base is $184,500.</p>
+
+      <h3>2026 Key Tax Deadlines for Single-Member LLCs</h3>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Filing / Action</th><th>Form</th><th>2026 Deadline</th><th>Notes</th></tr></thead><tbody><tr><td>Individual federal return</td><td>Form 1040</td><td>April 15, 2026</td><td>Extension moves filing to October 15</td></tr>
+<tr><td>S-Corp election for 2026</td><td>Form 2553</td><td>March 16, 2026</td><td>March 15 falls on Sunday</td></tr>
+<tr><td>C-Corp election</td><td>Form 8832</td><td>Depends on desired effective date</td><td>IRS election timing rules apply</td></tr>
+<tr><td>Q1 estimated tax</td><td>Form 1040-ES</td><td>April 15, 2026</td><td>When estimated-tax requirements met</td></tr>
+<tr><td>Q2 estimated tax</td><td>Form 1040-ES</td><td>June 15, 2026</td><td>&mdash;</td></tr>
+<tr><td>Q3 estimated tax</td><td>Form 1040-ES</td><td>September 15, 2026</td><td>&mdash;</td></tr>
+<tr><td>Q4 estimated tax</td><td>Form 1040-ES</td><td>January 15, 2027</td><td>Certain taxpayers may qualify for exceptions</td></tr>
+</tbody></table></div>
+
+      <h3>Top Tax Deductions to Review in 2026</h3>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Deduction / Provision</th><th>2026 Details</th></tr></thead><tbody><tr><td>Business mileage</td><td>72.5&cent; Jan&ndash;Jun / 76&cent; Jul&ndash;Dec</td></tr>
+<tr><td>Home office deduction</td><td>Qualifying home office under IRS rules (regular or simplified method)</td></tr>
+<tr><td>Depreciation and Section 179</td><td>Qualifying business equipment; check 2026 bonus-depreciation rules</td></tr>
+<tr><td>QBI deduction</td><td>Up to 20% of qualified business income, subject to income thresholds and rules</td></tr>
+<tr><td>Self-employed health insurance</td><td>Qualifying health, dental, long-term-care premiums</td></tr>
+<tr><td>Retirement contributions</td><td>SEP-IRA, Solo 401(k); 2026 defined-contribution limit $72,000; 401(k) elective-deferral limit $24,500</td></tr>
+</tbody></table></div>
+
+      <h2 id="protection">Liability Protection: What It Covers (and What It Doesn't)</h2>
+      <p>A properly maintained LLC can create a legal separation between the business and its owner. Generally, business debts and liabilities belong to the LLC rather than automatically becoming the owner's personal obligations. However, limited liability is not an absolute guarantee that personal assets can never be reached.</p>
+
+      <h3>When the Liability Shield Can Be Challenged</h3>
+      <p>Courts can consider factors such as whether the LLC was properly formed and maintained, whether the owner and business were treated as separate, whether the owner misused the entity, whether required state filings were maintained, and whether the owner personally guaranteed an obligation. The legal standard varies by jurisdiction.</p>
+      <div class="callout-green"><strong>Practical Priority:</strong> Keep business and personal finances separate. A dedicated business bank account is one of the simplest ways to maintain clear financial records. It helps document the distinction between the owner and the company and can reduce avoidable confusion.</div>
+
+      <h2 id="how-to-form">How to Form a Single-Member LLC &mdash; Step by Step</h2>
+      <div style="counter-reset:step-counter;">
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><div><strong style="color:#12304A;">Choose a unique business name</strong><p style="margin:0.4rem 0 0 0;color:#334155;">Your LLC name must satisfy your state's naming rules and generally must be distinguishable from existing registered entities. Check your state's official business-entity database before filing.</p></div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><div><strong style="color:#12304A;">Appoint a registered agent</strong><p style="margin:0.4rem 0 0 0;color:#334155;">Every domestic LLC generally must designate a <a href="registered-agent-guide.html">registered agent</a>. A professional registered-agent service can be useful for privacy and document monitoring. Compare options in our <a href="best-llc-formation-services.html">LLC formation services guide</a>.</p></div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><div><strong style="color:#12304A;">File Articles of Organization</strong><p style="margin:0.4rem 0 0 0;color:#334155;">Submit your state's required formation document. State filing fees vary substantially. See our <a href="start-llc.html">how to start an LLC</a> guide or the <a href="best-llc-formation-services.html">LLC formation services guide</a> if you prefer a commercial provider.</p></div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div><div><strong style="color:#12304A;">Create an operating agreement</strong><p style="margin:0.4rem 0 0 0;color:#334155;">An <a href="operating-agreement.html">operating agreement</a> sets out how the LLC is owned and operated. Even where not mandatory, it can document the owner's intent, management structure, and procedures for important business decisions.</p></div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div><div><strong style="color:#12304A;">Get your EIN from the IRS</strong><p style="margin:0.4rem 0 0 0;color:#334155;">An EIN is issued by the IRS at no charge. See our <a href="ein-guide.html">EIN guide</a>. Use the IRS's official EIN application process rather than paying a third party.</p></div></div>
+        <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="background:#159A9C;color:#fff;font-weight:900;font-size:1rem;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">6</div><div><strong style="color:#12304A;">Open a dedicated business bank account</strong><p style="margin:0.4rem 0 0 0;color:#334155;">Open a <a href="best-business-bank-accounts.html">dedicated business bank account</a> and keep business transactions separate from personal spending.</p></div></div>
+      </div>
+
+      <h3>Formation Cost by State &mdash; Quick Reference</h3>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>State</th><th>Example Formation Fee</th><th>Ongoing State Cost</th><th>Important Note</th></tr></thead><tbody><tr><td>Kentucky</td><td>$40</td><td>Annual report fee applies</td><td>Verify current fee</td></tr>
+<tr><td>New Mexico</td><td>$50</td><td>No regular annual report fee</td><td>Other taxes may still apply</td></tr>
+<tr><td>Missouri</td><td>$50</td><td>No regular annual report fee</td><td>Verify current state requirements</td></tr>
+<tr><td>Colorado</td><td>$50</td><td>Periodic report fee applies</td><td>Filing requirements differ from annual-fee assumptions</td></tr>
+<tr><td>Texas</td><td>$300</td><td>Franchise-tax/reporting rules apply</td><td>No simple annual LLC fee</td></tr>
+<tr><td>California</td><td>$70</td><td>$800 annual franchise tax generally applies</td><td>Additional CA requirements may apply</td></tr>
+<tr><td>Massachusetts</td><td>$500</td><td>$500 annual report fee</td><td>Verify current filing requirements</td></tr>
+</tbody></table></div>
+      <p>For a broader discussion of formation and ongoing costs, see <a href="how-much-does-an-llc-cost.html">how much an LLC costs</a>.</p>
+
+      <h2 id="vs-multi">Single-Member vs Multi-Member LLC</h2>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>Feature</th><th>Single-Member LLC</th><th>Multi-Member LLC</th></tr></thead><tbody><tr><td>Owners</td><td>1</td><td>2 or more</td></tr>
+<tr><td>IRS default</td><td>Disregarded entity</td><td>Partnership</td></tr>
+<tr><td>Federal return</td><td>Generally on owner's return</td><td>Form 1065</td></tr>
+<tr><td>K-1 issued</td><td>No under default</td><td>Yes &mdash; one per member</td></tr>
+<tr><td>Complexity</td><td>Generally lower</td><td>Generally higher</td></tr>
+</tbody></table></div>
+      <p>For more information, see our guide to <a href="multi-member-llc.html">multi-member LLCs</a>.</p>
+      <div class="callout-blue"><strong>Community-Property Note:</strong> In certain community-property states, a husband-and-wife LLC can potentially be treated as a disregarded entity rather than a partnership for federal income-tax purposes. These states generally include Arizona, California, Idaho, Louisiana, Nevada, New Mexico, Texas, Washington, and Wisconsin. Eligibility requirements must be reviewed.</div>
+
+      <h2 id="s-corp">S Corp Election for Single-Member LLCs</h2>
+      <p>An eligible single-member LLC can elect to be taxed as an S corporation using Form 2553. The LLC remains an LLC under state law; only the federal tax treatment changes. The owner must receive reasonable compensation as wages for services provided to the business. There is no universal profit threshold at which an S-corp election automatically becomes worthwhile.</p>
+      <p>The 2026 S-corp election deadline for a calendar-year taxpayer was March 16, 2026 (because March 15 fell on Sunday). See our <a href="llc-vs-scorp.html">LLC vs S Corp guide</a> and <a href="llc-startup-cost-estimator.html">S-Corp Tax Calculator</a> for additional information.</p>
+
+      <h2 id="costs">Single-Member LLC Costs and Annual Compliance</h2>
+      <p>Annual compliance checklist for a single-member LLC:</p>
+      <ul>
+        <li>File annual or periodic reports &mdash; use our <a href="llc-annual-report-tracker.html">LLC Annual Report Tracker</a></li>
+        <li>Pay applicable state taxes and fees</li>
+        <li>File your federal tax return (typically Schedule C with Form 1040)</li>
+        <li>Make estimated tax payments when required (April 15, June 15, September 15, January 15, 2027)</li>
+        <li>Maintain separate business records</li>
+        <li>Renew licenses and permits on applicable schedules</li>
+      </ul>
+
+      <h2 id="mistakes">5 Mistakes That Can Put Your Single-Member LLC Protection at Risk</h2>
+      <div class="styled-table-wrap"><table class="styled-table"><thead><tr><th>#</th><th>Mistake</th><th>Potential Problem</th><th>Better Practice</th></tr></thead><tbody><tr><td>1</td><td>Commingling personal and business funds</td><td>Makes financial separation harder to demonstrate</td><td>Use dedicated business banking and bookkeeping</td></tr>
+<tr><td>2</td><td>Ignoring the operating agreement</td><td>Leaves ownership and management procedures undocumented</td><td>Maintain an appropriate written agreement</td></tr>
+<tr><td>3</td><td>Missing state filings</td><td>Can result in penalties, loss of good standing, or administrative dissolution</td><td>Track all state deadlines</td></tr>
+<tr><td>4</td><td>Signing personally when LLC should be contracting party</td><td>May create personal contractual liability</td><td>Sign in LLC's proper legal capacity</td></tr>
+<tr><td>5</td><td>Using business funds for personal expenses without proper accounting</td><td>Creates poor records and can blur business/personal separation</td><td>Record legitimate owner distributions correctly</td></tr>
+</tbody></table></div>
+
+      <div class="nw-promo-box">
+  <div class="nw-text">
+    <div style="font-size:0.75rem;font-weight:800;color:#F59E0B;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;">FEATURED FORMATION SERVICE</div>
+    <div style="font-size:1.1rem;font-weight:800;margin-bottom:0.4rem;">Northwest Registered Agent</div>
+    <div style="font-size:0.875rem;color:#CBD5E1;">LLC formation from $39 + state fee &middot; Registered agent included first year &middot; Renewal $125/year</div>
+  </div>
+  <a href="northwest-registered-agent-review.html" class="nw-btn">See Full Review &rarr;</a>
+</div>
+
+      <h2 id="continue">Continue Building Your LLC</h2>
+      <div class="continue-grid">
+  <a href="llc-vs-scorp.html" class="continue-card"><div class="cc-title">LLC vs S-Corp</div><div class="cc-sub">When S-corp taxation may make sense</div></a>
+  <a href="how-are-llcs-taxed.html" class="continue-card"><div class="cc-title">Tax Benefits Guide</div><div class="cc-sub">QBI, deductions, and tax planning basics</div></a>
+  <a href="operating-agreement.html" class="continue-card"><div class="cc-title">Operating Agreement</div><div class="cc-sub">Document your LLC's ownership and rules</div></a>
+  <a href="llc-vs-sole-proprietorship.html" class="continue-card"><div class="cc-title">LLC vs Sole Proprietorship</div><div class="cc-sub">Compare the legal and tax differences</div></a>
+  <a href="multi-member-llc.html" class="continue-card"><div class="cc-title">Multi-Member LLC</div><div class="cc-sub">What changes when you add owners</div></a>
+  <a href="best-llc-formation-services.html" class="continue-card"><div class="cc-title">LLC Formation Services</div><div class="cc-sub">Compare formation options 2026</div></a>
+</div>
+
+      <h2 id="faq">Frequently Asked Questions &mdash; Single-Member LLC</h2>
+      <div class="faq-accordion-wrapper">
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Does a single-member LLC need to file a separate federal income-tax return? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Usually not under the default federal classification. A domestic single-member LLC is generally treated as a disregarded entity, so an individual owner commonly reports the business activity on Schedule C with Form 1040. However, other federal filings may apply depending on the business. If the LLC elects S-corporation or C-corporation taxation, separate entity-level federal returns generally become applicable.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">What is the self-employment tax rate for a single-member LLC in 2026? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>The general self-employment tax rate is 15.3%, consisting of Social Security and Medicare taxes. The calculation generally applies to 92.35% of net earnings from self-employment, subject to the applicable Social Security wage base and other rules. For 2026, the Social Security wage base is $184,500. Additional Medicare tax can apply to certain higher-income taxpayers.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Is a single-member LLC the same as a sole proprietorship for taxes? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Not exactly, although a default-taxed single-member LLC can have similar federal income-tax reporting. Both can commonly use Schedule C when owned by an individual, but the LLC is a state-law entity that can provide limited liability and can generally elect corporate tax treatment if eligible.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Do I need an EIN for a single-member LLC with no employees? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Not always. A single-member LLC without employees may, in certain circumstances, use the owner's Social Security number for federal income-tax purposes. However, obtaining an EIN is often useful for banking, vendors, state registrations, hiring employees, and future tax elections. An EIN is free from the IRS.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can a single-member LLC elect S-corp taxation? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Yes, if it meets the applicable eligibility requirements. The LLC generally files Form 2553 to elect S-corporation status. The LLC remains an LLC under state law; the election changes its federal tax treatment.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can I convert a sole proprietorship to a single-member LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Generally, yes. A common approach is to form the LLC with the state, obtain any necessary EIN and registrations, open business banking, update contracts and licenses, and move the business activity into the LLC. Some states provide specific statutory conversion procedures, while others may require forming a new LLC and transferring the business.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can a single-member LLC have employees? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Yes. An LLC can hire employees regardless of whether it has one or multiple members. Once you become an employer, federal and state employment-tax, payroll, wage, workers' compensation, and reporting requirements may apply. An EIN is generally required for an employer.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">How do I pay myself from a single-member LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Under the default tax classification, an individual owner commonly takes money through an owner's draw rather than treating the payment as a W-2 salary. The owner's federal tax liability is generally based on the business's taxable profit rather than simply the amount withdrawn. If the LLC elects S-corporation taxation, the owner generally needs to follow S-corp payroll and reasonable-compensation rules.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">Can a married couple form a single-member LLC? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>Possibly for federal tax purposes in certain circumstances in community-property states. The IRS has special rules for spouses who jointly own an LLC in community-property states: Arizona, California, Idaho, Louisiana, Nevada, New Mexico, Texas, Washington, and Wisconsin. Eligibility depends on the ownership arrangement, state law, and applicable IRS requirements.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">What happens if I miss my state's annual report deadline? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="faq-accordion-answer"><p>The consequences depend on the state. A missed filing can result in late fees, loss of good standing, administrative dissolution, or other penalties. Some states provide reinstatement procedures. Administrative dissolution can affect the LLC's legal status and should be addressed promptly.</p></div>
+    </details>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p class="footer-tagline">
+            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Popular States</h4>
+          <ul class="footer-links">
+            <li><a href="best-state-to-form-an-llc.html">Wyoming LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Delaware LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Florida LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Texas LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">California LLC Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Free Calculators</h4>
+          <ul class="footer-links">
+            <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
+            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Post-Formation</h4>
+          <ul class="footer-links">
+            <li><a href="business-setup.html">Post-LLC Setup</a></li>
+            <li><a href="ein-guide.html">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </p>
+        <div class="footer-copyright">
+          &copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">&#x2715;</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees &amp; Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
