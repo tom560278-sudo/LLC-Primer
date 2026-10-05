@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>How to Dissolve an LLC (2026): Step-by-Step State Guide | LLC Primer</title>
+  <meta name="description" content="Complete 2026 guide to dissolving an LLC. Covers voluntary vs involuntary dissolution, winding up, paying creditors, filing dissolution documents, final tax returns, and record retention.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 0.05rem 1.5rem;
+      width: 100%;
+    }
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article ul {
+      padding-left: 1.65rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+    .guide-article ul li {
+      margin-bottom: 0.65rem !important;
+      line-height: 1.7 !important;
+      color: #334155 !important;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover { color: #0E7490; }
+    .custom-table-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
+      margin: 1.75rem 0;
+    }
+    .custom-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .custom-data-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .custom-data-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.925rem;
+      color: #334155;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .custom-data-table tr:last-child td { border-bottom: none; }
+    .custom-data-table tr:nth-child(even) td { background: #F8FAFC; }
+    .callout-green {
+      background: #ECFDF5;
+      border: 1.5px solid #10B981;
+      border-left: 5px solid #059669;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #065F46;
+      margin: 1.75rem 0;
+    }
+    .callout-yellow {
+      background: #FFFBEB;
+      border: 1.5px solid #F59E0B;
+      border-left: 5px solid #D97706;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #78350F;
+      margin: 1.75rem 0;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #0284C7;
+      border-left: 5px solid #0369A1;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #0C4A6E;
+      margin: 1.75rem 0;
+    }
+    .callout-red {
+      background: #FEF2F2;
+      border: 1.5px solid #EF4444;
+      border-left: 5px solid #DC2626;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #7F1D1D;
+      margin: 1.75rem 0;
+    }
+    .faq-accordion-wrapper {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
+    .key-numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .key-number-card {
+      background: linear-gradient(135deg, #12304A 0%, #0D2336 100%);
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-align: center;
+    }
+    .key-number-card .kn-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #159A9C;
+      font-family: var(--font-heading);
+    }
+    .key-number-card .kn-label {
+      font-size: 0.8rem;
+      color: white;
+      margin-top: 0.3rem;
+    }
+    .toc-card-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .toc-card-box h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+    .toc-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem 2rem;
+      font-size: 0.9rem;
+    }
+    .toc-links-grid a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .continue-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .continue-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-decoration: none !important;
+      display: block;
+    }
+    .continue-card:hover { border-color: #159A9C; }
+    .continue-card .cc-title {
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: #12304A;
+    }
+    .continue-card .cc-sub {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-top: 0.25rem;
+    }
+    .nw-promo-box {
+      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      color: #FFFFFF;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nw-promo-box .nw-text { flex: 1; min-width: 200px; }
+    .nw-promo-box .nw-btn {
+      background: #FFFFFF;
+      color: #0d2336;
+      font-weight: 800;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .key-numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .toc-links-grid { grid-template-columns: 1fr; }
+      .continue-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">Start an LLC</a>
+        </div>
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="tools.html" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
+            <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
+            <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
+            <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
+            <a href="llc-annual-report-tracker.html" class="dropdown-link">Annual Report Tracker</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="non-resident-llc-guide.html" class="nav-link">
+            Non-Residents
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="best-state-for-non-us-residents.html" class="dropdown-link">Best State</a>
+            <a href="ein-guide-for-non-residents.html" class="dropdown-link">EIN Guide</a>
+            <a href="llc-cost-for-non-residents.html" class="dropdown-link">LLC Cost</a>
+            <a href="bank-account-for-non-residents.html" class="dropdown-link">Bank Account</a>
+          </div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan &rarr;
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section style="background:white;padding:1.5rem 0 0 0;">
+    <div class="guide-content-container">
+      <div style="font-size:0.85rem;color:#64748B;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;"><a href="index.html" style="color:#64748B;text-decoration:none;font-weight:500;">Home</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a></div>
+      <h1 style="font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;color:#12304A;line-height:1.2;margin-bottom:1.25rem;">How to Dissolve an LLC (2026): Step-by-Step Guide</h1>
+      <p>Dissolving an LLC is not as simple as closing a bank account or stopping business activity. Properly closing an LLC requires member approval, winding up the business, paying outstanding debts, filing the appropriate dissolution documents with the state, and filing final federal and state tax returns. Skipping formal dissolution can leave the LLC subject to ongoing annual-report obligations, fees, and state taxes even after the business stops operating.</p><p>This guide walks through the full dissolution process step by step &mdash; from the initial vote to the final distribution of any remaining assets to members.</p><p><strong>Important:</strong> LLC Primer provides general educational information, not legal, tax, or financial advice. Dissolution requirements differ significantly by state. Verify the applicable steps, documents, fees, and tax requirements for your specific state before proceeding.</p>
+    </div>
+  </section>
+  <main class="guide-article" style="padding: 0 4rem 0;">
+    <div class="guide-content-container">
+
+      <div class="key-numbers-grid">
+        <div class="key-number-card"><div class="kn-value">Step 1</div><div class="kn-label">Vote to dissolve per operating agreement</div></div>
+        <div class="key-number-card"><div class="kn-value">Step 2</div><div class="kn-label">Wind up business operations</div></div>
+        <div class="key-number-card"><div class="kn-value">Step 3</div><div class="kn-label">Pay debts and notify creditors</div></div>
+        <div class="key-number-card"><div class="kn-value">Step 4</div><div class="kn-label">File dissolution documents with state</div></div>
+        <div class="key-number-card"><div class="kn-value">Step 5</div><div class="kn-label">File final federal and state tax returns</div></div>
+        <div class="key-number-card"><div class="kn-value">Step 6</div><div class="kn-label">Close accounts and cancel licenses</div></div>
+      </div>
+
+      <h2 id="types">Voluntary vs Involuntary Dissolution</h2>
+      <div class="custom-table-wrap"><table class="custom-data-table">
+        <thead><tr><th>Type</th><th>What It Means</th><th>Typical Cause</th></tr></thead>
+        <tbody>
+          <tr><td>Voluntary dissolution</td><td>Members affirmatively choose to close the LLC</td><td>Business is no longer needed or wanted</td></tr>
+          <tr><td>Administrative dissolution</td><td>State dissolves the LLC for non-compliance</td><td>Missed annual reports, unpaid fees or taxes</td></tr>
+          <tr><td>Judicial dissolution</td><td>A court orders dissolution</td><td>Deadlock, fraud, or member petition</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout-yellow"><strong>Administrative Dissolution Is Not Automatic Closure.</strong> If a state administratively dissolves your LLC for failing to file an annual report or pay fees, this generally does not eliminate the LLC's debts, contracts, or tax obligations. Members may also lose liability protection for acts taken while the LLC is not in good standing. Preventing administrative dissolution requires staying current on compliance.</div>
+
+      <h2 id="step1">Step 1: Vote to Dissolve the LLC</h2>
+      <p>Start with the LLC's <a href="operating-agreement.html">operating agreement</a>. The agreement typically specifies the vote required to approve dissolution. For a multi-member LLC, this may require unanimous consent or a supermajority. For a single-member LLC, the decision is the member's own. Document the vote in writing, even for a single-member entity, and keep the record with the company's files.</p>
+      <div class="callout-blue">If your LLC does not have a written operating agreement, consult the applicable state statute to determine the default dissolution procedures and vote requirements that apply.</div>
+
+      <h2 id="step2">Step 2: Wind Up the LLC's Business</h2>
+      <p>Winding up the business involves completing or settling all ongoing obligations before the LLC formally dissolves. The goal is to bring the LLC to a state where its affairs are complete before terminating its legal existence.</p>
+      <h3>Winding-Up Checklist</h3>
+      <ul>
+        <li>Complete work in progress and honor existing contracts where possible</li>
+        <li>Collect outstanding accounts receivable</li>
+        <li>Stop accepting new business or commitments</li>
+        <li>Notify employees and comply with final payroll and benefits obligations</li>
+        <li>Notify vendors, suppliers, and service providers</li>
+        <li>Liquidate business assets as needed</li>
+        <li>Close or transfer business contracts</li>
+        <li>Comply with applicable federal and state WARN Act requirements (if applicable)</li>
+      </ul>
+
+      <h2 id="step3">Step 3: Pay Debts and Notify Creditors</h2>
+      <p>Before distributing any remaining assets to members, the LLC should pay all known debts and obligations or make adequate provision for them. Many states have formal creditor-notification procedures that allow the LLC to limit the time creditors have to submit claims.</p>
+      <div class="custom-table-wrap"><table class="custom-data-table">
+        <thead><tr><th>Obligation Type</th><th>Action Before Dissolution</th></tr></thead>
+        <tbody>
+          <tr><td>Vendor invoices</td><td>Pay outstanding balances</td></tr>
+          <tr><td>Business loans and credit lines</td><td>Repay or negotiate final settlement</td></tr>
+          <tr><td>Leases</td><td>Terminate per lease agreement or negotiate early exit</td></tr>
+          <tr><td>Payroll and employee obligations</td><td>Pay final wages, accrued leave, benefits</td></tr>
+          <tr><td>Tax obligations</td><td>Pay outstanding federal, state, and local taxes</td></tr>
+          <tr><td>Professional service fees</td><td>Pay final invoices</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout-red"><strong>Do Not Distribute Assets to Members Before Paying Creditors.</strong> Distributing LLC assets to members while known creditors remain unpaid can create legal exposure. In many states, members who receive distributions before creditors are paid can be liable for the amounts distributed up to the creditor's unpaid claim.</div>
+
+      <h2 id="step4">Step 4: File Dissolution Documents With the State</h2>
+      <p>Most states require a formal dissolution filing to legally terminate the LLC. Common document names include Articles of Dissolution, Certificate of Termination, Certificate of Cancellation, or Statement of Dissolution. The document name and required information differ by state.</p>
+      <div class="custom-table-wrap"><table class="custom-data-table">
+        <thead><tr><th>State Document Name</th><th>Common Filing Fee Range</th><th>Where to File</th></tr></thead>
+        <tbody>
+          <tr><td>Articles of Dissolution</td><td>Varies by state</td><td>Secretary of State or equivalent</td></tr>
+          <tr><td>Certificate of Termination</td><td>Varies by state</td><td>Secretary of State or equivalent</td></tr>
+          <tr><td>Certificate of Cancellation</td><td>Varies by state</td><td>Secretary of State or equivalent</td></tr>
+        </tbody>
+      </table></div>
+      <p>Verify the required documents, fees, and procedures with the official state agency or the Secretary of State website for the state where the LLC was formed and any other states where it was registered.</p>
+      <div class="callout-blue"><strong>Foreign Registrations:</strong> If your LLC was registered to do business as a foreign LLC in other states, file the required withdrawal or cancellation in each of those states separately. Failing to withdraw may continue to create annual report and fee obligations.</div>
+
+      <h2 id="step5">Step 5: File Final Federal and State Tax Returns</h2>
+      <p>Dissolving an LLC does not automatically satisfy all tax obligations. Final federal and state tax returns must generally be filed for the year of dissolution. Mark all relevant returns as "final" where the form provides that option.</p>
+      <h3>Federal Tax Returns for Dissolution</h3>
+      <div class="custom-table-wrap"><table class="custom-data-table">
+        <thead><tr><th>LLC Classification</th><th>Federal Return</th><th>Final Return Action</th></tr></thead>
+        <tbody>
+          <tr><td>Disregarded entity (single-member)</td><td>Schedule C on owner's Form 1040</td><td>No separate "final return" box on Schedule C, but the business activity ends</td></tr>
+          <tr><td>Partnership (multi-member)</td><td>Form 1065</td><td>Check final return box; final K-1s to members</td></tr>
+          <tr><td>S corporation</td><td>Form 1120-S</td><td>Check final return box</td></tr>
+          <tr><td>C corporation</td><td>Form 1120</td><td>Check final return box</td></tr>
+        </tbody>
+      </table></div>
+      <h3>If the LLC Had Employees</h3>
+      <ul>
+        <li>File final Form 941 (quarterly payroll returns)</li>
+        <li>File Form 940 (annual FUTA return)</li>
+        <li>Issue final W-2s to employees by January 31 of the following year</li>
+        <li>Issue final 1099s to qualifying contractors by January 31 of the following year</li>
+      </ul>
+      <div class="callout-yellow"><strong>State Tax Returns:</strong> Final state income-tax, franchise-tax, gross-receipts-tax, sales-tax, and payroll-tax returns may all be required depending on the state. Do not assume that filing only the state dissolution document closes all state tax accounts.</div>
+
+      <h2 id="step6">Step 6: Close Business Accounts and Cancel Licenses</h2>
+      <h3>Financial Accounts</h3>
+      <ul>
+        <li>Close the LLC's business bank accounts after all obligations are settled</li>
+        <li>Cancel or transfer business credit cards</li>
+        <li>Notify payment processors and recurring vendors</li>
+      </ul>
+      <h3>Licenses and Registrations</h3>
+      <ul>
+        <li>Cancel applicable business licenses at the federal, state, and local level</li>
+        <li>Notify the relevant regulatory agencies if the business operated in a regulated industry</li>
+        <li>Cancel any DBA (doing business as) registrations</li>
+        <li>Cancel applicable professional licenses or registrations associated with the LLC</li>
+      </ul>
+      <h3>Other Accounts and Subscriptions</h3>
+      <ul>
+        <li>Cancel business insurance policies after the run-off period or applicable coverage ends</li>
+        <li>Cancel software subscriptions and recurring service agreements</li>
+        <li>Transfer or allow domain names, trademarks, and other intellectual property to lapse or transfer as appropriate</li>
+      </ul>
+
+      <h2 id="distribute">Distributing Remaining Assets to Members</h2>
+      <p>After all debts are paid and creditor claims are addressed, any remaining assets can generally be distributed to members. The order and amount of distributions typically follow the operating agreement. If no agreement governs, applicable state law provides default rules.</p>
+      <div class="custom-table-wrap"><table class="custom-data-table">
+        <thead><tr><th>Priority</th><th>Category</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Creditors &mdash; pay or adequately provide for all debts and obligations</td></tr>
+          <tr><td>2</td><td>Return of member contributions, if specified in operating agreement</td></tr>
+          <tr><td>3</td><td>Remaining assets distributed to members per operating agreement or applicable law</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="records">Record Retention After Dissolution</h2>
+      <p>Even after the LLC is dissolved, certain records should be retained. The appropriate retention period depends on the type of document, applicable federal and state requirements, and whether any claims, disputes, or audits may arise.</p>
+      <ul>
+        <li>Formation documents and dissolution filings</li>
+        <li>Final tax returns and supporting documentation</li>
+        <li>Payroll records and final W-2s, if applicable</li>
+        <li>Financial statements and bank records</li>
+        <li>Contracts, leases, and their resolution</li>
+        <li>Creditor notices and claims documentation</li>
+        <li>Employment records</li>
+        <li>Intellectual-property assignments or cancellation records</li>
+      </ul>
+      <div class="callout-blue">The IRS generally recommends keeping records supporting business deductions for at least three years from the date the return was filed, with longer retention recommended when fraud or substantial understatement may be an issue. Some state laws and contracts may require even longer retention. Consult your accountant or attorney for specific guidance.</div>
+
+            <div class="nw-promo-box">
+        <div class="nw-text">Northwest Registered Agent &mdash; formation from $39 + state fee &middot; Registered agent included first year &middot; Renewal $125/year</div>
+        <a href="northwest-registered-agent-review.html" class="nw-btn">See Full Review &rarr;</a>
+      </div>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="faq-accordion-wrapper">
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">01</span>
+          <span>How do I dissolve an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>The process generally involves a member vote per the operating agreement, winding up the LLC's business (settling debts, collecting receivables, liquidating assets), filing the applicable termination or dissolution document with the state, and paying any outstanding state fees or taxes. Steps and required documents differ by state.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">02</span>
+          <span>How long does it take to dissolve an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Formal state processing time varies by state. Completing the winding-up process, paying all obligations, notifying creditors, and filing final tax returns can add to the overall timeline. Some states offer expedited processing.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">03</span>
+          <span>What happens to LLC debts when it is dissolved?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>An LLC must generally pay or adequately provide for all debts and obligations before distributing remaining assets to members. Distributing assets to members before settling known debts can create legal issues.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">04</span>
+          <span>Do I need to file final tax returns when I dissolve an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Yes. Depending on the LLC's tax classification, final federal tax returns, state income tax returns, and other filings may be required. Mark the final-return box where applicable. If the LLC had employees, final payroll returns and W-2s are also required.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">05</span>
+          <span>Can I just stop using the LLC and let it lapse?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Administrative dissolution by the state for failure to comply with requirements does not eliminate the LLC's debts, contractual obligations, or tax responsibilities. Members may have personal liability exposure and lose good standing. A formal voluntary dissolution is generally the more appropriate route.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">06</span>
+          <span>What if my LLC is registered in multiple states?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>If the LLC is registered as a foreign LLC in other states, the foreign registration may need to be withdrawn separately. Check the requirements for each state where the LLC has a registration and pay any outstanding obligations.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">07</span>
+          <span>Can I reactivate a dissolved LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Some states allow reinstatement of a dissolved LLC within a certain period. Requirements, fees, and whether reinstatement is available depend on the state and the reason for dissolution. If the LLC was involuntarily dissolved, the reinstatement process can differ from a voluntary dissolution.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">08</span>
+          <span>Do I cancel my EIN when dissolving an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>The IRS cannot cancel an EIN once assigned. However, you can inform the IRS that you are closing the business account associated with the EIN by sending a written request to the appropriate IRS address.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">09</span>
+          <span>What documents should I keep after dissolving my LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Generally keep: dissolution documents, final tax returns, financial statements, contracts and their resolution, employment records, intellectual-property documents, and any other records that may be relevant to future claims or inquiries. Retention periods can vary by document type and state law.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">10</span>
+          <span>What is the difference between dissolution and suspension?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Dissolution generally ends the LLC's existence as a legal entity through either a voluntary or involuntary process. Suspension or administrative dissolution happens when a state takes action against a non-compliant LLC. A suspended LLC can sometimes be reinstated; a fully dissolved LLC has formally ceased to exist under state law.</p></div>
+    </details>
+      </div>
+
+      <div class="continue-grid">
+        <a href="llc-guide.html" class="continue-card"><div class="cc-title">LLC Guide</div><div class="cc-sub">Full LLC formation guide from start to compliance</div></a>
+        <a href="operating-agreement.html" class="continue-card"><div class="cc-title">Operating Agreement</div><div class="cc-sub">Documents including dissolution procedures and member rights</div></a>
+        <a href="how-are-llcs-taxed.html" class="continue-card"><div class="cc-title">How LLCs Are Taxed</div><div class="cc-sub">Tax classification and final return requirements</div></a>
+        <a href="start-llc.html" class="continue-card"><div class="cc-title">Start a New LLC</div><div class="cc-sub">Begin again with our state-by-state formation guides</div></a>
+      </div>
+
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p class="footer-tagline">
+            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Popular States</h4>
+          <ul class="footer-links">
+            <li><a href="best-state-to-form-an-llc.html">Wyoming LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Delaware LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Florida LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Texas LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">California LLC Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Free Calculators</h4>
+          <ul class="footer-links">
+            <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
+            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Post-Formation</h4>
+          <ul class="footer-links">
+            <li><a href="business-setup.html">Post-LLC Setup</a></li>
+            <li><a href="ein-guide.html">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </p>
+        <div class="footer-copyright">
+          &copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">&#x2715;</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees &amp; Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

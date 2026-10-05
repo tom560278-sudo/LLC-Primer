@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>LLC for Real Estate: Benefits, Taxes & How to Set One Up (2026) | LLC Primer</title>
+  <meta name="description" content="Learn how LLCs are used for real estate investing. Covers liability protection, tax deductions, property transfers, Series LLC, and how to set up a real estate LLC in 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 0.05rem 1.5rem;
+      width: 100%;
+    }
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article ul {
+      padding-left: 1.65rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+    .guide-article ul li {
+      margin-bottom: 0.65rem !important;
+      line-height: 1.7 !important;
+      color: #334155 !important;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover { color: #0E7490; }
+    .custom-table-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
+      margin: 1.75rem 0;
+    }
+    .custom-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .custom-data-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .custom-data-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.925rem;
+      color: #334155;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .custom-data-table tr:last-child td { border-bottom: none; }
+    .custom-data-table tr:nth-child(even) td { background: #F8FAFC; }
+    .callout-green {
+      background: #ECFDF5;
+      border: 1.5px solid #10B981;
+      border-left: 5px solid #059669;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #065F46;
+      margin: 1.75rem 0;
+    }
+    .callout-yellow {
+      background: #FFFBEB;
+      border: 1.5px solid #F59E0B;
+      border-left: 5px solid #D97706;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #78350F;
+      margin: 1.75rem 0;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #0284C7;
+      border-left: 5px solid #0369A1;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #0C4A6E;
+      margin: 1.75rem 0;
+    }
+    .callout-red {
+      background: #FEF2F2;
+      border: 1.5px solid #EF4444;
+      border-left: 5px solid #DC2626;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #7F1D1D;
+      margin: 1.75rem 0;
+    }
+    .faq-accordion-wrapper {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
+    .key-numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .key-number-card {
+      background: linear-gradient(135deg, #12304A 0%, #0D2336 100%);
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-align: center;
+    }
+    .key-number-card .kn-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #159A9C;
+      font-family: var(--font-heading);
+    }
+    .key-number-card .kn-label {
+      font-size: 0.8rem;
+      color: white;
+      margin-top: 0.3rem;
+    }
+    .toc-card-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .toc-card-box h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+    .toc-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem 2rem;
+      font-size: 0.9rem;
+    }
+    .toc-links-grid a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .continue-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .continue-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-decoration: none !important;
+      display: block;
+    }
+    .continue-card:hover { border-color: #159A9C; }
+    .continue-card .cc-title {
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: #12304A;
+    }
+    .continue-card .cc-sub {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-top: 0.25rem;
+    }
+    .nw-promo-box {
+      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      color: #FFFFFF;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nw-promo-box .nw-text { flex: 1; min-width: 200px; }
+    .nw-promo-box .nw-btn {
+      background: #FFFFFF;
+      color: #0d2336;
+      font-weight: 800;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .key-numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .toc-links-grid { grid-template-columns: 1fr; }
+      .continue-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">Start an LLC</a>
+        </div>
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="tools.html" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
+            <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
+            <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
+            <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
+            <a href="llc-annual-report-tracker.html" class="dropdown-link">Annual Report Tracker</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="non-resident-llc-guide.html" class="nav-link">
+            Non-Residents
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="best-state-for-non-us-residents.html" class="dropdown-link">Best State</a>
+            <a href="ein-guide-for-non-residents.html" class="dropdown-link">EIN Guide</a>
+            <a href="llc-cost-for-non-residents.html" class="dropdown-link">LLC Cost</a>
+            <a href="bank-account-for-non-residents.html" class="dropdown-link">Bank Account</a>
+          </div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan &rarr;
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section style="background:white;padding:1.5rem 0 0 0;">
+    <div class="guide-content-container">
+      <div style="font-size:0.85rem;color:#64748B;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;"><a href="index.html" style="color:#64748B;text-decoration:none;font-weight:500;">Home</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a></div>
+      <h1 style="font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;color:#12304A;line-height:1.2;margin-bottom:1.25rem;">LLC for Real Estate: Benefits, Taxes &amp; How to Set One Up (2026)</h1>
+      <p>Real estate investors often use limited liability companies (LLCs) to separate property ownership from their personal finances and to create a formal structure for managing rental or investment properties. An LLC can be useful for holding rental property, organizing multiple investors, separating different properties, and managing real estate-related income and expenses. However, an LLC does not automatically eliminate every personal liability, tax, financing, or insurance risk.</p><p><strong>Important:</strong> LLC Primer provides general educational information, not legal, tax, accounting, insurance, or investment advice. Real estate transactions can involve significant legal and tax consequences. Verify requirements with the appropriate state agency, lender, insurance provider, attorney, or tax professional before making a decision.</p>
+    </div>
+  </section>
+  <main class="guide-article" style="padding: 0 4rem 0;">
+    <div class="guide-content-container">
+
+      <h2 id="what">What Is a Real Estate LLC?</h2>
+      <p>A real estate LLC is a limited liability company used to own, manage, or conduct business involving real estate. The LLC itself becomes the legal owner of property when the property is properly acquired or transferred to the company. The LLC can then receive rental income, pay property-related expenses, enter contracts, maintain bank accounts, and conduct other activities associated with the property.</p>
+      <p>For example, an investor might create <strong>ABC Property Holdings LLC</strong>. The LLC could purchase and own a rental property, while the investor owns the membership interest in the LLC. The important distinction is that the property and the owner's personal assets are not automatically the same legal property once a properly formed LLC is used.</p>
+      <p>An LLC generally provides personal liability protection in most circumstances, but that protection has limits. For example, an LLC generally does not protect an owner from liability arising from the owner's own wrongful conduct, personal guarantees, certain statutory obligations, or circumstances in which a court determines that the LLC structure should not be respected.</p>
+
+      <h2 id="benefits">Benefits of Using an LLC for Real Estate</h2>
+      <h3>1. Potential Liability Protection</h3>
+      <p>A properly maintained LLC can create a legal separation between the company and its members. If the LLC owns a rental property, claims relating to the company's business may generally be directed toward the LLC rather than automatically becoming personal obligations of every member. However, the protection is not absolute. For real estate investors, liability protection should generally be considered together with appropriate insurance coverage.</p>
+
+      <h3>2. Separation Between Properties</h3>
+      <p>Investors with multiple properties may want to separate ownership rather than placing every property into one entity. This structure may help isolate liabilities between properties because each property is owned by a separate legal entity. However, each additional LLC can create additional formation fees, annual state fees, additional tax and accounting work, and additional compliance obligations.</p>
+
+      <h3>3. Potential Privacy Benefits</h3>
+      <p>An LLC may provide some separation between an investor's personal identity and the property-owning entity, but LLC ownership should not be described as automatically anonymous. Public disclosure requirements differ by state. Real estate ownership can also create additional public records through property deeds, county assessor records, mortgage documents, and business filings.</p>
+
+      <h3>4. More Formal Ownership Structure</h3>
+      <p>An LLC can make it easier to document who owns an investment and how decisions are made. An <a href="operating-agreement.html">operating agreement</a> can establish rules covering ownership percentages, contributions, profit and loss allocations, management responsibilities, voting rights, property purchases and sales, distributions, new members, transfers, and dispute procedures. This can be particularly useful when multiple people invest in the same property.</p>
+
+      <h3>5. Potential Estate-Planning Flexibility</h3>
+      <p>LLC ownership can sometimes be incorporated into an estate plan. Instead of transferring individual real estate interests directly, an investor may be able to structure ownership through membership interests in an LLC. However, owning property through an LLC does not automatically avoid probate or create a complete estate plan. Investors considering an LLC as part of an estate plan should work with an estate-planning professional.</p>
+
+      <h2 id="taxes">Tax Benefits and Deductions</h2>
+      <p>An LLC does not automatically create a special federal tax treatment for real estate. For federal tax purposes, an LLC's treatment generally depends on how the LLC is classified and whether it has made an election to be taxed differently. A <a href="single-member-llc.html">single-member LLC</a> is generally treated as a disregarded entity for federal income tax purposes unless it elects corporate treatment. A <a href="multi-member-llc.html">multi-member LLC</a> is generally treated as a partnership unless it elects corporate treatment.</p>
+      <p>For more details on <a href="how-are-llcs-taxed.html">how LLCs are taxed</a>, see our dedicated guide.</p>
+
+      <h3>Common Real Estate Tax Deductions</h3>
+      <div class="custom-table-wrap"><table class="custom-data-table">
+        <thead><tr><th>Expense</th><th>Potential Tax Treatment</th></tr></thead>
+        <tbody>
+          <tr><td>Mortgage interest</td><td>May be deductible subject to applicable rules</td></tr>
+          <tr><td>Property taxes</td><td>May be deductible subject to applicable rules</td></tr>
+          <tr><td>Insurance</td><td>Generally deductible when related to rental activity</td></tr>
+          <tr><td>Repairs and maintenance</td><td>May be deductible when they qualify as current expenses</td></tr>
+          <tr><td>Property management</td><td>Generally deductible when related to rental activity</td></tr>
+          <tr><td>Depreciation</td><td>May allow recovery of qualifying property costs over time</td></tr>
+          <tr><td>Business mileage</td><td>May be deductible when the requirements are met (2026 rate: 72.5&cent;/mile Jan&ndash;June; 76&cent;/mile July&ndash;Dec)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout-yellow"><strong>Depreciation recapture:</strong> Prior depreciation can affect the taxable gain when property is sold through depreciation recapture rules. Do not overlook this when planning a property sale.</div>
+
+      <h2 id="types">Types of Real Estate LLCs</h2>
+      <div class="custom-table-wrap"><table class="custom-data-table">
+        <thead><tr><th>Structure</th><th>Description</th><th>Key Consideration</th></tr></thead>
+        <tbody>
+          <tr><td>Single-Member LLC</td><td>One owner; disregarded entity by default</td><td>Simpler tax reporting; legal separation maintained</td></tr>
+          <tr><td>Multi-Member LLC</td><td>Two or more owners; treated as partnership by default</td><td>Operating agreement critical; Form 1065 required</td></tr>
+          <tr><td>One LLC Per Property</td><td>Separate LLC for each investment property</td><td>Greater separation; higher cost and administration</td></tr>
+          <tr><td>Holding Company</td><td>Parent LLC owns interests in property-level LLCs</td><td>More complex structure; additional professional guidance needed</td></tr>
+          <tr><td><a href="series-llc.html">Series LLC</a></td><td>Separate series under one parent LLC (where permitted)</td><td>State-specific rules; not recognized in every state</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="setup">How to Set Up an LLC for Real Estate</h2>
+      <h3>Step 1: Choose Where to Form the LLC</h3>
+      <p>For a real estate investment, the property location is often an important starting point. If you form an LLC in one state but conduct business or own property in another state, you may have additional registration obligations. Forming an LLC in a state known for business-friendly laws does not automatically eliminate obligations in the state where the property is located.</p>
+
+      <h3>Step 2: Choose an LLC Name</h3>
+      <p>Choose a name that complies with the formation state's LLC naming rules. The name generally needs to be distinguishable from existing entities and may need an LLC designator such as LLC, L.L.C., or Limited Liability Company. Check the state's official business-name database before filing.</p>
+
+      <h3>Step 3: Appoint a Registered Agent</h3>
+      <p>An LLC generally needs a <a href="registered-agent-guide.html">registered agent</a> in its formation state. The registered agent receives official correspondence and legal documents on behalf of the company. If the LLC must register in another state, that state may also have registered-agent requirements.</p>
+
+      <h3>Step 4: File the Formation Document</h3>
+      <p>The formation document is commonly called the Articles of Organization (some states use Certificate of Formation or Certificate of Organization). The filing fee varies by state. Use the LLC Primer state guide for your formation state and verify the final amount with the appropriate state agency before filing.</p>
+
+      <h3>Step 5: Create an Operating Agreement</h3>
+      <p>An <a href="operating-agreement.html">operating agreement</a> establishes rules for the LLC. It is particularly important for multi-member real estate LLCs. A real estate operating agreement may address ownership percentages, initial capital contributions, property purchases, financing, management, voting, distributions, sale of property, refinancing, new members, transfers, and dissolution.</p>
+
+      <h3>Step 6: Obtain an EIN When Required</h3>
+      <p>An <a href="ein-guide.html">Employer Identification Number (EIN)</a> is a federal tax identification number issued by the IRS at no charge. Multi-member LLCs generally need an EIN, while a single-member LLC may have different federal identification requirements depending on its tax status and activities.</p>
+
+      <h3>Step 7: Open Separate Business Accounts</h3>
+      <p>Once the LLC is established, maintain separate financial records. A <a href="best-business-bank-accounts.html">dedicated business bank account</a> can help distinguish LLC transactions from the owner's personal transactions. Property income should generally be deposited into the appropriate business account.</p>
+
+      <h2 id="transfer">How to Transfer Property Into an LLC</h2>
+      <p>The process of moving property into the LLC generally requires a formal transfer of title. This can involve reviewing the mortgage and loan documents, confirming lender requirements, preparing the appropriate deed, signing and recording the deed, updating insurance, and updating property-tax records.</p>
+      <div class="callout-red"><strong>Check the Mortgage Before Transferring Property.</strong> A mortgage may contain a due-on-sale or due-on-transfer provision. Transferring property from an individual to an LLC can have consequences under the loan documents. Do not assume that a lender will automatically approve the transfer. Before recording a transfer, contact the lender or servicer and review the loan documents.</div>
+      <div class="callout-yellow"><strong>Check for Transfer Taxes.</strong> A property transfer can potentially trigger recording fees, transfer taxes, documentary taxes, property-tax reassessment, and other state or local charges. The treatment varies significantly by jurisdiction. Check with the county recorder, tax authority, title company, or real estate attorney before completing the transfer.</div>
+
+      <h2 id="costs">How Much Does a Real Estate LLC Cost?</h2>
+      <p>There is no single nationwide cost for forming or maintaining a real estate LLC. Costs depend on the state, property location, number of entities, filing method, registered-agent arrangement, tax requirements, and professional services used.</p>
+      <div class="custom-table-wrap"><table class="custom-data-table">
+        <thead><tr><th>Cost Category</th><th>What to Expect</th></tr></thead>
+        <tbody>
+          <tr><td>State formation fee</td><td>Varies by state — verify with the official state agency</td></tr>
+          <tr><td>Annual/biennial report</td><td>Varies by state</td></tr>
+          <tr><td>Registered agent</td><td>$0 if self-qualified where permitted; commercial services charge separately</td></tr>
+          <tr><td>EIN</td><td>$0 when obtained directly from the IRS</td></tr>
+          <tr><td>Operating agreement</td><td>$0 if self-prepared; professional help varies</td></tr>
+          <tr><td>Property transfer/recording</td><td>Varies by county and state</td></tr>
+          <tr><td>Transfer taxes</td><td>May apply depending on jurisdiction</td></tr>
+          <tr><td>Insurance</td><td>Varies by property, coverage, location, and risk</td></tr>
+        </tbody>
+      </table></div>
+      <p>For exact state filing fees, use the <a href="llc-startup-cost-estimator.html">LLC cost estimator</a> and verify the amount with the official state filing authority before submitting payment.</p>
+
+      <h2 id="mistakes">Common Mistakes to Avoid</h2>
+      <ul>
+        <li><strong>Treating the LLC as a complete liability shield.</strong> Personal conduct, guarantees, statutory obligations, and other exceptions can create personal exposure.</li>
+        <li><strong>Mixing personal and LLC finances.</strong> Maintain clear financial separation between the owner and the LLC.</li>
+        <li><strong>Assuming an LLC eliminates taxes.</strong> Federal tax treatment depends on the LLC's classification and elections.</li>
+        <li><strong>Ignoring the mortgage.</strong> Do not transfer mortgaged property to an LLC without first checking the loan documents and lender requirements.</li>
+        <li><strong>Failing to update insurance.</strong> The insurer should know who owns the property and how it is being used after a transfer.</li>
+        <li><strong>Not maintaining company records.</strong> Keep formation documents, operating agreement, tax documents, bank statements, and major company decisions.</li>
+        <li><strong>Assuming a Series LLC works everywhere.</strong> Series LLC laws vary considerably. Confirm recognition before using this structure.</li>
+      </ul>
+
+            <div class="nw-promo-box">
+        <div class="nw-text">Northwest Registered Agent &mdash; formation from $39 + state fee &middot; Registered agent included first year &middot; Renewal $125/year</div>
+        <a href="northwest-registered-agent-review.html" class="nw-btn">See Full Review &rarr;</a>
+      </div>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="faq-accordion-wrapper">
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">01</span>
+          <span>Is an LLC good for real estate?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>An LLC can be useful for real estate ownership because it can provide a separate legal structure for holding property and may provide personal liability protection in many circumstances. Whether it is appropriate depends on the property, financing, state law, taxes, insurance, number of owners, and investment strategy.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">02</span>
+          <span>Should I put my rental property in an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>It may make sense in some circumstances, but it is not automatically the right choice for every rental property. Before transferring a property, consider mortgage terms, lender approval, transfer taxes, insurance, state registration, property taxes, tax consequences, liability considerations, and ongoing LLC costs.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">03</span>
+          <span>Does an LLC protect my house from a rental-property lawsuit?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>An LLC may help separate business liabilities from personal assets in many circumstances. However, it is not an absolute guarantee. Personal liability can still arise from an owner's own conduct, personal guarantees, failure to maintain required separation, or other exceptions under applicable law. Insurance should be considered alongside the LLC structure.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">04</span>
+          <span>Can an LLC own rental property?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Yes. An LLC can generally own real estate if permitted by applicable law and if the transaction is properly documented. The LLC can purchase property directly, or an existing property may sometimes be transferred into the LLC subject to lender, title, tax, and recording requirements.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">05</span>
+          <span>Can one LLC own multiple rental properties?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Yes. An LLC can potentially own multiple properties. The advantage is administrative simplicity compared with maintaining multiple entities. The potential disadvantage is that liabilities associated with one property may expose other assets owned by the same LLC. Some investors therefore consider separate LLCs for separate properties.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">06</span>
+          <span>Should I create one LLC for each rental property?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Not necessarily. One LLC per property can potentially provide greater separation between properties, but each additional LLC creates additional formation, maintenance, banking, insurance, accounting, and compliance requirements. The right structure depends on the number and value of properties, financing, state requirements, risk tolerance, and professional advice.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">07</span>
+          <span>Can I transfer my house to an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>A property can potentially be transferred to an LLC, but transferring a property with an existing mortgage requires special attention. Review the loan documents and contact the lender or servicer before transferring title. Also check for transfer taxes, recording requirements, insurance changes, property-tax implications, and other local requirements.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">08</span>
+          <span>Will transferring my property to an LLC trigger the mortgage?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>It can depend on the loan documents and applicable law. Some loans have due-on-sale or due-on-transfer provisions, while some loan programs permit certain transfers under defined circumstances. Do not assume that an LLC transfer is automatically permitted. Contact the lender or servicer before recording the transfer.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">09</span>
+          <span>Does an LLC reduce property taxes?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Not automatically. Creating an LLC does not by itself guarantee lower property taxes. Property-tax rules are determined by state and local law, and a transfer of property can have tax or reassessment consequences depending on the jurisdiction.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">10</span>
+          <span>Does an LLC reduce capital gains tax when I sell a property?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Not automatically. Capital gains treatment generally depends on the property, ownership structure, basis, holding period, depreciation, tax classification, and applicable federal and state rules. An LLC is not automatically a capital-gains tax reduction strategy.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">11</span>
+          <span>Is rental income from an LLC subject to self-employment tax?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Rental income is generally treated differently from ordinary self-employment income, but exceptions can apply. The tax treatment depends on the nature of the rental activity and the taxpayer's circumstances. Do not assume that using an LLC automatically eliminates self-employment tax.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">12</span>
+          <span>Can a real estate LLC qualify for the QBI deduction?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Potentially. Certain rental real estate activities may qualify for the Section 199A deduction if the applicable requirements are met. The IRS provides a safe harbor for certain rental real estate enterprises, but satisfying the safe harbor is not the only possible route to qualifying treatment. A tax professional can determine whether a particular rental activity qualifies.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">13</span>
+          <span>Does an LLC have to have an operating agreement?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Requirements vary by state. Some states do not require every LLC to maintain a written operating agreement, but having one can be especially useful for real estate LLCs because it can document ownership, management, contributions, distributions, property decisions, and member rights. For multi-member LLCs, a written agreement is particularly important.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">14</span>
+          <span>Can an LLC have investors?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Yes, an LLC can have multiple members and can be used to structure ownership among investors. The operating agreement should clearly address contributions, ownership percentages, voting, distributions, transfers, management, and other important rights. Securities laws and other legal requirements may also apply when interests are offered to investors.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">15</span>
+          <span>Can an LLC own an investment property in another state?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Potentially, yes. However, owning property or conducting business in another state may create foreign-registration, tax, registered-agent, licensing, or reporting obligations. Real estate investors should verify the requirements of the state where the property is located.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">16</span>
+          <span>Is a Series LLC better than a regular LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Not necessarily. A Series LLC can provide a useful structure for some investors, but state recognition and administration vary. A traditional LLC-per-property structure may be easier to understand and administer in some circumstances. Compare the legal, tax, financing, insurance, and compliance consequences before choosing either structure.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">17</span>
+          <span>Can an LLC avoid probate for real estate?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Not automatically. LLC ownership can sometimes be incorporated into an estate plan, but whether an LLC interest passes outside probate depends on the ownership structure, estate-planning documents, state law, and other circumstances. An LLC should not be treated as a substitute for a properly prepared estate plan.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">18</span>
+          <span>Do I need landlord insurance if I have an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>An LLC does not replace insurance. Rental property owners should evaluate coverage appropriate for the property and its use, including liability and property coverage. The insurer should be informed of the ownership structure and rental activity so the policy reflects the actual risk.</p></div>
+    </details>
+      </div>
+
+      <div class="continue-grid">
+        <a href="llc-for-rental-property.html" class="continue-card"><div class="cc-title">LLC for Rental Property</div><div class="cc-sub">Step-by-step guide for landlords and rental investors</div></a>
+        <a href="single-member-llc.html" class="continue-card"><div class="cc-title">Single-Member LLC Guide</div><div class="cc-sub">How a one-owner LLC works for real estate and more</div></a>
+        <a href="series-llc.html" class="continue-card"><div class="cc-title">Series LLC Guide</div><div class="cc-sub">Multi-property structure using one parent LLC</div></a>
+        <a href="how-are-llcs-taxed.html" class="continue-card"><div class="cc-title">How LLCs Are Taxed</div><div class="cc-sub">Default classification, S-corp election, QBI deduction</div></a>
+      </div>
+
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p class="footer-tagline">
+            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Popular States</h4>
+          <ul class="footer-links">
+            <li><a href="best-state-to-form-an-llc.html">Wyoming LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Delaware LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Florida LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Texas LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">California LLC Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Free Calculators</h4>
+          <ul class="footer-links">
+            <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
+            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Post-Formation</h4>
+          <ul class="footer-links">
+            <li><a href="business-setup.html">Post-LLC Setup</a></li>
+            <li><a href="ein-guide.html">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </p>
+        <div class="footer-copyright">
+          &copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">&#x2715;</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees &amp; Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

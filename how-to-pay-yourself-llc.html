@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>How to Pay Yourself From an LLC (2026): Owner Draw vs Salary | LLC Primer</title>
+  <meta name="description" content="Learn how to pay yourself from an LLC in 2026. Covers owner draws, partnership distributions, S-corp wages, reasonable compensation, and quarterly estimated taxes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-content-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 0.05rem 1.5rem;
+      width: 100%;
+    }
+    .guide-article h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: #12304A;
+      margin: 2.75rem 0 1.25rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+    .guide-article h3 {
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      font-weight: 700;
+      color: #12304A;
+      margin: 2rem 0 1rem 0;
+      font-family: var(--font-heading);
+      line-height: 1.3;
+    }
+    .guide-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .guide-article ul {
+      padding-left: 1.65rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+    .guide-article ul li {
+      margin-bottom: 0.65rem !important;
+      line-height: 1.7 !important;
+      color: #334155 !important;
+    }
+    .guide-article a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .guide-article a:hover { color: #0E7490; }
+    .custom-table-wrap {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
+      margin: 1.75rem 0;
+    }
+    .custom-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .custom-data-table th {
+      background: #12304A;
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .custom-data-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.925rem;
+      color: #334155;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .custom-data-table tr:last-child td { border-bottom: none; }
+    .custom-data-table tr:nth-child(even) td { background: #F8FAFC; }
+    .callout-green {
+      background: #ECFDF5;
+      border: 1.5px solid #10B981;
+      border-left: 5px solid #059669;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #065F46;
+      margin: 1.75rem 0;
+    }
+    .callout-yellow {
+      background: #FFFBEB;
+      border: 1.5px solid #F59E0B;
+      border-left: 5px solid #D97706;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #78350F;
+      margin: 1.75rem 0;
+    }
+    .callout-blue {
+      background: #F0F9FF;
+      border: 1.5px solid #0284C7;
+      border-left: 5px solid #0369A1;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #0C4A6E;
+      margin: 1.75rem 0;
+    }
+    .callout-red {
+      background: #FEF2F2;
+      border: 1.5px solid #EF4444;
+      border-left: 5px solid #DC2626;
+      border-radius: 14px;
+      padding: 1.15rem 1.4rem;
+      color: #7F1D1D;
+      margin: 1.75rem 0;
+    }
+    .faq-accordion-wrapper {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .faq-accordion-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .faq-accordion-item:hover {
+      border-color: #159A9C;
+      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
+    }
+    .faq-accordion-item[open] {
+      border-color: #159A9C;
+      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
+    }
+    .faq-accordion-question {
+      padding: 1.25rem 1.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #12304A;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+      font-family: var(--font-heading);
+    }
+    .faq-accordion-question::-webkit-details-marker { display: none; }
+    .faq-q-badge-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .faq-q-badge {
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      color: #159A9C;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: #159A9C;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-accordion-answer {
+      padding: 0 1.65rem 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px dashed #F1F5F9;
+      margin-top: 0.25rem;
+      padding-top: 1rem;
+    }
+    .key-numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .key-number-card {
+      background: linear-gradient(135deg, #12304A 0%, #0D2336 100%);
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-align: center;
+    }
+    .key-number-card .kn-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #159A9C;
+      font-family: var(--font-heading);
+    }
+    .key-number-card .kn-label {
+      font-size: 0.8rem;
+      color: white;
+      margin-top: 0.3rem;
+    }
+    .toc-card-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .toc-card-box h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #12304A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+    .toc-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem 2rem;
+      font-size: 0.9rem;
+    }
+    .toc-links-grid a {
+      color: #159A9C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .continue-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .continue-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      text-decoration: none !important;
+      display: block;
+    }
+    .continue-card:hover { border-color: #159A9C; }
+    .continue-card .cc-title {
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: #12304A;
+    }
+    .continue-card .cc-sub {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-top: 0.25rem;
+    }
+    .nw-promo-box {
+      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      color: #FFFFFF;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nw-promo-box .nw-text { flex: 1; min-width: 200px; }
+    .nw-promo-box .nw-btn {
+      background: #FFFFFF;
+      color: #0d2336;
+      font-weight: 800;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .key-numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .toc-links-grid { grid-template-columns: 1fr; }
+      .continue-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="LLC Primer Homepage" style="display: flex; align-items: center;">
+        <img src="logo.png" alt="LLC Primer Logo" style="height: 56px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="nav-menu" id="primaryNavMenu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="start-llc.html" class="nav-link">Start an LLC</a>
+        </div>
+        <div class="nav-item">
+          <a href="best-llc-services.html" class="nav-link">
+            LLC Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="northwest-registered-agent-review.html" class="dropdown-link">Northwest Registered Agent</a>
+            <a href="zenbusiness-vs-northwest.html" class="dropdown-link">ZenBusiness vs Northwest</a>
+            <a href="best-registered-agent-services.html" class="dropdown-link">Best Registered Agent</a>
+            <a href="best-llc-formation-services.html" class="dropdown-link">Best LLC Formation Services</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="llc-guide.html" class="nav-link">
+            LLC Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-llc.html" class="dropdown-link">What is an LLC</a>
+            <a href="best-state-to-form-an-llc.html" class="dropdown-link">Best State for LLC</a>
+            <a href="how-much-does-an-llc-cost.html" class="dropdown-link">How Much Does An LLC Cost</a>
+            <a href="how-are-llcs-taxed.html" class="dropdown-link">How Are LLCs Taxed</a>
+            <a href="operating-agreement.html" class="dropdown-link">LLC Operating Agreement</a>
+            <a href="registered-agent-guide.html" class="dropdown-link">Registered Agent Guide</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="business-setup.html" class="nav-link">
+            Business Setup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="ein-guide.html" class="dropdown-link">Federal EIN (SS-4 Tax ID)</a>
+            <a href="best-business-bank-accounts.html" class="dropdown-link">Best Bank Accounts</a>
+            <a href="virtual-business-address.html" class="dropdown-link">Virtual Business Address</a>
+            <a href="llc-business-insurance.html" class="dropdown-link">LLC Business Insurance</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="tools.html" class="nav-link">
+            Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="llc-cost-calculator.html" class="dropdown-link">LLC Cost Calculator</a>
+            <a href="llc-startup-cost-estimator.html" class="dropdown-link">LLC Startup Cost Estimator</a>
+            <a href="sos-search.html" class="dropdown-link">Secretary of State Search</a>
+            <a href="quiz.html" class="dropdown-link">Business Structure Quiz</a>
+            <a href="llc-vs-scorp.html" class="dropdown-link">LLC vs S-Corp Calculator</a>
+            <a href="llc-annual-report-tracker.html" class="dropdown-link">Annual Report Tracker</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="non-resident-llc-guide.html" class="nav-link">
+            Non-Residents
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="best-state-for-non-us-residents.html" class="dropdown-link">Best State</a>
+            <a href="ein-guide-for-non-residents.html" class="dropdown-link">EIN Guide</a>
+            <a href="llc-cost-for-non-residents.html" class="dropdown-link">LLC Cost</a>
+            <a href="bank-account-for-non-residents.html" class="dropdown-link">Bank Account</a>
+          </div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="search-trigger" onclick="openSearchModal()" aria-label="Open Search" title="Search state guides (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="quiz.html" class="ls-btn ls-btn--emerald" style="padding: 0.6rem 1.35rem; font-size: 0.875rem; background: var(--color-primary-gradient);">
+          Build LLC Plan &rarr;
+        </a>
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section style="background:white;padding:1.5rem 0 0 0;">
+    <div class="guide-content-container">
+      <div style="font-size:0.85rem;color:#64748B;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;"><a href="index.html" style="color:#64748B;text-decoration:none;font-weight:500;">Home</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a><span style="color:#CBD5E1;">/</span><a href="llc-guide.html" style="color:#64748B;text-decoration:none;font-weight:500;">LLC Guide</a></div>
+      <h1 style="font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;color:#12304A;line-height:1.2;margin-bottom:1.25rem;">How to Pay Yourself From an LLC (2026)</h1>
+      <p>How you pay yourself from an LLC depends almost entirely on how the LLC is classified for federal tax purposes. A single-member LLC with default classification generally uses owner draws. A multi-member LLC taxed as a partnership distributes money according to the operating agreement. An LLC that has elected S corporation treatment generally must pay a reasonable W-2 salary before any additional distributions are taken.</p><p>This guide explains each method, the tax treatment of each approach, how to handle estimated taxes when there is no withholding, and what to watch out for when an S-corp election is involved.</p>
+    </div>
+  </section>
+  <main class="guide-article" style="padding: 0 4rem 0;">
+    <div class="guide-content-container">
+
+      <div class="key-numbers-grid">
+        <div class="key-number-card"><div class="kn-value">15.3%</div><div class="kn-label">SE tax rate on net self-employment earnings</div></div>
+        <div class="key-number-card"><div class="kn-value">$184,500</div><div class="kn-label">2026 Social Security wage base</div></div>
+        <div class="key-number-card"><div class="kn-value">4x/yr</div><div class="kn-label">Typical estimated-tax payment schedule</div></div>
+        <div class="key-number-card"><div class="kn-value">$24,500</div><div class="kn-label">2026 solo 401(k) elective deferral limit</div></div>
+        <div class="key-number-card"><div class="kn-value">$72,000</div><div class="kn-label">2026 maximum SEP contribution</div></div>
+        <div class="key-number-card"><div class="kn-value">20%</div><div class="kn-label">Max QBI deduction, subject to eligibility rules</div></div>
+      </div>
+
+      <h2 id="classification">How the LLC's Tax Classification Determines How You Pay Yourself</h2>
+      <p>How you pay yourself from an LLC is controlled primarily by the LLC's federal tax classification, not by state law or the word "LLC." For more about <a href="how-are-llcs-taxed.html">how LLCs are taxed</a>, see our dedicated guide.</p>
+      <div class="custom-table-wrap"><table class="custom-data-table">
+        <thead><tr><th>Tax Classification</th><th>Default?</th><th>How Owner Gets Paid</th></tr></thead>
+        <tbody>
+          <tr><td>Disregarded entity (single-member)</td><td>Yes, unless elected otherwise</td><td>Owner draw</td></tr>
+          <tr><td>Partnership (multi-member)</td><td>Yes, unless elected otherwise</td><td>Partner distributions per operating agreement</td></tr>
+          <tr><td>S Corporation</td><td>Elected; must meet eligibility</td><td>Reasonable W-2 wages + potential distributions</td></tr>
+          <tr><td>C Corporation</td><td>Elected</td><td>W-2 salary + potential dividends (subject to double taxation)</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="draws">Method 1: Owner Draws (Disregarded Entity LLCs)</h2>
+      <p>A domestic single-member LLC with default federal classification is generally treated as a disregarded entity. The owner is not an employee of the LLC for federal income-tax purposes. Instead, the owner takes money out of the business account as an owner draw.</p>
+      <h3>How Owner Draws Work</h3>
+      <ul>
+        <li>Transfer funds from the LLC business account to your personal account</li>
+        <li>Record each draw in your bookkeeping records as an owner's draw/distribution</li>
+        <li>Do not withhold taxes from draws &mdash; you are responsible for making estimated tax payments</li>
+        <li>The amount you draw does not directly affect your net self-employment income for tax purposes</li>
+        <li>Self-employment tax is based on the LLC's net business income, not the amount you drew</li>
+      </ul>
+      <div class="callout-blue"><strong>The tax is on profit, not draws:</strong> If the LLC earns $80,000 in net profit but you only draw $30,000, self-employment tax is still generally calculated on $80,000 of net earnings from self-employment, not $30,000.</div>
+
+      <h3>Estimated Tax Payments</h3>
+      <p>Draws are generally not subject to automatic withholding. Federal estimated income tax and self-employment tax may need to be paid quarterly. The standard 2026 due dates are April 15, June 16, September 15, and January 15, 2027. State estimated-tax due dates can differ. Underpayment penalties may apply when estimated payments are not made correctly.</p>
+
+      <h2 id="partnership">Method 2: Partnership Distributions (Multi-Member LLCs)</h2>
+      <p>A domestic <a href="multi-member-llc.html">multi-member LLC</a> is generally treated as a partnership for federal income-tax purposes unless it elects otherwise. The LLC files Form 1065 and provides each member with a Schedule K-1. Members receive their share of income, deductions, gains, and losses based on their ownership percentage or other agreed arrangement documented in the <a href="operating-agreement.html">operating agreement</a>.</p>
+      <h3>How Partnership Distributions Work</h3>
+      <ul>
+        <li>The operating agreement generally establishes when and how distributions can be made</li>
+        <li>Distributions must be tracked against each member's capital account basis</li>
+        <li>A distribution in excess of basis can have tax consequences</li>
+        <li>Guaranteed payments to partners are a separate category and are generally subject to self-employment tax</li>
+        <li>Each member pays estimated taxes on their allocable share of partnership income</li>
+      </ul>
+      <p>For a detailed explanation of self-employment tax in multi-member LLCs, see our <a href="how-are-llcs-taxed.html">LLC taxation guide</a>.</p>
+
+      <h2 id="scorp">Method 3: W-2 Salary + Distributions (S-Corp Election)</h2>
+      <p>An eligible LLC can elect S corporation treatment. When an LLC taxed as an S corporation has an owner who performs services for the company, that owner generally must receive reasonable compensation as W-2 wages before receiving additional non-wage distributions.</p>
+      <div class="callout-yellow"><strong>Reasonable Compensation Is a Legal Requirement, Not a Tax Choice.</strong> IRS guidance consistently requires that S corporation shareholder-employees receive reasonable compensation for services before non-wage distributions are taken. The reasonable salary should reflect what a similarly qualified third-party employee would receive for similar work.</div>
+      <div class="custom-table-wrap"><table class="custom-data-table">
+        <thead><tr><th>Factor</th><th>Role in Setting Reasonable Compensation</th></tr></thead>
+        <tbody>
+          <tr><td>Services performed</td><td>What functions does the owner actually perform?</td></tr>
+          <tr><td>Experience and credentials</td><td>Comparable market rates for that expertise</td></tr>
+          <tr><td>Time committed</td><td>Full-time versus part-time contribution</td></tr>
+          <tr><td>Industry and geography</td><td>What would a comparable business pay?</td></tr>
+          <tr><td>Business revenue and size</td><td>Profit should generally support the salary level</td></tr>
+        </tbody>
+      </table></div>
+      <h3>How S-Corp Owner Payment Works</h3>
+      <ul>
+        <li>Set up payroll for the business</li>
+        <li>Pay yourself a reasonable salary through payroll with appropriate withholding</li>
+        <li>File Form 941 quarterly</li>
+        <li>Issue Form W-2 by January 31 each year</li>
+        <li>Any additional distributions can be taken according to the S-corporation rules</li>
+        <li>Document compensation decisions and record them appropriately</li>
+      </ul>
+
+      <h2 id="comparison">Comparing Payment Methods Side by Side</h2>
+      <div class="custom-table-wrap"><table class="custom-data-table">
+        <thead><tr><th>Feature</th><th>Owner Draw</th><th>Partnership Distribution</th><th>S-Corp Wage + Distribution</th></tr></thead>
+        <tbody>
+          <tr><td>Withholding</td><td>None</td><td>None</td><td>Required on W-2 wages</td></tr>
+          <tr><td>SE tax on net income</td><td>Generally yes</td><td>Generally yes for active members</td><td>On wages only; not generally on distributions</td></tr>
+          <tr><td>Payroll required</td><td>No</td><td>No</td><td>Yes</td></tr>
+          <tr><td>Tax form</td><td>Schedule C</td><td>Schedule K-1 / Form 1065</td><td>W-2 + Schedule K-1 (Form 1120-S)</td></tr>
+          <tr><td>Complexity</td><td>Lower</td><td>Moderate</td><td>Higher</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="how-much">How Much Should You Pay Yourself?</h2>
+      <h3>Before Paying Yourself, Estimate Your Tax Liability</h3>
+      <p>Many self-employed LLC owners set aside a portion of each payment received before making any draws. A common planning approach is to set aside 25% to 35% of net business income, depending on the owner's tax bracket, state tax, and available deductions. This is a rough estimate, not a rule. A tax professional can help determine a more accurate quarterly estimate based on your actual situation.</p>
+
+      <h3>Maintain Enough for Business Operations</h3>
+      <p>Pay yourself after confirming that the LLC has enough cash to cover upcoming operating expenses, vendor payments, payroll (if any), quarterly estimated taxes, required state fees, and other obligations. Depleting the business account with excessive draws and then covering business costs personally can undermine financial separation.</p>
+
+      <h2 id="recordkeeping">Recordkeeping for Owner Draws and Distributions</h2>
+      <ul>
+        <li>Record each draw or distribution in your bookkeeping system with the date, amount, and category (owner draw or distributions)</li>
+        <li>Use a <a href="best-business-bank-accounts.html">dedicated business bank account</a> to document the transfer clearly</li>
+        <li>Maintain year-end capital-account records for partnership LLCs</li>
+        <li>For S corporations, maintain payroll records, W-2s, and quarterly 941 filings</li>
+        <li>Keep all distributions backed by an operating agreement or resolution</li>
+      </ul>
+
+            <div class="nw-promo-box">
+        <div class="nw-text">Northwest Registered Agent &mdash; formation from $39 + state fee &middot; Registered agent included first year &middot; Renewal $125/year</div>
+        <a href="northwest-registered-agent-review.html" class="nw-btn">See Full Review &rarr;</a>
+      </div>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="faq-accordion-wrapper">
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">01</span>
+          <span>How do I pay myself from an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>The method depends on the LLC's federal tax classification. A single-member disregarded LLC generally pays through owner draws taken from the business account. A multi-member partnership LLC distributes according to the operating agreement. An LLC taxed as an S corporation generally pays a reasonable W-2 salary, plus potential additional distributions.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">02</span>
+          <span>Is there a required amount for owner draws from an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>There is no minimum or maximum draw required by federal law for a disregarded entity or partnership LLC. However, federal and state estimated taxes should be considered, because draws are not automatically subject to withholding.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">03</span>
+          <span>Does taking an owner draw trigger self-employment tax?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Self-employment tax is generally applied to net earnings from self-employment reported on Schedule SE. Simply making a draw does not automatically trigger SE tax; the tax is based on the net business income and the entity's tax classification.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">04</span>
+          <span>What is a reasonable salary for an LLC taxed as an S corporation?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Reasonable compensation considers the services performed, experience, time committed, market rates for similar work, and what the business would otherwise pay for those services. It should not be designed solely to minimize wages. The IRS actively examines situations where S-corp shareholder-employees receive unreasonably low wages.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">05</span>
+          <span>Can I take a draw from an S-corp LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>An owner of an S corporation who performs services for the company must generally be paid a reasonable W-2 wage. After paying required compensation, the owner may also be able to receive additional distributions. Those distributions are generally not subject to Social Security and Medicare taxes, but distributions cannot replace required reasonable compensation.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">06</span>
+          <span>Do I owe self-employment tax on distributions from a multi-member LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>The self-employment treatment for LLC partnership income is a more complex area. For most general-partner-equivalent members who are actively involved in the business, the net earnings may be subject to self-employment tax. The rules are different for limited partners and for members classified differently under applicable regulations.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">07</span>
+          <span>Do I need a payroll provider to pay myself a salary from an LLC?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>If your LLC is taxed as an S corporation or C corporation and you are required to pay yourself wages, you generally need to handle payroll functions including withholding, payroll taxes, quarterly deposits, and Forms 941 and W-2. Payroll software or a professional payroll service can help manage these requirements.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">08</span>
+          <span>Does my owner draw affect the LLC's bank account balance?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>Yes. Any money you take out of the business account reduces the available balance. Maintaining enough cash to pay business obligations, taxes, and operating expenses before taking a draw is an important part of managing the business.</p></div>
+    </details>
+    <details class="faq-accordion-item">
+      <summary class="faq-accordion-question">
+        <div class="faq-q-badge-title">
+          <span class="faq-q-badge">09</span>
+          <span>How much should I save for taxes?</span>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <div class="faq-accordion-answer"><p>There is no universal percentage, but many self-employed individuals set aside at least 25% to 35% of net business income to cover federal income tax and self-employment tax, depending on the taxpayer's tax bracket, state, and other deductions. This is a planning heuristic, not a rule.</p></div>
+    </details>
+      </div>
+
+      <div class="continue-grid">
+        <a href="how-are-llcs-taxed.html" class="continue-card"><div class="cc-title">How LLCs Are Taxed</div><div class="cc-sub">Default classification, S-corp election, QBI deduction</div></a>
+        <a href="llc-tax-benefits.html" class="continue-card"><div class="cc-title">LLC Tax Benefits</div><div class="cc-sub">QBI, deductions, mileage, retirement plans and 2026 limits</div></a>
+        <a href="llc-vs-scorp.html" class="continue-card"><div class="cc-title">LLC vs S-Corp Calculator</div><div class="cc-sub">Model potential employment-tax savings for your business</div></a>
+        <a href="multi-member-llc.html" class="continue-card"><div class="cc-title">Multi-Member LLC Guide</div><div class="cc-sub">Partnership allocations, K-1s and distributions</div></a>
+      </div>
+
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="logo.png" alt="LLC Primer Logo" style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+          <p class="footer-tagline">
+            LLC Primer provides 2026 state guides, filing fee calculators, and step-by-step resources to help founders form, manage, and maintain an LLC in any U.S. state.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Popular States</h4>
+          <ul class="footer-links">
+            <li><a href="best-state-to-form-an-llc.html">Wyoming LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Delaware LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Florida LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">Texas LLC Guide</a></li>
+            <li><a href="best-state-to-form-an-llc.html">California LLC Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Free Calculators</h4>
+          <ul class="footer-links">
+            <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
+            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Post-Formation</h4>
+          <ul class="footer-links">
+            <li><a href="business-setup.html">Post-LLC Setup</a></li>
+            <li><a href="ein-guide.html">EIN Application Guide</a></li>
+            <li><a href="operating-agreement.html">Operating Agreement</a></li>
+            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+        </p>
+        <div class="footer-copyright">
+          &copy; 2026 LLC Primer. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()">&#x2715;</button>
+      <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees &amp; Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
