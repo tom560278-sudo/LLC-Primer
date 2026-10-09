@@ -169,6 +169,7 @@
     }
 
     .quiz-actions-row {
+      color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -241,6 +242,47 @@
     }
     @media (max-width: 480px) {
       .structure-nav-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Dynamic Quiz Results High-Contrast White Text Overrides */
+    #dynamicQuizResults,
+    #dynamicQuizResults * {
+      box-sizing: border-box;
+    }
+    #dynamicQuizResults h2,
+    #dynamicQuizResults h3,
+    #dynamicQuizResults h4 {
+      color: #FFFFFF !important;
+    }
+    #dynamicQuizResults p,
+    #dynamicQuizResults span,
+    #dynamicQuizResults div {
+      color: #F1F5F9;
+    }
+    #dynamicQuizResults ul,
+    #dynamicQuizResults ol {
+      color: #FFFFFF !important;
+    }
+    #dynamicQuizResults li {
+      color: #FFFFFF !important;
+      line-height: 1.6 !important;
+    }
+    #dynamicQuizResults strong,
+    #dynamicQuizResults b {
+      color: #FFFFFF !important;
+      display: inline !important;
+      font-weight: 700 !important;
+    }
+    #dynamicQuizResults .action-checklist-box {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 12px !important;
+      padding: 1.35rem !important;
+      margin-bottom: 1.5rem !important;
+      color: #FFFFFF !important;
+    }
+    #dynamicQuizResults .action-checklist-box * {
+      color: #FFFFFF !important;
     }
   </style>
 </head>
@@ -455,7 +497,7 @@
           </div>
           <div class="quiz-actions-row">
             <div></div>
-            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep(2)">Next Question →</button>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;color: white;" onclick="goToStep(2)">Next Question →</button>
           </div>
         </div>
 
@@ -482,7 +524,7 @@
             </div>
           </div>
           <div class="quiz-actions-row">
-            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep(1)">← Back</button>
+            <button class="ls-btn" style="color: white; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep(1)">← Back</button>
             <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep(3)">Next Question →</button>
           </div>
         </div>
@@ -502,7 +544,7 @@
             </div>
           </div>
           <div class="quiz-actions-row">
-            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep(2)">← Back</button>
+            <button class="ls-btn" style="color: white; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep(2)">← Back</button>
             <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="handleResidencyNext()">Next Question →</button>
           </div>
         </div>
@@ -515,7 +557,7 @@
             <select id="usStateSelector" class="state-select-box" style="background:#FFFFFF; color: #12304A; border: 1.5px solid #CBD5E1; font-size:1.05rem; padding:0.85rem 1rem; width: 100%; border-radius: 8px;"></select>
           </div>
           <div class="quiz-actions-row">
-            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep(3)">← Back</button>
+            <button class="ls-btn" style="color: white; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep(3)">← Back</button>
             <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep('5_US')">Next Question →</button>
           </div>
         </div>
@@ -535,7 +577,7 @@
             </div>
           </div>
           <div class="quiz-actions-row">
-            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep('4_US')">← Back</button>
+            <button class="ls-btn" style="color: white; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep('4_US')">← Back</button>
             <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep('6_US')">Next Question →</button>
           </div>
         </div>
@@ -555,7 +597,7 @@
             </div>
           </div>
           <div class="quiz-actions-row">
-            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep('5_US')">← Back</button>
+            <button class="ls-btn" style="color: white; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep('5_US')">← Back</button>
             <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="generateFinalResults()">Generate My Custom Plan →</button>
           </div>
         </div>
@@ -611,7 +653,7 @@
             </div>
           </div>
           <div class="quiz-actions-row">
-            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep('4_NONUS')">← Back</button>
+            <button class="ls-btn" style="color: white; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep('4_NONUS')">← Back</button>
             <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep('6_NONUS')">Next Question →</button>
           </div>
         </div>
@@ -631,7 +673,7 @@
             </div>
           </div>
           <div class="quiz-actions-row">
-            <button class="ls-btn" style="color: #12304A; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep('5_NONUS')">← Back</button>
+            <button class="ls-btn" style=" border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;color: white;" onclick="goToStep('5_NONUS')">← Back</button>
             <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="generateFinalResults()">Generate My Custom Plan →</button>
           </div>
         </div>
@@ -1389,13 +1431,13 @@
                 Because you indicated that your business will have <b>physical assets, employees, or an office in the U.S.</b>, forming in Wyoming or Delaware does not exempt you from registration. State law generally requires you to form or register as a foreign LLC in the state where your physical facilities or employees are located.
               </p>
 
-              <div style="background: rgba(255, 255, 255, 0.06); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
-                <h4 style="font-size: 0.95rem; color: #159A9C; margin-bottom: 0.5rem; font-weight: 700;">Key Compliance Requirements for Your Profile:</h4>
-                <ul style="font-size: 0.875rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.5rem; padding-left: 1.25rem;">
-                  <li><strong>State Selection:</strong> Form your LLC directly in the state where your physical location or employees are situated to avoid costly double filings and foreign qualification penalties.</li>
-                  <li><strong>Tax ID (${ssnType}):</strong> ${hasSSN ? 'Because you possess a ' + ssnType + ', you are eligible to apply for your EIN immediately online via IRS.gov at no cost.' : 'Because you do not have an SSN/ITIN, you must apply for your federal EIN by submitting IRS Form SS-4 via fax (free directly from the IRS; typically processed in 4–6 weeks).'}</li>
-                  <li><strong>Banking:</strong> You can apply for a business bank account with traditional commercial banks or online business platforms (such as Mercury or Relay). Note that banking approval is subject to individual bank underwriting and KYC verification—it is never guaranteed.</li>
-                  <li><strong>State & Local Taxes:</strong> Having physical operations creates a state tax nexus, meaning state income tax, sales tax collection, and employer payroll withholdings will apply in that state.</li>
+              <div class="action-checklist-box" style="background: rgba(255, 255, 255, 0.08); padding: 1.35rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.2); color: #FFFFFF;">
+                <h4 style="font-size: 1.05rem; color: #FFFFFF; margin-bottom: 0.75rem; font-weight: 800; letter-spacing: 0.02em;">Key Compliance Requirements for Your Profile:</h4>
+                <ul style="font-size: 0.925rem; color: #FFFFFF; display: flex; flex-direction: column; gap: 0.65rem; padding-left: 1.25rem; line-height: 1.6;">
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">State Selection:</strong> Form your LLC directly in the state where your physical location or employees are situated to avoid costly double filings and foreign qualification penalties.</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">Tax ID (${ssnType}):</strong> ${hasSSN ? 'Because you possess a ' + ssnType + ', you are eligible to apply for your EIN immediately online via IRS.gov at no cost.' : 'Because you do not have an SSN/ITIN, you must apply for your federal EIN by submitting IRS Form SS-4 via fax (free directly from the IRS; typically processed in 4–6 weeks).'}</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">Banking:</strong> You can apply for a business bank account with traditional commercial banks or online business platforms (such as Mercury or Relay). Note that banking approval is subject to individual bank underwriting and KYC verification—it is never guaranteed.</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">State & Local Taxes:</strong> Having physical operations creates a state tax nexus, meaning state income tax, sales tax collection, and employer payroll withholdings will apply in that state.</li>
                 </ul>
               </div>
 
@@ -1429,13 +1471,13 @@
                 Based on your answers (Non-U.S. Resident operating 100% remotely with ${ssnType}), <b>Wyoming</b> is widely considered the most cost-effective state for digital businesses, e-commerce, and consulting. It features a $100 formation fee, $60 annual report, zero state income tax, and strong privacy laws. If you are seeking institutional venture capital, <b>Delaware</b> is the standard alternative.
               </p>
 
-              <div style="background: rgba(255, 255, 255, 0.06); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
-                <h4 style="font-size: 0.95rem; color: #159A9C; margin-bottom: 0.5rem; font-weight: 700;">Step-by-Step Action Roadmap:</h4>
-                <ul style="font-size: 0.875rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.5rem; padding-left: 1.25rem;">
-                  <li><strong>1. File Formation Articles:</strong> Form your LLC in Wyoming ($102 state fee online) with a commercial registered agent ($125/yr, or $0 Year 1 with Northwest).</li>
-                  <li><strong>2. Obtain Federal EIN (${ssnType}):</strong> ${hasSSN ? 'Because you have a ' + ssnType + ', you can get your EIN immediately online for free at IRS.gov.' : 'Apply directly with the IRS using Form SS-4 via fax. The IRS issues EINs for free (avoid third-party markups).'}</li>
-                  <li><strong>3. Open U.S. Business Account:</strong> You can apply online with U.S. business fintechs such as Mercury or Relay. Account approval is subject to standard KYC documentation, identity verification, and compliance checks.</li>
-                  <li><strong>4. Payment Gateways:</strong> Connect your U.S. entity and EIN to Stripe or PayPal for global customer billing.</li>
+              <div class="action-checklist-box" style="background: rgba(255, 255, 255, 0.08); padding: 1.35rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.2); color: #FFFFFF;">
+                <h4 style="font-size: 1.05rem; color: #FFFFFF; margin-bottom: 0.75rem; font-weight: 800; letter-spacing: 0.02em;">Step-by-Step Action Roadmap:</h4>
+                <ul style="font-size: 0.925rem; color: #FFFFFF; display: flex; flex-direction: column; gap: 0.65rem; padding-left: 1.25rem; line-height: 1.6;">
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">1. File Formation Articles:</strong> Form your LLC in Wyoming ($102 state fee online) with a commercial registered agent ($125/yr, or $0 Year 1 with Northwest).</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">2. Obtain Federal EIN (${ssnType}):</strong> ${hasSSN ? 'Because you have a ' + ssnType + ', you can get your EIN immediately online for free at IRS.gov.' : 'Apply directly with the IRS using Form SS-4 via fax. The IRS issues EINs for free (avoid third-party markups).'}</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">3. Open U.S. Business Account:</strong> You can apply online with U.S. business fintechs such as Mercury or Relay. Account approval is subject to standard KYC documentation, identity verification, and compliance checks.</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">4. Payment Gateways:</strong> Connect your U.S. entity and EIN to Stripe or PayPal for global customer billing.</li>
                 </ul>
               </div>
 
@@ -1476,13 +1518,13 @@
               As a U.S. resident, forming your LLC in your home state (<b>${selectedStateName}</b>) is almost always the most cost-effective path. It avoids paying double formation fees, double registered agents, and foreign qualification penalties in your home jurisdiction.
             </p>
 
-            <div style="background: rgba(255, 255, 255, 0.06); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
-              <h4 style="font-size: 0.95rem; color: #159A9C; margin-bottom: 0.5rem; font-weight: 700;">Action Checklist for ${selectedStateName}:</h4>
-              <ul style="font-size: 0.875rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.5rem; padding-left: 1.25rem;">
-                <li><strong>1. File Articles of Organization:</strong> Submit your formation paperwork directly with the ${selectedStateName} Secretary of State.</li>
-                <li><strong>2. Get Free EIN:</strong> Apply directly online at IRS.gov for an instant, 100% free federal tax ID.</li>
-                <li><strong>3. Draft Operating Agreement:</strong> Create an internal agreement defining member ownership, voting rights, and distribution rules.</li>
-                <li><strong>4. Open Dedicated Bank Account:</strong> Keep personal and business finances strictly separated to preserve your limited liability shield.</li>
+            <div class="action-checklist-box" style="background: rgba(255, 255, 255, 0.08); padding: 1.35rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.2); color: #FFFFFF;">
+              <h4 style="font-size: 1.05rem; color: #FFFFFF; margin-bottom: 0.75rem; font-weight: 800; letter-spacing: 0.02em;">Action Checklist for ${selectedStateName}:</h4>
+              <ul style="font-size: 0.925rem; color: #FFFFFF; display: flex; flex-direction: column; gap: 0.65rem; padding-left: 1.25rem; line-height: 1.6;">
+                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">1. File Articles of Organization:</strong> Submit your formation paperwork directly with the ${selectedStateName} Secretary of State.</li>
+                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">2. Get Free EIN:</strong> Apply directly online at IRS.gov for an instant, 100% free federal tax ID.</li>
+                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">3. Draft Operating Agreement:</strong> Create an internal agreement defining member ownership, voting rights, and distribution rules.</li>
+                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">4. Open Dedicated Bank Account:</strong> Keep personal and business finances strictly separated to preserve your limited liability shield.</li>
               </ul>
             </div>
 
