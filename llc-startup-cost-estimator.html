@@ -1502,7 +1502,7 @@
           <h4 class="footer-heading">Free Calculators</h4>
           <ul class="footer-links">
             <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
-            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="quiz.html">6-Question Diagnostic Quiz</a></li>
             <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
           </ul>
         </div>
@@ -1566,12 +1566,25 @@
       const stateName = st ? st.name : (stateCode ? stateCode : 'Select State');
       const filingFee = st ? st.fee : 0;
       
-      let annualFee = 0;
-      if (st && st.annual) {
-        const match = st.annual.match(/[\d\.]+/);
-        if (match && !st.annual.includes("$0")) {
-          annualFee = parseFloat(match[0]) || 0;
+      // Calculate ongoing annual compliance
+      let annualReportFee = 0;
+      let annualReportDisplay = "$0/yr";
+      if (st) {
+        if (st.freq && st.freq.toLowerCase().includes("biennial")) {
+          annualReportFee = Math.round((st.annualFeeNum || 0) / 2);
+          annualReportDisplay = `${st.annual}`;
+        } else if (st.annualFeeNum > 0) {
+          annualReportFee = st.annualFeeNum;
+          annualReportDisplay = `$${st.annualFeeNum}/yr`;
         }
+      }
+
+      // Separate state franchise tax (CA $800, DE $300, NV $350 total)
+      let separateTaxYr2 = 0;
+      if (st) {
+        if (st.code === 'CA') separateTaxYr2 = 800;
+        else if (st.code === 'DE') separateTaxYr2 = 300;
+        else if (st.code === 'NV') separateTaxYr2 = 200; // $200 license + $150 list
       }
       
       const licenseEst = stateCode ? (BIZ_LICENSE_ESTIMATES[bizType] || 100) : 0;
@@ -1582,7 +1595,7 @@
 
       if (agentOpt) {
         if (formationOpt) {
-          agentFeeYear1 = 0; // Free Year 1 with Northwest
+          agentFeeYear1 = 0; // Free Year 1 with Northwest formation
           agentFeeYear2 = 125;
         } else {
           agentFeeYear1 = 125;
@@ -1590,22 +1603,25 @@
         }
       }
 
-      const totalYear1 = stateCode ? (filingFee + annualFee + licenseEst + formationFee + agentFeeYear1) : 0;
-      const totalYear2 = stateCode ? (annualFee + agentFeeYear2) : 0;
+      // Year 1 is Formation Filing + Initial Extras + Optional Services + Local License allowance
+      // Note: Annual report is NOT due in Year 1 for most states (due in Year 2+)
+      let initialExtras = (st && st.initialExtras) ? st.initialExtras : 0;
+      const totalYear1 = stateCode ? (filingFee + initialExtras + licenseEst + formationFee + agentFeeYear1) : 0;
+      const totalYear2 = stateCode ? (annualReportFee + separateTaxYr2 + agentFeeYear2) : 0;
 
       // Update UI elements
       if (document.getElementById('estStateName')) document.getElementById('estStateName').textContent = stateName;
-      if (document.getElementById('estResYear1')) document.getElementById('estResYear1').textContent = '$' + totalYear1;
-      if (document.getElementById('estResYear2')) document.getElementById('estResYear2').textContent = '$' + totalYear2 + '/yr';
+      if (document.getElementById('estResYear1')) document.getElementById('estResYear1').textContent = stateCode ? ('$' + totalYear1) : '$0';
+      if (document.getElementById('estResYear2')) document.getElementById('estResYear2').textContent = stateCode ? ('$' + totalYear2 + '/yr') : '$0/yr';
 
-      if (document.getElementById('estBreakStateFee')) document.getElementById('estBreakStateFee').textContent = '$' + filingFee;
-      if (document.getElementById('estBreakAnnualFee')) document.getElementById('estBreakAnnualFee').textContent = '$' + annualFee + '/yr';
-      if (document.getElementById('estBreakLicenseFee')) document.getElementById('estBreakLicenseFee').textContent = '$' + licenseEst;
+      if (document.getElementById('estBreakStateFee')) document.getElementById('estBreakStateFee').textContent = stateCode ? ('$' + filingFee) : '$0';
+      if (document.getElementById('estBreakAnnualFee')) document.getElementById('estBreakAnnualFee').textContent = stateCode ? annualReportDisplay : '$0/yr';
+      if (document.getElementById('estBreakLicenseFee')) document.getElementById('estBreakLicenseFee').textContent = stateCode ? ('$' + licenseEst + ' (Estimated allowance)') : '$0';
       if (document.getElementById('estBreakFormationFee')) document.getElementById('estBreakFormationFee').textContent = formationOpt ? '$39' : '$0 (DIY)';
 
       if (document.getElementById('estBreakAgentFee')) {
         if (agentOpt && formationOpt) {
-          document.getElementById('estBreakAgentFee').textContent = '$0 (Included Free Year 1)';
+          document.getElementById('estBreakAgentFee').textContent = '$0 (Free Year 1 w/ Northwest)';
         } else if (agentOpt) {
           document.getElementById('estBreakAgentFee').textContent = '$125';
         } else {
@@ -1618,16 +1634,16 @@
       if (warnBox) {
         if (stateCode === 'CA') {
           warnBox.style.display = 'block';
-          warnBox.innerHTML = '⚠️ <strong>California Warning:</strong> $800 Annual Franchise Tax applies starting in Year 2, regardless of business income.';
+          warnBox.innerHTML = '⚠️ <strong>California Notice:</strong> $800 Annual Franchise Tax applies starting in Year 2 (first tax year exempt under AB 85 rules). Initial Statement of Information ($20) is due within 90 days of formation.';
         } else if (stateCode === 'NY') {
           warnBox.style.display = 'block';
-          warnBox.innerHTML = '⚠️ <strong>New York Warning:</strong> Mandatory newspaper publication required within 120 days ($300–$1,500+ depending on county).';
+          warnBox.innerHTML = '⚠️ <strong>New York Notice:</strong> Section 206 requires newspaper publication in 2 county newspapers for 6 weeks within 120 days of formation (~$300–$1,500+ depending on county).';
         } else if (stateCode === 'NV') {
           warnBox.style.display = 'block';
-          warnBox.innerHTML = '⚠️ <strong>Nevada Warning:</strong> Mandatory $200 Annual List + $150 State Business License fee required annually.';
+          warnBox.innerHTML = '⚠️ <strong>Nevada Notice:</strong> Mandatory $150 Annual List fee + $200 State Business License fee required annually ($350/yr ongoing). Both are also required at formation ($425 total initial state fees).';
         } else if (stateCode === 'DE') {
           warnBox.style.display = 'block';
-          warnBox.innerHTML = '⚠️ <strong>Delaware Warning:</strong> $300 Annual Franchise Tax due every year by June 1st.';
+          warnBox.innerHTML = '⚠️ <strong>Delaware Notice:</strong> Mandatory $300 Annual Franchise Tax due every year by June 1st. No separate Secretary of State annual report fee for LLCs.';
         } else {
           warnBox.style.display = 'none';
         }

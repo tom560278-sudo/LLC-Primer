@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
-  <title>Contact LLC Primer</title>
-  <meta name="description" content="Contact LLC Primer for content corrections, feedback, or general questions about our LLC educational resource.">
+  <title>How We Review & Compare LLC Services | LLC Primer</title>
+  <meta name="description" content="Our evaluation methodology for LLC formation services and registered agents — transparent pricing research, feature audits, and independent comparisons.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,66 +55,6 @@
       text-decoration: underline;
     }
     .guide-article a:hover { color: #0E7490; }
-    .review-check-banner {
-      background: radial-gradient(circle at 85% 20%, rgba(21, 154, 156, 0.28) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(15, 118, 110, 0.22) 0%, transparent 50%), linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
-      color: #F8FAFC;
-      border-radius: 20px;
-      padding: 1.75rem 2rem;
-      font-size: 0.875rem;
-      line-height: 1.6;
-      margin-top: 1rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 12px 35px rgba(18, 48, 74, 0.22);
-      border: 1.5px solid rgba(21, 154, 156, 0.4);
-    }
-    .review-check-banner a {
-      color: #94def3;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(110, 231, 183, 0.25);
-      padding: 0.2rem 0.65rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      display: inline-block;
-    }
-    .custom-table-wrap {
-      background: #FFFFFF;
-      border: 1.5px solid #CBD5E1;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(18, 48, 74, 0.06);
-      margin: 1.75rem 0;
-    }
-    .custom-data-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-    .custom-data-table th {
-      background: #12304A;
-      color: #FFFFFF;
-      font-size: 0.825rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .custom-data-table td {
-      padding: 1rem 1.5rem;
-      font-size: 0.925rem;
-      color: #334155;
-      border-bottom: 1px solid #E2E8F0;
-    }
-    .custom-data-table tr:last-child td {
-      border-bottom: none;
-    }
-    .custom-data-table tr:nth-child(even) td {
-      background: #F8FAFC;
-    }
     .callout-green {
       background: #ECFDF5;
       border: 1.5px solid #10B981;
@@ -122,15 +62,6 @@
       border-radius: 14px;
       padding: 1.15rem 1.4rem;
       color: #065F46;
-      margin: 1.75rem 0;
-    }
-    .callout-yellow {
-      background: #FFFBEB;
-      border: 1.5px solid #F59E0B;
-      border-left: 5px solid #D97706;
-      border-radius: 14px;
-      padding: 1.15rem 1.4rem;
-      color: #78350F;
       margin: 1.75rem 0;
     }
     .callout-blue {
@@ -141,183 +72,6 @@
       padding: 1.15rem 1.4rem;
       color: #0C4A6E;
       margin: 1.75rem 0;
-    }
-    .faq-accordion-wrapper {
-      width: 100%;
-      max-width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-      margin-bottom: 2rem;
-    }
-    .faq-accordion-item {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(18, 48, 74, 0.04);
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-    .faq-accordion-item:hover {
-      border-color: #159A9C;
-      box-shadow: 0 6px 20px rgba(21, 154, 156, 0.1);
-    }
-    .faq-accordion-item[open] {
-      border-color: #159A9C;
-      box-shadow: 0 6px 22px rgba(21, 154, 156, 0.12);
-    }
-    .faq-accordion-question {
-      padding: 1.25rem 1.65rem;
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: #12304A;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      user-select: none;
-      list-style: none;
-      font-family: var(--font-heading);
-    }
-    .faq-accordion-question::-webkit-details-marker {
-      display: none;
-    }
-    .faq-q-badge-title {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-    }
-    .faq-q-badge {
-      background: #F0FDFA;
-      border: 1px solid #CCFBF1;
-      color: #159A9C;
-      font-size: 0.8rem;
-      font-weight: 800;
-      padding: 0.25rem 0.65rem;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-    .faq-chevron {
-      width: 20px;
-      height: 20px;
-      stroke: #159A9C;
-      transition: transform 0.25s ease;
-      flex-shrink: 0;
-    }
-    .faq-accordion-item[open] .faq-accordion-question .faq-chevron {
-      transform: rotate(180deg);
-    }
-    .faq-accordion-answer {
-      padding: 0 1.65rem 1.35rem 1.65rem;
-      font-size: 0.95rem;
-      color: #475569;
-      line-height: 1.7;
-      border-top: 1px dashed #F1F5F9;
-      margin-top: 0.25rem;
-      padding-top: 1rem;
-    }
-    .key-numbers-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin: 1.5rem 0 2rem 0;
-    }
-    .key-number-card {
-      background: linear-gradient(135deg, #12304A 0%, #0D2336 100%);
-      border: 1.5px solid #E2E8F0;
-      border-radius: 14px;
-      padding: 1.15rem 1.3rem;
-      text-align: center;
-    }
-    .key-number-card .kn-value {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #159A9C;
-      font-family: var(--font-heading);
-    }
-    .key-number-card .kn-label {
-      font-size: 0.8rem;
-      color: white;
-      margin-top: 0.3rem;
-    }
-    .toc-card-box {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 16px;
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 2rem;
-    }
-    .toc-card-box h3 {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #12304A;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 1rem;
-    }
-    .toc-links-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.6rem 2rem;
-      font-size: 0.9rem;
-    }
-    .toc-links-grid a {
-      color: #159A9C;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .continue-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      margin: 1.5rem 0 2rem 0;
-    }
-    .continue-card {
-      background: #FFFFFF;
-      border: 1.5px solid #E2E8F0;
-      border-radius: 14px;
-      padding: 1.15rem 1.3rem;
-      text-decoration: none !important;
-      display: block;
-    }
-    .continue-card:hover { border-color: #159A9C; }
-    .continue-card .cc-title {
-      font-size: 0.925rem;
-      font-weight: 700;
-      color: #12304A;
-    }
-    .continue-card .cc-sub {
-      font-size: 0.8rem;
-      color: #64748B;
-      margin-top: 0.25rem;
-    }
-    .nw-promo-box {
-      background: linear-gradient(135deg, #0d2336 0%, #0e7490 100%);
-      border-radius: 16px;
-      padding: 1.75rem 2rem;
-      color: #FFFFFF;
-      margin: 2rem 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .nw-promo-box .nw-text { flex: 1; min-width: 200px; }
-    .nw-promo-box .nw-btn {
-      background: #FFFFFF;
-      color: #0d2336;
-      font-weight: 800;
-      padding: 0.75rem 1.5rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      white-space: nowrap;
-    }
-    @media (max-width: 768px) {
-      .key-numbers-grid { grid-template-columns: repeat(2, 1fr); }
-      .toc-links-grid { grid-template-columns: 1fr; }
-      .continue-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -416,52 +170,58 @@
     <div class="guide-content-container">
       <nav class="guide-breadcrumb" style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 1rem;">
         <a href="index.html" style="color:#159A9C; text-decoration:none;">Home</a> /
-        <span>Contact Us</span>
+        <span>How We Review</span>
       </nav>
-      <h1 class="guide-h1">Contact Us</h1>
+      <h1 class="guide-h1">How We Review & Compare Services</h1>
     </div>
   </section>
 
   <main class="guide-article" style="padding: 0 4rem 0;">
     <div class="guide-content-container">
 
-      <h2>Contact LLC Primer</h2>
-      <p>We welcome feedback, correction reports, and general questions about the Site's content.</p>
-
-      <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:12px; padding:2rem; margin:2rem 0;">
-        <h3 style="margin-top:0;">What We Can Help With</h3>
-        <ul>
-          <li><strong>Content corrections:</strong> If you spot an error or outdated fee/deadline, please let us know.</li>
-          <li><strong>General questions about the Site</strong></li>
-          <li><strong>Partnership or media inquiries</strong></li>
-        </ul>
-
-        <h3>What We Cannot Provide</h3>
-        <ul>
-          <li>Legal advice or attorney services</li>
-          <li>Tax advice or accounting services</li>
-          <li>State-specific filing assistance</li>
-        </ul>
-
-        <p style="margin-bottom:0;">For legal or tax questions specific to your business, please consult a licensed attorney or CPA in your state.</p>
+      <div class="callout-blue">
+        <strong>Transparent Methodology:</strong> At LLC Primer, we do not make exaggerated claims of fake ongoing tests. Instead, we conduct rigorous, ongoing public pricing audits, terms-of-service evaluations, customer feature comparisons, and fee verification for LLC formation and registered agent providers.
       </div>
 
-      <h2>Submit a Correction</h2>
-      <p>Found an incorrect fee, wrong deadline, or outdated information? Please describe what you found and where, and we&#x27;ll verify and update it promptly according to our <a href="editorial-policy.html" style="color:#159A9C;">Editorial Policy</a>.</p>
-      <p>Email us at: <strong>contact [at] llcprimer.com</strong></p>
+      <h2>Our 6-Pillar Evaluation Framework</h2>
+      <p>When evaluating commercial formation platforms (such as Northwest Registered Agent, ZenBusiness, LegalZoom, Bizee, Tailor Brands, and doola), we assess providers against six practical criteria:</p>
 
-      <h2>Official Sources</h2>
-      <p>For the most current state LLC requirements, always use official sources:</p>
+      <h3>1. True Total Cost & Renewal Transparency</h3>
+      <p>Many formation companies advertise promotional "$0 + state fee" packages that conceal expensive mandatory subscription renewals or recurring compliance fees. We analyze:</p>
       <ul>
-        <li>Your state&#x27;s Secretary of State or equivalent agency</li>
-        <li><a href="https://www.irs.gov/businesses/small-businesses-self-employed/limited-liability-company-llc" target="_blank" rel="noopener" style="color:#159A9C;">IRS — Limited Liability Company</a></li>
-        <li>Your state&#x27;s department of revenue or taxation</li>
+        <li><strong>First-Year vs. Ongoing Costs:</strong> Does the advertised price include registered agent service, or does it trigger an expensive renewal after year one?</li>
+        <li><strong>Upsell Aggressiveness:</strong> How many checkout add-ons (such as EIN filing fees for a free IRS document, generic operating agreements, or unnecessary banking services) are pre-selected during checkout?</li>
+        <li><strong>Cancellation Ease:</strong> Can users cancel recurring registered agent or compliance subscriptions online without hidden retention barriers?</li>
       </ul>
+
+      <h3>2. Registered Agent Quality & Privacy Protection</h3>
+      <p>A registered agent must maintain a physical office in your state to receive service of process and state correspondence. We evaluate:</p>
+      <ul>
+        <li><strong>Address Privacy:</strong> Does the provider allow you to use their commercial street address on public state documents to protect your personal home address?</li>
+        <li><strong>Document Scanning & Forwarding:</strong> How quickly are official legal summons and state tax notices digitized and uploaded to your client portal?</li>
+        <li><strong>Local In-House Offices vs. Third-Party Contracting:</strong> Does the company own and staff its own offices in all 50 states (e.g., Northwest), or do they subcontract to unrelated regional agents?</li>
+      </ul>
+
+      <h3>3. Turnaround Time & Processing Options</h3>
+      <p>State filing speeds depend heavily on Secretary of State processing queues, but formation services differ in how quickly they prepare and transmit documents. We check whether providers charge inflated internal rush fees on top of statutory state expedite fees.</p>
+
+      <h3>4. Operating Agreement & EIN Transparency</h3>
+      <p>An EIN is 100% free when obtained directly from the IRS website. We look favorably on companies that provide free customizable operating agreement templates and clarify that founders can acquire an EIN directly from the government without third-party surcharges.</p>
+
+      <h3>5. Customer Support & Domain Expertise</h3>
+      <p>We review the availability and expertise of each service's customer support. Providers offering knowledgeable corporate guides who understand state-specific statutory nuances score higher than platforms with generic offshore call centers.</p>
+
+      <h3>6. International & Non-Resident Compatibility</h3>
+      <p>For international founders forming U.S. LLCs without a Social Security Number (SSN), we assess specialized providers (such as doola and Northwest) based on their ability to handle Form SS-4 fax applications, remote business bank account introductions, and registered agent representation.</p>
+
+      <h2>Affiliate Disclosure & Commercial Independence</h2>
+      <p>Some of the links on our comparison tables and review pages are affiliate links. If you choose to purchase a service through our link, LLC Primer may receive a commission at no additional cost to you. This compensation does not dictate our rankings or prevent us from highlighting drawbacks, hidden renewal charges, or free government alternatives.</p>
+      <p>For full details on our commercial relationships, please read our <a href="affiliate-disclosure.html">Affiliate Disclosure</a> and <a href="editorial-policy.html">Editorial Policy</a>.</p>
 
     </div>
   </main>
 
-<footer class="site-footer">
+  <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-grid">
         <div class="footer-col brand-col">
@@ -487,22 +247,23 @@
           <ul class="footer-links">
             <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
             <li><a href="quiz.html">6-Question Diagnostic Quiz</a></li>
-            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+            <li><a href="llc-cost-calculator.html">State Fee Calculator</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 class="footer-heading">Post-Formation</h4>
+          <h4 class="footer-heading">Publisher Trust</h4>
           <ul class="footer-links">
-            <li><a href="business-setup.html">Post-LLC Setup</a></li>
-            <li><a href="ein-guide.html">EIN Application Guide</a></li>
-            <li><a href="operating-agreement.html">Operating Agreement</a></li>
-            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+            <li><a href="about.html">About LLC Primer</a></li>
+            <li><a href="editorial-policy.html">Editorial Policy</a></li>
+            <li><a href="how-we-review.html">How We Review</a></li>
+            <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom-bar">
         <p class="footer-disclaimer">
-          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our <a href="affiliate-disclosure.html">Affiliate Disclosure</a>.
         </p>
         <div class="footer-copyright">
           &copy; 2026 LLC Primer. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a>

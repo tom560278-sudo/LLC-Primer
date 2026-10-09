@@ -24,7 +24,7 @@
       </div>
       <div style="display: flex; align-items: center; gap: 1.25rem;">
         <a href="#states-section" style="color: #CBD5E1; font-weight: 500;">🏛️ All 50 States</a>
-        <a href="#non-us-section" style="color: #CBD5E1; font-weight: 500;">🌐 Non-US Founders</a>
+        <a href="non-resident-llc-guide.html" style="color: #CBD5E1; font-weight: 500;">🌐 Non-US Founders</a>
         <a href="quiz.html" style="color: #159A9C; font-weight: 700;">🧩 Take 60-Sec LLC Quiz →</a>
       </div>
     </div>
@@ -774,7 +774,7 @@ Understand the difference between mandatory state filing fees and optional third
           <a href="quiz.html" class="tool-link-row">
             <div>
               <span class="ls-kicker-pill" style="font-size:0.65rem; padding:0.15rem 0.4rem; margin:0;">QUIZ</span>
-              <div style="font-size: 0.875rem; font-weight: 600; color: var(--text-dark); margin-top:0.2rem;">10-Question Diagnostic Quiz</div>
+              <div style="font-size: 0.875rem; font-weight: 600; color: var(--text-dark); margin-top:0.2rem;">6-Question Diagnostic Quiz</div>
             </div>
             <span>→</span>
           </a>
@@ -1299,7 +1299,7 @@ Understand the difference between mandatory state filing fees and optional third
           <h4 class="footer-heading">Free Calculators</h4>
           <ul class="footer-links">
             <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
-            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="quiz.html">6-Question Diagnostic Quiz</a></li>
             <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
           </ul>
         </div>
@@ -1354,12 +1354,12 @@ Understand the difference between mandatory state filing fees and optional third
           <div>
             <div style="margin-bottom: 1.25rem;">
               <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFF; margin-bottom: 0.4rem;">Select State:</label>
-              <select id="calcStateSelect" class="state-select-box" style="margin: 0;"></select>
+              <select id="modalCalcStateSelect" class="state-select-box" style="margin: 0;"></select>
             </div>
 
             <div style="margin-bottom: 1.25rem;">
               <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFF; margin-bottom: 0.4rem;">Registered Agent:</label>
-              <select id="calcAgentSelect" class="state-select-box" style="margin: 0;">
+              <select id="modalCalcAgentSelect" class="state-select-box" style="margin: 0;">
                 <option value="0">Self (Use Home Address — $0)</option>
                 <option value="125">Professional Registered Agent ($125/yr)</option>
               </select>
@@ -1367,7 +1367,7 @@ Understand the difference between mandatory state filing fees and optional third
 
             <div style="margin-bottom: 1.25rem;">
               <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFF; margin-bottom: 0.4rem;">Filing Service:</label>
-              <select id="calcServiceSelect" class="state-select-box" style="margin: 0;">
+              <select id="modalCalcServiceSelect" class="state-select-box" style="margin: 0;">
                 <option value="0">DIY Direct State Filing ($0)</option>
                 <option value="39">Northwest Registered Agent ($39)</option>
                 <option value="99">Standard Package ($99)</option>
@@ -1378,9 +1378,9 @@ Understand the difference between mandatory state filing fees and optional third
           <div style="background: var(--color-primary-light); border: 1px solid var(--color-primary); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
             <div>
               <div style="font-size: 0.775rem; color: var(--text-muted); text-transform: uppercase;">Estimated First-Year Total</div>
-              <div style="font-size: 0.85rem; color: #FFF;">Required Fee: <b id="calcLiveGovFee">$0</b></div>
+              <div style="font-size: 0.85rem; color: #FFF;">Required Fee: <b id="modalCalcLiveGovFee">$0</b></div>
             </div>
-            <div style="font-size: 2.25rem; font-weight: 900; color: var(--color-accent); font-family: var(--font-heading);" id="calcLiveTotalFee">$0</div>
+            <div style="font-size: 2.25rem; font-weight: 900; color: var(--color-accent); font-family: var(--font-heading);" id="modalCalcLiveTotalFee">$0</div>
           </div>
         </div>
 

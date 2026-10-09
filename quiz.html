@@ -404,7 +404,7 @@
       <div class="toc-card-box">
         <div class="toc-title">📑 WHAT'S IN THIS GUIDE</div>
         <ol class="toc-list">
-          <li><a href="#quiz-section">Take the 60-second Business Structure Quiz</a></li>
+          <li><a href="#quiz-section">Take the 2-Minute Business Structure Quiz</a></li>
           <li><a href="#section-four-explained">The four business structures explained</a></li>
           <li><a href="#section-sole-prop">1. Sole Proprietorship — Simple, but zero liability protection</a></li>
           <li><a href="#section-llc">2. Limited Liability Company (LLC) — The sweet spot for small business</a></li>
@@ -423,7 +423,7 @@
         <div class="quiz-header-bar">
           <div class="quiz-step-counter" id="quizStepCounterText">Question 1 of 6</div>
           <span style="font-size: 0.75rem; color: #159A9C; font-weight: 800; background: rgba(21, 154, 156, 0.12); padding: 0.3rem 0.75rem; border-radius: 9999px;">
-            ✓ 60-Second Business Diagnostic
+            ✓ 2-Minute Business Diagnostic
           </span>
         </div>
 
@@ -1281,7 +1281,7 @@
           <h4 class="footer-heading">Free Calculators</h4>
           <ul class="footer-links">
             <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
-            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="quiz.html">6-Question Diagnostic Quiz</a></li>
             <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
           </ul>
         </div>
@@ -1364,61 +1364,152 @@
     function generateFinalResults() {
       document.querySelectorAll('.quiz-step-block').forEach(b => b.style.display = 'none');
       document.getElementById('quizResultsBlock').style.display = 'block';
-      document.getElementById('quizStepCounterText').textContent = `Complete`;
-      document.getElementById('quizProgressBar').style.width = `100%`;
+      document.getElementById('quizStepCounterText').textContent = 'Complete';
+      document.getElementById('quizProgressBar').style.width = '100%';
 
       const resBox = document.getElementById('dynamicQuizResults');
-      
-      if (answers.residency === 'non_us') {
-        resBox.innerHTML = `
-          <div style="background: #12304A; border: 2px solid #159A9C; border-radius: 16px; padding: 2.25rem; text-align: left; color: #FFF; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.2);">
-            <div style="font-size: 0.8rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.05em;">RECOMMENDED BLUEPRINT</div>
-            <h2 style="font-size: 1.75rem; color: #FFF; margin: 0.3rem 0 0.75rem 0;">Non-U.S. Founder — Remote Wyoming LLC Plan</h2>
-            <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.6;">
-              Based on your answers (Non-US Resident operating remotely without SSN), <b>Wyoming</b> is your optimal formation state. It features low initial fees ($100), low annual maintenance ($60), zero state income tax, and full remote banking capabilities via Mercury or Relay.
-            </p>
+      if (!resBox) return;
 
-            <div style="background: rgba(255, 255, 255, 0.06); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
-              <h4 style="font-size: 0.95rem; color: #159A9C; margin-bottom: 0.5rem; font-weight: 700;">Step-by-Step Action Roadmap:</h4>
-              <ul style="font-size: 0.85rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.4rem; padding-left: 1rem;">
-                <li>1. Form Wyoming LLC with Registered Agent ($39 + $100 state fee)</li>
-                <li>2. Obtain EIN via IRS Form SS-4 Fax Application (No SSN required)</li>
-                <li>3. Open US Business Bank Account (Mercury or Relay online)</li>
-                <li>4. Connect Stripe &amp; PayPal for international client billing</li>
-              </ul>
+      const isNonUS = (answers.residency === 'non_us');
+      const hasSSN = (answers.ssn === 'ssn' || answers.ssn === 'itin');
+      const ssnType = (answers.ssn === 'ssn') ? 'U.S. SSN' : (answers.ssn === 'itin' ? 'U.S. ITIN' : 'No SSN/ITIN');
+      const hasUSPhys = (answers.nonusPhys === 'yes');
+
+      let html = '';
+
+      if (isNonUS) {
+        // --- NON-U.S. FOUNDER BRANCH ---
+        if (hasUSPhys) {
+          // Non-US founder WITH physical presence or employees in US
+          html = `
+            <div style="background: #12304A; border: 2px solid #159A9C; border-radius: 16px; padding: 2.25rem; text-align: left; color: #FFF; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.2);">
+              <div style="font-size: 0.8rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.05em;">CUSTOM BLUEPRINT: INTERNATIONAL FOUNDER WITH U.S. OPERATIONS</div>
+              <h2 style="font-size: 1.75rem; color: #FFF; margin: 0.3rem 0 0.75rem 0;">Physical U.S. Presence — Operational State Formation Plan</h2>
+              <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.6;">
+                Because you indicated that your business will have <b>physical assets, employees, or an office in the U.S.</b>, forming in Wyoming or Delaware does not exempt you from registration. State law generally requires you to form or register as a foreign LLC in the state where your physical facilities or employees are located.
+              </p>
+
+              <div style="background: rgba(255, 255, 255, 0.06); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+                <h4 style="font-size: 0.95rem; color: #159A9C; margin-bottom: 0.5rem; font-weight: 700;">Key Compliance Requirements for Your Profile:</h4>
+                <ul style="font-size: 0.875rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.5rem; padding-left: 1.25rem;">
+                  <li><strong>State Selection:</strong> Form your LLC directly in the state where your physical location or employees are situated to avoid costly double filings and foreign qualification penalties.</li>
+                  <li><strong>Tax ID (${ssnType}):</strong> ${hasSSN ? 'Because you possess a ' + ssnType + ', you are eligible to apply for your EIN immediately online via IRS.gov at no cost.' : 'Because you do not have an SSN/ITIN, you must apply for your federal EIN by submitting IRS Form SS-4 via fax (free directly from the IRS; typically processed in 4–6 weeks).'}</li>
+                  <li><strong>Banking:</strong> You can apply for a business bank account with traditional commercial banks or online business platforms (such as Mercury or Relay). Note that banking approval is subject to individual bank underwriting and KYC verification—it is never guaranteed.</li>
+                  <li><strong>State & Local Taxes:</strong> Having physical operations creates a state tax nexus, meaning state income tax, sales tax collection, and employer payroll withholdings will apply in that state.</li>
+                </ul>
+              </div>
+
+              <!-- Structure Comparison Box -->
+              <div style="background: rgba(21, 154, 156, 0.1); border: 1px solid #159A9C; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem;">
+                <h4 style="font-size: 0.95rem; color: #6EE7B7; margin-bottom: 0.5rem; font-weight: 700;">Business Structure Comparison:</h4>
+                <div style="font-size: 0.85rem; color: #E2E8F0; line-height: 1.6;">
+                  • <strong>LLC (Recommended):</strong> Protects your personal assets, provides pass-through taxation, and allows foreign ownership without complex corporate governance.<br>
+                  • <strong>C-Corporation:</strong> Useful if you plan to raise institutional venture capital or offer equity to U.S. investors, but subject to corporate income tax.<br>
+                  • <strong>S-Corporation (Not Eligible):</strong> Non-resident aliens cannot be shareholders in an S-Corporation under federal IRS rules.
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="non-resident-llc-guide.html" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none;">
+                  Read Complete Non-Resident LLC Guide →
+                </a>
+                <a href="ein-guide-for-non-residents.html" class="ls-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.2); padding: 0.85rem 1.75rem; text-decoration: none;">
+                  Non-Resident EIN Guide →
+                </a>
+              </div>
             </div>
+          `;
+        } else {
+          // Non-US founder 100% REMOTE
+          html = `
+            <div style="background: #12304A; border: 2px solid #159A9C; border-radius: 16px; padding: 2.25rem; text-align: left; color: #FFF; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.2);">
+              <div style="font-size: 0.8rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.05em;">CUSTOM BLUEPRINT: GLOBAL REMOTE FOUNDER</div>
+              <h2 style="font-size: 1.75rem; color: #FFF; margin: 0.3rem 0 0.75rem 0;">100% Remote Global — Wyoming or Delaware LLC Plan</h2>
+              <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.6;">
+                Based on your answers (Non-U.S. Resident operating 100% remotely with ${ssnType}), <b>Wyoming</b> is widely considered the most cost-effective state for digital businesses, e-commerce, and consulting. It features a $100 formation fee, $60 annual report, zero state income tax, and strong privacy laws. If you are seeking institutional venture capital, <b>Delaware</b> is the standard alternative.
+              </p>
 
-            <a href="index.html#states-section" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none;">
-              View Wyoming LLC Guide &amp; Fee Details →
-            </a>
-          </div>
-        `;
+              <div style="background: rgba(255, 255, 255, 0.06); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+                <h4 style="font-size: 0.95rem; color: #159A9C; margin-bottom: 0.5rem; font-weight: 700;">Step-by-Step Action Roadmap:</h4>
+                <ul style="font-size: 0.875rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.5rem; padding-left: 1.25rem;">
+                  <li><strong>1. File Formation Articles:</strong> Form your LLC in Wyoming ($102 state fee online) with a commercial registered agent ($125/yr, or $0 Year 1 with Northwest).</li>
+                  <li><strong>2. Obtain Federal EIN (${ssnType}):</strong> ${hasSSN ? 'Because you have a ' + ssnType + ', you can get your EIN immediately online for free at IRS.gov.' : 'Apply directly with the IRS using Form SS-4 via fax. The IRS issues EINs for free (avoid third-party markups).'}</li>
+                  <li><strong>3. Open U.S. Business Account:</strong> You can apply online with U.S. business fintechs such as Mercury or Relay. Account approval is subject to standard KYC documentation, identity verification, and compliance checks.</li>
+                  <li><strong>4. Payment Gateways:</strong> Connect your U.S. entity and EIN to Stripe or PayPal for global customer billing.</li>
+                </ul>
+              </div>
+
+              <!-- Structure Comparison Box -->
+              <div style="background: rgba(21, 154, 156, 0.1); border: 1px solid #159A9C; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem;">
+                <h4 style="font-size: 0.95rem; color: #6EE7B7; margin-bottom: 0.5rem; font-weight: 700;">Business Structure Comparison:</h4>
+                <div style="font-size: 0.85rem; color: #E2E8F0; line-height: 1.6;">
+                  • <strong>LLC (Recommended):</strong> Flexible pass-through taxation, limited liability protection, and minimal annual formalities.<br>
+                  • <strong>C-Corporation:</strong> Preferred if raising equity funding from U.S. accelerators or venture capital funds, but comes with corporate tax filing obligations.<br>
+                  • <strong>S-Corporation (Ineligible):</strong> Foreign non-resident owners cannot hold shares in an S-Corp under IRS regulations.
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="how-to-start-llc-in-wyoming.html" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none;">
+                  View Wyoming LLC Guide &amp; Details →
+                </a>
+                <a href="non-resident-llc-guide.html" class="ls-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.2); padding: 0.85rem 1.75rem; text-decoration: none;">
+                  Non-Resident LLC Hub →
+                </a>
+              </div>
+            </div>
+          `;
+        }
       } else {
-        const selectedStateCode = document.getElementById('usStateSelector')?.value || 'Home State';
-        resBox.innerHTML = `
+        // --- U.S. RESIDENT BRANCH ---
+        const stateSelect = document.getElementById('usStateSelector');
+        const selectedStateName = stateSelect ? stateSelect.value : 'Home State';
+        const stObj = (typeof stateData !== 'undefined') ? stateData.find(s => s.name === selectedStateName) : null;
+        const stateSlug = stObj ? stObj.slug : selectedStateName.toLowerCase().replace(/\s+/g, '-');
+        const stateGuideUrl = stObj ? `how-to-start-llc-in-${stObj.slug}.html` : 'start-llc.html';
+
+        html = `
           <div style="background: #12304A; border: 2px solid #159A9C; border-radius: 16px; padding: 2.25rem; text-align: left; color: #FFF; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.2);">
-            <div style="font-size: 0.8rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.05em;">RECOMMENDED BLUEPRINT</div>
-            <h2 style="font-size: 1.75rem; color: #FFF; margin: 0.3rem 0 0.75rem 0;">U.S. Resident — Home State LLC Formation Plan</h2>
+            <div style="font-size: 0.8rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.05em;">RECOMMENDED BLUEPRINT: U.S. FOUNDER</div>
+            <h2 style="font-size: 1.75rem; color: #FFF; margin: 0.3rem 0 0.75rem 0;">${selectedStateName} — Home State Formation Plan</h2>
             <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.6;">
-              As a US resident, forming your LLC in your home state (<b>${selectedStateCode}</b>) is the most cost-effective path. You avoid double state filing fees and foreign qualification requirements.
+              As a U.S. resident, forming your LLC in your home state (<b>${selectedStateName}</b>) is almost always the most cost-effective path. It avoids paying double formation fees, double registered agents, and foreign qualification penalties in your home jurisdiction.
             </p>
 
             <div style="background: rgba(255, 255, 255, 0.06); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
-              <h4 style="font-size: 0.95rem; color: #159A9C; margin-bottom: 0.5rem; font-weight: 700;">Next Steps Checklist:</h4>
-              <ul style="font-size: 0.85rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.4rem; padding-left: 1rem;">
-                <li>1. File Articles of Organization with your Secretary of State</li>
-                <li>2. Get Free EIN directly on IRS.gov</li>
-                <li>3. Draft internal Operating Agreement</li>
-                <li>4. Open dedicated business bank account</li>
+              <h4 style="font-size: 0.95rem; color: #159A9C; margin-bottom: 0.5rem; font-weight: 700;">Action Checklist for ${selectedStateName}:</h4>
+              <ul style="font-size: 0.875rem; color: #CBD5E1; display: flex; flex-direction: column; gap: 0.5rem; padding-left: 1.25rem;">
+                <li><strong>1. File Articles of Organization:</strong> Submit your formation paperwork directly with the ${selectedStateName} Secretary of State.</li>
+                <li><strong>2. Get Free EIN:</strong> Apply directly online at IRS.gov for an instant, 100% free federal tax ID.</li>
+                <li><strong>3. Draft Operating Agreement:</strong> Create an internal agreement defining member ownership, voting rights, and distribution rules.</li>
+                <li><strong>4. Open Dedicated Bank Account:</strong> Keep personal and business finances strictly separated to preserve your limited liability shield.</li>
               </ul>
             </div>
 
-            <a href="index.html#states-section" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none;">
-              View ${selectedStateCode} Filing Guide →
-            </a>
+            <!-- Structure Comparison Box -->
+            <div style="background: rgba(21, 154, 156, 0.1); border: 1px solid #159A9C; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem;">
+              <h4 style="font-size: 0.95rem; color: #6EE7B7; margin-bottom: 0.5rem; font-weight: 700;">How LLC Compares to Other Structures:</h4>
+              <div style="font-size: 0.85rem; color: #E2E8F0; line-height: 1.6;">
+                • <strong>Sole Proprietorship:</strong> Zero legal protection—personal assets are directly exposed to business claims.<br>
+                • <strong>LLC (Recommended):</strong> Provides a personal liability shield while keeping taxes simple (pass-through).<br>
+                • <strong>S-Corporation:</strong> An optional federal tax election you can make later once your business profit consistently exceeds reasonable salary levels.<br>
+                • <strong>C-Corporation:</strong> Ideal if raising venture capital or issuing stock options, but involves separate corporate entity taxation.
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="${stateGuideUrl}" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none;">
+                View Full ${selectedStateName} LLC Guide →
+              </a>
+              <a href="start-llc.html" class="ls-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.2); padding: 0.85rem 1.75rem; text-decoration: none;">
+                How to Start an LLC Overview →
+              </a>
+            </div>
           </div>
         `;
       }
+
+      resBox.innerHTML = html;
     }
 
     document.addEventListener("DOMContentLoaded", () => {

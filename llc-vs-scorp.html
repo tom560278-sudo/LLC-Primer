@@ -573,15 +573,20 @@
 
         <!-- RESULTS DISPLAY PANE -->
         <div id="scorpCalcResultsPane" style="margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid rgba(255, 255, 255, 0.15);">
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 1.5rem;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
             <div style="background: rgba(255, 255, 255, 0.06); padding: 1.15rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-              <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; margin-bottom: 0.3rem;">GROSS SE TAX SAVINGS</div>
+              <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; margin-bottom: 0.3rem;">GROSS FICA / SE TAX SAVINGS</div>
               <div id="scorpResGrossSavings" style="font-size: 1.6rem; font-weight: 900; color: #6EE7B7;">+$5,652/yr</div>
             </div>
 
             <div style="background: rgba(255, 255, 255, 0.06); padding: 1.15rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-              <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; margin-bottom: 0.3rem;">MINUS OVERHEAD &amp; CPA</div>
+              <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; margin-bottom: 0.3rem;">S-CORP OVERHEAD &amp; CPA</div>
               <div id="scorpResOverhead" style="font-size: 1.6rem; font-weight: 900; color: #FCA5A5;">-$1,800/yr</div>
+            </div>
+
+            <div id="scorpStateTaxCard" style="background: rgba(255, 255, 255, 0.06); padding: 1.15rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; margin-bottom: 0.3rem;" id="scorpStateTaxLabel">STATE ENTITY TAX</div>
+              <div id="scorpResStateTax" style="font-size: 1.6rem; font-weight: 900; color: #CBD5E1;">$0/yr</div>
             </div>
 
             <div style="background: rgba(16, 185, 129, 0.15); border: 1.5px solid #10B981; padding: 1.15rem; border-radius: 12px;">
@@ -589,10 +594,22 @@
               <div id="scorpResNetSavings" style="font-size: 1.65rem; font-weight: 900; color: #34D399;">~$3,852/year</div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- GREEN SALARY CALLOUT BOX (FROM IMAGE 1) -->
+          <!-- ASSUMPTIONS & DISCLOSURE BOX -->
+          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1.15rem 1.35rem; font-size: 0.825rem; color: #CBD5E1; line-height: 1.6;">
+            <div style="font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">
+              ℹ️ Planning Model Assumptions &amp; Disclosures
+            </div>
+            <div id="scorpAssumptionsList">
+              • <strong>FICA Taxes:</strong> 15.3% Social Security (12.4% up to $184,500 wage base limit) + Medicare (2.9%).<br>
+              • <strong>Filing Status:</strong> Single standard deduction applied. QBI deduction under Section 199A not factored into net difference.<br>
+              • <strong>State Tax Impact:</strong> Pass-through state taxation assumed unless state imposes entity-level franchise/excise taxes.<br>
+              • <strong>Overhead:</strong> Estimated $1,800/yr includes monthly payroll service (e.g. Gusto) and annual IRS Form 1120-S corporate return preparation.<br>
+              • <em>This is an educational planning model, not formal tax advice. Actual tax liability depends on your total household deductions, health insurance treatment, and IRS reasonable compensation review.</em>
+            </div>
+          </div>
+        </div>
+      </div><!-- GREEN SALARY CALLOUT BOX (FROM IMAGE 1) -->
       <div class="callout-green">
         <strong>💡 Not sure what salary to enter?</strong> The IRS does not provide a single percentage, salary range, or fixed formula for determining reasonable compensation. For an S-Corporation shareholder-employee who provides services, compensation should reflect the work actually performed and factors such as <strong>training and experience, duties and responsibilities, time and effort, comparable compensation, and how the company's revenue is generated</strong>.
         <br><br>
@@ -1358,7 +1375,11 @@
               An S-Corp election is generally a <strong>federal tax classification election</strong>, not a conversion of an LLC into a corporation under state law.
             </p>
             <p>
-              If an LLC elects S-Corporation taxation, the LLC generally continues to exist under state law. However, the election does not itself guar
+              If an LLC elects S-Corporation taxation, the LLC generally continues to exist under state law. However, the election does not itself guarantee liability protection; you must continue maintaining separate company records, business bank accounts, and ongoing entity compliance to preserve your limited liability shield.
+            </p>
+          </div>
+        </details>
+      </div>
 
     </article>
   </main>
@@ -1396,7 +1417,7 @@
           <h4 class="footer-heading">Free Calculators</h4>
           <ul class="footer-links">
             <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
-            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="quiz.html">6-Question Diagnostic Quiz</a></li>
             <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
           </ul>
         </div>
@@ -1446,6 +1467,8 @@
     function updateScorpCalc() {
       const profitInput = document.getElementById("scorpNetProfitInput");
       const salarySlider = document.getElementById("scorpSalarySlider");
+      const stateSelect = document.getElementById("scorpStateSelect");
+      const statusSelect = document.getElementById("scorpFilingStatusSelect");
       const overheadToggle = document.getElementById("scorpOverheadToggle");
 
       if (!profitInput || !salarySlider) return;
@@ -1464,17 +1487,52 @@
       document.getElementById("scorpSalaryPctText").textContent = `— ${salaryPct}% of net profit`;
 
       // SE Tax Calculation (15.3% on SE base)
-      const llcSeTaxBase = Math.min(netProfit, 184500) * 0.9235;
+      const wageBase = 184500; // 2026 Social Security wage limit
+      const llcSeTaxBase = Math.min(netProfit, wageBase) * 0.9235;
       const llcSeTax = llcSeTaxBase * 0.153;
 
-      const scorpSeTaxBase = Math.min(salary, 184500);
+      const scorpSeTaxBase = Math.min(salary, wageBase);
       const scorpSeTax = scorpSeTaxBase * 0.153;
 
       const grossSavings = Math.max(0, llcSeTax - scorpSeTax);
       const includeOverhead = overheadToggle ? overheadToggle.checked : true;
       const overheadCost = includeOverhead ? 1800 : 0;
 
-      const netSavings = grossSavings - overheadCost;
+      // State Entity Tax calculation
+      const stateCode = stateSelect ? stateSelect.value : "";
+      let stateEntityTax = 0;
+      let stateTaxNote = "Pass-through (No entity surcharge)";
+
+      if (stateCode === "CA") {
+        // California charges 1.5% S-Corporation tax on net profit, min $800
+        stateEntityTax = Math.max(800, netProfit * 0.015);
+        stateTaxNote = `CA 1.5% Franchise Tax (-$${Math.round(stateEntityTax).toLocaleString()}/yr)`;
+      } else if (stateCode === "TN") {
+        // Tennessee excise tax 6.5% on S-corp net income
+        stateEntityTax = netProfit * 0.065;
+        stateTaxNote = `TN 6.5% Excise Tax (-$${Math.round(stateEntityTax).toLocaleString()}/yr)`;
+      } else if (["WY", "NV", "TX", "FL", "WA", "SD", "AK"].includes(stateCode)) {
+        stateEntityTax = 0;
+        stateTaxNote = "0% State Income Tax";
+      }
+
+      const stateTaxCard = document.getElementById("scorpStateTaxCard");
+      const stateTaxLabel = document.getElementById("scorpStateTaxLabel");
+      const stateTaxEl = document.getElementById("scorpResStateTax");
+      if (stateTaxEl) {
+        if (stateEntityTax > 0) {
+          stateTaxEl.textContent = `-$${Math.round(stateEntityTax).toLocaleString()}/yr`;
+          stateTaxEl.style.color = "#FCA5A5";
+          if (stateTaxLabel) stateTaxLabel.textContent = `${stateCode} ENTITY TAX`;
+        } else {
+          stateTaxEl.textContent = stateCode ? "$0/yr" : "Select State";
+          stateTaxEl.style.color = "#CBD5E1";
+          if (stateTaxLabel) stateTaxLabel.textContent = stateCode ? `${stateCode} STATE TAX` : "STATE TAX";
+        }
+      }
+
+      // Net Savings = Gross FICA Savings - Overhead - State Entity Tax
+      const netSavings = grossSavings - overheadCost - stateEntityTax;
 
       // Update UI displays
       document.getElementById("scorpResGrossSavings").textContent = `+$${Math.round(grossSavings).toLocaleString()}/yr`;
@@ -1487,6 +1545,20 @@
       } else {
         netSavingsEl.textContent = `-$${Math.abs(Math.round(netSavings)).toLocaleString()}/year (No savings)`;
         netSavingsEl.style.color = "#FCA5A5";
+      }
+
+      // Update Assumptions list based on inputs
+      const status = statusSelect ? statusSelect.value : "single";
+      const statusNames = { single: "Single ($15,000 std deduction)", joint: "Married Filing Jointly ($30,000 std deduction)", head: "Head of Household ($22,500 std deduction)" };
+      const assumptionsEl = document.getElementById("scorpAssumptionsList");
+      if (assumptionsEl) {
+        assumptionsEl.innerHTML = `
+          • <strong>FICA Taxes:</strong> 15.3% Social Security (12.4% up to $184,500 cap) + Medicare (2.9%).<br>
+          • <strong>Filing Status:</strong> ${statusNames[status] || "Single"}.<br>
+          • <strong>State Tax Impact:</strong> ${stateCode ? stateTaxNote : "No state selected — standard pass-through assumed."}<br>
+          • <strong>Overhead:</strong> ${includeOverhead ? "$1,800/yr estimated compliance cost (payroll service + CPA Form 1120-S filing)." : "$0 overhead included (toggled off)."}<br>
+          • <em>This is an educational planning model, not formal tax advice. Consult a licensed CPA before making an S-Corp election.</em>
+        `;
       }
     }
 

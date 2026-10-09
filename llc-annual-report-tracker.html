@@ -1464,7 +1464,7 @@
           <h4 class="footer-heading">Free Calculators</h4>
           <ul class="footer-links">
             <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
-            <li><a href="quiz.html">10-Question Diagnostic Quiz</a></li>
+            <li><a href="quiz.html">6-Question Diagnostic Quiz</a></li>
             <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
           </ul>
         </div>
@@ -1493,61 +1493,68 @@
 
   <script src="app.js"></script>
   <script>
-    const stateDataMap = {
-      FL: { name: "Florida", due: "May 1 annually", fee: "$138.75", penalty: "$400 late fee after Sep 1", freq: "Annual", link: "https://dos.fl.gov/sunbiz/" },
-      CA: { name: "California", due: "End of formation month", fee: "$20", penalty: "$250 late fee", freq: "Biennial (every 2 yrs)", link: "https://bizfileonline.sos.ca.gov/" },
-      TX: { name: "Texas", due: "May 15 annually", fee: "$0 (most LLCs)", penalty: "5% penalty + interest", freq: "Annual", link: "https://comptroller.texas.gov/taxes/franchise/" },
-      NY: { name: "New York", due: "End of formation month", fee: "$9", penalty: "Loss of good standing", freq: "Biennial (every 2 yrs)", link: "https://dos.ny.gov/e-statement-filing" },
-      WY: { name: "Wyoming", due: "1st day of formation month", fee: "$60 min", penalty: "$25 late fee", freq: "Annual", link: "https://wyobiz.wyo.gov/" },
-      DE: { name: "Delaware", due: "June 1 annually", fee: "$300 tax", penalty: "$200 late penalty", freq: "Annual Tax", link: "https://corp.delaware.gov/paytaxes/" },
-      GA: { name: "Georgia", due: "April 1 annually", fee: "$50", penalty: "$25 late fee", freq: "Annual", link: "https://ecorp.sos.ga.gov/" },
-      NC: { name: "North Carolina", due: "April 15 annually", fee: "$202", penalty: "$50 late fee", freq: "Annual", link: "https://www.sosnc.gov/" },
-      IL: { name: "Illinois", due: "1st day of formation month", fee: "$75", penalty: "$100 late penalty", freq: "Annual", link: "https://www.ilsos.gov/" },
-      MI: { name: "Michigan", due: "February 15 annually", fee: "$25", penalty: "$10 late fee", freq: "Annual", link: "https://cofs.lara.state.mi.us/" },
-      OH: { name: "Ohio", due: "None required for LLCs", fee: "$0", penalty: "N/A", freq: "None", link: "https://www.ohiosos.gov/" },
-      PA: { name: "Pennsylvania", due: "Decennial (every 10 yrs)", fee: "$7", penalty: "Loss of protection", freq: "10-Year Decennial", link: "https://www.dos.pa.gov/" },
-      MA: { name: "Massachusetts", due: "Anniversary date", fee: "$500", penalty: "$100 late penalty", freq: "Annual", link: "https://www.sec.state.ma.us/cor/" },
-      AZ: { name: "Arizona", due: "No annual report required", fee: "$0", penalty: "N/A", freq: "None", link: "https://ecorp.azcc.gov/" },
-      MO: { name: "Missouri", due: "No annual report required", fee: "$0", penalty: "N/A", freq: "None", link: "https://bsd.sos.mo.gov/" },
-      NM: { name: "New Mexico", due: "No annual report required", fee: "$0", penalty: "N/A", freq: "None", link: "https://portal.sos.state.nm.us/" },
-      SC: { name: "South Carolina", due: "No annual report required", fee: "$0", penalty: "N/A", freq: "None", link: "https://businessfilings.sc.gov/" }
-    };
+    // Uses 50-state database from app.js (stateData)
+    function populateTrackerDropdown() {
+      const select = document.getElementById("stateSelectInput");
+      if (!select || typeof stateData === "undefined") return;
 
-    function renderStateTrackerData(st) {
+      select.innerHTML = "";
+      stateData.forEach(st => {
+        const opt = document.createElement("option");
+        opt.value = st.code;
+        opt.textContent = `${st.name} (${st.due} | ${st.annual})`;
+        if (st.code === "FL") opt.selected = true;
+        select.appendChild(opt);
+      });
+    }
+
+    function renderStateTrackerData(stCode) {
       const area = document.getElementById("trackerDisplayArea");
-      const d = stateDataMap[st] || {
-        name: st + " State", due: "Anniversary / Fixed date", fee: "$25–$100", penalty: "$25–$100 late fee", freq: "Annual", link: "https://www.google.com/search?q=" + st + "+secretary+of+state+annual+report"
-      };
+      if (!area) return;
+
+      const st = (typeof stateData !== "undefined") ? stateData.find(s => s.code === stCode) : null;
+      if (!st) {
+        area.innerHTML = `
+          <div style="padding: 2rem; text-align: center; color: #CBD5E1;">
+            Please select a state from the dropdown above to view verified annual compliance deadlines.
+          </div>
+        `;
+        return;
+      }
+
+      const portalLink = st.portalUrl || st.sosUrl || "https://www.google.com";
 
       area.innerHTML = `
         <div class="tr-metric-item">
           <div class="tr-metric-label">STATE</div>
-          <div class="tr-metric-val" style="color:#FFF;">${d.name}</div>
+          <div class="tr-metric-val" style="color:#FFF;">${st.name}</div>
         </div>
         <div class="tr-metric-item">
           <div class="tr-metric-label">DUE DATE</div>
-          <div class="tr-metric-val">${d.due}</div>
+          <div class="tr-metric-val">${st.due}</div>
         </div>
         <div class="tr-metric-item">
           <div class="tr-metric-label">FILING FEE</div>
-          <div class="tr-metric-val">${d.fee}</div>
+          <div class="tr-metric-val">${st.annual}</div>
         </div>
         <div class="tr-metric-item">
           <div class="tr-metric-label">LATE PENALTY</div>
-          <div class="tr-metric-val" style="color:#FCA5A5;">${d.penalty}</div>
+          <div class="tr-metric-val" style="color:#FCA5A5;">${st.penalty}</div>
         </div>
         <div class="tr-sos-btn-wrap">
           <div>
-            <strong style="color:#FFF;">Official State Portal (${d.name}):</strong> 
-            <span style="font-size:0.85rem; color:#CBD5E1;">File directly with Secretary of State</span>
+            <strong style="color:#FFF;">Official State Portal (${st.name}):</strong> 
+            <span style="font-size:0.85rem; color:#CBD5E1;">File directly with ${st.sosName || "Secretary of State"}</span>
           </div>
-          <a href="${d.link}" target="_blank" rel="noopener" style="background:#159A9C; color:#FFF; padding:0.6rem 1.15rem; border-radius:8px; font-weight:700; text-decoration:none; font-size:0.875rem;">File Directly with State SOS →</a>
+          <a href="${portalLink}" target="_blank" rel="noopener" style="background:#159A9C; color:#FFF; padding:0.6rem 1.15rem; border-radius:8px; font-weight:700; text-decoration:none; font-size:0.875rem; white-space:nowrap;">Visit Official State Portal →</a>
         </div>
       `;
     }
 
-    // Default load Florida
-    renderStateTrackerData("FL");
+    document.addEventListener("DOMContentLoaded", () => {
+      populateTrackerDropdown();
+      renderStateTrackerData("FL");
+    });
   </script>
 </body>
 </html>
