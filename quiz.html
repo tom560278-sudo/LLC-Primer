@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
-  <title>Business Structure Quiz: Sole Prop, LLC, S-Corp, or C-Corp? | LLC Primer</title>
-  <meta name="description" content="Take our 2026 diagnostic quiz to discover your recommended business structure (Sole Prop, LLC, S-Corp, C-Corp), state formation path, cost breakdown, and step-by-step decision framework.">
+  <title>LLC Formation & State Planning Wizard (2026) | LLC Primer</title>
+  <meta name="description" content="Take our 2026 interactive LLC planning wizard to discover your custom formation blueprint, home state vs. non-resident filing strategy, tax ID steps, and cost breakdown.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -397,17 +397,17 @@
     <div style="font-size: 0.85rem; color: #64748B; margin-top: 1.5rem; margin-bottom: 1rem;">
       <a href="index.html" style="color: #64748B; text-decoration: none;">LLC Primer</a> &nbsp;/&nbsp; 
       <a href="tools.html" style="color: #64748B; text-decoration: none;">Tools</a> &nbsp;/&nbsp; 
-      <strong style="color: #12304A;">Business Structure Quiz</strong>
+      <strong style="color: #12304A;">LLC Planning Wizard</strong>
     </div>
 
     <article class="guide-article">
 
       <div class="alert-callout-blue">
-        <strong>2026 Interactive Diagnostic Tool.</strong> Answer 6 diagnostic questions to compare <strong>Sole Proprietorship, LLC, S-Corporation, and C-Corporation</strong> based on your business situation, liability considerations, tax structure, and formation goals. Get a personalized planning result and a step-by-step formation path.
+        <strong>2026 Interactive LLC Planning Diagnostic.</strong> Answer 6 diagnostic questions to generate a tailored formation roadmap, compare state filing fees and compliance requirements, determine federal tax ID (EIN) steps, and evaluate business structure considerations. Results are educational planning estimates, not formal legal or tax counsel.
       </div>
 
       <h1 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; color: #12304A; line-height: 1.18; margin-bottom: 1.25rem; font-family: var(--font-heading);">
-        Business Structure Quiz: Sole Prop, LLC, S-Corp, or C-Corp?
+        Interactive LLC Planning &amp; Formation Wizard (2026)
       </h1>
 
       <p style="font-size: 1.05rem; line-height: 1.75; color: #475569;">
@@ -553,12 +553,15 @@
         <div class="quiz-step-block" id="quizQ4_US" style="display: none;">
           <div class="quiz-question-title">4. Select your home state:</div>
           <div class="quiz-question-desc">Where do you live or physically operate your business?</div>
+          <div id="quizStateError" role="alert" style="display: none; color: #FCA5A5; background: rgba(239, 68, 68, 0.15); border: 1px solid #EF4444; border-radius: 8px; padding: 0.65rem 0.85rem; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">
+            &#9888; Please select your home state from the dropdown to continue.
+          </div>
           <div style="margin-bottom: 2rem;">
-            <select id="usStateSelector" class="state-select-box" style="background:#FFFFFF; color: #12304A; border: 1.5px solid #CBD5E1; font-size:1.05rem; padding:0.85rem 1rem; width: 100%; border-radius: 8px;"></select>
+            <select id="usStateSelector" class="state-select-box" style="background:#FFFFFF; color: #12304A; border: 1.5px solid #CBD5E1; font-size:1.05rem; padding:0.85rem 1rem; width: 100%; border-radius: 8px;" onchange="handleStateChange()"></select>
           </div>
           <div class="quiz-actions-row">
             <button class="ls-btn" style="color: white; border: 1px solid #CBD5E1; padding: 0.75rem 1.5rem;" onclick="goToStep(3)">← Back</button>
-            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="goToStep('5_US')">Next Question →</button>
+            <button class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.75rem 1.75rem;" onclick="handleStateNext()">Next Question →</button>
           </div>
         </div>
 
@@ -1364,9 +1367,13 @@
   <script src="app.js"></script>
   <script>
     let answers = {
-      residency: 'us',
       goal: 'start_llc',
       reason: 'assets',
+      residency: 'us',
+      usState: '',
+      usPhys: 'yes',
+      privacy: 'max',
+      nonusUse: 'online',
       ssn: 'none',
       nonusPhys: 'no'
     };
@@ -1374,16 +1381,43 @@
     function setResidency(res, el) {
       answers.residency = res;
       document.querySelectorAll('#quizQ3 .quiz-choice-card').forEach(c => c.classList.remove('selected'));
-      el.classList.add('selected');
+      if (el) el.classList.add('selected');
     }
 
     function chooseOption(key, val, el) {
       answers[key] = val;
-      const parent = el.parentElement;
+      const parent = el ? el.parentElement : null;
       if (parent) {
         parent.querySelectorAll('.quiz-choice-card').forEach(c => c.classList.remove('selected'));
         el.classList.add('selected');
       }
+    }
+
+    function handleStateChange() {
+      const sel = document.getElementById('usStateSelector');
+      const err = document.getElementById('quizStateError');
+      if (sel && sel.value) {
+        answers.usState = sel.value;
+        if (err) err.style.display = 'none';
+        sel.style.borderColor = '#CBD5E1';
+      }
+    }
+
+    function handleStateNext() {
+      const sel = document.getElementById('usStateSelector');
+      const err = document.getElementById('quizStateError');
+      if (!sel || !sel.value) {
+        if (err) err.style.display = 'block';
+        if (sel) {
+          sel.focus();
+          sel.style.borderColor = '#EF4444';
+        }
+        return;
+      }
+      if (err) err.style.display = 'none';
+      if (sel) sel.style.borderColor = '#CBD5E1';
+      answers.usState = sel.value;
+      goToStep('5_US');
     }
 
     function handleResidencyNext() {
@@ -1395,30 +1429,77 @@
     }
 
     function goToStep(step) {
+      // Clear error banners
+      const err = document.getElementById('quizStateError');
+      if (err) err.style.display = 'none';
+
       document.querySelectorAll('.quiz-step-block').forEach(b => b.style.display = 'none');
 
       let stepNum = 1;
       let barPct = 10;
 
-      if (step === 1) { document.getElementById('quizQ1').style.display = 'block'; stepNum = 1; barPct = 10; }
-      else if (step === 2) { document.getElementById('quizQ2').style.display = 'block'; stepNum = 2; barPct = 25; }
-      else if (step === 3) { document.getElementById('quizQ3').style.display = 'block'; stepNum = 3; barPct = 40; }
-      else if (step === '4_US') { document.getElementById('quizQ4_US').style.display = 'block'; stepNum = 4; barPct = 55; }
-      else if (step === '5_US') { document.getElementById('quizQ5_US').style.display = 'block'; stepNum = 5; barPct = 75; }
-      else if (step === '6_US') { document.getElementById('quizQ6_US').style.display = 'block'; stepNum = 6; barPct = 90; }
-      else if (step === '4_NONUS') { document.getElementById('quizQ4_NONUS').style.display = 'block'; stepNum = 4; barPct = 55; }
-      else if (step === '5_NONUS') { document.getElementById('quizQ5_NONUS').style.display = 'block'; stepNum = 5; barPct = 75; }
-      else if (step === '6_NONUS') { document.getElementById('quizQ6_NONUS').style.display = 'block'; stepNum = 6; barPct = 90; }
+      if (step === 1) {
+        document.getElementById('quizQ1').style.display = 'block';
+        stepNum = 1; barPct = 10;
+      } else if (step === 2) {
+        document.getElementById('quizQ2').style.display = 'block';
+        stepNum = 2; barPct = 25;
+      } else if (step === 3) {
+        document.getElementById('quizQ3').style.display = 'block';
+        stepNum = 3; barPct = 40;
+      } else if (step === '4_US') {
+        document.getElementById('quizQ4_US').style.display = 'block';
+        stepNum = 4; barPct = 55;
+        const sel = document.getElementById('usStateSelector');
+        if (sel && answers.usState) sel.value = answers.usState;
+      } else if (step === '5_US') {
+        document.getElementById('quizQ5_US').style.display = 'block';
+        stepNum = 5; barPct = 75;
+      } else if (step === '6_US') {
+        document.getElementById('quizQ6_US').style.display = 'block';
+        stepNum = 6; barPct = 90;
+      } else if (step === '4_NONUS') {
+        document.getElementById('quizQ4_NONUS').style.display = 'block';
+        stepNum = 4; barPct = 55;
+      } else if (step === '5_NONUS') {
+        document.getElementById('quizQ5_NONUS').style.display = 'block';
+        stepNum = 5; barPct = 75;
+      } else if (step === '6_NONUS') {
+        document.getElementById('quizQ6_NONUS').style.display = 'block';
+        stepNum = 6; barPct = 90;
+      }
 
-      document.getElementById('quizStepCounterText').textContent = `Question ${stepNum} of 6`;
-      document.getElementById('quizProgressBar').style.width = `${barPct}%`;
+      const counterEl = document.getElementById('quizStepCounterText');
+      if (counterEl) counterEl.textContent = `Question ${stepNum} of 6`;
+      const barEl = document.getElementById('quizProgressBar');
+      if (barEl) barEl.style.width = `${barPct}%`;
     }
 
     function generateFinalResults() {
+      // Validation check: U.S. branch requires a valid state selection
+      if (answers.residency === 'us') {
+        const sel = document.getElementById('usStateSelector');
+        if (!sel || !sel.value) {
+          goToStep('4_US');
+          const err = document.getElementById('quizStateError');
+          if (err) err.style.display = 'block';
+          if (sel) {
+            sel.focus();
+            sel.style.borderColor = '#EF4444';
+          }
+          return;
+        }
+        answers.usState = sel.value;
+      }
+
       document.querySelectorAll('.quiz-step-block').forEach(b => b.style.display = 'none');
-      document.getElementById('quizResultsBlock').style.display = 'block';
-      document.getElementById('quizStepCounterText').textContent = 'Complete';
-      document.getElementById('quizProgressBar').style.width = '100%';
+      const resultsBlock = document.getElementById('quizResultsBlock');
+      if (resultsBlock) resultsBlock.style.display = 'block';
+
+      const counterEl = document.getElementById('quizStepCounterText');
+      if (counterEl) counterEl.textContent = 'Diagnostic Complete';
+      const barEl = document.getElementById('quizProgressBar');
+      if (barEl) barEl.style.width = '100%';
 
       const resBox = document.getElementById('dynamicQuizResults');
       if (!resBox) return;
@@ -1428,86 +1509,130 @@
       const ssnType = (answers.ssn === 'ssn') ? 'U.S. SSN' : (answers.ssn === 'itin' ? 'U.S. ITIN' : 'No SSN/ITIN');
       const hasUSPhys = (answers.nonusPhys === 'yes');
 
+      const goalLabels = {
+        'start_llc': 'Form a New Entity from Scratch',
+        'find_setup': 'Compare Jurisdictions & Setup Strategy',
+        'reduce_costs': 'Minimize State Filing & Compliance Costs',
+        'understand_options': 'Asset Protection & Governance Rules'
+      };
+
+      const reasonLabels = {
+        'assets': 'Personal Asset & Investment Holding',
+        'business': 'Local Commercial Service / Retail',
+        'online': 'E-Commerce / Digital Business',
+        'real_estate': 'Real Estate & Rental Holding'
+      };
+
+      const nonusUseLabels = {
+        'online': 'Online Store / E-Commerce (Stripe / Shopify)',
+        'consulting': 'Global Remote Consulting & Services',
+        'saas': 'SaaS & Digital Technology Software',
+        'agency': 'Digital Service Agency'
+      };
+
       let html = '';
 
       if (isNonUS) {
-        // --- NON-U.S. FOUNDER BRANCH ---
+        const businessActivityText = nonusUseLabels[answers.nonusUse] || 'Digital Commerce';
+
         if (hasUSPhys) {
-          // Non-US founder WITH physical presence or employees in US
+          // --- NON-U.S. FOUNDER WITH U.S. PHYSICAL OPERATIONS ---
           html = `
             <div style="background: #12304A; border: 2px solid #159A9C; border-radius: 16px; padding: 2.25rem; text-align: left; color: #FFF; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.2);">
-              <div style="font-size: 0.8rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.05em;">CUSTOM BLUEPRINT: INTERNATIONAL FOUNDER WITH U.S. OPERATIONS</div>
-              <h2 style="font-size: 1.75rem; color: #FFF; margin: 0.3rem 0 0.75rem 0;">Physical U.S. Presence — Operational State Formation Plan</h2>
+              <div style="font-size: 0.8rem; font-weight: 800; color: #F59E0B; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">CUSTOM BLUEPRINT: INTERNATIONAL FOUNDER WITH U.S. OPERATIONS</div>
+              <h2 style="font-size: 1.75rem; color: #FFF; margin: 0 0 0.75rem 0;">Operational State Formation &amp; Nexus Compliance Plan</h2>
+              
+              <!-- DIAGNOSTIC PROFILE PILLS -->
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem;">
+                <span style="background: rgba(21, 154, 156, 0.2); border: 1px solid #159A9C; color: #6EE7B7; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">Residency: Non-U.S. Resident</span>
+                <span style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: #E2E8F0; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">U.S. Presence: Physical Operations / Assets</span>
+                <span style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: #E2E8F0; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">Activity: ${businessActivityText}</span>
+                <span style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: #E2E8F0; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">Tax ID: ${ssnType}</span>
+              </div>
+
               <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.6;">
-                Because you indicated that your business will have <b>physical assets, employees, or an office in the U.S.</b>, forming in Wyoming or Delaware does not exempt you from registration. State law generally requires you to form or register as a foreign LLC in the state where your physical facilities or employees are located.
+                Because you indicated that your business will maintain <b>physical assets, employees, or facilities in the U.S.</b>, establishing an entity in Wyoming or Delaware does not exempt you from registration where your physical activity occurs. State corporate laws mandate forming directly in or registering as a foreign LLC in the specific state where operations reside to prevent unauthorized transaction penalties.
               </p>
 
               <div class="action-checklist-box" style="background: rgba(255, 255, 255, 0.08); padding: 1.35rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.2); color: #FFFFFF;">
-                <h4 style="font-size: 1.05rem; color: #FFFFFF; margin-bottom: 0.75rem; font-weight: 800; letter-spacing: 0.02em;">Key Compliance Requirements for Your Profile:</h4>
+                <h4 style="font-size: 1.05rem; color: #FFFFFF; margin-bottom: 0.75rem; font-weight: 800; letter-spacing: 0.02em;">Key Compliance Roadmap for Your Profile:</h4>
                 <ul style="font-size: 0.925rem; color: #FFFFFF; display: flex; flex-direction: column; gap: 0.65rem; padding-left: 1.25rem; line-height: 1.6;">
-                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">State Selection:</strong> Form your LLC directly in the state where your physical location or employees are situated to avoid costly double filings and foreign qualification penalties.</li>
-                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">Tax ID (${ssnType}):</strong> ${hasSSN ? 'Because you possess a ' + ssnType + ', you are eligible to apply for your EIN immediately online via IRS.gov at no cost.' : 'Because you do not have an SSN/ITIN, you must apply for your federal EIN by submitting IRS Form SS-4 via fax (free directly from the IRS; typically processed in 4–6 weeks).'}</li>
-                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">Banking:</strong> You can apply for a business bank account with traditional commercial banks or online business platforms (such as Mercury or Relay). Note that banking approval is subject to individual bank underwriting and KYC verification—it is never guaranteed.</li>
-                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">State & Local Taxes:</strong> Having physical operations creates a state tax nexus, meaning state income tax, sales tax collection, and employer payroll withholdings will apply in that state.</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">1. Primary Registration:</strong> Form your LLC directly in the state where your physical facility or personnel are located to avoid double ongoing franchise fees and foreign qualification costs.</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">2. Federal EIN Rules:</strong> ${hasSSN ? 'Because you possess a ' + ssnType + ', you can apply online directly at IRS.gov for an instant free EIN if your principal business location is in the U.S. Otherwise, submit Form SS-4 via fax to the IRS international division (free from the IRS).' : 'Because you do not possess an SSN or ITIN, you must submit IRS Form SS-4 via fax to the IRS (write "Foreign" on line 7b). The IRS provides this at zero cost; typical processing is 4–6 weeks.'}</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">3. Commercial Banking:</strong> Apply with commercial banks or U.S. business fintechs (e.g. Mercury, Relay). Note that banking approval requires standard KYC documentation and is subject to independent underwriting review.</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">4. State Tax Nexus:</strong> Maintaining a physical footprint creates state tax nexus, requiring state corporate income or franchise tax returns, sales tax registration, and local payroll withholdings.</li>
                 </ul>
               </div>
 
               <!-- Structure Comparison Box -->
               <div style="background: rgba(21, 154, 156, 0.1); border: 1px solid #159A9C; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem;">
-                <h4 style="font-size: 0.95rem; color: #6EE7B7; margin-bottom: 0.5rem; font-weight: 700;">Business Structure Comparison:</h4>
+                <h4 style="font-size: 0.95rem; color: #6EE7B7; margin-bottom: 0.5rem; font-weight: 700;">Entity Structure &amp; Eligibility Framework:</h4>
                 <div style="font-size: 0.85rem; color: #E2E8F0; line-height: 1.6;">
-                  • <strong>LLC (Recommended):</strong> Protects your personal assets, provides pass-through taxation, and allows foreign ownership without complex corporate governance.<br>
-                  • <strong>C-Corporation:</strong> Useful if you plan to raise institutional venture capital or offer equity to U.S. investors, but subject to corporate income tax.<br>
-                  • <strong>S-Corporation (Not Eligible):</strong> Non-resident aliens cannot be shareholders in an S-Corporation under federal IRS rules.
+                  • <strong>LLC (Recommended):</strong> Delivers personal asset protection, single-tier pass-through taxation, and permits 100% foreign ownership without board of directors formalities.<br>
+                  • <strong>C-Corporation:</strong> Appropriate if planning to raise institutional venture capital or issue equity to U.S. investment funds, but incurs separate corporate tax filing obligations.<br>
+                  • <strong>S-Corporation Eligibility:</strong> Under IRC &sect;1361(b)(1)(C), an S-Corporation cannot have a non-resident alien shareholder. Foreign nationals who are U.S. tax residents (under the green card or substantial presence test) may qualify; consult a CPA to verify tax residency.
                 </div>
               </div>
 
               <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="non-resident-llc-guide.html" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none;">
-                  Read Complete Non-Resident LLC Guide →
+                <a href="non-resident-llc-guide.html" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none; color: white;">
+                  Read Complete Non-Resident LLC Guide &rarr;
                 </a>
                 <a href="ein-guide-for-non-residents.html" class="ls-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.2); padding: 0.85rem 1.75rem; text-decoration: none;">
-                  Non-Resident EIN Guide →
+                  Non-Resident EIN Guide &rarr;
                 </a>
               </div>
             </div>
           `;
         } else {
-          // Non-US founder 100% REMOTE
+          // --- NON-U.S. FOUNDER 100% REMOTE ---
           html = `
             <div style="background: #12304A; border: 2px solid #159A9C; border-radius: 16px; padding: 2.25rem; text-align: left; color: #FFF; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.2);">
-              <div style="font-size: 0.8rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.05em;">CUSTOM BLUEPRINT: GLOBAL REMOTE FOUNDER</div>
-              <h2 style="font-size: 1.75rem; color: #FFF; margin: 0.3rem 0 0.75rem 0;">100% Remote Global — Wyoming or Delaware LLC Plan</h2>
+              <div style="font-size: 0.8rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">CUSTOM BLUEPRINT: GLOBAL REMOTE FOUNDER</div>
+              <h2 style="font-size: 1.75rem; color: #FFF; margin: 0 0 0.75rem 0;">100% Remote Global &mdash; Wyoming or Delaware Formation Plan</h2>
+              
+              <!-- DIAGNOSTIC PROFILE PILLS -->
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem;">
+                <span style="background: rgba(21, 154, 156, 0.2); border: 1px solid #159A9C; color: #6EE7B7; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">Residency: Non-U.S. Resident</span>
+                <span style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: #E2E8F0; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">Presence: 100% Remote / No U.S. Office</span>
+                <span style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: #E2E8F0; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">Activity: ${businessActivityText}</span>
+                <span style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: #E2E8F0; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">Tax ID: ${ssnType}</span>
+              </div>
+
               <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.6;">
-                Based on your answers (Non-U.S. Resident operating 100% remotely with ${ssnType}), <b>Wyoming</b> is widely considered the most cost-effective state for digital businesses, e-commerce, and consulting. It features a $100 formation fee, $60 annual report, zero state income tax, and strong privacy laws. If you are seeking institutional venture capital, <b>Delaware</b> is the standard alternative.
+                Because you operate 100% remotely without physical U.S. facilities or employees, <b>Wyoming</b> is widely considered the most cost-effective and private jurisdiction. It features a $100 formation fee ($102 online), $60 annual report, zero state income tax, and strong privacy laws. If your objective is securing institutional venture capital or U.S. accelerators, <b>Delaware</b> is the standard alternative.
               </p>
 
               <div class="action-checklist-box" style="background: rgba(255, 255, 255, 0.08); padding: 1.35rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.2); color: #FFFFFF;">
                 <h4 style="font-size: 1.05rem; color: #FFFFFF; margin-bottom: 0.75rem; font-weight: 800; letter-spacing: 0.02em;">Step-by-Step Action Roadmap:</h4>
                 <ul style="font-size: 0.925rem; color: #FFFFFF; display: flex; flex-direction: column; gap: 0.65rem; padding-left: 1.25rem; line-height: 1.6;">
-                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">1. File Formation Articles:</strong> Form your LLC in Wyoming ($102 state fee online) with a commercial registered agent ($125/yr, or $0 Year 1 with Northwest).</li>
-                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">2. Obtain Federal EIN (${ssnType}):</strong> ${hasSSN ? 'Because you have a ' + ssnType + ', you can get your EIN immediately online for free at IRS.gov.' : 'Apply directly with the IRS using Form SS-4 via fax. The IRS issues EINs for free (avoid third-party markups).'}</li>
-                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">3. Open U.S. Business Account:</strong> You can apply online with U.S. business fintechs such as Mercury or Relay. Account approval is subject to standard KYC documentation, identity verification, and compliance checks.</li>
-                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">4. Payment Gateways:</strong> Connect your U.S. entity and EIN to Stripe or PayPal for global customer billing.</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">1. File Articles of Organization:</strong> Submit your formation filing in Wyoming ($102 online) or Delaware ($110) with an in-state commercial registered agent.</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">2. Federal EIN Acquisition:</strong> ${hasSSN ? 'If you have an SSN/ITIN and a principal business presence in the U.S., you may apply online at IRS.gov; otherwise, apply directly via Form SS-4 fax (free directly from the IRS).' : 'Apply directly using IRS Form SS-4 via fax with line 7b marked "Foreign". The IRS issues EINs at no cost (processing is typically 4–6 weeks).'}</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">3. Business Banking Platform:</strong> Apply online with international-friendly business fintechs (such as Mercury or Relay). Approvals depend on standard KYC documentation and compliance review.</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">4. Payment Gateway Integration:</strong> Connect your approved entity and EIN to Stripe or PayPal for international customer billing.</li>
+                  <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">5. Annual IRS Reporting:</strong> Foreign-owned single-member LLCs must file annual information returns (IRS Form 5472 and pro-forma Form 1120) by April 15.</li>
                 </ul>
               </div>
 
               <!-- Structure Comparison Box -->
               <div style="background: rgba(21, 154, 156, 0.1); border: 1px solid #159A9C; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem;">
-                <h4 style="font-size: 0.95rem; color: #6EE7B7; margin-bottom: 0.5rem; font-weight: 700;">Business Structure Comparison:</h4>
+                <h4 style="font-size: 0.95rem; color: #6EE7B7; margin-bottom: 0.5rem; font-weight: 700;">Entity Structure &amp; Eligibility Framework:</h4>
                 <div style="font-size: 0.85rem; color: #E2E8F0; line-height: 1.6;">
-                  • <strong>LLC (Recommended):</strong> Flexible pass-through taxation, limited liability protection, and minimal annual formalities.<br>
-                  • <strong>C-Corporation:</strong> Preferred if raising equity funding from U.S. accelerators or venture capital funds, but comes with corporate tax filing obligations.<br>
-                  • <strong>S-Corporation (Ineligible):</strong> Foreign non-resident owners cannot hold shares in an S-Corp under IRS regulations.
+                  • <strong>LLC (Recommended):</strong> Optimal for global remote founders: pass-through taxation, minimal administrative overhead, and full foreign ownership.<br>
+                  • <strong>C-Corporation:</strong> Standard vehicle if seeking U.S. institutional venture capital, but incurs corporate tax filings and double-taxation considerations.<br>
+                  • <strong>S-Corporation Eligibility:</strong> Non-resident aliens living outside the U.S. who do not satisfy U.S. tax residency criteria cannot hold shares in an S-Corp under IRC &sect;1361(b)(1)(C).
                 </div>
               </div>
 
               <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="how-to-start-llc-in-wyoming.html" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none;color: white;">
-                  View Wyoming LLC Guide &amp; Details →
+                <a href="how-to-start-llc-in-wyoming.html" class="ls-btn ls-btn--emerald" style="background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none; color: white;">
+                  View Wyoming LLC Guide &rarr;
+                </a>
+                <a href="how-to-start-llc-in-delaware.html" class="ls-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.2); padding: 0.85rem 1.75rem; text-decoration: none;">
+                  View Delaware LLC Guide &rarr;
                 </a>
                 <a href="non-resident-llc-guide.html" class="ls-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.2); padding: 0.85rem 1.75rem; text-decoration: none;">
-                  Non-Resident LLC Hub →
+                  Non-Resident LLC Hub &rarr;
                 </a>
               </div>
             </div>
@@ -1515,47 +1640,69 @@
         }
       } else {
         // --- U.S. RESIDENT BRANCH ---
-        const stateSelect = document.getElementById('usStateSelector');
-        const selectedStateName = stateSelect ? stateSelect.value : 'Home State';
+        const selectedStateName = answers.usState || 'Delaware';
         const stObj = (typeof stateData !== 'undefined') ? stateData.find(s => s.name === selectedStateName) : null;
-        const stateSlug = stObj ? stObj.slug : selectedStateName.toLowerCase().replace(/\s+/g, '-');
-        const stateGuideUrl = stObj ? `how-to-start-llc-in-${stObj.slug}.html` : 'start-llc.html';
+        const stateSlug = stObj ? stObj.slug : selectedStateName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        const stateGuideUrl = `how-to-start-llc-in-${stateSlug}.html`;
+        const stateFeeText = stObj ? `$${stObj.fee}` : 'Varies by state';
+        const annualFeeText = stObj ? stObj.annual : 'Annual report required';
+        const speedText = stObj ? stObj.speed : '1–3 business days';
+
+        const goalText = goalLabels[answers.goal] || 'Form a New Business Entity';
+        const reasonText = reasonLabels[answers.reason] || 'Commercial Business';
+        const isOnline = (answers.usPhys === 'online');
+        const wantsPrivacy = (answers.privacy === 'max');
 
         html = `
           <div style="background: #12304A; border: 2px solid #159A9C; border-radius: 16px; padding: 2.25rem; text-align: left; color: #FFF; box-shadow: 0 10px 30px rgba(18, 48, 74, 0.2);">
-            <div style="font-size: 0.8rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.05em;">RECOMMENDED BLUEPRINT: U.S. FOUNDER</div>
-            <h2 style="font-size: 1.75rem; color: #FFF; margin: 0.3rem 0 0.75rem 0;">${selectedStateName} — Home State Formation Plan</h2>
+            <div style="font-size: 0.8rem; font-weight: 800; color: #159A9C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">CUSTOM BLUEPRINT: U.S. RESIDENT FOUNDER</div>
+            <h2 style="font-size: 1.75rem; color: #FFF; margin: 0 0 0.75rem 0;">${selectedStateName} &mdash; Home State Formation Plan</h2>
+            
+            <!-- DIAGNOSTIC PROFILE PILLS -->
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem;">
+              <span style="background: rgba(21, 154, 156, 0.2); border: 1px solid #159A9C; color: #6EE7B7; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">State: ${selectedStateName}</span>
+              <span style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: #E2E8F0; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">Goal: ${goalText}</span>
+              <span style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: #E2E8F0; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">Focus: ${reasonText}</span>
+              <span style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: #E2E8F0; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">Operations: ${isOnline ? '100% Online' : 'In-State Physical'}</span>
+              <span style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: #E2E8F0; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px;">Privacy: ${wantsPrivacy ? 'Commercial Agent Address' : 'Self Agent ($0)'}</span>
+            </div>
+
             <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.25rem; line-height: 1.6;">
-              As a U.S. resident, forming your LLC in your home state (<b>${selectedStateName}</b>) is almost always the most cost-effective path. It avoids paying double formation fees, double registered agents, and foreign qualification penalties in your home jurisdiction.
+              As a U.S. resident, forming your LLC directly in your home state (<b>${selectedStateName}</b>) is almost always the most cost-effective decision. Registering out-of-state (such as in Wyoming or Delaware) when you live and work in ${selectedStateName} requires you to pay double formation fees, double annual report fees, and foreign qualification expenses.
             </p>
 
             <div class="action-checklist-box" style="background: rgba(255, 255, 255, 0.08); padding: 1.35rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.2); color: #FFFFFF;">
               <h4 style="font-size: 1.05rem; color: #FFFFFF; margin-bottom: 0.75rem; font-weight: 800; letter-spacing: 0.02em;">Action Checklist for ${selectedStateName}:</h4>
               <ul style="font-size: 0.925rem; color: #FFFFFF; display: flex; flex-direction: column; gap: 0.65rem; padding-left: 1.25rem; line-height: 1.6;">
-                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">1. File Articles of Organization:</strong> Submit your formation paperwork directly with the ${selectedStateName} Secretary of State.</li>
-                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">2. Get Free EIN:</strong> Apply directly online at IRS.gov for an instant, 100% free federal tax ID.</li>
-                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">3. Draft Operating Agreement:</strong> Create an internal agreement defining member ownership, voting rights, and distribution rules.</li>
-                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">4. Open Dedicated Bank Account:</strong> Keep personal and business finances strictly separated to preserve your limited liability shield.</li>
+                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">1. File Articles of Organization:</strong> Submit your formation documents directly to the ${selectedStateName} Secretary of State. State fee: <b>${stateFeeText}</b> (Estimated speed: ${speedText}).</li>
+                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">2. Registered Agent Setup:</strong> ${wantsPrivacy ? 'Because you requested address privacy, designate a commercial registered agent ($100–$150/yr) to keep your residential street address off public government records.' : 'You can serve as your own registered agent for $0 if you have a physical street address in ' + selectedStateName + ' and are available during standard business hours.'}</li>
+                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">3. Obtain Federal EIN:</strong> Apply directly online at IRS.gov for an instant, 100% free federal Employer Identification Number (Monday–Friday 7am–10pm ET). Do not pay third-party filing markups.</li>
+                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">4. Draft Operating Agreement:</strong> Adopt a formal written operating agreement detailing member ownership percentages, capital contributions, voting rights, and liability protections.</li>
+                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">5. Dedicated Business Bank Account:</strong> Keep business income strictly segregated from personal finances to maintain your limited liability protection.</li>
+                <li style="color: #FFFFFF;"><strong style="color: #FFFFFF; display: inline;">6. Ongoing Annual Compliance:</strong> Maintain good standing by filing the ${selectedStateName} periodic report (${annualFeeText}).</li>
               </ul>
             </div>
 
             <!-- Structure Comparison Box -->
             <div style="background: rgba(21, 154, 156, 0.1); border: 1px solid #159A9C; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem;">
-              <h4 style="font-size: 0.95rem; color: #6EE7B7; margin-bottom: 0.5rem; font-weight: 700;">How LLC Compares to Other Structures:</h4>
+              <h4 style="font-size: 0.95rem; color: #6EE7B7; margin-bottom: 0.5rem; font-weight: 700;">Entity Structure &amp; Tax Strategy Comparison:</h4>
               <div style="font-size: 0.85rem; color: #E2E8F0; line-height: 1.6;">
-                • <strong>Sole Proprietorship:</strong> Zero legal protection—personal assets are directly exposed to business claims.<br>
-                • <strong>LLC (Recommended):</strong> Provides a personal liability shield while keeping taxes simple (pass-through).<br>
-                • <strong>S-Corporation:</strong> An optional federal tax election you can make later once your business profit consistently exceeds reasonable salary levels.<br>
-                • <strong>C-Corporation:</strong> Ideal if raising venture capital or issuing stock options, but involves separate corporate entity taxation.
+                • <strong>Sole Proprietorship:</strong> Zero formation filing fee, but offers zero personal liability shield—personal savings and assets are directly exposed.<br>
+                • <strong>LLC (Recommended Baseline):</strong> Provides personal liability protection with simple pass-through taxation and minimal statutory formalities.<br>
+                • <strong>S-Corporation Election:</strong> An optional federal tax election (Form 2553) that profitable LLCs can adopt once business net income exceeds reasonable compensation levels (typically $60,000–$80,000+). Use our <a href="llc-vs-scorp.html" style="color: #6EE7B7; font-weight: 600; text-decoration: underline;">LLC vs S-Corp Calculator</a> to evaluate your potential payroll tax differences.<br>
+                • <strong>C-Corporation:</strong> Ideal if seeking institutional venture capital funding or issuing stock options, but involves separate corporate entity taxation (Form 1120).
               </div>
             </div>
 
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="${stateGuideUrl}" class="ls-btn ls-btn--emerald" style="color: white;background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none;">
-                View Full ${selectedStateName} LLC Guide →
+              <a href="${stateGuideUrl}" class="ls-btn ls-btn--emerald" style="color: white; background: var(--color-primary-gradient); padding: 0.85rem 1.75rem; text-decoration: none;">
+                View Full ${selectedStateName} LLC Guide &rarr;
+              </a>
+              <a href="llc-cost-calculator.html" class="ls-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.2); padding: 0.85rem 1.75rem; text-decoration: none;">
+                ${selectedStateName} Cost Calculator &rarr;
               </a>
               <a href="start-llc.html" class="ls-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.2); padding: 0.85rem 1.75rem; text-decoration: none;">
-                How to Start an LLC Overview →
+                50-State Overview &rarr;
               </a>
             </div>
           </div>
