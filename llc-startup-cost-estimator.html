@@ -839,7 +839,7 @@
               <option value="CA">California ($70 fee + $20 stmt + $800 Tax)</option>
               <option value="CO">Colorado ($50 filing fee)</option>
               <option value="CT">Connecticut ($120 filing fee)</option>
-              <option value="DE">Delaware ($110 fee + $300 Franchise Tax)</option>
+              <option value="DE">Delaware ($110 fee + $400 Franchise Tax)</option>
               <option value="FL">Florida ($125 filing fee)</option>
               <option value="GA">Georgia ($100 filing fee)</option>
               <option value="HI">Hawaii ($50 filing fee)</option>
@@ -1326,7 +1326,7 @@
          Northwest Registered Agent is a commercial LLC formation and registered-agent provider. Its formation offer has been advertised at $39 + state fee, with first-year registered-agent service included under applicable offer terms. The provider also offers an operating agreement and other business services. Check the current offer for included features, eligibility, and renewal pricing.
             <p style="color: #059669; font-weight: 700; margin-top: 0.4rem;">$39 + state fee &mdash; registered agent included for year 1 under applicable offer terms</p>
           </div>
-          <a href="northwest-registered-agent-review.html" class="top-pick-btn">Start My LLC &rarr;</a>
+          <a href="northwest-registered-agent-review.html" class="top-pick-btn">Read Northwest Review &rarr;</a>
         </div>
       </div>
 
@@ -1504,7 +1504,7 @@
           <ul class="footer-links">
             <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
             <li><a href="quiz.html">6-Question Diagnostic Quiz</a></li>
-            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+            <li><a href="llc-cost-calculator.html">LLC Cost Calculator</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1583,7 +1583,7 @@
       let annualReportDisplay = "$0/yr";
       if (st) {
         if (st.code === 'DE') {
-          // Delaware has NO SOS annual report fee; only the $300 Franchise Tax
+          // Delaware has NO SOS annual report fee; only the $400 Franchise Tax (HB 400)
           annualReportFee = 0;
           annualReportDisplay = "$0 (No state report)";
         } else if (st.code === 'NV') {
@@ -1613,7 +1613,7 @@
           firstYearTax = 800;
           separateTaxYr2 = 800;
         } else if (st.code === 'DE') {
-          // Delaware: $300 Annual Franchise Tax due June 1
+          // Delaware: $400 Annual Franchise Tax due June 1 (HB 400)
           separateTaxYr2 = 300;
         } else if (st.code === 'NV') {
           // Nevada: $200 State Business License due annually (alongside $150 list = $350 total)

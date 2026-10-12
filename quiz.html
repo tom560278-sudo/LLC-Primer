@@ -142,9 +142,12 @@
       color: #FFFFFF;
     }
 
-    .quiz-choice-card:hover {
+    .quiz-choice-card:hover,
+    .quiz-choice-card:focus-visible {
       background: rgba(255, 255, 255, 0.12);
       border-color: #159A9C;
+      outline: 2px solid #6EE7B7;
+      outline-offset: 2px;
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(21, 154, 156, 0.2);
     }
@@ -479,19 +482,19 @@
           <div class="quiz-question-title">1. What is your primary objective today?</div>
           <div class="quiz-question-desc">Select what best matches your current business planning stage:</div>
           <div class="quiz-grid-2col">
-            <div class="quiz-choice-card selected" onclick="chooseOption('goal', 'start_llc', this)">
+            <div class="quiz-choice-card selected" role="button" tabindex="0" aria-pressed="true" onclick="chooseOption('goal', 'start_llc', this)">
               <div class="quiz-choice-title">🚀 Form a New LLC</div>
               <div class="quiz-choice-desc">Start a brand new business entity from scratch</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('goal', 'find_setup', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('goal', 'find_setup', this)">
               <div class="quiz-choice-title">🧭 Compare LLC States</div>
               <div class="quiz-choice-desc">Find out if Home State, WY, or DE is best</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('goal', 'reduce_costs', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('goal', 'reduce_costs', this)">
               <div class="quiz-choice-title">💰 Calculate Formation Costs</div>
               <div class="quiz-choice-desc">Determine government filing fees &amp; ongoing expenses</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('goal', 'understand_options', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('goal', 'understand_options', this)">
               <div class="quiz-choice-title">📚 Learn Compliance Rules</div>
               <div class="quiz-choice-desc">Understand EIN, Operating Agreements &amp; privacy</div>
             </div>
@@ -507,19 +510,19 @@
           <div class="quiz-question-title">2. What type of business will your entity operate?</div>
           <div class="quiz-question-desc">This helps tailor tax classification and state compliance recommendations:</div>
           <div class="quiz-grid-2col">
-            <div class="quiz-choice-card selected" onclick="chooseOption('reason', 'assets', this)">
+            <div class="quiz-choice-card selected" role="button" tabindex="0" aria-pressed="true" onclick="chooseOption('reason', 'assets', this)">
               <div class="quiz-choice-title">🛡️ Personal Asset Protection</div>
               <div class="quiz-choice-desc">Shield savings, personal bank accounts &amp; house</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('reason', 'business', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('reason', 'business', this)">
               <div class="quiz-choice-title">💼 Local Service / Retail</div>
               <div class="quiz-choice-desc">Physical store, local service, or consultancy</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('reason', 'online', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('reason', 'online', this)">
               <div class="quiz-choice-title">🛒 E-Commerce &amp; Online Store</div>
               <div class="quiz-choice-desc">Shopify, Amazon, Stripe, digital products</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('reason', 'real_estate', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('reason', 'real_estate', this)">
               <div class="quiz-choice-title">🏢 Real Estate Holding</div>
               <div class="quiz-choice-desc">Rental properties, Airbnb, land investments</div>
             </div>
@@ -535,11 +538,11 @@
           <div class="quiz-question-title">3. Where are you physically based?</div>
           <div class="quiz-question-desc">Federal IRS rules differ significantly based on your residency:</div>
           <div class="quiz-grid-2col">
-            <div class="quiz-choice-card selected" id="optResUS" onclick="setResidency('us', this)">
+            <div class="quiz-choice-card selected" role="button" tabindex="0" aria-pressed="true" id="optResUS" onclick="setResidency('us', this)">
               <div class="quiz-choice-title">🇺🇸 U.S. Resident</div>
               <div class="quiz-choice-desc">I reside in one of the 50 U.S. states</div>
             </div>
-            <div class="quiz-choice-card" id="optResNonUS" onclick="setResidency('non_us', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" id="optResNonUS" onclick="setResidency('non_us', this)">
               <div class="quiz-choice-title">🌐 International / Non-U.S.</div>
               <div class="quiz-choice-desc">Foreign founder living outside the U.S. without SSN</div>
             </div>
@@ -571,11 +574,11 @@
           <div class="quiz-question-title">5. Will your business have physical operations in your home state?</div>
           <div class="quiz-question-desc">Such as a storefront, warehouse, office, or local client service:</div>
           <div class="quiz-grid-2col">
-            <div class="quiz-choice-card selected" onclick="chooseOption('usPhys', 'yes', this)">
+            <div class="quiz-choice-card selected" role="button" tabindex="0" aria-pressed="true" onclick="chooseOption('usPhys', 'yes', this)">
               <div class="quiz-choice-title">Yes, Physical Operations</div>
               <div class="quiz-choice-desc">Physical workspace, office, or local service</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('usPhys', 'online', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('usPhys', 'online', this)">
               <div class="quiz-choice-title">100% Online / Remote</div>
               <div class="quiz-choice-desc">No physical location or local storefront</div>
             </div>
@@ -591,11 +594,11 @@
           <div class="quiz-question-title">6. What is your address privacy preference?</div>
           <div class="quiz-question-desc">Every state mandates a physical street address on public state records:</div>
           <div class="quiz-grid-2col">
-            <div class="quiz-choice-card selected" onclick="chooseOption('privacy', 'max', this)">
+            <div class="quiz-choice-card selected" role="button" tabindex="0" aria-pressed="true" onclick="chooseOption('privacy', 'max', this)">
               <div class="quiz-choice-title">🛡️ Registered Agent Address Privacy</div>
               <div class="quiz-choice-desc">Keep personal home address off public state records</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('privacy', 'standard', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('privacy', 'standard', this)">
               <div class="quiz-choice-title">🏠 Self Registered Agent ($0)</div>
               <div class="quiz-choice-desc">Okay displaying home address on state registry</div>
             </div>
@@ -611,19 +614,19 @@
           <div class="quiz-question-title">4. How will you use your U.S. LLC?</div>
           <div class="quiz-question-desc">Select your main commercial activities:</div>
           <div class="quiz-grid-2col">
-            <div class="quiz-choice-card selected" onclick="chooseOption('nonusUse', 'online', this)">
+            <div class="quiz-choice-card selected" role="button" tabindex="0" aria-pressed="true" onclick="chooseOption('nonusUse', 'online', this)">
               <div class="quiz-choice-title">🛒 Online Store / E-Commerce</div>
               <div class="quiz-choice-desc">Stripe payment gateway, Shopify, Amazon US</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('nonusUse', 'consulting', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('nonusUse', 'consulting', this)">
               <div class="quiz-choice-title">💼 Global Freelancing / Consulting</div>
               <div class="quiz-choice-desc">Receive USD payments from international clients</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('nonusUse', 'saas', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('nonusUse', 'saas', this)">
               <div class="quiz-choice-title">💻 SaaS / Software / Tech</div>
               <div class="quiz-choice-desc">Digital software product subscriptions</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('nonusUse', 'agency', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('nonusUse', 'agency', this)">
               <div class="quiz-choice-title">🚀 Digital Service Agency</div>
               <div class="quiz-choice-desc">Marketing, design, or dev services</div>
             </div>
@@ -639,19 +642,19 @@
           <div class="quiz-question-title">5. Do you currently possess a U.S. SSN or ITIN?</div>
           <div class="quiz-question-desc">This determines the exact IRS Employer Identification Number (EIN) acquisition route:</div>
           <div class="quiz-grid-2col">
-            <div class="quiz-choice-card" onclick="chooseOption('ssn', 'ssn', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('ssn', 'ssn', this)">
               <div class="quiz-choice-title">Yes, I have a U.S. SSN</div>
               <div class="quiz-choice-desc">Social Security Number</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('ssn', 'itin', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('ssn', 'itin', this)">
               <div class="quiz-choice-title">Yes, I have a U.S. ITIN</div>
               <div class="quiz-choice-desc">Individual Taxpayer Identification Number</div>
             </div>
-            <div class="quiz-choice-card selected" onclick="chooseOption('ssn', 'none', this)">
+            <div class="quiz-choice-card selected" role="button" tabindex="0" aria-pressed="true" onclick="chooseOption('ssn', 'none', this)">
               <div class="quiz-choice-title">No, I have neither</div>
               <div class="quiz-choice-desc">Requires IRS Form SS-4 fax application route</div>
             </div>
-            <div class="quiz-choice-card" onclick="chooseOption('ssn', 'unsure', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('ssn', 'unsure', this)">
               <div class="quiz-choice-title">I’m not sure</div>
               <div class="quiz-choice-desc">Need assistance evaluating tax status</div>
             </div>
@@ -667,11 +670,11 @@
           <div class="quiz-question-title">6. Will you have physical assets or employees in the U.S.?</div>
           <div class="quiz-question-desc">Determines whether state income tax or foreign qualifications apply:</div>
           <div class="quiz-grid-2col">
-            <div class="quiz-choice-card" onclick="chooseOption('nonusPhys', 'yes', this)">
+            <div class="quiz-choice-card" role="button" tabindex="0" aria-pressed="false" onclick="chooseOption('nonusPhys', 'yes', this)">
               <div class="quiz-choice-title">Yes, U.S. Physical Presence</div>
               <div class="quiz-choice-desc">U.S. office, warehouse, or employees</div>
             </div>
-            <div class="quiz-choice-card selected" onclick="chooseOption('nonusPhys', 'no', this)">
+            <div class="quiz-choice-card selected" role="button" tabindex="0" aria-pressed="true" onclick="chooseOption('nonusPhys', 'no', this)">
               <div class="quiz-choice-title">No, 100% Remote Global</div>
               <div class="quiz-choice-desc">Operated entirely outside the U.S.</div>
             </div>
@@ -1328,7 +1331,7 @@
           <ul class="footer-links">
             <li><a href="llc-annual-report-tracker.html">Annual Report Tracker</a></li>
             <li><a href="quiz.html">6-Question Diagnostic Quiz</a></li>
-            <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
+            <li><a href="llc-cost-calculator.html">LLC Cost Calculator</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1381,18 +1384,37 @@
 
     function setResidency(res, el) {
       answers.residency = res;
-      document.querySelectorAll('#quizQ3 .quiz-choice-card').forEach(c => c.classList.remove('selected'));
-      if (el) el.classList.add('selected');
+      document.querySelectorAll('#quizQ3 .quiz-choice-card').forEach(c => {
+        c.classList.remove('selected');
+        c.setAttribute('aria-pressed', 'false');
+      });
+      if (el) {
+        el.classList.add('selected');
+        el.setAttribute('aria-pressed', 'true');
+      }
     }
 
     function chooseOption(key, val, el) {
       answers[key] = val;
       const parent = el ? el.parentElement : null;
       if (parent) {
-        parent.querySelectorAll('.quiz-choice-card').forEach(c => c.classList.remove('selected'));
+        parent.querySelectorAll('.quiz-choice-card').forEach(c => {
+          c.classList.remove('selected');
+          c.setAttribute('aria-pressed', 'false');
+        });
         el.classList.add('selected');
+        el.setAttribute('aria-pressed', 'true');
       }
     }
+
+    // Keyboard navigation: Enter or Space activates choice cards
+    document.addEventListener('keydown', function(e) {
+      if ((e.key === 'Enter' || e.key === ' ') && e.target && e.target.classList && e.target.classList.contains('quiz-choice-card')) {
+        e.preventDefault();
+        e.target.click();
+      }
+    });
+
 
     function handleStateChange() {
       const sel = document.getElementById('usStateSelector');
