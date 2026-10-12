@@ -271,6 +271,17 @@
       </div>
     </div>
   </footer>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()" aria-label="Close search">&times;</button>
+      <h3 id="searchModalTitle" style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees &amp; Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;" aria-label="Search state guides" autocomplete="off">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
 <script src="app.js"></script>
 </body>
 </html>

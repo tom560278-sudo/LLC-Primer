@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
   <title>LLC vs S-Corp Tax Savings Calculator (2026 Edition) | LLC Primer</title>
-  <meta name="description" content="Calculate your exact potential S-Corp tax savings. Compare self-employment tax savings, federal and state income taxes, QBI deduction, and S-Corp overhead for 2026.">
+  <meta name="description" content="Compare self-employment tax savings vs S-Corp payroll (FICA) taxes, state entity taxes, and overhead costs for 2026. See your estimated net savings.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -497,9 +497,9 @@
       <!-- CALCULATOR WIDGET -->
       <h2 id="calc-widget-section">LLC vs S-Corp Tax Calculator — Your Personalized Breakdown</h2>
       <p>
-        Enter your net business profit, state, filing status, and estimated salary below. Whether you're comparing S-Corp vs. LLC tax treatment or looking for a side-by-side estimate, the calculator uses your inputs to estimate potential 2026 differences in self-employment/payroll taxes, federal income tax, state income tax, QBI-related effects, and estimated S-Corp overhead.
+        Enter your net business profit, state, filing status, and reasonable salary below. The calculator models estimated 2026 differences in self-employment (SE) taxes vs. S-Corp payroll (FICA) taxes, state entity taxes, and administrative overhead. Because individual income tax brackets, deductions, and Section 199A QBI deductions depend on your full household tax return, this tool focuses directly on employment-tax savings versus S-Corp overhead.
       </p>
-      <p>The results provide a <b>planning estimate of potential annual tax differences and estimated net savings</b> based on the assumptions you enter. Actual tax liability can differ based on your complete tax situation, reasonable compensation, deductions, credits, state rules, and other factors. The calculator is for educational purposes and is not a tax return or individualized tax advice.</p>
+      <p>The results provide a <b>planning estimate of potential annual payroll tax differences and estimated net savings</b> based on the assumptions you enter. Actual tax liability can differ based on your complete tax situation, reasonable compensation, deductions, credits, state rules, and other factors. The calculator is for educational purposes and is not a tax return or individualized tax advice.</p>
 
       <div class="scorp-calc-card" id="scorpCalcWidget">
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
@@ -509,7 +509,7 @@
               LLC vs S-Corp Tax Savings Calculator
             </h3>
             <p style="color: #94A3B8; font-size: 0.875rem; margin: 0;">
-              Enter your net profit and salary to see exactly how much an S-Corp election could save you.
+              Enter your net profit and reasonable salary to estimate potential self-employment tax savings vs. corporate overhead.
             </p>
           </div>
         </div>
@@ -1444,6 +1444,17 @@
     </div>
   </footer>
 
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()" aria-label="Close search">&times;</button>
+      <h3 id="searchModalTitle" style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees &amp; Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;" aria-label="Search state guides" autocomplete="off">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+
   <script src="app.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -1473,8 +1484,15 @@
 
       if (!profitInput || !salarySlider) return;
 
-      const netProfit = Math.max(10000, parseFloat(profitInput.value) || 10000);
+      const netProfit = Math.max(1000, parseFloat(profitInput.value) || 10000);
       let salary = parseFloat(salarySlider.value) || 60000;
+
+      // Adjust slider max if net profit is higher than slider max
+      if (netProfit > 250000 && parseFloat(salarySlider.max) < netProfit) {
+        salarySlider.max = Math.min(1000000, netProfit);
+      } else if (netProfit <= 250000 && parseFloat(salarySlider.max) > 250000) {
+        salarySlider.max = 250000;
+      }
 
       // Cap salary at net profit
       if (salary > netProfit) {
@@ -1482,40 +1500,62 @@
         salarySlider.value = salary;
       }
 
-      const salaryPct = Math.round((salary / netProfit) * 100);
-      document.getElementById("scorpSalaryValDisplay").textContent = `$${salary.toLocaleString()}`;
-      document.getElementById("scorpSalaryPctText").textContent = `— ${salaryPct}% of net profit`;
+      const salaryPct = netProfit > 0 ? Math.round((salary / netProfit) * 100) : 0;
+      const salaryValEl = document.getElementById("scorpSalaryValDisplay");
+      if (salaryValEl) salaryValEl.textContent = `$${Math.round(salary).toLocaleString()}`;
+      const salaryPctEl = document.getElementById("scorpSalaryPctText");
+      if (salaryPctEl) salaryPctEl.textContent = `— ${salaryPct}% of net profit`;
 
-      // SE Tax Calculation (15.3% on SE base)
-      const wageBase = 184500; // 2026 Social Security wage limit
-      const llcSeTaxBase = Math.min(netProfit, wageBase) * 0.9235;
-      const llcSeTax = llcSeTaxBase * 0.153;
+      // Status-based Additional Medicare Tax threshold (0.9% on earnings above threshold)
+      const status = statusSelect ? statusSelect.value : "single";
+      let addlMedicareThreshold = 200000; // Single & Head of Household default
+      if (status === "joint") {
+        addlMedicareThreshold = 250000;   // Married Filing Jointly
+      }
 
-      const scorpSeTaxBase = Math.min(salary, wageBase);
-      const scorpSeTax = scorpSeTaxBase * 0.153;
+      // 2026 Social Security Wage Limit ($184,500)
+      const ssWageBase = 184500;
 
-      const grossSavings = Math.max(0, llcSeTax - scorpSeTax);
+      // 1. LLC Self-Employment Tax (Schedule SE)
+      // Statutory net SE earnings factor is 92.35% applied to net profit before SE tax
+      const llcSeBase = netProfit * 0.9235;
+      const llcSocialSecurity = Math.min(llcSeBase, ssWageBase) * 0.124;
+      const llcMedicare = llcSeBase * 0.029; // UNCAPPED
+      const llcAddlMedicare = Math.max(0, llcSeBase - addlMedicareThreshold) * 0.009;
+      const totalLlcSeTax = llcSocialSecurity + llcMedicare + llcAddlMedicare;
+
+      // 2. S-Corp W-2 Payroll Tax (FICA: Employer + Employee)
+      const scorpSocialSecurity = Math.min(salary, ssWageBase) * 0.124;
+      const scorpMedicare = salary * 0.029; // UNCAPPED
+      const scorpAddlMedicare = Math.max(0, salary - addlMedicareThreshold) * 0.009;
+      const totalScorpFicaTax = scorpSocialSecurity + scorpMedicare + scorpAddlMedicare;
+
+      // 3. Gross Savings (SE Tax - S-Corp FICA Tax) — Not clamped to zero (supports negative differences)
+      const grossSavings = totalLlcSeTax - totalScorpFicaTax;
+
+      // 4. S-Corp Overhead Costs
       const includeOverhead = overheadToggle ? overheadToggle.checked : true;
       const overheadCost = includeOverhead ? 1800 : 0;
 
-      // State Entity Tax calculation
+      // 5. State Entity Tax
       const stateCode = stateSelect ? stateSelect.value : "";
       let stateEntityTax = 0;
       let stateTaxNote = "Pass-through (No entity surcharge)";
 
       if (stateCode === "CA") {
-        // California charges 1.5% S-Corporation tax on net profit, min $800
+        // California 1.5% S-Corporation franchise tax on net profit, min $800
         stateEntityTax = Math.max(800, netProfit * 0.015);
-        stateTaxNote = `CA 1.5% Franchise Tax (-$${Math.round(stateEntityTax).toLocaleString()}/yr)`;
+        stateTaxNote = `CA 1.5% Franchise Tax (-$${Math.round(stateEntityTax).toLocaleString()}/yr, min $800)`;
       } else if (stateCode === "TN") {
-        // Tennessee excise tax 6.5% on S-corp net income
+        // Tennessee 6.5% franchise & excise tax on net earnings
         stateEntityTax = netProfit * 0.065;
         stateTaxNote = `TN 6.5% Excise Tax (-$${Math.round(stateEntityTax).toLocaleString()}/yr)`;
       } else if (["WY", "NV", "TX", "FL", "WA", "SD", "AK"].includes(stateCode)) {
         stateEntityTax = 0;
-        stateTaxNote = "0% State Income Tax";
+        stateTaxNote = "0% State Income/Entity Tax";
       }
 
+      // State Tax Card Display
       const stateTaxCard = document.getElementById("scorpStateTaxCard");
       const stateTaxLabel = document.getElementById("scorpStateTaxLabel");
       const stateTaxEl = document.getElementById("scorpResStateTax");
@@ -1531,43 +1571,75 @@
         }
       }
 
-      // Net Savings = Gross FICA Savings - Overhead - State Entity Tax
+      // Net Savings = Gross Savings - Overhead - State Entity Tax
       const netSavings = grossSavings - overheadCost - stateEntityTax;
 
-      // Update UI displays
-      document.getElementById("scorpResGrossSavings").textContent = `+$${Math.round(grossSavings).toLocaleString()}/yr`;
-      document.getElementById("scorpResOverhead").textContent = `-$${overheadCost.toLocaleString()}/yr`;
-      
-      const netSavingsEl = document.getElementById("scorpResNetSavings");
-      if (netSavings >= 0) {
-        netSavingsEl.textContent = `~$${Math.round(netSavings).toLocaleString()}/year`;
-        netSavingsEl.style.color = "#34D399";
-      } else {
-        netSavingsEl.textContent = `-$${Math.abs(Math.round(netSavings)).toLocaleString()}/year (No savings)`;
-        netSavingsEl.style.color = "#FCA5A5";
+      // Gross Savings UI Display
+      const grossEl = document.getElementById("scorpResGrossSavings");
+      if (grossEl) {
+        if (grossSavings >= 0) {
+          grossEl.textContent = `+$${Math.round(grossSavings).toLocaleString()}/yr`;
+          grossEl.style.color = "#6EE7B7";
+        } else {
+          grossEl.textContent = `-$${Math.abs(Math.round(grossSavings)).toLocaleString()}/yr`;
+          grossEl.style.color = "#FCA5A5";
+        }
       }
 
+      const overheadEl = document.getElementById("scorpResOverhead");
+      if (overheadEl) {
+        overheadEl.textContent = `-$${overheadCost.toLocaleString()}/yr`;
+      }
+
+      // Net Savings UI Display
+      const netSavingsEl = document.getElementById("scorpResNetSavings");
+      if (netSavingsEl) {
+        if (netSavings >= 0) {
+          netSavingsEl.textContent = `~$${Math.round(netSavings).toLocaleString()}/year`;
+          netSavingsEl.style.color = "#34D399";
+        } else {
+          netSavingsEl.textContent = `-$${Math.abs(Math.round(netSavings)).toLocaleString()}/year (Net Loss)`;
+          netSavingsEl.style.color = "#FCA5A5";
+        }
+      }
+
+      // 2026 IRS Standard Deductions and Thresholds
+      const statusDetails = {
+        single: { name: "Single", stdDed: "$15,700", thresh: "$200,000" },
+        joint: { name: "Married Filing Jointly", stdDed: "$31,400", thresh: "$250,000" },
+        head: { name: "Head of Household", stdDed: "$23,550", thresh: "$200,000" }
+      };
+      const currentStatus = statusDetails[status] || statusDetails.single;
+
       // Update Assumptions list based on inputs
-      const status = statusSelect ? statusSelect.value : "single";
-      const statusNames = { single: "Single ($15,000 std deduction)", joint: "Married Filing Jointly ($30,000 std deduction)", head: "Head of Household ($22,500 std deduction)" };
       const assumptionsEl = document.getElementById("scorpAssumptionsList");
       if (assumptionsEl) {
         assumptionsEl.innerHTML = `
-          • <strong>FICA Taxes:</strong> 15.3% Social Security (12.4% up to $184,500 cap) + Medicare (2.9%).<br>
-          • <strong>Filing Status:</strong> ${statusNames[status] || "Single"}.<br>
+          • <strong>Employment Taxes:</strong> Social Security 12.4% (capped at $184,500 wage base) + Medicare 2.9% (uncapped) + 0.9% Additional Medicare above ${currentStatus.thresh}.<br>
+          • <strong>LLC Schedule SE Base:</strong> 92.35% factor applied to net profit before SE tax ($${Math.round(llcSeBase).toLocaleString()}).<br>
+          • <strong>Filing Status:</strong> ${currentStatus.name} (2026 IRS standard deduction: ${currentStatus.stdDed}; Addl Medicare threshold: ${currentStatus.thresh}).<br>
           • <strong>State Tax Impact:</strong> ${stateCode ? stateTaxNote : "No state selected — standard pass-through assumed."}<br>
           • <strong>Overhead:</strong> ${includeOverhead ? "$1,800/yr estimated compliance cost (payroll service + CPA Form 1120-S filing)." : "$0 overhead included (toggled off)."}<br>
-          • <em>This is an educational planning model, not formal tax advice. Consult a licensed CPA before making an S-Corp election.</em>
+          • <strong>Income Tax &amp; QBI Note:</strong> Individual income tax brackets and the Section 199A QBI deduction (up to 20%) depend on your complete household return and are evaluated separately with a licensed CPA.
         `;
       }
     }
 
     function resetScorpCalc() {
-      document.getElementById("scorpNetProfitInput").value = 100000;
-      document.getElementById("scorpSalarySlider").value = 60000;
-      document.getElementById("scorpStateSelect").value = "";
-      document.getElementById("scorpFilingStatusSelect").value = "single";
-      document.getElementById("scorpOverheadToggle").checked = true;
+      const profitInput = document.getElementById("scorpNetProfitInput");
+      const salarySlider = document.getElementById("scorpSalarySlider");
+      const stateSelect = document.getElementById("scorpStateSelect");
+      const statusSelect = document.getElementById("scorpFilingStatusSelect");
+      const overheadToggle = document.getElementById("scorpOverheadToggle");
+
+      if (profitInput) profitInput.value = 100000;
+      if (salarySlider) {
+        salarySlider.max = 250000;
+        salarySlider.value = 60000;
+      }
+      if (stateSelect) stateSelect.value = "";
+      if (statusSelect) statusSelect.value = "single";
+      if (overheadToggle) overheadToggle.checked = true;
       updateScorpCalc();
     }
   </script>

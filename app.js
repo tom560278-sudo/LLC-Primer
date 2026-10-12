@@ -29,12 +29,12 @@ const stateData = [
   {"name": "Mississippi", "code": "MS", "slug": "mississippi", "fee": 50, "paperFee": 50, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$0 Annual Report", "annualFeeNum": 0, "freq": "Annual (Free)", "due": "April 15 annually", "penalty": "Administrative dissolution for unfiled reports", "tax": "None", "taxNum": 0, "firstYearDue": "$50 Certificate of Formation. Free $0 annual report due April 15 of following year.", "speed": "Instant Online", "region": "south", "popular": false, "sosName": "Mississippi Secretary of State", "sosUrl": "https://corp.sos.ms.gov/corp/portal/c/page/corpBusinessIdSearch/portal.aspx", "portalUrl": "https://corp.sos.ms.gov/", "note": "$50 Certificate of Formation. Annual report is 100% free ($0) due April 15.", "lastChecked": "October 2026"},
   {"name": "Missouri", "code": "MO", "slug": "missouri", "fee": 50, "paperFee": 105, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$0", "annualFeeNum": 0, "freq": "None", "due": "No annual report required for LLCs under MO law", "penalty": "N/A", "tax": "None", "taxNum": 0, "firstYearDue": "$50 online Articles of Organization ($105 paper). No annual report.", "speed": "Instant Online", "region": "midwest", "popular": false, "sosName": "Missouri Secretary of State", "sosUrl": "https://bsd.sos.mo.gov/BusinessEntity/BESearch.aspx?SearchType=0", "portalUrl": "https://bsd.sos.mo.gov/", "note": "$50 online Articles of Organization ($105 paper). No recurring annual report required for domestic LLCs.", "lastChecked": "October 2026"},
   {"name": "Montana", "code": "MT", "slug": "montana", "fee": 35, "paperFee": 35, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$0 (if Jan 1–Apr 15) / $35 after", "annualFeeNum": 0, "freq": "Annual ($0 waived window)", "due": "April 15 annually ($0 fee if filed by April 15; $35 late fee after)", "penalty": "$35 fee after April 15; involuntary dissolution by Dec 1", "tax": "None (No general state sales tax)", "taxNum": 0, "firstYearDue": "$35 Articles of Organization. Annual report is $0 if filed between Jan 1 and April 15.", "speed": "1-2 Days Online", "region": "west", "popular": true, "sosName": "Montana Secretary of State", "sosUrl": "https://biz.sosmt.gov/search/business", "portalUrl": "https://biz.sosmt.gov/", "note": "$35 formation fee (lowest in US). Annual report fee is $0 if filed between Jan 1 and April 15 ($35 if late).", "lastChecked": "October 2026"},
-  {"name": "Nebraska", "code": "NE", "slug": "nebraska", "fee": 100, "paperFee": 110, "initialExtras": 65, "initialExtrasNote": "Newspaper publication for 3 consecutive weeks + $25 proof of publication fee", "annual": "$10 Biennial ($13 online)", "annualFeeNum": 13, "freq": "Biennial (every 2 yrs in odd years)", "due": "April 1 of odd-numbered years", "penalty": "Loss of good standing / dissolution", "tax": "None", "taxNum": 0, "firstYearDue": "$100 online Certificate + newspaper notice + $25 proof of publication. Biennial report due odd years.", "speed": "1-2 Days", "region": "midwest", "popular": false, "sosName": "Nebraska Secretary of State", "sosUrl": "https://www.nebraska.gov/sos/corp/corpsearch.cgi", "portalUrl": "https://www.nebraska.gov/sos/corp/", "note": "$100 online Certificate of Organization. 3-week newspaper publication required + $25 proof fee. $13 biennial report in odd years.", "lastChecked": "October 2026"},
+  {"name": "Nebraska", "code": "NE", "slug": "nebraska", "fee": 100, "paperFee": 110, "initialExtras": 25, "initialExtrasNote": "Mandatory Proof of Publication state fee ($25). 3-week newspaper publication paid separately to qualifying local newspaper.", "annual": "$10 Biennial ($13 online)", "annualFeeNum": 13, "freq": "Biennial (every 2 yrs in odd years)", "due": "April 1 of odd-numbered years", "penalty": "Loss of good standing / dissolution", "tax": "None", "taxNum": 0, "firstYearDue": "$100 online Certificate of Organization + $25 Proof of Publication state fee. 3-week newspaper publication paid separately to local paper.", "speed": "1-2 Days", "region": "midwest", "popular": false, "sosName": "Nebraska Secretary of State", "sosUrl": "https://www.nebraska.gov/sos/corp/corpsearch.cgi", "portalUrl": "https://www.nebraska.gov/sos/corp/", "note": "$100 online Certificate of Organization. 3-week newspaper publication required + $25 proof fee. $13 biennial report in odd years.", "lastChecked": "October 2026"},
   {"name": "Nevada", "code": "NV", "slug": "nevada", "fee": 75, "paperFee": 75, "initialExtras": 350, "initialExtrasNote": "Mandatory Initial List ($150) + State Business License ($200) due at formation", "annual": "$350 Annual List ($150) + License ($200)", "annualFeeNum": 150, "freq": "Annual ($150 List + $200 License)", "due": "Last day of formation anniversary month annually", "penalty": "$100 late fee on List + $100 late fee on License ($200 total penalty)", "tax": "$200 State Business License", "taxNum": 200, "firstYearDue": "$75 Articles + $150 Initial List + $200 Initial Business License = $425 total state initial fees.", "speed": "Instant Online (SilverFlume)", "region": "west", "popular": true, "sosName": "Nevada Secretary of State (SilverFlume)", "sosUrl": "https://esos.nv.gov/EntitySearch/OnlineEntitySearch", "portalUrl": "https://www.nvsilverflume.gov/", "note": "$75 formation fee + mandatory $150 Initial List + $200 Initial Business License ($425 total initial). Ongoing: $150 Annual List + $200 Business License ($350/yr).", "lastChecked": "October 2026"},
   {"name": "New Hampshire", "code": "NH", "slug": "new-hampshire", "fee": 100, "paperFee": 100, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$100", "annualFeeNum": 100, "freq": "Annual", "due": "April 1 annually", "penalty": "$50 late fee", "tax": "Business Profits Tax / Business Enterprise Tax may apply depending on gross receipts", "taxNum": 0, "firstYearDue": "$100 Certificate of Formation. First $100 annual report due April 1 of following year.", "speed": "2-3 Days", "region": "east", "popular": false, "sosName": "New Hampshire Department of State", "sosUrl": "https://quickstart.sos.nh.gov/online/Account/LandingPage", "portalUrl": "https://quickstart.sos.nh.gov/", "note": "$100 Certificate of Formation. $100 annual report due April 1.", "lastChecked": "October 2026"},
   {"name": "New Jersey", "code": "NJ", "slug": "new-jersey", "fee": 125, "paperFee": 125, "initialExtras": 0, "initialExtrasNote": "Mandatory NJ-REG tax registration within 60 days ($0)", "annual": "$75", "annualFeeNum": 75, "freq": "Annual", "due": "Last day of formation anniversary month annually", "penalty": "Revocation of charter after 2 delinquent years", "tax": "None", "taxNum": 0, "firstYearDue": "$125 Certificate of Formation. First $75 annual report due on 1st anniversary.", "speed": "Instant Online", "region": "east", "popular": true, "sosName": "New Jersey Division of Revenue", "sosUrl": "https://www.njportal.com/DOR/BusinessNameSearch/", "portalUrl": "https://www.njportal.com/DOR/BusinessRegistration", "note": "$125 Public Records Filing. $75 annual report due on formation anniversary month.", "lastChecked": "October 2026"},
   {"name": "New Mexico", "code": "NM", "slug": "new-mexico", "fee": 50, "paperFee": 50, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$0", "annualFeeNum": 0, "freq": "None", "due": "No annual report required for LLCs under NM law", "penalty": "N/A", "tax": "None", "taxNum": 0, "firstYearDue": "$50 online Articles of Organization. $0 recurring report costs.", "speed": "1-2 Days Online", "region": "west", "popular": true, "sosName": "New Mexico Secretary of State", "sosUrl": "https://portal.sos.state.nm.us/corps/(S(1ubdfbvgfdfu45f5j535d545))/CorpLookup/CorpSearch.aspx", "portalUrl": "https://portal.sos.state.nm.us/", "note": "$50 online Articles of Organization. Top privacy state: owner names not public, no annual report required.", "lastChecked": "October 2026"},
-  {"name": "New York", "code": "NY", "slug": "new-york", "fee": 200, "paperFee": 200, "initialExtras": 350, "initialExtrasNote": "Section 206 newspaper publication in 2 newspapers for 6 weeks + $50 Certificate of Publication fee (~$300–$1,500)", "annual": "$9 Biennial", "annualFeeNum": 9, "freq": "Biennial (every 2 yrs)", "due": "End of formation anniversary month every 2 years", "penalty": "Suspension of authority to do business", "tax": "None", "taxNum": 0, "firstYearDue": "$200 Articles of Organization + newspaper publication (~$300–$1,000) + $50 Certificate of Publication.", "speed": "1-2 Days", "region": "east", "popular": true, "sosName": "New York Department of State (Division of Corporations)", "sosUrl": "https://apps.dos.ny.gov/publicInquiry/", "portalUrl": "https://dos.ny.gov/e-statement-filing", "note": "$200 Articles of Organization. Section 206 publication required within 120 days ($300-$1500). $9 biennial statement every 2 years.", "lastChecked": "October 2026"},
+  {"name": "New York", "code": "NY", "slug": "new-york", "fee": 200, "paperFee": 200, "initialExtras": 50, "initialExtrasNote": "Mandatory Certificate of Publication state filing fee ($50). County newspaper publication (~$300\u2013$1,200) paid separately to local newspapers.", "annual": "$9 Biennial", "annualFeeNum": 9, "freq": "Biennial (every 2 yrs)", "due": "End of formation anniversary month every 2 years", "penalty": "Suspension of authority to do business", "tax": "None", "taxNum": 0, "firstYearDue": "$200 Articles of Organization + $50 Certificate of Publication state fee. Section 206 county newspaper publication (~$300\u2013$1,200) required within 120 days.", "speed": "1-2 Days", "region": "east", "popular": true, "sosName": "New York Department of State (Division of Corporations)", "sosUrl": "https://apps.dos.ny.gov/publicInquiry/", "portalUrl": "https://dos.ny.gov/e-statement-filing", "note": "$200 Articles of Organization. Section 206 publication required within 120 days ($300-$1500). $9 biennial statement every 2 years.", "lastChecked": "October 2026"},
   {"name": "North Carolina", "code": "NC", "slug": "north-carolina", "fee": 125, "paperFee": 125, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$202 ($200 paper)", "annualFeeNum": 202, "freq": "Annual", "due": "April 15 annually (starting year after formation)", "penalty": "Administrative dissolution notice", "tax": "None", "taxNum": 0, "firstYearDue": "$125 Articles of Organization. First $202 annual report due April 15 of following year.", "speed": "3-5 Days", "region": "south", "popular": true, "sosName": "North Carolina Secretary of State", "sosUrl": "https://www.sosnc.gov/search/index/corp", "portalUrl": "https://www.sosnc.gov/", "note": "$125 Articles of Organization. $202 online annual report ($200 paper) due April 15.", "lastChecked": "October 2026"},
   {"name": "North Dakota", "code": "ND", "slug": "north-dakota", "fee": 135, "paperFee": 135, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$50", "annualFeeNum": 50, "freq": "Annual", "due": "November 15 annually", "penalty": "$50 late fee ($100 total); involuntary dissolution if 1 year late", "tax": "None", "taxNum": 0, "firstYearDue": "$135 Articles of Organization. First $50 annual report due Nov 15 of year after formation.", "speed": "2-3 Days", "region": "midwest", "popular": false, "sosName": "North Dakota Secretary of State (FirstStop)", "sosUrl": "https://firststop.sos.nd.gov/search/business", "portalUrl": "https://firststop.sos.nd.gov/", "note": "$135 online Articles of Organization. $50 annual report due November 15.", "lastChecked": "October 2026"},
   {"name": "Ohio", "code": "OH", "slug": "ohio", "fee": 99, "paperFee": 99, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$0", "annualFeeNum": 0, "freq": "None", "due": "No annual report required for domestic LLCs", "penalty": "N/A", "tax": "Commercial Activity Tax (CAT) only if Ohio taxable gross receipts exceed $3M (2026 threshold)", "taxNum": 0, "firstYearDue": "$99 Articles of Organization. $0 recurring state report fees.", "speed": "1-2 Days Online", "region": "midwest", "popular": true, "sosName": "Ohio Secretary of State", "sosUrl": "https://businesssearch.ohiosos.gov/", "portalUrl": "https://www.ohiosos.gov/", "note": "$99 online Articles of Organization. No annual report required for domestic Ohio LLCs.", "lastChecked": "October 2026"},
@@ -343,6 +343,12 @@ function updateCost() {
   const headerStateEl = document.getElementById("calcCostHeaderState");
   const costBadgeEl = document.getElementById("calcCostBadge");
   const rowStateFeeEl = document.getElementById("calcRowStateFee");
+  const rowInitialExtrasEl = document.getElementById("calcRowInitialExtras");
+  const rowInitialExtrasLabelEl = document.getElementById("calcRowInitialExtrasLabel");
+  const rowInitialExtrasValEl = document.getElementById("calcRowInitialExtrasVal");
+  const rowFirstYearTaxEl = document.getElementById("calcRowFirstYearTax");
+  const rowFirstYearTaxLabelEl = document.getElementById("calcRowFirstYearTaxLabel");
+  const rowFirstYearTaxValEl = document.getElementById("calcRowFirstYearTaxVal");
   const rowAnnualReportEl = document.getElementById("calcRowAnnualReport");
   const rowAgentFeeEl = document.getElementById("calcRowAgentFee");
   const rowFormationServiceEl = document.getElementById("calcRowFormationService");
@@ -351,6 +357,7 @@ function updateCost() {
   const totalYear1El = document.getElementById("calcTotalYear1");
   const totalYear2El = document.getElementById("calcTotalYear2");
   const stateWarningBoxEl = document.getElementById("calcStateWarningBox");
+  const variableNoticeEl = document.getElementById("calcVariableNotice");
   const guideBtnEl = document.getElementById("calcGuideBtn");
 
   // If no state is selected, display clear placeholder prompt
@@ -363,6 +370,8 @@ function updateCost() {
       costBadgeEl.style.border = "1px solid #159A9C";
     }
     if (rowStateFeeEl) rowStateFeeEl.textContent = "—";
+    if (rowInitialExtrasEl) rowInitialExtrasEl.style.display = "none";
+    if (rowFirstYearTaxEl) rowFirstYearTaxEl.style.display = "none";
     if (rowAnnualReportEl) rowAnnualReportEl.textContent = "—";
     if (rowAgentFeeEl) rowAgentFeeEl.textContent = "—";
     if (rowFormationServiceEl) rowFormationServiceEl.textContent = "—";
@@ -370,6 +379,7 @@ function updateCost() {
     if (totalYear1El) totalYear1El.textContent = "Select State";
     if (totalYear2El) totalYear2El.textContent = "Select State";
     if (stateWarningBoxEl) stateWarningBoxEl.style.display = "none";
+    if (variableNoticeEl) variableNoticeEl.style.display = "none";
     if (guideBtnEl) {
       guideBtnEl.textContent = "Select State to View Guide →";
       guideBtnEl.href = "start-llc.html";
@@ -410,9 +420,6 @@ function updateCost() {
   const formationServiceCost = formationOptChecked ? 39 : 0;
 
   // 2. REGISTERED AGENT COST
-  // With Northwest formation ($39), Year 1 registered agent is included free ($0). Renewal is $125/yr.
-  // Without Northwest formation, standard commercial agent is $125/yr in Year 1 and ongoing.
-  // If not selected, DIY is $0.
   let agentYr1Cost = 0;
   let agentYr2Cost = 0;
   let agentYr1Display = "$0 (DIY / Self)";
@@ -430,7 +437,6 @@ function updateCost() {
   }
 
   // 3. RECURRING ANNUAL REPORT FEE
-  // Handle frequency transparently (Annual vs Biennial vs None)
   let annualReportFeeYr2 = 0;
   let annualReportDisplay = "$0";
   const isBiennial = st.freq && st.freq.toLowerCase().includes("biennial");
@@ -445,9 +451,7 @@ function updateCost() {
     annualReportDisplay = "$150/yr (Annual List)";
   } else if (st.annualFeeNum > 0) {
     if (isBiennial) {
-      // For biennial reports (e.g. CA $20, NY $9, IA $30, IN $32, AK $100)
       annualReportDisplay = `${st.annual}`;
-      // Annualized for annual budget purposes (or exact per occurrence)
       annualReportFeeYr2 = Math.round(st.annualFeeNum / 2);
     } else {
       annualReportFeeYr2 = st.annualFeeNum;
@@ -468,25 +472,15 @@ function updateCost() {
   let costBadgeText = "Standard Cost";
 
   if (st.code === "CA") {
-    // California:
-    // Year 1 Mandatory State Obligations:
-    // - $70 Articles of Organization
-    // - $20 Initial Statement of Information (due within 90 days)
-    // - $800 Annual Franchise Tax (due by 15th day of 4th month of taxable year; AB 85 exemption expired after 2023)
-    // Base mandatory Year 1 state obligations: $70 + $20 + $800 = $890.
+    // California: $70 Articles + $20 Statement of Info + $800 Franchise Tax = $890 Year 1
     initialMandatoryExtras = 20;
     initialMandatoryTax = 800;
-    initialExtrasLabel = "Initial Statement of Information (due within 90 days)";
-
-    // Year 2 Ongoing:
-    // - Biennial Statement of Information ($20 every 2 years = $10/yr avg)
-    // - $800 Annual Franchise Tax (due April 15 annually)
-    annualReportFeeYr2 = 10;
+    initialExtrasLabel = "Initial Statement of Information (due in 90 days)";
+    annualReportFeeYr2 = 10; // $20 Biennial = $10/yr avg
     annualReportDisplay = "$20 Biennial ($10/yr avg)";
     separateStateTaxYr2 = 800;
     stateTaxDisplay = "$800/yr (Annual Franchise Tax)";
     hasSeparateTax = true;
-
     stateWarningText = "⚠️ California: Mandatory first-year state obligations include the $70 filing fee, $20 Initial Statement of Information (due within 90 days), and the $800 Annual Franchise Tax (due by the 15th day of the 4th month after formation). The previous AB 85 first-year tax exemption expired after 2023. Ongoing annual compliance includes the $800 annual franchise tax (due April 15) and $20 Statement of Information every 2 years.";
     costBadgeText = "High Cost State";
   } else if (st.code === "DE") {
@@ -497,7 +491,7 @@ function updateCost() {
     stateWarningText = "⚠️ Delaware: Mandatory $300/yr franchise tax due June 1st. No separate Secretary of State annual report fee for LLCs. Great for VC-backed entities, but higher recurring tax for small businesses.";
     costBadgeText = "Above Average";
   } else if (st.code === "NV") {
-    // Nevada: $150 Annual List + $200 Business License = $350/yr total recurring state fees.
+    // Nevada: $150 Annual List + $200 Business License = $350/yr recurring
     separateStateTaxYr2 = 200;
     stateTaxDisplay = "$200/yr (State Business License)";
     hasSeparateTax = true;
@@ -506,13 +500,20 @@ function updateCost() {
     stateWarningText = "⚠️ Nevada: Mandatory $150 Annual List + $200 State Business License required annually ($350/yr total ongoing state fees). Both are also required at initial formation ($425 total initial government fees).";
     costBadgeText = "High Ongoing Cost";
   } else if (st.code === "NY") {
+    initialMandatoryExtras = 50;
+    initialExtrasLabel = "Certificate of Publication State Filing Fee";
     stateWarningText = "⚠️ New York: Section 206 requires publishing a notice in 2 county newspapers for 6 weeks and filing a Certificate of Publication ($50 state fee + ~$300–$1,200 newspaper costs depending on county). Biennial statement is $9 every 2 years.";
     costBadgeText = "High Startup Cost";
+  } else if (st.code === "NE") {
+    initialMandatoryExtras = 25;
+    initialExtrasLabel = "Proof of Publication State Filing Fee";
+    stateWarningText = "⚠️ Nebraska: Requires publishing notice for 3 consecutive weeks in a legal newspaper near the designated office (~$40–$250 depending on county) and filing Proof of Publication ($25 state fee). Biennial report is $25 in odd years.";
+    costBadgeText = "Standard Cost";
   } else if (st.code === "PA") {
     stateWarningText = "⚠️ Pennsylvania: Under Act 122 of 2022, PA switched from a 10-year decennial report to an annual report ($7 fee) due annually by September 30th.";
     costBadgeText = "Low Ongoing Cost";
   } else if (st.code === "TN") {
-    separateStateTaxYr2 = 0; // The $300 minimum is already the annual report fee
+    separateStateTaxYr2 = 0;
     stateWarningText = "⚠️ Tennessee: Annual report fee is $300 minimum ($50/member, up to $3,000 max). State franchise/excise tax ($100 minimum) may also apply.";
     costBadgeText = "Above Average";
   } else if (st.code === "TX") {
@@ -526,15 +527,12 @@ function updateCost() {
     costBadgeText = "Above Average";
   }
 
-  // Expedited toggle (where present)
+  // Expedited toggle
   const includeExpedited = calcExpeditedToggle ? calcExpeditedToggle.checked : false;
   const expeditedFee = includeExpedited ? 75 : 0;
 
-  // 5. COMPUTE YEAR 1 AND YEAR 2 TOTALS (Transparent, exact sums)
-  // Year 1 Total = State Filing Fee + Initial Mandatory Extras/Taxes + Formation Service + Agent Year 1 + Expedited
+  // 5. COMPUTE YEAR 1 AND YEAR 2 TOTALS (Exact sum of visible line items)
   const totalYear1 = stateFee + initialMandatoryExtras + initialMandatoryTax + formationServiceCost + agentYr1Cost + expeditedFee;
-
-  // Year 2 Ongoing Total = Annual Report Fee + Separate State Tax + Agent Year 2
   const totalYear2 = annualReportFeeYr2 + separateStateTaxYr2 + agentYr2Cost;
 
   // --- UPDATE UI ELEMENTS ---
@@ -545,17 +543,29 @@ function updateCost() {
     costBadgeEl.style.color = "#6EE7B7";
     costBadgeEl.style.border = "1px solid #159A9C";
   }
-  if (rowStateFeeEl) {
-    if (st.code === "CA") {
-      rowStateFeeEl.textContent = `$${stateFee} (+$20 Statement + $800 Tax)`;
-    } else if (st.code === "NV") {
-      rowStateFeeEl.textContent = `$${stateFee} (+$350 Initial List/License)`;
-    } else if (initialMandatoryExtras > 0) {
-      rowStateFeeEl.textContent = `$${stateFee} (+$${initialMandatoryExtras} Initial)`;
+  
+  if (rowStateFeeEl) rowStateFeeEl.textContent = `$${stateFee}`;
+  
+  if (rowInitialExtrasEl && rowInitialExtrasValEl) {
+    if (initialMandatoryExtras > 0) {
+      rowInitialExtrasEl.style.display = "flex";
+      rowInitialExtrasValEl.textContent = `$${initialMandatoryExtras}`;
+      if (rowInitialExtrasLabelEl) rowInitialExtrasLabelEl.textContent = `${initialExtrasLabel}:`;
     } else {
-      rowStateFeeEl.textContent = `$${stateFee}`;
+      rowInitialExtrasEl.style.display = "none";
     }
   }
+
+  if (rowFirstYearTaxEl && rowFirstYearTaxValEl) {
+    if (initialMandatoryTax > 0) {
+      rowFirstYearTaxEl.style.display = "flex";
+      rowFirstYearTaxValEl.textContent = `$${initialMandatoryTax}`;
+      if (rowFirstYearTaxLabelEl) rowFirstYearTaxLabelEl.textContent = `${stateName} 1st-Year Franchise Tax:`;
+    } else {
+      rowFirstYearTaxEl.style.display = "none";
+    }
+  }
+
   if (rowAnnualReportEl) rowAnnualReportEl.textContent = annualReportDisplay;
   if (rowAgentFeeEl) rowAgentFeeEl.textContent = isAgentIncluded ? agentYr1Display : "$0 (DIY / Self)";
   if (rowFormationServiceEl) rowFormationServiceEl.textContent = formationOptChecked ? "$39" : "$0 (DIY)";
@@ -578,6 +588,20 @@ function updateCost() {
       stateWarningBoxEl.innerHTML = stateWarningText;
     } else {
       stateWarningBoxEl.style.display = "none";
+    }
+  }
+
+  // Variable licensing & publication expense notice
+  if (variableNoticeEl) {
+    variableNoticeEl.style.display = "block";
+    if (st.code === "NY") {
+      variableNoticeEl.innerHTML = `<strong>ℹ️ Variable County Publication:</strong> Section 206 requires publishing notice in 2 county newspapers for 6 weeks (~$300–$1,200 depending on county) paid directly to local newspapers within 120 days. Not included in state totals.`;
+    } else if (st.code === "NE") {
+      variableNoticeEl.innerHTML = `<strong>ℹ️ Variable County Publication:</strong> Nebraska requires 3 consecutive weeks notice in a qualifying county newspaper (~$40–$250 depending on county) paid directly to the newspaper. Not included in state totals.`;
+    } else if (st.code === "AZ") {
+      variableNoticeEl.innerHTML = `<strong>ℹ️ County Publication:</strong> Required in counties other than Maricopa and Pima (~$30–$300) paid directly to qualifying newspapers within 60 days. Not included in state totals.`;
+    } else {
+      variableNoticeEl.innerHTML = `<strong>ℹ️ Local Licensing &amp; Permits:</strong> City or county general business licenses ($50–$300) vary by municipality and industry and are paid separately to local authorities.`;
     }
   }
 
@@ -689,7 +713,6 @@ function updateCost() {
   }
 }
 
-// Dedicated helper for the Modal Calculator in index.html
 function updateModalCost() {
   const stateSelect = document.getElementById("modalCalcStateSelect");
   const agentSelect = document.getElementById("modalCalcAgentSelect");
@@ -838,9 +861,64 @@ function generateQuizResults() {
   `;
 }
 
+function ensureSearchModalExists() {
+  let overlay = document.getElementById("searchModalOverlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.className = "modal-overlay";
+    overlay.id = "searchModalOverlay";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-labelledby", "searchModalTitle");
+    overlay.innerHTML = `
+      <div class="modal-card">
+        <button class="modal-close" onclick="closeSearchModal()" aria-label="Close search">&times;</button>
+        <h3 id="searchModalTitle" style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees &amp; Guides</h3>
+        <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;" aria-label="Search state guides" autocomplete="off">
+        <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+    initSearch();
+  }
+  return overlay;
+}
+
 function initSearch() {
   const searchInput = document.getElementById("searchInput");
+  const overlay = document.getElementById("searchModalOverlay");
   if (!searchInput) return;
+
+  if (searchInput.dataset.searchBound === "true") return;
+  searchInput.dataset.searchBound = "true";
+
+  const stateGuideUrls = {
+    'Alabama':'how-to-start-llc-in-alabama.html','Alaska':'how-to-start-llc-in-alaska.html',
+    'Arizona':'how-to-start-llc-in-arizona.html','Arkansas':'how-to-start-llc-in-arkansas.html',
+    'California':'how-to-start-llc-in-california.html','Colorado':'how-to-start-llc-in-colorado.html',
+    'Connecticut':'how-to-start-llc-in-connecticut.html','Delaware':'how-to-start-llc-in-delaware.html',
+    'Florida':'how-to-start-llc-in-florida.html','Georgia':'how-to-start-llc-in-georgia.html',
+    'Hawaii':'how-to-start-llc-in-hawaii.html','Idaho':'how-to-start-llc-in-idaho.html',
+    'Illinois':'how-to-start-llc-in-illinois.html','Indiana':'how-to-start-llc-in-indiana.html',
+    'Iowa':'how-to-start-llc-in-iowa.html','Kansas':'how-to-start-llc-in-kansas.html',
+    'Kentucky':'how-to-start-llc-in-kentucky.html','Louisiana':'how-to-start-llc-in-louisiana.html',
+    'Maine':'how-to-start-llc-in-maine.html','Maryland':'how-to-start-llc-in-maryland.html',
+    'Massachusetts':'how-to-start-llc-in-massachusetts.html','Michigan':'how-to-start-llc-in-michigan.html',
+    'Minnesota':'how-to-start-llc-in-minnesota.html','Mississippi':'how-to-start-llc-in-mississippi.html',
+    'Missouri':'how-to-start-llc-in-missouri.html','Montana':'how-to-start-llc-in-montana.html',
+    'Nebraska':'how-to-start-llc-in-nebraska.html','Nevada':'how-to-start-llc-in-nevada.html',
+    'New Hampshire':'how-to-start-llc-in-new-hampshire.html','New Jersey':'how-to-start-llc-in-new-jersey.html',
+    'New Mexico':'how-to-start-llc-in-new-mexico.html','New York':'how-to-start-llc-in-new-york.html',
+    'North Carolina':'how-to-start-llc-in-north-carolina.html','North Dakota':'how-to-start-llc-in-north-dakota.html',
+    'Ohio':'how-to-start-llc-in-ohio.html','Oklahoma':'how-to-start-llc-in-oklahoma.html',
+    'Oregon':'how-to-start-llc-in-oregon.html','Pennsylvania':'how-to-start-llc-in-pennsylvania.html',
+    'Rhode Island':'how-to-start-llc-in-rhode-island.html','South Carolina':'how-to-start-llc-in-south-carolina.html',
+    'South Dakota':'how-to-start-llc-in-south-dakota.html','Tennessee':'how-to-start-llc-in-tennessee.html',
+    'Texas':'how-to-start-llc-in-texas.html','Utah':'how-to-start-llc-in-utah.html',
+    'Vermont':'how-to-start-llc-in-vermont.html','Virginia':'how-to-start-llc-in-virginia.html',
+    'Washington':'how-to-start-llc-in-washington.html','West Virginia':'how-to-start-llc-in-west-virginia.html',
+    'Wisconsin':'how-to-start-llc-in-wisconsin.html','Wyoming':'how-to-start-llc-in-wyoming.html'
+  };
 
   searchInput.addEventListener("input", (e) => {
     const q = e.target.value.toLowerCase().trim();
@@ -852,56 +930,83 @@ function initSearch() {
       return;
     }
 
-    const matches = stateData.filter(s => s.name.toLowerCase().includes(q) || s.code.toLowerCase().includes(q));
+    const matches = (typeof stateData !== "undefined" ? stateData : []).filter(s =>
+      s.name.toLowerCase().includes(q) || s.code.toLowerCase().includes(q)
+    );
+
     if (matches.length === 0) {
       resultsContainer.innerHTML = `<div style="color:var(--text-muted); padding:0.5rem;">No matching state guides found.</div>`;
       return;
     }
 
-    const stateGuideUrls = {
-      'Alabama':'how-to-start-llc-in-alabama.html','Alaska':'how-to-start-llc-in-alaska.html',
-      'Arizona':'how-to-start-llc-in-arizona.html','Arkansas':'how-to-start-llc-in-arkansas.html',
-      'California':'how-to-start-llc-in-california.html','Colorado':'how-to-start-llc-in-colorado.html',
-      'Connecticut':'how-to-start-llc-in-connecticut.html','Delaware':'how-to-start-llc-in-delaware.html',
-      'Florida':'how-to-start-llc-in-florida.html','Georgia':'how-to-start-llc-in-georgia.html',
-      'Hawaii':'how-to-start-llc-in-hawaii.html','Idaho':'how-to-start-llc-in-idaho.html',
-      'Illinois':'how-to-start-llc-in-illinois.html','Indiana':'how-to-start-llc-in-indiana.html',
-      'Iowa':'how-to-start-llc-in-iowa.html','Kansas':'how-to-start-llc-in-kansas.html',
-      'Kentucky':'how-to-start-llc-in-kentucky.html','Louisiana':'how-to-start-llc-in-louisiana.html',
-      'Maine':'how-to-start-llc-in-maine.html','Maryland':'how-to-start-llc-in-maryland.html',
-      'Massachusetts':'how-to-start-llc-in-massachusetts.html','Michigan':'how-to-start-llc-in-michigan.html',
-      'Minnesota':'how-to-start-llc-in-minnesota.html','Mississippi':'how-to-start-llc-in-mississippi.html',
-      'Missouri':'how-to-start-llc-in-missouri.html','Montana':'how-to-start-llc-in-montana.html',
-      'Nebraska':'how-to-start-llc-in-nebraska.html','Nevada':'how-to-start-llc-in-nevada.html',
-      'New Hampshire':'how-to-start-llc-in-new-hampshire.html','New Jersey':'how-to-start-llc-in-new-jersey.html',
-      'New Mexico':'how-to-start-llc-in-new-mexico.html','New York':'how-to-start-llc-in-new-york.html',
-      'North Carolina':'how-to-start-llc-in-north-carolina.html','North Dakota':'how-to-start-llc-in-north-dakota.html',
-      'Ohio':'how-to-start-llc-in-ohio.html','Oklahoma':'how-to-start-llc-in-oklahoma.html',
-      'Oregon':'how-to-start-llc-in-oregon.html','Pennsylvania':'how-to-start-llc-in-pennsylvania.html',
-      'Rhode Island':'how-to-start-llc-in-rhode-island.html','South Carolina':'how-to-start-llc-in-south-carolina.html',
-      'South Dakota':'how-to-start-llc-in-south-dakota.html','Tennessee':'how-to-start-llc-in-tennessee.html',
-      'Texas':'how-to-start-llc-in-texas.html','Utah':'how-to-start-llc-in-utah.html',
-      'Vermont':'how-to-start-llc-in-vermont.html','Virginia':'how-to-start-llc-in-virginia.html',
-      'Washington':'how-to-start-llc-in-washington.html','West Virginia':'how-to-start-llc-in-west-virginia.html',
-      'Wisconsin':'how-to-start-llc-in-wisconsin.html','Wyoming':'how-to-start-llc-in-wyoming.html'
-    };
     resultsContainer.innerHTML = matches.map(s => {
-      const guideUrl = stateGuideUrls[s.name] || '#';
+      const guideUrl = (s.slug ? `how-to-start-llc-in-${s.slug}.html` : (stateGuideUrls[s.name] || '#'));
       return `
-        <a href="${guideUrl}" style="display:block; padding:0.6rem 0.75rem; border-bottom:1px solid rgba(255,255,255,0.07); text-decoration:none; color:inherit;">
-          <strong style="color:#FFFFFF">${s.name} LLC</strong> — <span style="color:var(--color-primary)">$${s.fee} State Fee</span> <span style="color:#94A3B8;font-size:0.8rem;">(${s.speed})</span>
+        <a href="${guideUrl}" class="search-result-row" style="display:block; padding:0.6rem 0.75rem; border-bottom:1px solid rgba(255,255,255,0.07); text-decoration:none; color:inherit; border-radius:6px; transition: background 0.15s ease;">
+          <strong style="color:#FFFFFF">${s.name} LLC</strong> &mdash; <span style="color:var(--color-primary)">$${s.fee} State Fee</span> <span style="color:#94A3B8;font-size:0.8rem;">(${s.speed})</span>
         </a>
       `;
     }).join("");
   });
+
+  // Handle Enter key to navigate to first result, and Escape to close
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const resultsContainer = document.getElementById("searchResults");
+      const firstLink = resultsContainer ? resultsContainer.querySelector("a") : null;
+      if (firstLink && firstLink.href) {
+        window.location.href = firstLink.href;
+      }
+    } else if (e.key === "Escape") {
+      closeSearchModal();
+    }
+  });
+
+  // Close modal when clicking backdrop
+  if (overlay && !overlay.dataset.backdropBound) {
+    overlay.dataset.backdropBound = "true";
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        closeSearchModal();
+      }
+    });
+  }
 }
 
+// Global keyboard listeners: Escape to close modal, Ctrl+K / Cmd+K to open search
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const searchModal = document.getElementById("searchModalOverlay");
+    if (searchModal && searchModal.classList.contains("active")) {
+      closeSearchModal();
+    }
+  } else if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+    const searchBtn = document.querySelector(".search-trigger");
+    if (searchBtn || document.getElementById("searchModalOverlay")) {
+      e.preventDefault();
+      openSearchModal();
+    }
+  }
+});
+
 function openSearchModal() {
-  document.getElementById("searchModalOverlay")?.classList.add("active");
-  document.getElementById("searchInput")?.focus();
+  const overlay = ensureSearchModalExists();
+  overlay.classList.add("active");
+  const input = document.getElementById("searchInput");
+  if (input) {
+    input.value = "";
+    const resultsContainer = document.getElementById("searchResults");
+    if (resultsContainer) resultsContainer.innerHTML = "";
+    setTimeout(() => input.focus(), 50);
+  }
 }
+
 function closeSearchModal() {
-  document.getElementById("searchModalOverlay")?.classList.remove("active");
+  const overlay = document.getElementById("searchModalOverlay");
+  if (overlay) {
+    overlay.classList.remove("active");
+  }
 }
 
 function openCostCalculatorModal() {
