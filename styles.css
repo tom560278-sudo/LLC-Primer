@@ -427,7 +427,7 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
 
 .ls-btn--emerald:hover, .ls-btn--primary:hover {
   background: var(--color-primary-hover);
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(21, 154, 156, 0.45);
 }

@@ -7,10 +7,10 @@ const stateData = [
   {"name": "Alaska", "code": "AK", "slug": "alaska", "fee": 250, "paperFee": 250, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$100 Biennial", "annualFeeNum": 100, "freq": "Biennial (every 2 yrs)", "due": "January 2 of every other year (first report due Jan 2 after formation year)", "penalty": "$37.50 late fee", "tax": "None", "taxNum": 0, "firstYearDue": "Initial report due within 6 months of formation ($0). First biennial report due Jan 2 of following year.", "speed": "Instant Online", "region": "west", "popular": false, "sosName": "Alaska Division of Corporations", "sosUrl": "https://www.commerce.alaska.gov/cbp/main/search/entities", "portalUrl": "https://www.commerce.alaska.gov/cbp/main/search/entities", "note": "$250 filing fee. Biennial report $100 every 2 years. Free initial report within 6 months.", "lastChecked": "October 2026"},
   {"name": "Arizona", "code": "AZ", "slug": "arizona", "fee": 50, "paperFee": 50, "initialExtras": 0, "initialExtrasNote": "Newspaper publication in counties other than Maricopa/Pima (~$30–$300)", "annual": "$0", "annualFeeNum": 0, "freq": "None", "due": "No annual report required for LLCs", "penalty": "N/A", "tax": "None", "taxNum": 0, "firstYearDue": "$50 formation fee. Publication in non-exempt counties within 60 days.", "speed": "1-2 Weeks (or expedited)", "region": "west", "popular": true, "sosName": "Arizona Corporation Commission (eCorp)", "sosUrl": "https://ecorp.azcc.gov/", "portalUrl": "https://ecorp.azcc.gov/", "note": "$50 filing fee. No annual report required for domestic LLCs. Maricopa/Pima counties exempt from publication.", "lastChecked": "October 2026"},
   {"name": "Arkansas", "code": "AR", "slug": "arkansas", "fee": 45, "paperFee": 50, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$150 Franchise Tax", "annualFeeNum": 150, "freq": "Annual Tax", "due": "May 1 annually", "penalty": "$25 late fee + 10% interest/year", "tax": "$150 Franchise Tax included", "taxNum": 0, "firstYearDue": "$45 online formation. Franchise tax due May 1 of the year following formation.", "speed": "Instant Online", "region": "south", "popular": false, "sosName": "Arkansas Secretary of State", "sosUrl": "https://www.sos.arkansas.gov/corps/search_all.php", "portalUrl": "https://www.sos.arkansas.gov/corps/search_all.php", "note": "$45 online Articles ($50 paper). Annual franchise tax is $150 due May 1 each year.", "lastChecked": "October 2026"},
-  {"name": "California", "code": "CA", "slug": "california", "fee": 70, "paperFee": 70, "initialExtras": 20, "initialExtrasNote": "Initial Statement of Information ($20) within 90 days", "annual": "$20 Biennial", "annualFeeNum": 20, "freq": "Biennial ($20) + Annual Tax", "due": "Statement of Info: every 2 years by end of anniversary month. $800 Franchise Tax: April 15 annually (starts Year 2 for LLCs formed under AB 85 / current rules).", "penalty": "$250 late penalty for Statement of Info; penalties/interest on franchise tax", "tax": "$800 Annual Franchise Tax (due Year 2+)", "taxNum": 800, "firstYearDue": "$70 Articles + $20 Initial Statement of Info. $800 Annual Franchise Tax applies starting Year 2 (first year exempt under AB 85 rules).", "speed": "1-2 Days", "region": "west", "popular": true, "sosName": "California Secretary of State (bizfile)", "sosUrl": "https://bizfileonline.sos.ca.gov/", "portalUrl": "https://bizfileonline.sos.ca.gov/", "note": "$70 filing fee + $20 initial statement of info. $800 annual franchise tax starts in year 2. $20 statement of info every 2 years.", "lastChecked": "October 2026"},
+  {"name": "California", "code": "CA", "slug": "california", "fee": 70, "paperFee": 70, "initialExtras": 20, "initialExtrasNote": "Initial Statement of Information ($20) within 90 days", "annual": "$20 Biennial", "annualFeeNum": 20, "freq": "Biennial ($20) + Annual Tax", "due": "Initial Statement of Info: within 90 days ($20). $800 Annual Franchise Tax: due by 15th day of 4th month after formation (Year 1) & April 15 annually thereafter. Statement of Info: every 2 years ($20).", "penalty": "$250 late penalty for Statement of Info; penalties/interest on franchise tax", "tax": "$800 Annual Franchise Tax (due in Year 1 & annually)", "taxNum": 800, "firstYearDue": "$70 Articles of Organization + $20 Initial Statement of Info (within 90 days) + $800 Annual Franchise Tax (due 15th day of 4th month). $890 total mandatory first-year state obligations (AB 85 first-year tax exemption expired after 2023).", "speed": "1-2 Days", "region": "west", "popular": true, "sosName": "California Secretary of State (bizfile)", "sosUrl": "https://bizfileonline.sos.ca.gov/", "portalUrl": "https://bizfileonline.sos.ca.gov/", "note": "$70 filing fee + $20 initial statement of info (due within 90 days) + $800 annual franchise tax (due in Year 1 & annually thereafter; AB 85 first-year tax exemption expired after 2023). $20 statement of info every 2 years.", "lastChecked": "October 2026"},
   {"name": "Colorado", "code": "CO", "slug": "colorado", "fee": 50, "paperFee": 50, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$25 Periodic Report", "annualFeeNum": 25, "freq": "Annual", "due": "Periodic Report due during 2-month window around formation anniversary", "penalty": "$50 late fee ($75 total) if filed past grace period", "tax": "None", "taxNum": 0, "firstYearDue": "$50 online Articles of Organization. First periodic report due on 1st anniversary.", "speed": "Instant Online", "region": "west", "popular": true, "sosName": "Colorado Secretary of State", "sosUrl": "https://www.sos.state.co.us/biz/BusinessEntityCriteriaExt.do", "portalUrl": "https://www.sos.state.co.us/biz/BusinessEntityCriteriaExt.do", "note": "$50 online filing fee. $25 annual periodic report filed online.", "lastChecked": "October 2026"},
   {"name": "Connecticut", "code": "CT", "slug": "connecticut", "fee": 120, "paperFee": 120, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$80", "annualFeeNum": 80, "freq": "Annual", "due": "Due annually between Jan 1 and March 31 (starting year after formation)", "penalty": "Loss of good standing / administrative dissolution", "tax": "None", "taxNum": 0, "firstYearDue": "$120 Certificate of Organization. First annual report due March 31 of next year.", "speed": "1-2 Days", "region": "east", "popular": false, "sosName": "Connecticut Secretary of the State (business.ct.gov)", "sosUrl": "https://business.ct.gov/", "portalUrl": "https://business.ct.gov/", "note": "$120 online formation fee. $80 annual report due annually between Jan 1 and March 31.", "lastChecked": "October 2026"},
-  {"name": "Delaware", "code": "DE", "slug": "delaware", "fee": 110, "paperFee": 110, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$300 Franchise Tax", "annualFeeNum": 300, "freq": "Annual Tax (no report)", "due": "June 1 annually", "penalty": "$200 penalty + 1.5% monthly interest", "tax": "$300 Franchise Tax included", "taxNum": 0, "firstYearDue": "$110 Certificate of Formation. First $300 franchise tax payment due June 1 of the year following formation.", "speed": "1-2 Days", "region": "east", "popular": true, "sosName": "Delaware Division of Corporations", "sosUrl": "https://corp.delaware.gov/", "portalUrl": "https://corp.delaware.gov/paytaxes/", "note": "$110 formation fee. Mandatory $300 annual franchise tax due every June 1st. No separate annual report filing required for LLCs.", "lastChecked": "October 2026"},
+  {"name": "Delaware", "code": "DE", "slug": "delaware", "fee": 110, "paperFee": 110, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$300 Franchise Tax", "annualFeeNum": 0, "freq": "Annual Tax (no report)", "due": "June 1 annually", "penalty": "$200 penalty + 1.5% monthly interest", "tax": "$300 Annual Franchise Tax", "taxNum": 300, "firstYearDue": "$110 Certificate of Formation. First $300 franchise tax payment due June 1 of the year following formation.", "speed": "1-2 Days", "region": "east", "popular": true, "sosName": "Delaware Division of Corporations", "sosUrl": "https://corp.delaware.gov/", "portalUrl": "https://corp.delaware.gov/paytaxes/", "note": "$110 formation fee. Mandatory $300 annual franchise tax due every June 1st. No separate Secretary of State annual report fee required for LLCs.", "lastChecked": "October 2026"},
   {"name": "Florida", "code": "FL", "slug": "florida", "fee": 125, "paperFee": 125, "initialExtras": 0, "initialExtrasNote": "None ($100 filing + $25 registered agent fee included)", "annual": "$138.75", "annualFeeNum": 138.75, "freq": "Annual", "due": "May 1 annually (starting year after formation)", "penalty": "Mandatory $400 late fee starting May 2; administrative dissolution on 3rd Friday of September", "tax": "None", "taxNum": 0, "firstYearDue": "$125 Articles of Organization. First annual report ($138.75) due by May 1 of following year.", "speed": "1-2 Days Online", "region": "south", "popular": true, "sosName": "Florida Division of Corporations (Sunbiz)", "sosUrl": "https://search.sunbiz.org/Inquiry/CorporationSearch/ByName", "portalUrl": "https://dos.myflorida.com/sunbiz/manage-business/efile/annual-report/", "note": "$125 formation fee. $138.75 annual report due May 1. Strict $400 non-negotiable statutory late fee applied on May 2.", "lastChecked": "October 2026"},
   {"name": "Georgia", "code": "GA", "slug": "georgia", "fee": 110, "paperFee": 110, "initialExtras": 0, "initialExtrasNote": "None ($100 fee + $10 online service charge)", "annual": "$60 Annual Registration", "annualFeeNum": 60, "freq": "Annual", "due": "April 1 annually (between Jan 1 and Apr 1)", "penalty": "$25 late fee", "tax": "None", "taxNum": 0, "firstYearDue": "$110 online Articles of Organization. First $60 registration due April 1 of following year.", "speed": "7 Business Days", "region": "south", "popular": true, "sosName": "Georgia Secretary of State (eCorp)", "sosUrl": "https://ecorp.sos.ga.gov/BusinessSearch", "portalUrl": "https://ecorp.sos.ga.gov/", "note": "$110 online formation fee ($100 + $10 service charge). $60 annual registration due April 1.", "lastChecked": "October 2026"},
   {"name": "Hawaii", "code": "HI", "slug": "hawaii", "fee": 50, "paperFee": 50, "initialExtras": 1, "initialExtrasNote": "$1 archive fee", "annual": "$15", "annualFeeNum": 15, "freq": "Annual", "due": "Quarterly based on registration quarter", "penalty": "$10 late fee", "tax": "None", "taxNum": 0, "firstYearDue": "$51 ($50 + $1 archive fee). Annual report due in formation quarter of next year.", "speed": "3-5 Days", "region": "west", "popular": false, "sosName": "Hawaii Business Registration Division (BREG)", "sosUrl": "https://hbe.ehawaii.gov/bizsearch/", "portalUrl": "https://hbe.ehawaii.gov/", "note": "$51 online formation fee ($50 + $1 fee). $15 annual report.", "lastChecked": "October 2026"},
@@ -30,7 +30,7 @@ const stateData = [
   {"name": "Missouri", "code": "MO", "slug": "missouri", "fee": 50, "paperFee": 105, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$0", "annualFeeNum": 0, "freq": "None", "due": "No annual report required for LLCs under MO law", "penalty": "N/A", "tax": "None", "taxNum": 0, "firstYearDue": "$50 online Articles of Organization ($105 paper). No annual report.", "speed": "Instant Online", "region": "midwest", "popular": false, "sosName": "Missouri Secretary of State", "sosUrl": "https://bsd.sos.mo.gov/BusinessEntity/BESearch.aspx?SearchType=0", "portalUrl": "https://bsd.sos.mo.gov/", "note": "$50 online Articles of Organization ($105 paper). No recurring annual report required for domestic LLCs.", "lastChecked": "October 2026"},
   {"name": "Montana", "code": "MT", "slug": "montana", "fee": 35, "paperFee": 35, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$0 (if Jan 1–Apr 15) / $35 after", "annualFeeNum": 0, "freq": "Annual ($0 waived window)", "due": "April 15 annually ($0 fee if filed by April 15; $35 late fee after)", "penalty": "$35 fee after April 15; involuntary dissolution by Dec 1", "tax": "None (No general state sales tax)", "taxNum": 0, "firstYearDue": "$35 Articles of Organization. Annual report is $0 if filed between Jan 1 and April 15.", "speed": "1-2 Days Online", "region": "west", "popular": true, "sosName": "Montana Secretary of State", "sosUrl": "https://biz.sosmt.gov/search/business", "portalUrl": "https://biz.sosmt.gov/", "note": "$35 formation fee (lowest in US). Annual report fee is $0 if filed between Jan 1 and April 15 ($35 if late).", "lastChecked": "October 2026"},
   {"name": "Nebraska", "code": "NE", "slug": "nebraska", "fee": 100, "paperFee": 110, "initialExtras": 65, "initialExtrasNote": "Newspaper publication for 3 consecutive weeks + $25 proof of publication fee", "annual": "$10 Biennial ($13 online)", "annualFeeNum": 13, "freq": "Biennial (every 2 yrs in odd years)", "due": "April 1 of odd-numbered years", "penalty": "Loss of good standing / dissolution", "tax": "None", "taxNum": 0, "firstYearDue": "$100 online Certificate + newspaper notice + $25 proof of publication. Biennial report due odd years.", "speed": "1-2 Days", "region": "midwest", "popular": false, "sosName": "Nebraska Secretary of State", "sosUrl": "https://www.nebraska.gov/sos/corp/corpsearch.cgi", "portalUrl": "https://www.nebraska.gov/sos/corp/", "note": "$100 online Certificate of Organization. 3-week newspaper publication required + $25 proof fee. $13 biennial report in odd years.", "lastChecked": "October 2026"},
-  {"name": "Nevada", "code": "NV", "slug": "nevada", "fee": 75, "paperFee": 75, "initialExtras": 350, "initialExtrasNote": "Mandatory Initial List ($150) + State Business License ($200) due at formation", "annual": "$350 Annual List ($150) + License ($200)", "annualFeeNum": 350, "freq": "Annual ($150 List + $200 License)", "due": "Last day of formation anniversary month annually", "penalty": "$100 late fee on List + $100 late fee on License ($200 total penalty)", "tax": "None", "taxNum": 0, "firstYearDue": "$75 Articles + $150 Initial List + $200 Initial Business License = $425 total state initial fees.", "speed": "Instant Online (SilverFlume)", "region": "west", "popular": true, "sosName": "Nevada Secretary of State (SilverFlume)", "sosUrl": "https://esos.nv.gov/EntitySearch/OnlineEntitySearch", "portalUrl": "https://www.nvsilverflume.gov/", "note": "$75 formation fee + mandatory $150 Initial List + $200 Initial Business License ($425 total initial). Ongoing: $150 Annual List + $200 Business License ($350/yr).", "lastChecked": "October 2026"},
+  {"name": "Nevada", "code": "NV", "slug": "nevada", "fee": 75, "paperFee": 75, "initialExtras": 350, "initialExtrasNote": "Mandatory Initial List ($150) + State Business License ($200) due at formation", "annual": "$350 Annual List ($150) + License ($200)", "annualFeeNum": 150, "freq": "Annual ($150 List + $200 License)", "due": "Last day of formation anniversary month annually", "penalty": "$100 late fee on List + $100 late fee on License ($200 total penalty)", "tax": "$200 State Business License", "taxNum": 200, "firstYearDue": "$75 Articles + $150 Initial List + $200 Initial Business License = $425 total state initial fees.", "speed": "Instant Online (SilverFlume)", "region": "west", "popular": true, "sosName": "Nevada Secretary of State (SilverFlume)", "sosUrl": "https://esos.nv.gov/EntitySearch/OnlineEntitySearch", "portalUrl": "https://www.nvsilverflume.gov/", "note": "$75 formation fee + mandatory $150 Initial List + $200 Initial Business License ($425 total initial). Ongoing: $150 Annual List + $200 Business License ($350/yr).", "lastChecked": "October 2026"},
   {"name": "New Hampshire", "code": "NH", "slug": "new-hampshire", "fee": 100, "paperFee": 100, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$100", "annualFeeNum": 100, "freq": "Annual", "due": "April 1 annually", "penalty": "$50 late fee", "tax": "Business Profits Tax / Business Enterprise Tax may apply depending on gross receipts", "taxNum": 0, "firstYearDue": "$100 Certificate of Formation. First $100 annual report due April 1 of following year.", "speed": "2-3 Days", "region": "east", "popular": false, "sosName": "New Hampshire Department of State", "sosUrl": "https://quickstart.sos.nh.gov/online/Account/LandingPage", "portalUrl": "https://quickstart.sos.nh.gov/", "note": "$100 Certificate of Formation. $100 annual report due April 1.", "lastChecked": "October 2026"},
   {"name": "New Jersey", "code": "NJ", "slug": "new-jersey", "fee": 125, "paperFee": 125, "initialExtras": 0, "initialExtrasNote": "Mandatory NJ-REG tax registration within 60 days ($0)", "annual": "$75", "annualFeeNum": 75, "freq": "Annual", "due": "Last day of formation anniversary month annually", "penalty": "Revocation of charter after 2 delinquent years", "tax": "None", "taxNum": 0, "firstYearDue": "$125 Certificate of Formation. First $75 annual report due on 1st anniversary.", "speed": "Instant Online", "region": "east", "popular": true, "sosName": "New Jersey Division of Revenue", "sosUrl": "https://www.njportal.com/DOR/BusinessNameSearch/", "portalUrl": "https://www.njportal.com/DOR/BusinessRegistration", "note": "$125 Public Records Filing. $75 annual report due on formation anniversary month.", "lastChecked": "October 2026"},
   {"name": "New Mexico", "code": "NM", "slug": "new-mexico", "fee": 50, "paperFee": 50, "initialExtras": 0, "initialExtrasNote": "None", "annual": "$0", "annualFeeNum": 0, "freq": "None", "due": "No annual report required for LLCs under NM law", "penalty": "N/A", "tax": "None", "taxNum": 0, "firstYearDue": "$50 online Articles of Organization. $0 recurring report costs.", "speed": "1-2 Days Online", "region": "west", "popular": true, "sosName": "New Mexico Secretary of State", "sosUrl": "https://portal.sos.state.nm.us/corps/(S(1ubdfbvgfdfu45f5j535d545))/CorpLookup/CorpSearch.aspx", "portalUrl": "https://portal.sos.state.nm.us/", "note": "$50 online Articles of Organization. Top privacy state: owner names not public, no annual report required.", "lastChecked": "October 2026"},
@@ -378,7 +378,7 @@ function updateCost() {
       tbody.innerHTML = `
         <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
           <td colspan="4" style="padding: 1.5rem 0.5rem; text-align: center; color: #94A3B8;">
-            👇 Select a state from the dropdown to see your customized government fees and compliance breakdown.
+            Select a state from the dropdown to see your customized government fees and compliance breakdown.
           </td>
         </tr>
       `;
@@ -435,7 +435,15 @@ function updateCost() {
   let annualReportDisplay = "$0";
   const isBiennial = st.freq && st.freq.toLowerCase().includes("biennial");
 
-  if (st.annualFeeNum > 0) {
+  if (st.code === "DE") {
+    // Delaware has NO SOS annual report fee. Only the $300 Franchise Tax.
+    annualReportFeeYr2 = 0;
+    annualReportDisplay = "$0 (No state report required)";
+  } else if (st.code === "NV") {
+    // Nevada has a $150 Annual List fee (separate from $200 Business License)
+    annualReportFeeYr2 = 150;
+    annualReportDisplay = "$150/yr (Annual List)";
+  } else if (st.annualFeeNum > 0) {
     if (isBiennial) {
       // For biennial reports (e.g. CA $20, NY $9, IA $30, IN $32, AK $100)
       annualReportDisplay = `${st.annual}`;
@@ -449,8 +457,10 @@ function updateCost() {
     annualReportDisplay = "$0 (No state report fee)";
   }
 
-  // 4. SEPARATE STATE TAXES (FRANCHISE TAXES)
-  // Ensure taxes are added ONCE and only if separate from the report fee
+  // 4. MANDATORY YEAR 1 EXTRAS AND SEPARATE STATE TAXES
+  let initialMandatoryExtras = (st.initialExtras || 0);
+  let initialMandatoryTax = 0;
+  let initialExtrasLabel = st.initialExtrasNote || "Mandatory Initial Filings";
   let separateStateTaxYr2 = 0;
   let stateTaxDisplay = "$0/yr";
   let hasSeparateTax = false;
@@ -458,11 +468,26 @@ function updateCost() {
   let costBadgeText = "Standard Cost";
 
   if (st.code === "CA") {
-    // California: $800 Annual Franchise Tax (starts in Year 2; 1st tax year exempt under AB 85 rules).
+    // California:
+    // Year 1 Mandatory State Obligations:
+    // - $70 Articles of Organization
+    // - $20 Initial Statement of Information (due within 90 days)
+    // - $800 Annual Franchise Tax (due by 15th day of 4th month of taxable year; AB 85 exemption expired after 2023)
+    // Base mandatory Year 1 state obligations: $70 + $20 + $800 = $890.
+    initialMandatoryExtras = 20;
+    initialMandatoryTax = 800;
+    initialExtrasLabel = "Initial Statement of Information (due within 90 days)";
+
+    // Year 2 Ongoing:
+    // - Biennial Statement of Information ($20 every 2 years = $10/yr avg)
+    // - $800 Annual Franchise Tax (due April 15 annually)
+    annualReportFeeYr2 = 10;
+    annualReportDisplay = "$20 Biennial ($10/yr avg)";
     separateStateTaxYr2 = 800;
-    stateTaxDisplay = "$800/yr (Franchise Tax)";
+    stateTaxDisplay = "$800/yr (Annual Franchise Tax)";
     hasSeparateTax = true;
-    stateWarningText = "⚠️ California: The mandatory $800 annual franchise tax applies starting in Year 2 of operation (first tax year exempt under AB 85). Initial Statement of Information ($20) is due within 90 days of formation, then $20 every 2 years.";
+
+    stateWarningText = "⚠️ California: Mandatory first-year state obligations include the $70 filing fee, $20 Initial Statement of Information (due within 90 days), and the $800 Annual Franchise Tax (due by the 15th day of the 4th month after formation). The previous AB 85 first-year tax exemption expired after 2023. Ongoing annual compliance includes the $800 annual franchise tax (due April 15) and $20 Statement of Information every 2 years.";
     costBadgeText = "High Cost State";
   } else if (st.code === "DE") {
     // Delaware: $300 Annual Franchise Tax due June 1. No separate annual report fee.
@@ -472,12 +497,12 @@ function updateCost() {
     stateWarningText = "⚠️ Delaware: Mandatory $300/yr franchise tax due June 1st. No separate Secretary of State annual report fee for LLCs. Great for VC-backed entities, but higher recurring tax for small businesses.";
     costBadgeText = "Above Average";
   } else if (st.code === "NV") {
-    // Nevada: $150 Annual List + $200 Business License = $350/yr total.
-    separateStateTaxYr2 = 200; // $200 business license + $150 annual list
-    annualReportFeeYr2 = 150;
-    annualReportDisplay = "$150/yr (Annual List)";
+    // Nevada: $150 Annual List + $200 Business License = $350/yr total recurring state fees.
+    separateStateTaxYr2 = 200;
     stateTaxDisplay = "$200/yr (State Business License)";
     hasSeparateTax = true;
+    initialMandatoryExtras = 350; // $150 Initial List + $200 Initial License
+    initialExtrasLabel = "Mandatory Initial List ($150) + Business License ($200)";
     stateWarningText = "⚠️ Nevada: Mandatory $150 Annual List + $200 State Business License required annually ($350/yr total ongoing state fees). Both are also required at initial formation ($425 total initial government fees).";
     costBadgeText = "High Ongoing Cost";
   } else if (st.code === "NY") {
@@ -491,7 +516,7 @@ function updateCost() {
     stateWarningText = "⚠️ Tennessee: Annual report fee is $300 minimum ($50/member, up to $3,000 max). State franchise/excise tax ($100 minimum) may also apply.";
     costBadgeText = "Above Average";
   } else if (st.code === "TX") {
-    stateWarningText = "ℹ️ Texas: $300 state formation fee. No state franchise tax is owed for businesses with gross revenue below the $2.47M threshold, but filing the annual No Tax Due / Public Information Report (PIR) is mandatory ($0).";
+    stateWarningText = "⚠️ Texas: $300 state formation fee. No state franchise tax is owed for businesses with gross revenue below the $2.47M threshold, but filing the annual No Tax Due / Public Information Report (PIR) is mandatory ($0).";
     costBadgeText = "Zero Recurring Tax";
   } else if (st.code === "WY") {
     costBadgeText = "Top Privacy State";
@@ -506,8 +531,8 @@ function updateCost() {
   const expeditedFee = includeExpedited ? 75 : 0;
 
   // 5. COMPUTE YEAR 1 AND YEAR 2 TOTALS (Transparent, exact sums)
-  // Year 1 Total = State Filing Fee + Formation Service + Agent Year 1 + Expedited
-  const totalYear1 = stateFee + formationServiceCost + agentYr1Cost + expeditedFee;
+  // Year 1 Total = State Filing Fee + Initial Mandatory Extras/Taxes + Formation Service + Agent Year 1 + Expedited
+  const totalYear1 = stateFee + initialMandatoryExtras + initialMandatoryTax + formationServiceCost + agentYr1Cost + expeditedFee;
 
   // Year 2 Ongoing Total = Annual Report Fee + Separate State Tax + Agent Year 2
   const totalYear2 = annualReportFeeYr2 + separateStateTaxYr2 + agentYr2Cost;
@@ -520,7 +545,17 @@ function updateCost() {
     costBadgeEl.style.color = "#6EE7B7";
     costBadgeEl.style.border = "1px solid #159A9C";
   }
-  if (rowStateFeeEl) rowStateFeeEl.textContent = `$${stateFee}`;
+  if (rowStateFeeEl) {
+    if (st.code === "CA") {
+      rowStateFeeEl.textContent = `$${stateFee} (+$20 Statement + $800 Tax)`;
+    } else if (st.code === "NV") {
+      rowStateFeeEl.textContent = `$${stateFee} (+$350 Initial List/License)`;
+    } else if (initialMandatoryExtras > 0) {
+      rowStateFeeEl.textContent = `$${stateFee} (+$${initialMandatoryExtras} Initial)`;
+    } else {
+      rowStateFeeEl.textContent = `$${stateFee}`;
+    }
+  }
   if (rowAnnualReportEl) rowAnnualReportEl.textContent = annualReportDisplay;
   if (rowAgentFeeEl) rowAgentFeeEl.textContent = isAgentIncluded ? agentYr1Display : "$0 (DIY / Self)";
   if (rowFormationServiceEl) rowFormationServiceEl.textContent = formationOptChecked ? "$39" : "$0 (DIY)";
@@ -561,12 +596,62 @@ function updateCost() {
         <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">One-time (Year 1)</td>
         <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 700; text-align: right;">$${stateFee.toFixed(2)}</td>
       </tr>
+    `;
+
+    if (initialMandatoryExtras > 0) {
+      rowsHtml += `
+        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
+          <td style="padding: 0.75rem 0.5rem; color: #6EE7B7; font-weight: 500;">${stateName} ${initialExtrasLabel}</td>
+          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Mandatory Initial</td>
+          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Year 1</td>
+          <td style="padding: 0.75rem 0.5rem; color: #6EE7B7; font-weight: 700; text-align: right;">$${initialMandatoryExtras.toFixed(2)}</td>
+        </tr>
+      `;
+    }
+
+    if (initialMandatoryTax > 0) {
+      rowsHtml += `
+        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
+          <td style="padding: 0.75rem 0.5rem; color: #FCA5A5; font-weight: 500;">${stateName} Annual Franchise Tax (Year 1)</td>
+          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Franchise Tax Board (due 15th day of 4th mo.)</td>
+          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Year 1 (AB 85 expired)</td>
+          <td style="padding: 0.75rem 0.5rem; color: #FCA5A5; font-weight: 700; text-align: right;">$${initialMandatoryTax.toFixed(2)}</td>
+        </tr>
+      `;
+    }
+
+    rowsHtml += `
       <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
         <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 500;">Registered Agent Service</td>
         <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Privacy / Compliance</td>
         <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Year 1</td>
         <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 700; text-align: right;">$${agentYr1Cost.toFixed(2)}</td>
       </tr>
+    `;
+
+    if (formationOptChecked) {
+      rowsHtml += `
+        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
+          <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 500;">Formation Service (Northwest)</td>
+          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Professional Filing</td>
+          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">One-time</td>
+          <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 700; text-align: right;">$39.00</td>
+        </tr>
+      `;
+    }
+
+    if (includeExpedited) {
+      rowsHtml += `
+        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
+          <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 500;">Expedited Processing Surcharge</td>
+          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Government Expedite</td>
+          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">One-time (Setup)</td>
+          <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 700; text-align: right;">$75.00</td>
+        </tr>
+      `;
+    }
+
+    rowsHtml += `
       <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
         <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 500;">${stateName} Annual Report / Recurring State Fee</td>
         <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Mandatory State</td>
@@ -582,17 +667,6 @@ function updateCost() {
           <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">State Tax / Revenue</td>
           <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Year 2+ Annual</td>
           <td style="padding: 0.75rem 0.5rem; color: #FCA5A5; font-weight: 700; text-align: right;">$${separateStateTaxYr2.toFixed(2)}</td>
-        </tr>
-      `;
-    }
-
-    if (includeExpedited) {
-      rowsHtml += `
-        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem;">
-          <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 500;">Expedited Processing Surcharge</td>
-          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">Government Expedite</td>
-          <td style="padding: 0.75rem 0.5rem; color: #CBD5E1;">One-time (Setup)</td>
-          <td style="padding: 0.75rem 0.5rem; color: #FFFFFF; font-weight: 700; text-align: right;">$75.00</td>
         </tr>
       `;
     }
@@ -628,7 +702,17 @@ function updateModalCost() {
   const code = stateSelect.value;
   const st = stateData.find(s => s.code === code);
 
-  const govFee = st ? st.fee : 0;
+  let govFee = st ? st.fee : 0;
+  if (st) {
+    if (st.code === "CA") {
+      govFee = 70 + 20 + 800; // $70 Articles + $20 Initial Statement + $800 Annual Franchise Tax (Year 1)
+    } else if (st.code === "NV") {
+      govFee = 75 + 350; // $75 Articles + $150 List + $200 License
+    } else if (st.initialExtras) {
+      govFee += st.initialExtras;
+    }
+  }
+
   const agentFee = agentSelect ? (parseInt(agentSelect.value) || 0) : 0;
   const serviceFee = serviceSelect ? (parseInt(serviceSelect.value) || 0) : 0;
 
