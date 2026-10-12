@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
   <title>LLC Cost Calculator (2026 50-State Fee Estimator) | LLC Primer</title>
   <meta name="description" content="Calculate your exact LLC formation and annual costs across all 50 states with our free 2026 interactive LLC Cost Calculator. Compare filing fees, annual report costs, and optional service toggles.">
+  <meta name="author" content="LLC Primer Editorial Research Team">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -554,6 +555,16 @@
                 <input type="checkbox" id="calcOptFormationToggle" onchange="updateCost()" style="width: 20px; height: 20px; accent-color: #159A9C;">
               </label>
             </div>
+
+            <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1rem; margin-top: 0.85rem;">
+              <label style="display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none;">
+                <div>
+                  <strong id="calcExpeditedLabel" style="font-size: 0.9rem; color: #94A3B8; display: block;">Expedited State Processing</strong>
+                  <span id="calcExpeditedSubtext" style="font-size: 0.78rem; color: #94A3B8;">Select a state to view options</span>
+                </div>
+                <input type="checkbox" id="calcExpeditedToggle" disabled onchange="updateCost()" style="width: 20px; height: 20px; accent-color: #159A9C;">
+              </label>
+            </div>
           </div>
 
           <!-- RIGHT: DYNAMIC BREAKDOWN & TOTALS -->
@@ -587,6 +598,11 @@
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
                 <span style="font-size: 0.9rem; color: #94A3B8;">Formation Service:</span>
                 <strong id="calcRowFormationService" style="font-size: 0.9rem; color: #CBD5E1;">$0 (DIY / Off)</strong>
+              </div>
+
+              <div id="calcRowExpedited" style="display: none; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                <span style="font-size: 0.9rem; color: #FFFFFF;" id="calcRowExpeditedLabel">State Expedite Fee:</span>
+                <strong id="calcRowExpeditedVal" style="font-size: 1.1rem; color: #FFFFFF;">$0</strong>
               </div>
 
               <div id="calcRowFranchiseTax" style="display: none; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
@@ -659,7 +675,7 @@
               <tr><td><a href="how-to-start-llc-in-mississippi.html" style="color:#159A9C;font-weight:600;text-decoration:none;">Mississippi</a></td><td>$50</td><td>$0</td><td>Annual (free)</td><td><strong>$50</strong></td></tr>
               <tr><td><a href="how-to-start-llc-in-missouri.html" style="color:#159A9C;font-weight:600;text-decoration:none;">Missouri</a></td><td>$50</td><td>$0</td><td>None</td><td><strong>$50</strong></td></tr>
               <tr><td><a href="how-to-start-llc-in-new-mexico.html" style="color:#159A9C;font-weight:600;text-decoration:none;">New Mexico</a></td><td>$50</td><td>$0</td><td>None</td><td><strong>$50</strong></td></tr>
-              <tr><td><a href="how-to-start-llc-in-montana.html" style="color:#159A9C;font-weight:600;text-decoration:none;">Montana</a></td><td>$35</td><td>$20</td><td>Annual</td><td><strong>$55</strong></td></tr>
+              <tr><td><a href="how-to-start-llc-in-montana.html" style="color:#159A9C;font-weight:600;text-decoration:none;">Montana</a></td><td>$35</td><td>$0</td><td>Annual ($0 timely / $35 late)</td><td><strong>$35</strong></td></tr>
               <tr><td><a href="how-to-start-llc-in-hawaii.html" style="color:#159A9C;font-weight:600;text-decoration:none;">Hawaii</a></td><td>$51</td><td>$15*</td><td>Annual</td><td><strong>$66</strong></td></tr>
               <tr><td><a href="how-to-start-llc-in-kentucky.html" style="color:#159A9C;font-weight:600;text-decoration:none;">Kentucky</a></td><td>$40</td><td>$15*</td><td>Annual</td><td><strong>$73*</strong></td></tr>
               <tr><td><a href="how-to-start-llc-in-colorado.html" style="color:#159A9C;font-weight:600;text-decoration:none;">Colorado</a></td><td>$50</td><td>$25</td><td>Annual</td><td><strong>$75</strong></td></tr>
@@ -1028,24 +1044,24 @@
             <li><a href="llc-cost-calculator.html">State Fee Calculator (Popup)</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
-          <h4 class="footer-heading">Post-Formation</h4>
+          <h4 class="footer-heading">Publisher Trust</h4>
           <ul class="footer-links">
-            <li><a href="business-setup.html">Post-LLC Setup</a></li>
-            <li><a href="ein-guide.html">EIN Application Guide</a></li>
-            <li><a href="operating-agreement.html">Operating Agreement</a></li>
-            <li><a href="best-business-bank-accounts.html">Business Banking</a></li>
+            <li><a href="about.html">About LLC Primer</a></li>
+            <li><a href="editorial-policy.html">Editorial Policy</a></li>
+            <li><a href="how-we-review.html">How We Review</a></li>
+            <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom-bar">
         <p class="footer-disclaimer">
-          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our Affiliate Disclosure.
+          <b>Disclaimer:</b> LLC Primer is an independent informational website, not a law firm or government agency, and is not affiliated with any Secretary of State office. Nothing on this site constitutes legal or tax advice. Always verify current fees, requirements, and forms with your state's official website or a qualified professional. Some links on this site may be affiliate links, which means LLC Primer may earn a commission at no additional cost to you. See our <a href="affiliate-disclosure.html">Affiliate Disclosure</a>.
         </p>
         <div class="footer-copyright">
-          &copy; 2026 LLC Primer. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a>
+          &copy; 2026 LLC Primer. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a> | <a href="editorial-policy.html">Editorial Policy</a> | <a href="how-we-review.html">How We Review</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a>
         </div>
       </div>
     </div>
