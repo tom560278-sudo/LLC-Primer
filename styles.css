@@ -1872,6 +1872,31 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
   line-height: 1.6 !important;
 }
 
+.footer-inquiries {
+  margin-top: 1.15rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  color: #CBD5E1 !important;
+}
+
+.footer-inquiries strong {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+.footer-inquiries a {
+  color: #20C4C8 !important;
+  text-decoration: underline !important;
+  font-weight: 600 !important;
+  transition: color 0.2s ease, opacity 0.2s ease !important;
+}
+
+.footer-inquiries a:hover {
+  color: #5EEAD4 !important;
+  text-decoration: underline !important;
+  opacity: 0.95 !important;
+}
+
 .footer-heading, .footer-grid h4 {
   color: #FFFFFF !important;
   font-size: 0.95rem !important;
