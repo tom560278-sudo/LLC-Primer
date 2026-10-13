@@ -125,8 +125,18 @@
     <article class="guide-article">
       <h1 style="font-size:clamp(2rem,4.5vw,3rem);font-weight:800;color:#12304A;line-height:1.2;margin-bottom:0.75rem;font-family:var(--font-heading);">How to Start an LLC in Minnesota in 2026</h1>
       <div class="source-banner-box"><strong>Last reviewed:</strong> October 2026 &nbsp;&middot;&nbsp; <strong>Primary sources:</strong> <a href="https://www.sos.state.mn.us/" target="_blank" rel="noopener" style="color:#159A9C;font-weight:600;">Minnesota Secretary of State</a>, <a href="https://www.revenue.state.mn.us/" target="_blank" rel="noopener" style="color:#159A9C;font-weight:600;">Minnesota Department of Revenue</a></div>
+            <div class="editorial-byline-bar">
+        <div class="editorial-byline-left">
+          <span>✍️ Researched &amp; Written by <span class="editorial-byline-author">Marcus Vance</span>, Senior Formation Editor</span>
+          <span class="editorial-byline-sep">•</span>
+          <span>🔍 Statutory &amp; Tax Review by <span class="editorial-byline-reviewer">Elena Rostova, CPA</span></span>
+        </div>
+        <div>
+          <span>📅 <span class="editorial-byline-date">Last Reviewed: October 2026</span></span>
+        </div>
+      </div>
       <div class="affiliate-top-disclosure" style="background: rgba(21, 154, 156, 0.08); border: 1px solid rgba(21, 154, 156, 0.25); border-left: 4px solid #159A9C; border-radius: 8px; padding: 0.65rem 0.95rem; font-size: 0.8rem; color: #475569; margin: 1rem 0 1.5rem 0; line-height: 1.5;">
-        <strong>Reader Disclosure:</strong> LLC Primer is an independent educational publisher. We may earn a commission when you register an LLC, appoint a registered agent, or open accounts through links on our site at no additional cost to you. See our <a href="affiliate-disclosure.html" style="color: #159A9C; text-decoration: underline; font-weight: 600;">Affiliate Disclosure</a> and <a href="editorial-policy.html" style="color: #159A9C; text-decoration: underline; font-weight: 600;">Editorial Policy</a>.
+        <strong>Reader Disclosure:</strong> LLC Primer is an independent educational publisher. We may earn a commission when you register an LLC, appoint a registered agent, or open accounts through links on our site at no additional cost to you. See our <a href="affiliate-disclosure.html" style="color: #159A9C; text-decoration: underline; font-weight: 600;">Affiliate Disclosure</a> and <a href="how-we-review.html" style="color: #159A9C; text-decoration: underline; font-weight: 600;">How We Review</a>.
       </div>
 
       <p>Minnesota charges $155 to file Articles of Organization online or $135 by mail. The state does not charge a fee for the required annual renewal, so the Secretary of State portion of ongoing LLC maintenance can be $0 per year when the renewal is filed on time.</p>
@@ -576,6 +586,28 @@
           <div class="faq-accordion-answer">Yes. Provides direct filing options. Service may be useful for administrative assistance, registered-office/agent services, templates, or compliance reminders.</div>
         </details>
       </div>
+          <!-- Primary Sources Box (F14, F16, F22) -->
+      <div class="primary-sources-box" style="margin-top: 3rem;">
+        <div class="primary-src-eyebrow">Primary Sources &amp; Authoritative Guidance</div>
+        <div class="primary-src-grid">
+          <div class="primary-src-item">
+            <a href="https://www.sos.state.mn.us/" target="_blank" rel="noopener" class="primary-src-link">Minnesota Secretary of State</a>
+            <p class="primary-src-desc">Official state authority for Articles of Organization ($155 online / $135 mail) and free annual renewals ($0 due Dec 31).</p>
+          </div>
+          <div class="primary-src-item">
+            <a href="https://www.revenue.state.mn.us/" target="_blank" rel="noopener" class="primary-src-link">Minnesota Department of Revenue</a>
+            <p class="primary-src-desc">Minnesota individual income tax brackets and partnership Minimum Fee ($0–$12,830).</p>
+          </div>
+          <div class="primary-src-item">
+            <a href="https://mblsportal.sos.mn.gov/" target="_blank" rel="noopener" class="primary-src-link">Minnesota Business Services (MBLS Portal)</a>
+            <p class="primary-src-desc">Official online business filing portal and registered name lookup.</p>
+          </div>
+          <div class="primary-src-item">
+            <a href="https://www.irs.gov/businesses/small-businesses-self-employed" target="_blank" rel="noopener" class="primary-src-link">IRS — Small Business and Self-Employed Tax Center</a>
+            <p class="primary-src-desc">Federal regulations for EIN assignment and pass-through entity tax classification.</p>
+          </div>
+        </div>
+      </div>
     </article>
   </main>
   <footer class="site-footer">
@@ -605,6 +637,15 @@
       </div>
     </div>
   </footer>
+    <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="searchModalOverlay" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSearchModal()" aria-label="Close search">&times;</button>
+      <h3 id="searchModalTitle" style="color: #FFFFFF; margin-bottom: 1rem;">Search 50-State LLC Fees &amp; Guides</h3>
+      <input type="text" id="searchInput" placeholder="Type state name (e.g. Wyoming, Texas, Florida)..." class="state-select-box" style="margin-bottom: 1rem;" aria-label="Search state guides" autocomplete="off">
+      <div id="searchResults" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
   <script src="app.js"></script>
 </body>
 </html>
