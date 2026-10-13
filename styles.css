@@ -1885,7 +1885,7 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
 }
 
 .footer-inquiries a {
-  color: #5EEAD4 !important;
+  color: #159a9c !important;
   text-decoration: underline !important;
   font-weight: 700 !important;
   word-break: break-word !important;
@@ -1895,7 +1895,7 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
 .footer-inquiries a:hover {
   color: #FFFFFF !important;
   text-decoration: underline !important;
-  text-shadow: 0 0 10px rgba(94, 234, 212, 0.7) !important;
+  text-shadow: 0 0 15px rgba(94, 234, 212, 0.7) !important;
   opacity: 1 !important;
 }
 
@@ -1923,9 +1923,9 @@ ul:not(.footer-links):not(.nav-menu):not(.dropdown-menu) li {
 }
 
 .footer-links a, .footer-grid a {
-  color: #CBD5E1 !important;
+  color: #CBD5E1 ;
   font-size: 0.85rem !important;
-  text-decoration: none !important;
+  text-decoration: none ;
   transition: color 0.2s ease !important;
 }
 
