@@ -173,14 +173,15 @@ function openStateModal(code) {
 
       if (nameEl) nameEl.textContent = st.name;
       if (abbrEl) abbrEl.textContent = st.code;
-      if (feeEl) feeEl.textContent = `$${st.fee}`;
-      if (speedEl) speedEl.textContent = st.speed || "1-2 Days";
-      if (annualEl) annualEl.textContent = st.annualFee ? `$${st.annualFee}` : "$0";
+      if (feeEl) feeEl.textContent = (st.fee !== undefined && st.fee !== null) ? `$${st.fee}` : "Varies";
+      if (speedEl) speedEl.textContent = st.speed ? st.speed : "Varies by filing method";
+      if (annualEl) annualEl.textContent = st.annual || (st.annualFee !== undefined && st.annualFee !== null ? `$${st.annualFee}` : "Varies");
       if (noteEl) noteEl.textContent = st.note || `Official statutory filing with the ${st.sosName || (st.name + " Secretary of State")}.`;
       if (guideBtn) {
         guideBtn.disabled = false;
         guideBtn.style.opacity = "1";
         guideBtn.style.cursor = "pointer";
+        guideBtn.textContent = `View ${st.name} Filing Guide →`;
         const slug = st.name.toLowerCase().replace(/\s+/g, '-');
         guideBtn.onclick = function() {
           closeStateModal();
@@ -276,9 +277,15 @@ function showInlineStateResult(code) {
       </div>
 
       <!-- Small Official Source Box -->
-      <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.65rem 0.85rem; font-size: 0.8rem; color: #CBD5E1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+      <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.65rem 0.85rem; font-size: 0.8rem; color: #CBD5E1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
         <div>State Filing Fee: <strong style="color: #FFFFFF; font-size: 0.9rem;">$${st.fee}</strong></div>
         <div>Source: <a href="${sosLinkUrl}" target="_blank" rel="noopener" style="color: #159A9C; font-weight: 700; text-decoration: underline;">${sosLinkName}</a></div>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="${st.link || ('how-to-start-llc-in-' + st.name.toLowerCase().replace(/\s+/g, '-') + '.html')}" class="ls-btn ls-btn--emerald" style="display: block; text-align: center; width: 100%; padding: 0.75rem 1.25rem; font-weight: 700; text-decoration: none; border-radius: 9999px; justify-content: center;">
+          View ${st.name} Filing Guide →
+        </a>
       </div>
 
     </div>
@@ -827,23 +834,29 @@ function updateModalCost() {
   const agentSelect = document.getElementById("modalCalcAgentSelect");
   const serviceSelect = document.getElementById("modalCalcServiceSelect");
   const govFeeEl = document.getElementById("modalCalcLiveGovFee");
+  const govFeeLineEl = document.getElementById("modalCalcGovFeeLine");
   const totalFeeEl = document.getElementById("modalCalcLiveTotalFee");
   const guideBtn = document.getElementById("modalCalcGuideBtn");
 
-  if (!stateSelect || !govFeeEl || !totalFeeEl) return;
+  if (!stateSelect || !totalFeeEl) return;
 
   const code = stateSelect.value;
   const st = stateData.find(s => s.code === code);
 
   if (!st) {
-    govFeeEl.textContent = "—";
-    totalFeeEl.textContent = "Select a state";
-    totalFeeEl.style.fontSize = "1.15rem";
+    if (govFeeLineEl) {
+      govFeeLineEl.textContent = "Required state fees and optional service costs will appear after you select a state.";
+    } else if (govFeeEl) {
+      govFeeEl.textContent = "—";
+    }
+    totalFeeEl.textContent = "Select a state to see your estimated costs.";
+    totalFeeEl.style.fontSize = "0.95rem";
     totalFeeEl.style.color = "#94A3B8";
     if (guideBtn) {
       guideBtn.disabled = true;
       guideBtn.style.opacity = "0.5";
       guideBtn.style.cursor = "not-allowed";
+      guideBtn.textContent = "View State Filing Guide →";
     }
     return;
   }
@@ -860,7 +873,11 @@ function updateModalCost() {
   const agentFee = agentSelect ? (parseInt(agentSelect.value) || 0) : 0;
   const serviceFee = serviceSelect ? (parseInt(serviceSelect.value) || 0) : 0;
 
-  govFeeEl.textContent = `$${govFee}`;
+  if (govFeeLineEl) {
+    govFeeLineEl.innerHTML = `Required Fee: <b id="modalCalcLiveGovFee" style="color: #FFF;">$${govFee}</b>`;
+  } else if (govFeeEl) {
+    govFeeEl.textContent = `$${govFee}`;
+  }
   totalFeeEl.textContent = `$${govFee + agentFee + serviceFee}`;
   totalFeeEl.style.fontSize = "2.25rem";
   totalFeeEl.style.color = "var(--color-accent)";
@@ -869,6 +886,7 @@ function updateModalCost() {
     guideBtn.disabled = false;
     guideBtn.style.opacity = "1";
     guideBtn.style.cursor = "pointer";
+    guideBtn.textContent = `View ${st.name} Filing Guide →`;
   }
 }
 

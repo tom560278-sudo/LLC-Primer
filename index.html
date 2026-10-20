@@ -1408,12 +1408,12 @@ Understand the difference between mandatory state filing fees and optional third
             </div>
           </div>
 
-          <div style="background: var(--color-primary-light); border: 1px solid var(--color-primary); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
+          <div style="background: var(--color-primary-light); border: 1px solid var(--color-primary); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
             <div>
               <div style="font-size: 0.775rem; color: var(--text-muted); text-transform: uppercase;">Estimated First-Year Total</div>
-              <div style="font-size: 0.85rem; color: #CBD5E1;">Required Fee: <b id="modalCalcLiveGovFee" style="color: #FFF;">—</b></div>
+              <div style="font-size: 0.85rem; color: #CBD5E1;" id="modalCalcGovFeeLine">Required state fees and optional service costs will appear after you select a state.</div>
             </div>
-            <div style="font-size: 1.15rem; font-weight: 700; color: #94A3B8; font-family: var(--font-heading);" id="modalCalcLiveTotalFee">Select a state</div>
+            <div style="font-size: 0.95rem; font-weight: 700; color: #94A3B8; font-family: var(--font-heading);" id="modalCalcLiveTotalFee">Select a state to see your estimated costs.</div>
           </div>
         </div>
 
@@ -1456,12 +1456,13 @@ Understand the difference between mandatory state filing fees and optional third
       <!-- Clean Empty State (shown until a state is selected) -->
       <div id="modalStateEmptyState" style="text-align: center; padding: 2rem 1rem;">
         <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏛️</div>
-        <h3 style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 0.5rem; font-weight: 700;">Select a State</h3>
-        <p style="font-size: 0.9rem; color: #94A3B8; max-width: 420px; margin: 0 auto 1.5rem auto; line-height: 1.5;">
-          Please select a state from the dropdown menu to view official state filing costs, turnaround speed, and compliance requirements.
+        <h3 style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 0.5rem; font-weight: 700;">Explore Your State's LLC Requirements</h3>
+        <p style="font-size: 0.9rem; color: #94A3B8; max-width: 460px; margin: 0 auto 1.5rem auto; line-height: 1.6;">
+          Select a state to see its filing costs and requirements.<br><br>
+          Filing fees, processing times, and annual requirements vary by state. State-specific information will appear after a valid selection.
         </p>
         <button onclick="closeStateModal(); location.href='#states-section';" class="ls-btn ls-btn--emerald" style="padding: 0.75rem 1.5rem;">
-          Choose a State &rarr;
+          View State Filing Guide →
         </button>
       </div>
 
