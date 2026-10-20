@@ -1199,16 +1199,10 @@ function closeQuizModal() {
 // Non-blocking floating corner message that slides in from the side
 // --------------------------------------------------------------------------
 function initCookieConsent() {
-  if (typeof window === "undefined" || !window.localStorage) return;
-
-  try {
-    const consent = localStorage.getItem("llcprimer_cookie_consent");
-    if (consent === "accepted") return;
-  } catch (e) {
-    return;
-  }
+  if (typeof window === "undefined") return;
 
   // Defer initialization so crawler bots and initial page render are never blocked
+  // Always displays on page load / reload as requested
   setTimeout(() => {
     if (document.getElementById("cookieConsentToast")) return;
 
@@ -1218,19 +1212,18 @@ function initCookieConsent() {
     toast.setAttribute("aria-label", "Privacy & Cookie Notice");
     toast.style.cssText = `
       position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
+      bottom: 1.25rem;
+      right: 1.25rem;
       max-width: 360px;
-      width: calc(100% - 2rem);
-      background: linear-gradient(145deg, rgba(13, 35, 54, 0.96) 0%, rgba(9, 24, 38, 0.98) 100%);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(21, 154, 156, 0.38);
+      width: calc(100% - 2.5rem);
+      box-sizing: border-box;
+      background: #0D2336;
+      border: 1.5px solid #159A9C;
       border-radius: 16px;
       color: #F8FAFC;
-      padding: 1.15rem 1.25rem;
+      padding: 1.25rem 1.35rem;
       z-index: 9999;
-      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 24px rgba(21, 154, 156, 0.15);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(21, 154, 156, 0.25);
       font-family: inherit;
       transform: translateX(130%);
       opacity: 0;
@@ -1238,29 +1231,22 @@ function initCookieConsent() {
     `;
 
     toast.innerHTML = `
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem;">
-        <div style="display: flex; align-items: center; gap: 0.65rem;">
-          <div style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: rgba(21, 154, 156, 0.15); border: 1px solid rgba(21, 154, 156, 0.35); flex-shrink: 0; font-size: 14px;">
-            🛡️
-          </div>
-          <div>
-            <strong style="color: #FFFFFF; font-size: 0.875rem; font-weight: 700; letter-spacing: -0.01em; display: block; line-height: 1.25;">Privacy &amp; Cookies</strong>
-            <span style="color: #159A9C; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Essential Only</span>
-          </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.15rem;">🛡️</span>
+          <strong style="color: #FFFFFF; font-size: 0.95rem;">Privacy &amp; Cookies</strong>
         </div>
-        <button id="closeCookieConsentBtn" aria-label="Dismiss notice" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); color: #94A3B8; width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 11px; line-height: 1; transition: all 0.2s ease;">
+        <button id="closeCookieConsentBtn" aria-label="Dismiss notice" style="background: none; border: none; color: #94A3B8; font-size: 1.2rem; cursor: pointer; padding: 0.2rem; line-height: 1; transition: color 0.2s ease;">
           ✕
         </button>
       </div>
-      <p style="font-size: 0.8125rem; color: #CBD5E1; line-height: 1.55; margin: 0 0 0.95rem 0;">
-        We use essential cookies to maintain site security and core functionality. We do not use third-party tracking or advertising cookies.
+      <p style="font-size: 0.825rem; color: #CBD5E1; line-height: 1.55; margin: 0 0 1rem 0;">
+        We use essential browser mechanisms to ensure security and proper site functionality. We do not use third-party advertising or tracking cookies. Learn more in our
+        <a href="privacy-policy.html" style="color: #159A9C; font-weight: 600; text-decoration: underline;">Privacy Policy</a>.
       </p>
-      <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
-        <a id="cookiePolicyLink" href="privacy-policy.html" style="color: #94A3B8; font-size: 0.775rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s ease;">
-          Privacy Policy <span style="font-size: 0.7rem; color: #159A9C;">&rarr;</span>
-        </a>
-        <button id="acceptCookieConsentBtn" style="background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #FFFFFF; border: none; border-radius: 9999px; padding: 0.42rem 1.15rem; font-size: 0.775rem; font-weight: 700; cursor: pointer; box-shadow: 0 3px 12px rgba(21, 154, 156, 0.35); transition: transform 0.2s ease, box-shadow 0.2s ease;">
-          Accept
+      <div style="display: flex; justify-content: flex-end;">
+        <button id="acceptCookieConsentBtn" style="background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #FFFFFF; border: none; border-radius: 9999px; padding: 0.42rem 1.15rem; font-size: 0.8rem; font-weight: 700; cursor: pointer; box-shadow: 0 3px 12px rgba(21, 154, 156, 0.35); text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+          Got It / Accept
         </button>
       </div>
     `;
@@ -1276,9 +1262,6 @@ function initCookieConsent() {
     });
 
     const dismissToast = () => {
-      try {
-        localStorage.setItem("llcprimer_cookie_consent", "accepted");
-      } catch (e) {}
       toast.style.transform = "translateX(130%)";
       toast.style.opacity = "0";
       setTimeout(() => toast.remove(), 450);
@@ -1288,7 +1271,7 @@ function initCookieConsent() {
     if (acceptBtn) {
       acceptBtn.addEventListener("mouseenter", () => {
         acceptBtn.style.transform = "translateY(-1px)";
-        acceptBtn.style.boxShadow = "0 6px 16px rgba(21, 154, 156, 0.5)";
+        acceptBtn.style.boxShadow = "0 5px 16px rgba(21, 154, 156, 0.5)";
       });
       acceptBtn.addEventListener("mouseleave", () => {
         acceptBtn.style.transform = "none";
@@ -1300,24 +1283,12 @@ function initCookieConsent() {
     const closeBtn = document.getElementById("closeCookieConsentBtn");
     if (closeBtn) {
       closeBtn.addEventListener("mouseenter", () => {
-        closeBtn.style.background = "rgba(255, 255, 255, 0.12)";
         closeBtn.style.color = "#FFFFFF";
       });
       closeBtn.addEventListener("mouseleave", () => {
-        closeBtn.style.background = "rgba(255, 255, 255, 0.05)";
         closeBtn.style.color = "#94A3B8";
       });
       closeBtn.addEventListener("click", dismissToast);
-    }
-
-    const policyLink = document.getElementById("cookiePolicyLink");
-    if (policyLink) {
-      policyLink.addEventListener("mouseenter", () => {
-        policyLink.style.color = "#159A9C";
-      });
-      policyLink.addEventListener("mouseleave", () => {
-        policyLink.style.color = "#94A3B8";
-      });
     }
   }, 400);
 }
