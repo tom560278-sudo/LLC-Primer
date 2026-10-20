@@ -154,7 +154,54 @@ function selectStateAndOpenModal(code) {
 }
 
 function openStateModal(code) {
-  showInlineStateResult(code);
+  const modal = document.getElementById("stateModalOverlay");
+  const emptyBox = document.getElementById("modalStateEmptyState");
+  const contentBox = document.getElementById("modalStateContent");
+  const st = stateData.find(s => s.code === code);
+
+  if (modal) {
+    if (st) {
+      if (emptyBox) emptyBox.style.display = "none";
+      if (contentBox) contentBox.style.display = "block";
+      const nameEl = document.getElementById("modalStateName");
+      const abbrEl = document.getElementById("modalStateAbbr");
+      const feeEl = document.getElementById("modalStateFee");
+      const speedEl = document.getElementById("modalStateSpeed");
+      const annualEl = document.getElementById("modalStateAnnual");
+      const noteEl = document.getElementById("modalStateNote");
+      const guideBtn = document.getElementById("modalGuideBtn");
+
+      if (nameEl) nameEl.textContent = st.name;
+      if (abbrEl) abbrEl.textContent = st.code;
+      if (feeEl) feeEl.textContent = `$${st.fee}`;
+      if (speedEl) speedEl.textContent = st.speed || "1-2 Days";
+      if (annualEl) annualEl.textContent = st.annualFee ? `$${st.annualFee}` : "$0";
+      if (noteEl) noteEl.textContent = st.note || `Official statutory filing with the ${st.sosName || (st.name + " Secretary of State")}.`;
+      if (guideBtn) {
+        guideBtn.disabled = false;
+        guideBtn.style.opacity = "1";
+        guideBtn.style.cursor = "pointer";
+        const slug = st.name.toLowerCase().replace(/\s+/g, '-');
+        guideBtn.onclick = function() {
+          closeStateModal();
+          window.location.href = st.link || `how-to-start-llc-in-${slug}.html`;
+        };
+      }
+    } else {
+      if (emptyBox) emptyBox.style.display = "block";
+      if (contentBox) contentBox.style.display = "none";
+      const guideBtn = document.getElementById("modalGuideBtn");
+      if (guideBtn) {
+        guideBtn.disabled = true;
+        guideBtn.style.opacity = "0.5";
+        guideBtn.style.cursor = "not-allowed";
+        guideBtn.onclick = null;
+      }
+    }
+    modal.classList.add("active");
+  } else if (code) {
+    showInlineStateResult(code);
+  }
 }
 
 function closeStateModal() {
@@ -264,8 +311,8 @@ function onStateSelectedInCta(code) {
     <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
       State Filing Fee: <b style="color:#FFFFFF">$${st.fee}</b> · Speed: <b style="color:var(--color-primary)">${st.speed}</b> · Annual Report: <b style="color:#FFFFFF">${st.annual}</b>
     </div>
-    <button class="ls-btn ls-btn--emerald" onclick="alert('Navigating to ${st.name} step-by-step formation checklist...')">
-      Start ${st.name} LLC Filing Now →
+    <button class="ls-btn ls-btn--emerald" onclick="window.location.href='${st.link || ('how-to-start-llc-in-' + st.name.toLowerCase().replace(/\\s+/g, '-') + '.html')}'">
+      View ${st.name} Filing Guide →
     </button>
   `;
 
@@ -412,11 +459,13 @@ function updateCost() {
       `;
     }
     if (totalSetupEl) {
-      totalSetupEl.textContent = "$0.00";
+      totalSetupEl.textContent = "—";
+      totalSetupEl.style.fontSize = "1.25rem";
       totalSetupEl.style.color = "#94A3B8";
     }
     if (annualCompEl) {
-      annualCompEl.textContent = "$0.00/yr";
+      annualCompEl.textContent = "—";
+      annualCompEl.style.fontSize = "1.25rem";
       annualCompEl.style.color = "#94A3B8";
     }
     return;
@@ -779,21 +828,33 @@ function updateModalCost() {
   const serviceSelect = document.getElementById("modalCalcServiceSelect");
   const govFeeEl = document.getElementById("modalCalcLiveGovFee");
   const totalFeeEl = document.getElementById("modalCalcLiveTotalFee");
+  const guideBtn = document.getElementById("modalCalcGuideBtn");
 
   if (!stateSelect || !govFeeEl || !totalFeeEl) return;
 
   const code = stateSelect.value;
   const st = stateData.find(s => s.code === code);
 
-  let govFee = st ? st.fee : 0;
-  if (st) {
-    if (st.code === "CA") {
-      govFee = 70 + 20 + 800; // $70 Articles + $20 Initial Statement + $800 Annual Franchise Tax (Year 1)
-    } else if (st.code === "NV") {
-      govFee = 75 + 350; // $75 Articles + $150 List + $200 License
-    } else if (st.initialExtras) {
-      govFee += st.initialExtras;
+  if (!st) {
+    govFeeEl.textContent = "—";
+    totalFeeEl.textContent = "Select a state";
+    totalFeeEl.style.fontSize = "1.15rem";
+    totalFeeEl.style.color = "#94A3B8";
+    if (guideBtn) {
+      guideBtn.disabled = true;
+      guideBtn.style.opacity = "0.5";
+      guideBtn.style.cursor = "not-allowed";
     }
+    return;
+  }
+
+  let govFee = st.fee;
+  if (st.code === "CA") {
+    govFee = 70 + 20 + 800; // $70 Articles + $20 Initial Statement + $800 Annual Franchise Tax (Year 1)
+  } else if (st.code === "NV") {
+    govFee = 75 + 350; // $75 Articles + $150 List + $200 License
+  } else if (st.initialExtras) {
+    govFee += st.initialExtras;
   }
 
   const agentFee = agentSelect ? (parseInt(agentSelect.value) || 0) : 0;
@@ -801,6 +862,30 @@ function updateModalCost() {
 
   govFeeEl.textContent = `$${govFee}`;
   totalFeeEl.textContent = `$${govFee + agentFee + serviceFee}`;
+  totalFeeEl.style.fontSize = "2.25rem";
+  totalFeeEl.style.color = "var(--color-accent)";
+
+  if (guideBtn) {
+    guideBtn.disabled = false;
+    guideBtn.style.opacity = "1";
+    guideBtn.style.cursor = "pointer";
+  }
+}
+
+function onModalCalcGuideClick() {
+  const stateSelect = document.getElementById("modalCalcStateSelect");
+  const code = stateSelect ? stateSelect.value : "";
+  if (!code) return;
+  const st = stateData.find(s => s.code === code);
+  closeCostCalculatorModal();
+  if (st && st.link) {
+    window.location.href = st.link;
+  } else if (st) {
+    const slug = st.name.toLowerCase().replace(/\s+/g, '-');
+    window.location.href = `how-to-start-llc-in-${slug}.html`;
+  } else {
+    window.location.href = "#states-section";
+  }
 }
 
 
@@ -1073,7 +1158,7 @@ function openCostCalculatorModal() {
   const modal = document.getElementById("costCalcModalOverlay");
   if (modal) {
     modal.classList.add("active");
-    updateCost();
+    updateModalCost();
   }
 }
 function closeCostCalculatorModal() {

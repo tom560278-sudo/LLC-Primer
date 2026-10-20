@@ -2011,12 +2011,12 @@ Choose the state or decision path that fits your situation, then review the link
           <div>
             <div style="margin-bottom: 1.25rem;">
               <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFF; margin-bottom: 0.4rem;">Select State:</label>
-              <select id="calcStateSelect" class="state-select-box" style="margin: 0;"></select>
+              <select id="modalCalcStateSelect" class="state-select-box" style="margin: 0;"></select>
             </div>
 
             <div style="margin-bottom: 1.25rem;">
               <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFF; margin-bottom: 0.4rem;">Registered Agent:</label>
-              <select id="calcAgentSelect" class="state-select-box" style="margin: 0;">
+              <select id="modalCalcAgentSelect" class="state-select-box" style="margin: 0;">
                 <option value="0">Self (Use Home Address — $0)</option>
                 <option value="125">Professional Registered Agent ($125/yr)</option>
               </select>
@@ -2024,7 +2024,7 @@ Choose the state or decision path that fits your situation, then review the link
 
             <div style="margin-bottom: 1.25rem;">
               <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #FFF; margin-bottom: 0.4rem;">Filing Service:</label>
-              <select id="calcServiceSelect" class="state-select-box" style="margin: 0;">
+              <select id="modalCalcServiceSelect" class="state-select-box" style="margin: 0;">
                 <option value="0">DIY Direct State Filing ($0)</option>
                 <option value="39">Northwest Registered Agent ($39)</option>
                 <option value="99">Standard Package ($99)</option>
@@ -2035,9 +2035,9 @@ Choose the state or decision path that fits your situation, then review the link
           <div style="background: var(--color-primary-light); border: 1px solid var(--color-primary); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
             <div>
               <div style="font-size: 0.775rem; color: var(--text-muted); text-transform: uppercase;">Estimated First-Year Total</div>
-              <div style="font-size: 0.85rem; color: #FFF;">Required Fee: <b id="calcLiveGovFee">$0</b></div>
+              <div style="font-size: 0.85rem; color: #CBD5E1;">Required Fee: <b id="modalCalcLiveGovFee" style="color: #FFF;">—</b></div>
             </div>
-            <div style="font-size: 2.25rem; font-weight: 900; color: var(--color-accent); font-family: var(--font-heading);" id="calcLiveTotalFee">$0</div>
+            <div style="font-size: 1.15rem; font-weight: 700; color: #94A3B8; font-family: var(--font-heading);" id="modalCalcLiveTotalFee">Select a state</div>
           </div>
         </div>
 
@@ -2063,8 +2063,8 @@ Choose the state or decision path that fits your situation, then review the link
           </div>
 
           <div style="margin-top: 1.5rem;">
-            <button class="ls-btn ls-btn--emerald" style="width: 100%;" onclick="closeCostCalculatorModal(); location.href='#canonical-tables-section';">
-              Select State & File →
+            <button id="modalCalcGuideBtn" class="ls-btn ls-btn--emerald" style="width: 100%; opacity: 0.5; cursor: not-allowed;" disabled onclick="onModalCalcGuideClick()">
+              View State Filing Guide →
             </button>
           </div>
         </div>
@@ -2077,42 +2077,57 @@ Choose the state or decision path that fits your situation, then review the link
     <div class="modal-card state-modal-card">
       <button class="modal-close" onclick="closeStateModal()" aria-label="Close modal">✕</button>
       
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
-        <h3 style="font-size: 1.4rem; color: #FFFFFF; display: flex; align-items: center; gap: 0.6rem; margin: 0;">
-          <span>🏛️</span> <span id="modalStateName">State Name</span> LLC
-        </h3>
-        <span class="ls-kicker-pill" id="modalStateAbbr" style="margin: 0;">CODE</span>
-      </div>
-
-      <div class="state-info-grid" style="margin-bottom: 1.5rem;">
-        <div class="info-item-box">
-          <div class="info-item-label">State Filing Fee</div>
-          <div class="info-item-value lime" id="modalStateFee">$0</div>
-        </div>
-        <div class="info-item-box">
-          <div class="info-item-label">Processing Speed</div>
-          <div class="info-item-value" id="modalStateSpeed" style="color: var(--color-primary);">1-2 Days</div>
-        </div>
-        <div class="info-item-box">
-          <div class="info-item-label">Annual Fee</div>
-          <div class="info-item-value" id="modalStateAnnual" style="color: #FFFFFF;">$0</div>
-        </div>
-      </div>
-
-      <div style="background: rgba(0, 229, 255, 0.06); border: 1px solid rgba(0, 229, 255, 0.2); border-radius: var(--radius-md); padding: 1rem 1.25rem; margin-bottom: 1.75rem; text-align: left;">
-        <div style="font-size: 0.75rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">
-          2026 SECRETARY OF STATE HIGHLIGHT
-        </div>
-        <p id="modalStateNote" style="font-size: 0.9rem; color: #CBD5E1; margin: 0; line-height: 1.5;"></p>
-      </div>
-
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button id="modalGuideBtn" class="ls-btn ls-btn--emerald" style="flex: 1; background: var(--color-primary-gradient); padding: 0.85rem 1.5rem;">
-          Start State Filing →
+      <!-- Clean Empty State (shown until a state is selected) -->
+      <div id="modalStateEmptyState" style="text-align: center; padding: 2rem 1rem;">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏛️</div>
+        <h3 style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 0.5rem; font-weight: 700;">Select a State</h3>
+        <p style="font-size: 0.9rem; color: #94A3B8; max-width: 420px; margin: 0 auto 1.5rem auto; line-height: 1.5;">
+          Please select a state from the dropdown menu to view official state filing costs, turnaround speed, and compliance requirements.
+        </p>
+        <button onclick="closeStateModal(); location.href='#canonical-tables-section';" class="ls-btn ls-btn--emerald" style="padding: 0.75rem 1.5rem;">
+          Choose a State &rarr;
         </button>
-        <button onclick="closeStateModal()" class="ls-btn ls-btn--ghost" style="padding: 0.85rem 1.5rem;">
-          Close
-        </button>
+      </div>
+
+      <!-- Populated State Content (hidden by default until valid state selected) -->
+      <div id="modalStateContent" style="display: none;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+          <h3 style="font-size: 1.4rem; color: #FFFFFF; display: flex; align-items: center; gap: 0.6rem; margin: 0;">
+            <span>🏛️</span> <span id="modalStateName"></span> LLC
+          </h3>
+          <span class="ls-kicker-pill" id="modalStateAbbr" style="margin: 0;"></span>
+        </div>
+
+        <div class="state-info-grid" style="margin-bottom: 1.5rem;">
+          <div class="info-item-box">
+            <div class="info-item-label">State Filing Fee</div>
+            <div class="info-item-value lime" id="modalStateFee">—</div>
+          </div>
+          <div class="info-item-box">
+            <div class="info-item-label">Processing Speed</div>
+            <div class="info-item-value" id="modalStateSpeed" style="color: var(--color-primary);">—</div>
+          </div>
+          <div class="info-item-box">
+            <div class="info-item-label">Annual Fee</div>
+            <div class="info-item-value" id="modalStateAnnual" style="color: #FFFFFF;">—</div>
+          </div>
+        </div>
+
+        <div style="background: rgba(0, 229, 255, 0.06); border: 1px solid rgba(0, 229, 255, 0.2); border-radius: var(--radius-md); padding: 1rem 1.25rem; margin-bottom: 1.75rem; text-align: left;">
+          <div style="font-size: 0.75rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">
+            2026 SECRETARY OF STATE HIGHLIGHT
+          </div>
+          <p id="modalStateNote" style="font-size: 0.9rem; color: #CBD5E1; margin: 0; line-height: 1.5;"></p>
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <button id="modalGuideBtn" class="ls-btn ls-btn--emerald" style="flex: 1; background: var(--color-primary-gradient); padding: 0.85rem 1.5rem;">
+            View State Filing Guide →
+          </button>
+          <button onclick="closeStateModal()" class="ls-btn ls-btn--ghost" style="padding: 0.85rem 1.5rem;">
+            Close
+          </button>
+        </div>
       </div>
     </div>
   </div>
