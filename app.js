@@ -1195,8 +1195,8 @@ function closeQuizModal() {
 }
 
 // --------------------------------------------------------------------------
-// LIGHTWEIGHT ASYNCHRONOUS COOKIE CONSENT BANNER (GDPR / CCPA COMPLIANT)
-// Non-blocking, preserves full semantic text accessibility for crawler bots
+// LIGHTWEIGHT ASYNCHRONOUS COOKIE CONSENT TOAST (GDPR / CCPA COMPLIANT)
+// Non-blocking floating corner message that slides in from the side
 // --------------------------------------------------------------------------
 function initCookieConsent() {
   if (typeof window === "undefined" || !window.localStorage) return;
@@ -1208,43 +1208,75 @@ function initCookieConsent() {
     return;
   }
 
-  // Defer initialization asynchronously so crawler bots and page render are never blocked
+  // Defer initialization so crawler bots and initial page render are never blocked
   setTimeout(() => {
-    if (document.getElementById("cookieConsentBanner")) return;
+    if (document.getElementById("cookieConsentToast")) return;
 
-    const banner = document.createElement("div");
-    banner.id = "cookieConsentBanner";
-    banner.setAttribute("role", "region");
-    banner.setAttribute("aria-label", "Cookie Consent Notice");
-    banner.style.cssText = "position: fixed; bottom: 0; left: 0; right: 0; background: #0D2336; border-top: 2px solid #159A9C; color: #F8FAFC; padding: 0.95rem 1.5rem; z-index: 9998; box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35); font-family: inherit; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;";
-
-    banner.innerHTML = `
-      <div style="flex: 1; min-width: 280px; font-size: 0.85rem; line-height: 1.5; color: #CBD5E1;">
-        <strong style="color: #FFFFFF;">Privacy &amp; Cookie Notice:</strong>
-        We use essential browser mechanisms to ensure security and proper site functionality. We do not deploy third-party advertising or tracking cookies. Learn more in our
-        <a href="privacy-policy.html" style="color: #159A9C; font-weight: 600; text-decoration: underline;">Privacy Policy</a> and
-        <a href="terms-of-service.html" style="color: #159A9C; font-weight: 600; text-decoration: underline;">Terms of Service</a>.
-      </div>
-      <div style="display: flex; gap: 0.75rem; align-items: center; flex-shrink: 0;">
-        <button id="acceptCookieConsentBtn" style="background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #FFFFFF; border: none; border-radius: 9999px; padding: 0.55rem 1.35rem; font-size: 0.825rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 10px rgba(21, 154, 156, 0.3);">
-          Accept &amp; Close
-        </button>
-      </div>
+    const toast = document.createElement("div");
+    toast.id = "cookieConsentToast";
+    toast.setAttribute("role", "region");
+    toast.setAttribute("aria-label", "Privacy & Cookie Notice");
+    toast.style.cssText = `
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      max-width: 360px;
+      width: calc(100% - 3rem);
+      background: #0D2336;
+      border: 1.5px solid #159A9C;
+      border-radius: 16px;
+      color: #F8FAFC;
+      padding: 1.25rem 1.35rem;
+      z-index: 9999;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(21, 154, 156, 0.25);
+      font-family: inherit;
+      transform: translateX(130%);
+      opacity: 0;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
     `;
 
-    document.body.appendChild(banner);
+    toast.innerHTML = `
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.15rem;">🛡️</span>
+          <strong style="color: #FFFFFF; font-size: 0.95rem;">Privacy &amp; Cookies</strong>
+        </div>
+        <button id="closeCookieConsentBtn" aria-label="Dismiss notice" style="background: none; border: none; color: #94A3B8; font-size: 1.2rem; cursor: pointer; padding: 0.2rem; line-height: 1; transition: color 0.2s ease;">
+          ✕
+        </button>
+      </div>
+      <p style="font-size: 0.825rem; color: #CBD5E1; line-height: 1.55; margin: 0 0 1rem 0;">
+        We use essential browser mechanisms to ensure security and proper site functionality. We do not use third-party advertising or tracking cookies. Learn more in our
+        <a href="privacy-policy.html" style="color: #159A9C; font-weight: 600; text-decoration: underline;">Privacy Policy</a>.
+      </p>
+      <button id="acceptCookieConsentBtn" style="width: 100%; background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #FFFFFF; border: none; border-radius: 9999px; padding: 0.65rem 1.25rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(21, 154, 156, 0.35); text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+        Got It / Accept
+      </button>
+    `;
 
-    const btn = document.getElementById("acceptCookieConsentBtn");
-    if (btn) {
-      btn.addEventListener("click", () => {
-        try {
-          localStorage.setItem("llcprimer_cookie_consent", "accepted");
-        } catch (e) {}
-        banner.style.transition = "opacity 0.25s ease, transform 0.25s ease";
-        banner.style.opacity = "0";
-        banner.style.transform = "translateY(100%)";
-        setTimeout(() => banner.remove(), 250);
-      });
-    }
-  }, 100);
+    document.body.appendChild(toast);
+
+    // Slide in from side after mount
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        toast.style.transform = "translateX(0)";
+        toast.style.opacity = "1";
+      }, 50);
+    });
+
+    const dismissToast = () => {
+      try {
+        localStorage.setItem("llcprimer_cookie_consent", "accepted");
+      } catch (e) {}
+      toast.style.transform = "translateX(130%)";
+      toast.style.opacity = "0";
+      setTimeout(() => toast.remove(), 450);
+    };
+
+    const acceptBtn = document.getElementById("acceptCookieConsentBtn");
+    if (acceptBtn) acceptBtn.addEventListener("click", dismissToast);
+
+    const closeBtn = document.getElementById("closeCookieConsentBtn");
+    if (closeBtn) closeBtn.addEventListener("click", dismissToast);
+  }, 400);
 }
