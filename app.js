@@ -1220,17 +1220,17 @@ function initCookieConsent() {
       position: fixed;
       bottom: 1.5rem;
       right: 1.5rem;
-      max-width: 320px;
-      width: calc(100% - 2.5rem);
-      background: rgba(13, 35, 54, 0.94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(21, 154, 156, 0.45);
-      border-radius: 18px;
+      max-width: 360px;
+      width: calc(100% - 2rem);
+      background: linear-gradient(145deg, rgba(13, 35, 54, 0.96) 0%, rgba(9, 24, 38, 0.98) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(21, 154, 156, 0.38);
+      border-radius: 16px;
       color: #F8FAFC;
-      padding: 1rem 1.15rem;
+      padding: 1.15rem 1.25rem;
       z-index: 9999;
-      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06), 0 0 24px rgba(21, 154, 156, 0.15);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 24px rgba(21, 154, 156, 0.15);
       font-family: inherit;
       transform: translateX(130%);
       opacity: 0;
@@ -1238,23 +1238,28 @@ function initCookieConsent() {
     `;
 
     toast.innerHTML = `
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem;">
-        <div style="display: flex; align-items: center; gap: 0.45rem;">
-          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #159A9C; box-shadow: 0 0 8px #159A9C;"></span>
-          <strong style="color: #FFFFFF; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.02em;">Privacy &amp; Cookies</strong>
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem;">
+        <div style="display: flex; align-items: center; gap: 0.65rem;">
+          <div style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: rgba(21, 154, 156, 0.15); border: 1px solid rgba(21, 154, 156, 0.35); flex-shrink: 0; font-size: 14px;">
+            🛡️
+          </div>
+          <div>
+            <strong style="color: #FFFFFF; font-size: 0.875rem; font-weight: 700; letter-spacing: -0.01em; display: block; line-height: 1.25;">Privacy &amp; Cookies</strong>
+            <span style="color: #159A9C; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Essential Only</span>
+          </div>
         </div>
-        <button id="closeCookieConsentBtn" aria-label="Dismiss notice" style="background: rgba(255, 255, 255, 0.06); border: none; color: #94A3B8; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 11px; line-height: 1; transition: background 0.2s ease, color 0.2s ease;">
+        <button id="closeCookieConsentBtn" aria-label="Dismiss notice" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); color: #94A3B8; width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 11px; line-height: 1; transition: all 0.2s ease;">
           ✕
         </button>
       </div>
-      <p style="font-size: 0.775rem; color: #CBD5E1; line-height: 1.5; margin: 0 0 0.85rem 0;">
-        We use essential cookies for site security and functionality. We do not use tracking or advertising cookies.
+      <p style="font-size: 0.8125rem; color: #CBD5E1; line-height: 1.55; margin: 0 0 0.95rem 0;">
+        We use essential cookies to maintain site security and core functionality. We do not use third-party tracking or advertising cookies.
       </p>
       <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
-        <a href="privacy-policy.html" style="color: #159A9C; font-size: 0.75rem; font-weight: 600; text-decoration: underline;">
-          Policy Details
+        <a id="cookiePolicyLink" href="privacy-policy.html" style="color: #94A3B8; font-size: 0.775rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s ease;">
+          Privacy Policy <span style="font-size: 0.7rem; color: #159A9C;">&rarr;</span>
         </a>
-        <button id="acceptCookieConsentBtn" style="background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #FFFFFF; border: none; border-radius: 9999px; padding: 0.38rem 1rem; font-size: 0.75rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 10px rgba(21, 154, 156, 0.35); transition: transform 0.2s ease, box-shadow 0.2s ease;">
+        <button id="acceptCookieConsentBtn" style="background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #FFFFFF; border: none; border-radius: 9999px; padding: 0.42rem 1.15rem; font-size: 0.775rem; font-weight: 700; cursor: pointer; box-shadow: 0 3px 12px rgba(21, 154, 156, 0.35); transition: transform 0.2s ease, box-shadow 0.2s ease;">
           Accept
         </button>
       </div>
@@ -1280,9 +1285,39 @@ function initCookieConsent() {
     };
 
     const acceptBtn = document.getElementById("acceptCookieConsentBtn");
-    if (acceptBtn) acceptBtn.addEventListener("click", dismissToast);
+    if (acceptBtn) {
+      acceptBtn.addEventListener("mouseenter", () => {
+        acceptBtn.style.transform = "translateY(-1px)";
+        acceptBtn.style.boxShadow = "0 6px 16px rgba(21, 154, 156, 0.5)";
+      });
+      acceptBtn.addEventListener("mouseleave", () => {
+        acceptBtn.style.transform = "none";
+        acceptBtn.style.boxShadow = "0 3px 12px rgba(21, 154, 156, 0.35)";
+      });
+      acceptBtn.addEventListener("click", dismissToast);
+    }
 
     const closeBtn = document.getElementById("closeCookieConsentBtn");
-    if (closeBtn) closeBtn.addEventListener("click", dismissToast);
+    if (closeBtn) {
+      closeBtn.addEventListener("mouseenter", () => {
+        closeBtn.style.background = "rgba(255, 255, 255, 0.12)";
+        closeBtn.style.color = "#FFFFFF";
+      });
+      closeBtn.addEventListener("mouseleave", () => {
+        closeBtn.style.background = "rgba(255, 255, 255, 0.05)";
+        closeBtn.style.color = "#94A3B8";
+      });
+      closeBtn.addEventListener("click", dismissToast);
+    }
+
+    const policyLink = document.getElementById("cookiePolicyLink");
+    if (policyLink) {
+      policyLink.addEventListener("mouseenter", () => {
+        policyLink.style.color = "#159A9C";
+      });
+      policyLink.addEventListener("mouseleave", () => {
+        policyLink.style.color = "#94A3B8";
+      });
+    }
   }, 400);
 }
