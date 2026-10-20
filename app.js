@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initQuizWizard();
   initSearch();
   initActiveNavHighlighting();
+  initCookieConsent();
 });
 
 function initActiveNavHighlighting() {
@@ -1191,4 +1192,59 @@ function openQuizModal() {
 }
 function closeQuizModal() {
   document.getElementById("quizModalOverlay")?.classList.remove("active");
+}
+
+// --------------------------------------------------------------------------
+// LIGHTWEIGHT ASYNCHRONOUS COOKIE CONSENT BANNER (GDPR / CCPA COMPLIANT)
+// Non-blocking, preserves full semantic text accessibility for crawler bots
+// --------------------------------------------------------------------------
+function initCookieConsent() {
+  if (typeof window === "undefined" || !window.localStorage) return;
+
+  try {
+    const consent = localStorage.getItem("llcprimer_cookie_consent");
+    if (consent === "accepted") return;
+  } catch (e) {
+    return;
+  }
+
+  // Defer initialization asynchronously so crawler bots and page render are never blocked
+  setTimeout(() => {
+    if (document.getElementById("cookieConsentBanner")) return;
+
+    const banner = document.createElement("div");
+    banner.id = "cookieConsentBanner";
+    banner.setAttribute("role", "region");
+    banner.setAttribute("aria-label", "Cookie Consent Notice");
+    banner.style.cssText = "position: fixed; bottom: 0; left: 0; right: 0; background: #0D2336; border-top: 2px solid #159A9C; color: #F8FAFC; padding: 0.95rem 1.5rem; z-index: 9998; box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35); font-family: inherit; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;";
+
+    banner.innerHTML = `
+      <div style="flex: 1; min-width: 280px; font-size: 0.85rem; line-height: 1.5; color: #CBD5E1;">
+        <strong style="color: #FFFFFF;">Privacy &amp; Cookie Notice:</strong>
+        We use essential browser mechanisms to ensure security and proper site functionality. We do not deploy third-party advertising or tracking cookies. Learn more in our
+        <a href="privacy-policy.html" style="color: #159A9C; font-weight: 600; text-decoration: underline;">Privacy Policy</a> and
+        <a href="terms-of-service.html" style="color: #159A9C; font-weight: 600; text-decoration: underline;">Terms of Service</a>.
+      </div>
+      <div style="display: flex; gap: 0.75rem; align-items: center; flex-shrink: 0;">
+        <button id="acceptCookieConsentBtn" style="background: linear-gradient(135deg, #159A9C 0%, #0E7490 100%); color: #FFFFFF; border: none; border-radius: 9999px; padding: 0.55rem 1.35rem; font-size: 0.825rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 10px rgba(21, 154, 156, 0.3);">
+          Accept &amp; Close
+        </button>
+      </div>
+    `;
+
+    document.body.appendChild(banner);
+
+    const btn = document.getElementById("acceptCookieConsentBtn");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        try {
+          localStorage.setItem("llcprimer_cookie_consent", "accepted");
+        } catch (e) {}
+        banner.style.transition = "opacity 0.25s ease, transform 0.25s ease";
+        banner.style.opacity = "0";
+        banner.style.transform = "translateY(100%)";
+        setTimeout(() => banner.remove(), 250);
+      });
+    }
+  }, 100);
 }

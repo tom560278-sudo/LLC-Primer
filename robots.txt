@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://llcprimer.com/sitemap.xml
 Sitemap: https://llc-primer-eight.vercel.app/sitemap.xml
