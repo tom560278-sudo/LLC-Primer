@@ -43,75 +43,91 @@ function buildSitemapXml() {
   const stateSlugs = getStateSlugs();
   const allHtmlFiles = fs.readdirSync(rootDir).filter(f => f.endsWith('.html'));
 
-  const urlEntries = [];
-
-  // 1. Homepage
-  urlEntries.push({
-    loc: `${primaryBaseUrl}/`,
-    lastmod: currentDate,
-    changefreq: 'daily',
-    priority: '1.0'
-  });
-
-  // 2. Core Legal & Transparency Routes
-  const legalMap = [
-    { file: 'privacy-policy.html', priority: '0.5', changefreq: 'monthly' },
-    { file: 'privacy-policy', priority: '0.5', changefreq: 'monthly' },
-    { file: 'terms-of-service.html', priority: '0.5', changefreq: 'monthly' },
-    { file: 'terms-of-service', priority: '0.5', changefreq: 'monthly' },
-    { file: 'affiliate-disclosure.html', priority: '0.5', changefreq: 'monthly' },
-    { file: 'disclosure-transparency', priority: '0.5', changefreq: 'monthly' },
-    { file: 'editorial-policy.html', priority: '0.5', changefreq: 'monthly' },
-    { file: 'how-we-review.html', priority: '0.6', changefreq: 'monthly' },
-    { file: 'about.html', priority: '0.5', changefreq: 'monthly' },
-    { file: 'contact.html', priority: '0.5', changefreq: 'monthly' },
+  const baseUrls = [
+    primaryBaseUrl,
+    'https://llc-primer-eight.vercel.app'
   ];
 
-  legalMap.forEach(item => {
+  // Remove duplicate if primaryBaseUrl is already the vercel domain
+  const uniqueBases = Array.from(new Set(baseUrls));
+
+  const urlEntries = [];
+
+  uniqueBases.forEach(baseUrl => {
+    // 1. Homepage
     urlEntries.push({
-      loc: `${primaryBaseUrl}/${item.file}`,
+      loc: `${baseUrl}/`,
       lastmod: currentDate,
-      changefreq: item.changefreq,
-      priority: item.priority
+      changefreq: 'daily',
+      priority: '1.0'
     });
-  });
 
-  // 3. 50-State Guide Slugs
-  stateSlugs.forEach(slug => {
-    urlEntries.push({
-      loc: `${primaryBaseUrl}/how-to-start-llc-in-${slug}.html`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.8'
+    // 2. Core Legal & Transparency Routes
+    const legalMap = [
+      { file: 'privacy-policy.html', priority: '0.5', changefreq: 'monthly' },
+      { file: 'privacy-policy', priority: '0.5', changefreq: 'monthly' },
+      { file: 'terms-of-service.html', priority: '0.5', changefreq: 'monthly' },
+      { file: 'terms-of-service', priority: '0.5', changefreq: 'monthly' },
+      { file: 'affiliate-disclosure.html', priority: '0.5', changefreq: 'monthly' },
+      { file: 'disclosure-transparency', priority: '0.5', changefreq: 'monthly' },
+      { file: 'editorial-policy.html', priority: '0.5', changefreq: 'monthly' },
+      { file: 'how-we-review.html', priority: '0.6', changefreq: 'monthly' },
+      { file: 'about.html', priority: '0.5', changefreq: 'monthly' },
+      { file: 'contact.html', priority: '0.5', changefreq: 'monthly' },
+    ];
+
+    legalMap.forEach(item => {
+      urlEntries.push({
+        loc: `${baseUrl}/${item.file}`,
+        lastmod: currentDate,
+        changefreq: item.changefreq,
+        priority: item.priority
+      });
     });
-  });
 
-  // 4. Remaining HTML Pages (Calculators, Reviews, Comparisons, Guides)
-  const trackedFiles = new Set([
-    'index.html',
-    ...legalMap.map(l => l.file),
-    ...stateSlugs.map(s => `how-to-start-llc-in-${s}.html`)
-  ]);
+    // 3. 50-State Guide Slugs
+    stateSlugs.forEach(slug => {
+      urlEntries.push({
+        loc: `${baseUrl}/how-to-start-llc-in-${slug}.html`,
+        lastmod: currentDate,
+        changefreq: 'monthly',
+        priority: '0.8'
+      });
+      urlEntries.push({
+        loc: `${baseUrl}/how-to-start-llc-in-${slug}`,
+        lastmod: currentDate,
+        changefreq: 'monthly',
+        priority: '0.8'
+      });
+    });
 
-  allHtmlFiles.forEach(file => {
-    if (trackedFiles.has(file)) return;
+    // 4. Remaining HTML Pages (Calculators, Reviews, Comparisons, Guides)
+    const trackedFiles = new Set([
+      'index.html',
+      ...legalMap.map(l => l.file),
+      ...stateSlugs.map(s => `how-to-start-llc-in-${s}.html`)
+    ]);
 
-    let priority = '0.7';
-    let changefreq = 'monthly';
+    allHtmlFiles.forEach(file => {
+      if (trackedFiles.has(file)) return;
 
-    if (file.includes('calculator') || file.includes('estimator') || file.includes('tracker') || file === 'tools.html') {
-      priority = '0.8';
-      changefreq = 'weekly';
-    } else if (file.includes('best-') || file.includes('review') || file.includes('-vs-')) {
-      priority = '0.7';
-      changefreq = 'monthly';
-    }
+      let priority = '0.7';
+      let changefreq = 'monthly';
 
-    urlEntries.push({
-      loc: `${primaryBaseUrl}/${file}`,
-      lastmod: currentDate,
-      changefreq,
-      priority
+      if (file.includes('calculator') || file.includes('estimator') || file.includes('tracker') || file === 'tools.html') {
+        priority = '0.8';
+        changefreq = 'weekly';
+      } else if (file.includes('best-') || file.includes('review') || file.includes('-vs-')) {
+        priority = '0.7';
+        changefreq = 'monthly';
+      }
+
+      urlEntries.push({
+        loc: `${baseUrl}/${file}`,
+        lastmod: currentDate,
+        changefreq,
+        priority
+      });
     });
   });
 

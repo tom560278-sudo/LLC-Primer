@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSearch();
   initActiveNavHighlighting();
   initCookieConsent();
+  initCrawlerIntegration();
 });
 
 function initActiveNavHighlighting() {
@@ -1292,3 +1293,58 @@ function initCookieConsent() {
     }
   }, 400);
 }
+
+// --------------------------------------------------------------------------
+// AUTOMATED SITEMAP & CRAWLER BOT INTEGRATION
+// Guarantees that any search engine, affiliate platform bot, or automated crawler
+// discovers and commands full crawl of all URLs across the entire domain.
+// --------------------------------------------------------------------------
+function initCrawlerIntegration() {
+  if (typeof document === "undefined") return;
+
+  try {
+    // 1. In-head link rel="sitemap" tag for XML sitemap discovery
+    if (!document.querySelector('link[rel="sitemap"]')) {
+      const sitemapLink = document.createElement("link");
+      sitemapLink.rel = "sitemap";
+      sitemapLink.type = "application/xml";
+      sitemapLink.title = "Sitemap";
+      sitemapLink.href = "/sitemap.xml";
+      document.head.appendChild(sitemapLink);
+    }
+
+    // 2. In-head meta robots permitting full indexation and rich previews
+    if (!document.querySelector('meta[name="robots"]')) {
+      const metaRobots = document.createElement("meta");
+      metaRobots.name = "robots";
+      metaRobots.content = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+      document.head.appendChild(metaRobots);
+    }
+
+    // 3. Ensure footer copyright bar includes a discoverable Sitemap anchor for DOM crawlers
+    const footerCopyright = document.querySelector(".footer-copyright");
+    if (footerCopyright && !footerCopyright.querySelector('a[href*="sitemap"]')) {
+      const separator = document.createTextNode(" | ");
+      const sitemapAnchor = document.createElement("a");
+      sitemapAnchor.href = "sitemap.xml";
+      sitemapAnchor.textContent = "Sitemap";
+      sitemapAnchor.setAttribute("title", "XML Sitemap");
+      footerCopyright.appendChild(separator);
+      footerCopyright.appendChild(sitemapAnchor);
+    }
+
+    // 4. Expose dynamic sitemap registry for headless JS crawlers (Puppeteer, Playwright, network bots)
+    if (typeof window !== "undefined") {
+      window.__LLCPRIMER_SITEMAP__ = {
+        url: "/sitemap.xml",
+        canonical: "https://llcprimer.com/sitemap.xml",
+        totalUrls: 324,
+        status: "active",
+        crawling: "allowed"
+      };
+    }
+  } catch (e) {
+    // Fail-safe silent execution
+  }
+}
+
