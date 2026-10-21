@@ -1,4 +1,5 @@
 {
+  "buildCommand": "node scripts/generate-sitemap.js",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [

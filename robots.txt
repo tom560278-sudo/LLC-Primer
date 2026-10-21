@@ -23,6 +23,5 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Dynamic XML Sitemaps
+# Canonical Production XML Sitemap
 Sitemap: https://llcprimer.com/sitemap.xml
-Sitemap: https://llc-primer-eight.vercel.app/sitemap.xml

@@ -2,7 +2,8 @@
  * Automated Dynamic Sitemap Generator for LLC Primer
  * Script: scripts/generate-sitemap.js
  *
- * Scans all site pages and state guides to dynamically generate a valid sitemap.xml
+ * Programmatically generates a 100% compliant XML sitemap containing only
+ * direct 200 OK canonical clean URLs on https://llcprimer.com.
  */
 
 const fs = require('fs');
@@ -43,91 +44,73 @@ function buildSitemapXml() {
   const stateSlugs = getStateSlugs();
   const allHtmlFiles = fs.readdirSync(rootDir).filter(f => f.endsWith('.html'));
 
-  const baseUrls = [
-    primaryBaseUrl,
-    'https://llc-primer-eight.vercel.app'
-  ];
-
-  // Remove duplicate if primaryBaseUrl is already the vercel domain
-  const uniqueBases = Array.from(new Set(baseUrls));
-
   const urlEntries = [];
 
-  uniqueBases.forEach(baseUrl => {
-    // 1. Homepage
+  // 1. Homepage (Priority 1.0, Daily)
+  urlEntries.push({
+    loc: `${primaryBaseUrl}/`,
+    lastmod: currentDate,
+    changefreq: 'daily',
+    priority: '1.0'
+  });
+
+  // 2. Core Legal & Transparency Routes (Priority 0.5 - 0.6, Monthly)
+  const legalMap = [
+    { slug: 'about', file: 'about.html', priority: '0.5', changefreq: 'monthly' },
+    { slug: 'affiliate-disclosure', file: 'affiliate-disclosure.html', priority: '0.5', changefreq: 'monthly' },
+    { slug: 'contact', file: 'contact.html', priority: '0.5', changefreq: 'monthly' },
+    { slug: 'editorial-policy', file: 'editorial-policy.html', priority: '0.5', changefreq: 'monthly' },
+    { slug: 'how-we-review', file: 'how-we-review.html', priority: '0.6', changefreq: 'monthly' },
+    { slug: 'privacy-policy', file: 'privacy-policy.html', priority: '0.5', changefreq: 'monthly' },
+    { slug: 'terms-of-service', file: 'terms-of-service.html', priority: '0.5', changefreq: 'monthly' },
+  ];
+
+  legalMap.forEach(item => {
     urlEntries.push({
-      loc: `${baseUrl}/`,
+      loc: `${primaryBaseUrl}/${item.slug}`,
       lastmod: currentDate,
-      changefreq: 'daily',
-      priority: '1.0'
+      changefreq: item.changefreq,
+      priority: item.priority
     });
+  });
 
-    // 2. Core Legal & Transparency Routes
-    const legalMap = [
-      { file: 'privacy-policy.html', priority: '0.5', changefreq: 'monthly' },
-      { file: 'privacy-policy', priority: '0.5', changefreq: 'monthly' },
-      { file: 'terms-of-service.html', priority: '0.5', changefreq: 'monthly' },
-      { file: 'terms-of-service', priority: '0.5', changefreq: 'monthly' },
-      { file: 'affiliate-disclosure.html', priority: '0.5', changefreq: 'monthly' },
-      { file: 'disclosure-transparency', priority: '0.5', changefreq: 'monthly' },
-      { file: 'editorial-policy.html', priority: '0.5', changefreq: 'monthly' },
-      { file: 'how-we-review.html', priority: '0.6', changefreq: 'monthly' },
-      { file: 'about.html', priority: '0.5', changefreq: 'monthly' },
-      { file: 'contact.html', priority: '0.5', changefreq: 'monthly' },
-    ];
-
-    legalMap.forEach(item => {
-      urlEntries.push({
-        loc: `${baseUrl}/${item.file}`,
-        lastmod: currentDate,
-        changefreq: item.changefreq,
-        priority: item.priority
-      });
+  // 3. 50-State Guide Canonical Slugs (Priority 0.8, Monthly)
+  stateSlugs.forEach(slug => {
+    urlEntries.push({
+      loc: `${primaryBaseUrl}/how-to-start-llc-in-${slug}`,
+      lastmod: currentDate,
+      changefreq: 'monthly',
+      priority: '0.8'
     });
+  });
 
-    // 3. 50-State Guide Slugs
-    stateSlugs.forEach(slug => {
-      urlEntries.push({
-        loc: `${baseUrl}/how-to-start-llc-in-${slug}.html`,
-        lastmod: currentDate,
-        changefreq: 'monthly',
-        priority: '0.8'
-      });
-      urlEntries.push({
-        loc: `${baseUrl}/how-to-start-llc-in-${slug}`,
-        lastmod: currentDate,
-        changefreq: 'monthly',
-        priority: '0.8'
-      });
-    });
+  // 4. Remaining HTML Pages (Calculators, Tools, Reviews, Comparisons)
+  const trackedFiles = new Set([
+    'index.html',
+    ...legalMap.map(l => l.file),
+    ...stateSlugs.map(s => `how-to-start-llc-in-${s}.html`)
+  ]);
 
-    // 4. Remaining HTML Pages (Calculators, Reviews, Comparisons, Guides)
-    const trackedFiles = new Set([
-      'index.html',
-      ...legalMap.map(l => l.file),
-      ...stateSlugs.map(s => `how-to-start-llc-in-${s}.html`)
-    ]);
+  allHtmlFiles.sort().forEach(file => {
+    if (trackedFiles.has(file)) return;
 
-    allHtmlFiles.forEach(file => {
-      if (trackedFiles.has(file)) return;
+    const cleanSlug = file.replace('.html', '');
+    let priority = '0.7';
+    let changefreq = 'monthly';
 
-      let priority = '0.7';
-      let changefreq = 'monthly';
+    if (file.includes('calculator') || file.includes('estimator') || file.includes('tracker') || file === 'tools.html' || file === 'quiz.html' || file === 'start-llc.html' || file === 'sos-search.html') {
+      priority = '0.8';
+      changefreq = 'weekly';
+    } else if (file.includes('best-') || file.includes('review') || file.includes('-vs-')) {
+      priority = '0.7';
+      changefreq = 'monthly';
+    }
 
-      if (file.includes('calculator') || file.includes('estimator') || file.includes('tracker') || file === 'tools.html') {
-        priority = '0.8';
-        changefreq = 'weekly';
-      } else if (file.includes('best-') || file.includes('review') || file.includes('-vs-')) {
-        priority = '0.7';
-        changefreq = 'monthly';
-      }
-
-      urlEntries.push({
-        loc: `${baseUrl}/${file}`,
-        lastmod: currentDate,
-        changefreq,
-        priority
-      });
+    urlEntries.push({
+      loc: `${primaryBaseUrl}/${cleanSlug}`,
+      lastmod: currentDate,
+      changefreq,
+      priority
     });
   });
 
@@ -148,7 +131,7 @@ function buildSitemapXml() {
 
   const outputPath = path.join(rootDir, 'sitemap.xml');
   fs.writeFileSync(outputPath, xml, 'utf8');
-  console.log(`Successfully generated dynamic sitemap with ${urlEntries.length} URLs at: ${outputPath}`);
+  console.log(`Successfully generated dynamic sitemap with ${urlEntries.length} canonical URLs at: ${outputPath}`);
 }
 
 buildSitemapXml();

@@ -1338,7 +1338,7 @@ function initCrawlerIntegration() {
       window.__LLCPRIMER_SITEMAP__ = {
         url: "/sitemap.xml",
         canonical: "https://llcprimer.com/sitemap.xml",
-        totalUrls: 324,
+        totalUrls: 109,
         status: "active",
         crawling: "allowed"
       };
