@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   populateStateSelectors();
   initFaqAccordion();
   initMobileMenu();
+  initSlimHeaderOnScroll();
   initCostCalculator();
   initQuizWizard();
   initSearch();
@@ -65,6 +66,35 @@ document.addEventListener("DOMContentLoaded", () => {
   initCookieConsent();
   initCrawlerIntegration();
 });
+
+function initSlimHeaderOnScroll() {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  let ticking = false;
+  const updateHeader = () => {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollY > 30) {
+      if (!header.classList.contains("header-scrolled")) {
+        header.classList.add("header-scrolled");
+      }
+    } else {
+      if (header.classList.contains("header-scrolled")) {
+        header.classList.remove("header-scrolled");
+      }
+    }
+    ticking = false;
+  };
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateHeader();
+}
 
 function initActiveNavHighlighting() {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
