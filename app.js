@@ -1227,13 +1227,18 @@ function closeQuizModal() {
 
 // --------------------------------------------------------------------------
 // LIGHTWEIGHT ASYNCHRONOUS COOKIE CONSENT TOAST (GDPR / CCPA COMPLIANT)
-// Non-blocking floating corner message that slides in from the side
+// Displays strictly on the homepage only; disabled across all inner pages
 // --------------------------------------------------------------------------
 function initCookieConsent() {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || typeof document === "undefined") return;
+
+  // Restrict popup strictly to the homepage
+  const pathname = (window.location.pathname || "").toLowerCase();
+  const page = pathname.split('/').pop().replace(/\.html?$/i, '');
+  const isHomePage = page === '' || page === 'index';
+  if (!isHomePage) return;
 
   // Defer initialization so crawler bots and initial page render are never blocked
-  // Always displays on page load / reload as requested
   setTimeout(() => {
     if (document.getElementById("cookieConsentToast")) return;
 
